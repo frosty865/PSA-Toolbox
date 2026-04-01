@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import './ida-design-system.css';
+import '../../../../../shared/cisa_styles.css';
 import { RootLayoutClientLoader } from '@/components/RootLayoutClientLoader';
 
 export const metadata: Metadata = {

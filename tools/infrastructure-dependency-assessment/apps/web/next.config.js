@@ -1,9 +1,9 @@
 const path = require('path');
 
-const repoRoot = path.resolve(__dirname, '../../../../..');
+const repoRoot = path.resolve(__dirname, '../../../..');
 const toolRoot = path.resolve(__dirname, '../..');
 const packagesDir = path.join(toolRoot, 'packages');
-const toolRootFromRepo = 'products/asset-dependency-assessment/asset-dependency-tool';
+const toolRootFromRepo = 'tools/infrastructure-dependency-assessment';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

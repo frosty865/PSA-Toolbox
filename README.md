@@ -10,6 +10,7 @@ Unified home for PSA tools: each product lives under `tools/<tool-id>/`, with a 
 | `launcher/` | WinUI 3 app — browse tools, open folders, start documented entry points |
 | `tools-manifest.json` | Machine-readable list of tools for the launcher |
 | `docs/tools-manifest.schema.json` | JSON Schema for the manifest |
+| [`shared/cisa_styles.css`](shared/cisa_styles.css) | DHS CISA house styles — import in every web tool’s global CSS entry after base tokens (e.g. `import '../../../../../shared/cisa_styles.css'` from `apps/web/app/layout.tsx`) |
 
 ## Requirements
 
