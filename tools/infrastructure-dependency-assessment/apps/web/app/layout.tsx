@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+/* USWDS v3 — U.S. Web Design System (local npm; fonts resolved from package) */
+import '@uswds/uswds/dist/css/uswds.min.css';
 import './globals.css';
 import './ida-design-system.css';
 import '../../../../../shared/cisa_styles.css';
