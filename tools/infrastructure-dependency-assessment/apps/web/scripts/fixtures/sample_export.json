@@ -1,0 +1,548 @@
+{
+  "assessment": {
+    "meta": {
+      "tool_version": "0.1.0",
+      "template_version": "1",
+      "created_at_iso": "2026-03-08T00:52:03.838Z"
+    },
+    "asset": {
+      "asset_name": "Sample Facility",
+      "visit_date_iso": "2026-03-08"
+    },
+    "categories": {
+      "ELECTRIC_POWER": {
+        "report_themed_findings": [
+          {
+            "id": "ENERGY_FEED_DIVERSITY",
+            "domain": "ELECTRIC_POWER",
+            "title": "Electric service feed diversity may be limited",
+            "narrative": "Electric service may rely on a single connection, co-located entry points, or insufficient load survivability. A localized failure could significantly affect facility operations.",
+            "ofcText": "Evaluate the feasibility of establishing additional electric service connections with geographic separation, or ensuring one connection can support critical operations.",
+            "evidence": [
+              {
+                "question_id": "E-3"
+              },
+              {
+                "question_id": "E-4"
+              },
+              {
+                "question_id": "E-5"
+              }
+            ],
+            "references": [
+              "FEMA P-2166, Community Continuity Guidance (CCG), 2022 (2022) - https://www.fema.gov/sites/default/files/documents/fema_p2166_community-continuity-guidance.pdf",
+              "NFPA 1600, Standard on Continuity, Emergency, and Crisis Management, 2024 Edition (2024) - https://www.nfpa.org/codes-and-standards/nfpa-1600"
+            ]
+          },
+          {
+            "id": "ENERGY_BACKUP_ABSENT",
+            "domain": "ELECTRIC_POWER",
+            "title": "Backup power capability may be absent or insufficient",
+            "narrative": "Backup or alternate power may be absent, or available backup may not support critical or full facility operations. This can increase operational impacts during electric service disruptions.",
+            "ofcText": "Evaluate the need for backup or alternate power capability to support critical operations during extended electric service outages.",
+            "evidence": [
+              {
+                "question_id": "E-8"
+              }
+            ],
+            "references": [
+              "NFPA 110, Standard for Emergency and Standby Power Systems, 2019 Edition (2019) - https://www.nfpa.org/codes-and-standards/nfpa-110",
+              "FEMA P-2166, Community Continuity Guidance (CCG), 2022 (2022) - https://www.fema.gov/sites/default/files/documents/fema_p2166_community-continuity-guidance.pdf"
+            ]
+          },
+          {
+            "id": "ENERGY_BACKUP_SUSTAIN_TEST",
+            "domain": "ELECTRIC_POWER",
+            "title": "Backup power sustainment or testing may be uncertain",
+            "narrative": "Refueling or sustainment planning for backup power may be absent, or backup systems may not have been tested under load. This can increase recovery time and uncertainty during extended outages.",
+            "ofcText": "Establish refueling/sustainment planning for backup power and maintain a routine testing schedule to verify backup systems function as intended under load.",
+            "evidence": [
+              {
+                "question_id": "E-9"
+              },
+              {
+                "question_id": "E-10"
+              }
+            ],
+            "references": [
+              "NFPA 110, Standard for Emergency and Standby Power Systems, 2019 Edition (2019) - https://www.nfpa.org/codes-and-standards/nfpa-110",
+              "FEMA P-2166, Community Continuity Guidance (CCG), 2022 (2022) - https://www.fema.gov/sites/default/files/documents/fema_p2166_community-continuity-guidance.pdf"
+            ]
+          }
+        ]
+      },
+      "COMMUNICATIONS": {
+        "report_themed_findings": []
+      },
+      "INFORMATION_TECHNOLOGY": {
+        "it_transport_resilience": {
+          "transport_connection_count": 2,
+          "transport_building_entry_diversity": "SAME_ENTRY",
+          "transport_route_independence": "UNKNOWN",
+          "transport_failover_mode": "UNKNOWN"
+        },
+        "it_hosted_resilience": {
+          "aws": {
+            "survivability": "NO_CONTINUITY"
+          }
+        },
+        "IT-2_upstream_assets": [
+          {
+            "service_id": "aws"
+          }
+        ],
+        "report_themed_findings": [
+          {
+            "id": "IT_PROVIDER_CONCENTRATION",
+            "domain": "INFORMATION_TECHNOLOGY",
+            "title": "External IT provider dependency is concentrated",
+            "narrative": "Assessment inputs indicate a single provider/path concentration and unresolved transport independence. A single external failure can disrupt multiple critical IT services.",
+            "ofcText": "Evaluate the feasibility of diversifying external IT provider/platform dependencies to reduce single-point-of-failure risk.",
+            "evidence": [
+              {
+                "question_id": "IT-1"
+              },
+              {
+                "question_id": "IT-3_multiple_connections"
+              }
+            ],
+            "references": [
+              "NIST Cybersecurity Framework, Version 1.1 - https://www.nist.gov/cyberframework",
+              "ISO 22301:2019, Security and resilience — Business continuity management systems — Requirements (2019) - https://www.iso.org/standard/75106.html"
+            ]
+          },
+          {
+            "id": "IT_TRANSPORT_SINGLE_PATH",
+            "domain": "INFORMATION_TECHNOLOGY",
+            "title": "Internet transport has single path or limited diversity",
+            "narrative": "Multiple transport connections are present. Same building entry. Route independence is unknown. Concentrated failure exposure cannot be ruled out.",
+            "ofcText": "Evaluate alternate transport path or carrier diversity for internet connectivity; do not conflate with hosted service continuity (internet loss impact), which is evaluated in IT.",
+            "evidence": [
+              {
+                "question_id": "it_transport_resilience",
+                "answer": "route/entry not documented"
+              }
+            ],
+            "references": [
+              "Improving Emergency Communications Resiliency through Redundancies (2021) - https://www.cisa.gov/resources-tools/resources/improving-emergency-communications-resiliency-through-redundancies",
+              "Communications Security, Reliability and Interoperability Council (CSRIC) Recommendations - https://www.fcc.gov/about-fcc/advisory-committees/communications-security-reliability-and-interoperability-council"
+            ]
+          },
+          {
+            "id": "IT_HOSTED_VENDOR_NO_CONTINUITY",
+            "domain": "INFORMATION_TECHNOLOGY",
+            "title": "Hosted service has no continuity when internet is lost",
+            "narrative": "The facility relies on externally hosted services that require internet connectivity. Loss of internet connectivity would render these systems inaccessible and disrupt operations. One or more hosted dependencies have no continuity (no local backup, alternate path, or validated fallback).",
+            "ofcText": "Evaluate per-service continuity when internet connectivity is lost and the hosted service cannot be reached: alternate provider, local mirror, or validated manual fallback.",
+            "evidence": [
+              {
+                "question_id": "it_hosted_resilience",
+                "answer": "one or more hosted services have no continuity"
+              }
+            ],
+            "references": [
+              "NIST Cybersecurity Framework, Version 1.1 - https://www.nist.gov/cyberframework",
+              "ISO 22301:2019, Security and resilience — Business continuity management systems — Requirements (2019) - https://www.iso.org/standard/75106.html"
+            ]
+          }
+        ]
+      },
+      "WATER": {
+        "report_themed_findings": [
+          {
+            "id": "W_NO_ALTERNATE_SOURCE",
+            "domain": "WATER",
+            "title": "No alternate water source",
+            "narrative": "The facility does not have an alternate/backup water source to use if primary water service is disrupted.",
+            "ofcText": "Consider evaluating whether an alternate source is needed for core operations during extended disruptions.",
+            "evidence": [
+              {
+                "question_id": "W_Q8"
+              }
+            ],
+            "references": [
+              "Water Infrastructure and Security Guidance (2022) - https://www.epa.gov/waterresilience",
+              "Power Resilience: Guide for Water and Wastewater Utilities (May 2023 update) (2023) - https://www.epa.gov/system/files/documents/2023-05/PowerResilienceGuide_2023_508c.pdf"
+            ]
+          }
+        ]
+      },
+      "WASTEWATER": {
+        "report_themed_findings": []
+      }
+    },
+    "sessions": {
+      "ELECTRIC_POWER": {
+        "derived": {
+          "themedFindings": [
+            {
+              "id": "ENERGY_FEED_DIVERSITY",
+              "domain": "ELECTRIC_POWER",
+              "title": "Electric service feed diversity may be limited",
+              "narrative": "Electric service may rely on a single connection, co-located entry points, or insufficient load survivability. A localized failure could significantly affect facility operations.",
+              "ofcText": "Evaluate the feasibility of establishing additional electric service connections with geographic separation, or ensuring one connection can support critical operations.",
+              "evidence": [
+                {
+                  "question_id": "E-3"
+                },
+                {
+                  "question_id": "E-4"
+                },
+                {
+                  "question_id": "E-5"
+                }
+              ],
+              "references": [
+                "FEMA P-2166, Community Continuity Guidance (CCG), 2022 (2022) - https://www.fema.gov/sites/default/files/documents/fema_p2166_community-continuity-guidance.pdf",
+                "NFPA 1600, Standard on Continuity, Emergency, and Crisis Management, 2024 Edition (2024) - https://www.nfpa.org/codes-and-standards/nfpa-1600"
+              ]
+            },
+            {
+              "id": "ENERGY_BACKUP_ABSENT",
+              "domain": "ELECTRIC_POWER",
+              "title": "Backup power capability may be absent or insufficient",
+              "narrative": "Backup or alternate power may be absent, or available backup may not support critical or full facility operations. This can increase operational impacts during electric service disruptions.",
+              "ofcText": "Evaluate the need for backup or alternate power capability to support critical operations during extended electric service outages.",
+              "evidence": [
+                {
+                  "question_id": "E-8"
+                }
+              ],
+              "references": [
+                "NFPA 110, Standard for Emergency and Standby Power Systems, 2019 Edition (2019) - https://www.nfpa.org/codes-and-standards/nfpa-110",
+                "FEMA P-2166, Community Continuity Guidance (CCG), 2022 (2022) - https://www.fema.gov/sites/default/files/documents/fema_p2166_community-continuity-guidance.pdf"
+              ]
+            },
+            {
+              "id": "ENERGY_BACKUP_SUSTAIN_TEST",
+              "domain": "ELECTRIC_POWER",
+              "title": "Backup power sustainment or testing may be uncertain",
+              "narrative": "Refueling or sustainment planning for backup power may be absent, or backup systems may not have been tested under load. This can increase recovery time and uncertainty during extended outages.",
+              "ofcText": "Establish refueling/sustainment planning for backup power and maintain a routine testing schedule to verify backup systems function as intended under load.",
+              "evidence": [
+                {
+                  "question_id": "E-9"
+                },
+                {
+                  "question_id": "E-10"
+                }
+              ],
+              "references": [
+                "NFPA 110, Standard for Emergency and Standby Power Systems, 2019 Edition (2019) - https://www.nfpa.org/codes-and-standards/nfpa-110",
+                "FEMA P-2166, Community Continuity Guidance (CCG), 2022 (2022) - https://www.fema.gov/sites/default/files/documents/fema_p2166_community-continuity-guidance.pdf"
+              ]
+            }
+          ],
+          "vulnerabilities": [
+            {
+              "id": "ENERGY_FEED_DIVERSITY",
+              "text": "Electric service feed diversity may be limited. Electric service may rely on a single connection, co-located entry points, or insufficient load survivability. A localized failure could significantly affect facility operations.",
+              "infrastructure": "ELECTRIC_POWER"
+            },
+            {
+              "id": "ENERGY_BACKUP_ABSENT",
+              "text": "Backup power capability may be absent or insufficient. Backup or alternate power may be absent, or available backup may not support critical or full facility operations. This can increase operational impacts during electric service disruptions.",
+              "infrastructure": "ELECTRIC_POWER"
+            },
+            {
+              "id": "ENERGY_BACKUP_SUSTAIN_TEST",
+              "text": "Backup power sustainment or testing may be uncertain. Refueling or sustainment planning for backup power may be absent, or backup systems may not have been tested under load. This can increase recovery time and uncertainty during extended outages.",
+              "infrastructure": "ELECTRIC_POWER"
+            }
+          ],
+          "ofcs": [
+            {
+              "id": "OFC-ENERGY_FEED_DIVERSITY",
+              "text": "Evaluate the feasibility of establishing additional electric service connections with geographic separation, or ensuring one connection can support critical operations.",
+              "vulnerability_id": "ENERGY_FEED_DIVERSITY"
+            },
+            {
+              "id": "OFC-ENERGY_BACKUP_ABSENT",
+              "text": "Evaluate the need for backup or alternate power capability to support critical operations during extended electric service outages.",
+              "vulnerability_id": "ENERGY_BACKUP_ABSENT"
+            },
+            {
+              "id": "OFC-ENERGY_BACKUP_SUSTAIN_TEST",
+              "text": "Establish refueling/sustainment planning for backup power and maintain a routine testing schedule to verify backup systems function as intended under load.",
+              "vulnerability_id": "ENERGY_BACKUP_SUSTAIN_TEST"
+            }
+          ]
+        }
+      },
+      "COMMUNICATIONS": {
+        "derived": {
+          "themedFindings": [],
+          "vulnerabilities": [],
+          "ofcs": []
+        }
+      },
+      "INFORMATION_TECHNOLOGY": {
+        "derived": {
+          "themedFindings": [
+            {
+              "id": "IT_PROVIDER_CONCENTRATION",
+              "domain": "INFORMATION_TECHNOLOGY",
+              "title": "External IT provider dependency is concentrated",
+              "narrative": "Assessment inputs indicate a single provider/path concentration and unresolved transport independence. A single external failure can disrupt multiple critical IT services.",
+              "ofcText": "Evaluate the feasibility of diversifying external IT provider/platform dependencies to reduce single-point-of-failure risk.",
+              "evidence": [
+                {
+                  "question_id": "IT-1"
+                },
+                {
+                  "question_id": "IT-3_multiple_connections"
+                }
+              ],
+              "references": [
+                "NIST Cybersecurity Framework, Version 1.1 - https://www.nist.gov/cyberframework",
+                "ISO 22301:2019, Security and resilience — Business continuity management systems — Requirements (2019) - https://www.iso.org/standard/75106.html"
+              ]
+            },
+            {
+              "id": "IT_TRANSPORT_SINGLE_PATH",
+              "domain": "INFORMATION_TECHNOLOGY",
+              "title": "Internet transport has single path or limited diversity",
+              "narrative": "Multiple transport connections are present. Same building entry. Route independence is unknown. Concentrated failure exposure cannot be ruled out.",
+              "ofcText": "Evaluate alternate transport path or carrier diversity for internet connectivity; do not conflate with hosted service continuity (internet loss impact), which is evaluated in IT.",
+              "evidence": [
+                {
+                  "question_id": "it_transport_resilience",
+                  "answer": "route/entry not documented"
+                }
+              ],
+              "references": [
+                "Improving Emergency Communications Resiliency through Redundancies (2021) - https://www.cisa.gov/resources-tools/resources/improving-emergency-communications-resiliency-through-redundancies",
+                "Communications Security, Reliability and Interoperability Council (CSRIC) Recommendations - https://www.fcc.gov/about-fcc/advisory-committees/communications-security-reliability-and-interoperability-council"
+              ]
+            },
+            {
+              "id": "IT_HOSTED_VENDOR_NO_CONTINUITY",
+              "domain": "INFORMATION_TECHNOLOGY",
+              "title": "Hosted service has no continuity when internet is lost",
+              "narrative": "The facility relies on externally hosted services that require internet connectivity. Loss of internet connectivity would render these systems inaccessible and disrupt operations. One or more hosted dependencies have no continuity (no local backup, alternate path, or validated fallback).",
+              "ofcText": "Evaluate per-service continuity when internet connectivity is lost and the hosted service cannot be reached: alternate provider, local mirror, or validated manual fallback.",
+              "evidence": [
+                {
+                  "question_id": "it_hosted_resilience",
+                  "answer": "one or more hosted services have no continuity"
+                }
+              ],
+              "references": [
+                "NIST Cybersecurity Framework, Version 1.1 - https://www.nist.gov/cyberframework",
+                "ISO 22301:2019, Security and resilience — Business continuity management systems — Requirements (2019) - https://www.iso.org/standard/75106.html"
+              ]
+            }
+          ],
+          "vulnerabilities": [
+            {
+              "id": "IT_PROVIDER_CONCENTRATION",
+              "text": "External IT provider dependency is concentrated. Assessment inputs indicate a single provider/path concentration and unresolved transport independence. A single external failure can disrupt multiple critical IT services.",
+              "infrastructure": "INFORMATION_TECHNOLOGY"
+            },
+            {
+              "id": "IT_TRANSPORT_SINGLE_PATH",
+              "text": "Internet transport has single path or limited diversity. Multiple transport connections are present. Same building entry. Route independence is unknown. Concentrated failure exposure cannot be ruled out.",
+              "infrastructure": "INFORMATION_TECHNOLOGY"
+            },
+            {
+              "id": "IT_HOSTED_VENDOR_NO_CONTINUITY",
+              "text": "Hosted service has no continuity when internet is lost. The facility relies on externally hosted services that require internet connectivity. Loss of internet connectivity would render these systems inaccessible and disrupt operations. One or more hosted dependencies have no continuity (no local backup, alternate path, or validated fallback).",
+              "infrastructure": "INFORMATION_TECHNOLOGY"
+            }
+          ],
+          "ofcs": [
+            {
+              "id": "OFC-IT_PROVIDER_CONCENTRATION",
+              "text": "Evaluate the feasibility of diversifying external IT provider/platform dependencies to reduce single-point-of-failure risk.",
+              "vulnerability_id": "IT_PROVIDER_CONCENTRATION"
+            },
+            {
+              "id": "OFC-IT_TRANSPORT_SINGLE_PATH",
+              "text": "Evaluate alternate transport path or carrier diversity for internet connectivity; do not conflate with hosted service continuity (internet loss impact), which is evaluated in IT.",
+              "vulnerability_id": "IT_TRANSPORT_SINGLE_PATH"
+            },
+            {
+              "id": "OFC-IT_HOSTED_VENDOR_NO_CONTINUITY",
+              "text": "Evaluate per-service continuity when internet connectivity is lost and the hosted service cannot be reached: alternate provider, local mirror, or validated manual fallback.",
+              "vulnerability_id": "IT_HOSTED_VENDOR_NO_CONTINUITY"
+            }
+          ]
+        }
+      },
+      "WATER": {
+        "derived": {
+          "themedFindings": [
+            {
+              "id": "W_NO_ALTERNATE_SOURCE",
+              "domain": "WATER",
+              "title": "No alternate water source",
+              "narrative": "The facility does not have an alternate/backup water source to use if primary water service is disrupted.",
+              "ofcText": "Consider evaluating whether an alternate source is needed for core operations during extended disruptions.",
+              "evidence": [
+                {
+                  "question_id": "W_Q8"
+                }
+              ],
+              "references": [
+                "Water Infrastructure and Security Guidance (2022) - https://www.epa.gov/waterresilience",
+                "Power Resilience: Guide for Water and Wastewater Utilities (May 2023 update) (2023) - https://www.epa.gov/system/files/documents/2023-05/PowerResilienceGuide_2023_508c.pdf"
+              ]
+            }
+          ],
+          "vulnerabilities": [
+            {
+              "id": "W_NO_ALTERNATE_SOURCE",
+              "text": "No alternate water source. The facility does not have an alternate/backup water source to use if primary water service is disrupted.",
+              "infrastructure": "WATER"
+            }
+          ],
+          "ofcs": [
+            {
+              "id": "OFC-W_NO_ALTERNATE_SOURCE",
+              "text": "Consider evaluating whether an alternate source is needed for core operations during extended disruptions.",
+              "vulnerability_id": "W_NO_ALTERNATE_SOURCE"
+            }
+          ]
+        }
+      },
+      "WASTEWATER": {
+        "derived": {
+          "themedFindings": [],
+          "vulnerabilities": [],
+          "ofcs": []
+        }
+      }
+    }
+  },
+  "canonicalVulnBlocks": [
+    {
+      "domain": "ELECTRIC_POWER",
+      "vuln_id": "ENERGY_FEED_DIVERSITY",
+      "title": "Electric service feed diversity may be limited",
+      "narrative": "Electric service may rely on a single connection, co-located entry points, or insufficient load survivability. A localized failure could significantly affect facility operations. Source references: FEMA P-2166, Community Continuity Guidance (CCG), 2022 - https://www.fema.gov/sites/default/files/documents/fema_p2166_community-continuity-guidance.pdf; NFPA 1600, Standard on Continuity, Emergency, and Crisis Management, 2024 Edition - https://www.nfpa.org/codes-and-standards/nfpa-1600.",
+      "ofcText": "Evaluate the feasibility of establishing additional electric service connections with geographic separation, or ensuring one connection can support critical operations. (Source: FEMA P-2166, Community Continuity Guidance (CCG), 2022 - https://www.fema.gov/sites/default/files/documents/fema_p2166_community-continuity-guidance.pdf)\nDocument utility feed paths, entry points, and known shared-route constraints with the provider. (Source: NFPA 1600, Standard on Continuity, Emergency, and Crisis Management, 2024 Edition - https://www.nfpa.org/codes-and-standards/nfpa-1600)",
+      "references": [
+        "FEMA P-2166, Community Continuity Guidance (CCG), 2022 - https://www.fema.gov/sites/default/files/documents/fema_p2166_community-continuity-guidance.pdf",
+        "NFPA 1600, Standard on Continuity, Emergency, and Crisis Management, 2024 Edition - https://www.nfpa.org/codes-and-standards/nfpa-1600"
+      ],
+      "evidence": [
+        {
+          "question_id": "E-3"
+        },
+        {
+          "question_id": "E-4"
+        },
+        {
+          "question_id": "E-5"
+        }
+      ]
+    },
+    {
+      "domain": "ELECTRIC_POWER",
+      "vuln_id": "ENERGY_BACKUP_ABSENT",
+      "title": "Backup power capability may be absent or insufficient",
+      "narrative": "Backup or alternate power may be absent, or available backup may not support critical or full facility operations. This can increase operational impacts during electric service disruptions. Source references: NFPA 110, Standard for Emergency and Standby Power Systems, 2019 Edition - https://www.nfpa.org/codes-and-standards/nfpa-110; FEMA P-2166, Community Continuity Guidance (CCG), 2022 - https://www.fema.gov/sites/default/files/documents/fema_p2166_community-continuity-guidance.pdf.",
+      "ofcText": "Evaluate the need for backup or alternate power capability to support critical operations during extended electric service outages. (Source: NFPA 110, Standard for Emergency and Standby Power Systems, 2019 Edition - https://www.nfpa.org/codes-and-standards/nfpa-110)\nAssess backup power options sized for critical operations, including required runtime objectives. (Source: FEMA P-2166, Community Continuity Guidance (CCG), 2022 - https://www.fema.gov/sites/default/files/documents/fema_p2166_community-continuity-guidance.pdf)",
+      "references": [
+        "NFPA 110, Standard for Emergency and Standby Power Systems, 2019 Edition - https://www.nfpa.org/codes-and-standards/nfpa-110",
+        "FEMA P-2166, Community Continuity Guidance (CCG), 2022 - https://www.fema.gov/sites/default/files/documents/fema_p2166_community-continuity-guidance.pdf"
+      ],
+      "evidence": [
+        {
+          "question_id": "E-8"
+        }
+      ]
+    },
+    {
+      "domain": "ELECTRIC_POWER",
+      "vuln_id": "ENERGY_BACKUP_SUSTAIN_TEST",
+      "title": "Backup power sustainment or testing may be uncertain",
+      "narrative": "Refueling or sustainment planning for backup power may be absent, or backup systems may not have been tested under load. This can increase recovery time and uncertainty during extended outages. Source references: NFPA 110, Standard for Emergency and Standby Power Systems, 2019 Edition - https://www.nfpa.org/codes-and-standards/nfpa-110; FEMA P-2166, Community Continuity Guidance (CCG), 2022 - https://www.fema.gov/sites/default/files/documents/fema_p2166_community-continuity-guidance.pdf.",
+      "ofcText": "Establish refueling/sustainment planning for backup power and maintain a routine testing schedule to verify backup systems function as intended under load. (Source: NFPA 110, Standard for Emergency and Standby Power Systems, 2019 Edition - https://www.nfpa.org/codes-and-standards/nfpa-110)\nEstablish refuel and sustainment logistics for backup power under multi-day outage conditions. (Source: FEMA P-2166, Community Continuity Guidance (CCG), 2022 - https://www.fema.gov/sites/default/files/documents/fema_p2166_community-continuity-guidance.pdf)",
+      "references": [
+        "NFPA 110, Standard for Emergency and Standby Power Systems, 2019 Edition - https://www.nfpa.org/codes-and-standards/nfpa-110",
+        "FEMA P-2166, Community Continuity Guidance (CCG), 2022 - https://www.fema.gov/sites/default/files/documents/fema_p2166_community-continuity-guidance.pdf"
+      ],
+      "evidence": [
+        {
+          "question_id": "E-9"
+        },
+        {
+          "question_id": "E-10"
+        }
+      ]
+    },
+    {
+      "domain": "INFORMATION_TECHNOLOGY",
+      "vuln_id": "IT_PROVIDER_CONCENTRATION",
+      "title": "External IT provider dependency is concentrated",
+      "narrative": "Assessment inputs indicate a single provider/path concentration and unresolved transport independence. A single external failure can disrupt multiple critical IT services. Source references: NIST Cybersecurity Framework, Version 1.1 - https://www.nist.gov/cyberframework; ISO 22301:2019, Security and resilience — Business continuity management systems — Requirements - https://www.iso.org/standard/75106.html.",
+      "ofcText": "Evaluate the feasibility of diversifying external IT provider/platform dependencies to reduce single-point-of-failure risk. (Source: NIST Cybersecurity Framework, Version 1.1 - https://www.nist.gov/cyberframework)\nDocument concentration risk across critical externally hosted IT services and providers. (Source: ISO 22301:2019, Security and resilience — Business continuity management systems — Requirements - https://www.iso.org/standard/75106.html)",
+      "references": [
+        "NIST Cybersecurity Framework, Version 1.1 - https://www.nist.gov/cyberframework",
+        "ISO 22301:2019, Security and resilience — Business continuity management systems — Requirements - https://www.iso.org/standard/75106.html"
+      ],
+      "evidence": [
+        {
+          "question_id": "IT-1"
+        },
+        {
+          "question_id": "IT-3_multiple_connections"
+        }
+      ]
+    },
+    {
+      "domain": "INFORMATION_TECHNOLOGY",
+      "vuln_id": "IT_TRANSPORT_SINGLE_PATH",
+      "title": "Internet transport has single path or limited diversity",
+      "narrative": "Multiple transport connections are present. Same building entry. Route independence is unknown. Concentrated failure exposure cannot be ruled out. Source references: Improving Emergency Communications Resiliency through Redundancies - https://www.cisa.gov/resources-tools/resources/improving-emergency-communications-resiliency-through-redundancies; Communications Security, Reliability and Interoperability Council (CSRIC) Recommendations - https://www.fcc.gov/about-fcc/advisory-committees/communications-security-reliability-and-interoperability-council.",
+      "ofcText": "Evaluate alternate transport path or carrier diversity for internet connectivity; do not conflate with hosted service continuity (internet loss impact), which is evaluated in IT. (Source: Improving Emergency Communications Resiliency through Redundancies - https://www.cisa.gov/resources-tools/resources/improving-emergency-communications-resiliency-through-redundancies)\nEvaluate additional transport path or carrier diversity for internet connectivity. (Source: Communications Security, Reliability and Interoperability Council (CSRIC) Recommendations - https://www.fcc.gov/about-fcc/advisory-committees/communications-security-reliability-and-interoperability-council)",
+      "references": [
+        "Improving Emergency Communications Resiliency through Redundancies - https://www.cisa.gov/resources-tools/resources/improving-emergency-communications-resiliency-through-redundancies",
+        "Communications Security, Reliability and Interoperability Council (CSRIC) Recommendations - https://www.fcc.gov/about-fcc/advisory-committees/communications-security-reliability-and-interoperability-council"
+      ],
+      "evidence": [
+        {
+          "question_id": "it_transport_resilience",
+          "answer": "route/entry not documented"
+        }
+      ]
+    },
+    {
+      "domain": "INFORMATION_TECHNOLOGY",
+      "vuln_id": "IT_HOSTED_VENDOR_NO_CONTINUITY",
+      "title": "Hosted service has no continuity when internet is lost",
+      "narrative": "The facility relies on externally hosted services that require internet connectivity. Loss of internet connectivity would render these systems inaccessible and disrupt operations. One or more hosted dependencies have no continuity (no local backup, alternate path, or validated fallback). Source references: NIST Cybersecurity Framework, Version 1.1 - https://www.nist.gov/cyberframework; ISO 22301:2019, Security and resilience — Business continuity management systems — Requirements - https://www.iso.org/standard/75106.html.",
+      "ofcText": "Evaluate per-service continuity when internet connectivity is lost and the hosted service cannot be reached: alternate provider, local mirror, or validated manual fallback. (Source: NIST Cybersecurity Framework, Version 1.1 - https://www.nist.gov/cyberframework)\nFor each critical hosted service, define a validated continuity approach for internet-loss conditions. (Source: ISO 22301:2019, Security and resilience — Business continuity management systems — Requirements - https://www.iso.org/standard/75106.html)",
+      "references": [
+        "NIST Cybersecurity Framework, Version 1.1 - https://www.nist.gov/cyberframework",
+        "ISO 22301:2019, Security and resilience — Business continuity management systems — Requirements - https://www.iso.org/standard/75106.html"
+      ],
+      "evidence": [
+        {
+          "question_id": "it_hosted_resilience",
+          "answer": "one or more hosted services have no continuity"
+        }
+      ]
+    },
+    {
+      "domain": "WATER",
+      "vuln_id": "W_NO_ALTERNATE_SOURCE",
+      "title": "No alternate water source",
+      "narrative": "The facility does not have an alternate/backup water source to use if primary water service is disrupted. Source references: Water Infrastructure and Security Guidance - https://www.epa.gov/waterresilience; Power Resilience: Guide for Water and Wastewater Utilities (May 2023 update) - https://www.epa.gov/system/files/documents/2023-05/PowerResilienceGuide_2023_508c.pdf.",
+      "ofcText": "Consider evaluating whether an alternate source is needed for core operations during extended disruptions. (Source: Water Infrastructure and Security Guidance - https://www.epa.gov/waterresilience)\nEvaluate alternate water-source options that can sustain critical operations during extended outages. (Source: Power Resilience: Guide for Water and Wastewater Utilities (May 2023 update) - https://www.epa.gov/system/files/documents/2023-05/PowerResilienceGuide_2023_508c.pdf)",
+      "references": [
+        "Water Infrastructure and Security Guidance - https://www.epa.gov/waterresilience",
+        "Power Resilience: Guide for Water and Wastewater Utilities (May 2023 update) - https://www.epa.gov/system/files/documents/2023-05/PowerResilienceGuide_2023_508c.pdf"
+      ],
+      "evidence": [
+        {
+          "question_id": "W_Q8"
+        }
+      ]
+    }
+  ],
+  "canonicalTotals": {
+    "totalFindings": 7
+  }
+}

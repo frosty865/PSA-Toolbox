@@ -1,0 +1,55 @@
+{
+  "assessment": {
+    "asset": {
+      "asset_name": "Test Facility",
+      "location": "Test Location, NY",
+      "assessor": "Test Assessor",
+      "visit_date_iso": "2025-01-15"
+    },
+    "categories": {
+      "ELECTRIC_POWER": {
+        "requires_service": true,
+        "time_to_impact_hours": 4,
+        "loss_fraction_no_backup": 0.80,
+        "has_backup_any": true,
+        "backup_duration_hours": 24,
+        "loss_fraction_with_backup": 0.25,
+        "recovery_time_hours": 48
+      },
+      "COMMUNICATIONS": {
+        "requires_service": true,
+        "time_to_impact_hours": 2,
+        "loss_fraction_no_backup": 0.60,
+        "has_backup_any": false,
+        "recovery_time_hours": 12
+      },
+      "INFORMATION_TECHNOLOGY": {
+        "requires_service": true,
+        "time_to_impact_hours": 1,
+        "loss_fraction_no_backup": 0.90,
+        "has_backup_any": true,
+        "backup_duration_hours": 8,
+        "loss_fraction_with_backup": 0.40,
+        "recovery_time_hours": 24
+      },
+      "WATER": {
+        "requires_service": true,
+        "time_to_impact_hours": 12,
+        "loss_fraction_no_backup": 0.50,
+        "has_backup_any": false,
+        "recovery_time_hours": 72
+      },
+      "WASTEWATER": {
+        "requires_service": true,
+        "time_to_impact_hours": 24,
+        "loss_fraction_no_backup": 0.30,
+        "has_backup_any": false,
+        "recovery_time_hours": 96
+      }
+    },
+    "vulnerabilities": []
+  },
+  "vofc_collection": {
+    "items": []
+  }
+}

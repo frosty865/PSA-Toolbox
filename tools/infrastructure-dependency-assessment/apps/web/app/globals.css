@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.report-content {
+  width: 100%;
+}
+
+.report-section {
+  margin-bottom: 1.5rem;
+}
+
+.report-section p {
+  margin: 0.5rem 0;
+}
+
+.report-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+.report-section table th,
+.report-section table td {
+  border: 1px solid var(--cisa-gray-light);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.report-section table th {
+  background-color: var(--cisa-gray-lighter);
+  font-weight: bold;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .report-page {
+    max-width: none;
+    background: white !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+  .report-content {
+    background: white;
+    color: black;
+  }
+  .report-section {
+    page-break-inside: avoid;
+  }
+  .report-section table {
+    page-break-inside: avoid;
+    width: 100%;
+  }
+}

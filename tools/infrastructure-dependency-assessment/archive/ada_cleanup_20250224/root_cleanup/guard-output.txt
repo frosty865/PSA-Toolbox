@@ -1,0 +1,163 @@
+🔍 Scanning repo for forbidden terms...
+❌ 32 violation(s) found:
+
+  File: 
+  Line: 2
+  Match: * Unified ENERGY and COMMUNICATIONS persistence interface for web and standalone.
+  Pattern: 'standalone'
+
+  File: 
+  Line: 7
+  Match: Forbidden terms: "standalone", "static export", "output: export", "dist/", "IndexedDB (as offline runtime)", "no server required"
+  Pattern: 'standalone'
+
+  File: 
+  Line: 25
+  Match: "standalone",
+  Pattern: 'standalone'
+
+  File: 
+  Line: 3
+  Match: * Used for static export builds (no server) and as the primary purge path.
+  Pattern: 'static[\s-]export'
+
+  File: 
+  Line: 4
+  Match: * that are incompatible with static export (e.g. force-dynamic).
+  Pattern: 'static[\s-]export'
+
+  File: 
+  Line: 39
+  Match: 'Route handlers with force-dynamic cannot be used with static export.',
+  Pattern: 'static[\s-]export'
+
+  File: 
+  Line: 7
+  Match: Forbidden terms: "standalone", "static export", "output: export", "dist/", "IndexedDB (as offline runtime)", "no server required"
+  Pattern: 'static[\s-]export'
+
+  File: 
+  Line: 19
+  Match: // Match output: 'export' or output: "export" or process.env.VERCEL ? undefined : 'export'
+  Pattern: 'output:\s*["']export["']'
+
+  File: 
+  Line: 20
+  Match: if (content.includes("output: 'export'") || content.includes('output: "export"')) return true;
+  Pattern: 'output:\s*["']export["']'
+
+  File: 
+  Line: 6
+  Match: * - Default (dev): apps/reporter/dist/reporter.exe
+  Pattern: 'dist/'
+
+  File: 
+  Line: 23
+  Match: 'engine/client': 'packages/engine/dist/client.js',
+  Pattern: 'dist/'
+
+  File: 
+  Line: 24
+  Match: - Output artifact: `reporter.exe` located under `apps/reporter/dist/`.
+  Pattern: 'dist/'
+
+  File: 
+  Line: 5
+  Match: "main": "./dist/index.js",
+  Pattern: 'dist/'
+
+  File: 
+  Line: 6
+  Match: "types": "./dist/index.d.ts",
+  Pattern: 'dist/'
+
+  File: 
+  Line: 28
+  Match: "types": "./dist/index.d.ts",
+  Pattern: 'dist/'
+
+  File: 
+  Line: 29
+  Match: "default": "./dist/index.js"
+  Pattern: 'dist/'
+
+  File: 
+  Line: 32
+  Match: "types": "./dist/client.d.ts",
+  Pattern: 'dist/'
+
+  File: 
+  Line: 33
+  Match: "default": "./dist/client.js"
+  Pattern: 'dist/'
+
+  File: 
+  Line: 5
+  Match: "main": "./dist/index.js",
+  Pattern: 'dist/'
+
+  File: 
+  Line: 6
+  Match: "types": "./dist/index.d.ts",
+  Pattern: 'dist/'
+
+  File: 
+  Line: 5
+  Match: "main": "./dist/index.js",
+  Pattern: 'dist/'
+
+  File: 
+  Line: 6
+  Match: "types": "./dist/index.d.ts",
+  Pattern: 'dist/'
+
+  File: 
+  Line: 5
+  Match: "main": "./dist/index.js",
+  Pattern: 'dist/'
+
+  File: 
+  Line: 6
+  Match: "types": "./dist/index.d.ts",
+  Pattern: 'dist/'
+
+  File: 
+  Line: 7
+  Match: Forbidden terms: "standalone", "static export", "output: export", "dist/", "IndexedDB (as offline runtime)", "no server required"
+  Pattern: 'dist/'
+
+  File: 
+  Line: 28
+  Match: "dist/",
+  Pattern: 'dist/'
+
+  File: 
+  Line: 3
+  Match: Source and config only (excludes `node_modules/`, `.next/`, `out/`, `dist/`, `target/`, `build/`, `.venv*/`, `__pycache__/`).
+  Pattern: 'dist/'
+
+  File: 
+  Line: 221
+  Match: *Generated for asset-dependency-tool. Omitted: `node_modules/`, `.next/`, `out/`, `dist/`, `target/`, `build/`, `.venv*/`, `__pycache__/`.*
+  Pattern: 'dist/'
+
+  File: 
+  Line: 7
+  Match: Forbidden terms: "standalone", "static export", "output: export", "dist/", "IndexedDB (as offline runtime)", "no server required"
+  Pattern: 'IndexedDB.*offline[\s]?runtime'
+
+  File: 
+  Line: 3
+  Match: * Client-side CSV export for analytical considerations. No server required.
+  Pattern: 'no[\s]?server[\s]?required'
+
+  File: 
+  Line: 30
+  Match: * Deterministic, no server required.
+  Pattern: 'no[\s]?server[\s]?required'
+
+  File: 
+  Line: 7
+  Match: Forbidden terms: "standalone", "static export", "output: export", "dist/", "IndexedDB (as offline runtime)", "no server required"
+  Pattern: 'no[\s]?server[\s]?required'
+

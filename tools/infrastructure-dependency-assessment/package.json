@@ -1,0 +1,52 @@
+{
+  "name": "asset-dependency-tool",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Infrastructure dependency assessment monorepo — PSA Toolbox local edition",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "dev": "node scripts/dev.js",
+    "build": "pnpm run validate:deps && pnpm -r build",
+    "build:web": "pnpm --filter schema run build && pnpm --filter security run build && pnpm --filter ui run build && pnpm --filter engine run build && node scripts/build-web-with-tmp.js",
+    "lint": "pnpm run verify:question-integrity && pnpm run verify:dependency-scope && pnpm run verify:vuln-gap && pnpm run verify:question-vofc-coverage && pnpm run verify:truth-parity && pnpm run validate:deps && pnpm --filter web run validate:dependency-contract && pnpm -r lint",
+    "validate:deps": "tsx --tsconfig apps/web/tsconfig.json tools/validate_dependency_parity.ts",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "qa": "cross-env ADA_STRICT_INTEGRITY=1 pnpm run typecheck && pnpm -r test && pnpm truth:diff:fixture",
+    "extract-xlsm": "tsx scripts/extract_xlsm_ui_config.ts",
+    "check-generated": "tsx scripts/check_generated_integrity.ts",
+    "template:check": "tsx scripts/validate_template_anchors.ts",
+    "template:build": "tsx scripts/build_template_docx.ts",
+    "template:inject-dev": "python apps/reporter/inject_anchors.py",
+    "template:inject-body": "python apps/reporter/inject_anchors_into_body.py",
+    "release:gate": "tsx scripts/release_gate.ts",
+    "build:vofc-json": "tsx scripts/build-vofc-json.ts",
+    "verify:question-integrity": "pnpm --filter web exec -- tsx --tsconfig ./tsconfig.json ./scripts/verify_question_integrity.ts",
+    "vq": "pnpm run verify:question-integrity",
+    "vqr": "pnpm -r --stream run verify:question-integrity",
+    "audit:questions": "tsx scripts/outstanding_issues_audit.ts",
+    "verify:dependency-scope": "pnpm --filter web exec tsx scripts/verify_dependency_scope.ts",
+    "verify:vuln-gap": "pnpm --filter web run audit:vuln-gaps:strict",
+    "verify:question-vofc-coverage": "pnpm --filter web run verify:question-vofc-coverage",
+    "verify:truth-parity": "pnpm truth:diff:fixture",
+    "seed:dep-vofc": "node scripts/seed_dependency_vofc_from_xlsm.mjs",
+    "seed:dep-vofc:direct": "node scripts/seed_dependency_vofc_from_xlsm.mjs --direct",
+    "export:dep-vofc-sheet": "tsx scripts/export_dependency_vofc_to_sheet.ts",
+    "add:dep-vofc-sheet": "tsx scripts/add_dependency_vofc_sheet_to_workbook.ts",
+    "truth:diff": "pnpm --filter web exec -- tsx scripts/truth_diff.ts",
+    "truth:diff:fixture": "pnpm truth:diff -- --json scripts/fixtures/sample_export.json --out scripts/fixtures/out --strict"
+  },
+  "engines": {
+    "node": ">=20 <25"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "jszip": "^3.10.1",
+    "knip": "^5.85.0",
+    "next": "^16.1.6",
+    "ts-prune": "^0.10.3",
+    "tsx": "^4.7.0",
+    "xlsx": "^0.18.5"
+  }
+}

@@ -1,0 +1,682 @@
+{
+  "project": "ada",
+  "description": "Missing OFCs for ADA conditions using project-local existing VOFC data",
+  "vulnerability_first": true,
+  "vulnerabilities": [
+    {
+      "id": "EP_SINGLE_FEED",
+      "status": "existing",
+      "vulnerability_text": "Electric service may rely on a single feed or limited diversity."
+    },
+    {
+      "id": "EP_SHARED_ENTRY",
+      "status": "derived",
+      "vulnerability_text": "Infrastructure dependency vulnerability for EP_SHARED_ENTRY: loss or degradation of dependency may disrupt operations without adequate resilience controls."
+    },
+    {
+      "id": "EP_COLOCATED_CORRIDOR",
+      "status": "derived",
+      "vulnerability_text": "Infrastructure dependency vulnerability for EP_COLOCATED_CORRIDOR: loss or degradation of dependency may disrupt operations without adequate resilience controls."
+    },
+    {
+      "id": "EP_NO_PRIORITY_RESTORATION",
+      "status": "derived",
+      "vulnerability_text": "Infrastructure dependency vulnerability for EP_NO_PRIORITY_RESTORATION: loss or degradation of dependency may disrupt operations without adequate resilience controls."
+    },
+    {
+      "id": "EP_NO_BACKUP_POWER",
+      "status": "existing",
+      "vulnerability_text": "Backup power capability may be absent or insufficient for critical operations."
+    },
+    {
+      "id": "EP_NO_FUEL_CONTINUITY",
+      "status": "derived",
+      "vulnerability_text": "Infrastructure dependency vulnerability for EP_NO_FUEL_CONTINUITY: loss or degradation of dependency may disrupt operations without adequate resilience controls."
+    },
+    {
+      "id": "EP_VEHICLE_IMPACT_UNPROTECTED",
+      "status": "existing",
+      "vulnerability_text": "Exterior electric components are exposed to vehicle impact without protective measures, increasing the likelihood of damage that disrupts power service."
+    },
+    {
+      "id": "EP_VEHICLE_IMPACT_UNKNOWN",
+      "status": "existing",
+      "vulnerability_text": "The protection posture for exterior electric components exposed to vehicle impact is unknown, limiting confidence in their ability to withstand a strike."
+    },
+    {
+      "id": "COM_SHARED_ENTRY",
+      "status": "existing",
+      "vulnerability_text": "Communications paths may share facility entry points with other utilities."
+    },
+    {
+      "id": "COM_COLOCATED_CORRIDOR",
+      "status": "derived",
+      "vulnerability_text": "Infrastructure dependency vulnerability for COM_COLOCATED_CORRIDOR: loss or degradation of dependency may disrupt operations without adequate resilience controls."
+    },
+    {
+      "id": "COM_VEHICLE_IMPACT_UNPROTECTED",
+      "status": "existing",
+      "vulnerability_text": "Exterior communications components are exposed to vehicle impact and lack protective measures, increasing the chance of a disruptive strike."
+    },
+    {
+      "id": "COM_VEHICLE_IMPACT_UNKNOWN",
+      "status": "existing",
+      "vulnerability_text": "The level of vehicle impact protection for exterior communications components is unknown, leaving potential exposure unaddressed."
+    },
+    {
+      "id": "COM_NO_PRIORITY_RESTORATION",
+      "status": "derived",
+      "vulnerability_text": "Infrastructure dependency vulnerability for COM_NO_PRIORITY_RESTORATION: loss or degradation of dependency may disrupt operations without adequate resilience controls."
+    },
+    {
+      "id": "COM_NO_CONTINGENCY_PLAN",
+      "status": "derived",
+      "vulnerability_text": "Infrastructure dependency vulnerability for COM_NO_CONTINGENCY_PLAN: loss or degradation of dependency may disrupt operations without adequate resilience controls."
+    },
+    {
+      "id": "IT_NO_REDUNDANT_CARRIER",
+      "status": "existing",
+      "vulnerability_text": "IT services may rely on a single carrier or path with no redundant options."
+    },
+    {
+      "id": "IT_SHARED_ENTRY",
+      "status": "derived",
+      "vulnerability_text": "Infrastructure dependency vulnerability for IT_SHARED_ENTRY: loss or degradation of dependency may disrupt operations without adequate resilience controls."
+    },
+    {
+      "id": "IT_VEHICLE_IMPACT_UNPROTECTED",
+      "status": "existing",
+      "vulnerability_text": "Exterior IT infrastructure (e.g., network cabinets, conduit) is exposed to vehicle impact without protective measures, risking service disruption."
+    },
+    {
+      "id": "IT_VEHICLE_IMPACT_UNKNOWN",
+      "status": "existing",
+      "vulnerability_text": "Vehicle impact protection for exterior IT infrastructure is unknown, creating uncertainty in resilience planning."
+    },
+    {
+      "id": "IT_NO_PRIORITY_RESTORATION",
+      "status": "derived",
+      "vulnerability_text": "Infrastructure dependency vulnerability for IT_NO_PRIORITY_RESTORATION: loss or degradation of dependency may disrupt operations without adequate resilience controls."
+    },
+    {
+      "id": "W_SINGLE_CONN",
+      "status": "existing",
+      "vulnerability_text": "The facility relies on a single water service connection, creating a potential single point of failure. A disruption could degrade operations."
+    },
+    {
+      "id": "W_SHARED_ENTRY",
+      "status": "existing",
+      "vulnerability_text": "Water service connections enter the site at the same geographic location, creating a potential single point of failure."
+    },
+    {
+      "id": "W_COLOCATED_CORRIDOR",
+      "status": "existing",
+      "vulnerability_text": "Water service components are collocated with other utilities, increasing the likelihood a single incident disrupts multiple services."
+    },
+    {
+      "id": "W_UPSTREAM_UNKNOWN",
+      "status": "existing",
+      "vulnerability_text": "The facility has not identified its water provider and relevant upstream dependency information, which may limit effective coordination during disruptions."
+    },
+    {
+      "id": "W_NO_PRIORITY_RESTORATION",
+      "status": "existing",
+      "vulnerability_text": "The facility does not participate in a priority or coordinated restoration plan with the water provider, which may delay restoration during high-impact events."
+    },
+    {
+      "id": "W_NO_CONTINGENCY_PLAN",
+      "status": "existing",
+      "vulnerability_text": "The facility does not have a documented contingency/coordination plan with the water provider for extended disruption."
+    },
+    {
+      "id": "W_NO_ALTERNATE_SOURCE",
+      "status": "existing",
+      "vulnerability_text": "The facility does not have an alternate/backup water source to use if primary water service is disrupted."
+    },
+    {
+      "id": "W_ALTERNATE_INSUFFICIENT",
+      "status": "existing",
+      "vulnerability_text": "The facility has an alternate water source, but it cannot support core operational needs during an extended disruption."
+    },
+    {
+      "id": "W_ALTERNATE_DEPENDS_ON_POWER",
+      "status": "existing",
+      "vulnerability_text": "The alternate water source depends on commercial power or another external service, which may limit its availability during outages."
+    },
+    {
+      "id": "W_FIRE_NO_BACKUP_SUPPLY",
+      "status": "existing",
+      "vulnerability_text": "Water-based fire suppression depends on water service, and no secondary supply approach has been identified if water pressure/supply is lost."
+    },
+    {
+      "id": "W_FIRE_IMPACT_NOT_EVALUATED",
+      "status": "existing",
+      "vulnerability_text": "The facility has not evaluated operational impacts if fire suppression water is unavailable during prolonged disruption."
+    },
+    {
+      "id": "W_PUMP_NO_BACKUP_POWER",
+      "status": "existing",
+      "vulnerability_text": "Onsite water pumping/boosting depends on commercial power without backup power, increasing disruption risk during outages."
+    },
+    {
+      "id": "W_PUMP_NO_MANUAL_OVERRIDE",
+      "status": "existing",
+      "vulnerability_text": "Onsite water pumping/boosting cannot be manually overridden if automation fails, which may increase the likelihood of service interruption."
+    },
+    {
+      "id": "W_PUMP_NO_ALARMING",
+      "status": "existing",
+      "vulnerability_text": "The facility lacks a method to detect/alert on pump failure, low pressure, or storage depletion, which may delay response and increase impacts."
+    },
+    {
+      "id": "W_PUMP_SINGLE_SOURCE_PARTS",
+      "status": "existing",
+      "vulnerability_text": "The facility relies on a single source for critical onsite water pump/control components, which may extend downtime during failures."
+    },
+    {
+      "id": "WW_SINGLE_CONN",
+      "status": "existing",
+      "vulnerability_text": "The facility relies on a single wastewater service connection, creating a potential single point of failure. A disruption could degrade operations."
+    },
+    {
+      "id": "WW_SHARED_ENTRY",
+      "status": "existing",
+      "vulnerability_text": "Wastewater service connections enter/leave the site at the same geographic location, creating a potential single point of failure."
+    },
+    {
+      "id": "WW_COLOCATED_CORRIDOR",
+      "status": "existing",
+      "vulnerability_text": "Wastewater service components are collocated with other utilities, increasing the likelihood a single incident disrupts multiple services."
+    },
+    {
+      "id": "WW_UPSTREAM_UNKNOWN",
+      "status": "existing",
+      "vulnerability_text": "The facility has not identified its wastewater provider and/or primary upstream dependencies supporting service, which may limit effective coordination during disruptions."
+    },
+    {
+      "id": "WW_NO_PRIORITY_RESTORATION",
+      "status": "existing",
+      "vulnerability_text": "The facility does not participate in a priority or coordinated restoration plan with the wastewater provider, which may delay restoration during high-impact events."
+    },
+    {
+      "id": "WW_NO_CONTINGENCY_PLAN",
+      "status": "existing",
+      "vulnerability_text": "The facility does not have a documented contingency/coordination plan with the wastewater provider for extended disruption."
+    },
+    {
+      "id": "WW_PUMP_NO_BACKUP_POWER",
+      "status": "existing",
+      "vulnerability_text": "Onsite wastewater pumping relies on commercial power without backup power, increasing the likelihood of overflow/backflow or operational disruption during outages."
+    },
+    {
+      "id": "WW_PUMP_NO_MANUAL_OVERRIDE",
+      "status": "existing",
+      "vulnerability_text": "Onsite wastewater pumping cannot be manually overridden if automation fails, which may increase the likelihood of service interruption or overflow."
+    },
+    {
+      "id": "WW_PUMP_NO_ALARMING",
+      "status": "existing",
+      "vulnerability_text": "The facility lacks a method to detect/alert on pump failure, high level, or backflow risk, which may delay response and increase impacts."
+    },
+    {
+      "id": "WW_PUMP_SINGLE_SOURCE_PARTS",
+      "status": "existing",
+      "vulnerability_text": "The facility relies on a single source for critical onsite wastewater pump components, which may extend downtime during failures."
+    },
+    {
+      "id": "WW_NO_HOLDING_CAPACITY",
+      "status": "existing",
+      "vulnerability_text": "The facility lacks temporary holding/containment capability to prevent overflow/backflow during wastewater service disruption, which may force shutdown."
+    },
+    {
+      "id": "WW_CONSTRAINTS_NOT_EVALUATED",
+      "status": "existing",
+      "vulnerability_text": "The facility has not evaluated regulatory/operational constraints that could force shutdown during prolonged wastewater disruption."
+    }
+  ],
+  "injections": [
+    {
+      "id": "EP_SINGLE_FEED",
+      "vulnerability_text": "Electric service may rely on a single feed or limited diversity.",
+      "infrastructure": "ENERGY",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:EP_SINGLE_FEED",
+      "library_ofcs": [
+        "Evaluate the possibility of establishing a microgrid or on-site generation capability that can operate independently and provide backup power during grid failures."
+      ],
+      "library_citations": [
+        "femap1019.pdf:139"
+      ]
+    },
+    {
+      "id": "EP_SHARED_ENTRY",
+      "vulnerability_text": "Infrastructure dependency vulnerability for EP_SHARED_ENTRY: loss or degradation of dependency may disrupt operations without adequate resilience controls.",
+      "infrastructure": "ENERGY",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:EP_SHARED_ENTRY",
+      "library_ofcs": [
+        "Evaluate the feasibility of establishing additional electric service connections with geographic separation."
+      ],
+      "library_citations": [
+        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+      ]
+    },
+    {
+      "id": "EP_COLOCATED_CORRIDOR",
+      "vulnerability_text": "Infrastructure dependency vulnerability for EP_COLOCATED_CORRIDOR: loss or degradation of dependency may disrupt operations without adequate resilience controls.",
+      "infrastructure": "ENERGY",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:EP_COLOCATED_CORRIDOR",
+      "library_ofcs": [
+        "Evaluate the feasibility of establishing additional electric service connections with geographic separation to address co-located entry points."
+      ],
+      "library_citations": [
+        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+      ]
+    },
+    {
+      "id": "EP_NO_BACKUP_POWER",
+      "vulnerability_text": "Backup power capability may be absent or insufficient for critical operations.",
+      "infrastructure": "ENERGY",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:EP_NO_BACKUP_POWER",
+      "library_ofcs": [
+        "Document detailed backup-power operating procedures to ensure operators can sustain critical functions during extended grid loss.",
+        "Formalize fuel sustainment and resupply coordination plans for multi-day outages."
+      ],
+      "library_citations": [
+        "docs/design/ENERGY_QUESTIONS.md:1",
+        "femap1019.pdf:17"
+      ]
+    },
+    {
+      "id": "EP_NO_FUEL_CONTINUITY",
+      "vulnerability_text": "Infrastructure dependency vulnerability for EP_NO_FUEL_CONTINUITY: loss or degradation of dependency may disrupt operations without adequate resilience controls.",
+      "infrastructure": "ENERGY",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:EP_NO_FUEL_CONTINUITY",
+      "library_ofcs": [
+        "Conduct regular testing and maintenance of backup fuel systems to ensure reliability during extended outages."
+      ],
+      "library_citations": [
+        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+      ]
+    },
+    {
+      "id": "EP_VEHICLE_IMPACT_UNPROTECTED",
+      "vulnerability_text": "Exterior electric components are exposed to vehicle impact without protective measures, increasing the likelihood of damage that disrupts power service.",
+      "infrastructure": "ENERGY",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:EP_VEHICLE_IMPACT_UNPROTECTED",
+      "library_ofcs": [
+        "Evaluate the installation of bollards or other physical barriers around critical exterior electrical equipment to mitigate vehicle impact risks.",
+        "Implement a standoff distance between the facility’s perimeter and critical exterior electrical assets to reduce the risk of vehicle impacts.",
+        "Reroute or relocate critical exterior electrical equipment away from high-traffic areas to reduce the risk of vehicle impacts."
+      ],
+      "library_citations": [
+        "docs/implementation/QUESTION_FLOW_REORDER_IMPLEMENTATION.md:1",
+        "docs/implementation/QUESTION_FLOW_REORDER_IMPLEMENTATION.md:1",
+        "docs/implementation/QUESTION_FLOW_REORDER_IMPLEMENTATION.md:1"
+      ]
+    },
+    {
+      "id": "EP_VEHICLE_IMPACT_UNKNOWN",
+      "vulnerability_text": "The protection posture for exterior electric components exposed to vehicle impact is unknown, limiting confidence in their ability to withstand a strike.",
+      "infrastructure": "ENERGY",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:EP_VEHICLE_IMPACT_UNKNOWN",
+      "library_ofcs": [
+        "Consider implementing bollards and barriers around exterior electrical components to mitigate vehicle impact risk.",
+        "Evaluate the feasibility of installing reinforced concrete barriers or other robust physical protection around critical exterior electrical assets.",
+        "Install standoff distances and grade separations to prevent vehicles from reaching critical electrical infrastructure."
+      ],
+      "library_citations": [
+        "audit/question_audit_report.json:1",
+        "audit/question_audit_report.json:1",
+        "audit/question_audit_report.json:1"
+      ]
+    },
+    {
+      "id": "COM_SHARED_ENTRY",
+      "vulnerability_text": "Communications paths may share facility entry points with other utilities.",
+      "infrastructure": "COMMUNICATIONS",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:COM_SHARED_ENTRY",
+      "library_ofcs": [
+        "Implement physical barriers to separate entry points used by different utilities, reducing the risk of cascading failures.",
+        "Coordinate with utility providers to establish priority restoration agreements for shared entry points."
+      ],
+      "library_citations": [
+        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
+        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+      ]
+    },
+    {
+      "id": "COM_COLOCATED_CORRIDOR",
+      "vulnerability_text": "Infrastructure dependency vulnerability for COM_COLOCATED_CORRIDOR: loss or degradation of dependency may disrupt operations without adequate resilience controls.",
+      "infrastructure": "COMMUNICATIONS",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:COM_COLOCATED_CORRIDOR",
+      "library_ofcs": [
+        "Evaluate and implement diversified communications architecture using distinct carriers or transport paths where feasible for critical voice coordination functions.",
+        "Document voice coordination methods, carrier contacts, and escalation procedures to ensure clear restoration roles and coordination.",
+        "Establish restoration roles and coordination procedures for critical communications dependencies to ensure timely recovery.",
+        "Consider using Telecommunications Service Priority (TSP) to expedite restoration of critical voice communication services."
+      ],
+      "library_citations": [
+        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
+        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
+        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
+        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+      ]
+    },
+    {
+      "id": "COM_VEHICLE_IMPACT_UNKNOWN",
+      "vulnerability_text": "The level of vehicle impact protection for exterior communications components is unknown, leaving potential exposure unaddressed.",
+      "infrastructure": "COMMUNICATIONS",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:COM_VEHICLE_IMPACT_UNKNOWN",
+      "library_ofcs": [
+        "Install bollards or barriers around exterior communications components exposed to vehicle impact.",
+        "Increase standoff distance between exterior communications components and potential impact zones."
+      ],
+      "library_citations": [
+        "docs/design/COMMS_QUESTIONS.md:1",
+        "docs/design/COMMS_QUESTIONS.md:1"
+      ]
+    },
+    {
+      "id": "COM_NO_PRIORITY_RESTORATION",
+      "vulnerability_text": "Infrastructure dependency vulnerability for COM_NO_PRIORITY_RESTORATION: loss or degradation of dependency may disrupt operations without adequate resilience controls.",
+      "infrastructure": "COMMUNICATIONS",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:COM_NO_PRIORITY_RESTORATION",
+      "library_ofcs": [
+        "Develop a contingency plan for voice communications that includes alternative pathways or backup systems to maintain operational continuity during disruptions.",
+        "Maintain a detailed record of current carrier contacts and escalation procedures for rapid reporting and restoration coordination during outages."
+      ],
+      "library_citations": [
+        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
+        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+      ]
+    },
+    {
+      "id": "COM_NO_CONTINGENCY_PLAN",
+      "vulnerability_text": "Infrastructure dependency vulnerability for COM_NO_CONTINGENCY_PLAN: loss or degradation of dependency may disrupt operations without adequate resilience controls.",
+      "infrastructure": "COMMUNICATIONS",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:COM_NO_CONTINGENCY_PLAN",
+      "library_ofcs": [
+        "Establish a formal contingency plan with the telecommunications service provider to ensure rapid restoration of voice coordination services.",
+        "Develop a secondary communication pathway for critical voice coordination to ensure redundancy in case of primary pathway failure."
+      ],
+      "library_citations": [
+        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
+        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+      ]
+    },
+    {
+      "id": "IT_NO_REDUNDANT_CARRIER",
+      "vulnerability_text": "IT services may rely on a single carrier or path with no redundant options.",
+      "infrastructure": "INFORMATION_TRANSPORT",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:IT_NO_REDUNDANT_CARRIER",
+      "library_ofcs": [
+        "Consider implementing a secondary data transport provider for critical services to ensure redundancy."
+      ],
+      "library_citations": [
+        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+      ]
+    },
+    {
+      "id": "IT_SHARED_ENTRY",
+      "vulnerability_text": "Infrastructure dependency vulnerability for IT_SHARED_ENTRY: loss or degradation of dependency may disrupt operations without adequate resilience controls.",
+      "infrastructure": "INFORMATION_TRANSPORT",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:IT_SHARED_ENTRY",
+      "library_ofcs": [
+        "Consider establishing a contingency plan with IT service providers for rapid restoration in case of disruptions."
+      ],
+      "library_citations": [
+        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+      ]
+    },
+    {
+      "id": "IT_VEHICLE_IMPACT_UNPROTECTED",
+      "vulnerability_text": "Exterior IT infrastructure (e.g., network cabinets, conduit) is exposed to vehicle impact without protective measures, risking service disruption.",
+      "infrastructure": "INFORMATION_TRANSPORT",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:IT_VEHICLE_IMPACT_UNPROTECTED",
+      "library_ofcs": [
+        "Install bollards or barriers around exposed IT infrastructure to prevent vehicle impact.",
+        "Construct reinforced barriers or concrete walls around exterior IT infrastructure to provide additional protection against vehicle impact."
+      ],
+      "library_citations": [
+        "docs/design/IT_QUESTIONS_OUTPUT.md:1",
+        "docs/design/IT_QUESTIONS_OUTPUT.md:1"
+      ]
+    },
+    {
+      "id": "W_SINGLE_CONN",
+      "vulnerability_text": "The facility relies on a single water service connection, creating a potential single point of failure. A disruption could degrade operations.",
+      "infrastructure": "WATER",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:W_SINGLE_CONN",
+      "library_ofcs": [
+        "Consider installing a secondary well or onsite storage tanks to serve as an independent backup water source during extended disruptions.",
+        "Consider developing a detailed contingency plan with the local water utility provider to ensure priority restoration of critical services during disruptions."
+      ],
+      "library_citations": [
+        "audit/question_audit_report.json:1",
+        "docs/design/WATER_QUESTIONS.md:1"
+      ]
+    },
+    {
+      "id": "W_COLOCATED_CORRIDOR",
+      "vulnerability_text": "Water service components are collocated with other utilities, increasing the likelihood a single incident disrupts multiple services.",
+      "infrastructure": "WATER",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:W_COLOCATED_CORRIDOR",
+      "library_ofcs": [
+        "Consider implementing physical separation or diversification of water service entry points to reduce the risk of simultaneous disruption.",
+        "Explore options for relocating critical water service components to separate utility corridors, reducing shared vulnerability with other services.",
+        "Develop a plan for emergency rerouting or temporary connections if primary water service is disrupted due to shared entry vulnerability.",
+        "Coordinate with local utilities and emergency services to ensure they understand the critical nature of separate utility corridors for water service."
+      ],
+      "library_citations": [
+        "docs/design/WATER_QUESTIONS.md:1",
+        "docs/design/WATER_QUESTIONS.md:1",
+        "docs/design/WATER_QUESTIONS.md:1",
+        "docs/design/WATER_QUESTIONS.md:1"
+      ]
+    },
+    {
+      "id": "W_NO_PRIORITY_RESTORATION",
+      "vulnerability_text": "The facility does not participate in a priority or coordinated restoration plan with the water provider, which may delay restoration during high-impact events.",
+      "infrastructure": "WATER",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:W_NO_PRIORITY_RESTORATION",
+      "library_ofcs": [
+        "Consider establishing a formal agreement with the water utility to ensure priority restoration in case of service disruptions.",
+        "Develop a detailed emergency response plan that includes specific steps for contacting the water provider and initiating restoration procedures."
+      ],
+      "library_citations": [
+        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
+        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+      ]
+    },
+    {
+      "id": "W_NO_CONTINGENCY_PLAN",
+      "vulnerability_text": "The facility does not have a documented contingency/coordination plan with the water provider for extended disruption.",
+      "infrastructure": "WATER",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:W_NO_CONTINGENCY_PLAN",
+      "library_ofcs": [
+        "Consider developing a detailed contingency plan with specific steps and timelines for communication, resource allocation, and operational adjustments during extended disruptions."
+      ],
+      "library_citations": [
+        "docs/design/WATER_QUESTIONS.md:1"
+      ]
+    },
+    {
+      "id": "W_ALTERNATE_INSUFFICIENT",
+      "vulnerability_text": "The facility has an alternate water source, but it cannot support core operational needs during an extended disruption.",
+      "infrastructure": "WATER",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:W_ALTERNATE_INSUFFICIENT",
+      "library_ofcs": [
+        "Consider enhancing the capacity and duration of the alternate water source to better support core operational needs.",
+        "Evaluate the feasibility of establishing a secondary water supply approach, such as an additional well or connection, to supplement the existing alternate source.",
+        "Consider implementing a system to monitor and manage the usage of the alternate water source in real-time, ensuring efficient allocation during disruptions."
+      ],
+      "library_citations": [
+        "docs/design/WATER_QUESTIONS.md:1",
+        "docs/design/WATER_QUESTIONS.md:1",
+        "docs/design/WATER_QUESTIONS.md:1"
+      ]
+    },
+    {
+      "id": "W_FIRE_NO_BACKUP_SUPPLY",
+      "vulnerability_text": "Water-based fire suppression depends on water service, and no secondary supply approach has been identified if water pressure/supply is lost.",
+      "infrastructure": "WATER",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:W_FIRE_NO_BACKUP_SUPPLY",
+      "library_ofcs": [
+        "Consider installing an onsite fire water storage tank to provide a secondary supply for fire suppression during primary water disruptions.",
+        "Evaluate the feasibility of establishing an agreement with a neighboring facility or utility to provide emergency water supply for fire suppression.",
+        "Develop and document operational procedures to manage fire suppression during prolonged water disruptions, including manual operation of fire suppression systems if automated controls fail."
+      ],
+      "library_citations": [
+        "audit/question_audit_report.json:1",
+        "docs/design/WATER_QUESTIONS.md:1",
+        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+      ]
+    },
+    {
+      "id": "W_FIRE_IMPACT_NOT_EVALUATED",
+      "vulnerability_text": "The facility has not evaluated operational impacts if fire suppression water is unavailable during prolonged disruption.",
+      "infrastructure": "WATER",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:W_FIRE_IMPACT_NOT_EVALUATED",
+      "library_ofcs": [
+        "Consider conducting a tabletop exercise to simulate the operational impacts of prolonged fire suppression water unavailability.",
+        "Develop a detailed continuity plan that outlines specific actions and decision points for maintaining operations when fire suppression water is disrupted.",
+        "Establish a liaison with local emergency services to coordinate response and recovery efforts in case of fire suppression water unavailability.",
+        "Identify and secure alternative water sources that can be used for fire suppression in case of primary supply failure."
+      ],
+      "library_citations": [
+        "audit/question_audit_report.json:1",
+        "docs/design/WATER_QUESTIONS.md:1",
+        "docs/design/WATER_QUESTIONS.md:1",
+        "docs/design/WATER_QUESTIONS.md:1"
+      ]
+    },
+    {
+      "id": "W_PUMP_NO_BACKUP_POWER",
+      "vulnerability_text": "Onsite water pumping/boosting depends on commercial power without backup power, increasing disruption risk during outages.",
+      "infrastructure": "WATER",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:W_PUMP_NO_BACKUP_POWER",
+      "library_ofcs": [
+        "Explore the installation of solar-powered or other renewable energy sources to provide backup power for critical water pumping systems."
+      ],
+      "library_citations": [
+        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+      ]
+    },
+    {
+      "id": "WW_SHARED_ENTRY",
+      "vulnerability_text": "Wastewater service connections enter/leave the site at the same geographic location, creating a potential single point of failure.",
+      "infrastructure": "WASTEWATER",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:WW_SHARED_ENTRY",
+      "library_ofcs": [
+        "Consider implementing a redundant wastewater service connection that enters the site from a different geographic location to mitigate shared entry risks.",
+        "Develop a contingency plan that includes alternative wastewater routing options in case of disruption at the shared entry point.",
+        "Install physical barriers and signage to protect the shared wastewater entry point from accidental vehicle impacts."
+      ],
+      "library_citations": [
+        "docs/design/WASTEWATER_QUESTIONS.md:1",
+        "docs/design/WASTEWATER_QUESTIONS.md:1",
+        "docs/design/WASTEWATER_QUESTIONS.md:1"
+      ]
+    },
+    {
+      "id": "WW_COLOCATED_CORRIDOR",
+      "vulnerability_text": "Wastewater service components are collocated with other utilities, increasing the likelihood a single incident disrupts multiple services.",
+      "infrastructure": "WASTEWATER",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:WW_COLOCATED_CORRIDOR",
+      "library_ofcs": [
+        "Consider implementing a geographic separation strategy for wastewater service connections to reduce the risk of simultaneous disruption.",
+        "Evaluate and implement alternative routing for wastewater service connections to ensure redundancy in case of a single-point failure.",
+        "Develop a contingency plan that includes alternative wastewater service connections to mitigate disruptions caused by shared utility corridors."
+      ],
+      "library_citations": [
+        "docs/design/WASTEWATER_QUESTIONS.md:1",
+        "docs/design/WASTEWATER_QUESTIONS.md:1",
+        "docs/design/WASTEWATER_QUESTIONS.md:1"
+      ]
+    },
+    {
+      "id": "WW_UPSTREAM_UNKNOWN",
+      "vulnerability_text": "The facility has not identified its wastewater provider and/or primary upstream dependencies supporting service, which may limit effective coordination during disruptions.",
+      "infrastructure": "WASTEWATER",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:WW_UPSTREAM_UNKNOWN",
+      "library_ofcs": [
+        "Consider engaging with local emergency management agencies to understand their protocols for wastewater service disruptions."
+      ],
+      "library_citations": [
+        "data/dependency_vofc_local.json:1"
+      ]
+    },
+    {
+      "id": "WW_PUMP_NO_BACKUP_POWER",
+      "vulnerability_text": "Onsite wastewater pumping relies on commercial power without backup power, increasing the likelihood of overflow/backflow or operational disruption during outages.",
+      "infrastructure": "WASTEWATER",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:WW_PUMP_NO_BACKUP_POWER",
+      "library_ofcs": [
+        "Consider installing a dedicated generator or uninterruptible power supply (UPS) specifically for the wastewater pumping system."
+      ],
+      "library_citations": [
+        "docs/design/WASTEWATER_QUESTIONS.md:1"
+      ]
+    },
+    {
+      "id": "WW_NO_HOLDING_CAPACITY",
+      "vulnerability_text": "The facility lacks temporary holding/containment capability to prevent overflow/backflow during wastewater service disruption, which may force shutdown.",
+      "infrastructure": "WASTEWATER",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:WW_NO_HOLDING_CAPACITY",
+      "library_ofcs": [
+        "Consider integrating wastewater holding capacity into emergency response plans to ensure operational continuity during disruptions.",
+        "Consider evaluating the feasibility of on-site treatment options to manage wastewater during service disruptions."
+      ],
+      "library_citations": [
+        "docs/design/WASTEWATER_QUESTIONS.md:1",
+        "data/dependency_vofc_local.json:1"
+      ]
+    },
+    {
+      "id": "WW_CONSTRAINTS_NOT_EVALUATED",
+      "vulnerability_text": "The facility has not evaluated regulatory/operational constraints that could force shutdown during prolonged wastewater disruption.",
+      "infrastructure": "WASTEWATER",
+      "source_type": "LIBRARY_RAG",
+      "source_reference": "condition_code:WW_CONSTRAINTS_NOT_EVALUATED",
+      "library_ofcs": [
+        "Consider developing a detailed regulatory compliance plan that outlines actions to be taken during prolonged wastewater disruptions.",
+        "Consider establishing a contingency plan with the local utility provider to ensure priority restoration in case of extended service disruptions.",
+        "Consider training staff on the regulatory and operational constraints that could lead to facility shutdown during prolonged wastewater disruptions.",
+        "Consider integrating wastewater disruption scenarios into regular business continuity and disaster recovery drills."
+      ],
+      "library_citations": [
+        "data/dependency_vofc_local.json:1",
+        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
+        "data/dependency_vofc_local.json:1",
+        "data/dependency_vofc_local.json:1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "comm_voice_functions": ["SECURITY_COORDINATION", "EMERGENCY_RESPONSE", "FACILITY_OPERATIONS", "DISPATCH_OPERATIONS"],
+  "curve_requires_service": true,
+  "curve_time_to_impact_hours": 2,
+  "curve_loss_fraction_no_backup": 0.6,
+  "curve_backup_available": "yes",
+  "curve_backup_duration_hours": 24,
+  "curve_loss_fraction_with_backup": 0.2,
+  "curve_recovery_time_hours": 4,
+  "comm_pace_P": {
+    "system_type": "LANDLINE_VOIP_TRUNK",
+    "carrier_dependency": "MULTIPLE_COMMERCIAL",
+    "route_diversity": "DISTINCT_ROUTES",
+    "power_dependency": "FACILITY_POWER_ONLY",
+    "regional_survivability": "LIKELY_REMAIN_OPERATIONAL",
+    "provider_name": "Telco Primary"
+  },
+  "comm_pace_A": {
+    "system_type": "CELLULAR_VOICE", "cellular_diversity": "MULTI_CARRIER", "cellular_priority": "FIRSTNET", "cellular_coverage": "LIMITED_INDOOR",
+    "route_diversity": "DISTINCT_ROUTES",
+    "power_dependency": "BATTERY_4_TO_24H",
+    "regional_survivability": "DEPENDS_ON_SAME_UPSTREAM_AS_PRIMARY",
+    "provider_name": "Mobile Carrier"
+  },
+  "comm_pace_C": {
+    "system_type": "PUBLIC_SAFETY_RADIO_NETWORK",
+    "carrier_dependency": "PUBLIC_SAFETY_NETWORK",
+    "route_diversity": "DISTINCT_ROUTES",
+    "power_dependency": "GENERATOR_BACKED",
+    "regional_survivability": "LIKELY_REMAIN_OPERATIONAL"
+  },
+  "comm_pace_E": {
+    "system_type": "MANUAL_RUNNER"
+  },
+  "comm_single_point_voice_failure": "no",
+  "comm_interoperability": "FULL",
+  "comm_restoration_coordination": "yes"
+}

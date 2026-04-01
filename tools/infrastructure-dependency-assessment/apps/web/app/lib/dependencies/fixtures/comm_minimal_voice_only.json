@@ -1,0 +1,22 @@
+{
+  "comm_voice_functions": ["FACILITY_OPERATIONS", "DISPATCH_OPERATIONS"],
+  "curve_requires_service": true,
+  "curve_time_to_impact_hours": 4,
+  "curve_loss_fraction_no_backup": 0.8,
+  "curve_backup_available": "no",
+  "curve_recovery_time_hours": 2,
+  "comm_pace_P": {
+    "system_type": "CELLULAR_SINGLE_CARRIER",
+    "carrier_dependency": "SINGLE_COMMERCIAL",
+    "route_diversity": "SHARED_ENTRY_POINT",
+    "power_dependency": "FACILITY_POWER_ONLY",
+    "regional_survivability": "LIKELY_FAIL_REGIONAL",
+    "provider_name": "Carrier A"
+  },
+  "comm_pace_A": {},
+  "comm_pace_C": {},
+  "comm_pace_E": {},
+  "comm_single_point_voice_failure": "yes",
+  "comm_interoperability": "PARTIAL",
+  "comm_restoration_coordination": "unknown"
+}

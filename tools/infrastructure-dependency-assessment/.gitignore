@@ -1,0 +1,54 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build / output
+dist/
+.next/
+out/
+.build-tmp/
+target/
+*.tsbuildinfo
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Data (temp and exports are ephemeral)
+data/temp/*
+data/exports/*
+!data/temp/.gitkeep
+!data/exports/.gitkeep
+
+# Pilot fixtures exports (optional; avoid bloating git)
+ADA/_pilot_fixtures/exports/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.venv-reporter/
+*.egg-info/
+.eggs/
+
+# Logs / debug
+*.log
+npm-debug.log*
+pnpm-debug.log*
+logs/
+tmp_report_debug/
+
+# Optional: keep template/workbook in repo; uncomment if you track them elsewhere
+# assets/templates/*.docx
+# assets/workbooks/*.xlsm
+.vercel
+.env*.local

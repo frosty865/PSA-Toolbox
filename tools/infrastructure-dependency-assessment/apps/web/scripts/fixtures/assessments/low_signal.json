@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "facility_name": "Low Signal Test Facility",
+    "site_name": "Test Site 1",
+    "assessment_date": "2026-02-13"
+  },
+  "dependencies": {
+    "ELECTRIC_POWER": {
+      "curve_time_to_impact_hours": 4,
+      "curve_loss_fraction_no_backup": 0.3,
+      "curve_backup_available": true,
+      "curve_backup_duration_hours": 48,
+      "curve_loss_fraction_with_backup": 0.1,
+      "curve_recovery_time_hours": 12,
+      "E-2": "YES",
+      "E-3": "YES"
+    },
+    "COMMUNICATIONS": {
+      "curve_time_to_impact_hours": 8,
+      "curve_loss_fraction_no_backup": 0.2,
+      "curve_backup_available": true,
+      "curve_backup_duration_hours": 24,
+      "curve_loss_fraction_with_backup": 0.05,
+      "curve_recovery_time_hours": 6,
+      "CO-1": "YES",
+      "CO-2": "YES"
+    },
+    "INFORMATION_TECHNOLOGY": {
+      "curve_time_to_impact_hours": 2,
+      "curve_loss_fraction_no_backup": 0.4,
+      "curve_backup_available": false,
+      "curve_recovery_time_hours": 24,
+      "IT-1": "YES",
+      "IT-2": "YES"
+    },
+    "WATER": {
+      "curve_time_to_impact_hours": 24,
+      "curve_loss_fraction_no_backup": 0.1,
+      "curve_backup_available": true,
+      "curve_backup_duration_hours": 72,
+      "curve_loss_fraction_with_backup": 0.05,
+      "curve_recovery_time_hours": 48,
+      "W_Q1": "YES",
+      "W_Q2": 2
+    },
+    "WASTEWATER": {
+      "curve_time_to_impact_hours": 48,
+      "curve_loss_fraction_no_backup": 0.05,
+      "curve_backup_available": true,
+      "curve_backup_duration_hours": 96,
+      "curve_loss_fraction_with_backup": 0.02,
+      "curve_recovery_time_hours": 72,
+      "WW_Q1": "YES"
+    }
+  }
+}

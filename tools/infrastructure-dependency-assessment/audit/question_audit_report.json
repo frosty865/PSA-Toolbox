@@ -1,0 +1,993 @@
+{
+  "generated_at": "2026-03-06T19:23:51.409Z",
+  "tabs": {
+    "ELECTRIC_POWER": {
+      "count": 19,
+      "ids_missing": [],
+      "id_dupes": [],
+      "prompt_dupes": [],
+      "prefix_mismatches": [],
+      "items": [
+        {
+          "index": 0,
+          "id": "curve_requires_service",
+          "prompt": "Does the facility rely on electric power for core operations?",
+          "prompt_norm": "does the facility rely on electric power for core operations",
+          "source": "infrastructure/energy_spec.ts"
+        },
+        {
+          "index": 1,
+          "id": "curve_primary_provider",
+          "prompt": "Who provides electric power to the facility/site?",
+          "prompt_norm": "who provides electric power to the facilitysite",
+          "source": "infrastructure/energy_spec.ts"
+        },
+        {
+          "index": 2,
+          "id": "curve_time_to_impact",
+          "prompt": "If electric supply is lost (without backup), how soon would the facility be severely impacted? (hours)",
+          "prompt_norm": "if electric supply is lost without backup how soon would the facility be severely impacted hours",
+          "source": "infrastructure/energy_spec.ts"
+        },
+        {
+          "index": 3,
+          "id": "curve_loss_no_backup",
+          "prompt": "Once electric supply is lost (without backup), what percentage of normal business functions are lost or degraded?",
+          "prompt_norm": "once electric supply is lost without backup what percentage of normal business functions are lost or degraded",
+          "source": "infrastructure/energy_spec.ts"
+        },
+        {
+          "index": 4,
+          "id": "curve_backup_available",
+          "prompt": "Is any backup or alternate power capability available for this infrastructure?",
+          "prompt_norm": "is any backup or alternate power capability available for this infrastructure",
+          "source": "infrastructure/energy_spec.ts"
+        },
+        {
+          "index": 5,
+          "id": "curve_backup_duration",
+          "prompt": "How many hours can backup power sustain operations without refueling?",
+          "prompt_norm": "how many hours can backup power sustain operations without refueling",
+          "source": "infrastructure/energy_spec.ts"
+        },
+        {
+          "index": 6,
+          "id": "curve_loss_with_backup",
+          "prompt": "Once electric supply is lost (considering backup), what percentage of normal business functions are lost or degraded?",
+          "prompt_norm": "once electric supply is lost considering backup what percentage of normal business functions are lost or degraded",
+          "source": "infrastructure/energy_spec.ts"
+        },
+        {
+          "index": 7,
+          "id": "curve_recovery_time",
+          "prompt": "Once external service is restored, how long until full resumption of operations? (hours)",
+          "prompt_norm": "once external service is restored how long until full resumption of operations hours",
+          "source": "infrastructure/energy_spec.ts"
+        },
+        {
+          "index": 8,
+          "id": "E-2",
+          "prompt": "If known, which key upstream substation(s) may affect service to this site?",
+          "prompt_norm": "if known which key upstream substations may affect service to this site",
+          "source": "infrastructure/energy_spec.ts"
+        },
+        {
+          "index": 9,
+          "id": "E-3",
+          "prompt": "Does the facility have more than one electric service connection?",
+          "prompt_norm": "does the facility have more than one electric service connection",
+          "source": "infrastructure/energy_spec.ts"
+        },
+        {
+          "index": 10,
+          "id": "E-4",
+          "prompt": "Are service connections physically separated and independently routed into the facility?",
+          "prompt_norm": "are service connections physically separated and independently routed into the facility",
+          "source": "infrastructure/energy_spec.ts"
+        },
+        {
+          "index": 11,
+          "id": "E-5",
+          "prompt": "Is at least one service connection capable of supporting core operations independently?",
+          "prompt_norm": "is at least one service connection capable of supporting core operations independently",
+          "source": "infrastructure/energy_spec.ts"
+        },
+        {
+          "index": 12,
+          "id": "E-6",
+          "prompt": "Are exterior electrical components protected from accidental/intentional damage?",
+          "prompt_norm": "are exterior electrical components protected from accidentalintentional damage",
+          "source": "infrastructure/energy_spec.ts"
+        },
+        {
+          "index": 13,
+          "id": "E-7",
+          "prompt": "Are exterior electrical components exposed to potential vehicle impact?",
+          "prompt_norm": "are exterior electrical components exposed to potential vehicle impact",
+          "source": "infrastructure/energy_spec.ts"
+        },
+        {
+          "index": 14,
+          "id": "E-7a",
+          "prompt": "Are protective measures in place to reduce vehicle impact risk to exterior electrical components (e.g., bollards, barriers, standoff, grade separation)?",
+          "prompt_norm": "are protective measures in place to reduce vehicle impact risk to exterior electrical components eg bollards barriers standoff grade separation",
+          "source": "infrastructure/energy_spec.ts"
+        },
+        {
+          "index": 15,
+          "id": "E-8",
+          "prompt": "Does the facility have backup power available during loss of commercial power?",
+          "prompt_norm": "does the facility have backup power available during loss of commercial power",
+          "source": "infrastructure/energy_spec.ts"
+        },
+        {
+          "index": 16,
+          "id": "E-9",
+          "prompt": "Are refueling/sustainment procedures established for extended backup operation?",
+          "prompt_norm": "are refuelingsustainment procedures established for extended backup operation",
+          "source": "infrastructure/energy_spec.ts"
+        },
+        {
+          "index": 17,
+          "id": "E-10",
+          "prompt": "Are backup power systems routinely tested under operational load?",
+          "prompt_norm": "are backup power systems routinely tested under operational load",
+          "source": "infrastructure/energy_spec.ts"
+        },
+        {
+          "index": 18,
+          "id": "E-11",
+          "prompt": "Does the facility have established coordination with the electric utility provider for restoration?",
+          "prompt_norm": "does the facility have established coordination with the electric utility provider for restoration",
+          "source": "infrastructure/energy_spec.ts"
+        }
+      ],
+      "intent_dupes": []
+    },
+    "COMMUNICATIONS": {
+      "count": 12,
+      "ids_missing": [],
+      "id_dupes": [],
+      "prompt_dupes": [],
+      "prefix_mismatches": [
+        {
+          "index": 8,
+          "id": "COMM-0",
+          "prompt": "Which voice/command functions does the facility rely on? (Select all that apply)"
+        },
+        {
+          "index": 9,
+          "id": "COMM-SP1",
+          "prompt": "Is there a single point of voice failure? (All practical voice options depend on one carrier, one route, one repeater/tower, or one power source.)"
+        },
+        {
+          "index": 10,
+          "id": "COMM-SP2",
+          "prompt": "Interoperability with other agencies/systems for voice?"
+        },
+        {
+          "index": 11,
+          "id": "COMM-SP3",
+          "prompt": "Is there documented coordination with voice providers/network operators for restoration and priority during outages?"
+        }
+      ],
+      "items": [
+        {
+          "index": 0,
+          "id": "curve_requires_service",
+          "prompt": "Does the facility rely on voice communications to coordinate operations, security, or emergency response?",
+          "prompt_norm": "does the facility rely on voice communications to coordinate operations security or emergency response",
+          "source": "infrastructure/comms_spec.ts"
+        },
+        {
+          "index": 1,
+          "id": "curve_primary_provider",
+          "prompt": "Who provides primary voice/telephony service?",
+          "prompt_norm": "who provides primary voicetelephony service",
+          "source": "infrastructure/comms_spec.ts"
+        },
+        {
+          "index": 2,
+          "id": "curve_time_to_impact_hours",
+          "prompt": "If voice communications are lost (without backup), how soon would the facility be severely impacted? (hours, 0–72)",
+          "prompt_norm": "if voice communications are lost without backup how soon would the facility be severely impacted hours 072",
+          "source": "infrastructure/comms_spec.ts"
+        },
+        {
+          "index": 3,
+          "id": "curve_loss_fraction_no_backup",
+          "prompt": "Once voice communications are lost (without backup), what percentage of normal business functions are lost or degraded? (0–100%)",
+          "prompt_norm": "once voice communications are lost without backup what percentage of normal business functions are lost or degraded 0100",
+          "source": "infrastructure/comms_spec.ts"
+        },
+        {
+          "index": 4,
+          "id": "curve_backup_available",
+          "prompt": "Is any backup or alternate voice communications capability available?",
+          "prompt_norm": "is any backup or alternate voice communications capability available",
+          "source": "infrastructure/comms_spec.ts"
+        },
+        {
+          "index": 5,
+          "id": "curve_backup_duration_hours",
+          "prompt": "How many hours can alternate voice capability sustain operations? (0–96)",
+          "prompt_norm": "how many hours can alternate voice capability sustain operations 096",
+          "source": "infrastructure/comms_spec.ts"
+        },
+        {
+          "index": 6,
+          "id": "curve_loss_fraction_with_backup",
+          "prompt": "Once voice is lost (considering backup), what percentage of functions are still lost or degraded? (0–100%)",
+          "prompt_norm": "once voice is lost considering backup what percentage of functions are still lost or degraded 0100",
+          "source": "infrastructure/comms_spec.ts"
+        },
+        {
+          "index": 7,
+          "id": "curve_recovery_time_hours",
+          "prompt": "Once external voice service is restored, how long until full resumption of operations? (hours, 0–168)",
+          "prompt_norm": "once external voice service is restored how long until full resumption of operations hours 0168",
+          "source": "infrastructure/comms_spec.ts"
+        },
+        {
+          "index": 8,
+          "id": "COMM-0",
+          "prompt": "Which voice/command functions does the facility rely on? (Select all that apply)",
+          "prompt_norm": "which voicecommand functions does the facility rely on select all that apply",
+          "source": "infrastructure/comms_spec.ts"
+        },
+        {
+          "index": 9,
+          "id": "COMM-SP1",
+          "prompt": "Is there a single point of voice failure? (All practical voice options depend on one carrier, one route, one repeater/tower, or one power source.)",
+          "prompt_norm": "is there a single point of voice failure all practical voice options depend on one carrier one route one repeatertower or one power source",
+          "source": "infrastructure/comms_spec.ts"
+        },
+        {
+          "index": 10,
+          "id": "COMM-SP2",
+          "prompt": "Interoperability with other agencies/systems for voice?",
+          "prompt_norm": "interoperability with other agenciessystems for voice",
+          "source": "infrastructure/comms_spec.ts"
+        },
+        {
+          "index": 11,
+          "id": "COMM-SP3",
+          "prompt": "Is there documented coordination with voice providers/network operators for restoration and priority during outages?",
+          "prompt_norm": "is there documented coordination with voice providersnetwork operators for restoration and priority during outages",
+          "source": "infrastructure/comms_spec.ts"
+        }
+      ],
+      "intent_dupes": []
+    },
+    "INFORMATION_TECHNOLOGY": {
+      "count": 17,
+      "ids_missing": [],
+      "id_dupes": [],
+      "prompt_dupes": [],
+      "prefix_mismatches": [],
+      "items": [
+        {
+          "index": 0,
+          "id": "curve_requires_service",
+          "prompt": "Does the facility rely on internet/data connectivity for core operations?",
+          "prompt_norm": "does the facility rely on internetdata connectivity for core operations",
+          "source": "infrastructure/it_spec.ts"
+        },
+        {
+          "index": 1,
+          "id": "curve_primary_provider",
+          "prompt": "Who provides primary internet/data connectivity?",
+          "prompt_norm": "who provides primary internetdata connectivity",
+          "source": "infrastructure/it_spec.ts"
+        },
+        {
+          "index": 2,
+          "id": "curve_time_to_impact",
+          "prompt": "If IT service is lost (without backup), how soon would the facility be severely impacted? (hours)",
+          "prompt_norm": "if it service is lost without backup how soon would the facility be severely impacted hours",
+          "source": "infrastructure/it_spec.ts"
+        },
+        {
+          "index": 3,
+          "id": "curve_loss_no_backup",
+          "prompt": "Once IT service is lost (without backup), what percentage of normal business functions are lost or degraded?",
+          "prompt_norm": "once it service is lost without backup what percentage of normal business functions are lost or degraded",
+          "source": "infrastructure/it_spec.ts"
+        },
+        {
+          "index": 4,
+          "id": "curve_backup_available",
+          "prompt": "Is any backup or alternate IT capability available for this infrastructure?",
+          "prompt_norm": "is any backup or alternate it capability available for this infrastructure",
+          "source": "infrastructure/it_spec.ts"
+        },
+        {
+          "index": 5,
+          "id": "curve_loss_with_backup",
+          "prompt": "Once IT service is lost (considering backup), what percentage of normal business functions are lost or degraded?",
+          "prompt_norm": "once it service is lost considering backup what percentage of normal business functions are lost or degraded",
+          "source": "infrastructure/it_spec.ts"
+        },
+        {
+          "index": 6,
+          "id": "curve_recovery_time",
+          "prompt": "Once external IT service is restored, how long until full resumption of operations? (hours)",
+          "prompt_norm": "once external it service is restored how long until full resumption of operations hours",
+          "source": "infrastructure/it_spec.ts"
+        },
+        {
+          "index": 7,
+          "id": "IT-1",
+          "prompt": "Managed IT / Cyber Provider (MSP/MSSP)",
+          "prompt_norm": "managed it  cyber provider mspmssp",
+          "source": "infrastructure/it_spec.ts"
+        },
+        {
+          "index": 8,
+          "id": "IT-2",
+          "prompt": "Has the facility identified critical externally hosted or managed digital services relied upon for core operations (if any).",
+          "prompt_norm": "has the facility identified critical externally hosted or managed digital services relied upon for core operations if any",
+          "source": "infrastructure/it_spec.ts"
+        },
+        {
+          "index": 9,
+          "id": "IT-3",
+          "prompt": "Do critical operations rely on a single external IT provider/platform (single point of dependency)?",
+          "prompt_norm": "do critical operations rely on a single external it providerplatform single point of dependency",
+          "source": "infrastructure/it_spec.ts"
+        },
+        {
+          "index": 10,
+          "id": "IT-4",
+          "prompt": "Are IT service connections provisioned through distinct network infrastructure or providers?",
+          "prompt_norm": "are it service connections provisioned through distinct network infrastructure or providers",
+          "source": "infrastructure/it_spec.ts"
+        },
+        {
+          "index": 11,
+          "id": "IT-5",
+          "prompt": "Can the alternate method (if used) support core operations at an acceptable level?",
+          "prompt_norm": "can the alternate method if used support core operations at an acceptable level",
+          "source": "infrastructure/it_spec.ts"
+        },
+        {
+          "index": 12,
+          "id": "IT-6",
+          "prompt": "Are IT infrastructure components protected from accidental/intentional physical damage?",
+          "prompt_norm": "are it infrastructure components protected from accidentalintentional physical damage",
+          "source": "infrastructure/it_spec.ts"
+        },
+        {
+          "index": 13,
+          "id": "IT-7",
+          "prompt": "Where are critical IT infrastructure components installed relative to vehicle access?",
+          "prompt_norm": "where are critical it infrastructure components installed relative to vehicle access",
+          "source": "infrastructure/it_spec.ts"
+        },
+        {
+          "index": 14,
+          "id": "IT-7a",
+          "prompt": "Are protective measures in place to reduce vehicle impact risk to IT infrastructure components?",
+          "prompt_norm": "are protective measures in place to reduce vehicle impact risk to it infrastructure components",
+          "source": "infrastructure/it_spec.ts"
+        },
+        {
+          "index": 15,
+          "id": "IT-11",
+          "prompt": "Does the facility have established coordination with the external IT service provider for restoration during outages?",
+          "prompt_norm": "does the facility have established coordination with the external it service provider for restoration during outages",
+          "source": "infrastructure/it_spec.ts"
+        },
+        {
+          "index": 16,
+          "id": "it_plan_exercised",
+          "prompt": "Has the IT continuity or recovery plan been exercised or tested?",
+          "prompt_norm": "has the it continuity or recovery plan been exercised or tested",
+          "source": "infrastructure/it_spec.ts"
+        }
+      ],
+      "intent_dupes": []
+    },
+    "WATER": {
+      "count": 25,
+      "ids_missing": [],
+      "id_dupes": [],
+      "prompt_dupes": [],
+      "prefix_mismatches": [],
+      "items": [
+        {
+          "index": 0,
+          "id": "curve_requires_service",
+          "prompt": "Does the facility rely on water for core operations?",
+          "prompt_norm": "does the facility rely on water for core operations",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 1,
+          "id": "curve_primary_provider",
+          "prompt": "Who provides potable/process water to the facility/site?",
+          "prompt_norm": "who provides potableprocess water to the facilitysite",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 2,
+          "id": "curve_time_to_impact",
+          "prompt": "If water service is lost (without alternate source), how soon would the facility be severely impacted? (hours)",
+          "prompt_norm": "if water service is lost without alternate source how soon would the facility be severely impacted hours",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 3,
+          "id": "curve_loss_no_backup",
+          "prompt": "Once water service is lost (without alternate source), what percentage of normal business functions are lost or degraded?",
+          "prompt_norm": "once water service is lost without alternate source what percentage of normal business functions are lost or degraded",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 4,
+          "id": "curve_backup_available",
+          "prompt": "Is any backup or alternate water source available for this infrastructure?",
+          "prompt_norm": "is any backup or alternate water source available for this infrastructure",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 5,
+          "id": "curve_backup_duration",
+          "prompt": "How many hours can alternate water source sustain operations without resupply?",
+          "prompt_norm": "how many hours can alternate water source sustain operations without resupply",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 6,
+          "id": "curve_loss_with_backup",
+          "prompt": "Once water service is lost (considering alternate source), what percentage of normal business functions are lost or degraded?",
+          "prompt_norm": "once water service is lost considering alternate source what percentage of normal business functions are lost or degraded",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 7,
+          "id": "curve_recovery_time",
+          "prompt": "Once external water service is restored, how long until full resumption of operations? (hours)",
+          "prompt_norm": "once external water service is restored how long until full resumption of operations hours",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 8,
+          "id": "W_Q1",
+          "prompt": "Does the facility rely on a municipal/public water utility for primary water supply?",
+          "prompt_norm": "does the facility rely on a municipalpublic water utility for primary water supply",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 9,
+          "id": "W_Q2",
+          "prompt": "How many water service connections supply the facility?",
+          "prompt_norm": "how many water service connections supply the facility",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 10,
+          "id": "W_Q3",
+          "prompt": "Do all water service connections enter the site at the same geographic location?",
+          "prompt_norm": "do all water service connections enter the site at the same geographic location",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 11,
+          "id": "W_Q4",
+          "prompt": "Are water service lines/valves/meters collocated in a shared utility corridor with other critical utilities?",
+          "prompt_norm": "are water service linesvalvesmeters collocated in a shared utility corridor with other critical utilities",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 12,
+          "id": "W_Q6",
+          "prompt": "Does the facility participate in a priority restoration or coordinated restoration plan with the water utility/provider?",
+          "prompt_norm": "does the facility participate in a priority restoration or coordinated restoration plan with the water utilityprovider",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 13,
+          "id": "W_Q7",
+          "prompt": "Does the facility have a documented contingency/coordination plan with the water utility/provider for extended service disruption?",
+          "prompt_norm": "does the facility have a documented contingencycoordination plan with the water utilityprovider for extended service disruption",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 14,
+          "id": "W_Q8",
+          "prompt": "Does the facility have an alternate/backup water source that can be used if primary water service is disrupted?",
+          "prompt_norm": "does the facility have an alternatebackup water source that can be used if primary water service is disrupted",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 15,
+          "id": "W_Q9",
+          "prompt": "Can the alternate/backup water source support core operational water needs for an extended disruption?",
+          "prompt_norm": "can the alternatebackup water source support core operational water needs for an extended disruption",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 16,
+          "id": "W_Q10",
+          "prompt": "Is the alternate/backup water source dependent on commercial power or another external service to function?",
+          "prompt_norm": "is the alternatebackup water source dependent on commercial power or another external service to function",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 17,
+          "id": "W_Q11",
+          "prompt": "Does the facility rely on water-based fire suppression systems that depend on water service pressure/supply?",
+          "prompt_norm": "does the facility rely on waterbased fire suppression systems that depend on water service pressuresupply",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 18,
+          "id": "W_Q12",
+          "prompt": "Is there a secondary water supply approach for fire suppression if primary water pressure/supply is lost?",
+          "prompt_norm": "is there a secondary water supply approach for fire suppression if primary water pressuresupply is lost",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 19,
+          "id": "W_Q13",
+          "prompt": "Has the facility evaluated the operational impact if fire suppression water is unavailable during a prolonged disruption?",
+          "prompt_norm": "has the facility evaluated the operational impact if fire suppression water is unavailable during a prolonged disruption",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 20,
+          "id": "W_Q14",
+          "prompt": "Does the facility rely on onsite water pumping/boosting equipment to maintain usable water supply/pressure?",
+          "prompt_norm": "does the facility rely on onsite water pumpingboosting equipment to maintain usable water supplypressure",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 21,
+          "id": "W_Q15",
+          "prompt": "Is backup power available to support onsite water pumps/boosters during a power outage?",
+          "prompt_norm": "is backup power available to support onsite water pumpsboosters during a power outage",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 22,
+          "id": "W_Q16",
+          "prompt": "Can onsite water pumps/boosters be operated or overridden manually if automated controls fail?",
+          "prompt_norm": "can onsite water pumpsboosters be operated or overridden manually if automated controls fail",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 23,
+          "id": "W_Q17",
+          "prompt": "Is there a monitoring/alarm method for low pressure, pump failure, or storage depletion (onsite)?",
+          "prompt_norm": "is there a monitoringalarm method for low pressure pump failure or storage depletion onsite",
+          "source": "infrastructure/water_spec.ts"
+        },
+        {
+          "index": 24,
+          "id": "W_Q18",
+          "prompt": "Are critical pump/control components identified and available through at least two sources?",
+          "prompt_norm": "are critical pumpcontrol components identified and available through at least two sources",
+          "source": "infrastructure/water_spec.ts"
+        }
+      ],
+      "intent_dupes": []
+    },
+    "WASTEWATER": {
+      "count": 21,
+      "ids_missing": [],
+      "id_dupes": [],
+      "prompt_dupes": [],
+      "prefix_mismatches": [],
+      "items": [
+        {
+          "index": 0,
+          "id": "curve_requires_service",
+          "prompt": "Does the facility rely on wastewater for core operations?",
+          "prompt_norm": "does the facility rely on wastewater for core operations",
+          "source": "infrastructure/wastewater_spec.ts"
+        },
+        {
+          "index": 1,
+          "id": "curve_primary_provider",
+          "prompt": "Who provides wastewater/sewer service to the facility/site?",
+          "prompt_norm": "who provides wastewatersewer service to the facilitysite",
+          "source": "infrastructure/wastewater_spec.ts"
+        },
+        {
+          "index": 2,
+          "id": "curve_time_to_impact",
+          "prompt": "If wastewater service is lost (without alternate capability), how soon would the facility be severely impacted? (hours)",
+          "prompt_norm": "if wastewater service is lost without alternate capability how soon would the facility be severely impacted hours",
+          "source": "infrastructure/wastewater_spec.ts"
+        },
+        {
+          "index": 3,
+          "id": "curve_loss_no_backup",
+          "prompt": "Once wastewater service is lost (without alternate capability), what percentage of normal business functions are lost or degraded?",
+          "prompt_norm": "once wastewater service is lost without alternate capability what percentage of normal business functions are lost or degraded",
+          "source": "infrastructure/wastewater_spec.ts"
+        },
+        {
+          "index": 4,
+          "id": "curve_backup_available",
+          "prompt": "Is any backup or alternate wastewater capability available for this infrastructure?",
+          "prompt_norm": "is any backup or alternate wastewater capability available for this infrastructure",
+          "source": "infrastructure/wastewater_spec.ts"
+        },
+        {
+          "index": 5,
+          "id": "curve_backup_duration",
+          "prompt": "How many hours can alternate wastewater capability sustain operations without resupply?",
+          "prompt_norm": "how many hours can alternate wastewater capability sustain operations without resupply",
+          "source": "infrastructure/wastewater_spec.ts"
+        },
+        {
+          "index": 6,
+          "id": "curve_loss_with_backup",
+          "prompt": "Once wastewater service is lost (considering alternate capability), what percentage of normal business functions are lost or degraded?",
+          "prompt_norm": "once wastewater service is lost considering alternate capability what percentage of normal business functions are lost or degraded",
+          "source": "infrastructure/wastewater_spec.ts"
+        },
+        {
+          "index": 7,
+          "id": "curve_recovery_time",
+          "prompt": "Once external wastewater service is restored, how long until full resumption of operations? (hours)",
+          "prompt_norm": "once external wastewater service is restored how long until full resumption of operations hours",
+          "source": "infrastructure/wastewater_spec.ts"
+        },
+        {
+          "index": 8,
+          "id": "WW_Q1",
+          "prompt": "Does the facility discharge wastewater to a municipal/public sewer system?",
+          "prompt_norm": "does the facility discharge wastewater to a municipalpublic sewer system",
+          "source": "infrastructure/wastewater_spec.ts"
+        },
+        {
+          "index": 9,
+          "id": "WW_Q2",
+          "prompt": "How many wastewater discharge/service connections serve the facility?",
+          "prompt_norm": "how many wastewater dischargeservice connections serve the facility",
+          "source": "infrastructure/wastewater_spec.ts"
+        },
+        {
+          "index": 10,
+          "id": "WW_Q3",
+          "prompt": "Do all wastewater service connections enter/leave the site at the same geographic location?",
+          "prompt_norm": "do all wastewater service connections enterleave the site at the same geographic location",
+          "source": "infrastructure/wastewater_spec.ts"
+        },
+        {
+          "index": 11,
+          "id": "WW_Q4",
+          "prompt": "Are wastewater lines/manholes/cleanouts collocated in a shared utility corridor?",
+          "prompt_norm": "are wastewater linesmanholescleanouts collocated in a shared utility corridor",
+          "source": "infrastructure/wastewater_spec.ts"
+        },
+        {
+          "index": 12,
+          "id": "WW_Q6",
+          "prompt": "Does the facility participate in a priority restoration plan with the wastewater provider?",
+          "prompt_norm": "does the facility participate in a priority restoration plan with the wastewater provider",
+          "source": "infrastructure/wastewater_spec.ts"
+        },
+        {
+          "index": 13,
+          "id": "WW_Q7",
+          "prompt": "Does the facility have a documented contingency/coordination plan with the wastewater provider?",
+          "prompt_norm": "does the facility have a documented contingencycoordination plan with the wastewater provider",
+          "source": "infrastructure/wastewater_spec.ts"
+        },
+        {
+          "index": 14,
+          "id": "WW_Q8",
+          "prompt": "Does the facility rely on onsite wastewater pumping?",
+          "prompt_norm": "does the facility rely on onsite wastewater pumping",
+          "source": "infrastructure/wastewater_spec.ts"
+        },
+        {
+          "index": 15,
+          "id": "WW_Q9",
+          "prompt": "Is backup power available to support onsite wastewater pumps?",
+          "prompt_norm": "is backup power available to support onsite wastewater pumps",
+          "source": "infrastructure/wastewater_spec.ts"
+        },
+        {
+          "index": 16,
+          "id": "WW_Q10",
+          "prompt": "Can onsite wastewater pumps be operated or overridden manually?",
+          "prompt_norm": "can onsite wastewater pumps be operated or overridden manually",
+          "source": "infrastructure/wastewater_spec.ts"
+        },
+        {
+          "index": 17,
+          "id": "WW_Q11",
+          "prompt": "Is there a monitoring/alarm method for pump failure, high level, or backflow risk?",
+          "prompt_norm": "is there a monitoringalarm method for pump failure high level or backflow risk",
+          "source": "infrastructure/wastewater_spec.ts"
+        },
+        {
+          "index": 18,
+          "id": "WW_Q12",
+          "prompt": "Are critical pump components available through at least two sources?",
+          "prompt_norm": "are critical pump components available through at least two sources",
+          "source": "infrastructure/wastewater_spec.ts"
+        },
+        {
+          "index": 19,
+          "id": "WW_Q13",
+          "prompt": "During a wastewater service disruption, does the facility have holding/containment capability?",
+          "prompt_norm": "during a wastewater service disruption does the facility have holdingcontainment capability",
+          "source": "infrastructure/wastewater_spec.ts"
+        },
+        {
+          "index": 20,
+          "id": "WW_Q14",
+          "prompt": "Has the facility evaluated regulatory/operational constraints for prolonged disruption?",
+          "prompt_norm": "has the facility evaluated regulatoryoperational constraints for prolonged disruption",
+          "source": "infrastructure/wastewater_spec.ts"
+        }
+      ],
+      "intent_dupes": []
+    }
+  },
+  "global_id_collisions": [
+    {
+      "id": "curve_requires_service",
+      "count": 5,
+      "occurrences": [
+        {
+          "tab": "ELECTRIC_POWER",
+          "index": 0,
+          "source": "infrastructure/energy_spec.ts",
+          "prompt": "Does the facility rely on electric power for core operations?"
+        },
+        {
+          "tab": "COMMUNICATIONS",
+          "index": 0,
+          "source": "infrastructure/comms_spec.ts",
+          "prompt": "Does the facility rely on voice communications to coordinate operations, security, or emergency response?"
+        },
+        {
+          "tab": "INFORMATION_TECHNOLOGY",
+          "index": 0,
+          "source": "infrastructure/it_spec.ts",
+          "prompt": "Does the facility rely on internet/data connectivity for core operations?"
+        },
+        {
+          "tab": "WATER",
+          "index": 0,
+          "source": "infrastructure/water_spec.ts",
+          "prompt": "Does the facility rely on water for core operations?"
+        },
+        {
+          "tab": "WASTEWATER",
+          "index": 0,
+          "source": "infrastructure/wastewater_spec.ts",
+          "prompt": "Does the facility rely on wastewater for core operations?"
+        }
+      ]
+    },
+    {
+      "id": "curve_primary_provider",
+      "count": 5,
+      "occurrences": [
+        {
+          "tab": "ELECTRIC_POWER",
+          "index": 1,
+          "source": "infrastructure/energy_spec.ts",
+          "prompt": "Who provides electric power to the facility/site?"
+        },
+        {
+          "tab": "COMMUNICATIONS",
+          "index": 1,
+          "source": "infrastructure/comms_spec.ts",
+          "prompt": "Who provides primary voice/telephony service?"
+        },
+        {
+          "tab": "INFORMATION_TECHNOLOGY",
+          "index": 1,
+          "source": "infrastructure/it_spec.ts",
+          "prompt": "Who provides primary internet/data connectivity?"
+        },
+        {
+          "tab": "WATER",
+          "index": 1,
+          "source": "infrastructure/water_spec.ts",
+          "prompt": "Who provides potable/process water to the facility/site?"
+        },
+        {
+          "tab": "WASTEWATER",
+          "index": 1,
+          "source": "infrastructure/wastewater_spec.ts",
+          "prompt": "Who provides wastewater/sewer service to the facility/site?"
+        }
+      ]
+    },
+    {
+      "id": "curve_time_to_impact",
+      "count": 4,
+      "occurrences": [
+        {
+          "tab": "ELECTRIC_POWER",
+          "index": 2,
+          "source": "infrastructure/energy_spec.ts",
+          "prompt": "If electric supply is lost (without backup), how soon would the facility be severely impacted? (hours)"
+        },
+        {
+          "tab": "INFORMATION_TECHNOLOGY",
+          "index": 2,
+          "source": "infrastructure/it_spec.ts",
+          "prompt": "If IT service is lost (without backup), how soon would the facility be severely impacted? (hours)"
+        },
+        {
+          "tab": "WATER",
+          "index": 2,
+          "source": "infrastructure/water_spec.ts",
+          "prompt": "If water service is lost (without alternate source), how soon would the facility be severely impacted? (hours)"
+        },
+        {
+          "tab": "WASTEWATER",
+          "index": 2,
+          "source": "infrastructure/wastewater_spec.ts",
+          "prompt": "If wastewater service is lost (without alternate capability), how soon would the facility be severely impacted? (hours)"
+        }
+      ]
+    },
+    {
+      "id": "curve_loss_no_backup",
+      "count": 4,
+      "occurrences": [
+        {
+          "tab": "ELECTRIC_POWER",
+          "index": 3,
+          "source": "infrastructure/energy_spec.ts",
+          "prompt": "Once electric supply is lost (without backup), what percentage of normal business functions are lost or degraded?"
+        },
+        {
+          "tab": "INFORMATION_TECHNOLOGY",
+          "index": 3,
+          "source": "infrastructure/it_spec.ts",
+          "prompt": "Once IT service is lost (without backup), what percentage of normal business functions are lost or degraded?"
+        },
+        {
+          "tab": "WATER",
+          "index": 3,
+          "source": "infrastructure/water_spec.ts",
+          "prompt": "Once water service is lost (without alternate source), what percentage of normal business functions are lost or degraded?"
+        },
+        {
+          "tab": "WASTEWATER",
+          "index": 3,
+          "source": "infrastructure/wastewater_spec.ts",
+          "prompt": "Once wastewater service is lost (without alternate capability), what percentage of normal business functions are lost or degraded?"
+        }
+      ]
+    },
+    {
+      "id": "curve_backup_available",
+      "count": 5,
+      "occurrences": [
+        {
+          "tab": "ELECTRIC_POWER",
+          "index": 4,
+          "source": "infrastructure/energy_spec.ts",
+          "prompt": "Is any backup or alternate power capability available for this infrastructure?"
+        },
+        {
+          "tab": "COMMUNICATIONS",
+          "index": 4,
+          "source": "infrastructure/comms_spec.ts",
+          "prompt": "Is any backup or alternate voice communications capability available?"
+        },
+        {
+          "tab": "INFORMATION_TECHNOLOGY",
+          "index": 4,
+          "source": "infrastructure/it_spec.ts",
+          "prompt": "Is any backup or alternate IT capability available for this infrastructure?"
+        },
+        {
+          "tab": "WATER",
+          "index": 4,
+          "source": "infrastructure/water_spec.ts",
+          "prompt": "Is any backup or alternate water source available for this infrastructure?"
+        },
+        {
+          "tab": "WASTEWATER",
+          "index": 4,
+          "source": "infrastructure/wastewater_spec.ts",
+          "prompt": "Is any backup or alternate wastewater capability available for this infrastructure?"
+        }
+      ]
+    },
+    {
+      "id": "curve_backup_duration",
+      "count": 3,
+      "occurrences": [
+        {
+          "tab": "ELECTRIC_POWER",
+          "index": 5,
+          "source": "infrastructure/energy_spec.ts",
+          "prompt": "How many hours can backup power sustain operations without refueling?"
+        },
+        {
+          "tab": "WATER",
+          "index": 5,
+          "source": "infrastructure/water_spec.ts",
+          "prompt": "How many hours can alternate water source sustain operations without resupply?"
+        },
+        {
+          "tab": "WASTEWATER",
+          "index": 5,
+          "source": "infrastructure/wastewater_spec.ts",
+          "prompt": "How many hours can alternate wastewater capability sustain operations without resupply?"
+        }
+      ]
+    },
+    {
+      "id": "curve_loss_with_backup",
+      "count": 4,
+      "occurrences": [
+        {
+          "tab": "ELECTRIC_POWER",
+          "index": 6,
+          "source": "infrastructure/energy_spec.ts",
+          "prompt": "Once electric supply is lost (considering backup), what percentage of normal business functions are lost or degraded?"
+        },
+        {
+          "tab": "INFORMATION_TECHNOLOGY",
+          "index": 5,
+          "source": "infrastructure/it_spec.ts",
+          "prompt": "Once IT service is lost (considering backup), what percentage of normal business functions are lost or degraded?"
+        },
+        {
+          "tab": "WATER",
+          "index": 6,
+          "source": "infrastructure/water_spec.ts",
+          "prompt": "Once water service is lost (considering alternate source), what percentage of normal business functions are lost or degraded?"
+        },
+        {
+          "tab": "WASTEWATER",
+          "index": 6,
+          "source": "infrastructure/wastewater_spec.ts",
+          "prompt": "Once wastewater service is lost (considering alternate capability), what percentage of normal business functions are lost or degraded?"
+        }
+      ]
+    },
+    {
+      "id": "curve_recovery_time",
+      "count": 4,
+      "occurrences": [
+        {
+          "tab": "ELECTRIC_POWER",
+          "index": 7,
+          "source": "infrastructure/energy_spec.ts",
+          "prompt": "Once external service is restored, how long until full resumption of operations? (hours)"
+        },
+        {
+          "tab": "INFORMATION_TECHNOLOGY",
+          "index": 6,
+          "source": "infrastructure/it_spec.ts",
+          "prompt": "Once external IT service is restored, how long until full resumption of operations? (hours)"
+        },
+        {
+          "tab": "WATER",
+          "index": 7,
+          "source": "infrastructure/water_spec.ts",
+          "prompt": "Once external water service is restored, how long until full resumption of operations? (hours)"
+        },
+        {
+          "tab": "WASTEWATER",
+          "index": 7,
+          "source": "infrastructure/wastewater_spec.ts",
+          "prompt": "Once external wastewater service is restored, how long until full resumption of operations? (hours)"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_questions": 94,
+    "tabs": 5,
+    "hard_fail": false
+  }
+}
