@@ -45,8 +45,7 @@ coverage/
 .build-tmp/
 *.swp
 
-# Obsolete duplicate tree after migration (delete locally if still present)
+# Obsolete / duplicate paths (delete locally when not locked; do not commit)
 PSA IDAT/
-
-# Legacy tool path — remove this folder after unlock (replaced by tools/dependency-analysis/)
+Host V3/
 tools/infrastructure-dependency-assessment/
