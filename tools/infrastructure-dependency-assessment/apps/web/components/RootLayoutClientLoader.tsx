@@ -4,6 +4,7 @@ import { AssessmentProvider } from '@/lib/assessment-context';
 import IdaHeader from '@/components/branding/IdaHeader';
 import { useEffect } from 'react';
 import type { ReactNode } from 'react';
+import { usePathname } from 'next/navigation';
 
 function isDev(): boolean {
   if (typeof window === 'undefined') return false;
@@ -15,6 +16,9 @@ function isDev(): boolean {
 
 /** Single client boundary: inlines shell to avoid RSC lazy "promise resolves to undefined" error. */
 export function RootLayoutClientLoader({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+  const isToolboxLanding = pathname === '/' || pathname === '';
+
   useEffect(() => {
     if (typeof window === 'undefined' || !('serviceWorker' in navigator)) return;
     if (isDev()) return;
@@ -24,8 +28,14 @@ export function RootLayoutClientLoader({ children }: { children: ReactNode }) {
   return (
     <AssessmentProvider>
       <div className="ida-app">
-        <IdaHeader variant="page" />
-        <div className="container">{children}</div>
+        {isToolboxLanding ? (
+          <div className="container">{children}</div>
+        ) : (
+          <>
+            <IdaHeader variant="page" />
+            <div className="container">{children}</div>
+          </>
+        )}
       </div>
     </AssessmentProvider>
   );

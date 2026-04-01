@@ -1,6 +1,6 @@
 # PSA Toolbox
 
-Unified home for PSA tools: each product lives under `tools/<tool-id>/`, with a Windows launcher in `launcher/` that reads [`tools-manifest.json`](tools-manifest.json).
+Unified home for PSA tools: each product lives under `tools/<tool-id>/`, with a Windows launcher in `launcher/` and a **web root landing page** (when using the bundled Next.js dev server) that reads [`tools-manifest.json`](tools-manifest.json) to list every tool.
 
 ## Repository layout
 
@@ -8,7 +8,7 @@ Unified home for PSA tools: each product lives under `tools/<tool-id>/`, with a 
 |------|---------|
 | `tools/` | One subfolder per tool (own build stack, README, dependencies) |
 | `launcher/` | WinUI 3 app — browse tools, open folders, start documented entry points |
-| `tools-manifest.json` | Machine-readable list of tools for the launcher |
+| `tools-manifest.json` | Machine-readable list of tools for the launcher and web root landing page (`entryPath` / `externalUrl`) |
 | `docs/tools-manifest.schema.json` | JSON Schema for the manifest |
 | [`shared/cisa_styles.css`](shared/cisa_styles.css) | DHS CISA house styles — import in every web tool’s global CSS entry after base tokens (e.g. `import '../../../../../shared/cisa_styles.css'` from `apps/web/app/layout.tsx`) |
 
@@ -30,7 +30,7 @@ dotnet run --project .\launcher\PSA.Toolbox.Launcher\PSA.Toolbox.Launcher.csproj
 ## Adding a tool
 
 1. Create `tools/<tool-id>/` with your project.
-2. Add an entry to `tools-manifest.json` (see schema in `docs/tools-manifest.schema.json`).
+2. Add an entry to `tools-manifest.json` (see schema in `docs/tools-manifest.schema.json`). For the web UI, set **`entryPath`** (path on this app, e.g. `/my-tool/`) and/or **`externalUrl`** if the tool runs on another origin.
 3. Document setup in `tools/<tool-id>/README.md`.
 
 ## Remote

@@ -21,6 +21,15 @@
         "relativePath": { "type": "string" },
         "description": { "type": "string" },
         "readmeRelativePath": { "type": "string" },
+        "entryPath": {
+          "type": "string",
+          "description": "Path on this web app to open the tool (leading slash). Use with trailing slash if Next.js trailingSlash is true."
+        },
+        "externalUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "If set, the landing page links here instead of entryPath (e.g. another host or port)."
+        },
         "start": {
           "type": "object",
           "required": ["kind", "scriptRelativePath"],

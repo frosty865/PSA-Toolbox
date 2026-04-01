@@ -7,6 +7,7 @@
       "relativePath": "tools/infrastructure-dependency-assessment",
       "description": "Structured dependency review, continuity conditions, and export artifacts (PSA local edition).",
       "readmeRelativePath": "README.md",
+      "entryPath": "/assessment/categories/",
       "start": {
         "kind": "powershell",
         "scriptRelativePath": "Start-PsaIda.ps1",
