@@ -6,7 +6,7 @@
       "id": "dependency-analysis",
       "displayName": "Dependency analysis",
       "relativePath": "tools/dependency-analysis",
-      "description": "Infrastructure dependency assessment — structured dependency review, continuity conditions, and export artifacts (PSA Toolbox edition). Own repo/workspace: clone or work in tools/dependency-analysis/.",
+      "description": "Infrastructure dependency assessment — structured dependency review, continuity conditions, and export artifacts. Web UI is part of the unified Next app (with landing / and Host V3 /host-v3/).",
       "readmeRelativePath": "README.md",
       "entryPath": "/assessment/categories/",
       "start": {
@@ -19,14 +19,9 @@
       "id": "host-v3",
       "displayName": "Host V3",
       "relativePath": "tools/host-v3",
-      "description": "Host V3 — Vite + React app on port 3001 (loopback). Run Start-HostV3.ps1 or pnpm dev in tools/host-v3.",
+      "description": "Host V3 standalone product workspace (assets, modules, docs). Web surface: /host-v3/ in the unified Next app — one dev server with dependency analysis.",
       "readmeRelativePath": "README.md",
-      "externalUrl": "http://127.0.0.1:3001/",
-      "start": {
-        "kind": "powershell",
-        "scriptRelativePath": "Start-HostV3.ps1",
-        "arguments": []
-      }
+      "entryPath": "/host-v3/"
     }
   ]
 }

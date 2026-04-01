@@ -15,8 +15,6 @@ All **cross-tool** visual branding and house-style rules live **here** at the re
    psa-tokens.css → cisa_styles.css → your/app.css
    ```
 
-2. **Next.js (dependency analysis):** also loads `apps/web/public/tsp-global.css` (app shell); `cisa_styles.css` is imported from this folder via a relative path in `app/layout.tsx`.
-
-3. **Vite (Host V3):** imports from `../../../shared/` in `src/main.tsx`.
+2. **Next.js (unified toolbox app):** loads `apps/web/public/tsp-global.css` in `<head>`; `cisa_styles.css` is imported from this folder in `app/layout.tsx`. Host V3 (`/host-v3/`) uses the same app and shared styles.
 
 When you change tokens or house rules, edit files in **`shared/`** first, then align any duplicated token blocks in tool-specific bundles if needed.

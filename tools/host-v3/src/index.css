@@ -1,8 +1,0 @@
-/* App-only tweaks; branding tokens + house styles load from PSA Toolbox shared/ */
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: var(--font-body);
-  color: var(--color-text);
-  background: var(--color-bg);
-}

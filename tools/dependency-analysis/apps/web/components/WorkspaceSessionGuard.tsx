@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 /** Root SSO entry when unauthenticated. */
 const rootSignInUrl =
   process.env.NEXT_PUBLIC_ROOT_SIGNIN_URL?.trim() || "";
-const localAuthOrigin = "http://localhost:3001";
 const enforceLocalAuth =
   (process.env.NEXT_PUBLIC_ENFORCE_LOCAL_AUTH?.trim() || "") === "1";
 
@@ -14,8 +13,9 @@ function isLocalHost() {
 }
 
 function getDefaultRootSignInUrl() {
+  if (typeof window === "undefined") return "https://www.example.com";
   return isLocalHost()
-    ? `${localAuthOrigin}/auth/signin`
+    ? `${window.location.origin}/auth/signin`
     : "https://www.example.com";
 }
 

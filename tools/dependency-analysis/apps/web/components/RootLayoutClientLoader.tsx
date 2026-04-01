@@ -17,7 +17,9 @@ function isDev(): boolean {
 /** Single client boundary: inlines shell to avoid RSC lazy "promise resolves to undefined" error. */
 export function RootLayoutClientLoader({ children }: { children: ReactNode }) {
   const pathname = usePathname();
-  const isToolboxLanding = pathname === '/' || pathname === '';
+  /** Unified toolbox shell: no IDA header on landing or Host V3 product routes */
+  const isToolboxShell =
+    pathname === '/' || pathname === '' || pathname.startsWith('/host-v3');
 
   useEffect(() => {
     if (typeof window === 'undefined' || !('serviceWorker' in navigator)) return;
@@ -28,7 +30,7 @@ export function RootLayoutClientLoader({ children }: { children: ReactNode }) {
   return (
     <AssessmentProvider>
       <div className="ida-app">
-        {isToolboxLanding ? (
+        {isToolboxShell ? (
           <div className="container">{children}</div>
         ) : (
           <>

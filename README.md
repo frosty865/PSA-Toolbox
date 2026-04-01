@@ -1,11 +1,14 @@
 # PSA Toolbox
 
-Monorepo umbrella for PSA tools: each product is a **separate folder under [`tools/`](tools/)** (and typically its own Git history). The WinUI launcher and the dependency-analysis web app read [`tools-manifest.json`](tools-manifest.json) for the tool list and entry points.
+Monorepo umbrella for PSA tools: **one unified web app** (Next.js in [`tools/dependency-analysis/`](tools/dependency-analysis/)) serves the toolbox landing, Host V3 (`/host-v3/`), and dependency analysis (`/assessment/…`) on **one port**. Each product still has a **standalone folder** under [`tools/`](tools/) for its own assets, docs, and repos. The WinUI launcher reads [`tools-manifest.json`](tools-manifest.json).
 
-| Tool | Location |
-|------|----------|
-| Dependency analysis | [`tools/dependency-analysis/`](tools/dependency-analysis/) — Next.js app (landing `/`, assessment under `/assessment/…`) |
-| Host V3 | [`tools/host-v3/`](tools/host-v3/) — Vite + React on **:3001**; run `pnpm dev` or `Start-HostV3.ps1` (dependency analysis on **:3000**) |
+| Tool | Web route | Product folder |
+|------|-----------|----------------|
+| Toolbox shell | `/` | *(layout in dependency-analysis app)* |
+| Host V3 | `/host-v3/` | [`tools/host-v3/`](tools/host-v3/) |
+| Dependency analysis | `/assessment/…` | [`tools/dependency-analysis/`](tools/dependency-analysis/) |
+
+**Dev:** one command — `pnpm dev` from `tools/dependency-analysis`.
 
 ## Root layout
 

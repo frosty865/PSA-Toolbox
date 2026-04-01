@@ -1,44 +1,20 @@
-# Host V3
+# Host V3 (standalone product)
 
-Standalone **Vite + React** app (port **3001**, loopback only). Dependency analysis runs separately on port **3000**.
+This folder is the **Host V3 product workspace** inside PSA Toolbox: assets, documentation, and future shared modules that belong to Host V3 **as its own product line**, separate from dependency-assessment internals.
 
-**Branding:** design tokens and CISA house styles are imported from the PSA Toolbox repo — [`../../shared/psa-tokens.css`](../../shared/psa-tokens.css) and [`../../shared/cisa_styles.css`](../../shared/cisa_styles.css) (see [`../../shared/README.md`](../../shared/README.md)).
+## Web UI (unified system)
 
-## Prerequisites
+The **web surface** for Host V3 is **not** a second dev server. It is served by the **same Next.js app** as the rest of the toolbox:
 
-- [Node.js](https://nodejs.org/) 20+
-- [pnpm](https://pnpm.io/) (`corepack enable pnpm` or install globally)
+- **URL:** [`/host-v3/`](../../dependency-analysis/apps/web/app/host-v3/) (e.g. `http://localhost:3000/host-v3/` when you run `pnpm dev` from `tools/dependency-analysis`).
+- **One process:** `pnpm dev` in `tools/dependency-analysis` runs the unified app (landing `/`, Host V3 `/host-v3/`, dependency analysis `/assessment/…`).
 
-## Development
+Registering Host V3 in [`../../tools-manifest.json`](../../tools-manifest.json) uses **`entryPath": "/host-v3/"`** so the toolbox landing and launcher stay consistent.
 
-```powershell
-cd tools\host-v3
-pnpm install
-pnpm dev
-```
+## Source repository (optional)
 
-Open **http://127.0.0.1:3001/**
+If Host V3 also has its **own Git remote**, you can still clone or submodule extra content **into this directory** (or a subfolder) and import from the Next route as you grow the product.
 
-Or from repo root:
+## Legacy note
 
-```powershell
-.\tools\host-v3\Start-HostV3.ps1
-```
-
-## PSA Toolbox integration
-
-- [`../../tools-manifest.json`](../../tools-manifest.json) lists Host V3 with **`externalUrl`** `http://127.0.0.1:3001/` so the toolbox landing page (dependency-analysis app on :3000) opens Host in a new tab — **only while this dev server is running**.
-- WinUI launcher: **Start** runs `Start-HostV3.ps1`.
-
-## Production build
-
-```powershell
-pnpm run build
-pnpm run preview
-```
-
-Deploy **`dist/`** to any static host (S3, Azure Static Web Apps, etc.) or add a `vercel.json` / pipeline for this folder. Update **`externalUrl`** in `tools-manifest.json` to your production URL when known.
-
-## Replacing this scaffold
-
-Drop in your real Host V3 UI and routes under `src/`. Keep `vite.config.ts` port **3001** for local parity with the manifest, or change the port and update `tools-manifest.json` and this README.
+An earlier **Vite-on-:3001** scaffold was removed in favor of this unified model.

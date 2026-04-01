@@ -1,5 +1,4 @@
-node_modules/
+# Product-specific build artifacts / local tooling
 dist/
-*.tsbuildinfo
+node_modules/
 *.local
-.DS_Store
