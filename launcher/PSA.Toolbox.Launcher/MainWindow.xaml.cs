@@ -25,7 +25,7 @@ public sealed partial class MainWindow : Window
         if (_repoRoot is null)
         {
             StatusText.Text =
-                "Could not find tools-manifest.json. Set environment variable PSA_TOOLBOX_ROOT to your clone root, or run the launcher from the repository (build copies the manifest next to the .exe).";
+                "Could not find the repository root (tools-manifest.json and tools/ folder). Set environment variable PSA_TOOLBOX_ROOT to your clone root, or run from a build output under the cloned repo.";
             return;
         }
 
