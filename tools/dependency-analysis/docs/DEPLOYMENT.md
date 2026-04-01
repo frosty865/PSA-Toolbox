@@ -34,7 +34,7 @@ The build artifacts live in `apps/web/.next` and static assets ship from `apps/w
    - Install Command: `pnpm install`
    - Build Command: `pnpm run build`
    - Output Directory: `apps/web/.next`
-4. If the repository is nested (e.g., `tools/infrastructure-dependency-assessment`), set the **Root Directory** accordingly in Project Settings.
+4. If the repository is nested (e.g., `tools/dependency-analysis`), set the **Root Directory** accordingly in Project Settings.
 5. Deploy with `vercel --prod` (or plain `vercel` for preview).
 
 ## Release artifacts and hashes

@@ -47,3 +47,6 @@ coverage/
 
 # Obsolete duplicate tree after migration (delete locally if still present)
 PSA IDAT/
+
+# Legacy tool path — remove this folder after unlock (replaced by tools/dependency-analysis/)
+tools/infrastructure-dependency-assessment/

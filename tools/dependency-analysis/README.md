@@ -7,7 +7,7 @@
 Install workspace dependencies:
 
 ```powershell
-cd tools\infrastructure-dependency-assessment
+cd tools\dependency-analysis
 pnpm install
 ```
 
@@ -16,7 +16,7 @@ pnpm install
 Use a **user** virtual environment under this folder:
 
 ```powershell
-cd tools\infrastructure-dependency-assessment
+cd tools\dependency-analysis
 py -3 -m venv .venv
 .\.venv\Scripts\pip install -r apps\reporter\requirements.txt
 ```
@@ -26,7 +26,7 @@ Prefer the Python reporter on locked-down hosts (see `apps/web/app/api/export/fi
 ## Development
 
 ```powershell
-cd tools\infrastructure-dependency-assessment
+cd tools\dependency-analysis
 pnpm dev
 ```
 
@@ -41,7 +41,7 @@ pnpm run build:web
 After a successful `build:web`, start the app with the bundled launcher (sets **`ADT_ROOT`** / **`ADT_APP_ROOT`** to the monorepo root for template and reporter paths):
 
 ```powershell
-cd tools\infrastructure-dependency-assessment
+cd tools\dependency-analysis
 .\Start-PsaIda.ps1
 ```
 

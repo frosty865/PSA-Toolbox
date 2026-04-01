@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-/* USWDS v3 — U.S. Web Design System (local npm; fonts resolved from package) */
+/* USWDS v3 — U.S. Web Design System stylesheet (npm package). Host V3 product code lives under tools/host-v3/, not here. */
 import '@uswds/uswds/dist/css/uswds.min.css';
 import './globals.css';
 import './ida-design-system.css';

@@ -3,7 +3,7 @@ const path = require('path');
 const repoRoot = path.resolve(__dirname, '../../../..');
 const toolRoot = path.resolve(__dirname, '../..');
 const packagesDir = path.join(toolRoot, 'packages');
-const toolRootFromRepo = 'tools/infrastructure-dependency-assessment';
+const toolRootFromRepo = 'tools/dependency-analysis';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

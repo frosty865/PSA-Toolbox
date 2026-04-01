@@ -2,10 +2,10 @@
   "version": 1,
   "tools": [
     {
-      "id": "infrastructure-dependency-assessment",
-      "displayName": "Infrastructure Dependency Assessment",
-      "relativePath": "tools/infrastructure-dependency-assessment",
-      "description": "Structured dependency review, continuity conditions, and export artifacts (PSA local edition).",
+      "id": "dependency-analysis",
+      "displayName": "Dependency analysis",
+      "relativePath": "tools/dependency-analysis",
+      "description": "Infrastructure dependency assessment — structured dependency review, continuity conditions, and export artifacts (PSA Toolbox edition). Own repo/workspace: clone or work in tools/dependency-analysis/.",
       "readmeRelativePath": "README.md",
       "entryPath": "/assessment/categories/",
       "start": {
@@ -13,6 +13,13 @@
         "scriptRelativePath": "Start-PsaIda.ps1",
         "arguments": []
       }
+    },
+    {
+      "id": "host-v3",
+      "displayName": "Host V3",
+      "relativePath": "tools/host-v3",
+      "description": "Host V3 — separate product; own Git repository and folder. Populate tools/host-v3 by cloning your Host V3 repo (or submodule). Wire entryPath/externalUrl in this manifest when the web UI is ready.",
+      "readmeRelativePath": "README.md"
     }
   ]
 }

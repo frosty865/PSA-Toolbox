@@ -1,12 +1,21 @@
 # PSA Toolbox
 
-Unified home for PSA tools: each product lives under `tools/<tool-id>/`, with a Windows launcher in `launcher/` and a **web root landing page** (when using the bundled Next.js dev server) that reads [`tools-manifest.json`](tools-manifest.json) to list every tool.
+Unified home for PSA tools: each product lives under `tools/<tool-id>/` as its **own workspace** (separate clone or submodule per tool is supported). The Windows launcher and the **dependency analysis** web app read [`tools-manifest.json`](tools-manifest.json) to list every tool.
+
+**Tools tracked so far (see manifest):**
+
+| Tool | Folder | Role |
+|------|--------|------|
+| Dependency analysis | [`tools/dependency-analysis/`](tools/dependency-analysis/) | Next.js monorepo (web UI + packages); serves the toolbox landing at `/` and the assessment app under `/assessment/…`. |
+| Host V3 | [`tools/host-v3/`](tools/host-v3/) | Placeholder for the Host V3 **repository** — clone or submodule your Host V3 repo into this directory. |
+
+If you still have an old `tools/infrastructure-dependency-assessment/` path on disk from a rename, close editors using it and delete that folder; the canonical path is `tools/dependency-analysis/`.
 
 ## Repository layout
 
 | Path | Purpose |
 |------|---------|
-| `tools/` | One subfolder per tool (own build stack, README, dependencies) |
+| `tools/` | One subfolder per tool (own build stack, README, dependencies, often its own Git remote) |
 | `launcher/` | WinUI 3 app — browse tools, open folders, start documented entry points |
 | `tools-manifest.json` | Machine-readable list of tools for the launcher and web root landing page (`entryPath` / `externalUrl`) |
 | `docs/tools-manifest.schema.json` | JSON Schema for the manifest |
