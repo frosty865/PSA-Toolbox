@@ -2,6 +2,8 @@
 
 Standalone **Vite + React** app (port **3001**, loopback only). Dependency analysis runs separately on port **3000**.
 
+**Branding:** design tokens and CISA house styles are imported from the PSA Toolbox repo — [`../../shared/psa-tokens.css`](../../shared/psa-tokens.css) and [`../../shared/cisa_styles.css`](../../shared/cisa_styles.css) (see [`../../shared/README.md`](../../shared/README.md)).
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) 20+

@@ -1,40 +1,8 @@
-:root {
-  font-family: 'Segoe UI', system-ui, sans-serif;
-  line-height: 1.5;
-  color: #1a4480;
-  background: #f4f6f8;
-}
-
+/* App-only tweaks; branding tokens + house styles load from PSA Toolbox shared/ */
 body {
   margin: 0;
-}
-
-.host-shell {
-  max-width: 42rem;
-  margin: 0 auto;
-  padding: 2.5rem 1.25rem;
-}
-
-.host-shell h1 {
-  margin: 0 0 0.75rem;
-  font-size: 1.75rem;
-}
-
-.host-lede {
-  margin: 0 0 1rem;
-  font-size: 1.05rem;
-}
-
-.host-meta {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #5c6c7c;
-}
-
-code {
-  font-size: 0.9em;
-}
-
-a {
-  color: #205493;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
 }

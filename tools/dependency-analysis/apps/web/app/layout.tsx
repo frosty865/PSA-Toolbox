@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import '@uswds/uswds/css/uswds.min.css';
 import './globals.css';
 import './ida-design-system.css';
+/* PSA Toolbox branding: shared/cisa_styles.css (+ tokens in public/tsp-global.css; see repo shared/psa-tokens.css) */
 import '../../../../../shared/cisa_styles.css';
 import { RootLayoutClientLoader } from '@/components/RootLayoutClientLoader';
 

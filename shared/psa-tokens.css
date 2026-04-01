@@ -1,0 +1,59 @@
+/*
+ * PSA Toolbox — design tokens (canonical :root palette + spacing).
+ * Import this before shared/cisa_styles.css in any tool (Vite, Next, etc.).
+ * The dependency-analysis app mirrors these in apps/web/public/tsp-global.css for static hosting; keep both aligned when tokens change.
+ */
+
+:root {
+  /* PSA-aligned palette (USWDS-inspired blues + neutral paper) */
+  --brand-navy: #1a4480;
+  --brand-steel: #3d4551;
+  --brand-blue: #205493;
+  --brand-brass: #face00;
+  --brand-paper: #f4f6f8;
+  --brand-night: #0f1419;
+  --brand-slate: #5c6c7c;
+  --brand-white: #ffffff;
+
+  --font-body: "Segoe UI", system-ui, Roboto, Arial, sans-serif;
+  --font-display: Georgia, "Source Serif 4", serif;
+
+  --color-bg: var(--brand-paper);
+  --color-surface: var(--brand-white);
+  --color-text: var(--brand-navy);
+  --color-muted: var(--brand-slate);
+  --color-line: rgba(15, 23, 42, 0.24);
+  --color-line-strong: rgba(15, 23, 42, 0.44);
+  --color-header: rgba(246, 240, 229, 0.95);
+
+  --container: 1220px;
+  --tsp-assessment-column-max: 100%;
+  --tsp-assessment-progress-inner: 100%;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 5.5rem;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --shadow-soft: 0 10px 28px rgba(15, 23, 42, 0.08);
+  --shadow-raise: 0 18px 38px rgba(15, 23, 42, 0.12);
+  --transition: 180ms ease;
+}
+
+html.dark,
+body.dark {
+  --color-bg: var(--brand-night);
+  --color-surface: #0f172a;
+  --color-text: #f8fafc;
+  --color-muted: #cbd5e1;
+  --color-line: rgba(148, 163, 184, 0.34);
+  --color-line-strong: rgba(148, 163, 184, 0.55);
+  --color-header: rgba(8, 17, 29, 0.95);
+}

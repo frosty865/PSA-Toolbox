@@ -13,7 +13,7 @@ Monorepo umbrella for PSA tools: each product is a **separate folder under [`too
 |------|---------|
 | [`tools-manifest.json`](tools-manifest.json) | Tool list for launcher + web landing (`entryPath` / `externalUrl`) |
 | [`tools-manifest.schema.json`](tools-manifest.schema.json) | JSON Schema for the manifest |
-| [`shared/cisa_styles.css`](shared/cisa_styles.css) | Shared CISA house styles (import from web tools after base CSS) |
+| [`shared/`](shared/) | **Branding & style guide** — [`psa-tokens.css`](shared/psa-tokens.css) (design tokens) and [`cisa_styles.css`](shared/cisa_styles.css) (house layout/components); see [`shared/README.md`](shared/README.md) |
 | [`launcher/`](launcher/) | WinUI 3 launcher — open folders, run documented start scripts |
 | [`LICENSE`](LICENSE) | License |
 

@@ -45,6 +45,9 @@ coverage/
 .build-tmp/
 *.swp
 
+# Stray duplicate — canonical file is shared/cisa_styles.css
+/cisa_styles.css
+
 # Obsolete / duplicate paths (delete locally when not locked; do not commit)
 PSA IDAT/
 Host V3/

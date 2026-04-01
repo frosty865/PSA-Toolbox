@@ -1,7 +1,7 @@
 /*
- * DHS CISA House Style Guide — shared across PSA Toolbox tools
- * Single source of truth: import this file in each project’s global entry (e.g. Next.js root layout).
- * Loads after base tokens (e.g. tsp-global.css / app design system) so these classes can override when needed.
+ * DHS CISA House Style Guide — PSA Toolbox shared/ (canonical location for branding + layout patterns)
+ * Import order: shared/psa-tokens.css → this file → app overrides.
+ * In dependency-analysis, tsp-global.css supplies tokens for the Next app; still import this file from repo shared/ for parity.
  */
 
 /* -------------------------------------------------------------------------- */
