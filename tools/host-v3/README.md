@@ -1,22 +1,42 @@
 # Host V3
 
-This directory is the **local workspace for the Host V3 tool** — its own product line, separate from [dependency analysis](../dependency-analysis/).
+Standalone **Vite + React** app (port **3001**, loopback only). Dependency analysis runs separately on port **3000**.
 
-## Source repository
+## Prerequisites
 
-Host V3 should live in **its own Git repository**. Typical setup:
+- [Node.js](https://nodejs.org/) 20+
+- [pnpm](https://pnpm.io/) (`corepack enable pnpm` or install globally)
 
-1. Create or use your Host V3 remote (for example `https://github.com/frosty865/Host-V3`).
-2. Clone it **into this folder** (replace the placeholder content), or add it as a **submodule** from the PSA Toolbox repo root:
+## Development
 
-   ```powershell
-   cd "D:\PSA Toolbox"
-   git submodule add https://github.com/YOUR_ORG/YOUR-host-v3-repo.git tools/host-v3
-   ```
+```powershell
+cd tools\host-v3
+pnpm install
+pnpm dev
+```
 
-3. Add or adjust the `host-v3` entry in [`../../tools-manifest.json`](../../tools-manifest.json): set **`entryPath`** (if this app is served by the same Next server) and/or **`externalUrl`** (if it runs on another port or host), then restart the dev server.
+Open **http://127.0.0.1:3001/**
 
-## After clone
+Or from repo root:
 
-- Install and run using that repo’s README (Node, .NET, etc.).
-- Ensure the toolbox landing page lists Host V3 via `tools-manifest.json` (already stubbed).
+```powershell
+.\tools\host-v3\Start-HostV3.ps1
+```
+
+## PSA Toolbox integration
+
+- [`../../tools-manifest.json`](../../tools-manifest.json) lists Host V3 with **`externalUrl`** `http://127.0.0.1:3001/` so the toolbox landing page (dependency-analysis app on :3000) opens Host in a new tab — **only while this dev server is running**.
+- WinUI launcher: **Start** runs `Start-HostV3.ps1`.
+
+## Production build
+
+```powershell
+pnpm run build
+pnpm run preview
+```
+
+Deploy **`dist/`** to any static host (S3, Azure Static Web Apps, etc.) or add a `vercel.json` / pipeline for this folder. Update **`externalUrl`** in `tools-manifest.json` to your production URL when known.
+
+## Replacing this scaffold
+
+Drop in your real Host V3 UI and routes under `src/`. Keep `vite.config.ts` port **3001** for local parity with the manifest, or change the port and update `tools-manifest.json` and this README.

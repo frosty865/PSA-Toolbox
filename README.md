@@ -5,7 +5,7 @@ Monorepo umbrella for PSA tools: each product is a **separate folder under [`too
 | Tool | Location |
 |------|----------|
 | Dependency analysis | [`tools/dependency-analysis/`](tools/dependency-analysis/) — Next.js app (landing `/`, assessment under `/assessment/…`) |
-| Host V3 | [`tools/host-v3/`](tools/host-v3/) — clone your Host V3 repository here (or use a submodule) |
+| Host V3 | [`tools/host-v3/`](tools/host-v3/) — Vite + React on **:3001**; run `pnpm dev` or `Start-HostV3.ps1` (dependency analysis on **:3000**) |
 
 ## Root layout
 
