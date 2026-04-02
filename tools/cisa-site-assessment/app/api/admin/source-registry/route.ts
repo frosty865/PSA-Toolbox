@@ -8,6 +8,9 @@ import { tierFromPublisherAndUrl } from '@/app/lib/sourceRegistry/tierFromPublis
 import { assessmentCorpusWhereFragment, moduleSourcesWhereFragment } from '@/app/lib/sourceRegistry/corpusModuleFilter';
 import { getAdminAuditContext, writeAdminAuditLog } from '@/app/lib/admin/audit';
 import { columnExists, tableExists } from '@/app/lib/db/table_exists';
+import { existsSync } from 'fs';
+import path from 'path';
+import { resolveCorpusPath } from '@/app/lib/storage/config';
 
 /** True if stored publisher looks like a document title (so we show URL-derived publisher instead). */
 function publisherLooksLikeTitle(publisher: string | null | undefined, title: string | null | undefined): boolean {
@@ -299,6 +302,25 @@ export async function GET(request: NextRequest) {
         canonicalUrlForTier
       );
 
+      let file_exists: boolean | null = null;
+      let file_error: string | null = null;
+      const storageRelpath = typeof row.storage_relpath === 'string' ? row.storage_relpath : null;
+      const localPath = typeof row.local_path === 'string' ? row.local_path : null;
+      const candidate = storageRelpath || localPath;
+      if (candidate) {
+        try {
+          const absPath = path.isAbsolute(candidate)
+            ? candidate
+            : resolveCorpusPath(candidate);
+          file_exists = existsSync(absPath);
+          if (!file_exists) {
+            file_error = 'File not found at expected location';
+          }
+        } catch (error) {
+          file_exists = false;
+          file_error = error instanceof Error ? error.message : 'Invalid storage path';
+        }
+      }
       return {
         ...row,
         publisher: displayPublisherVal,
@@ -307,7 +329,9 @@ export async function GET(request: NextRequest) {
         citation_label: citationLabel,
         title: finalTitle,
         status: extractStatusFromNotes(typeof row.notes === 'string' ? row.notes : null),
-        is_technology_library: isTechnologyLibrary
+        is_technology_library: isTechnologyLibrary,
+        file_exists,
+        file_error,
       };
     });
 

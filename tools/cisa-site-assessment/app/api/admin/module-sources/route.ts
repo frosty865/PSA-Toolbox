@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import { getRuntimePool } from '@/app/lib/db/runtime_client';
 import { getCorpusPool } from '@/app/lib/db/corpus_client';
+import { existsSync } from 'fs';
+import path from 'path';
+import { resolveModulePath } from '@/app/lib/storage/config';
 
 export const dynamic = 'force-dynamic';
 
@@ -136,7 +139,7 @@ export async function GET() {
     // Include module_documents that have no matching module_sources row (INGESTED or DOWNLOADED so list isn't blank)
     try {
       const docOnly = await pool.query(
-        `SELECT md.id, md.module_code, md.label, md.sha256, am.module_name
+        `SELECT md.id, md.module_code, md.label, md.sha256, md.local_path, am.module_name
          FROM public.module_documents md
          LEFT JOIN public.assessment_modules am ON am.module_code = md.module_code
          WHERE md.status IN ('INGESTED', 'DOWNLOADED')
@@ -163,6 +166,7 @@ export async function GET() {
             sha256: doc.sha256,
             created_at: null,
             corpus_source_id: null,
+            local_path: doc.local_path ?? null,
             publisher: null,
             _from_document: true,
           });
@@ -232,6 +236,8 @@ export async function GET() {
 
     const sources = rows.map((r: Record<string, unknown>) => {
       let chunk_count = 0;
+      let file_exists: boolean | null = null;
+      let file_error: string | null = null;
       if (r._from_document && r.id) {
         chunk_count = chunkCountByKey[`doc:${String(r.id)}`] ?? 0;
       } else if (r.source_type === 'CORPUS_POINTER' && r.corpus_source_id) {
@@ -240,6 +246,23 @@ export async function GET() {
         chunk_count = chunkCountByKey[`ms:${String(r.module_code)}:${String(r.sha256)}`] ?? chunkCountByKey[`sha256:${String(r.sha256)}`] ?? 0;
       } else if (r.sha256) {
         chunk_count = chunkCountByKey[`sha256:${String(r.sha256)}`] ?? 0;
+      }
+      const storageRelpath = typeof r.storage_relpath === 'string' ? r.storage_relpath : null;
+      const localPath = typeof r.local_path === 'string' ? r.local_path : null;
+      const candidate = storageRelpath || localPath;
+      if (candidate) {
+        try {
+          const absPath = path.isAbsolute(candidate)
+            ? candidate
+            : resolveModulePath(candidate);
+          file_exists = existsSync(absPath);
+          if (!file_exists) {
+            file_error = 'File not found at expected location';
+          }
+        } catch (error) {
+          file_exists = false;
+          file_error = error instanceof Error ? error.message : 'Invalid storage path';
+        }
       }
       return {
         id: r.id,
@@ -250,9 +273,12 @@ export async function GET() {
         publisher: r.publisher ?? null,
         source_url: r.source_url,
         storage_relpath: r.storage_relpath,
+        local_path: r.local_path ?? null,
         sha256: r.sha256,
         created_at: r.created_at,
         chunk_count,
+        file_exists,
+        file_error,
         /** When source_type is CORPUS_POINTER, the CORPUS source_registry.id. Used by sources page to dedupe when showing "all". */
         corpus_source_id: r.corpus_source_id ?? null,
       };

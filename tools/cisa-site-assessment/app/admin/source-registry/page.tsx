@@ -24,6 +24,10 @@ interface Source {
   updated_at: string;
   /** Total chunks across corpus_documents linked to this source (CORPUS only). */
   chunk_count?: number;
+  /** Whether the file resolves to an existing path on disk. */
+  file_exists?: boolean | null;
+  /** File-resolution error message when file_exists is false/null. */
+  file_error?: string | null;
   /** True when loaded from RUNTIME.module_sources (Module Sources tab) */
   _isModuleSource?: boolean;
   _moduleCode?: string;
@@ -337,6 +341,8 @@ export default function SourceRegistryPage() {
           created_at: String(ms.created_at ?? ''),
           updated_at: String(ms.created_at ?? ''),
           chunk_count: typeof ms.chunk_count === 'number' ? ms.chunk_count : 0,
+          file_exists: typeof ms.file_exists === 'boolean' ? ms.file_exists : null,
+          file_error: typeof ms.file_error === 'string' ? ms.file_error : null,
           _isModuleSource: true as const,
           _moduleCode: moduleCode,
         };
@@ -400,6 +406,8 @@ export default function SourceRegistryPage() {
               created_at: String(ms.created_at ?? ''),
               updated_at: String(ms.created_at ?? ''),
               chunk_count: typeof ms.chunk_count === 'number' ? ms.chunk_count : 0,
+              file_exists: typeof ms.file_exists === 'boolean' ? ms.file_exists : null,
+              file_error: typeof ms.file_error === 'string' ? ms.file_error : null,
               _isModuleSource: true as const,
               _moduleCode: moduleCode,
               _corpus_source_id: ms.corpus_source_id != null ? String(ms.corpus_source_id) : null as string | null,
@@ -2118,16 +2126,18 @@ export default function SourceRegistryPage() {
                   <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
                     {source._isModuleSource && source._moduleCode ? (
                       <>
-                        <a
-                          href={`/api/admin/modules/${encodeURIComponent(source._moduleCode)}/sources/${encodeURIComponent(source.id)}/file`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="usa-button usa-button--outline"
-                          style={{ fontSize: '0.875rem', padding: '0.25rem 0.5rem', textDecoration: 'none' }}
-                          title="Open PDF"
-                        >
-                          View
-                        </a>
+                        {source.file_exists === true ? (
+                          <a
+                            href={`/api/admin/modules/${encodeURIComponent(source._moduleCode)}/sources/${encodeURIComponent(source.id)}/file`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="usa-button usa-button--outline"
+                            style={{ fontSize: '0.875rem', padding: '0.25rem 0.5rem', textDecoration: 'none' }}
+                            title="Open PDF"
+                          >
+                            View
+                          </a>
+                        ) : null}
                         <button
                           type="button"
                           className="usa-button usa-button--outline"
@@ -2159,7 +2169,7 @@ export default function SourceRegistryPage() {
                             {ingestLoadingSourceKey === source.source_key ? 'Ingesting…' : 'Ingest'}
                           </button>
                         )}
-                        {source.local_path ? (
+                        {source.local_path && source.file_exists === true ? (
                           <a
                             href={`/api/admin/source-registry/${encodeURIComponent(source.source_key)}/file`}
                             target="_blank"
