@@ -133,12 +133,25 @@ export default function AssessmentsListPage() {
       return;
     }
 
+    const deleteUrl = apiUrl(`/api/runtime/assessments/${assessmentId}`);
+
     try {
       setDeletingId(assessmentId);
-      const response = await fetch(apiUrl(`/api/runtime/assessments/${assessmentId}`), {
+      let response = await fetch(deleteUrl, {
         method: "DELETE",
         credentials: "same-origin",
       });
+
+      if (response.status === 405) {
+        response = await fetch(deleteUrl, {
+          method: "POST",
+          credentials: "same-origin",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ delete: true }),
+        });
+      }
 
       if (!response.ok) {
         throw new Error(await readApiErrorMessage(response));
