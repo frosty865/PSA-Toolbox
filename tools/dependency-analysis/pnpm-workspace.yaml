@@ -1,6 +1,5 @@
-# Removing a tool: delete its folder, remove it from tools-manifest.json, run `pnpm sync:manifest` / build,
-# and delete any line here that pointed at that tool (or `pnpm install` will fail).
+# Only this workspace (Next app + shared packages). Optional tools under tools/<id>/ are NOT workspace
+# members — deleting a tool never breaks `pnpm install` here.
 packages:
   - "apps/*"
   - "packages/*"
-  - "../cisa-site-assessment"

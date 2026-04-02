@@ -56,7 +56,9 @@ if (!fs.existsSync(wsFile)) {
 }
 
 if (errors > 0) {
-  console.error(`\n[verify-tool-paths] ${errors} error(s). Remove the tool from tools-manifest.json and pnpm-workspace.yaml, or restore the folder.`);
+  console.error(
+    `\n[verify-tool-paths] ${errors} error(s). Update tools-manifest.json, or fix pnpm-workspace.yaml paths under tools/dependency-analysis.`,
+  );
   process.exit(1);
 }
-console.log('[verify-tool-paths] OK — manifest paths and workspace packages exist.');
+console.log('[verify-tool-paths] OK — manifest tool paths and workspace entries exist.');

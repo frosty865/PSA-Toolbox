@@ -39,7 +39,7 @@ dotnet run --project .\launcher\PSA.Toolbox.Launcher\PSA.Toolbox.Launcher.csproj
 
 ## Remove or deprecate a tool
 
-Keep **`tools-manifest.json`** and [`tools/dependency-analysis/pnpm-workspace.yaml`](tools/dependency-analysis/pnpm-workspace.yaml) in sync with folders on disk (see [`docs/removing-a-tool.md`](docs/removing-a-tool.md)). From the repo root, `pnpm verify:tools` checks that manifest paths and workspace entries exist.
+Other tools under **`tools/`** are optional: they are **not** part of the `dependency-analysis` pnpm workspace, so removing a folder does not break the Next.js install/build. Update **`tools-manifest.json`** and run `pnpm sync:manifest` (see [`docs/removing-a-tool.md`](docs/removing-a-tool.md)). `pnpm verify:tools` checks manifest paths exist on disk.
 
 ## Remote
 

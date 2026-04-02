@@ -1,15 +1,14 @@
 # Removing or deprecating a tool
 
-The monorepo stays healthy if you treat the **manifest** and **pnpm workspace** as the source of truth and keep the Next shell **manifest-driven**.
+Optional tools under **`tools/<id>/`** are **not** pnpm workspace members of `tools/dependency-analysis`. Deleting a tool folder does not break `pnpm install` or `pnpm run build:web` there—only **`tools-manifest.json`** (and synced `apps/web/data/tools-manifest.json`) need to stay accurate for the landing UI.
 
 ## Checklist
 
-1. **`tools-manifest.json`** — Remove the tool’s entry (or never add deprecated tools). Run `pnpm sync:manifest` at the repo root, then commit `tools/dependency-analysis/apps/web/data/tools-manifest.json` when it changes.
-2. **`tools/dependency-analysis/pnpm-workspace.yaml`** — If the tool was listed here (e.g. `../cisa-site-assessment`), **remove that line**. A missing folder with a workspace entry will break `pnpm install`.
-3. **Next.js shell** — Landing links and `/t/[toolId]` use `tools-manifest.json` only; no per-tool IDs are hardcoded on the home page anymore.
-4. **Optional cleanup** — Remove `next.config.js` rewrites or `public/` assets that existed only for that tool (otherwise you may get 404s for old URLs, not build failures).
-5. **Verify** — From repo root: `pnpm verify:tools` (confirms manifest paths and workspace entries exist on disk).
+1. **`tools-manifest.json`** — Remove the tool’s entry. Run `pnpm sync:manifest` at the repo root, then commit `tools/dependency-analysis/apps/web/data/tools-manifest.json` when it changes.
+2. **Next.js shell** — Landing and `/t/[toolId]` are manifest-driven only.
+3. **Optional cleanup** — Remove `next.config.js` rewrites or `public/` assets that existed only for that tool if you want old URLs gone (404s, not build failures).
+4. **Verify** — From repo root: `pnpm verify:tools` (manifest paths on disk).
 
 ## What stays stable
 
-- **`tools/dependency-analysis/`** (the Next app) does not import other tools’ source as packages except via the workspace member above; removing a tool folder does not break TypeScript in the shell **if** the workspace line and manifest entry are removed.
+- **`tools/dependency-analysis/`** installs and builds **only** its own `apps/*` and `packages/*`. Other tools are separate checkouts; dev may start them side by side (see `scripts/dev.js`) if their folders exist.

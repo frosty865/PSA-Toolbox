@@ -7,5 +7,5 @@ $dep = Join-Path $repoRoot "tools\dependency-analysis"
 if (-not (Test-Path -LiteralPath $dep)) {
     Write-Error "Expected PSA Toolbox at $repoRoot (tools\dependency-analysis missing)."
 }
-Set-Location -LiteralPath $dep
-pnpm --filter psa-rebuild dev
+Set-Location -LiteralPath $here
+pnpm dev
