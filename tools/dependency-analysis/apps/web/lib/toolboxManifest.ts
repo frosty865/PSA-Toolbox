@@ -1,6 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 
+/** Synced from repo root by `scripts/sync-toolbox-manifest.cjs` before build; bundled at compile time. */
+import bundledToolboxManifest from '@/data/tools-manifest.json';
+
 export type ToolboxManifestTool = {
   id: string;
   displayName: string;
@@ -45,13 +48,23 @@ function getRepoRoot(): string {
 }
 
 export async function loadToolboxManifest(): Promise<ToolboxManifest | null> {
+  const env = process.env.PSA_TOOLBOX_ROOT?.trim();
+  if (env) {
+    try {
+      const p = path.join(path.resolve(env), 'tools-manifest.json');
+      const raw = await fs.promises.readFile(p, 'utf8');
+      return JSON.parse(raw) as ToolboxManifest;
+    } catch {
+      return null;
+    }
+  }
   try {
     const root = getRepoRoot();
     const p = path.join(root, 'tools-manifest.json');
     const raw = await fs.promises.readFile(p, 'utf8');
     return JSON.parse(raw) as ToolboxManifest;
   } catch {
-    return null;
+    return bundledToolboxManifest as ToolboxManifest;
   }
 }
 

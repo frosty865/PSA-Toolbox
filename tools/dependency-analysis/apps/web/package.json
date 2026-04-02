@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --webpack",
+    "dev": "node ../../scripts/sync-toolbox-manifest.cjs && next dev --webpack",
     "build": "next build",
     "build:field": "node scripts/build-field-static.cjs",
     "start": "next start",
