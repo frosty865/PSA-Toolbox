@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import { ensureRuntimePoolConnected } from '@/app/lib/db/runtime_client';
 import { assertTableOnOwnerPool } from '@/app/lib/db/pool_guard';
 import { createAssessmentBodySchema } from '@/app/lib/runtime/assessmentRequestSchema';
-import path from 'path';
-import { spawn } from 'child_process';
 
 export const runtime = "nodejs";
 export const dynamic = 'force-dynamic';
@@ -1021,38 +1019,6 @@ export async function POST(request: NextRequest) {
           }
         }
 
-        // Compose assessment universe (best-effort, don't fail on error)
-        try {
-          const modulesJson = JSON.stringify(modules || []);
-          const composeScript = path.join(process.cwd(), 'tools', 'runtime', 'compose_assessment_universe.py');
-          
-          await new Promise<void>((resolve) => {
-            const pythonProcess = spawn('python', [
-              composeScript,
-              assessment_id,
-              sector_code || 'null',
-              subsector_code || 'null',
-              modulesJson
-            ], { cwd: process.cwd(), stdio: 'pipe' });
-            
-            pythonProcess.on('close', (code: number) => {
-              if (code === 0) {
-                console.log('[API] Assessment universe composed successfully');
-              } else {
-                console.warn('[API] Warning from compose_assessment_universe');
-              }
-              resolve();
-            });
-            
-            pythonProcess.on('error', () => {
-              console.warn('[API] Could not compose assessment universe');
-              resolve();
-            });
-          });
-        } catch (composeError: unknown) {
-          console.warn('[API] Could not compose assessment universe:', composeError instanceof Error ? composeError.message : String(composeError));
-        }
-
         return NextResponse.json({
           ok: true,
           assessment_id,
@@ -1479,62 +1445,6 @@ export async function POST(request: NextRequest) {
         // Log but don't fail - module instances are optional
         console.warn('[API] Could not create module instances:', moduleInstanceError instanceof Error ? moduleInstanceError.message : String(moduleInstanceError));
       }
-    }
-
-    // Compose assessment universe (baseline core + modules)
-    try {
-      // Import and call compose function directly
-      
-      const modulesArray = modules || [];
-      const modulesJson = JSON.stringify(modulesArray);
-      const sectorCode = sector_id || null;
-      const subsectorCode = subsector_id || null;
-      
-      // Call compose_assessment_universe.py as subprocess
-      const composeScript = path.join(process.cwd(), 'tools', 'runtime', 'compose_assessment_universe.py');
-      
-      await new Promise<void>((resolve) => {
-        const pythonProcess = spawn('python', [
-          composeScript,
-          assessmentId,
-          sectorCode || 'null',
-          subsectorCode || 'null',
-          modulesJson
-        ], {
-          cwd: process.cwd(),
-          stdio: 'pipe'
-        });
-        
-        let stderr = '';
-        
-        pythonProcess.stdout.on('data', () => {
-          // stdout discarded
-        });
-        
-        pythonProcess.stderr.on('data', (data: Buffer) => {
-          stderr += data.toString();
-        });
-        
-        pythonProcess.on('close', (code: number) => {
-          if (code === 0) {
-            console.log('[API] Assessment universe composed successfully');
-            resolve();
-          } else {
-            console.warn('[API] Warning from compose_assessment_universe:', stderr);
-            // Don't fail - universe composition is optional for now
-            resolve();
-          }
-        });
-        
-        pythonProcess.on('error', (err: Error) => {
-          console.warn('[API] Could not compose assessment universe:', err.message);
-          // Don't fail - universe composition is optional for now
-          resolve();
-        });
-      });
-    } catch (composeError: unknown) {
-      // Log but don't fail - universe composition is optional for now
-      console.warn('[API] Could not compose assessment universe:', composeError instanceof Error ? composeError.message : String(composeError));
     }
 
     return NextResponse.json({

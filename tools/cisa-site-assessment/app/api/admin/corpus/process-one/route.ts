@@ -1,14 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
-import { spawn } from "child_process";
-import path from "path";
 import { getCorpusPoolForAdmin } from "@/app/lib/db/corpus_client";
+import { ingestDocumentFromFile } from "@/app/lib/sourceRegistry/ingestion";
 
 export const dynamic = "force-dynamic";
 
 /**
  * POST /api/admin/corpus/process-one
  * Body: { source_registry_id: string }
- * Runs the corpus ingestion Python script for this one source (creates corpus_document + chunks).
+ * Runs the corpus ingestion path for this one source (creates corpus_document + chunks).
  */
 export async function POST(request: NextRequest) {
   try {
@@ -43,44 +42,34 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+    const ingestionResult = await ingestDocumentFromFile(
+      pdfPath,
+      row.publisher || "",
+      (row.title || row.source_key || "document").slice(0, 200),
+      null,
+      "BASELINE_AUTHORITY",
+      source_registry_id
+    );
 
-    const projectRoot = process.cwd();
-    const pythonScript = path.resolve(projectRoot, "tools", "corpus_ingest_pdf.py");
-    const { existsSync } = await import("fs");
-    if (!existsSync(pythonScript)) {
+    if (!ingestionResult.success) {
       return NextResponse.json(
-        { error: "Python ingestion script not found: tools/corpus_ingest_pdf.py" },
+        {
+          error: "Ingestion failed",
+          message: ingestionResult.error || "Unknown error",
+        },
         { status: 500 }
       );
     }
-    const pythonExe = process.env.PYTHON_EXECUTABLE || "python";
 
-    const result = await new Promise<{ ok: boolean; stderr: string }>((resolve) => {
-      const proc = spawn(pythonExe, [
-        pythonScript,
-        "--pdf_path", pdfPath,
-        "--source_registry_id", source_registry_id,
-        "--ingestion-stream", "GENERAL",
-        "--source_name", "",
-        "--title", (row.title || row.source_key || "document").slice(0, 200),
-        "--authority_scope", "BASELINE_AUTHORITY",
-      ], { cwd: projectRoot });
-
-      let stderr = "";
-      proc.stderr.on("data", (d) => { stderr += d.toString(); });
-      proc.on("close", (code) => {
-        resolve({ ok: code === 0, stderr });
-      });
+    return NextResponse.json({
+      ok: true,
+      message: "Processed",
+      ingestion: {
+        documentId: ingestionResult.documentId,
+        docSha256: ingestionResult.docSha256,
+        chunksCount: ingestionResult.chunksCount,
+      },
     });
-
-    if (!result.ok) {
-      return NextResponse.json(
-        { error: "Ingestion script failed", message: result.stderr.slice(-500) },
-        { status: 500 }
-      );
-    }
-
-    return NextResponse.json({ ok: true, message: "Processed" });
   } catch (e) {
     const msg = e instanceof Error ? e.message : String(e);
     return NextResponse.json({ error: "process-one failed", message: msg }, { status: 500 });

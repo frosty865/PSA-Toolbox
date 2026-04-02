@@ -1,4 +1,3 @@
-import { spawn } from 'child_process';
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import * as os from 'os';
@@ -7,6 +6,7 @@ import { getCorpusPoolForAdmin } from '@/app/lib/db/corpus_client';
 import { getCorpusSourcesRoot } from '@/app/lib/storage/config';
 import { assertSourceRegistryId } from '@/app/lib/sourceRegistry/guards';
 import { tierFromPublisher } from '@/app/lib/sourceRegistry/tierFromPublisher';
+import { ingestCorpusPdfBufferToDb, type CorpusPdfIngestResult } from '@/app/lib/corpus/corpusPdfIngest';
 
 export interface IngestionResult {
   success: boolean;
@@ -91,39 +91,8 @@ async function downloadFile(url: string, maxSizeMB: number = 100): Promise<strin
 }
 
 /**
- * Find Python executable
- * Uses PSA System venv (processor service) or falls back to system Python
- */
-function findPythonExecutable(): string | null {
-  // Sync loader for optional python venv (eslint-disable: no dynamic import equivalent for sync return)
-  const { findPythonExecutable: findPSAPython } = require('@/app/lib/python/venv') as { findPythonExecutable: (name: string) => string | null }; // eslint-disable-line @typescript-eslint/no-require-imports
-  return findPSAPython('processor');
-}
-
-/**
- * Resolve path to corpus_ingest_pdf.py so ingestion works from repo root or psa_rebuild.
- * Tries cwd/tools then cwd/psa_rebuild/tools. Returns first path that exists.
- */
-async function resolveIngestScriptPath(): Promise<string> {
-  const cwd = process.cwd();
-  const candidates = [
-    path.join(cwd, 'tools', 'corpus_ingest_pdf.py'),
-    path.join(cwd, 'psa_rebuild', 'tools', 'corpus_ingest_pdf.py'),
-  ];
-  for (const p of candidates) {
-    try {
-      await fs.access(p);
-      return p;
-    } catch {
-      continue;
-    }
-  }
-  return candidates[0];
-}
-
-/**
- * Ingest a document from a local file path using Python script
- * Exported for use in upload endpoint
+ * Ingest a document from a local file path using Node corpus ingestion.
+ * Exported for use in upload endpoint.
  */
 export async function ingestDocumentFromFile(
   filePath: string,
@@ -133,167 +102,37 @@ export async function ingestDocumentFromFile(
   authorityScope: string = 'BASELINE_AUTHORITY',
   sourceRegistryId?: string | null
 ): Promise<IngestionResult> {
-  const scriptPath = await resolveIngestScriptPath();
-  const scriptCwd = path.dirname(path.dirname(scriptPath));
-
-  try {
-    await fs.access(scriptPath);
-  } catch {
+  if (!filePath.toLowerCase().endsWith('.pdf')) {
     return {
       success: false,
-      error: `Ingestion script not found at ${scriptPath}. Run from psa_rebuild or ensure tools/corpus_ingest_pdf.py exists.`,
+      error: 'Only PDF files are supported for ingestion',
     };
   }
 
-  return new Promise((resolve) => {
-    // Check if file is PDF (script only handles PDFs)
-    if (!filePath.toLowerCase().endsWith('.pdf')) {
-      resolve({
-        success: false,
-        error: 'Only PDF files are supported for ingestion',
-      });
-      return;
-    }
-    
-    // GUARDRAIL: Refuse to create corpus_documents without source_registry_id
-    if (!sourceRegistryId || sourceRegistryId.trim() === '') {
-      resolve({
-        success: false,
-        error: 'Refusing to create corpus_documents without source_registry_id. All documents must be linked to Source Registry.',
-      });
-      return;
-    }
-    
-    // Build arguments array - each element becomes a separate argument
-    // Important: Don't quote or escape - spawn handles this automatically
-    const args = [
-      scriptPath,
-      '--pdf_path', filePath,
-      '--source_name', sourceName,
-      '--title', title, // Title as single string argument (spaces are fine)
-      '--authority_scope', authorityScope,
-      '--source_registry_id', sourceRegistryId, // Always required now
-    ];
+  if (!sourceRegistryId || sourceRegistryId.trim() === '') {
+    return {
+      success: false,
+      error: 'Refusing to create corpus_documents without source_registry_id. All documents must be linked to Source Registry.',
+    };
+  }
 
-    console.log(`[Ingestion] Passing source_registry_id: ${sourceRegistryId}`);
-
-    if (publishedAt) {
-      // Ensure date is in ISO format (YYYY-MM-DD)
-      let isoDate: string | null = null;
-      
-      if (typeof publishedAt === 'string') {
-        // Check if already in ISO format
-        if (publishedAt.match(/^\d{4}-\d{2}-\d{2}$/)) {
-          isoDate = publishedAt;
-        } else {
-          // Try to parse and reformat
-          try {
-            const date = new Date(publishedAt);
-            if (!isNaN(date.getTime())) {
-              isoDate = date.toISOString().split('T')[0]; // YYYY-MM-DD
-            }
-          } catch {
-            console.warn(`[Ingestion] Failed to parse date: ${publishedAt}`);
-          }
-        }
-      }
-      
-      if (isoDate) {
-        args.push('--published_at', isoDate);
-      } else {
-        console.warn(`[Ingestion] Invalid or missing date format: ${publishedAt}, skipping --published_at`);
-      }
-    }
-
-    // Find Python executable
-    const pythonCmd = findPythonExecutable();
-    if (!pythonCmd) {
-      resolve({
-        success: false,
-        error: 'Python executable not found. Please ensure Python is installed and available in PATH, or use a virtual environment.',
-      });
-      return;
-    }
-    
-    // On Windows with shell: true, we need to be careful with arguments
-    // Use shell: false to ensure proper argument handling, or properly escape if shell: true
-    const useShell = false; // Don't use shell to avoid argument parsing issues
-    
-    const pythonProcess = spawn(pythonCmd, args, {
-      cwd: scriptCwd,
-      stdio: 'pipe',
-      env: { ...process.env },
-      shell: useShell,
+  try {
+    const buffer = await fs.readFile(filePath);
+    const result = await ingestCorpusPdfBufferToDb({
+      buffer,
+      filePath,
+      sourceRegistryId,
+      titleHint: title,
+      publisherHint: sourceName,
+      pool: getCorpusPoolForAdmin(),
     });
-
-    let stdout = '';
-    let stderr = '';
-
-    pythonProcess.stdout.on('data', (data: Buffer) => {
-      stdout += data.toString();
-    });
-
-    pythonProcess.stderr.on('data', (data: Buffer) => {
-      stderr += data.toString();
-    });
-
-    pythonProcess.on('close', (code: number) => {
-      if (code === 0) {
-        try {
-          // Parse JSON output from script
-          // The script outputs JSON followed by success messages
-          const lines = stdout.split('\n');
-          let jsonLine: string | undefined;
-          
-          // Find the first line that looks like JSON (starts with {)
-          for (const line of lines) {
-            const trimmed = line.trim();
-            if (trimmed.startsWith('{') && trimmed.endsWith('}')) {
-              jsonLine = trimmed;
-              break;
-            }
-          }
-          
-          if (jsonLine) {
-            const result = JSON.parse(jsonLine);
-            const pubDate = result.publication_date ?? null;
-            resolve({
-              success: true,
-              documentId: result.document_id,
-              docSha256: result.content_hash,
-              chunksCount: result.chunks_count,
-              publicationDate: typeof pubDate === 'string' ? pubDate : null,
-            });
-          } else {
-            // If no JSON found, check if there's useful info in stdout
-            const hasSuccess = stdout.toLowerCase().includes('document ingested') || 
-                              stdout.toLowerCase().includes('success');
-            resolve({
-              success: hasSuccess,
-              error: hasSuccess ? undefined : 'Could not parse ingestion result from script output',
-            });
-          }
-        } catch (parseError) {
-          resolve({
-            success: false,
-            error: `Failed to parse ingestion output: ${parseError instanceof Error ? parseError.message : 'Unknown error'}. Output: ${stdout.substring(0, 500)}`,
-          });
-        }
-      } else {
-        resolve({
-          success: false,
-          error: `Ingestion script failed with exit code ${code}. ${stderr || stdout}`,
-        });
-      }
-    });
-
-    pythonProcess.on('error', (err: Error) => {
-      resolve({
-        success: false,
-        error: `Failed to spawn ingestion process: ${err.message}`,
-      });
-    });
-  });
+    return result as CorpusPdfIngestResult;
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown ingestion error',
+    };
+  }
 }
 
 /**
@@ -582,8 +421,8 @@ export async function ingestSourceRegistryId(
   if (srRecord.local_path && srRecord.local_path !== filePath) {
     console.warn(`[Ingestion] File path mismatch: SR has ${srRecord.local_path}, provided ${filePath}`);
   }
-  
-  // Ingest using the existing function
+
+  // Ingest using the Node corpus path
   return await ingestDocumentFromFile(
     filePath,
     sourceName,
