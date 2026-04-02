@@ -14,7 +14,7 @@
     "guard:no-client-storage-imports": "node scripts/guards/verifyNoClientImportsStorageConfig.js",
     "guard:ofc-extraction": "node scripts/guards/verifyNoDirectOFCExtraction.js",
     "guard:ofc_doctrine": "node scripts/guards/verifyNoAutoMinedOfcRefs.js",
-    "guard:ofc-text": "node scripts/get_python_path.js scripts/guards/verify_ofc_text_rules.py || echo [WARN] OFC text lint guard failed (non-blocking)",
+    "guard:ofc-text": "node scripts/guards/verify_ofc_text_rules.js",
     "guard:intake": "node scripts/guards/verifyNoLegacyIntakeRefs.js",
     "guard:db-ownership": "node scripts/guards/verifyDbOwnershipMatchesReality.js",
     "guard:legacy-intent-ui": "node scripts/guards/verifyNoLegacyIntentUI.js .",

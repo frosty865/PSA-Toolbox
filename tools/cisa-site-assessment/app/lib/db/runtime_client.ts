@@ -77,15 +77,6 @@ async function connectWithFallback(
       };
       const pool = new Pool(applyNodeTls(poolConfig));
 
-      // Set statement timeout for all connections in pool
-      pool.on('connect', async (client) => {
-        try {
-          await client.query(`SET statement_timeout TO '${statementTimeoutMs}ms'`);
-        } catch {
-          // Ignore errors setting timeout on individual connections
-        }
-      });
-
       console.log(`runtime_db_connected host=${host} port=${port} db=${info.db} user=${info.user}`);
 
       return { pool, port };
@@ -252,15 +243,6 @@ export function getRuntimePool(): Pool {
           connectionTimeoutMillis: connectTimeoutMs,
         };
         runtimePool = new Pool(applyNodeTls(poolConfig));
-
-        // Set statement timeout for all connections
-        runtimePool.on('connect', async (client) => {
-          try {
-            await client.query(`SET statement_timeout TO '${statementTimeoutMs}ms'`);
-          } catch {
-            // Ignore errors setting timeout
-          }
-        });
 
         runtimePool.on('error', (err) => {
           console.error('[Runtime DB] Unexpected database pool error:', err);
