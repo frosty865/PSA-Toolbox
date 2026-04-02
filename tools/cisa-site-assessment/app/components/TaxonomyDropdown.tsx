@@ -26,7 +26,7 @@ export default function TaxonomyDropdown() {
     <div className="nav-dropdown" data-dropdown="taxonomy">
       <button
         onClick={() => setShowTaxonomyDropdown(!showTaxonomyDropdown)}
-        className={`nav-dropdown-button ${(pathname === '/reference/sectors' || pathname === '/reference/disciplines' || pathname === '/coverage' || pathname?.startsWith('/reference/question-focus')) ? 'active' : ''}`}
+        className={`nav-dropdown-button ${(pathname === '/reference/sectors' || pathname === '/reference/disciplines' || pathname === '/reference/baseline-questions' || pathname?.startsWith('/reference/baseline-questions/') || pathname?.startsWith('/reference/question-focus')) ? 'active' : ''}`}
         style={{ fontSize: '0.875rem', opacity: 0.8 }}
       >
         Reference
@@ -38,8 +38,8 @@ export default function TaxonomyDropdown() {
       {showTaxonomyDropdown && (
         <div className="nav-dropdown-menu">
           <Link
-            href="/coverage"
-            className={`nav-dropdown-item ${pathname === '/coverage' ? 'active' : ''}`}
+            href="/reference/baseline-questions/"
+            className={`nav-dropdown-item ${pathname === '/reference/baseline-questions' || pathname?.startsWith('/reference/baseline-questions/') ? 'active' : ''}`}
             onClick={(e) => { e.stopPropagation(); setShowTaxonomyDropdown(false); }}
           >
             Coverage

@@ -74,7 +74,7 @@ export default function HomePage() {
           </div>
           <div style={{ marginTop: 'auto' }}>
             <Link 
-              href="/coverage" 
+              href="/reference/baseline-questions/"
               className="btn btn-primary"
               style={{ display: 'inline-block', textDecoration: 'none' }}
             >

@@ -1,6 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
-  "installCommand": "npm ci",
-  "buildCommand": "npm run build:vercel"
+  "installCommand": "pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm run build:vercel",
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/cisa-site-assessment/",
+      "permanent": false
+    }
+  ]
 }
