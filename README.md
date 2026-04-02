@@ -45,6 +45,8 @@ Keep **`tools-manifest.json`** and [`tools/dependency-analysis/pnpm-workspace.ya
 
 [github.com/frosty865/PSA-Toolbox](https://github.com/frosty865/PSA-Toolbox)
 
+**Vercel:** The repo-root `package.json` lists `next` in `devDependencies` only so the platform can detect the Next.js framework when the project root is the Git repo (the real app still builds under `tools/dependency-analysis`). Install runs at the repo root and in that folder. Optionally set the Vercel project **Root Directory** to `tools/dependency-analysis` and drop the root `next` stub later if you prefer.
+
 ## Local cleanup (optional)
 
 - **Stale path:** If `tools/infrastructure-dependency-assessment/` still exists next to `tools/dependency-analysis/`, it is obsolete — stop dev servers/editors using it, then delete that folder.
