@@ -445,11 +445,19 @@ export default function SectorsPage() {
   }
 
   if (error) {
+    const needsRuntimeUrl = error.includes('RUNTIME_DATABASE_URL')
     return (
       <section className="section active">
         <div className="alert alert-danger">
           <h2>Error Loading Sectors</h2>
-          <p>{error}</p>
+          <p style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>{error}</p>
+          {needsRuntimeUrl ? (
+            <p style={{ marginTop: '1rem', fontSize: 'var(--font-size-sm)', lineHeight: 1.5 }}>
+              <strong>Deployed without a database URL:</strong> set <code>RUNTIME_DATABASE_URL</code> (and{' '}
+              <code>CORPUS_DATABASE_URL</code> where needed) on this app’s Vercel project, then redeploy. See{' '}
+              <strong>README-TOOLBOX.md</strong> → “Required environment variables on this (CISA) Vercel project”.
+            </p>
+          ) : null}
         </div>
       </section>
     )
