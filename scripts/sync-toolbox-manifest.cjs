@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 /**
- * Copy repo-root tools-manifest.json into apps/web/data for Next import (Vercel + local build).
+ * Copy repo-root tools-manifest.json into the Next app (Vercel + local build).
+ * Run from PSA Toolbox repo root only.
  */
 const fs = require('fs');
 const path = require('path');
 
-const toolRoot = path.resolve(__dirname, '..');
-const src = path.join(toolRoot, '..', '..', 'tools-manifest.json');
-const destDir = path.join(toolRoot, 'apps', 'web', 'data');
+const repoRoot = path.resolve(__dirname, '..');
+const src = path.join(repoRoot, 'tools-manifest.json');
+const destDir = path.join(repoRoot, 'tools', 'dependency-analysis', 'apps', 'web', 'data');
 const dest = path.join(destDir, 'tools-manifest.json');
 
 try {

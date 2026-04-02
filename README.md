@@ -9,7 +9,7 @@ Monorepo umbrella for PSA tools: **one unified web app** (Next.js in [`tools/dep
 | Hotel Analysis | `/hotel-analysis/` | [`tools/hotel-analysis/`](tools/hotel-analysis/) |
 | SAFE 3.0 | `/safe-3-0/` | [`tools/safe-3.0/`](tools/safe-3.0/) |
 
-**Dev:** one command — `pnpm dev` from `tools/dependency-analysis`.
+**Dev:** from the repo root (`D:\PSA Toolbox`), run `pnpm dev` (or `pnpm install:web` then `pnpm dev`). Same commands work from `tools/dependency-analysis` if you prefer.
 
 ## Root layout
 

@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-/** Synced from repo root by `scripts/sync-toolbox-manifest.cjs` before build; bundled at compile time. */
+/** Synced from repo root by root `scripts/sync-toolbox-manifest.cjs` before build; bundled at compile time. */
 import bundledToolboxManifest from '@/data/tools-manifest.json';
 
 export type ToolboxManifestTool = {

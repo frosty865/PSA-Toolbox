@@ -10,7 +10,7 @@ const fs = require('fs');
 const { spawnSync } = require('child_process');
 
 const root = path.resolve(__dirname, '..');
-require('./sync-toolbox-manifest.cjs');
+require(path.join(__dirname, '../../../scripts/sync-toolbox-manifest.cjs'));
 const buildTmp = path.join(root, '.build-tmp');
 try {
   fs.mkdirSync(buildTmp, { recursive: true });
