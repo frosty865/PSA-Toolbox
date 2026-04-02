@@ -5,6 +5,14 @@ import { columnExists, tableExists } from "@/app/lib/db/table_exists";
 export const runtime = "nodejs";
 export const dynamic = 'force-dynamic';
 
+/** Align with client payloads that send question_canon_id / question_template_id instead of question_code. */
+function coalesceQuestionCode(item: Record<string, unknown>): string | null {
+  const raw =
+    item.question_code ?? item.question_canon_id ?? item.question_template_id;
+  if (typeof raw === "string" && raw.trim().length > 0) return raw.trim();
+  return null;
+}
+
 export async function GET(
   _: Request,
   { params }: { params: Promise<{ assessmentId: string }> }
@@ -120,9 +128,9 @@ export async function PUT(
     const pool = getRuntimePool();
 
     const body = await req.json();
-    const items: Array<{ question_code: string; response_enum: string; detail?: unknown }> = body?.items ?? [];
+    const itemsRaw: unknown[] = Array.isArray(body?.items) ? body.items : [];
 
-    if (!Array.isArray(items) || items.length === 0) {
+    if (itemsRaw.length === 0) {
       return NextResponse.json({ error: "No items provided" }, { status: 400 });
     }
 
@@ -145,8 +153,36 @@ export async function PUT(
         );
       }
 
-      // Batch insert/update using a single query with VALUES clause (much faster)
-      const validItems = items.filter(it => it?.question_code && it?.response_enum);
+      const normalized = itemsRaw
+        .map((raw) => (raw && typeof raw === "object" ? (raw as Record<string, unknown>) : null))
+        .filter((row): row is Record<string, unknown> => row !== null)
+        .map((row) => {
+          const question_code = coalesceQuestionCode(row);
+          const response_enum = row.response_enum;
+          if (!question_code || typeof response_enum !== "string" || !response_enum.trim()) {
+            return null;
+          }
+          return {
+            question_code,
+            response_enum: response_enum.trim(),
+            detail: row.detail,
+          };
+        })
+        .filter((row): row is { question_code: string; response_enum: string; detail: unknown } => row !== null);
+
+      if (normalized.length === 0) {
+        await client.query("ROLLBACK");
+        return NextResponse.json(
+          {
+            error: "No valid items",
+            message:
+              "Each item needs response_enum and a question id (question_code, question_canon_id, or question_template_id).",
+          },
+          { status: 400 }
+        );
+      }
+
+      const validItems = normalized;
       if (validItems.length > 0) {
         // Build VALUES clause for batch insert
         const values = validItems.map((it, idx) => {

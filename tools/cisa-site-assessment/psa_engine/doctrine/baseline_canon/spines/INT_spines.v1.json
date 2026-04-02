@@ -3,7 +3,7 @@
     "canon_id": "INT-001",
     "discipline_code": "INT",
     "subtype_code": "INT_ACCESS_RESTRICTED_AREAS",
-    "question_text": "Are restricted areas controlled at their entry points?",
+    "question_text": "Are restricted areas entered only through entry points where access rules are enforced?",
     "response_enum": ["YES", "NO", "N_A"]
   }
 ]

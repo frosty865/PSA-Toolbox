@@ -6,7 +6,7 @@
       "canon_id": "BASE-ACS-001",
       "discipline_code": "ACS",
       "subtype_code": null,
-      "question_text": "Is entry controlled at designated entry points for areas requiring access control?",
+      "question_text": "For restricted areas, is entry limited to designated entry points where access control is enforced—not through informal routes, propped doors, or uncontrolled exits used as entrances?",
       "response_enum": [
         "YES",
         "NO",
@@ -39,7 +39,7 @@
       "canon_id": "BASE-CPTED-001",
       "discipline_code": "CPTED",
       "subtype_code": null,
-      "question_text": "Are site layout and environmental design decisions used to influence access, visibility, and territorial control for areas of concern?",
+      "question_text": "Are site layout and environmental design decisions used to influence access, visibility, and territorial reinforcement for areas prioritized for security?",
       "response_enum": [
         "YES",
         "NO",
@@ -50,7 +50,7 @@
       "canon_id": "BASE-CPTED-002",
       "discipline_code": "CPTED",
       "subtype_code": null,
-      "question_text": "Are areas of concern evaluated for visibility and natural surveillance considerations as part of security decision-making?",
+      "question_text": "Are those priority areas evaluated for visibility and natural surveillance when making security decisions?",
       "response_enum": [
         "YES",
         "NO",
@@ -83,7 +83,7 @@
       "canon_id": "BASE-EMR-001",
       "discipline_code": "EMR",
       "subtype_code": null,
-      "question_text": "Is there a defined emergency management capability for the facility?",
+      "question_text": "Is emergency management for the facility documented (for example: roles, incident coordination, or recovery planning)?",
       "response_enum": [
         "YES",
         "NO",
@@ -94,7 +94,7 @@
       "canon_id": "BASE-EMR-002",
       "discipline_code": "EMR",
       "subtype_code": null,
-      "question_text": "Is continuity of operations addressed for disruptions that could affect the facility?",
+      "question_text": "Is continuity of operations—maintaining critical functions during disruptions—addressed for scenarios that could affect the facility?",
       "response_enum": [
         "YES",
         "NO",
@@ -105,7 +105,7 @@
       "canon_id": "BASE-FAC-001",
       "discipline_code": "FAC",
       "subtype_code": null,
-      "question_text": "Are critical building openings or access points identified for physical hardening decisions where protection is required?",
+      "question_text": "Are critical doors, windows, and other openings identified when deciding where physical protection or hardening is required?",
       "response_enum": [
         "YES",
         "NO",
@@ -116,7 +116,7 @@
       "canon_id": "BASE-IDS-001",
       "discipline_code": "IDS",
       "subtype_code": null,
-      "question_text": "Are intrusion events detected and signaled at the site?",
+      "question_text": "Are unauthorized intrusion attempts detected and alarmed or reported to monitoring staff at the site?",
       "response_enum": [
         "YES",
         "NO",
@@ -127,7 +127,7 @@
       "canon_id": "INT-001",
       "discipline_code": "INT",
       "subtype_code": "INT_ACCESS_RESTRICTED_AREAS",
-      "question_text": "Are restricted areas controlled at their entry points?",
+      "question_text": "Are restricted areas entered only through entry points where access rules are enforced?",
       "response_enum": [
         "YES",
         "NO",
@@ -138,7 +138,7 @@
       "canon_id": "BASE-ISC-001",
       "discipline_code": "ISC",
       "subtype_code": null,
-      "question_text": "Are external coordination points identified for security or emergency support?",
+      "question_text": "Are external contacts or agencies identified for security and emergency coordination (for example: law enforcement, fire, or mutual aid)?",
       "response_enum": [
         "YES",
         "NO",
@@ -248,7 +248,7 @@
       "canon_id": "BASE-VSS-001",
       "discipline_code": "VSS",
       "subtype_code": "VSS_EXTERIOR_CAMERAS",
-      "question_text": "Are exterior areas requiring observation covered by cameras?",
+      "question_text": "Do cameras cover exterior areas where video monitoring is needed for security?",
       "response_enum": [
         "YES",
         "NO",
@@ -259,7 +259,7 @@
       "canon_id": "BASE-VSS-002",
       "discipline_code": "VSS",
       "subtype_code": "VSS_INTERIOR_CAMERAS",
-      "question_text": "Are interior areas requiring observation covered by cameras?",
+      "question_text": "Do cameras cover interior areas where video monitoring is needed for security?",
       "response_enum": [
         "YES",
         "NO",
@@ -270,7 +270,7 @@
       "canon_id": "BASE-VSS-003",
       "discipline_code": "VSS",
       "subtype_code": "VSS_RECORDING_STORAGE_NVR_DVR",
-      "question_text": "Is video recorded for cameras covering areas requiring observation?",
+      "question_text": "Is video recorded from cameras that cover areas monitored for security?",
       "response_enum": [
         "YES",
         "NO",

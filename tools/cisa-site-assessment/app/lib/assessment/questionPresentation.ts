@@ -26,7 +26,7 @@ export function shouldRenderSpineAsQuestion(
     return true;
   }
 
-  // If discipline uses tech capability selector, hide subtype spines
+  // If discipline uses tech capability selector, hide subtype spines (shown as selector checkboxes)
   if (isTechSelectorDiscipline(discipline_code)) {
     return false;
   }

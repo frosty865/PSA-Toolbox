@@ -12,7 +12,7 @@
  */
 export const TECH_SELECTOR_DISCIPLINES = new Set<string>([
   'ACS',  // Access Control Systems
-  'VSS',  // Video Surveillance Systems
+  // VSS: not selector — multiple baseline spines (exterior / interior / recording) must not share one mega-list
   'IDS',  // Intrusion Detection Systems
   'COM',  // Communications
 ]);

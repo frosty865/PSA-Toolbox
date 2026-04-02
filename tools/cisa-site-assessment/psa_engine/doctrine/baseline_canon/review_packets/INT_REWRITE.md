@@ -7,7 +7,7 @@ Count: 1
 
 **Question text**
 
-Are restricted areas controlled at their entry points?
+Are restricted areas entered only through entry points where access rules are enforced?
 
 **Analyzer notes**
 

@@ -210,20 +210,32 @@ export default function SubtypeQuestionBlock({
     }
   }, [normalizedSpineResponse, storageKey]);
 
-  // Filter depth-2 questions based on selected tags
+  const checklist = spineQuestion.checklist;
+
+  // Filter depth-2 questions based on selected tags (when tags exist); otherwise show all follow-ons for YES
   const visibleDepth2Questions = useMemo(() => {
-    if (normalizedSpineResponse !== 'YES' || selectedTags.length === 0) {
+    if (normalizedSpineResponse !== 'YES' || depth2Questions.length === 0) {
+      return [];
+    }
+
+    const anyQuestionHasTags = depth2Questions.some(
+      (q) => Array.isArray(q.depth2_tags) && q.depth2_tags.length > 0
+    );
+    const hasChecklist = Boolean(checklist && checklist.items.length > 0);
+
+    if (!hasChecklist || !anyQuestionHasTags) {
+      return depth2Questions;
+    }
+
+    if (selectedTags.length === 0) {
       return [];
     }
 
     return depth2Questions.filter((q) => {
       const questionTags = q.depth2_tags || [];
-      // Question is visible if intersection of selectedTags and questionTags is non-empty
-      return questionTags.some(tag => selectedTags.includes(tag));
+      return questionTags.some((tag) => selectedTags.includes(tag));
     });
-  }, [depth2Questions, selectedTags, normalizedSpineResponse]);
-
-  const checklist = spineQuestion.checklist;
+  }, [depth2Questions, selectedTags, normalizedSpineResponse, checklist]);
   const _showChecklist = normalizedSpineResponse === 'YES' && checklist && checklist.items.length > 0;
   void _showChecklist;
   const checklistItemsCount = checklist?.items?.length || 0;

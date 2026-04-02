@@ -142,9 +142,9 @@ REWRITE_TEMPLATES: Dict[str, str] = {
     "IDS_SYSTEM_RELIABILITY_TAMPER": "Are intrusion detection devices and circuits monitored for tamper conditions at the monitoring point?",
     
     # VSS (Video Surveillance) - EXACTLY 3 baseline spines (all others are depth)
-    "VSS_EXTERIOR_CAMERAS": "Are exterior areas requiring observation monitored using video coverage at the site?",
-    "VSS_INTERIOR_CAMERAS": "Are interior areas requiring observation monitored using video coverage at the site?",
-    "VSS_RECORDING_STORAGE_NVR_DVR": "Are video recordings recorded for areas requiring observation at the site?",
+    "VSS_EXTERIOR_CAMERAS": "Do cameras cover exterior areas where video monitoring is needed for security?",
+    "VSS_INTERIOR_CAMERAS": "Do cameras cover interior areas where video monitoring is needed for security?",
+    "VSS_RECORDING_STORAGE_NVR_DVR": "Is video recorded from cameras that cover areas monitored for security?",
     
     # PER (Perimeter) - boundary-anchored control assertions (baseline spine candidates)
     "PER_BOLLARDS_BARRIERS": "Are vehicle approach points or vulnerable perimeter segments identified and controlled using vehicle-stopping or vehicle-channeling measures?",
@@ -159,7 +159,7 @@ REWRITE_TEMPLATES: Dict[str, str] = {
     "PER_VEHICLE_ACCESS_CONTROL_POINTS": "Are vehicle access points identified and controlled at the site perimeter?",
     
     # INT (Interior) - boundary-anchored control assertions (baseline spine candidates, SYSTEMS only)
-    "INT_ACCESS_RESTRICTED_AREAS": "Are restricted areas controlled at their entry points?",
+    "INT_ACCESS_RESTRICTED_AREAS": "Are restricted areas entered only through entry points where access rules are enforced?",
     "INT_HARD_INTERIOR_BARRIERS": "Are interior barriers controlled to restrict movement between areas?",
     "INT_INTERIOR_DOORS": "Are interior doors controlled to restrict movement between areas?",
     "INT_INTERIOR_LIGHTING": "Is interior lighting controlled to support observation in restricted areas?",

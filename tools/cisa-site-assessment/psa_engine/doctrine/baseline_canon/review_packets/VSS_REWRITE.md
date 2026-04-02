@@ -7,7 +7,7 @@ Count: 3
 
 **Question text**
 
-Are exterior areas requiring observation monitored using video coverage at the site?
+Do cameras cover exterior areas where video monitoring is needed for security?
 
 **Analyzer notes**
 
@@ -27,7 +27,7 @@ Template available for rewrite
 
 **Question text**
 
-Are interior areas requiring observation monitored using video coverage at the site?
+Do cameras cover interior areas where video monitoring is needed for security?
 
 **Analyzer notes**
 
@@ -47,7 +47,7 @@ Template available for rewrite
 
 **Question text**
 
-Are video recordings recorded for areas requiring observation at the site?
+Is video recorded from cameras that cover areas monitored for security?
 
 **Analyzer notes**
 

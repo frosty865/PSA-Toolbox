@@ -25,14 +25,17 @@ export async function GET(
       corpusPool = getCorpusPool();
     } catch (poolError) {
       const msg = poolError instanceof Error ? poolError.message : String(poolError);
-      console.error('[API /api/admin/citations/integrity-audit GET] Pool error:', poolError);
+      console.warn('[API /api/admin/citations/integrity-audit GET] Pool error (audit skipped):', poolError);
       return NextResponse.json(
         {
+          audit_available: false,
+          reason: 'database_unavailable',
           error: 'Database unavailable',
           message: msg,
-          hint: 'Ensure RUNTIME_DATABASE_URL and CORPUS_DATABASE_URL (or CORPUS_DATABASE_URL) are set and reachable.'
+          hint:
+            'Ensure RUNTIME_DATABASE_URL and CORPUS_DATABASE_URL are set and reachable. Citation integrity checks are skipped until databases are configured.',
         },
-        { status: 503 }
+        { status: 200 }
       );
     }
 
@@ -46,11 +49,14 @@ export async function GET(
     if (!tableCheck.rows[0]?.table_exists) {
       return NextResponse.json(
         {
+          audit_available: false,
+          reason: 'table_missing',
           error: 'Table not found',
           message: 'public.ofc_library_citations does not exist in RUNTIME',
-          hint: 'Run database migrations to create ofc_library_citations in the RUNTIME database.'
+          hint:
+            'Run RUNTIME database migrations to create ofc_library_citations. The admin page will show full citation integrity results after migrations.',
         },
-        { status: 503 }
+        { status: 200 }
       );
     }
 
@@ -126,15 +132,19 @@ export async function GET(
         .filter((v): v is { ofc_id: string; source_key: string; created_at: string | null } => v !== null);
     }
 
-    return NextResponse.json({
-      integrity_ok: missingInCorpus.length === 0,
-      total_citations: totalCitations,
-      distinct_source_keys: distinctSourceKeys.length,
-      total_sources_in_registry: totalSourcesInRegistry,
-      missing_in_corpus: missingInCorpus,
-      missing_count: missingInCorpus.length,
-      sample_orphans: sampleOrphans
-    }, { status: 200 });
+    return NextResponse.json(
+      {
+        audit_available: true,
+        integrity_ok: missingInCorpus.length === 0,
+        total_citations: totalCitations,
+        distinct_source_keys: distinctSourceKeys.length,
+        total_sources_in_registry: totalSourcesInRegistry,
+        missing_in_corpus: missingInCorpus,
+        missing_count: missingInCorpus.length,
+        sample_orphans: sampleOrphans,
+      },
+      { status: 200 }
+    );
 
   } catch (error: unknown) {
     console.error('[API /api/admin/citations/integrity-audit GET] Error:', error);

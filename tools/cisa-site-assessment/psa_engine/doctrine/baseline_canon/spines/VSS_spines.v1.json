@@ -3,21 +3,21 @@
     "canon_id": "BASE-VSS-001",
     "discipline_code": "VSS",
     "subtype_code": "VSS_EXTERIOR_CAMERAS",
-    "question_text": "Are exterior areas requiring observation covered by cameras?",
+    "question_text": "Do cameras cover exterior areas where video monitoring is needed for security?",
     "response_enum": ["YES","NO","N_A"]
   },
   {
     "canon_id": "BASE-VSS-002",
     "discipline_code": "VSS",
     "subtype_code": "VSS_INTERIOR_CAMERAS",
-    "question_text": "Are interior areas requiring observation covered by cameras?",
+    "question_text": "Do cameras cover interior areas where video monitoring is needed for security?",
     "response_enum": ["YES","NO","N_A"]
   },
   {
     "canon_id": "BASE-VSS-003",
     "discipline_code": "VSS",
     "subtype_code": "VSS_RECORDING_STORAGE_NVR_DVR",
-    "question_text": "Is video recorded for cameras covering areas requiring observation?",
+    "question_text": "Is video recorded from cameras that cover areas monitored for security?",
     "response_enum": ["YES","NO","N_A"]
   }
 ]

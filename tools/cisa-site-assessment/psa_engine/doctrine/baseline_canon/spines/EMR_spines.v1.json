@@ -3,14 +3,14 @@
     "canon_id": "BASE-EMR-001",
     "discipline_code": "EMR",
     "subtype_code": null,
-    "question_text": "Is there a defined emergency management capability for the facility?",
+    "question_text": "Is emergency management for the facility documented (for example: roles, incident coordination, or recovery planning)?",
     "response_enum": ["YES","NO","N_A"]
   },
   {
     "canon_id": "BASE-EMR-002",
     "discipline_code": "EMR",
     "subtype_code": null,
-    "question_text": "Is continuity of operations addressed for disruptions that could affect the facility?",
+    "question_text": "Is continuity of operations—maintaining critical functions during disruptions—addressed for scenarios that could affect the facility?",
     "response_enum": ["YES","NO","N_A"]
   }
 ]

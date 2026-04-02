@@ -3,7 +3,7 @@
     "canon_id": "BASE-IDS-001",
     "discipline_code": "IDS",
     "subtype_code": null,
-    "question_text": "Are intrusion events detected and signaled at the site?",
+    "question_text": "Are unauthorized intrusion attempts detected and alarmed or reported to monitoring staff at the site?",
     "response_enum": ["YES","NO","N_A"]
   }
 ]

@@ -3,7 +3,7 @@
     "canon_id": "BASE-ACS-001",
     "discipline_code": "ACS",
     "subtype_code": null,
-    "question_text": "Is entry controlled at designated entry points for areas requiring access control?",
+    "question_text": "For restricted areas, is entry limited to designated entry points where access control is enforced—not through informal routes, propped doors, or uncontrolled exits used as entrances?",
     "response_enum": ["YES","NO","N_A"]
   }
 ]

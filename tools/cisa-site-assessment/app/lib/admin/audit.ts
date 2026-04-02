@@ -1,8 +1,9 @@
 import type { NextRequest } from "next/server";
-
-const ADMIN_ACTOR_HEADER = "x-admin-actor";
-const ADMIN_AUTH_MODE_HEADER = "x-admin-auth-mode";
-const ADMIN_REQUEST_ID_HEADER = "x-admin-request-id";
+import {
+  ADMIN_ACTOR_HEADER,
+  ADMIN_AUTH_MODE_HEADER,
+  ADMIN_REQUEST_ID_HEADER,
+} from "@/app/lib/admin/constants";
 
 export type AdminAuditContext = {
   actor: string;

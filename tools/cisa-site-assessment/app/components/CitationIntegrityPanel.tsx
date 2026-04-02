@@ -9,6 +9,7 @@ interface SampleOrphan {
 }
 
 interface IntegrityAuditResult {
+  audit_available?: boolean;
   integrity_ok: boolean;
   total_citations: number;
   distinct_source_keys: number;
@@ -18,8 +19,39 @@ interface IntegrityAuditResult {
   sample_orphans: SampleOrphan[];
 }
 
+interface AuditUnavailableInfo {
+  title: string;
+  message: string;
+  hint: string;
+  reason?: string;
+}
+
+async function parseIntegrityAuditError(response: Response): Promise<string> {
+  const status = response.status;
+  const statusLine = response.statusText?.trim() ? `${status} ${response.statusText}` : `HTTP ${status}`;
+  try {
+    const body = (await response.json()) as {
+      error?: string;
+      message?: string;
+      hint?: string;
+    };
+    const parts = [statusLine];
+    if (body.error) parts.push(body.error);
+    if (body.message) parts.push(body.message);
+    if (body.hint) parts.push(body.hint);
+    return parts.filter(Boolean).join(' — ');
+  } catch {
+    return `${statusLine}. The server did not return JSON details.`;
+  }
+}
+
+function isAuditSuccessPayload(data: Record<string, unknown>): boolean {
+  return typeof data.integrity_ok === 'boolean';
+}
+
 export default function CitationIntegrityPanel() {
   const [auditData, setAuditData] = useState<IntegrityAuditResult | null>(null);
+  const [auditUnavailable, setAuditUnavailable] = useState<AuditUnavailableInfo | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -27,12 +59,26 @@ export default function CitationIntegrityPanel() {
     async function fetchAudit() {
       try {
         setLoading(true);
+        setAuditUnavailable(null);
         const response = await fetch('/api/admin/citations/integrity-audit');
         if (!response.ok) {
-          throw new Error(`Failed to fetch integrity audit: ${response.statusText}`);
+          throw new Error(await parseIntegrityAuditError(response));
         }
-        const data = await response.json();
-        setAuditData(data);
+        const raw = (await response.json()) as Record<string, unknown>;
+        if (raw.audit_available === false) {
+          setAuditData(null);
+          setAuditUnavailable({
+            title: typeof raw.error === 'string' ? raw.error : 'Citation audit unavailable',
+            message: typeof raw.message === 'string' ? raw.message : '',
+            hint: typeof raw.hint === 'string' ? raw.hint : '',
+            reason: typeof raw.reason === 'string' ? raw.reason : undefined,
+          });
+          return;
+        }
+        if (!isAuditSuccessPayload(raw)) {
+          throw new Error('Unexpected response from integrity audit API.');
+        }
+        setAuditData(raw as unknown as IntegrityAuditResult);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Unknown error');
       } finally {
@@ -62,6 +108,35 @@ export default function CitationIntegrityPanel() {
           ⚠️ Integrity Audit Error
         </h3>
         <p style={{ margin: 0, color: '#991b1b' }}>{error}</p>
+      </div>
+    );
+  }
+
+  if (auditUnavailable) {
+    return (
+      <div
+        className="card"
+        style={{
+          padding: 'var(--spacing-lg)',
+          border: '1px solid #fcd34d',
+          backgroundColor: '#fffbeb',
+          marginBottom: 'var(--spacing-lg)',
+        }}
+      >
+        <h3 style={{ margin: '0 0 var(--spacing-sm) 0', color: '#b45309', fontSize: 'var(--font-size-lg)' }}>
+          Citation integrity audit unavailable
+        </h3>
+        <p style={{ margin: '0 0 var(--spacing-sm) 0', color: '#92400e', fontWeight: 600 }}>{auditUnavailable.title}</p>
+        {auditUnavailable.message ? (
+          <p style={{ margin: '0 0 var(--spacing-sm) 0', color: '#78350f', fontSize: 'var(--font-size-sm)' }}>
+            {auditUnavailable.message}
+          </p>
+        ) : null}
+        {auditUnavailable.hint ? (
+          <p style={{ margin: 0, color: '#92400e', fontSize: 'var(--font-size-sm)', lineHeight: 1.5 }}>
+            {auditUnavailable.hint}
+          </p>
+        ) : null}
       </div>
     );
   }
@@ -324,19 +399,35 @@ export default function CitationIntegrityPanel() {
       {/* Refresh Button */}
       <div style={{ marginTop: 'var(--spacing-md)', textAlign: 'right' }}>
         <button
-          onClick={() => {
+          onClick={async () => {
             setLoading(true);
             setError(null);
-            fetch('/api/admin/citations/integrity-audit')
-              .then(res => res.json())
-              .then(data => {
-                setAuditData(data);
-                setLoading(false);
-              })
-              .catch(err => {
-                setError(err.message);
-                setLoading(false);
-              });
+            try {
+              setAuditUnavailable(null);
+              const res = await fetch('/api/admin/citations/integrity-audit');
+              if (!res.ok) {
+                throw new Error(await parseIntegrityAuditError(res));
+              }
+              const raw = (await res.json()) as Record<string, unknown>;
+              if (raw.audit_available === false) {
+                setAuditData(null);
+                setAuditUnavailable({
+                  title: typeof raw.error === 'string' ? raw.error : 'Citation audit unavailable',
+                  message: typeof raw.message === 'string' ? raw.message : '',
+                  hint: typeof raw.hint === 'string' ? raw.hint : '',
+                  reason: typeof raw.reason === 'string' ? raw.reason : undefined,
+                });
+                return;
+              }
+              if (!isAuditSuccessPayload(raw)) {
+                throw new Error('Unexpected response from integrity audit API.');
+              }
+              setAuditData(raw as unknown as IntegrityAuditResult);
+            } catch (err) {
+              setError(err instanceof Error ? err.message : 'Unknown error');
+            } finally {
+              setLoading(false);
+            }
           }}
           style={{
             padding: 'var(--spacing-sm) var(--spacing-md)',

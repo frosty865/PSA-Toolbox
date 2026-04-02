@@ -3,7 +3,7 @@
     "canon_id": "BASE-ISC-001",
     "discipline_code": "ISC",
     "subtype_code": null,
-    "question_text": "Are external coordination points identified for security or emergency support?",
+    "question_text": "Are external contacts or agencies identified for security and emergency coordination (for example: law enforcement, fire, or mutual aid)?",
     "response_enum": ["YES","NO","N_A"]
   },
   {

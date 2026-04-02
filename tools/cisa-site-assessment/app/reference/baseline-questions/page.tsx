@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo } from 'react';
+import { apiUrl } from '@/app/lib/apiUrl';
 
 interface BaselineQuestion {
   canon_id: string;
@@ -69,20 +70,48 @@ export default function BaselineQuestionsPage() {
         if (subtypeFilter) params.set('subtype_code', subtypeFilter);
         // Note: capability_dimension filter removed (not in spine format)
 
-        const response = await fetch(`/api/reference/baseline-questions?${params.toString()}`, {
-          cache: 'no-store'
-        });
+        const response = await fetch(
+          apiUrl(`/api/reference/baseline-questions?${params.toString()}`),
+          { cache: 'no-store' }
+        );
 
         if (!response.ok) {
-          throw new Error(`Failed to load baseline questions: ${response.status}`);
+          let detail = '';
+          try {
+            const errBody = (await response.json()) as { message?: string; error?: string };
+            detail = errBody.message || errBody.error || '';
+          } catch {
+            /* ignore */
+          }
+          throw new Error(
+            detail
+              ? `Failed to load baseline questions (${response.status}): ${detail}`
+              : `Failed to load baseline questions: ${response.status}`
+          );
         }
 
-        const data = await response.json();
-        // API now returns spines array instead of questions array
-        setQuestions(data.spines || data.questions || []);
+        const data = (await response.json()) as {
+          success?: boolean;
+          spines?: BaselineQuestion[];
+          questions?: BaselineQuestion[];
+          coverage?: { by_discipline?: CoverageByDiscipline[]; by_subtype?: CoverageBySubtype[] };
+          metadata?: Metadata;
+        };
+        const rows = data.spines ?? data.questions ?? [];
+        const hasFilters = Boolean(disciplineFilter || subtypeFilter);
+        if (data.success === false) {
+          throw new Error('Baseline questions API reported failure.');
+        }
+        // Unfiltered empty list means DB/config issue; filtered empty is valid (no matches).
+        if (!hasFilters && Array.isArray(rows) && rows.length === 0) {
+          throw new Error(
+            'No baseline questions returned. Ensure RUNTIME_DATABASE_URL is set and baseline_spines_runtime is seeded (see .env.example and docs).'
+          );
+        }
+        setQuestions(rows);
         setCoverageByDiscipline(data.coverage?.by_discipline || []);
         setCoverageBySubtype(data.coverage?.by_subtype || []);
-        setMetadata(data.metadata || null);
+        setMetadata(data.metadata ?? null);
       } catch (err: unknown) {
         console.error('Error loading baseline questions:', err);
         setError(err instanceof Error ? err.message : 'Failed to load baseline questions');
@@ -186,7 +215,10 @@ export default function BaselineQuestionsPage() {
           marginTop: 'var(--spacing-md)',
           maxWidth: '800px'
         }}>
-          View baseline questions and their coverage across disciplines and subtypes.
+          View baseline questions and their coverage across disciplines and subtypes.{' '}
+          <strong>Total Questions</strong> here counts <strong>depth-1</strong> rows from the baseline catalog (active spines in{' '}
+          <code style={{ fontSize: '0.9em' }}>baseline_spines_runtime</code>
+          ). An assessment run can show a larger number because it also loads depth-2 follow-ups, sector/subsector overlays, and expansion questions.
         </p>
       </div>
 

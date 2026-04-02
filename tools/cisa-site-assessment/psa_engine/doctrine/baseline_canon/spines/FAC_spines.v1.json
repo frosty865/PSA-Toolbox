@@ -3,7 +3,7 @@
     "canon_id": "BASE-FAC-001",
     "discipline_code": "FAC",
     "subtype_code": null,
-    "question_text": "Are critical building openings or access points identified for physical hardening decisions where protection is required?",
+    "question_text": "Are critical doors, windows, and other openings identified when deciding where physical protection or hardening is required?",
     "response_enum": ["YES","NO","N_A"]
   }
 ]

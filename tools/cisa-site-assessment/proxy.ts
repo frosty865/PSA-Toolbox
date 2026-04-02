@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-
-const ADMIN_API_TOKEN_HEADER = "x-admin-api-token";
-const ADMIN_ACTOR_HEADER = "x-admin-actor";
-const ADMIN_AUTH_MODE_HEADER = "x-admin-auth-mode";
-const ADMIN_REQUEST_ID_HEADER = "x-admin-request-id";
+import {
+  ADMIN_API_TOKEN_HEADER,
+  ADMIN_ACTOR_HEADER,
+  ADMIN_AUTH_MODE_HEADER,
+  ADMIN_REQUEST_ID_HEADER,
+  ADMIN_COOKIE_NAME,
+} from "@/app/lib/admin/constants";
 
 function isLoopbackHost(hostname: string): boolean {
   const normalized = hostname.toLowerCase();
@@ -27,6 +29,11 @@ function isLocalDevelopmentRequest(request: NextRequest): boolean {
 }
 
 function extractProvidedToken(request: NextRequest): string | null {
+  const cookieToken = request.cookies.get(ADMIN_COOKIE_NAME)?.value;
+  if (cookieToken) {
+    return cookieToken.trim();
+  }
+
   const explicitHeader = request.headers.get(ADMIN_API_TOKEN_HEADER);
   if (explicitHeader) {
     return explicitHeader.trim();

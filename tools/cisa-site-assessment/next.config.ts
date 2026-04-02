@@ -23,6 +23,10 @@ try {
 const SITE_BASE = "/cisa-site-assessment";
 
 const nextConfig: NextConfig = {
+  /** Exposed to client bundles for `apiUrl()`; must match `basePath`. */
+  env: {
+    NEXT_PUBLIC_BASE_PATH: SITE_BASE,
+  },
   basePath: SITE_BASE,
   /**
    * Must match tools/dependency-analysis/apps/web (trailingSlash: true).

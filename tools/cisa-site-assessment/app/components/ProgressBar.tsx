@@ -6,6 +6,8 @@ interface ProgressBarProps {
   percentage?: number;
   showCount?: boolean;
   label?: string;
+  /** Short explanation shown under the bar (e.g. depth-1 vs depth-2 breakdown). */
+  caption?: string;
 }
 
 export default function ProgressBar({
@@ -14,6 +16,7 @@ export default function ProgressBar({
   percentage,
   showCount = true,
   label = "Progress",
+  caption,
 }: ProgressBarProps) {
   const calculatedPercentage = percentage ?? Math.round((current / total) * 100);
   const safePercentage = Math.min(100, Math.max(0, calculatedPercentage));
@@ -79,6 +82,20 @@ export default function ProgressBar({
           {safePercentage}% complete
         </div>
       )}
+      {caption ? (
+        <p
+          className="progress-caption"
+          style={{
+            margin: "10px 0 0",
+            fontSize: "12px",
+            lineHeight: 1.45,
+            color: "#565c65",
+            maxWidth: "52rem",
+          }}
+        >
+          {caption}
+        </p>
+      ) : null}
     </div>
   );
 }

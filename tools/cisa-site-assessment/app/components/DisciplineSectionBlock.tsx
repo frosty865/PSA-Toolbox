@@ -210,6 +210,8 @@ export default function DisciplineSectionBlock({
   const isTechForMemo = isTechSelectorDiscipline(disciplineCode);
   const shouldUseSelectorForMemo = isTechForMemo && gateOk && !usesDisciplineChecklistMemo;
 
+  const gateCanonId = gateDef?.gate_canon_id;
+
   // Subtype spines that should be shown as individual question cards
   // Only shown for non-tech disciplines when gate is satisfied
   const subtypeSpines = useMemo(() => {
@@ -226,6 +228,7 @@ export default function DisciplineSectionBlock({
       q.subtype_code && 
       q.depth !== 2 && // Exclude depth-2 questions
       !q.parent_spine_canon_id &&
+      (gateCanonId ? q.canon_id !== gateCanonId : true) &&
       shouldRenderSpineAsQuestion(disciplineCode, q.subtype_code)
     );
     
@@ -242,7 +245,7 @@ export default function DisciplineSectionBlock({
     }
     
     return filtered;
-  }, [questionsDepth1, disciplineCode, shouldUseSelectorForMemo, gateOk]);
+  }, [questionsDepth1, disciplineCode, shouldUseSelectorForMemo, gateOk, gateCanonId]);
 
   // Hidden subtype spines: these will be shown in capability selector
   // Only populated when we're using the capability selector AND gate is satisfied
@@ -251,14 +254,17 @@ export default function DisciplineSectionBlock({
       // Gate not satisfied or not using selector - don't populate hidden spines
       return [];
     }
-    // For disciplines using selector, include all subtype spines
+    // For disciplines using selector, include subtype spines (not the gate spine — avoids duplicate rows)
     return questionsDepth1.filter(q => {
       if (!q.subtype_code || q.depth === 2 || q.parent_spine_canon_id) {
         return false; // Exclude non-subtype and depth-2 questions
       }
-      return true; // Include all subtype spines for selector
+      if (gateCanonId && q.canon_id === gateCanonId) {
+        return false;
+      }
+      return true;
     });
-  }, [questionsDepth1, shouldUseSelectorForMemo, gateOk]);
+  }, [questionsDepth1, shouldUseSelectorForMemo, gateOk, gateCanonId]);
 
   // Group depth-2 questions by subtype
   const depth2BySubtype = useMemo(() => {
@@ -279,27 +285,31 @@ export default function DisciplineSectionBlock({
     if (!gateOk) {
       return []; // Gate not satisfied - no selector items
     }
-    return hiddenSubtypeSpines.map(spine => {
+    const bySubtype = new Map<string, { subtype_code: string; label: string; description?: string }>();
+    for (const spine of hiddenSubtypeSpines) {
       const subtypeCode = spine.subtype_code!;
+      if (bySubtype.has(subtypeCode)) {
+        continue;
+      }
       // Use subtype_name from API if available, otherwise format from code
       const label = spine.subtype_name || formatSubtypeName(subtypeCode);
-      
+
       // Extract description from question text if available
       let description: string | undefined;
       if (spine.question_text) {
-        // Remove "Is a" and "capability implemented?" to get the capability name
         const match = spine.question_text.match(/Is a (.+?) capability implemented\?/i);
         if (match && match[1]) {
           description = `${match[1]} capability`;
         }
       }
 
-      return {
+      bySubtype.set(subtypeCode, {
         subtype_code: subtypeCode,
-        label: label,
-        description: description,
-      };
-    });
+        label,
+        description,
+      });
+    }
+    return Array.from(bySubtype.values());
   }, [hiddenSubtypeSpines, gateOk]);
 
   // Get selected subtype codes (those with YES response)
@@ -468,8 +478,54 @@ export default function DisciplineSectionBlock({
         {disciplineName} ({disciplineCode})
       </h2>
 
-      {/* Gate Question (always shown first, single question) */}
-      {gateQuestion && (() => {
+      {/* Gate Question (always shown first): full subtype block when gate is a subtype spine (e.g. VSS), else compact radios */}
+      {gateQuestion && gateQuestion.subtype_code && (() => {
+        const currentResponse = responsesByCanonId.get(gateQuestion.canon_id) || gateQuestion.current_response || null;
+        const normalizedSpineResponse = currentResponse === 'N/A' || currentResponse === 'N_A'
+          ? 'N_A'
+          : (currentResponse === 'YES' || currentResponse === 'NO' ? currentResponse : null) as "YES" | "NO" | "N_A" | null;
+        const gateD2 = depth2BySubtype.get(gateQuestion.subtype_code) || [];
+        const gateDepth2Responses = new Map<string, string>();
+        for (const d2q of gateD2) {
+          const resp = responsesByCanonId.get(d2q.canon_id) || d2q.current_response || null;
+          if (typeof resp === 'string' && resp.trim().length > 0) {
+            gateDepth2Responses.set(d2q.canon_id, resp === 'N/A' ? 'N_A' : resp);
+          }
+        }
+        return (
+          <div
+            key={gateQuestion.canon_id}
+            style={{
+              marginBottom: 'var(--spacing-md)',
+              paddingBottom: 'var(--spacing-md)',
+              borderBottom: gateOk ? '1px solid #e5e7eb' : '2px solid #005ea2',
+            }}
+          >
+            <SubtypeQuestionBlock
+              spineQuestion={gateQuestion}
+              spineResponse={normalizedSpineResponse}
+              depth2Questions={gateD2}
+              depth2Responses={gateDepth2Responses}
+              onSpineAnswer={onResponseChange}
+              onDepth2Answer={(canonId: string, response: string | null) => {
+                if (!response || response === 'PAPER' || response === 'DIGITAL' || response === 'HYBRID') {
+                  onResponseChange(canonId, 'N_A');
+                } else if (response === 'N/A') {
+                  onResponseChange(canonId, 'N/A');
+                } else {
+                  onResponseChange(canonId, response);
+                }
+              }}
+              saving={saving}
+              isReadOnly={isReadOnly}
+              assessmentId={assessmentId}
+              subtypeLabel={gateQuestion.subtype_name || formatSubtypeName(gateQuestion.subtype_code)}
+            />
+          </div>
+        );
+      })()}
+
+      {gateQuestion && !gateQuestion.subtype_code && (() => {
         const currentResponse = responsesByCanonId.get(gateQuestion.canon_id) || gateQuestion.current_response || null;
         const normalizedResponse = currentResponse === 'N/A' || currentResponse === 'N_A' 
           ? 'N_A' 

@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import AdminNav from '../components/AdminNav';
 import CitationIntegrityBadge from '../components/CitationIntegrityBadge';
+import AdminAccessGate from '../components/AdminAccessGate';
 
 export const metadata = {
   title: 'Governance Administration - PSA',
@@ -69,15 +70,17 @@ export default function AdminLayout({
         <AdminNav />
       </Suspense>
 
-      {/* Admin Content — full width so wide tables (e.g. Source Registry) show all columns; only vertical scroll site-wide */}
-      <div style={{
-        width: '100%',
-        margin: 0,
-        padding: '1.5rem',
-        boxSizing: 'border-box'
-      }}>
-        {children}
-      </div>
+      <AdminAccessGate>
+        {/* Admin Content — full width so wide tables (e.g. Source Registry) show all columns; only vertical scroll site-wide */}
+        <div style={{
+          width: '100%',
+          margin: 0,
+          padding: '1.5rem',
+          boxSizing: 'border-box'
+        }}>
+          {children}
+        </div>
+      </AdminAccessGate>
     </div>
   );
 }

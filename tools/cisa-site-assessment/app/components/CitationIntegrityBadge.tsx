@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { shouldSendAdminApiRequests } from "@/app/lib/admin/client";
 
 interface IntegrityStatus {
   integrity_ok: boolean;
@@ -22,13 +23,23 @@ export default function CitationIntegrityBadge() {
     }
     async function checkStatus() {
       try {
+        if (!shouldSendAdminApiRequests()) {
+          setStatus(null);
+          return;
+        }
         const response = await fetch("/api/admin/citations/integrity-audit");
         if (response.ok) {
           const data = await response.json();
-          setStatus({
-            integrity_ok: data.integrity_ok,
-            missing_count: data.missing_count || 0,
-          });
+          if (data.audit_available === false) {
+            setStatus(null);
+            return;
+          }
+          if (typeof data.integrity_ok === "boolean") {
+            setStatus({
+              integrity_ok: data.integrity_ok,
+              missing_count: data.missing_count || 0,
+            });
+          }
         }
       } catch {
         // Silently fail - badge is optional

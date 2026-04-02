@@ -42,12 +42,43 @@ async function getAssessmentDetail(assessmentId: string) {
   return response.json();
 }
 
-async function getRequiredElements(assessmentId: string) {
+export type AssessmentQuestionsMetadata = {
+  baseline_count?: number;
+  overlay_count?: number;
+  overlay_sector_count?: number;
+  overlay_subsector_count?: number;
+  depth2_count?: number;
+  expansion_count?: number;
+  sector_code?: string | null;
+  subsector_code?: string | null;
+  baseline_version?: string;
+  source?: string;
+};
+
+function mapQuestionsToRequiredElements(questions: unknown[]) {
+  return questions.map((q) => {
+    const rec = q as Record<string, unknown>;
+    return {
+      ...rec,
+      canon_id: rec.canon_id,
+      element_id: rec.canon_id, // Map canon_id to element_id for backward compatibility
+      element_code: rec.canon_id, // Map canon_id to element_code for backward compatibility
+      discipline_subtype_id: rec.discipline_subtype_id ?? null,
+      subtype_code: rec.subtype_code ?? null,
+      subtype_guidance: rec.subtype_guidance ?? null,
+    };
+  });
+}
+
+async function getRequiredElements(assessmentId: string): Promise<{
+  questions: ReturnType<typeof mapQuestionsToRequiredElements>;
+  metadata: AssessmentQuestionsMetadata | null;
+}> {
   try {
     const response = await fetch(`/api/runtime/assessments/${assessmentId}/questions`, { cache: 'no-store' });
     if (!response.ok) {
       console.error(`[getRequiredElements] API returned ${response.status}:`, await response.text().catch(() => ''));
-      return [];
+      return { questions: [], metadata: null };
     }
     const data = await response.json();
     assertNoLegacyIntent(data, 'assessments/[assessmentId] getRequiredElements');
@@ -59,20 +90,16 @@ async function getRequiredElements(assessmentId: string) {
     // API now returns questions array with canon_id (spines format)
     const questions = data.questions || [];
     console.log(`[getRequiredElements] Mapped ${questions.length} questions`);
-    // Map to RequiredElement format (canon_id is primary, element_id/element_code for legacy compatibility)
-    // Help is gated by discipline_subtype_id only; legacy intent removed.
-    return questions.map((q: Record<string, unknown>) => ({
-      ...q,
-      canon_id: q.canon_id,
-      element_id: q.canon_id, // Map canon_id to element_id for backward compatibility
-      element_code: q.canon_id, // Map canon_id to element_code for backward compatibility
-      discipline_subtype_id: q.discipline_subtype_id ?? null,
-      subtype_code: q.subtype_code ?? null,
-      subtype_guidance: q.subtype_guidance ?? null,
-    }));
+    const metadata = (data.metadata && typeof data.metadata === 'object')
+      ? (data.metadata as AssessmentQuestionsMetadata)
+      : null;
+    return {
+      questions: mapQuestionsToRequiredElements(questions),
+      metadata,
+    };
   } catch (error) {
     console.error('[getRequiredElements] Error fetching questions:', error);
-    return [];
+    return { questions: [], metadata: null };
   }
 }
 
@@ -259,6 +286,7 @@ export default function AssessmentExecutionPage() {
 
   const [detail, setDetail] = useState<AssessmentDetail | null>(null);
   const [elements, setElements] = useState<RequiredElement[]>([]);
+  const [questionsMetadata, setQuestionsMetadata] = useState<AssessmentQuestionsMetadata | null>(null);
   const [ofcs, setOfcs] = useState<Record<string, unknown>[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -325,7 +353,7 @@ export default function AssessmentExecutionPage() {
         setError(null);
 
         // Load detail, elements, responses, OFCs, and component capability data in parallel
-        const [detailData, elementsData, responsesData, ofcsData, componentQuestionsData, componentResponsesData] = await Promise.all([
+        const [detailData, requiredPayload, responsesData, ofcsData, componentQuestionsData, componentResponsesData] = await Promise.all([
           getAssessmentDetail(assessmentId),
           getRequiredElements(assessmentId),
           getResponses(assessmentId),
@@ -333,6 +361,8 @@ export default function AssessmentExecutionPage() {
           getComponentCapabilityQuestions(assessmentId),
           getComponentCapabilityResponses(assessmentId),
         ]);
+        const elementsData = requiredPayload.questions;
+        setQuestionsMetadata(requiredPayload.metadata);
 
         // Temporary diagnostic (remove after verification)
         console.log("Assessment detail:", detailData);
@@ -429,7 +459,7 @@ export default function AssessmentExecutionPage() {
             return (Number(a.order_index) || 0) - (Number(b.order_index) || 0);
           });
 
-        setElements(enrichedElements);
+        setElements(enrichedElements as RequiredElement[]);
         setOfcs(ofcsData || []);
         
         // Convert server responses to DraftResponses format for draft hook
@@ -489,6 +519,31 @@ export default function AssessmentExecutionPage() {
       percentage: total > 0 ? Math.round((answered / total) * 100) : 0
     };
   }, [elements]);
+
+  /** Explains why total questions can exceed the baseline reference count (depth-2, overlays, expansions). */
+  const progressCaption = useMemo(() => {
+    const m = questionsMetadata;
+    if (!m) return undefined;
+    const b = m.baseline_count;
+    const d2 = m.depth2_count;
+    const ov = m.overlay_count;
+    const ex = m.expansion_count;
+    if (
+      b === undefined &&
+      d2 === undefined &&
+      ov === undefined &&
+      ex === undefined
+    ) {
+      return undefined;
+    }
+    const parts: string[] = [];
+    if (typeof b === "number") parts.push(`${b} depth-1 baseline`);
+    if (typeof d2 === "number" && d2 > 0) parts.push(`${d2} depth-2 follow-up`);
+    if (typeof ov === "number" && ov > 0) parts.push(`${ov} overlay`);
+    if (typeof ex === "number" && ex > 0) parts.push(`${ex} expansion`);
+    if (parts.length === 0) return undefined;
+    return `This total includes: ${parts.join(", ")}. The Baseline Question Coverage reference lists depth-1 baseline rows only (${typeof b === "number" ? b : "—"}), not depth-2 or other layers.`;
+  }, [questionsMetadata]);
 
   // Save component capability response handler
   const handleComponentResponseChange = async (
@@ -919,6 +974,7 @@ export default function AssessmentExecutionPage() {
               percentage={progress.percentage}
               label="Assessment Progress"
               showCount={true}
+              caption={progressCaption}
             />
           </div>
         )}

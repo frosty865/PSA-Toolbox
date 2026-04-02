@@ -111,8 +111,48 @@ function getChecklistTemplate(subtypeCode: string, subtypeName: string): Checkli
     ];
   }
 
-  // VSS_RECORDING_STORAGE_NVR_DVR
-  if (code === 'VSS_RECORDING_STORAGE_NVR_DVR' || code.includes('RECORDING') || code.includes('STORAGE')) {
+  // VSS — scope checklists to the subtype (do not use broad substring matches)
+  if (code === 'VSS_EXTERIOR_CAMERAS') {
+    return [
+      {
+        id: 'vss_ext_perimeter_coverage',
+        label: 'Perimeter / approach coverage',
+        description: 'Cameras cover building approaches, entries, and priority exterior zones',
+        tags: ['EXTERIOR_COVERAGE'],
+      },
+      {
+        id: 'vss_ext_lighting_image_quality',
+        label: 'Lighting supports usable images',
+        description: 'Exterior lighting or camera settings support identifiable images at night and in weather',
+        tags: ['EXTERIOR_LIGHTING'],
+      },
+      {
+        id: 'vss_ext_environmental_fit',
+        label: 'Outdoor / environmental fit',
+        description: 'Housings, mounting, and maintenance suit outdoor conditions',
+        tags: ['EXTERIOR_ENVIRONMENT'],
+      },
+    ];
+  }
+
+  if (code === 'VSS_INTERIOR_CAMERAS') {
+    return [
+      {
+        id: 'vss_int_priority_zones',
+        label: 'Priority interior zones covered',
+        description: 'Cameras cover lobbies, corridors, or other priority interior areas',
+        tags: ['INTERIOR_COVERAGE'],
+      },
+      {
+        id: 'vss_int_privacy_controls',
+        label: 'Privacy-sensitive areas considered',
+        description: 'Placement avoids or limits recording where policy requires',
+        tags: ['INTERIOR_PRIVACY'],
+      },
+    ];
+  }
+
+  if (code === 'VSS_RECORDING_STORAGE_NVR_DVR') {
     return [
       {
         id: 'vss_recording_retention',

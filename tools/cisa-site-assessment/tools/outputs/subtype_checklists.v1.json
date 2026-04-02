@@ -1,0 +1,1068 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-04-02T14:55:56.039Z",
+  "checklists": [
+    {
+      "version": "1.0",
+      "subtype_code": "ACS_BIOMETRIC_ACCESS",
+      "discipline_code": "ACS",
+      "title": "Biometric Access Capabilities",
+      "items": [
+        {
+          "id": "biometric_modalities",
+          "label": "Modalities in use",
+          "description": "One or more biometric modalities (fingerprint, facial, iris, voice) are deployed",
+          "tags": [
+            "BIOMETRIC_MODALITIES"
+          ]
+        },
+        {
+          "id": "biometric_enrollment",
+          "label": "Enrollment & identity proofing method exists",
+          "description": "A defined method exists for enrolling users and verifying identity during enrollment",
+          "tags": [
+            "BIOMETRIC_ENROLLMENT"
+          ]
+        },
+        {
+          "id": "biometric_data_handling",
+          "label": "Data handling policy exists",
+          "description": "A defined method exists for storing, retaining, and protecting biometric data",
+          "tags": [
+            "HANDLING_POLICY"
+          ]
+        },
+        {
+          "id": "biometric_backup",
+          "label": "Backup authentication method exists",
+          "description": "A defined method exists for access when biometric systems fail or users cannot use biometrics",
+          "tags": [
+            "BACKUP_METHOD"
+          ]
+        },
+        {
+          "id": "biometric_device_upkeep",
+          "label": "Device upkeep method exists",
+          "description": "A defined method exists to keep readers and sensors usable and accurate",
+          "tags": [
+            "DEVICE_USABILITY_METHOD"
+          ]
+        }
+      ]
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "ACS_CREDENTIAL_BADGE_SYSTEMS",
+      "discipline_code": "ACS",
+      "title": "Credential / Badge Systems Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "ACS_DOOR_MONITORING",
+      "discipline_code": "ACS",
+      "title": "Door Monitoring Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "ACS_DOOR_READERS",
+      "discipline_code": "ACS",
+      "title": "Door Readers Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "ACS_ELECTRIC_STRIKES_MAG_LOCKS",
+      "discipline_code": "ACS",
+      "title": "Electric Strikes / Mag Locks Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "ACS_ELECTRONIC_ACCESS_CONTROL",
+      "discipline_code": "ACS",
+      "title": "Electronic Access Control Capabilities",
+      "items": [
+        {
+          "id": "eac_credential_issuance",
+          "label": "Credential issuance/termination method exists",
+          "description": "A defined method exists for issuing and terminating access credentials",
+          "tags": [
+            "CREDENTIAL_ISSUANCE"
+          ]
+        },
+        {
+          "id": "eac_door_integration",
+          "label": "Door hardware integration exists",
+          "description": "Electronic access control integrates with door hardware (strikes, mag locks, readers)",
+          "tags": [
+            "DOOR_INTEGRATION"
+          ]
+        },
+        {
+          "id": "eac_alarm_monitoring",
+          "label": "Alarm/door events monitoring method exists",
+          "description": "A defined method exists to monitor and respond to door alarms and access events",
+          "tags": [
+            "ALARM_MONITORING"
+          ]
+        },
+        {
+          "id": "eac_visitor_handling",
+          "label": "Visitor handling method exists",
+          "description": "A defined method exists for managing visitor access and temporary credentials",
+          "tags": [
+            "VISITOR_HANDLING"
+          ]
+        }
+      ]
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "ACS_KEYPADS_PIN_ENTRY",
+      "discipline_code": "ACS",
+      "title": "Keypads / PIN Entry Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "ACS_LOCKING_HARDWARE",
+      "discipline_code": "ACS",
+      "title": "Locking Hardware Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "ACS_SECURED_VESTIBULES",
+      "discipline_code": "ACS",
+      "title": "Secured Vestibules Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "ACS_VISITOR_MANAGEMENT_SYSTEMS",
+      "discipline_code": "ACS",
+      "title": "Visitor Management Systems Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "COM_BACKUP_COMMUNICATIONS",
+      "discipline_code": "COM",
+      "title": "Backup Communications Capabilities",
+      "items": [
+        {
+          "id": "com_radio_channels",
+          "label": "Channel management method exists",
+          "description": "A defined method exists for managing radio channels and frequencies",
+          "tags": [
+            "COM_INTEROP_METHOD"
+          ]
+        },
+        {
+          "id": "com_radio_interop",
+          "label": "Interoperability method exists",
+          "description": "A defined method exists for interoperable communication with other agencies/systems",
+          "tags": [
+            "COM_INTEROP_METHOD"
+          ]
+        }
+      ]
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "COM_COMMUNICATION_PROTOCOLS",
+      "discipline_code": "COM",
+      "title": "Communication Protocols Capabilities",
+      "items": [
+        {
+          "id": "com_radio_channels",
+          "label": "Channel management method exists",
+          "description": "A defined method exists for managing radio channels and frequencies",
+          "tags": [
+            "COM_INTEROP_METHOD"
+          ]
+        },
+        {
+          "id": "com_radio_interop",
+          "label": "Interoperability method exists",
+          "description": "A defined method exists for interoperable communication with other agencies/systems",
+          "tags": [
+            "COM_INTEROP_METHOD"
+          ]
+        }
+      ]
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "COM_INTEROPERABLE_COMMUNICATIONS",
+      "discipline_code": "COM",
+      "title": "Interoperable Communications Capabilities",
+      "items": [
+        {
+          "id": "com_radio_channels",
+          "label": "Channel management method exists",
+          "description": "A defined method exists for managing radio channels and frequencies",
+          "tags": [
+            "COM_INTEROP_METHOD"
+          ]
+        },
+        {
+          "id": "com_radio_interop",
+          "label": "Interoperability method exists",
+          "description": "A defined method exists for interoperable communication with other agencies/systems",
+          "tags": [
+            "COM_INTEROP_METHOD"
+          ]
+        }
+      ]
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "COM_PA_SYSTEMS",
+      "discipline_code": "COM",
+      "title": "PA Systems Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "COM_PAGING_SYSTEMS",
+      "discipline_code": "COM",
+      "title": "Paging Systems Capabilities",
+      "items": [
+        {
+          "id": "com_override_priority",
+          "label": "Override/priority method exists",
+          "description": "A defined method exists for emergency override and priority paging",
+          "tags": [
+            "COM_OVERRIDE_PRIORITY"
+          ]
+        },
+        {
+          "id": "com_interop",
+          "label": "Interoperability method exists",
+          "description": "A defined method exists for interoperable communication with other systems",
+          "tags": [
+            "COM_INTEROP_METHOD"
+          ]
+        }
+      ]
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "COM_RADIOS_TWO_WAY",
+      "discipline_code": "COM",
+      "title": "Radios / Two-Way Capabilities",
+      "items": [
+        {
+          "id": "com_radio_channels",
+          "label": "Channel management method exists",
+          "description": "A defined method exists for managing radio channels and frequencies",
+          "tags": [
+            "COM_INTEROP_METHOD"
+          ]
+        },
+        {
+          "id": "com_radio_interop",
+          "label": "Interoperability method exists",
+          "description": "A defined method exists for interoperable communication with other agencies/systems",
+          "tags": [
+            "COM_INTEROP_METHOD"
+          ]
+        }
+      ]
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "CPTED_DEFENSIBLE_SPACE",
+      "discipline_code": "CPTED",
+      "title": "Defensible Space Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "CPTED_EXTERIOR_LIGHTING",
+      "discipline_code": "CPTED",
+      "title": "Exterior Lighting Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "CPTED_LANDSCAPING_CONTROL",
+      "discipline_code": "CPTED",
+      "title": "Landscaping Control Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "CPTED_NATURAL_SURVEILLANCE",
+      "discipline_code": "CPTED",
+      "title": "Natural Surveillance Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "CPTED_SIGHTLINES",
+      "discipline_code": "CPTED",
+      "title": "Sightlines Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "CPTED_TERRITORIAL_REINFORCEMENT",
+      "discipline_code": "CPTED",
+      "title": "Territorial Reinforcement Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "CPTED_WAYFINDING",
+      "discipline_code": "CPTED",
+      "title": "Wayfinding Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "EAP_EMERGENCY_DRILLS",
+      "discipline_code": "EAP",
+      "title": "Emergency Drills Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "EAP_EMERGENCY_GUIDES_FLIP_CHARTS",
+      "discipline_code": "EAP",
+      "title": "Emergency Guides / Flip Charts Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "EAP_EVACUATION_PROCEDURES",
+      "discipline_code": "EAP",
+      "title": "Evacuation Procedures Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "EAP_LOCKDOWN_LOCKOUT_PROCEDURES",
+      "discipline_code": "EAP",
+      "title": "Lockdown / Lockout Procedures Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "EAP_MUSTER_POINTS_RALLY_AREAS",
+      "discipline_code": "EAP",
+      "title": "Muster Points / Rally Areas Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "EAP_REUNIFICATION_PROCEDURES",
+      "discipline_code": "EAP",
+      "title": "Reunification Procedures Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "EAP_SHELTER_IN_PLACE",
+      "discipline_code": "EAP",
+      "title": "Shelter-in-Place Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "EAP_STAFF_EMERGENCY_ROLES",
+      "discipline_code": "EAP",
+      "title": "Staff Emergency Roles Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "EMR_BUSINESS_CONTINUITY",
+      "discipline_code": "EMR",
+      "title": "Business Continuity Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "EMR_CRISIS_MANAGEMENT",
+      "discipline_code": "EMR",
+      "title": "Crisis Management Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "EMR_EMERGENCY_COMMUNICATIONS",
+      "discipline_code": "EMR",
+      "title": "Emergency Communications Capabilities",
+      "items": [
+        {
+          "id": "com_radio_channels",
+          "label": "Channel management method exists",
+          "description": "A defined method exists for managing radio channels and frequencies",
+          "tags": [
+            "COM_INTEROP_METHOD"
+          ]
+        },
+        {
+          "id": "com_radio_interop",
+          "label": "Interoperability method exists",
+          "description": "A defined method exists for interoperable communication with other agencies/systems",
+          "tags": [
+            "COM_INTEROP_METHOD"
+          ]
+        }
+      ]
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "EMR_ICS_NIMS_INTEGRATION",
+      "discipline_code": "EMR",
+      "title": "ICS/NIMS Integration Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "EMR_MASS_NOTIFICATION",
+      "discipline_code": "EMR",
+      "title": "Mass Notification Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "EMR_REDUNDANCY_BACKUP_SYSTEMS",
+      "discipline_code": "EMR",
+      "title": "Redundancy / Backup Systems Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "EMR_RESILIENCE_PLANNING",
+      "discipline_code": "EMR",
+      "title": "Resilience Planning Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "FAC_BALLISTIC_BARRIERS",
+      "discipline_code": "FAC",
+      "title": "Ballistic Barriers Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "FAC_BLAST_MITIGATION",
+      "discipline_code": "FAC",
+      "title": "Blast Mitigation Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "FAC_EXTERIOR_WALL_REINFORCEMENT",
+      "discipline_code": "FAC",
+      "title": "Exterior Wall Reinforcement Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "FAC_IMPACT_RESISTANT_GLAZING",
+      "discipline_code": "FAC",
+      "title": "Impact-Resistant Glazing Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "FAC_STRUCTURAL_HARDENING",
+      "discipline_code": "FAC",
+      "title": "Structural Hardening Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "FAC_WINDOW_FILM",
+      "discipline_code": "FAC",
+      "title": "Window Film Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "IDS_ALARM_MONITORING",
+      "discipline_code": "IDS",
+      "title": "Alarm Monitoring Capabilities",
+      "items": [
+        {
+          "id": "ids_alarm_receiving",
+          "label": "Alarm receiving method exists",
+          "description": "A defined method exists for receiving alarms from intrusion detection sensors",
+          "tags": [
+            "IDS_MONITORING_ESCALATION"
+          ]
+        },
+        {
+          "id": "ids_notification_escalation",
+          "label": "Notification/escalation method exists",
+          "description": "A defined method exists for notifying and escalating alarm events",
+          "tags": [
+            "IDS_MONITORING_ESCALATION"
+          ]
+        },
+        {
+          "id": "ids_response_dispatch",
+          "label": "Response dispatch method exists",
+          "description": "A defined method exists for dispatching response personnel to alarm events",
+          "tags": [
+            "IDS_MONITORING_ESCALATION"
+          ]
+        }
+      ]
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "IDS_ALARM_PANELS",
+      "discipline_code": "IDS",
+      "title": "Alarm Panels Capabilities",
+      "items": [
+        {
+          "id": "ids_alarm_receiving",
+          "label": "Alarm receiving method exists",
+          "description": "A defined method exists for receiving alarms from intrusion detection sensors",
+          "tags": [
+            "IDS_MONITORING_ESCALATION"
+          ]
+        },
+        {
+          "id": "ids_notification_escalation",
+          "label": "Notification/escalation method exists",
+          "description": "A defined method exists for notifying and escalating alarm events",
+          "tags": [
+            "IDS_MONITORING_ESCALATION"
+          ]
+        },
+        {
+          "id": "ids_response_dispatch",
+          "label": "Response dispatch method exists",
+          "description": "A defined method exists for dispatching response personnel to alarm events",
+          "tags": [
+            "IDS_MONITORING_ESCALATION"
+          ]
+        }
+      ]
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "IDS_DOOR_CONTACTS",
+      "discipline_code": "IDS",
+      "title": "Door Contacts Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "IDS_GLASS_BREAK_SENSORS",
+      "discipline_code": "IDS",
+      "title": "Glass Break Sensors Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "IDS_MOTION_DETECTORS",
+      "discipline_code": "IDS",
+      "title": "Motion Detectors Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "IDS_PANIC_DURESS_BUTTONS",
+      "discipline_code": "IDS",
+      "title": "Panic / Duress Buttons Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "IDS_PERIMETER_IDS",
+      "discipline_code": "IDS",
+      "title": "Perimeter IDS Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "INT_ACCESS_RESTRICTED_AREAS",
+      "discipline_code": "INT",
+      "title": "Access-Restricted Areas Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "INT_HARD_INTERIOR_BARRIERS",
+      "discipline_code": "INT",
+      "title": "Hard-Interior Barriers Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "INT_INTERIOR_DOORS",
+      "discipline_code": "INT",
+      "title": "Interior Doors Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "INT_INTERIOR_LIGHTING",
+      "discipline_code": "INT",
+      "title": "Interior Lighting Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "INT_SAFE_ROOMS",
+      "discipline_code": "INT",
+      "title": "Safe Rooms Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "INT_SECURE_ROOMS",
+      "discipline_code": "INT",
+      "title": "Secure Rooms Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "INT_SENSITIVE_ITEM_STORAGE",
+      "discipline_code": "INT",
+      "title": "Sensitive Item Storage Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "ISC_COORDINATION_PROTOCOLS",
+      "discipline_code": "ISC",
+      "title": "Coordination Protocols Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "ISC_EXTERNAL_REPORTING",
+      "discipline_code": "ISC",
+      "title": "External Reporting Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "ISC_FUSION_CENTER_INTERFACE",
+      "discipline_code": "ISC",
+      "title": "Fusion Center Interface Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "ISC_ISAC_ISAOS",
+      "discipline_code": "ISC",
+      "title": "ISAC / ISAOs Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "ISC_JTTF_ENGAGEMENT",
+      "discipline_code": "ISC",
+      "title": "JTTF Engagement Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "ISC_LAW_ENFORCEMENT_LIAISON",
+      "discipline_code": "ISC",
+      "title": "Law Enforcement Liaison Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "ISC_THREAT_INFORMATION_SHARING",
+      "discipline_code": "ISC",
+      "title": "Threat Information Sharing Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "KEY_KEY_CABINETS",
+      "discipline_code": "KEY",
+      "title": "Key Cabinets Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "KEY_KEY_LOGS_ACCOUNTABILITY",
+      "discipline_code": "KEY",
+      "title": "Key Logs / Accountability Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "KEY_MASTER_KEY_MANAGEMENT",
+      "discipline_code": "KEY",
+      "title": "Master Key Management Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "KEY_REKEYING_PROCEDURES",
+      "discipline_code": "KEY",
+      "title": "Rekeying Procedures Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "KEY_RESTRICTED_KEYS",
+      "discipline_code": "KEY",
+      "title": "Restricted Keys Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "PER_BOLLARDS_BARRIERS",
+      "discipline_code": "PER",
+      "title": "Bollards / Barriers Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "PER_BOUNDARY_DEMARCATION",
+      "discipline_code": "PER",
+      "title": "Boundary Demarcation Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "PER_CLEAR_ZONES",
+      "discipline_code": "PER",
+      "title": "Clear Zones Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "PER_FENCING",
+      "discipline_code": "PER",
+      "title": "Fencing Capabilities",
+      "items": [
+        {
+          "id": "per_fencing_maintenance",
+          "label": "Maintenance method exists",
+          "description": "A defined method exists for maintaining and inspecting perimeter systems",
+          "tags": [
+            "PER_MAINTENANCE"
+          ]
+        },
+        {
+          "id": "per_fencing_monitoring",
+          "label": "Monitoring method exists",
+          "description": "A defined method exists for monitoring perimeter system status",
+          "tags": [
+            "PER_MONITORING"
+          ]
+        }
+      ]
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "PER_GATES",
+      "discipline_code": "PER",
+      "title": "Gates Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "PER_PEDESTRIAN_ACCESS_CONTROL_POINTS",
+      "discipline_code": "PER",
+      "title": "Pedestrian Access Control Points Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "PER_PERIMETER_LIGHTING",
+      "discipline_code": "PER",
+      "title": "Perimeter Lighting Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "PER_PERIMETER_SIGNAGE",
+      "discipline_code": "PER",
+      "title": "Perimeter Signage Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "PER_VEHICLE_ACCESS_CONTROL_POINTS",
+      "discipline_code": "PER",
+      "title": "Vehicle Access Control Points Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "SFO_GUARD_POSTS",
+      "discipline_code": "SFO",
+      "title": "Guard Posts Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "SFO_INCIDENT_REPORTING",
+      "discipline_code": "SFO",
+      "title": "Incident Reporting Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "SFO_PATROL_ROUTES",
+      "discipline_code": "SFO",
+      "title": "Patrol Routes Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "SFO_RADIO_COMMUNICATIONS",
+      "discipline_code": "SFO",
+      "title": "Radio Communications Capabilities",
+      "items": [
+        {
+          "id": "com_radio_channels",
+          "label": "Channel management method exists",
+          "description": "A defined method exists for managing radio channels and frequencies",
+          "tags": [
+            "COM_INTEROP_METHOD"
+          ]
+        },
+        {
+          "id": "com_radio_interop",
+          "label": "Interoperability method exists",
+          "description": "A defined method exists for interoperable communication with other agencies/systems",
+          "tags": [
+            "COM_INTEROP_METHOD"
+          ]
+        }
+      ]
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "SFO_RESPONSE_PROCEDURES",
+      "discipline_code": "SFO",
+      "title": "Response Procedures Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "SFO_SCHOOL_RESOURCE_OFFICER_SRO",
+      "discipline_code": "SFO",
+      "title": "School Resource Officer (SRO) Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "SFO_SECURITY_OFFICER_TRAINING",
+      "discipline_code": "SFO",
+      "title": "Security Officer Training Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "SFO_SECURITY_OPERATIONS_CENTER_SOC",
+      "discipline_code": "SFO",
+      "title": "Security Operations Center (SOC) Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "SMG_GOVERNANCE_OVERSIGHT",
+      "discipline_code": "SMG",
+      "title": "Governance & Oversight Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "SMG_POLICY_COMPLIANCE_TRACKING",
+      "discipline_code": "SMG",
+      "title": "Policy Compliance Tracking Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "SMG_RISK_ASSESSMENT_RISK_MANAGEMENT",
+      "discipline_code": "SMG",
+      "title": "Risk Assessment / Risk Management Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "SMG_SECURITY_DOCUMENTATION",
+      "discipline_code": "SMG",
+      "title": "Security Documentation Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "SMG_SECURITY_POLICIES",
+      "discipline_code": "SMG",
+      "title": "Security Policies Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "SMG_SECURITY_PROCEDURES",
+      "discipline_code": "SMG",
+      "title": "Security Procedures Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "SMG_SECURITY_TRAINING_PROGRAMS",
+      "discipline_code": "SMG",
+      "title": "Security Training Programs Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "VSS_ANALYTICS_BEHAVIOR_DETECTION",
+      "discipline_code": "VSS",
+      "title": "Analytics / Behavior Detection Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "VSS_CAMERA_COVERAGE_LINE_OF_SIGHT",
+      "discipline_code": "VSS",
+      "title": "Camera Coverage / Line of Sight Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "VSS_EXTERIOR_CAMERAS",
+      "discipline_code": "VSS",
+      "title": "Exterior Cameras Capabilities",
+      "items": [
+        {
+          "id": "vss_ext_perimeter_coverage",
+          "label": "Perimeter / approach coverage",
+          "description": "Cameras cover building approaches, entries, and priority exterior zones",
+          "tags": [
+            "EXTERIOR_COVERAGE"
+          ]
+        },
+        {
+          "id": "vss_ext_lighting_image_quality",
+          "label": "Lighting supports usable images",
+          "description": "Exterior lighting or camera settings support identifiable images at night and in weather",
+          "tags": [
+            "EXTERIOR_LIGHTING"
+          ]
+        },
+        {
+          "id": "vss_ext_environmental_fit",
+          "label": "Outdoor / environmental fit",
+          "description": "Housings, mounting, and maintenance suit outdoor conditions",
+          "tags": [
+            "EXTERIOR_ENVIRONMENT"
+          ]
+        }
+      ]
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "VSS_FIXED_CAMERAS",
+      "discipline_code": "VSS",
+      "title": "Fixed Cameras Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "VSS_INTERIOR_CAMERAS",
+      "discipline_code": "VSS",
+      "title": "Interior Cameras Capabilities",
+      "items": [
+        {
+          "id": "vss_int_priority_zones",
+          "label": "Priority interior zones covered",
+          "description": "Cameras cover lobbies, corridors, or other priority interior areas",
+          "tags": [
+            "INTERIOR_COVERAGE"
+          ]
+        },
+        {
+          "id": "vss_int_privacy_controls",
+          "label": "Privacy-sensitive areas considered",
+          "description": "Placement avoids or limits recording where policy requires",
+          "tags": [
+            "INTERIOR_PRIVACY"
+          ]
+        }
+      ]
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "VSS_IP_CAMERAS",
+      "discipline_code": "VSS",
+      "title": "IP Cameras Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "VSS_MONITORING_WORKSTATIONS",
+      "discipline_code": "VSS",
+      "title": "Monitoring / Workstations Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "VSS_PTZ_CAMERAS",
+      "discipline_code": "VSS",
+      "title": "PTZ Cameras Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "VSS_RECORDING_STORAGE_NVR_DVR",
+      "discipline_code": "VSS",
+      "title": "Recording / Storage (NVR/DVR) Capabilities",
+      "items": [
+        {
+          "id": "vss_recording_retention",
+          "label": "Recording retention method exists",
+          "description": "A defined method exists for how long recordings are retained",
+          "tags": [
+            "VSS_RECORDING_HANDLING"
+          ]
+        },
+        {
+          "id": "vss_export_retrieval",
+          "label": "Export/retrieval method exists",
+          "description": "A defined method exists for exporting and retrieving recorded footage",
+          "tags": [
+            "VSS_RECORDING_HANDLING"
+          ]
+        },
+        {
+          "id": "vss_storage_capacity",
+          "label": "Storage capacity planning method exists",
+          "description": "A defined method exists for planning and managing storage capacity",
+          "tags": [
+            "VSS_STORAGE_PLANNING"
+          ]
+        }
+      ]
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "VSS_SYSTEM_ARCHITECTURE",
+      "discipline_code": "VSS",
+      "title": "System Architecture Capabilities",
+      "items": []
+    },
+    {
+      "version": "1.0",
+      "subtype_code": "VSS_VIDEO_WALL_DISPLAY_SYSTEMS",
+      "discipline_code": "VSS",
+      "title": "Video Wall / Display Systems Capabilities",
+      "items": []
+    }
+  ]
+}
