@@ -8,28 +8,26 @@ import '@/styles/toolbox-landing.css';
 export const metadata: Metadata = {
   title: 'PSA Toolbox | CISA',
   description:
-    'Infrastructure dependency analysis, hotel security (HOST), Modular Site Assessment, and SAFE 3.0.',
+    'Unified workspace for PSA assessment tools registered in tools-manifest.json.',
   applicationName: 'PSA Toolbox',
 };
 
-function defaultToolHref(tool: ToolboxManifestTool): string {
-  if (tool.entryPath?.trim()) return tool.entryPath.trim();
+/** Same-origin link: prefer entryPath so removing a tool from the manifest does not require code edits here. */
+function toolCardHref(tool: ToolboxManifestTool): string {
+  const entry = tool.entryPath?.trim();
+  if (entry) return entry.endsWith('/') ? entry : `${entry}/`;
   if (tool.externalUrl?.trim()) return tool.externalUrl.trim();
   return `/t/${tool.id}/`;
 }
 
-function launchHref(tool: ToolboxManifestTool): string {
-  if (tool.id === 'hotel-analysis') return '/hotel-analysis/';
-  if (tool.id === 'dependency-analysis') return '/assessment/categories/';
-  if (tool.id === 'cisa-site-assessment') return '/cisa-site-assessment/';
-  if (tool.id === 'safe-3-0') return '/safe-3-0/';
-  if (tool.externalUrl?.trim()) return tool.externalUrl.trim();
-  return defaultToolHref(tool);
+/** Open in a new tab only when there is no same-origin entryPath (external-only tools). */
+function toolCardIsExternal(tool: ToolboxManifestTool): boolean {
+  return Boolean(tool.externalUrl?.trim()) && !tool.entryPath?.trim();
 }
 
 function ToolCard({ tool }: { tool: ToolboxManifestTool }) {
-  const href = launchHref(tool);
-  const isExternal = Boolean(tool.externalUrl?.trim() && tool.id !== 'cisa-site-assessment');
+  const href = toolCardHref(tool);
+  const isExternal = toolCardIsExternal(tool);
 
   const body = (
     <>

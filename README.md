@@ -37,6 +37,10 @@ dotnet run --project .\launcher\PSA.Toolbox.Launcher\PSA.Toolbox.Launcher.csproj
 2. Register it in [`tools-manifest.json`](tools-manifest.json) (schema: [`tools-manifest.schema.json`](tools-manifest.schema.json)). Set **`entryPath`** and/or **`externalUrl`** for the web UI when applicable.
 3. Add `tools/<tool-id>/README.md`.
 
+## Remove or deprecate a tool
+
+Keep **`tools-manifest.json`** and [`tools/dependency-analysis/pnpm-workspace.yaml`](tools/dependency-analysis/pnpm-workspace.yaml) in sync with folders on disk (see [`docs/removing-a-tool.md`](docs/removing-a-tool.md)). From the repo root, `pnpm verify:tools` checks that manifest paths and workspace entries exist.
+
 ## Remote
 
 [github.com/frosty865/PSA-Toolbox](https://github.com/frosty865/PSA-Toolbox)
