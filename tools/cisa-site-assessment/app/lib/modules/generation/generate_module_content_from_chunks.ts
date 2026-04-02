@@ -1,10 +1,10 @@
 /**
- * Generate module content (questions and OFCs) by running chunks through the Python processor.
- * Uses run_module_parser_from_db.py.
- * Requires: data/module_chunks/<module_code>.json (run extract first).
+ * Generate module content (questions and OFCs) from exported chunks.
+ *
+ * The legacy Python-backed generator has been retired from the deployed app.
+ * Keep the offline module-crawler tooling for local generation workflows.
  */
 
-import { spawnSync } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
 import { getRuntimePool } from '@/app/lib/db/runtime_client';
@@ -29,19 +29,6 @@ function getSpawnTimeoutMs(): number {
     if (Number.isFinite(n) && n > 0) return n;
   }
   return DEFAULT_SPAWN_TIMEOUT_MS;
-}
-
-/** Resolve Python executable so spawn works when PATH is minimal (e.g. Next.js server). */
-function getPythonExecutable(): string {
-  const fromEnv = process.env.PYTHON_PATH || process.env.PYTHON;
-  if (fromEnv && fromEnv.trim()) return fromEnv.trim();
-  if (process.platform === 'win32') {
-    const py = spawnSync('py', ['-3', '-c', 'import sys; print(sys.executable)'], { encoding: 'utf-8', timeout: 5000 });
-    if (!py.error && py.status === 0 && py.stdout?.trim()) return py.stdout.trim();
-  }
-  const tryPython3 = spawnSync('python3', ['-c', 'pass'], { encoding: 'utf-8', timeout: 5000 });
-  if (!tryPython3.error) return 'python3';
-  return 'python';
 }
 
 type OllamaItem = {
@@ -137,7 +124,7 @@ export async function generateModuleContentFromChunks(
   if (!fs.existsSync(chunksPath)) {
     throw new Error(
       `CHUNK_EXPORT_MISSING: No chunk export at data/module_chunks/${module_code}.json. ` +
-        `Run: python tools/modules/extract_module_pdfs_to_chunks.py ${module_code}`
+        `Run the offline chunk extractor for ${module_code} before generating module content.`
     );
   }
 
@@ -221,139 +208,7 @@ export async function generateModuleContentFromChunks(
     }
   }
 
-  const pythonCmd = getPythonExecutable();
-  const timeoutMs = getSpawnTimeoutMs();
-  const stdinPayload = JSON.stringify({ chunks: chunksForParser, source_index: sourceIndex });
-  console.log(
-    `[module/generate] chunk parser input: chunks=${chunksForParser.length} chars=${effectiveCharCount} timeoutMs=${timeoutMs}`
+  throw new Error(
+    `Legacy module generation is retired in the deployed app. Use the offline generator locally for ${module_code}.`
   );
-  const result = spawnSync(pythonCmd, args, {
-    cwd: process.cwd(),
-    env,
-    stdio: 'pipe',
-    encoding: 'utf-8',
-    timeout: timeoutMs,
-    input: stdinPayload,
-  });
-
-  if (result.error) {
-    const err = result.error as unknown;
-    const code = typeof err === 'object' && err !== null && 'code' in err ? (err as { code?: string }).code : undefined;
-    const message = err instanceof Error ? err.message : String(err);
-    const hint =
-      code === 'ENOENT'
-        ? ' Python not found. Set PYTHON_PATH (or PYTHON) to your Python executable (e.g. C:\\Python311\\python.exe) in .env.local.'
-        : code === 'ETIMEDOUT'
-          ? ` Generation ran longer than ${Math.round(timeoutMs / 60_000)} minutes (timeoutMs=${timeoutMs}) and was stopped. Increase MODULE_CHUNK_PARSER_TIMEOUT_MS (e.g. 900000 for 15 min, 1200000 for 20 min) in .env.local if needed.`
-          : '';
-    throw new Error(`Chunk parser failed: ${message}.${hint}`);
-  }
-  if (result.status !== 0) {
-    const stderr = (result.stderr || '').trim();
-    if (result.status === 2 && stderr.includes('STANDARD_PROMPT_CONTAINS_PLAN_FOR_OBJECT_MODULE')) {
-      const err = new Error('Object module prompt must not contain plan element vocabulary.');
-      err.name = 'STANDARD_PROMPT_CONTAINS_PLAN_FOR_OBJECT_MODULE';
-      throw err;
-    }
-    throw new Error(`Chunk parser script exited ${result.status}. ${stderr.slice(0, 500) || (result.stdout || '').slice(-300) || ''}`);
-  }
-
-  const outputPath = path.join(OUTPUT_DIR, `module_parser_test_${module_code}.json`);
-  if (!fs.existsSync(outputPath)) {
-    throw new Error(`Parser run completed but output file not found: ${outputPath}`);
-  }
-
-  const raw = fs.readFileSync(outputPath, 'utf-8');
-  let data: OllamaOutput;
-  try {
-    data = JSON.parse(raw);
-  } catch {
-    throw new Error('Parser output file is not valid JSON.');
-  }
-
-  const items = Array.isArray(data?.items) ? data.items : [];
-  const chunksTotal = allChunks.length;
-  const chunksUsable = chunksForParser.length;
-  if (items.length === 0) {
-    return {
-      questions: [],
-      ofcs: [],
-      source: 'ollama_chunks',
-      itemCount: 0,
-      itemsEmptyReason: data?.items_empty_reason,
-      droppedTotal: data?.dropped_total,
-      dropReasons: data?.drop_reasons,
-      dropExamples: data?.examples,
-      totalRetrieved: data?.total_retrieved,
-      missingTextCount: data?.missing_text_count,
-      missingLocatorCount: data?.missing_locator_count,
-      missingSourceLabelCount: data?.missing_source_label_count,
-      missingTextChunkIds: data?.missing_text_chunk_ids,
-      missingLocatorChunkIds: data?.missing_locator_chunk_ids,
-      missingSourceLabelChunkIds: data?.missing_source_label_chunk_ids,
-      chunksTotal,
-      chunksUsable,
-      debugTraceFromPython: data?.debug_trace as Record<string, unknown> | undefined,
-      router: data?.router as GenerateFromChunksResult['router'],
-      stage_debug: data?.stage_debug as GenerateFromChunksResult['stage_debug'],
-    };
-  }
-
-  // Default discipline subtype for module questions (first active)
-  const runtimePool = getRuntimePool();
-  const subtypeQuery = `SELECT id, code FROM public.discipline_subtypes WHERE is_active = true ORDER BY code LIMIT 1`;
-  guardModuleQuery(subtypeQuery, 'generateModuleContentFromChunks: discipline_subtypes');
-  const subRows = await runtimePool.query<{ id: string; code: string }>(subtypeQuery);
-  const defaultSubtypeId = subRows.rows[0]?.id;
-  if (!defaultSubtypeId) {
-    throw new Error('No active discipline subtype found for mapping generated questions.');
-  }
-
-  const questions: GeneratedQuestion[] = [];
-  const ofcs: GeneratedOFC[] = [];
-  let orderIndex = 1;
-  for (const item of items) {
-    const questionText = (item.question || '').trim();
-    if (!questionText) continue;
-
-    const criterionKey = `Q${orderIndex.toString().padStart(3, '0')}`;
-    questions.push({
-      criterion_key: criterionKey,
-      question_text: questionText,
-      discipline_subtype_id: defaultSubtypeId,
-      asset_or_location: 'Module Asset',
-      event_trigger: 'TAMPERING',
-      order_index: orderIndex,
-    });
-
-    const ofcList = Array.isArray(item.ofcs) ? item.ofcs : [];
-    ofcList.forEach((ofcEntry, i) => {
-      const text =
-        typeof ofcEntry === 'string'
-          ? (ofcEntry || '').trim()
-          : ofcEntry && typeof ofcEntry === 'object' && (ofcEntry as { text?: string; option?: string }).text
-            ? String((ofcEntry as { text: string }).text).trim()
-            : ofcEntry && typeof ofcEntry === 'object' && (ofcEntry as { option?: string }).option
-              ? String((ofcEntry as { option: string }).option).trim()
-              : '';
-      if (!text) return;
-      ofcs.push({
-        criterion_key: criterionKey,
-        ofc_id: `MOD_OFC_${module_code}_${criterionKey}_${i + 1}`,
-        ofc_text: text,
-        order_index: orderIndex,
-      });
-    });
-    orderIndex++;
-  }
-
-  return {
-    questions,
-    ofcs,
-    source: 'ollama_chunks',
-    itemCount: items.length,
-    chunksTotal,
-    chunksUsable,
-    stage_debug: data?.stage_debug as GenerateFromChunksResult['stage_debug'],
-  };
 }

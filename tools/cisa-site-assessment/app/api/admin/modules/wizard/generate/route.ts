@@ -72,7 +72,7 @@ export async function POST(req: Request) {
           error: {
             code: 'CHUNK_EXPORT_MISSING',
             message: safeMsg,
-            details: `Run: python tools/modules/extract_module_pdfs_to_chunks.py ${module_code}`
+            details: `Run the offline chunk extractor for ${module_code} before generating module content.`
           }
         },
         { status: 400 }
