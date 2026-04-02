@@ -1,9 +1,9 @@
 /**
  * Extract document title from a PDF buffer or file path.
  *
- * This replaces the old Python-backed metadata scraper for the Vercel-facing
- * PDF title / publisher paths. It uses pdfjs-dist directly so the app can run
- * without Python for metadata extraction.
+ * This replaces the old metadata scraper for the Vercel-facing PDF title /
+ * publisher paths. It uses pdfjs-dist directly so the app can run entirely in
+ * Node for metadata extraction.
  */
 
 import { existsSync } from "fs";

@@ -6,8 +6,7 @@ export const dynamic = "force-dynamic";
  * POST /api/admin/modules/ingest/scan
  * Legacy compatibility endpoint.
  *
- * The Python-backed scanner has been retired in favor of the Node module ingest
- * routes:
+ * The legacy scanner has been retired in favor of the Node module ingest routes:
  * - /api/admin/modules/[moduleCode]/sources/upload
  * - /api/admin/modules/[moduleCode]/sources/add-from-url
  * - /api/admin/modules/[moduleCode]/process-incoming-pdfs

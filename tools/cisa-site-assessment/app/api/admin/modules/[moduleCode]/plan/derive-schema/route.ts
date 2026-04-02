@@ -236,7 +236,7 @@ export async function POST(
 
     const sourceSetHash = computeSourceSetHash(requirementSourceIds);
 
-    // TOC_PREFERRED: deterministic Python TOC + headings fallback only. No Ollama.
+    // TOC_PREFERRED: deterministic TOC + headings fallback only. No Ollama.
     if (engine === "TOC_PREFERRED") {
       if (!structureSourceId) {
         return NextResponse.json(

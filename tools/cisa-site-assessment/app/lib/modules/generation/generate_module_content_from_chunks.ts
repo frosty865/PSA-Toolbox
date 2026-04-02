@@ -1,7 +1,7 @@
 /**
  * Generate module content (questions and OFCs) from exported chunks.
  *
- * The legacy Python-backed generator has been retired from the deployed app.
+ * The legacy chunk generator has been retired from the deployed app.
  * Keep the offline module-crawler tooling for local generation workflows.
  */
 
@@ -86,8 +86,8 @@ export interface GenerateFromChunksResult {
   /** For debug_trace: chunks sent to parser. */
   chunksTotal?: number;
   chunksUsable?: number;
-  /** From Python when items empty (packet pipeline). */
-  debugTraceFromPython?: Record<string, unknown>;
+  /** From the legacy packet pipeline when items are empty. */
+  debugTraceFromPacketPipeline?: Record<string, unknown>;
   /** Router stats (total, keep, maybe, ignore, examples) when packet pipeline used. */
   router?: {
     total?: number;
@@ -112,7 +112,7 @@ export interface GenerateFromChunksResult {
 }
 
 /**
- * Run the Python chunk parser and map its output to wizard format.
+ * Run the legacy chunk parser path and map its output to wizard format.
  * Chunk export must exist at data/module_chunks/<module_code>.json (run extract first).
  * When standardClass/moduleKind are set, uses packet pipeline (structure from standard class, topic from module).
  */

@@ -204,7 +204,7 @@ export async function GET(request: NextRequest) {
     // Optional: restrict to sources scoped to a specific module (scope_tags->>'module_code' or source_key prefix).
     if (moduleCodeFilter) {
       const code = (moduleCode as string).trim();
-      // Match backfill (module:CODE:...) and Python ingestion (MOD_IN_CODE_...)
+      // Match backfill (module:CODE:...) and legacy module ingestion (MOD_IN_CODE_...)
       query += ` AND (sr.scope_tags->>'module_code' = $${paramIndex} OR sr.source_key LIKE $${paramIndex + 1} OR sr.source_key LIKE $${paramIndex + 2})`;
       params.push(code, `module:${code}%`, `MOD_IN_${code}_%`);
       paramIndex += 3;

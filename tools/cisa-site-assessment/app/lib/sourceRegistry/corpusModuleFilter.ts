@@ -5,8 +5,8 @@
  *   Module Sources   = source_registry rows where module_code IS NOT NULL
  *
  * source_registry has no top-level module_code column. We derive from:
- * - scope_tags->>'module_code' (set by backfill and Python module ingestion)
- * - source_key prefix 'module:' (backfill) or 'MOD_IN_' (Python ingestion)
+ * - scope_tags->>'module_code' (set by backfill and module ingestion)
+ * - source_key prefix 'module:' (backfill) or 'MOD_IN_' (legacy module ingestion)
  *
  * Use these helpers in any query that lists source_registry so assessment
  * corpus never shows module sources and module lists never show assessment-only rows.

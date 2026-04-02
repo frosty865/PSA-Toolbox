@@ -1,6 +1,6 @@
 /**
  * EAP criteria prompt rules for Standard generation.
- * Use in any prompt that produces criteria (PLAN/MEASURES, Python run_module_parser_from_db or TS).
+ * Use in any prompt that produces criteria (PLAN/MEASURES or TS-based module generation).
  * Ensures criteria are plan elements only, not hazard/scenario content.
  */
 

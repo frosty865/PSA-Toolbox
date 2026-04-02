@@ -6,9 +6,9 @@ export const runtime = "nodejs";
 /**
  * POST /api/admin/modules/research
  *
- * The legacy Python-backed module research downloader is retired from the
- * Vercel-facing app. Keep research generation in the offline tooling under
- * tools/research/ if you need it locally.
+ * The legacy module research downloader is retired from the Vercel-facing app.
+ * Keep research generation in the offline tooling under tools/research/ if
+ * you need it locally.
  */
 export async function POST() {
   return NextResponse.json(
@@ -18,7 +18,7 @@ export async function POST() {
         code: "LEGACY_RESEARCH_DISABLED",
         message: "Module research downloader is not available in the deployed app.",
         migration: {
-          step1: "Use the offline tools/research/module_research_downloader.py workflow locally.",
+          step1: "Use the offline tools/research workflow locally.",
           step2: "Keep research-generated discovery/manifest artifacts out of the Vercel runtime path.",
         },
       },

@@ -100,7 +100,7 @@ export interface ExportChunksResult {
 
 /**
  * Export ingested chunks from RUNTIME to data/module_chunks/<module_code>.json
- * (same format as Python extract_module_pdfs_to_chunks.py for run_module_parser_from_db.py).
+ * (same format as the legacy chunk export for the module parser path).
  * Only exports chunks whose document has a CORPUS source_registry link (module_doc_source_link).
  * Returns { exported, missingSourceRegistryLink }.
  */
@@ -1079,9 +1079,9 @@ export async function POST(
             dropReasons: chunkGenerated.dropReasons,
             dropExamples: chunkGenerated.dropExamples,
             extracted: undefined,
-            llm: (chunkGenerated.debugTraceFromPython as Record<string, unknown> | undefined)?.llm as GenerationDebugTrace["llm"] | undefined,
-            parsing: (chunkGenerated.debugTraceFromPython as Record<string, unknown> | undefined)?.parsing as GenerationDebugTrace["parsing"] | undefined,
-            schema: (chunkGenerated.debugTraceFromPython as Record<string, unknown> | undefined)?.schema as GenerationDebugTrace["schema"] | undefined,
+            llm: (chunkGenerated.debugTraceFromPacketPipeline as Record<string, unknown> | undefined)?.llm as GenerationDebugTrace["llm"] | undefined,
+            parsing: (chunkGenerated.debugTraceFromPacketPipeline as Record<string, unknown> | undefined)?.parsing as GenerationDebugTrace["parsing"] | undefined,
+            schema: (chunkGenerated.debugTraceFromPacketPipeline as Record<string, unknown> | undefined)?.schema as GenerationDebugTrace["schema"] | undefined,
           });
           const payload: Record<string, unknown> = {
             error: "Chunk pipeline returned no items",
@@ -1280,8 +1280,8 @@ export async function POST(
               itemsKept: lastChunkGeneratedForDebug.itemCount,
               dropReasons: lastChunkGeneratedForDebug.dropReasons,
               dropExamples: lastChunkGeneratedForDebug.dropExamples,
-              llm: (lastChunkGeneratedForDebug.debugTraceFromPython as Record<string, unknown> | undefined)?.llm as GenerationDebugTrace["llm"] | undefined,
-              parsing: (lastChunkGeneratedForDebug.debugTraceFromPython as Record<string, unknown> | undefined)?.parsing as GenerationDebugTrace["parsing"] | undefined,
+              llm: (lastChunkGeneratedForDebug.debugTraceFromPacketPipeline as Record<string, unknown> | undefined)?.llm as GenerationDebugTrace["llm"] | undefined,
+              parsing: (lastChunkGeneratedForDebug.debugTraceFromPacketPipeline as Record<string, unknown> | undefined)?.parsing as GenerationDebugTrace["parsing"] | undefined,
             }),
           }
         : {}),

@@ -18,7 +18,7 @@ type Body = {
   dryRun?: boolean;
   limit?: number | null;
   pdfDir?: string | null;
-  /** Kept for backward compatibility; this Node path no longer shells out to the CORPUS Python mirror. */
+  /** Kept for backward compatibility; this Node path no longer shells out to the legacy CORPUS mirror. */
   skipCorpusIngest?: boolean;
   /** Skip comprehension pass after ingest. Default false. */
   skipComprehension?: boolean;
