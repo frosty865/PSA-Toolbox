@@ -37,7 +37,7 @@
       "description": "Modular Site Assessment is a modular assessment designed so Protective Security Advisors have a flexible tool to conduct assessments based on sector and subsector.",
       "readmeRelativePath": "README-TOOLBOX.md",
       "entryPath": "/cisa-site-assessment/",
-      "externalUrl": "http://127.0.0.1:3001/cisa-site-assessment/assessments/",
+      "externalUrl": "https://cisa.zophielgroup.com/cisa-site-assessment/assessments/",
       "start": {
         "kind": "powershell",
         "scriptRelativePath": "Start-CisaSiteAssessment.ps1",
