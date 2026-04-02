@@ -4,6 +4,33 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import CreateAssessmentDialog from "@/app/components/CreateAssessmentDialog";
+import { apiUrl } from "@/app/lib/apiUrl";
+
+/** Read failed response body without throwing on empty or non-JSON (proxies often return empty 502 bodies). */
+async function readApiErrorMessage(response: Response): Promise<string> {
+  const text = await response.text();
+  if (!text?.trim()) {
+    return `${response.status} ${response.statusText || "Request failed"}`;
+  }
+  try {
+    const j = JSON.parse(text) as { message?: string; error?: string };
+    if (typeof j.message === "string" && j.message.trim()) return j.message;
+    if (typeof j.error === "string" && j.error.trim()) return j.error;
+  } catch {
+    /* HTML or plain text */
+  }
+  return text.slice(0, 500);
+}
+
+function tryParseJsonObject(text: string): Record<string, unknown> | null {
+  if (!text.trim()) return null;
+  try {
+    const v = JSON.parse(text) as unknown;
+    return typeof v === "object" && v !== null ? (v as Record<string, unknown>) : null;
+  } catch {
+    return null;
+  }
+}
 
 interface Assessment {
   assessment_id: string;
@@ -36,16 +63,20 @@ export default function AssessmentsListPage() {
       setLoading(true);
       setError(null);
 
-      const url = includeTest 
-        ? '/api/runtime/assessments?include_qa=true'
-        : '/api/runtime/assessments';
-      
-      const response = await fetch(url, { cache: 'no-store' });
+      const url = includeTest
+        ? apiUrl("/api/runtime/assessments?include_qa=true")
+        : apiUrl("/api/runtime/assessments");
+
+      const response = await fetch(url, { cache: "no-store", credentials: "same-origin" });
       if (!response.ok) {
-        throw new Error(`Failed to fetch assessments: ${response.status}`);
+        throw new Error(await readApiErrorMessage(response));
       }
-      const data = await response.json();
-      setAssessments(data);
+      const text = await response.text();
+      if (!text.trim()) {
+        setAssessments([]);
+        return;
+      }
+      setAssessments(JSON.parse(text) as Assessment[]);
     } catch (err) {
       setError(
         err instanceof Error
@@ -104,13 +135,13 @@ export default function AssessmentsListPage() {
 
     try {
       setDeletingId(assessmentId);
-      const response = await fetch(`/api/runtime/assessments/${assessmentId}`, {
-        method: 'DELETE',
+      const response = await fetch(apiUrl(`/api/runtime/assessments/${assessmentId}`), {
+        method: "DELETE",
+        credentials: "same-origin",
       });
 
       if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.message || 'Failed to delete assessment');
+        throw new Error(await readApiErrorMessage(response));
       }
 
       // Refresh assessments list
@@ -131,33 +162,56 @@ export default function AssessmentsListPage() {
       setCreatingTest(true);
       
       // Use dedicated test assessment endpoint - much simpler!
-      const response = await fetch('/api/runtime/test-assessments', {
-        method: 'POST',
+      const response = await fetch(apiUrl("/api/runtime/test-assessments"), {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({}), // Empty body - endpoint handles everything
+        credentials: "same-origin",
       });
 
+      const responseText = await response.text();
+
       if (!response.ok) {
-        const error = await response.json();
-        console.error('[Test Assessment] API Error Response:', error);
-        const errorMsg = error.error || error.message || 'Failed to create test assessment';
-        const errorDetails = error.details ? `\n\nDetails: ${JSON.stringify(error.details, null, 2)}` : '';
-        throw new Error(`${errorMsg}${errorDetails}`);
+        if (!responseText.trim()) {
+          throw new Error(
+            `${response.status} ${response.statusText || "Request failed"}`
+          );
+        }
+        const errObj = tryParseJsonObject(responseText);
+        if (errObj) {
+          console.error("[Test Assessment] API Error Response:", errObj);
+          const errorMsg =
+            (typeof errObj.error === "string" && errObj.error) ||
+            (typeof errObj.message === "string" && errObj.message) ||
+            `${response.status} ${response.statusText}`;
+          const details = errObj.details;
+          const suffix =
+            details !== undefined
+              ? `\n\nDetails: ${JSON.stringify(details, null, 2)}`
+              : "";
+          throw new Error(`${errorMsg}${suffix}`);
+        }
+        throw new Error(responseText.slice(0, 500));
       }
 
-      const data = await response.json();
-      
-      if (!data.ok) {
-        throw new Error(data.error || 'Failed to create test assessment');
+      const data = tryParseJsonObject(responseText) ?? {};
+      const ok = data.ok === true;
+      const newAssessmentId =
+        typeof data.assessment_id === "string" ? data.assessment_id : undefined;
+      const err =
+        typeof data.error === "string" ? data.error : "Failed to create test assessment";
+
+      if (!ok || !newAssessmentId) {
+        throw new Error(err);
       }
-      
+
       // Refresh assessments list
       await fetchAssessments(showTestAssessments);
-      
+
       // Navigate to the new test assessment
-      router.push(`/assessments/${data.assessment_id}`);
+      router.push(`/assessments/${newAssessmentId}`);
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Failed to create test assessment';
       console.error('[Test Assessment] Error:', err);

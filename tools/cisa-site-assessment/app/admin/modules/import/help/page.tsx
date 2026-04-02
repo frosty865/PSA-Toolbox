@@ -5,9 +5,22 @@ import Link from "next/link";
 export default function ModuleImportHelpPage() {
   return (
     <div style={{ padding: 24, maxWidth: 1200 }}>
-      <div style={{ marginBottom: 16 }}>
+      <div style={{ marginBottom: 16, display: "flex", gap: 16, flexWrap: "wrap", alignItems: "center" }}>
         <Link href="/admin/modules/import" style={{ color: "#0066cc" }}>
           ← Back to Import
+        </Link>
+        <Link
+          href="/admin/modules/import/builder"
+          style={{
+            padding: "8px 16px",
+            backgroundColor: "#1a4480",
+            color: "white",
+            textDecoration: "none",
+            borderRadius: 4,
+            fontSize: "14px",
+          }}
+        >
+          Open JSON builder
         </Link>
       </div>
 
@@ -19,6 +32,14 @@ export default function ModuleImportHelpPage() {
           Modules are <strong>additive content bundles</strong> that extend the baseline PSA assessment 
           with technology-specific or situation-specific questions and recommendations. Modules are 
           completely independent of baseline content.
+        </p>
+        <p style={{ marginTop: 12 }}>
+          To avoid hand-editing UUIDs and IDs, use the{" "}
+          <Link href="/admin/modules/import/builder" style={{ color: "#0066cc", fontWeight: 600 }}>
+            module import JSON builder
+          </Link>
+          {" "}
+          (discipline/subtype pickers, auto-generated <code>MODULEQ_*</code> / <code>MOD_OFC_*</code> IDs, then copy or open on the Import page).
         </p>
       </section>
 

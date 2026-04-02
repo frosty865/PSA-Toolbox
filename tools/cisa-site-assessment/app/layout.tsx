@@ -39,7 +39,8 @@ export default function RootLayout({
                 <h1>Protective Security Assessment System</h1>
               </Link>
             </div>
-            <nav className="nav-links">
+            <nav className="nav-links" aria-label="Primary">
+              <Link href="/" className="nav-link">Home</Link>
               <Link href="/assessments" className="nav-link">Assessments</Link>
               <Link href="/admin" className="nav-link">Admin</Link>
             </nav>

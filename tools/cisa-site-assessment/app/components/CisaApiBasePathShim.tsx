@@ -7,11 +7,20 @@ import { readAdminCookieFromDocument } from "@/app/lib/admin/client";
 const BASE_PATH = "/cisa-site-assessment";
 const FETCH_MARK = Symbol.for("psa.cisa.fetch.basePathShim");
 
+/** Match next.config `trailingSlash: true` so route handlers resolve (avoids 405 on DELETE/GET). */
+function ensureApiTrailingSlash(fullUrl: string): string {
+  const q = fullUrl.indexOf("?");
+  const pathOnly = q >= 0 ? fullUrl.slice(0, q) : fullUrl;
+  const search = q >= 0 ? fullUrl.slice(q) : "";
+  if (pathOnly.length <= 1 || pathOnly.endsWith("/")) return fullUrl;
+  return `${pathOnly}/${search}`;
+}
+
 function prefixApiPath(input: string): string {
   if (!input.startsWith("/api/")) return input;
   // Already prefixed (e.g. apiUrl() + basePath) — avoid /cisa-site-assessment/cisa-site-assessment/api/...
-  if (input.startsWith(`${BASE_PATH}/api/`)) return input;
-  return `${BASE_PATH}${input}`;
+  if (input.startsWith(`${BASE_PATH}/api/`)) return ensureApiTrailingSlash(input);
+  return ensureApiTrailingSlash(`${BASE_PATH}${input}`);
 }
 
 /** Ensure admin routes send cookie + explicit header (some proxies/CDNs strip cookies). */

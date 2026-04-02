@@ -40,6 +40,7 @@ export default function AdminModuleImportPage() {
       window.removeEventListener('unhandledrejection', handleRejection, true);
     };
   }, []);
+
   const [jsonText, setJsonText] = useState<string>("");
   const [preview, setPreview] = useState<{ module_code?: string; title?: string; module_questions: number; module_ofcs: number; sources: number; risk_drivers: number } | null>(null);
   const [result, setResult] = useState<Record<string, unknown> | null>(null);
@@ -68,6 +69,24 @@ export default function AdminModuleImportPage() {
       risk_drivers: riskDrivers,
     };
   }
+
+  /** Payload from /admin/modules/import/builder via "Open in Import page". */
+  useEffect(() => {
+    try {
+      const raw = sessionStorage.getItem("psa_module_import_builder_json");
+      if (!raw?.trim()) return;
+      setJsonText(raw);
+      try {
+        const obj = JSON.parse(raw) as Record<string, unknown>;
+        setPreview(buildPreview(obj));
+      } catch {
+        setPreview(null);
+      }
+      sessionStorage.removeItem("psa_module_import_builder_json");
+    } catch {
+      /* ignore */
+    }
+  }, []);
 
   // Real-time validation
   useMemo(() => {
@@ -183,20 +202,36 @@ export default function AdminModuleImportPage() {
             Import a module definition including metadata, module-specific questions, and module-specific OFCs.
           </p>
         </div>
-        <Link
-          href="/admin/modules/import/help"
-          style={{
-            padding: "8px 16px",
-            backgroundColor: "#0066cc",
-            color: "white",
-            textDecoration: "none",
-            borderRadius: 4,
-            fontSize: "14px",
-            whiteSpace: "nowrap"
-          }}
-        >
-          📚 View Help Guide
-        </Link>
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+          <Link
+            href="/admin/modules/import/builder"
+            style={{
+              padding: "8px 16px",
+              backgroundColor: "#1a4480",
+              color: "white",
+              textDecoration: "none",
+              borderRadius: 4,
+              fontSize: "14px",
+              whiteSpace: "nowrap",
+            }}
+          >
+            JSON builder
+          </Link>
+          <Link
+            href="/admin/modules/import/help"
+            style={{
+              padding: "8px 16px",
+              backgroundColor: "#0066cc",
+              color: "white",
+              textDecoration: "none",
+              borderRadius: 4,
+              fontSize: "14px",
+              whiteSpace: "nowrap",
+            }}
+          >
+            📚 View Help Guide
+          </Link>
+        </div>
       </div>
       
       <div style={{ 

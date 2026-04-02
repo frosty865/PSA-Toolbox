@@ -7,6 +7,7 @@ export default function AdminNav() {
   const pathname = usePathname();
 
   const navItems = [
+    { href: '/', label: 'Home', icon: '🏠' },
     { href: '/admin', label: 'Dashboard', icon: '📊' },
     { href: '/admin/assessments', label: 'Assessment Management', icon: '📝' },
     { href: '/admin/module-management', label: 'Module Management', icon: '📦' },
@@ -33,7 +34,9 @@ export default function AdminNav() {
       }}>
         {navItems.map((item) => {
           let isActive: boolean;
-          if (item.href === '/admin/module-management') {
+          if (item.href === '/') {
+            isActive = pathname === '/' || pathname === '';
+          } else if (item.href === '/admin/module-management') {
             isActive = pathname === '/admin/module-management' || pathname?.startsWith('/admin/modules') || pathname?.startsWith('/admin/module-data') || pathname?.startsWith('/admin/module-drafts');
           } else if (item.href === '/admin/assessments') {
             isActive = pathname === '/admin/assessments';

@@ -1,9 +1,38 @@
 import { NextRequest, NextResponse } from 'next/server';
+import type { PoolClient } from 'pg';
 import { getRuntimePool } from '@/app/lib/db/runtime_client';
 import { assertTableOnOwnerPool } from '@/app/lib/db/pool_guard';
 
 export const runtime = "nodejs";
 export const dynamic = 'force-dynamic';
+
+/** Ignore missing table (42P01) so deletes work across schema variants */
+async function execIgnoreUndefinedTable(client: PoolClient, sql: string, params: unknown[]): Promise<void> {
+  try {
+    await client.query(sql, params);
+  } catch (e: unknown) {
+    const code = e && typeof e === "object" && "code" in e ? String((e as { code?: string }).code) : "";
+    if (code === "42P01") return;
+    throw e;
+  }
+}
+
+/**
+ * True if this assessment is allowed to be deleted via the assessments UI
+ * (aligned with purge-test-assessments safety, plus [TEST]% from POST /api/runtime/test-assessments).
+ */
+function isDeletableTestAssessment(row: {
+  qa_flag?: boolean | null;
+  test_run_id?: string | null;
+  facility_name?: string | null;
+}): boolean {
+  if (row.qa_flag === true) return true;
+  if (row.test_run_id != null && String(row.test_run_id).trim() !== "") return true;
+  const name = row.facility_name ?? "";
+  if (name.startsWith("[QA]")) return true;
+  if (name.toUpperCase().startsWith("[TEST]")) return true;
+  return false;
+}
 
 // Force module evaluation
 if (typeof window === 'undefined') {
@@ -105,6 +134,190 @@ export async function GET(
         error: 'Failed to fetch assessment',
         message: errorDetails.message,
         details: errorDetails
+      },
+      { status: 500 }
+    );
+  }
+}
+
+/**
+ * DELETE /api/runtime/assessments/[assessmentId]
+ *
+ * Deletes a **test** assessment and dependent runtime rows. Production-style assessments are refused.
+ * Test detection: qa_flag, test_run_id, or facility_name prefix [QA] / [TEST] (case-insensitive for TEST).
+ */
+export async function DELETE(
+  _request: NextRequest,
+  { params }: { params: Promise<{ assessmentId: string }> }
+) {
+  try {
+    await assertTableOnOwnerPool("public.assessments");
+
+    const { assessmentId } = await params;
+    if (!assessmentId?.trim()) {
+      return NextResponse.json({ error: "assessmentId parameter is required" }, { status: 400 });
+    }
+
+    const pool = getRuntimePool();
+    const client = await pool.connect();
+
+    try {
+      const meta = await client.query(
+        `
+        SELECT id, facility_name, qa_flag, test_run_id
+        FROM public.assessments
+        WHERE id::text = $1
+        LIMIT 1
+        `,
+        [assessmentId]
+      );
+
+      if (meta.rows.length === 0) {
+        return NextResponse.json({ error: "Assessment not found" }, { status: 404 });
+      }
+
+      const row = meta.rows[0] as {
+        id: string;
+        facility_name: string | null;
+        qa_flag: boolean | null;
+        test_run_id: string | null;
+      };
+
+      if (!isDeletableTestAssessment(row)) {
+        return NextResponse.json(
+          {
+            error: "Only test assessments can be deleted",
+            message:
+              "This assessment is not marked as a test (qa_flag / test_run_id / [QA] or [TEST] name). Delete is disabled for non-test assessments.",
+          },
+          { status: 403 }
+        );
+      }
+
+      const instanceResult = await client.query(
+        `
+        SELECT id FROM public.assessment_instances
+        WHERE facility_id::text = $1 OR id::text = $1
+        `,
+        [assessmentId]
+      );
+      const instanceIds = instanceResult.rows.map((r: { id: string }) => r.id);
+
+      await client.query("BEGIN");
+
+      if (instanceIds.length > 0) {
+        await execIgnoreUndefinedTable(
+          client,
+          `DELETE FROM public.assessment_technology_profiles WHERE assessment_instance_id = ANY($1::uuid[])`,
+          [instanceIds]
+        );
+        await execIgnoreUndefinedTable(
+          client,
+          `DELETE FROM public.assessment_responses WHERE assessment_instance_id = ANY($1::uuid[])`,
+          [instanceIds]
+        );
+      }
+
+      await execIgnoreUndefinedTable(
+        client,
+        `DELETE FROM public.assessment_question_responses WHERE assessment_id::text = $1`,
+        [assessmentId]
+      );
+
+      await execIgnoreUndefinedTable(
+        client,
+        `DELETE FROM public.assessment_expansion_responses WHERE assessment_id::text = $1`,
+        [assessmentId]
+      );
+      await execIgnoreUndefinedTable(
+        client,
+        `DELETE FROM public.assessment_expansion_profiles WHERE assessment_id::text = $1`,
+        [assessmentId]
+      );
+      await execIgnoreUndefinedTable(
+        client,
+        `DELETE FROM public.assessment_question_universe WHERE assessment_id::text = $1`,
+        [assessmentId]
+      );
+      await execIgnoreUndefinedTable(
+        client,
+        `DELETE FROM public.assessment_required_elements WHERE assessment_id::text = $1`,
+        [assessmentId]
+      );
+      await execIgnoreUndefinedTable(
+        client,
+        `DELETE FROM public.assessment_status WHERE assessment_id::text = $1`,
+        [assessmentId]
+      );
+      await execIgnoreUndefinedTable(
+        client,
+        `DELETE FROM public.assessment_definitions WHERE assessment_id::text = $1`,
+        [assessmentId]
+      );
+
+      await execIgnoreUndefinedTable(
+        client,
+        `DELETE FROM public.ofc_nominations WHERE assessment_id::text = $1`,
+        [assessmentId]
+      );
+
+      await execIgnoreUndefinedTable(
+        client,
+        `DELETE FROM public.assessment_followup_responses WHERE assessment_id::text = $1`,
+        [assessmentId]
+      );
+
+      await execIgnoreUndefinedTable(
+        client,
+        `DELETE FROM public.assessment_module_question_responses WHERE assessment_id::text = $1`,
+        [assessmentId]
+      );
+      await execIgnoreUndefinedTable(
+        client,
+        `DELETE FROM public.assessment_module_instances WHERE assessment_id::text = $1`,
+        [assessmentId]
+      );
+
+      await execIgnoreUndefinedTable(
+        client,
+        `DELETE FROM public.assessment_applied_ofcs WHERE assessment_id::text = $1`,
+        [assessmentId]
+      );
+      await execIgnoreUndefinedTable(
+        client,
+        `DELETE FROM public.assessment_applied_vulnerabilities WHERE assessment_id::text = $1`,
+        [assessmentId]
+      );
+
+      if (instanceIds.length > 0) {
+        await client.query(`DELETE FROM public.assessment_instances WHERE id = ANY($1::uuid[])`, [instanceIds]);
+      }
+
+      await client.query(`DELETE FROM public.assessments WHERE id::text = $1`, [assessmentId]);
+
+      await client.query("COMMIT");
+
+      return NextResponse.json({ ok: true, deleted_assessment_id: row.id }, { status: 200 });
+    } catch (inner: unknown) {
+      try {
+        await client.query("ROLLBACK");
+      } catch {
+        /* ignore */
+      }
+      throw inner;
+    } finally {
+      client.release();
+    }
+  } catch (error: unknown) {
+    const msg = error instanceof Error ? error.message : String(error);
+    const code =
+      error && typeof error === "object" && "code" in error ? String((error as { code?: string }).code) : "";
+    console.error("[API /api/runtime/assessments/[assessmentId] DELETE] Error:", error);
+    return NextResponse.json(
+      {
+        error: "Failed to delete assessment",
+        message: msg,
+        code: code || undefined,
       },
       { status: 500 }
     );
