@@ -1037,7 +1037,11 @@
       "discipline_id": "7aa8d7a5-68a8-4290-be4c-4eb654e61a29",
       "discipline_code": "ISC",
       "discipline_name": "Information Sharing & Coordination",
-      "is_active": true
+      "is_active": true,
+      "guidance": {
+        "overview": "External reporting defines how and when the facility notifies agencies, partners, or authorities outside the organization about incidents, threats, or required disclosures. Clear paths reduce delay, confusion, and inconsistent messaging during stressful events.",
+        "psa_notes": "Ask who may release information externally and how drafts are reviewed. If only one person knows the process, reporting can stall when they are unavailable."
+      }
     },
     {
       "id": "5a112ba9-dfea-4009-b618-7a2bb9273623",
@@ -1333,7 +1337,11 @@
       "discipline_id": "69a28796-c8fe-42c1-88af-950a90d0a5e4",
       "discipline_code": "PER",
       "discipline_name": "Perimeter Security",
-      "is_active": true
+      "is_active": true,
+      "guidance": {
+        "overview": "Pedestrian access control points manage how people enter on foot at the perimeter through gates, turnstiles, staffed checkpoints, or similar controls. They are where identity checks, visitor handling, and tailgating risk are most visible.",
+        "psa_notes": "Observe a busy arrival period. If staff wave people through or credentials are not challenged, the control point is not operating as intended."
+      }
     },
     {
       "id": "e7e2aa40-e832-48bc-a142-cad9986620db",
@@ -1800,7 +1808,8 @@
         "standards_references": [
           "ISC: Facility Security Plan Guide",
           "ISC: Occupant Emergency Programs (2024 Edition)"
-        ]
+        ],
+        "psa_notes": "Trace a camera path from lens to recorder using documentation or configuration. If no one can describe the end-to-end path, the architecture is informal rather than managed."
       },
       "guidance_required": true
     },
