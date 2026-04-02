@@ -16,10 +16,21 @@ The toolbox app **reverse-proxies** the Modular Site Assessment UI. On your lapt
 
 1. Deploy **`tools/cisa-site-assessment`** as a **separate** Vercel project (or any HTTPS host with `basePath` `/cisa-site-assessment`).
 2. On **this** (toolbox / IDA) Vercel project → **Settings → Environment Variables**, add:
-   - **`PSA_SITE_ASSESSMENT_ORIGIN`** = the PSA deployment **origin** only, e.g. `https://your-psa.vercel.app` (no trailing slash).
+   - **`PSA_SITE_ASSESSMENT_ORIGIN`** = the PSA deployment **origin** only, e.g. `https://your-psa.vercel.app` (no trailing slash). Optional alias: **`MODULAR_SITE_ASSESSMENT_ORIGIN`** (same value).
 3. Redeploy the toolbox app.
 
 Without `PSA_SITE_ASSESSMENT_ORIGIN`, requests to `/cisa-site-assessment/` on Vercel return **503** with setup instructions.
+
+### Troubleshooting `503` on `/cisa-site-assessment/` (e.g. www.zophielgroup.com)
+
+That response means **`PSA_SITE_ASSESSMENT_ORIGIN` is missing or not applied** for the deployment that serves the hostname you opened — not a bug in the PSA app itself.
+
+1. In Vercel, open the **toolbox** project connected to **zophielgroup.com** (same project as `/` and `/assessment/`).
+2. **Settings → Environment Variables**: add **`PSA_SITE_ASSESSMENT_ORIGIN`** (optional alias **`MODULAR_SITE_ASSESSMENT_ORIGIN`**) with value = the **full origin** of your Modular Site Assessment deployment, e.g. `https://psa-xxxxx.vercel.app` or `https://cisa.zophielgroup.com` if that domain is attached to the PSA project.
+3. Scope: enable for **Production** (and **Preview** if you test preview URLs).
+4. **Save**, then **Deployments → … → Redeploy** (or push a commit). New variables are not guaranteed to apply to old deployments until you redeploy.
+
+If the variable is set but you still see **502**, the toolbox server cannot reach the PSA URL (wrong URL, PSA project paused, or TLS/DNS issues).
 
 ## What the repo contains
 

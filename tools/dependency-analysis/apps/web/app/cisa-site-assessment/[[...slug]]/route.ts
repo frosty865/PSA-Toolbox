@@ -9,32 +9,42 @@ import { NextResponse } from 'next/server';
  * - **Vercel:** set `PSA_SITE_ASSESSMENT_ORIGIN` to your deployed PSA origin (e.g. `https://<psa>.vercel.app`) — there is no localhost on the platform.
  */
 function resolveUpstream(): { origin: string } | { response: NextResponse } {
-  const raw = process.env.PSA_SITE_ASSESSMENT_ORIGIN?.trim();
+  /** Alias for teams that prefer one name; same format as PSA_SITE_ASSESSMENT_ORIGIN. */
+  const raw =
+    process.env.PSA_SITE_ASSESSMENT_ORIGIN?.trim() ||
+    process.env.MODULAR_SITE_ASSESSMENT_ORIGIN?.trim();
   if (raw) {
     try {
       const u = new URL(raw);
       return { origin: `${u.protocol}//${u.host}` };
     } catch {
       return {
-        response: new NextResponse('PSA_SITE_ASSESSMENT_ORIGIN is not a valid absolute URL (include https://).', {
-          status: 500,
-          headers: { 'content-type': 'text/plain; charset=utf-8' },
-        }),
+        response: new NextResponse(
+          'PSA_SITE_ASSESSMENT_ORIGIN (or MODULAR_SITE_ASSESSMENT_ORIGIN) is not a valid absolute URL (include https://).',
+          {
+            status: 500,
+            headers: { 'content-type': 'text/plain; charset=utf-8' },
+          },
+        ),
       };
     }
   }
   if (process.env.VERCEL === '1') {
     return {
-      response: new NextResponse(
+        response: new NextResponse(
         [
-          'Modular Site Assessment is not configured for this deployment.',
+          'HTTP 503: Modular Site Assessment upstream is not configured for Vercel.',
           '',
-          'Deploy tools/cisa-site-assessment as its own Vercel project (or another HTTPS host),',
-          'then add environment variable PSA_SITE_ASSESSMENT_ORIGIN on this project to that origin, e.g.',
-          '  https://your-psa-project.vercel.app',
-          '(no trailing slash; paths like /cisa-site-assessment/... are forwarded automatically).',
+          'This toolbox app proxies /cisa-site-assessment/ to a separate PSA deployment. Set on THIS project',
+          '(the one serving this domain — e.g. www.zophielgroup.com) in Vercel → Settings → Environment Variables:',
+          '  PSA_SITE_ASSESSMENT_ORIGIN = https://<your-psa-deployment>.vercel.app',
+          '  (or https://psa.yourdomain.com if you assigned a custom domain to the PSA project)',
+          'Use the origin only: no trailing slash, no path. Alias: MODULAR_SITE_ASSESSMENT_ORIGIN.',
+          'Enable it for Production, save, then Redeploy — env vars apply after a new deployment.',
           '',
-          'Local dev does not need this: run pnpm dev from tools/dependency-analysis so PSA listens on :3001.',
+          'Deploy PSA from repo folder tools/cisa-site-assessment as its own Vercel project if you have not.',
+          '',
+          'Local dev: omit this variable; run pnpm dev from tools/dependency-analysis (PSA on :3001).',
         ].join('\n'),
         {
           status: 503,
