@@ -6,7 +6,7 @@
     "node": ">=20 <21"
   },
   "scripts": {
-    "dev": "npx next dev --port 3001 --webpack",
+    "dev": "npx next dev --port 3001 --hostname 127.0.0.1 --webpack",
     "corpus:module-standards": "node scripts/run_corpus_module_standards.js",
     "doctrine:check": "node scripts/check_doctrine_mirrors.js",
     "guard:baseline": "node scripts/guards/verifyNoLegacyBaselineRefs.js .",

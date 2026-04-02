@@ -4,6 +4,9 @@ import { NextResponse } from 'next/server';
 /**
  * Reverse-proxy PSA Rebuild (port 3001, basePath /cisa-site-assessment) through :3000.
  * Implemented as a Route Handler so we avoid Next.js middleware/proxy adapter bugs (Invalid URL on some dev requests).
+ *
+ * Default uses 127.0.0.1 (not `localhost`) so Node fetch hits IPv4; PSA `pnpm dev` binds
+ * `--hostname 127.0.0.1` to match. Without that, Next can listen on ::1 only and the proxy 502s.
  */
 const UPSTREAM = process.env.PSA_SITE_ASSESSMENT_ORIGIN ?? 'http://127.0.0.1:3001';
 
@@ -68,7 +71,10 @@ async function forward(request: NextRequest): Promise<NextResponse> {
       [
         'Modular Site Assessment is not reachable.',
         '',
-        'Start: pnpm dev from tools/dependency-analysis (PSA on port 3001).',
+        'Start the unified dev servers from tools/dependency-analysis:',
+        '  pnpm dev',
+        '(not only pnpm --filter web dev — that skips PSA on :3001.)',
+        'Ensure tools/cisa-site-assessment has node_modules: pnpm install there once.',
         '',
         `Upstream: ${UPSTREAM}`,
       ].join('\n'),

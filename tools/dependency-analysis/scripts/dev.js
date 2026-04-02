@@ -30,6 +30,7 @@ if (fs.existsSync(nextDir)) {
 
 const skipPsa = process.env.PSA_TOOLBOX_SKIP_SITE_ASSESSMENT === '1';
 
+/** Relative to tools/dependency-analysis — no spaces, safe inside concurrently's double-quoted argv. */
 const relCisa = path.relative(root, cisaSiteRoot).split(path.sep).join('/');
 
 const cmd =

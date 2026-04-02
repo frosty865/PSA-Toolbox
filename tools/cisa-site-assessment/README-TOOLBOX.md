@@ -5,9 +5,9 @@ This directory is a **full copy** of PSA Rebuild (CISA Site Assessment UI), inte
 ## How it runs with the toolbox
 
 1. From **`tools/dependency-analysis`**, run **`pnpm install`** (IDA workspace only). From **`tools/cisa-site-assessment`**, run **`pnpm install`** for this app (it is not a workspace member of IDA—optional tool).
-2. Run **`pnpm dev`** from `tools/dependency-analysis`. That starts:
+2. Run **`pnpm dev`** from `tools/dependency-analysis` (starts both IDA and PSA; do not use only `pnpm --filter web dev` if you need the proxy). That starts:
    - **IDA / unified app** on **http://localhost:3000**
-   - **This Next app** on **http://127.0.0.1:3001** with `basePath` **`/cisa-site-assessment`**
+   - **This Next app** on **http://127.0.0.1:3001** (`next dev --hostname 127.0.0.1` so the :3000 proxy can reach IPv4 loopback) with `basePath` **`/cisa-site-assessment`**
 3. Open the Site Assessment at **http://localhost:3000/cisa-site-assessment/** — traffic is **forwarded** by **`apps/web/app/cisa-site-assessment/[[...slug]]/route.ts`** (Node route handler, not middleware), so requests avoid Next **proxy/middleware** adapter issues in dev.
 
 Optional: **`PSA_SITE_ASSESSMENT_ORIGIN`** (default `http://127.0.0.1:3001`) if PSA listens elsewhere.
