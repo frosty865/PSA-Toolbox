@@ -45,7 +45,7 @@ Keep **`tools-manifest.json`** and [`tools/dependency-analysis/pnpm-workspace.ya
 
 [github.com/frosty865/PSA-Toolbox](https://github.com/frosty865/PSA-Toolbox)
 
-**Vercel:** The repo-root `package.json` lists `next` in `devDependencies` (same **exact** version as `tools/dependency-analysis/apps/web`) so the platform detects Next.js at the Git root without a version skew that breaks the Vercel build hook. Install runs at the repo root and in `tools/dependency-analysis`. Optionally set the Vercel project **Root Directory** to `tools/dependency-analysis` and drop the root `next` stub later if you prefer.
+**Vercel:** Root `vercel.json` runs install/build from the Git repo root and sets **`outputDirectory`** to `tools/dependency-analysis/apps/web/.next` so deployments find the Next output. The repo-root `package.json` still lists `next` (same **exact** version as `apps/web`) for framework detection. **Recommended:** in the Vercel project, set **Root Directory** to `tools/dependency-analysis`, use that folder’s `vercel.json`, and you can drop the root `next` stub and simplify—see Vercel monorepo docs.
 
 ## Local cleanup (optional)
 
