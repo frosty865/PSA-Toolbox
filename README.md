@@ -45,7 +45,7 @@ Other tools under **`tools/`** are optional: they are **not** part of the `depen
 
 [github.com/frosty865/PSA-Toolbox](https://github.com/frosty865/PSA-Toolbox)
 
-**Vercel:** Set the project **Root Directory** to **`tools/dependency-analysis`** (required). Config lives in [`tools/dependency-analysis/vercel.json`](tools/dependency-analysis/vercel.json). See [`docs/vercel.md`](docs/vercel.md).
+**Vercel:** Set the project **Root Directory** to **`tools/dependency-analysis/apps/web`** (required — that is where `next.config.js` lives). Config: [`tools/dependency-analysis/apps/web/vercel.json`](tools/dependency-analysis/apps/web/vercel.json). See [`docs/vercel.md`](docs/vercel.md).
 
 ## Local cleanup (optional)
 
