@@ -18512,6 +18512,11 @@
                 
                 // Update filename preview after loading data
                 updateFilenamePreview();
+
+                // Sync masthead (Facility / Assessment date) — was stuck at "--" after file or localStorage load
+                if (typeof updateHeader === 'function') {
+                    updateHeader();
+                }
                 
             } catch (error) {
                 console.error('JSON Loading: Error loading JSON data', error);

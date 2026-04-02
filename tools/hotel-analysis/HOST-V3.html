@@ -41,10 +41,10 @@
     <!--
         /* Critical CSS fallback for when external files fail to load */
         body { font-family: 'Sora', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        .site-security-header { background: linear-gradient(135deg, #08111d, #1d4ed8) !important; color: white !important; }
-        .assessment-progress { position: sticky !important; top: 0 !important; z-index: 1000 !important; background: rgba(8, 17, 29, 0.82) !important; color: #f8fafc !important; }
-        .btn-primary { background: linear-gradient(135deg, #10203a 0%, #1d4ed8 100%) !important; color: white !important; }
-        .data-management-header { background: linear-gradient(135deg, #08111d, #13233a) !important; color: white !important; }
+        .site-security-header { background: linear-gradient(135deg, #003d5c 0%, #005288 45%, #0078ae 100%) !important; color: white !important; }
+        .assessment-progress { position: sticky !important; top: 0 !important; z-index: 1000 !important; background: rgba(0, 40, 70, 0.82) !important; color: #f8fafc !important; }
+        .btn-primary { background: linear-gradient(135deg, #003d5c 0%, #005288 48%, #0078ae 100%) !important; color: white !important; }
+        .data-management-header { background: linear-gradient(135deg, #003d5c 0%, #005288 55%, #003d5c 100%) !important; color: white !important; }
         .data-management-header button { background: rgba(255, 255, 255, 0.04) !important; color: #f8fafc !important; border: 1px solid rgba(203, 213, 225, 0.35) !important; }
         
         /* VOFC Vulnerability Dashboard Styles */
@@ -18512,6 +18512,11 @@
                 
                 // Update filename preview after loading data
                 updateFilenamePreview();
+
+                // Sync masthead (Facility / Assessment date) — was stuck at "--" after file or localStorage load
+                if (typeof updateHeader === 'function') {
+                    updateHeader();
+                }
                 
             } catch (error) {
                 console.error('JSON Loading: Error loading JSON data', error);

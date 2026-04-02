@@ -215,6 +215,19 @@
 
         const data = hostJson.data;
 
+        // Masthead fields: some saves only persist names in metadata — copy into sections so form + header fill.
+        const meta = hostJson.metadata;
+        if (meta && data.sections) {
+            data.sections.facility_info = { ...(data.sections.facility_info || {}) };
+            data.sections.assessment_info = { ...(data.sections.assessment_info || {}) };
+            if (meta.facility_name && !String(data.sections.facility_info.hotel_name || '').trim()) {
+                data.sections.facility_info.hotel_name = meta.facility_name;
+            }
+            if (meta.assessment_date && !String(data.sections.assessment_info.assessment_date || '').trim()) {
+                data.sections.assessment_info.assessment_date = meta.assessment_date;
+            }
+        }
+
         // Load sections
         if (data.sections && typeof loadCleanJSONData === 'function') {
             // Use existing load function but wrap data in old format for compatibility
@@ -248,6 +261,10 @@
             Object.keys(data.tables).forEach(tableName => {
                 loadTableData(tableName, data.tables[tableName]);
             });
+        }
+
+        if (typeof updateHeader === 'function') {
+            updateHeader();
         }
     }
 
