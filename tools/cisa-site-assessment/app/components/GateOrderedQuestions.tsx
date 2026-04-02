@@ -9,6 +9,8 @@ import QuestionHelp from "@/app/components/QuestionHelp";
 import SubtypeQuestionBlock from "@/app/components/SubtypeQuestionBlock";
 import type { BaselineSpineUI } from "@/app/lib/types/uiBaseline";
 import type { SubtypeChecklist } from "@/app/lib/types/checklist";
+import { apiUrl } from "@/app/lib/apiUrl";
+import { readResponseJson } from "@/app/lib/http/responseJson";
 
 interface RequiredElement extends BaselineSpineUI {
   [key: string]: unknown;
@@ -149,11 +151,11 @@ export default function GateOrderedQuestions({
     const loadAssessmentDetail = async () => {
       try {
         const response = await fetch(
-          `/api/runtime/assessments/${assessmentId}`,
-          { cache: "no-store" }
+          apiUrl(`/api/runtime/assessments/${assessmentId}`),
+          { cache: "no-store", credentials: "same-origin" }
         );
         if (response.ok) {
-          const data = await response.json();
+          const data = await readResponseJson(response) as { assessment_instance_id?: string | null };
           setAssessmentInstanceId(data.assessment_instance_id || null);
         }
       } catch (err) {

@@ -24,6 +24,8 @@ import { writeResponse } from "@/app/lib/assessment/useAssessmentResponseWriter"
 import OfcCandidatesPanel from "@/app/components/assessment/OfcCandidatesPanel";
 import { assertNoLegacyIntent } from "@/app/lib/invariants/noLegacyIntent";
 import type { SubtypeChecklist } from "@/app/lib/types/checklist";
+import { apiUrl } from "@/app/lib/apiUrl";
+import { readResponseJson, tryReadResponseJson } from "@/app/lib/http/responseJson";
 
 function asString(value: unknown): string | null {
   return typeof value === "string" ? value : null;
@@ -36,10 +38,13 @@ function isSubtypeChecklist(value: unknown): value is SubtypeChecklist {
 }
 
 // Use API routes instead of direct data provider for client component
-async function getAssessmentDetail(assessmentId: string) {
-  const response = await fetch(`/api/runtime/assessments/${assessmentId}`, { cache: 'no-store' });
+async function getAssessmentDetail(assessmentId: string): Promise<AssessmentDetail> {
+  const response = await fetch(apiUrl(`/api/runtime/assessments/${assessmentId}`), {
+    cache: "no-store",
+    credentials: "same-origin",
+  });
   if (!response.ok) throw new Error(`Failed to fetch assessment: ${response.status}`);
-  return response.json();
+  return readResponseJson<AssessmentDetail>(response);
 }
 
 export type AssessmentQuestionsMetadata = {
@@ -75,12 +80,19 @@ async function getRequiredElements(assessmentId: string): Promise<{
   metadata: AssessmentQuestionsMetadata | null;
 }> {
   try {
-    const response = await fetch(`/api/runtime/assessments/${assessmentId}/questions`, { cache: 'no-store' });
+    const response = await fetch(apiUrl(`/api/runtime/assessments/${assessmentId}/questions`), {
+      cache: "no-store",
+      credentials: "same-origin",
+    });
     if (!response.ok) {
       console.error(`[getRequiredElements] API returned ${response.status}:`, await response.text().catch(() => ''));
       return { questions: [], metadata: null };
     }
-    const data = await response.json();
+    const data = await readResponseJson<{
+      total?: number;
+      questions?: unknown[];
+      metadata?: unknown;
+    }>(response);
     assertNoLegacyIntent(data, 'assessments/[assessmentId] getRequiredElements');
     console.log(`[getRequiredElements] API response:`, { 
       total: data.total, 
@@ -105,22 +117,30 @@ async function getRequiredElements(assessmentId: string): Promise<{
 
 async function getResponses(assessmentId: string) {
   // Use responses endpoint
-  const response = await fetch(`/api/runtime/assessments/${assessmentId}/responses`, { cache: 'no-store' });
+  const response = await fetch(apiUrl(`/api/runtime/assessments/${assessmentId}/responses`), {
+    cache: "no-store",
+    credentials: "same-origin",
+  });
   if (!response.ok) return [];
-  const data = await response.json();
+  const data = await readResponseJson<{ responses?: Record<string, unknown>[] }>(response);
   // Transform to expected format
   // Support both canon_id (new) and question_template_id (legacy)
   // Normalize response: API returns "N_A" but UI uses "N/A" for display
   return (data.responses || []).map((r: Record<string, unknown>) => {
-    const apiResponse = r.response || r.response_enum;
-    // Convert "N_A" from API to "N/A" for UI display consistency
-    const uiResponse = apiResponse === 'N_A' ? 'N/A' : apiResponse;
+    const apiResponse = r.response ?? r.response_enum;
+    const uiResponse =
+      apiResponse === "N_A"
+        ? "N/A"
+        : typeof apiResponse === "string"
+          ? apiResponse
+          : String(apiResponse ?? "");
     const canonId = r.question_canon_id || r.question_template_id || r.question_code;
+    const rid = r.id ?? r.response_id;
     return {
       element_id: canonId || r.element_id,
       canon_id: canonId,
       response: uiResponse,
-      response_id: r.id || r.response_id, // Include response ID if available
+      response_id: rid != null ? String(rid) : undefined,
     };
   });
 }
@@ -130,7 +150,7 @@ async function saveResponseProvider(assessmentId: string, canonId: string, respo
   // Convert 'N/A' to 'N_A' for API
   const responseEnum = response === 'N/A' ? 'N_A' : response;
   
-  const res = await fetch(`/api/runtime/assessments/${assessmentId}/responses`, {
+  const res = await fetch(apiUrl(`/api/runtime/assessments/${assessmentId}/responses`), {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ 
@@ -140,25 +160,32 @@ async function saveResponseProvider(assessmentId: string, canonId: string, respo
         response_enum: responseEnum as 'YES' | 'NO' | 'N_A'
       }] 
     }),
+    credentials: "same-origin",
   });
   if (!res.ok) {
-    const errorData = await res.json().catch(() => ({}));
-    throw new Error(errorData.error || `Failed to save response: ${res.status}`);
+    const errorData = (await tryReadResponseJson(res)) ?? {};
+    throw new Error((errorData as { error?: string }).error || `Failed to save response: ${res.status}`);
   }
-  return res.json();
+  return readResponseJson(res);
 }
 
 async function getOfcs(assessmentId: string) {
-  const response = await fetch(`/api/runtime/assessments/${assessmentId}/ofcs`, { cache: 'no-store' });
+  const response = await fetch(apiUrl(`/api/runtime/assessments/${assessmentId}/ofcs`), {
+    cache: "no-store",
+    credentials: "same-origin",
+  });
   if (!response.ok) return [];
-  const data = await response.json();
+  const data = await readResponseJson<{ ofcs?: Record<string, unknown>[] }>(response);
   return data.ofcs || [];
 }
 
 async function getComponentCapabilityQuestions(assessmentId: string) {
-  const response = await fetch(`/api/runtime/assessments/${assessmentId}/component-capability/questions`, { cache: 'no-store' });
+  const response = await fetch(
+    apiUrl(`/api/runtime/assessments/${assessmentId}/component-capability/questions`),
+    { cache: "no-store", credentials: "same-origin" }
+  );
   if (!response.ok) return [];
-  const data = await response.json();
+  const data = await readResponseJson<{ questions?: unknown[] }>(response);
   const rows: unknown[] = Array.isArray(data.questions) ? data.questions : [];
   return rows
     .map((row): ComponentQuestion | null => {
@@ -177,9 +204,12 @@ async function getComponentCapabilityQuestions(assessmentId: string) {
 }
 
 async function getComponentCapabilityResponses(assessmentId: string) {
-  const response = await fetch(`/api/runtime/assessments/${assessmentId}/component-capability/responses`, { cache: 'no-store' });
+  const response = await fetch(
+    apiUrl(`/api/runtime/assessments/${assessmentId}/component-capability/responses`),
+    { cache: "no-store", credentials: "same-origin" }
+  );
   if (!response.ok) return [];
-  const data = await response.json();
+  const data = await readResponseJson<{ responses?: unknown[] }>(response);
   const rows: unknown[] = Array.isArray(data.responses) ? data.responses : [];
   return rows
     .map((row): ComponentResponseRow | null => {
@@ -194,27 +224,33 @@ async function getComponentCapabilityResponses(assessmentId: string) {
 }
 
 async function saveComponentCapabilityResponse(assessmentId: string, componentCode: string, response: 'YES' | 'NO' | 'N/A') {
-  const res = await fetch(`/api/runtime/assessments/${assessmentId}/component-capability/responses`, {
+  const res = await fetch(apiUrl(`/api/runtime/assessments/${assessmentId}/component-capability/responses`), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ component_code: componentCode, response }),
+    credentials: "same-origin",
   });
   if (!res.ok) throw new Error(`Failed to save component response: ${res.status}`);
-  return res.json();
+  return readResponseJson(res);
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars -- reserved for status updates
 async function updateAssessmentStatus(assessmentId: string, status: "DRAFT" | "IN_PROGRESS" | "SUBMITTED" | "LOCKED") {
-  const res = await fetch(`/api/runtime/assessments/${assessmentId}/status`, {
+  const res = await fetch(apiUrl(`/api/runtime/assessments/${assessmentId}/status`), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ status }),
+    credentials: "same-origin",
   });
   if (!res.ok) {
-    const errorData = await res.json().catch(() => ({}));
-    throw new Error(errorData.error || errorData.message || `Failed to update status: ${res.status}`);
+    const errorData = (await tryReadResponseJson(res)) ?? {};
+    throw new Error(
+      (errorData as { error?: string; message?: string }).error ||
+        (errorData as { error?: string; message?: string }).message ||
+        `Failed to update status: ${res.status}`
+    );
   }
-  return res.json();
+  return readResponseJson(res);
 }
 
 interface RequiredElement {
@@ -410,8 +446,10 @@ export default function AssessmentExecutionPage() {
         // Support both canon_id (new) and element_id (legacy) for response matching
         const responseMap = new Map<string, string>();
         for (const r of responsesData) {
-          const key = r.canon_id || r.element_id;
-          if (key && r.response) {
+          const keyRaw = r.canon_id ?? r.element_id;
+          if (keyRaw == null || keyRaw === "") continue;
+          const key = String(keyRaw);
+          if (r.response) {
             responseMap.set(key, r.response);
           }
         }
@@ -421,15 +459,17 @@ export default function AssessmentExecutionPage() {
         const responsesMapForGate = new Map<string, string>();
         const responseIdMapForGate = new Map<string, string>(); // canon_id -> response_id
         for (const r of responsesData) {
-          const key = r.canon_id || r.element_id;
-          if (key && typeof r.response === 'string') {
+          const keyRaw = r.canon_id ?? r.element_id;
+          if (keyRaw == null || keyRaw === "") continue;
+          const key = String(keyRaw);
+          if (typeof r.response === "string") {
             // Normalize "N_A" from API to "N/A" for UI consistency
             // Preserve any other response strings, including non-binary depth-2 answers.
-            const normalizedResponse = r.response === 'N_A' ? 'N/A' : r.response;
+            const normalizedResponse = r.response === "N_A" ? "N/A" : r.response;
             responsesMapForGate.set(key, normalizedResponse);
             // Store response ID if available
             if (r.response_id) {
-              responseIdMapForGate.set(key, r.response_id);
+              responseIdMapForGate.set(key, String(r.response_id));
             }
           }
         }
@@ -609,15 +649,16 @@ export default function AssessmentExecutionPage() {
     });
 
     try {
-      const res = await fetch(`/api/runtime/assessments/${assessmentId}/responses`, {
+      const res = await fetch(apiUrl(`/api/runtime/assessments/${assessmentId}/responses`), {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ items }),
+        credentials: 'same-origin',
       });
-      
+
       if (!res.ok) {
-        const errorData = await res.json().catch(() => ({}));
-        throw new Error(errorData.error || `Failed to save responses: ${res.status}`);
+        const errorData = (await tryReadResponseJson(res)) ?? {};
+        throw new Error((errorData as { error?: string }).error || `Failed to save responses: ${res.status}`);
       }
 
       // Update responses map for all saved items

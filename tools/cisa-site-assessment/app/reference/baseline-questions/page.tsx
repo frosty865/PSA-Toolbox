@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import { apiUrl } from '@/app/lib/apiUrl';
+import { readResponseJson, tryReadResponseJson } from '@/app/lib/http/responseJson';
 
 interface BaselineQuestion {
   canon_id: string;
@@ -72,17 +73,15 @@ export default function BaselineQuestionsPage() {
 
         const response = await fetch(
           apiUrl(`/api/reference/baseline-questions?${params.toString()}`),
-          { cache: 'no-store' }
+          { cache: 'no-store', credentials: 'same-origin' }
         );
 
         if (!response.ok) {
-          let detail = '';
-          try {
-            const errBody = (await response.json()) as { message?: string; error?: string };
-            detail = errBody.message || errBody.error || '';
-          } catch {
-            /* ignore */
-          }
+          const errBody = await tryReadResponseJson(response);
+          const detail =
+            (errBody && typeof errBody.message === 'string' && errBody.message) ||
+            (errBody && typeof errBody.error === 'string' && errBody.error) ||
+            '';
           throw new Error(
             detail
               ? `Failed to load baseline questions (${response.status}): ${detail}`
@@ -90,7 +89,7 @@ export default function BaselineQuestionsPage() {
           );
         }
 
-        const data = (await response.json()) as {
+        const data = (await readResponseJson(response)) as {
           success?: boolean;
           spines?: BaselineQuestion[];
           questions?: BaselineQuestion[];

@@ -1,3 +1,5 @@
+import { readResponseJson } from "@/app/lib/http/responseJson";
+
 export type JsonObject = Record<string, unknown>;
 
 function asObject(value: unknown): JsonObject {
@@ -17,6 +19,6 @@ export async function fetchJson<T>(
     const errorBody = await response.text();
     throw new Error(`Request failed (${response.status}): ${errorBody || response.statusText}`);
   }
-  const raw = (await response.json()) as unknown;
+  const raw = await readResponseJson(response);
   return parse(asObject(raw));
 }

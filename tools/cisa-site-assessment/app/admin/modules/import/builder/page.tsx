@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { apiUrl } from "@/app/lib/apiUrl";
+import { readResponseJson } from "@/app/lib/http/responseJson";
 import { validateModuleJson, type ValidationIssue } from "@/app/lib/admin/module_json_validator";
 
 const EVENT_TRIGGERS = ["TAMPERING", "OTHER", "OUTAGE", "FIRE", "IMPACT"] as const;
@@ -150,7 +151,7 @@ export default function ModuleImportJsonBuilderPage() {
           credentials: "same-origin",
         });
         if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
-        const data = (await r.json()) as {
+        const data = (await readResponseJson(r)) as {
           disciplines?: Array<{
             id: string;
             code: string;
