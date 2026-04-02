@@ -19,14 +19,16 @@ export default async function ToolWorkspacePage({ params }: Props) {
   const tool = await getToolById(toolId);
   if (!tool) notFound();
 
-  if (tool.externalUrl?.trim()) {
-    redirect(tool.externalUrl.trim());
-  }
-
+  // Match `app/page.tsx` toolCardHref: same-origin entryPath wins over externalUrl so /t/<id> and
+  // cards behave the same (Modular Site Assessment keeps /cisa-site-assessment/ on this host).
   const entry = tool.entryPath?.trim();
   if (entry) {
     const normalized = entry.endsWith('/') ? entry : `${entry}/`;
     redirect(normalized);
+  }
+
+  if (tool.externalUrl?.trim()) {
+    redirect(tool.externalUrl.trim());
   }
 
   return (
