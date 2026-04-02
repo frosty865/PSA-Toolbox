@@ -1612,7 +1612,7 @@ Is an Incident Reporting capability implemented?
 #### Depth-2: Follow-on Questions (1)
 
 1. **`BASE-SFO-SFO_INCIDENT_REPORTING-D2-001`**
-   Do you track near-misses, suspicious activity, and minor events, or only major incidents?
+   Does your incident reporting track near-misses, suspicious activity, and minor events in addition to major incidents?
 
 ---
 

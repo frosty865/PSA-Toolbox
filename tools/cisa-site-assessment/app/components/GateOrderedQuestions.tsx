@@ -540,14 +540,14 @@ export default function GateOrderedQuestions({
 
                       <fieldset className="usa-fieldset" disabled={isReadOnly || isSaving} style={{ margin: 0, padding: 0, border: "none" }}>
                         <legend className="usa-sr-only">{element.question_text}</legend>
-                        <div className="usa-radio" style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginBottom: "0.5rem" }}>
+                        <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginBottom: "0.5rem" }}>
                           {(element.response_enum || ["YES", "NO", "N/A"]).map((option) => {
                             const optionValue = option === "N_A" ? "N/A" : option;
                             const isSelected = currentResponse === optionValue;
                             return (
-                              <div key={option} className="usa-radio__input usa-radio__input--tile" style={{ margin: 0 }}>
+                              <div key={option} className="usa-radio" style={{ margin: 0 }}>
                                 <input
-                                  className="usa-radio__input"
+                                  className="usa-radio__input usa-radio__input--tile"
                                   id={`${canonId}-${option}`}
                                   type="radio"
                                   name={`response-${canonId}`}
@@ -794,14 +794,14 @@ export default function GateOrderedQuestions({
 
                       <fieldset className="usa-fieldset" disabled={isReadOnly || isSaving} style={{ margin: 0, padding: 0, border: "none" }}>
                         <legend className="usa-sr-only">{element.question_text}</legend>
-                        <div className="usa-radio" style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginBottom: "0.5rem" }}>
+                        <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginBottom: "0.5rem" }}>
                           {(element.response_enum || ["YES", "NO", "N/A"]).map((option) => {
                             const optionValue = option === "N_A" ? "N/A" : option;
                             const isSelected = currentResponse === optionValue;
                             return (
-                              <div key={option} className="usa-radio__input usa-radio__input--tile" style={{ margin: 0 }}>
+                              <div key={option} className="usa-radio" style={{ margin: 0 }}>
                                 <input
-                                  className="usa-radio__input"
+                                  className="usa-radio__input usa-radio__input--tile"
                                   id={`${canonId}-${option}`}
                                   type="radio"
                                   name={`response-${canonId}`}

@@ -1,91 +1,79 @@
+import { existsSync } from "fs";
+import { readFile, readdir } from "fs/promises";
+import { createHash } from "crypto";
+import path from "path";
 import { NextResponse } from "next/server";
 import { getRuntimePool } from "@/app/lib/db/runtime_client";
-import { getPythonExecutablePath, findPythonExecutable } from "@/app/lib/python/venv";
 import { getComprehensionModel } from "@/app/lib/ollama/model_router";
+import { extractPdfMetadataFromBuffer } from "@/app/lib/pdfExtractTitle";
+import { ingestModulePdfBufferToRuntime } from "@/app/lib/corpus/modulePdfIngest";
+import { replicateModuleDocsToSourceRegistry } from "@/app/lib/corpus/replicate_module_docs_to_source_registry";
+import { ensureModuleComprehension } from "@/app/lib/modules/comprehension/run_module_comprehension";
+import { libraryModuleIncomingDir } from "@/app/lib/storage/config";
 
-const SCRIPT_REL = "tools/corpus/process_module_pdfs_from_incoming.py";
-const INGEST_SCRIPT_REL = "tools/corpus/ingest_module_sources.py";
-const COMPREHENSION_SCRIPT_REL = "tools/module_crawler/extract_module_comprehension_from_corpus.py";
-const TIMEOUT_MS = 120_000;
-const INGEST_TIMEOUT_MS = 120_000;
-const COMPREHENSION_TIMEOUT_MS = 180_000;
-
-function getProcessorPythonExe(): string {
-  // Prefer env override
-  if (process.env.PROCESSOR_PYTHON?.trim()) {
-    return process.env.PROCESSOR_PYTHON.trim();
-  }
-  
-  // Use PSA System venv utility to find processor Python
-  const venvPython = getPythonExecutablePath('processor');
-  const found = findPythonExecutable('processor');
-  
-  // Return venv Python if it exists, otherwise fall back to found Python
-  return found || venvPython;
-}
-
-function resolveExePath(p: string): string {
-  const path = require("path") as typeof import("path"); // eslint-disable-line @typescript-eslint/no-require-imports
-  // Resolve relative to cwd at runtime; path.resolve(p) uses cwd when p is relative.
-  // Avoid path.resolve(process.cwd(), p) — it triggers Turbopack broad tracing.
-  return path.isAbsolute(p) ? p : path.resolve(p);
-}
-
-async function runPythonScript(
-  spawn: (cmd: string, args: string[], opts: { cwd: string; env: NodeJS.ProcessEnv; windowsHide: boolean }) => import("child_process").ChildProcess,
-  pythonExe: string,
-  scriptPath: string,
-  args: string[],
-  timeoutMs: number
-): Promise<{ exitCode: number; stdout: string; stderr: string }> {
-  const proc = spawn(pythonExe, args, { cwd: process.cwd(), env: process.env, windowsHide: true });
-  const chunks: Buffer[] = [];
-  const errChunks: Buffer[] = [];
-  proc.stdout?.on("data", (d: Buffer) => chunks.push(d));
-  proc.stderr?.on("data", (d: Buffer) => errChunks.push(d));
-  let exitCode = -1;
-  let timedOut = false;
-  return new Promise((resolve) => {
-    const t = setTimeout(() => {
-      if (proc.exitCode != null) return;
-      timedOut = true;
-      proc.kill("SIGTERM");
-      try {
-        proc.kill("SIGKILL");
-      } catch {
-        /* noop */
-      }
-      errChunks.push(Buffer.from("\n[Process killed: timeout " + timeoutMs / 1000 + "s exceeded.]", "utf-8"));
-      exitCode = 124;
-      resolve({
-        exitCode,
-        stdout: Buffer.concat(chunks).toString("utf-8"),
-        stderr: Buffer.concat(errChunks).toString("utf-8"),
-      });
-    }, timeoutMs);
-    proc.on("close", (code, signal) => {
-      clearTimeout(t);
-      if (!timedOut) {
-        exitCode = code ?? (signal ? 124 : -1);
-      }
-      resolve({
-        exitCode,
-        stdout: Buffer.concat(chunks).toString("utf-8"),
-        stderr: Buffer.concat(errChunks).toString("utf-8"),
-      });
-    });
-  });
-}
+const DEFAULT_TIMEOUT_MS = 120_000;
+const RESERVED_DIRS = new Set(["_processed", "_failed"]);
 
 type Body = {
   dryRun?: boolean;
   limit?: number | null;
   pdfDir?: string | null;
-  /** Skip CORPUS mirror (corpus_documents + document_chunks). Default false. */
+  /** Kept for backward compatibility; this Node path no longer shells out to the CORPUS Python mirror. */
   skipCorpusIngest?: boolean;
   /** Skip comprehension pass after ingest. Default false. */
   skipComprehension?: boolean;
 };
+
+type ProcessedFile = {
+  file: string;
+  status: "ingested" | "already_processed" | "would_process" | "skipped";
+  module_document_id?: string | null;
+  chunks?: number;
+  error?: string | null;
+};
+
+async function findPdfs(directory: string, recursive = true): Promise<string[]> {
+  if (!existsSync(directory)) return [];
+  const result: string[] = [];
+
+  async function walk(dir: string): Promise<void> {
+    const entries = await readdir(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (RESERVED_DIRS.has(entry.name)) continue;
+      const abs = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        if (recursive) await walk(abs);
+        continue;
+      }
+      if (entry.isFile() && entry.name.toLowerCase().endsWith(".pdf")) {
+        result.push(abs);
+      }
+    }
+  }
+
+  await walk(directory);
+  return result.sort((a, b) => a.localeCompare(b));
+}
+
+function normalizeSourceLabel(title: string | null, fileName: string): string {
+  const stem = (title && title.trim()) || fileName.replace(/\.[^.]+$/, "");
+  if (stem && /^[a-f0-9]{32,64}$/i.test(stem.trim())) {
+    return "Document";
+  }
+  return stem || "Document";
+}
+
+function formatCommand(moduleCode: string, pdfDir: string, dryRun: boolean, limit: number | null): string {
+  const parts = ["process-incoming-pdfs", `--module-code ${moduleCode}`];
+  if (dryRun) parts.push("--dry-run");
+  if (limit != null) parts.push(`--limit ${limit}`);
+  if (pdfDir) parts.push(`--pdf-dir ${pdfDir}`);
+  return parts.join(" ");
+}
+
+function sha256Buffer(buf: Buffer): string {
+  return createHash("sha256").update(buf).digest("hex");
+}
 
 export async function POST(
   req: Request,
@@ -95,10 +83,7 @@ export async function POST(
     const { moduleCode } = await ctx.params;
     const normalizedModuleCode = decodeURIComponent(moduleCode).trim();
     if (!normalizedModuleCode) {
-      return NextResponse.json(
-        { error: "moduleCode is required" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "moduleCode is required" }, { status: 400 });
     }
 
     let body: Body = {};
@@ -108,13 +93,12 @@ export async function POST(
     } catch {
       // optional body; use defaults
     }
+
     const dryRun = body.dryRun !== false;
     const limit = body.limit != null && typeof body.limit === "number" ? body.limit : null;
-    const pdfDir = typeof body.pdfDir === "string" && body.pdfDir.trim() ? body.pdfDir.trim() : null;
-    const skipCorpusIngest = body.skipCorpusIngest === true;
+    const pdfDir = typeof body.pdfDir === "string" && body.pdfDir.trim() ? path.resolve(body.pdfDir.trim()) : libraryModuleIncomingDir();
     const skipComprehension = body.skipComprehension === true;
 
-    // Validate module exists in assessment_modules
     let runtimePool;
     try {
       runtimePool = getRuntimePool();
@@ -129,261 +113,172 @@ export async function POST(
       );
     }
 
-    let m;
-    try {
-      m = await runtimePool.query(
-        "SELECT 1 FROM public.assessment_modules WHERE module_code = $1",
-        [normalizedModuleCode]
-      );
-    } catch (queryError) {
-      console.error("[process-incoming-pdfs] Database query failed:", queryError);
-      return NextResponse.json(
-        {
-          error: "Database query failed",
-          message: queryError instanceof Error ? queryError.message : String(queryError),
-        },
-        { status: 500 }
-      );
-    }
-
-    if (!m.rowCount) {
+    const moduleCheck = await runtimePool.query(
+      "SELECT 1 FROM public.assessment_modules WHERE module_code = $1",
+      [normalizedModuleCode]
+    );
+    if (!moduleCheck.rowCount) {
       return NextResponse.json({ error: "Module not found" }, { status: 404 });
     }
 
-    let existsSync: typeof import("fs")["existsSync"];
-    let spawn: typeof import("child_process")["spawn"];
-    try {
-      const fs = require("fs") as typeof import("fs"); // eslint-disable-line @typescript-eslint/no-require-imports
-      const cp = require("child_process") as typeof import("child_process"); // eslint-disable-line @typescript-eslint/no-require-imports
-      existsSync = fs.existsSync;
-      spawn = cp.spawn;
-    } catch (requireError) {
-      console.error("[process-incoming-pdfs] Failed to require modules:", requireError);
+    if (!existsSync(pdfDir)) {
       return NextResponse.json(
         {
-          error: "Failed to load required modules",
-          message: requireError instanceof Error ? requireError.message : String(requireError),
+          error: "PDF_DIR_NOT_FOUND",
+          message: `PDF directory not found: ${pdfDir}`,
         },
-        { status: 500 }
+        { status: 400 }
       );
     }
 
-    const processorPython = resolveExePath(getProcessorPythonExe());
-    console.log("[process-incoming-pdfs] Python executable:", processorPython);
-    console.log("[process-incoming-pdfs] CWD:", process.cwd());
+    const files = await findPdfs(pdfDir, true);
+    const selected = limit != null ? files.slice(0, Math.max(0, limit)) : files;
+    const command = formatCommand(normalizedModuleCode, pdfDir, dryRun, limit);
 
-    if (!existsSync(processorPython)) {
-      console.error("[process-incoming-pdfs] Python executable not found:", processorPython);
-      const psaRoot = process.env.PSA_SYSTEM_ROOT || 'D:\\PSA_System';
-      return NextResponse.json(
-        { 
-          error: "Processor Python not found", 
-          path: processorPython,
-          expectedPath: getPythonExecutablePath('processor'),
-          psaSystemRoot: psaRoot,
-          hint: `Ensure the processor venv exists at ${psaRoot}\\Dependencies\\python\\venvs\\processor\\Scripts\\python.exe or set PROCESSOR_PYTHON environment variable`
-        },
-        { status: 500 }
-      );
-    }
-
-    const scriptPath = resolveExePath(SCRIPT_REL);
-    console.log("[process-incoming-pdfs] Script path:", scriptPath);
-    if (!existsSync(scriptPath)) {
-      console.error("[process-incoming-pdfs] Script not found:", scriptPath);
-      return NextResponse.json(
-        {
-          error: "Ingestion script not found",
-          message: `Expected: ${scriptPath}`,
-        },
-        { status: 500 }
-      );
-    }
-
-    const args: string[] = [
-      scriptPath,
-      "--module-code",
-      normalizedModuleCode,
-      ...(dryRun ? ["--dry-run"] : []),
-      ...(limit != null ? ["--limit", String(limit)] : []),
-      ...(pdfDir ? ["--pdf-dir", pdfDir] : []),
-    ];
-    const command = [processorPython, ...args].join(" ");
-    console.log("[process-incoming-pdfs] Command:", command);
-    console.log("[process-incoming-pdfs] Args:", args);
-
-    let proc;
-    try {
-      proc = spawn(processorPython, args, {
-        cwd: process.cwd(),
-        env: process.env,
-        windowsHide: true,
+    if (dryRun) {
+      const preview = selected.map((file) => `would process: ${file}`);
+      return NextResponse.json({
+        ok: true,
+        exitCode: 0,
+        stdout: preview.join("\n"),
+        stderr: "",
+        command,
+        dryRun: true,
+        corpusIngest: { exitCode: 0, skipped: true },
+        comprehension: { exitCode: 0, skipped: true },
       });
-    } catch (spawnError) {
-      console.error("[process-incoming-pdfs] Spawn failed:", spawnError);
-      return NextResponse.json(
-        {
-          error: "Failed to spawn process",
-          message: spawnError instanceof Error ? spawnError.message : String(spawnError),
-        },
-        { status: 500 }
-      );
     }
 
-    const chunks: Buffer[] = [];
-    const errChunks: Buffer[] = [];
-    proc.stdout?.on("data", (d: Buffer) => chunks.push(d));
-    proc.stderr?.on("data", (d: Buffer) => errChunks.push(d));
-
-    let exitCode: number = -1;
-    let timedOut = false;
-
-    const done = new Promise<void>((resolve) => {
-      const t = setTimeout(() => {
-        if (proc.exitCode != null) return; // already exited
-        timedOut = true;
-        proc.kill("SIGTERM");
-        try {
-          proc.kill("SIGKILL");
-        } catch {
-          /* noop */
-        }
-        const msg =
-          "\n[Process killed: timeout " +
-          TIMEOUT_MS / 1000 +
-          "s exceeded. Partial output above.]";
-        errChunks.push(Buffer.from(msg, "utf-8"));
-        exitCode = 124;
-        resolve();
-      }, TIMEOUT_MS);
-
-      proc.on("close", (code, signal) => {
-        clearTimeout(t);
-        if (!timedOut) {
-          exitCode = code ?? (signal ? 124 : -1);
-        }
-        resolve();
-      });
-    });
-
-    await done;
-
-    const stdout = Buffer.concat(chunks).toString("utf-8");
-    const stderr = Buffer.concat(errChunks).toString("utf-8");
-
+    const stdoutLines: string[] = [];
+    const stderrLines: string[] = [];
+    const processed: ProcessedFile[] = [];
     let replicated = 0;
-    let publisherBackfilled = 0;
-    let corpusIngest: { exitCode: number; stdout?: string; stderr?: string; skipped?: boolean } | undefined;
-    let comprehension: { exitCode: number; stdout?: string; stderr?: string; skipped?: boolean; model?: string } | undefined;
-    if (exitCode === 0 && !dryRun) {
+
+    for (const filePath of selected) {
+      const fileName = path.basename(filePath);
       try {
-        const { replicateModuleDocsToSourceRegistry } = await import("@/app/lib/corpus/replicate_module_docs_to_source_registry");
+        const buffer = await readFile(filePath);
+        const sha256 = sha256Buffer(buffer);
+        const shaCheck = await runtimePool.query(
+          `SELECT 1 FROM public.module_sources
+           WHERE module_code = $1 AND sha256 = $2 AND source_type = 'MODULE_UPLOAD'
+           LIMIT 1`,
+          [normalizedModuleCode, sha256]
+        );
+        if (shaCheck.rowCount) {
+          processed.push({ file: filePath, status: "already_processed" });
+          stdoutLines.push(`already processed: ${fileName}`);
+          continue;
+        }
+
+        const meta = await extractPdfMetadataFromBuffer(buffer);
+        const sourceLabel = normalizeSourceLabel(meta.title, fileName);
+        const ingest = await ingestModulePdfBufferToRuntime({
+          buffer,
+          moduleCode: normalizedModuleCode,
+          label: sourceLabel,
+          pool: runtimePool,
+        });
+
+        const publisher = meta.publisher && meta.publisher.trim() ? meta.publisher.trim() : null;
+        try {
+          await runtimePool.query(
+            `INSERT INTO public.module_sources (
+              module_code, source_type, source_url, source_label, publisher, sha256, storage_relpath,
+              content_type, fetch_status, fetched_at
+            ) VALUES ($1, 'MODULE_UPLOAD', $2, $3, $4, $5, $6, 'application/pdf', 'DOWNLOADED', now())`,
+            [normalizedModuleCode, filePath, sourceLabel, publisher, ingest.sha256, ingest.storageRelpath]
+          );
+        } catch (insertErr: unknown) {
+          const msg = insertErr instanceof Error ? insertErr.message : String(insertErr ?? "");
+          if (msg.includes("publisher") && (msg.includes("does not exist") || msg.includes("column"))) {
+            await runtimePool.query(
+              `INSERT INTO public.module_sources (
+                module_code, source_type, source_url, source_label, sha256, storage_relpath,
+                content_type, fetch_status, fetched_at
+              ) VALUES ($1, 'MODULE_UPLOAD', $2, $3, $4, $5, 'application/pdf', 'DOWNLOADED', now())`,
+              [normalizedModuleCode, filePath, sourceLabel, ingest.sha256, ingest.storageRelpath]
+            );
+          } else {
+            throw insertErr;
+          }
+        }
+
+        processed.push({
+          file: filePath,
+          status: "ingested",
+          module_document_id: ingest.moduleDocumentId,
+          chunks: ingest.chunksCount,
+        });
+        stdoutLines.push(`ingested: ${fileName} (${ingest.chunksCount} chunks)`);
+      } catch (error) {
+        const message = error instanceof Error ? error.message : String(error);
+        processed.push({ file: filePath, status: "skipped", error: message });
+        stderrLines.push(`${fileName}: ${message}`);
+      }
+    }
+
+    if (processed.some((row) => row.status === "skipped")) {
+      return NextResponse.json(
+        {
+          ok: false,
+          exitCode: 1,
+          stdout: stdoutLines.join("\n"),
+          stderr: stderrLines.join("\n"),
+          command,
+          dryRun: false,
+          processed,
+          corpusIngest: { exitCode: 0, skipped: true },
+          comprehension: { exitCode: 0, skipped: true },
+        },
+        { status: 400 }
+      );
+    }
+
+    if (processed.some((row) => row.status === "ingested")) {
+      try {
         const rep = await replicateModuleDocsToSourceRegistry(normalizedModuleCode);
         replicated = rep.replicated;
-        if (rep.replicated > 0) {
-          const { getCorpusPoolForAdmin } = await import("@/app/lib/db/corpus_client");
-          const {
-            resolvePathForSourceRegistryRow,
-            extractAndApplyPublisherToSourceRegistry,
-          } = await import("@/app/lib/corpus/extract_module_source_publisher");
-          const corpusPool = getCorpusPoolForAdmin();
-          const rows = await corpusPool.query<{ id: string; source_key: string; local_path: string | null; storage_relpath: string | null }>(
-            `SELECT id, source_key, local_path, storage_relpath FROM public.source_registry WHERE source_key LIKE $1`,
-            [`module:${normalizedModuleCode}:%`]
-          );
-          for (const row of rows.rows) {
-            const absPath = resolvePathForSourceRegistryRow(row);
-            if (absPath) {
-              const result = await extractAndApplyPublisherToSourceRegistry(corpusPool, row.id, absPath);
-              if (result.updated) publisherBackfilled++;
-            }
-          }
-        }
-      } catch (e) {
-        console.warn("[process-incoming-pdfs] Replication or publisher backfill failed (non-fatal):", e instanceof Error ? e.message : e);
-      }
-
-      // CORPUS mirror: corpus_documents + document_chunks (for comprehension and RAG)
-      if (!skipCorpusIngest) {
-        const ingestPath = resolveExePath(INGEST_SCRIPT_REL);
-        if (existsSync(ingestPath)) {
-          console.log("[process-incoming-pdfs] Running CORPUS ingest:", ingestPath);
-          const ingestResult = await runPythonScript(
-            spawn,
-            processorPython,
-            ingestPath,
-            [ingestPath, "--module-code", normalizedModuleCode],
-            INGEST_TIMEOUT_MS
-          );
-          corpusIngest = {
-            exitCode: ingestResult.exitCode,
-            stdout: ingestResult.stdout,
-            stderr: ingestResult.stderr,
-          };
-          if (ingestResult.exitCode !== 0) {
-            console.warn("[process-incoming-pdfs] CORPUS ingest non-zero exit:", ingestResult.exitCode, ingestResult.stderr?.slice(0, 300));
-          }
-        } else {
-          corpusIngest = { exitCode: -1, skipped: true };
-        }
-      } else {
-        corpusIngest = { exitCode: 0, skipped: true };
-      }
-
-      // Comprehension pass (reads CORPUS document_chunks, writes RUNTIME module_chunk_comprehension)
-      if (!skipComprehension) {
-        const compPath = resolveExePath(COMPREHENSION_SCRIPT_REL);
-        const compModel = getComprehensionModel();
-        if (existsSync(compPath)) {
-          console.log("[process-incoming-pdfs] Running comprehension:", compPath, "model=", compModel);
-          const compResult = await runPythonScript(
-            spawn,
-            processorPython,
-            compPath,
-            [compPath, "--module-code", normalizedModuleCode, "--model", compModel, "--apply"],
-            COMPREHENSION_TIMEOUT_MS
-          );
-          comprehension = {
-            exitCode: compResult.exitCode,
-            stdout: compResult.stdout,
-            stderr: compResult.stderr,
-            model: compModel,
-          };
-          if (compResult.exitCode !== 0) {
-            console.warn("[process-incoming-pdfs] Comprehension non-zero exit:", compResult.exitCode, compResult.stderr?.slice(0, 300));
-          }
-        } else {
-          comprehension = { exitCode: -1, skipped: true, model: compModel };
-        }
-      } else {
-        comprehension = { exitCode: 0, skipped: true };
+      } catch (replicationError) {
+        const message = replicationError instanceof Error ? replicationError.message : String(replicationError);
+        stderrLines.push(`replication: ${message}`);
       }
     }
 
-    const payload: Record<string, unknown> = {
-      ok: exitCode === 0,
-      exitCode,
-      stdout,
-      stderr,
+    let comprehension: { exitCode: number; skipped?: boolean; model?: string } | undefined;
+    if (!skipComprehension) {
+      const model = getComprehensionModel();
+      await ensureModuleComprehension({
+        moduleCode: normalizedModuleCode,
+        model,
+        runtimeDb: runtimePool,
+      });
+      comprehension = { exitCode: 0, skipped: false, model };
+    } else {
+      comprehension = { exitCode: 0, skipped: true };
+    }
+
+    return NextResponse.json({
+      ok: true,
+      exitCode: 0,
+      stdout: stdoutLines.join("\n"),
+      stderr: stderrLines.join("\n"),
       command,
-      ...(replicated > 0 ? { replicated, publisherBackfilled } : {}),
-    };
-    if (typeof corpusIngest !== "undefined") {
-      payload.corpusIngest = corpusIngest;
-    }
-    if (typeof comprehension !== "undefined") {
-      payload.comprehension = comprehension;
-    }
-    return NextResponse.json(payload);
+      replicated,
+      dryRun: false,
+      processed,
+      corpusIngest: { exitCode: 0, skipped: true },
+      comprehension,
+    });
   } catch (error: unknown) {
     const err = error instanceof Error ? error : new Error(String(error));
     console.error("[process-incoming-pdfs]", err);
     console.error("[process-incoming-pdfs] Stack:", err.stack);
     return NextResponse.json(
-      { 
-        error: "Request failed", 
+      {
+        error: "Request failed",
         message: err.message,
-        stack: process.env.NODE_ENV === "development" ? err.stack : undefined
+        stack: process.env.NODE_ENV === "development" ? err.stack : undefined,
       },
       { status: 500 }
     );

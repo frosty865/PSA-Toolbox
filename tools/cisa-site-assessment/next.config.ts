@@ -74,16 +74,6 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  /** `/coverage` has no app route; home + nav still linked here. Send to baseline coverage UI. */
-  async redirects() {
-    return [
-      {
-        source: '/coverage',
-        destination: '/reference/baseline-questions/',
-        permanent: false,
-      },
-    ];
-  },
 };
 
 export default nextConfig;

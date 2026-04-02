@@ -499,20 +499,21 @@
       "depth": 2,
       "discipline_code": "ACS",
       "subtype_code": "ACS_KEYPADS_PIN_ENTRY",
-      "question_text": "Are PINs assigned individually or shared among groups?",
-      "intent": "Keypads / PIN Entry does not stay reliable on its own. Over time, access systems stop working correctly or become easy to bypass. Without regular checking and maintenance, people who should not get in can get in.",
+      "question_text": "What best describes how PINs are assigned?",
+      "intent": "PINs that are shared are harder to trace than PINs tied to one person. Recording whether PINs are unique per person or shared helps reviewers judge exposure.",
       "what_counts_as_yes": [
-        "Responsible personnel confirm the condition is supported",
-        "A demonstration or record can substantiate the condition when requested"
+        "Individually assigned fits when each person or role has a distinct PIN",
+        "Shared among groups fits when the same PIN is used by multiple people"
       ],
       "what_does_not_count": [
-        "Assumed capability without confirmation",
-        "Condition exists only under exceptional circumstances with no identifiable method to invoke"
+        "Picking an answer without asking staff who oversee access",
+        "Treating occasional rotation as individual assignment when the PIN is still shared"
       ],
       "typical_evidence": [
-        "Demonstration by responsible personnel"
+        "Configuration listings or inventories",
+        "Records demonstrating use"
       ],
-      "field_tip": "If unsure, request a brief demonstration or the document that defines this behavior.",
+      "field_tip": "Ask staff who oversee access whether PINs are unique per person or reused across a group.",
       "references": [],
       "source": {
         "subtype_guidance_used": true,
@@ -7347,20 +7348,21 @@
       "depth": 2,
       "discipline_code": "SFO",
       "subtype_code": "SFO_INCIDENT_REPORTING",
-      "question_text": "Do you track near-misses, suspicious activity, and minor events, or only major incidents?",
-      "intent": "Incident Reporting does not stay reliable on its own. Over time, parts wear out or stop working as expected. Without regular checking and maintenance, problems can occur when you need the system most.",
+      "question_text": "Does your incident reporting track near-misses, suspicious activity, and minor events in addition to major incidents?",
+      "intent": "Strong incident reporting captures precursors and lower-severity events—not only major or catastrophic incidents—so issues can be corrected before harm escalates.",
       "what_counts_as_yes": [
-        "Responsible personnel confirm the condition is supported",
-        "A demonstration or record can substantiate the condition when requested"
+        "Written policy, procedures, or tools show near-misses, suspicious activity, or minor events are reportable and actually recorded or triaged",
+        "Responsible staff can describe how such an event would be logged today"
       ],
       "what_does_not_count": [
-        "Assumed capability without confirmation",
-        "Condition exists only under exceptional circumstances with no identifiable method to invoke"
+        "Only major incidents are tracked; no path for near-misses or suspicious activity",
+        "Generic policy language with no evidence of lower-severity categories in use"
       ],
       "typical_evidence": [
-        "Demonstration by responsible personnel"
+        "Inventories or logs",
+        "Records demonstrating use"
       ],
-      "field_tip": "If unsure, request a brief demonstration or the document that defines this behavior.",
+      "field_tip": "Ask for a recent example category list or blank form—does it include more than major incidents?",
       "references": [],
       "source": {
         "subtype_guidance_used": true,

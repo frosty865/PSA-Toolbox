@@ -8,6 +8,7 @@
  */
 
 import type { SubtypeGuidance } from './types/baseline';
+import { apiUrl } from '@/app/lib/apiUrl';
 
 export type BaselineSpine = {
   canon_id: string;
@@ -38,9 +39,11 @@ export type BaselineSpine = {
 export async function fetchBaselineSpines(activeOnly: boolean = true): Promise<BaselineSpine[]> {
   // Use Next.js API route instead of external psaback
   // This works in both server-side (API routes) and client-side contexts
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 
-                  (typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000');
-  const url = `${baseUrl}/api/baseline/spines?active_only=${activeOnly}`;
+  const path = apiUrl(`/api/baseline/spines?active_only=${activeOnly}`);
+  const url =
+    typeof window !== 'undefined'
+      ? `${window.location.origin}${path}`
+      : `${(process.env.NEXT_PUBLIC_APP_URL || 'http://127.0.0.1:3001').replace(/\/$/, '')}${path}`;
   
   let res: Response;
   try {

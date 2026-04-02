@@ -571,15 +571,15 @@ export default function DisciplineSectionBlock({
 
             <fieldset className="usa-fieldset" disabled={isReadOnly || isSaving} style={{ marginTop: '0.75rem', padding: 0, border: 'none' }}>
               <legend style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', border: 0 }}>{gateQuestion.question_text}</legend>
-              <div className="usa-radio" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 {(gateQuestion.response_enum || ['YES', 'NO', 'N_A']).map((option) => {
                   const optionValue = option === 'N_A' ? 'N/A' : option;
                   const normalizedOption = option === 'N_A' ? 'N_A' : option;
                   const isSelected = normalizedResponse === normalizedOption;
                   return (
-                    <div key={option} className="usa-radio__input usa-radio__input--tile" style={{ margin: 0 }}>
+                    <div key={option} className="usa-radio" style={{ margin: 0 }}>
                       <input
-                        className="usa-radio__input"
+                        className="usa-radio__input usa-radio__input--tile"
                         id={`${gateQuestion.canon_id}-${option}`}
                         type="radio"
                         name={`response-${gateQuestion.canon_id}`}
@@ -685,15 +685,15 @@ export default function DisciplineSectionBlock({
 
             <fieldset className="usa-fieldset" disabled={isReadOnly || isSaving} style={{ marginTop: '0.75rem', padding: 0, border: 'none' }}>
               <legend style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', border: 0 }}>{question.question_text}</legend>
-              <div className="usa-radio" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 {(question.response_enum || ['YES', 'NO', 'N_A']).map((option) => {
                   const optionValue = option === 'N_A' ? 'N/A' : option;
                   const normalizedOption = option === 'N_A' ? 'N_A' : option;
                   const isSelected = normalizedResponse === normalizedOption;
                   return (
-                    <div key={option} className="usa-radio__input usa-radio__input--tile" style={{ margin: 0 }}>
+                    <div key={option} className="usa-radio" style={{ margin: 0 }}>
                       <input
-                        className="usa-radio__input"
+                        className="usa-radio__input usa-radio__input--tile"
                         id={`${question.canon_id}-${option}`}
                         type="radio"
                         name={`response-${question.canon_id}`}
@@ -1017,14 +1017,14 @@ export default function DisciplineSectionBlock({
                       <fieldset className="usa-fieldset" disabled={isReadOnly || isSaving} style={{ marginTop: '0.5rem', padding: 0, border: 'none' }}>
                         <legend style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', border: 0 }}>{question.question_text}</legend>
                         {question.response_type === 'ENUM' && question.response_options ? (
-                          <div className="usa-radio" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                             {question.response_options.map((option) => {
                               const optionValue = option.value;
                               const isSelected = currentEnumResponse === optionValue;
                               return (
-                                <div key={optionValue} className="usa-radio__input usa-radio__input--tile" style={{ margin: 0 }}>
+                                <div key={optionValue} className="usa-radio" style={{ margin: 0 }}>
                                   <input
-                                    className="usa-radio__input"
+                                    className="usa-radio__input usa-radio__input--tile"
                                     id={`${question.canon_id}-${optionValue}`}
                                     type="radio"
                                     name={`response-${question.canon_id}`}
@@ -1060,15 +1060,15 @@ export default function DisciplineSectionBlock({
                             })}
                           </div>
                         ) : (
-                          <div className="usa-radio" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                             {(question.response_enum || ['YES', 'NO', 'N_A']).map((option) => {
                               const optionValue = option === 'N_A' ? 'N/A' : option;
                               const normalizedOption = option === 'N_A' ? 'N_A' : option;
                               const isSelected = normalizedCurrentResp === normalizedOption;
                               return (
-                                <div key={option} className="usa-radio__input usa-radio__input--tile" style={{ margin: 0 }}>
+                                <div key={option} className="usa-radio" style={{ margin: 0 }}>
                                   <input
-                                    className="usa-radio__input"
+                                    className="usa-radio__input usa-radio__input--tile"
                                     id={`${question.canon_id}-${option}`}
                                     type="radio"
                                     name={`response-${question.canon_id}`}

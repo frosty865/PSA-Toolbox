@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { shouldSendAdminApiRequests } from "@/app/lib/admin/client";
+import { adminAuthHeaders, shouldSendAdminApiRequests } from "@/app/lib/admin/client";
 
 interface IntegrityStatus {
   integrity_ok: boolean;
@@ -27,7 +27,9 @@ export default function CitationIntegrityBadge() {
           setStatus(null);
           return;
         }
-        const response = await fetch("/api/admin/citations/integrity-audit");
+        const response = await fetch("/api/admin/citations/integrity-audit", {
+          headers: adminAuthHeaders(),
+        });
         if (response.ok) {
           const data = await response.json();
           if (data.audit_available === false) {

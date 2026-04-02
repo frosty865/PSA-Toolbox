@@ -1,23 +1,14 @@
 /**
- * TOC parsing for schema-first pipeline: call Python outline extractor or use pre-parsed TOC JSON.
+ * TOC parsing for schema-first pipeline using Node PDF text extraction.
  * Maps outline to PlanSchemaSnapshot sections/elements (Level-1 => section, Level-2+ => element).
  */
 
-import { spawn } from "child_process";
-import * as path from "path";
-import { extractFirstJsonValue, parseJsonWithContext } from "./json_extract";
+import { readFile } from "fs/promises";
+import { extractPdfContentFromBuffer } from "@/app/lib/pdfExtractTitle";
+import { extractAndGroupToc } from "@/app/lib/plans/toc_parser";
 import type { PlanSchemaSnapshot, PlanSchemaSection, PlanSchemaElement, PlanSourceLocator } from "./types";
 
 export type TocOutlineEntry = { level: number; title: string; page: number };
-
-/** Discriminate payload shape: TOC extractor returns { toc: [...] }; LLM/legacy returns { items: [...] }. */
-export function detectPayloadKind(v: unknown): "toc" | "items" | "unknown" {
-  if (v && typeof v === "object") {
-    if (Array.isArray((v as { toc?: unknown }).toc)) return "toc";
-    if (Array.isArray((v as { items?: unknown }).items)) return "items";
-  }
-  return "unknown";
-}
 
 const MIN_LEVEL1_FOR_TOC = 8;
 const MAX_SECTIONS = 12;
@@ -138,83 +129,29 @@ export function outlineToSnapshot(opts: {
   return { snapshot, confidence };
 }
 
-type TocPayload = { toc?: TocOutlineEntry[]; error?: string };
-
 /**
- * Run Python TOC extractor; stdout = JSON only. Parse with robust extractor.
- */
-async function runPythonTocJson(scriptPath: string, pdfPath: string): Promise<{ stdout: string; stderr: string; code: number }> {
-  return new Promise((resolve, reject) => {
-    const child = spawn("python", [scriptPath, pdfPath], {
-      cwd: process.cwd(),
-      env: { ...process.env, PYTHONUTF8: "1" },
-      stdio: ["ignore", "pipe", "pipe"],
-    });
-    let stdout = "";
-    let stderr = "";
-    child.stdout?.setEncoding("utf8");
-    child.stderr?.setEncoding("utf8");
-    child.stdout?.on("data", (d: string | Buffer) => (stdout += typeof d === "string" ? d : d.toString("utf8")));
-    child.stderr?.on("data", (d: string | Buffer) => (stderr += typeof d === "string" ? d : d.toString("utf8")));
-    child.on("error", (err) => reject(err));
-    child.on("close", (code, _signal) => resolve({ stdout, stderr, code: code ?? -1 }));
-  });
-}
-
-/**
- * Call Python script to extract PDF outline. Returns parsed TOC or empty on error.
- * Uses robust JSON extraction; on parse failure throws PLAN_SCHEMA_PARSE_FAILED with debug (message, position, snippet).
- * Requires payload shape { toc: [...] }; throws PLAN_SCHEMA_UNEXPECTED_PAYLOAD_FOR_TOC if shape is items/unknown.
+ * Extract a PDF outline from the Node PDF text extractor.
+ * Returns parsed TOC or empty on error.
  */
 export function extractPdfOutline(pdfPath: string): Promise<TocOutlineEntry[]> {
-  const scriptPath = path.join(process.cwd(), "tools", "plans", "extract_pdf_toc.py");
-  return runPythonTocJson(scriptPath, pdfPath).then(({ stdout, stderr, code }) => {
-    let jsonText: string;
-    try {
-      const extracted = extractFirstJsonValue(stdout);
-      jsonText = extracted.jsonText;
-  } catch (_extractErr) {
-      console.error("[derive_plan_schema] JSON extraction failed (no start token or unbalanced).", {
-        stderr_preview: (stderr ?? "").slice(0, 400),
-        length: stdout?.length ?? 0,
-        first40: (stdout ?? "").slice(0, 40),
-      });
-      const err = new Error("PLAN_SCHEMA_PARSE_FAILED") as Error & { code?: string };
-      err.code = "PLAN_SCHEMA_PARSE_FAILED";
-      throw err;
-    }
+  return readFile(pdfPath)
+    .then(async (buffer) => {
+      const extracted = await extractPdfContentFromBuffer(buffer);
+      if (!extracted) return [];
+      const grouped = extractAndGroupToc(extracted.firstPagesText);
+      if (!grouped || grouped.sections.length === 0) return [];
 
-    const parsed = parseJsonWithContext<TocPayload>(jsonText);
-    if (!parsed.ok) {
-      console.error("[derive_plan_schema] JSON.parse failed.", {
-        ...parsed.debug,
-        stderr_preview: (stderr ?? "").slice(0, 400),
-      });
-      const err = new Error("PLAN_SCHEMA_PARSE_FAILED") as Error & { code?: string };
-      err.code = "PLAN_SCHEMA_PARSE_FAILED";
-      throw err;
-    }
-
-    const kind = detectPayloadKind(parsed.value);
-    if (kind !== "toc") {
-      console.error("[derive_plan_schema] Unexpected payload for TOC_PREFERRED.", {
-        kind,
-        keys: Object.keys(parsed.value ?? {}),
-      });
-      const err = new Error("PLAN_SCHEMA_UNEXPECTED_PAYLOAD_FOR_TOC") as Error & { code?: string };
-      err.code = "PLAN_SCHEMA_UNEXPECTED_PAYLOAD_FOR_TOC";
-      throw err;
-    }
-
-    const payload = parsed.value;
-    if (!payload || !Array.isArray(payload.toc)) {
-      const err = new Error("PLAN_SCHEMA_TOC_PAYLOAD_INVALID") as Error & { code?: string };
-      err.code = "PLAN_SCHEMA_TOC_PAYLOAD_INVALID";
-      throw err;
-    }
-    if (payload.error && code !== 0) return [];
-    return payload.toc;
-  });
+      const entries: TocOutlineEntry[] = [];
+      for (const section of grouped.sections) {
+        const startPage = typeof section.start_page === "number" && Number.isFinite(section.start_page) ? section.start_page : 0;
+        entries.push({ level: 1, title: section.title, page: startPage });
+        for (const vital of section.vitals) {
+          entries.push({ level: 2, title: vital.title, page: startPage });
+        }
+      }
+      return entries;
+    })
+    .catch(() => []);
 }
 
 /**

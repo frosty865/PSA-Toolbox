@@ -4496,7 +4496,7 @@
 
 **Field tip:** If unsure, request a brief demonstration or the document that defines this behavior.
 
-### Depth-2: Do you track near-misses, suspicious activity, and minor events, or only major incidents?
+### Depth-2: Does your incident reporting track near-misses, suspicious activity, and minor events in addition to major incidents?
 
 **Intent:** Incident Reporting does not stay reliable on its own. Over time, parts wear out or stop working as expected. Without regular checking and maintenance, problems can occur when you need the system most.
 

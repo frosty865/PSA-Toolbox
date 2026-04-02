@@ -1554,8 +1554,8 @@
 #### Depth-2 Questions:
 
 1. **BASE-SFO-SFO_INCIDENT_REPORTING-D2-001**
-   - Question: Do you track near-misses, suspicious activity, and minor events, or only major incidents?
-   - Source: "Do you track near-misses, suspicious activity, and minor events, or only major incidents?"
+   - Question: Does your incident reporting track near-misses, suspicious activity, and minor events in addition to major incidents?
+   - Source: "Does your incident reporting track near-misses, suspicious activity, and minor events in addition to major incidents?"
 
 ---
 

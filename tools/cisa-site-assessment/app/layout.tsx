@@ -1,9 +1,21 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
 import './styles/mobile.css';
 import CisaApiBasePathShim from './components/CisaApiBasePathShim';
 
-export const metadata = {
+function metadataBaseFromEnv(): URL | undefined {
+  const raw = process.env.NEXT_PUBLIC_APP_URL?.trim();
+  if (!raw) return undefined;
+  try {
+    return new URL(raw.endsWith('/') ? raw.slice(0, -1) : raw);
+  } catch {
+    return undefined;
+  }
+}
+
+export const metadata: Metadata = {
+  metadataBase: metadataBaseFromEnv(),
   title: 'Modular Site Assessment',
   description:
     'Modular assessment for Protective Security Advisors—flexible assessments by sector and subsector.',

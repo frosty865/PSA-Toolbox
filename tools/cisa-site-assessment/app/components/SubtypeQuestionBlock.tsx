@@ -334,16 +334,16 @@ export default function SubtypeQuestionBlock({
         {/* Response Options */}
         <fieldset className="usa-fieldset" disabled={isReadOnly || saving[spineQuestion.canon_id]} style={{ marginTop: '0.75rem', padding: 0, border: 'none' }}>
           <legend style={visuallyHiddenStyle}>{spineQuestion.question_text}</legend>
-          <div className="usa-radio" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             {(spineQuestion.response_enum || ['YES', 'NO', 'N_A']).map((option) => {
               const optionValue = option === 'N_A' ? 'N/A' : option;
               // Compare normalized: convert both to internal format for comparison
               const normalizedOption = option === 'N_A' ? 'N_A' : option;
               const isSelected = normalizedSpineResponse === normalizedOption;
               return (
-                <div key={option} className="usa-radio__input usa-radio__input--tile" style={{ margin: 0 }}>
+                <div key={option} className="usa-radio" style={{ margin: 0 }}>
                   <input
-                    className="usa-radio__input"
+                    className="usa-radio__input usa-radio__input--tile"
                     id={`${spineQuestion.canon_id}-${option}`}
                     type="radio"
                     name={`response-${spineQuestion.canon_id}`}
@@ -503,7 +503,7 @@ export default function SubtypeQuestionBlock({
                   <legend style={visuallyHiddenStyle}>{question.question_text}</legend>
                   {question.response_type === 'CHECKLIST' && question.response_options ? (
                     // CHECKLIST: Single-select checkbox group
-                    <div className="usa-checkbox" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                       {question.response_options.map((option) => {
                         // For CHECKLIST, current_response can be a string or array
                         const currentRespArray = Array.isArray(currentResponse) 
@@ -511,9 +511,9 @@ export default function SubtypeQuestionBlock({
                           : (currentResponse ? [currentResponse] : []);
                         const isSelected = currentRespArray.includes(option.value);
                         return (
-                          <div key={option.value} className="usa-checkbox__input usa-checkbox__input--tile" style={{ margin: 0 }}>
+                          <div key={option.value} className="usa-checkbox" style={{ margin: 0 }}>
                             <input
-                              className="usa-checkbox__input"
+                              className="usa-checkbox__input usa-checkbox__input--tile"
                               id={`${question.canon_id}-${option.value}`}
                               type="checkbox"
                               name={`response-${question.canon_id}`}
@@ -573,14 +573,14 @@ export default function SubtypeQuestionBlock({
                     </div>
                   ) : question.response_type === 'ENUM' && question.response_options ? (
                     // ENUM: Single-select radio group for non-binary questions
-                    <div className="usa-radio" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                       {question.response_options.map((option) => {
                         const optionValue = option.value;
                         const isSelected = currentResponse === optionValue;
                         return (
-                          <div key={optionValue} className="usa-radio__input usa-radio__input--tile" style={{ margin: 0 }}>
+                          <div key={optionValue} className="usa-radio" style={{ margin: 0 }}>
                             <input
-                              className="usa-radio__input"
+                              className="usa-radio__input usa-radio__input--tile"
                               id={`${question.canon_id}-${optionValue}`}
                               type="radio"
                               name={`response-${question.canon_id}`}
@@ -617,7 +617,7 @@ export default function SubtypeQuestionBlock({
                     </div>
                   ) : (
                     // YES/NO/N/A: Radio buttons (default)
-                    <div className="usa-radio" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                       {(question.response_enum || ['YES', 'NO', 'N_A']).map((option) => {
                         const optionValue = option === 'N_A' ? 'N/A' : option;
                         // Normalize current response for comparison
@@ -627,9 +627,9 @@ export default function SubtypeQuestionBlock({
                         const normalizedOption = option === 'N_A' ? 'N_A' : option;
                         const isSelected = normalizedCurrentResp === normalizedOption;
                         return (
-                          <div key={option} className="usa-radio__input usa-radio__input--tile" style={{ margin: 0 }}>
+                          <div key={option} className="usa-radio" style={{ margin: 0 }}>
                             <input
-                              className="usa-radio__input"
+                              className="usa-radio__input usa-radio__input--tile"
                               id={`${question.canon_id}-${option}`}
                               type="radio"
                               name={`response-${question.canon_id}`}

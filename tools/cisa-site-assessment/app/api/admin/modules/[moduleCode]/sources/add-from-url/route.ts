@@ -2,38 +2,22 @@
  * POST /api/admin/modules/[moduleCode]/sources/add-from-url
  *
  * Add a module source by fetching from a URL. URL is screened first; only
- * PDFs that pass screening are downloaded. Downloads to temp, runs ingest
- * (single library raw/_blobs/), then inserts into module_sources with
- * canonical blob storage_relpath.
+ * PDFs that pass screening are downloaded, ingested in Node, then inserted
+ * into module_sources with the canonical blob storage_relpath.
  *
  * Body: { source_url: string, source_label?: string }
  */
 
 import { NextRequest, NextResponse } from "next/server";
-import { writeFile, unlink } from "fs/promises";
-import { createHash } from "crypto";
-import { randomUUID } from "crypto";
-import { spawnSync } from "child_process";
 import * as path from "path";
-import { existsSync } from "fs";
-import {
-  getModuleSourcesRoot,
-  ensureStorageDirs,
-  assertModulePath,
-} from "@/app/lib/storage/config";
 import { ensureRuntimePoolConnected } from "@/app/lib/db/runtime_client";
 import { screenCandidateUrl } from "@/app/lib/crawler/screenCandidateUrl";
+import { ingestModulePdfBufferToRuntime } from "@/app/lib/corpus/modulePdfIngest";
 
 export const dynamic = "force-dynamic";
 
 const MAX_BYTES = 100 * 1024 * 1024; // 100MB
 const FETCH_TIMEOUT_MS = 60000; // 60s
-const INGEST_SCRIPT = path.join(process.cwd(), "tools", "corpus", "ingest_module_pdf_to_runtime.py");
-const INGEST_TIMEOUT_MS = 120_000;
-
-function sha256Buffer(buf: Buffer): string {
-  return createHash("sha256").update(buf).digest("hex");
-}
 
 function inferExtension(urlPathname: string, contentType: string | null): string {
   const ct = (contentType || "").toLowerCase();
@@ -157,7 +141,6 @@ export async function POST(
     }
 
     const buf = Buffer.from(bytes);
-    const sha256 = sha256Buffer(buf);
     const sourceLabel = label || name;
 
     if (ext !== ".pdf") {
@@ -167,58 +150,12 @@ export async function POST(
       );
     }
 
-    await ensureStorageDirs();
-    const root = getModuleSourcesRoot();
-    const tempRelpath = `raw/_incoming/${randomUUID()}${ext}`;
-    let absPath = path.join(root, tempRelpath);
-    assertModulePath(absPath);
-
-    await writeFile(absPath, buf);
-
-    const runtimeUrl = process.env.RUNTIME_DATABASE_URL || process.env.RUNTIME_DB_URL || "";
-    const result = spawnSync(
-      "python",
-      [INGEST_SCRIPT, "--pdf-path", absPath, "--module-code", normalized, "--label", sourceLabel],
-      {
-        cwd: process.cwd(),
-        env: { ...process.env, PYTHONPATH: process.cwd(), RUNTIME_DATABASE_URL: runtimeUrl },
-        encoding: "utf-8",
-        timeout: INGEST_TIMEOUT_MS,
-      }
-    );
-
-    try {
-      if (existsSync(absPath)) await unlink(absPath);
-    } catch {
-      /* ignore */
-    }
-    absPath = "";
-
-    if (result.error || result.status !== 0) {
-      const stderr = (result.stderr || "").trim().slice(0, 500);
-      return NextResponse.json(
-        {
-          error: "CHUNK_FAILED",
-          message: result.error
-            ? "Chunking failed (timeout or error). Document has not been added."
-            : "Document could not be chunked (no text or no chunks).",
-          details: stderr,
-        },
-        { status: 400 }
-      );
-    }
-
-    const blobRow = await pool.query<{ storage_relpath: string }>(
-      `SELECT storage_relpath FROM public.document_blobs WHERE sha256 = $1 LIMIT 1`,
-      [sha256]
-    );
-    const storageRelpath = blobRow.rows[0]?.storage_relpath ?? null;
-    if (!storageRelpath) {
-      return NextResponse.json(
-        { error: "BLOB_NOT_FOUND", message: "Document was chunked but document_blobs row not found." },
-        { status: 500 }
-      );
-    }
+    const ingest = await ingestModulePdfBufferToRuntime({
+      buffer: buf,
+      moduleCode: normalized,
+      label: sourceLabel,
+      pool,
+    });
 
     try {
       await pool.query(
@@ -230,8 +167,8 @@ export async function POST(
           normalized,
           sourceUrl,
           sourceLabel,
-          sha256,
-          storageRelpath,
+          ingest.sha256,
+          ingest.storageRelpath,
           contentType,
         ]
       );
@@ -257,13 +194,13 @@ export async function POST(
        FROM public.module_sources
        WHERE module_code = $1 AND sha256 = $2
        ORDER BY created_at DESC LIMIT 1`,
-      [normalized, sha256]
+      [normalized, ingest.sha256]
     );
 
     return NextResponse.json({
       ok: true,
       source: row.rows[0],
-      storage_relpath: storageRelpath,
+      storage_relpath: ingest.storageRelpath,
       screening: { strictness: 'strict', target: { kind: 'module', moduleCode: normalized }, acceptedCount: 1, finalUrl: sourceUrl },
     });
   } catch (e: unknown) {

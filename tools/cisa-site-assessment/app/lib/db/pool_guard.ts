@@ -64,14 +64,25 @@ export async function assertTableOnOwnerPool(fqtn: string): Promise<void> {
     return;
   }
 
-  const corpusPool = getCorpusPool();
   const runtimePool = getRuntimePool();
-
-  const inCorpus = await tableExists(corpusPool as DbClient, fqtn);
   const inRuntime = await tableExists(runtimePool as DbClient, fqtn);
-
-  const corpusId = await dbIdentity(corpusPool as DbClient);
   const runtimeId = await dbIdentity(runtimePool as DbClient);
+
+  const corpusConfigured = Boolean(process.env.CORPUS_DATABASE_URL?.trim());
+  let inCorpus = false;
+  let corpusId: unknown = null;
+
+  if (corpusConfigured) {
+    const corpusPool = getCorpusPool();
+    inCorpus = await tableExists(corpusPool as DbClient, fqtn);
+    corpusId = await dbIdentity(corpusPool as DbClient);
+  } else if (owner === "CORPUS") {
+    throw new Error(
+      "CORPUS_DATABASE_URL must be set to verify CORPUS-owned tables (pool ownership guard)."
+    );
+  }
+  // RUNTIME-owned tables with no CORPUS URL: we only assert the table exists on RUNTIME
+  // (cannot detect a duplicate on CORPUS without connecting to CORPUS).
 
   // Owner must exist only on the owner pool
   const ok =

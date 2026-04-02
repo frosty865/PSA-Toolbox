@@ -186,16 +186,22 @@
       "parent_spine_canon_id": "BASE-ACS-ACS_KEYPADS_PIN_ENTRY",
       "discipline_code": "ACS",
       "subtype_code": "ACS_KEYPADS_PIN_ENTRY",
-      "question_text": "Are PINs assigned individually or shared among groups?",
+      "question_text": "What best describes how PINs are assigned?",
+      "response_type": "ENUM",
       "response_enum": [
-        "YES",
-        "NO",
+        "INDIVIDUAL",
+        "SHARED",
         "N_A"
+      ],
+      "response_options": [
+        { "value": "INDIVIDUAL", "label": "Individually assigned" },
+        { "value": "SHARED", "label": "Shared among groups" },
+        { "value": "N/A", "label": "N/A" }
       ],
       "layer": "baseline",
       "depth": 2,
       "order_index": 1,
-      "source_question": "Are PINs assigned individually or shared among groups?"
+      "source_question": "What best describes how PINs are assigned?"
     },
     {
       "question_code": "BASE-ACS-ACS_KEYPADS_PIN_ENTRY-D2-002",
@@ -2641,7 +2647,7 @@
       "parent_spine_canon_id": "BASE-SFO-SFO_INCIDENT_REPORTING",
       "discipline_code": "SFO",
       "subtype_code": "SFO_INCIDENT_REPORTING",
-      "question_text": "Do you track near-misses, suspicious activity, and minor events, or only major incidents?",
+      "question_text": "Does your incident reporting track near-misses, suspicious activity, and minor events in addition to major incidents?",
       "response_enum": [
         "YES",
         "NO",
@@ -2650,7 +2656,7 @@
       "layer": "baseline",
       "depth": 2,
       "order_index": 1,
-      "source_question": "Do you track near-misses, suspicious activity, and minor events, or only major incidents?"
+      "source_question": "Does your incident reporting track near-misses, suspicious activity, and minor events in addition to major incidents?"
     },
     {
       "question_code": "BASE-SFO-SFO_PATROL_ROUTES-D2-001",
@@ -3867,16 +3873,22 @@
             "parent_spine_canon_id": "BASE-ACS-ACS_KEYPADS_PIN_ENTRY",
             "discipline_code": "ACS",
             "subtype_code": "ACS_KEYPADS_PIN_ENTRY",
-            "question_text": "Are PINs assigned individually or shared among groups?",
+            "question_text": "What best describes how PINs are assigned?",
+            "response_type": "ENUM",
             "response_enum": [
-              "YES",
-              "NO",
+              "INDIVIDUAL",
+              "SHARED",
               "N_A"
+            ],
+            "response_options": [
+              { "value": "INDIVIDUAL", "label": "Individually assigned" },
+              { "value": "SHARED", "label": "Shared among groups" },
+              { "value": "N/A", "label": "N/A" }
             ],
             "layer": "baseline",
             "depth": 2,
             "order_index": 1,
-            "source_question": "Are PINs assigned individually or shared among groups?"
+            "source_question": "What best describes how PINs are assigned?"
           },
           {
             "question_code": "BASE-ACS-ACS_KEYPADS_PIN_ENTRY-D2-002",
@@ -7048,7 +7060,7 @@
             "parent_spine_canon_id": "BASE-SFO-SFO_INCIDENT_REPORTING",
             "discipline_code": "SFO",
             "subtype_code": "SFO_INCIDENT_REPORTING",
-            "question_text": "Do you track near-misses, suspicious activity, and minor events, or only major incidents?",
+            "question_text": "Does your incident reporting track near-misses, suspicious activity, and minor events in addition to major incidents?",
             "response_enum": [
               "YES",
               "NO",
@@ -7057,7 +7069,7 @@
             "layer": "baseline",
             "depth": 2,
             "order_index": 1,
-            "source_question": "Do you track near-misses, suspicious activity, and minor events, or only major incidents?"
+            "source_question": "Does your incident reporting track near-misses, suspicious activity, and minor events in addition to major incidents?"
           }
         ]
       },

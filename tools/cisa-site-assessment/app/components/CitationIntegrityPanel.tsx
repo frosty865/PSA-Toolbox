@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from 'react';
+import { adminAuthHeaders, shouldSendAdminApiRequests } from '@/app/lib/admin/client';
 
 interface SampleOrphan {
   ofc_id: string;
@@ -45,6 +46,24 @@ async function parseIntegrityAuditError(response: Response): Promise<string> {
   }
 }
 
+function formatAuditUnavailable(response: Response, fallbackMessage: string): AuditUnavailableInfo {
+  if (response.status === 401) {
+    return {
+      title: 'Admin token required',
+      message: 'Enter the admin token to unlock database diagnostics.',
+      hint: 'The admin token is stored in a browser cookie after you unlock the admin area.',
+      reason: 'unauthorized',
+    };
+  }
+
+  return {
+    title: `Audit unavailable (${response.status})`,
+    message: fallbackMessage,
+    hint: 'Check the admin deployment and database environment variables.',
+    reason: 'unavailable',
+  };
+}
+
 function isAuditSuccessPayload(data: Record<string, unknown>): boolean {
   return typeof data.integrity_ok === 'boolean';
 }
@@ -60,9 +79,23 @@ export default function CitationIntegrityPanel() {
       try {
         setLoading(true);
         setAuditUnavailable(null);
-        const response = await fetch('/api/admin/citations/integrity-audit');
+        if (!shouldSendAdminApiRequests()) {
+          setAuditUnavailable({
+            title: 'Admin token required',
+            message: 'Enter the admin token to unlock database diagnostics.',
+            hint: 'Use the admin access form at the top of the page.',
+            reason: 'unauthorized',
+          });
+          return;
+        }
+
+        const response = await fetch('/api/admin/citations/integrity-audit', {
+          headers: adminAuthHeaders(),
+        });
         if (!response.ok) {
-          throw new Error(await parseIntegrityAuditError(response));
+          const fallbackMessage = await parseIntegrityAuditError(response);
+          setAuditUnavailable(formatAuditUnavailable(response, fallbackMessage));
+          return;
         }
         const raw = (await response.json()) as Record<string, unknown>;
         if (raw.audit_available === false) {
@@ -404,9 +437,23 @@ export default function CitationIntegrityPanel() {
             setError(null);
             try {
               setAuditUnavailable(null);
-              const res = await fetch('/api/admin/citations/integrity-audit');
+              if (!shouldSendAdminApiRequests()) {
+                setAuditUnavailable({
+                  title: 'Admin token required',
+                  message: 'Enter the admin token to unlock database diagnostics.',
+                  hint: 'Use the admin access form at the top of the page.',
+                  reason: 'unauthorized',
+                });
+                return;
+              }
+
+              const res = await fetch('/api/admin/citations/integrity-audit', {
+                headers: adminAuthHeaders(),
+              });
               if (!res.ok) {
-                throw new Error(await parseIntegrityAuditError(res));
+                const fallbackMessage = await parseIntegrityAuditError(res);
+                setAuditUnavailable(formatAuditUnavailable(res, fallbackMessage));
+                return;
               }
               const raw = (await res.json()) as Record<string, unknown>;
               if (raw.audit_available === false) {

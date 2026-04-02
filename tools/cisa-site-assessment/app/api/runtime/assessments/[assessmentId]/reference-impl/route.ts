@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getRuntimePool } from "@/app/lib/db/runtime_client";
 import { getOrCompute } from "@/app/lib/runtime/reference_impl_cache";
-import { runPython } from "@/app/lib/runtime/python_runner";
-import { getPythonExe } from "@/app/lib/runtime/python_exec";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -21,48 +20,27 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ asse
       return jsonError(400, "Missing required query param: discipline_subtype_id");
     }
 
-    // Basic UUID-ish validation
     if (!/^[0-9a-fA-F-]{32,36}$/.test(discipline_subtype_id)) {
       return jsonError(400, "discipline_subtype_id does not look like a UUID");
     }
 
     const cached = await getOrCompute(discipline_subtype_id, async () => {
-      const py = getPythonExe();
-      const repoRoot = process.cwd();
+      const pool = getRuntimePool();
+      const result = await pool.query(
+        `SELECT
+          discipline_subtype_id,
+          reference_impl
+         FROM public.discipline_subtype_reference_impl
+         WHERE discipline_subtype_id = $1`,
+        [discipline_subtype_id]
+      );
 
-      const script = `
-import json
-from model.doctrine.reference_impls import try_get_reference_impl
-rid = ${JSON.stringify(discipline_subtype_id)}
-ref = try_get_reference_impl(rid)
-if not ref:
-    print(json.dumps({"ok": True, "found": False}))
-else:
-    print(json.dumps({"ok": True, "found": True, "payload": ref.payload}))
-`.trim();
-
-      const res = await runPython(py, ["-c", script], {
-        cwd: repoRoot,
-        env: process.env,
-        timeoutMs: 8000,
-      });
-
-      if (!res.ok) {
-        throw new Error(
-          `reference-impl python failed: ${res.error ?? "unknown"}; stderr=${res.stderr}`
-        );
+      if (result.rows.length === 0) {
+        return { ok: true, found: false };
       }
 
-      const txt = (res.stdout || "").trim();
-      if (!txt) {
-        throw new Error("reference-impl python returned empty stdout");
-      }
-
-      try {
-        return JSON.parse(txt) as { ok: boolean; found?: boolean; payload?: unknown };
-      } catch {
-        throw new Error(`reference-impl python stdout not JSON: ${txt.slice(0, 200)}`);
-      }
+      const row = result.rows[0] as { discipline_subtype_id: string; reference_impl: unknown };
+      return { ok: true, found: true, payload: { discipline_subtype_id: row.discipline_subtype_id, reference_impl: row.reference_impl } };
     });
 
     if ("error" in cached) {
@@ -71,7 +49,13 @@ else:
       return resp;
     }
 
-    const resp = NextResponse.json(cached.payload, { status: 200 });
+    if (!cached.payload.found) {
+      const resp = NextResponse.json({ ok: false, error: "Reference implementation not found" }, { status: 404 });
+      resp.headers.set("X-Reference-Impl-Cache", cached.cache);
+      return resp;
+    }
+
+    const resp = NextResponse.json(cached.payload.payload, { status: 200 });
     resp.headers.set("X-Reference-Impl-Cache", cached.cache);
     return resp;
   } catch (error) {

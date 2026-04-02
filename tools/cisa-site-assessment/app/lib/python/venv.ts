@@ -1,8 +1,9 @@
 /**
  * PSA System Python Virtual Environment Utilities
- * Resolves Python executable paths from PSA_SYSTEM_ROOT
+ * Resolves Python executable paths from env, PSA System venv, or PATH.
  */
 
+import { execSync } from 'child_process';
 import { existsSync } from 'fs';
 import * as path from 'path';
 
@@ -33,51 +34,80 @@ export function getPythonExecutablePath(serviceName: 'engine' | 'processor'): st
   const venvPath = getVenvPath(serviceName);
   if (process.platform === 'win32') {
     return path.join(venvPath, 'Scripts', 'python.exe');
-  } else {
-    return path.join(venvPath, 'bin', 'python');
   }
+  return path.join(venvPath, 'bin', 'python');
+}
+
+function tryPythonRuns(cmd: string): boolean {
+  const trimmed = cmd.trim();
+  if (!trimmed) return false;
+  if (path.isAbsolute(trimmed) || trimmed.includes(path.sep)) {
+    if (!existsSync(trimmed)) return false;
+  }
+  try {
+    const q = trimmed.includes(' ') ? `"${trimmed}"` : trimmed;
+    execSync(`${q} --version`, {
+      stdio: 'ignore',
+      timeout: 4000,
+      windowsHide: true,
+    });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/** Env keys to try first for the processor (ingestion, PDF) stack. */
+function processorEnvCandidates(): string[] {
+  const keys = ['PROCESSOR_PYTHON', 'PSA_PYTHON_PROCESSOR_EXE', 'PYTHON_PATH', 'PYTHON'] as const;
+  const out: string[] = [];
+  for (const k of keys) {
+    const v = process.env[k]?.trim();
+    if (v) out.push(v);
+  }
+  return out;
+}
+
+/** Env keys for engine (reserved; same pattern as processor). */
+function engineEnvCandidates(): string[] {
+  const keys = ['ENGINE_PYTHON', 'PSA_PYTHON_ENGINE_EXE', 'PYTHON_PATH', 'PYTHON'] as const;
+  const out: string[] = [];
+  for (const k of keys) {
+    const v = process.env[k]?.trim();
+    if (v) out.push(v);
+  }
+  return out;
+}
+
+/**
+ * Returns true if `cmd` is runnable as Python (by `--version`), including bare names on PATH
+ * (e.g. `python3` on Linux). Use this instead of fs.existsSync for commands.
+ */
+export function isPythonRunnable(cmd: string): boolean {
+  return tryPythonRuns(cmd);
 }
 
 /**
  * Find Python executable for a service
- * Tries PSA System venv first, then falls back to system Python
+ * Order: env overrides → PSA venv → system python / python3 / py (Windows)
  * @param serviceName Service name ('engine' | 'processor')
- * @returns Python executable path or null if not found
+ * @returns Python executable path or command name, or null if not found
  */
 export function findPythonExecutable(serviceName: 'engine' | 'processor'): string | null {
-  const candidates: string[] = [];
+  const envFirst = serviceName === 'processor' ? processorEnvCandidates() : engineEnvCandidates();
+  for (const cmd of envFirst) {
+    if (tryPythonRuns(cmd)) return cmd;
+  }
 
-  // Check PSA System venv first
   const venvPython = getPythonExecutablePath(serviceName);
-  try {
-    if (existsSync(venvPython)) {
-      candidates.unshift(venvPython);
-    }
-  } catch {
-    // Ignore errors
-  }
+  if (tryPythonRuns(venvPython)) return venvPython;
 
-  // Fallback to system Python
-  candidates.push('python', 'python3');
-  
+  const candidates = ['python', 'python3'];
   if (process.platform === 'win32') {
-    candidates.push('py'); // Windows Python Launcher
+    candidates.push('py');
   }
-
-  // Try each candidate
   for (const cmd of candidates) {
-    try {
-      // eslint-disable-next-line @typescript-eslint/no-require-imports -- dynamic require inside loop
-      const { execSync } = require('child_process');
-      execSync(`"${cmd}" --version`, { 
-        stdio: 'ignore', 
-        timeout: 2000,
-        windowsHide: true,
-      });
-      return cmd;
-    } catch {
-      // Continue to next candidate
-    }
+    if (tryPythonRuns(cmd)) return cmd;
   }
 
   return null;
