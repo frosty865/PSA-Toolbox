@@ -3,7 +3,7 @@ import * as path from 'path';
 import * as os from 'os';
 import { createHash } from 'crypto';
 import { getCorpusPoolForAdmin } from '@/app/lib/db/corpus_client';
-import { getCorpusSourcesRoot } from '@/app/lib/storage/config';
+import { assertCorpusPath, corpusRawRelpath, ensureStorageDirs, getCorpusSourcesRoot, resolveCorpusPath } from '@/app/lib/storage/config';
 import { assertSourceRegistryId } from '@/app/lib/sourceRegistry/guards';
 import { tierFromPublisher } from '@/app/lib/sourceRegistry/tierFromPublisher';
 import { ingestCorpusPdfBufferToDb, type CorpusPdfIngestResult } from '@/app/lib/corpus/corpusPdfIngest';
@@ -135,6 +135,19 @@ export async function ingestDocumentFromFile(
   }
 }
 
+async function persistCorpusDownload(tempFilePath: string): Promise<string> {
+  await ensureStorageDirs();
+  const buffer = await fs.readFile(tempFilePath);
+  const sha256 = createHash('sha256').update(buffer).digest('hex');
+  const root = getCorpusSourcesRoot();
+  const relpath = corpusRawRelpath(`${sha256}.pdf`);
+  const absPath = resolveCorpusPath(relpath);
+  assertCorpusPath(absPath);
+  await fs.mkdir(path.dirname(absPath), { recursive: true });
+  await fs.writeFile(absPath, buffer);
+  return absPath;
+}
+
 /**
  * Ingest a document from URL
  * Downloads the file, ingests it, and returns results
@@ -153,9 +166,12 @@ export async function ingestDocumentFromUrl(
     // Download file to temporary location
     tempFilePath = await downloadFile(url);
 
+    // Persist the downloaded PDF under CORPUS storage so the registry can serve it later.
+    const storedPath = await persistCorpusDownload(tempFilePath);
+
     // Ingest the document
     const result = await ingestDocumentFromFile(
-      tempFilePath,
+      storedPath,
       sourceName,
       title,
       publishedAt,
@@ -165,7 +181,7 @@ export async function ingestDocumentFromUrl(
 
     // If successful, set localPath to the temp file (or we could move it to a permanent location)
     if (result.success) {
-      result.localPath = tempFilePath;
+      result.localPath = storedPath;
     }
 
     return result;
