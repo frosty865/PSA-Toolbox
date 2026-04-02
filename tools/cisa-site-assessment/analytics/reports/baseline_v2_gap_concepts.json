@@ -1,0 +1,299 @@
+{
+  "baseline_v1_status": "frozen",
+  "purpose": "Enumerate candidate concepts for Baseline Questions v2",
+  "baseline_v1_exclusion_principles": [
+    "Universal applicability required",
+    "Existence-based verification only",
+    "Minimal viable capability scope",
+    "Excludes environment-specific nuance",
+    "Excludes operational constraints",
+    "Excludes context-driven management requirements",
+    "Excludes historically SAFE-contaminated concepts",
+    "Excludes regulatory or compliance framing"
+  ],
+  "gaps": [
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "System Management",
+      "concept": "Access control system exists and is operational",
+      "reason_excluded_from_v1": "System existence was considered too specific for minimal baseline scope",
+      "baseline_applicability": "Physical access control is a universal physical security capability applicable to all facility types",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Procedures",
+      "concept": "Documented procedures for access control system operation",
+      "reason_excluded_from_v1": "Procedural requirements were excluded to avoid operational constraint creep",
+      "baseline_applicability": "Basic operational procedures for access control systems are universally applicable across facility types",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Personnel",
+      "concept": "Personnel with responsibility for access control system management",
+      "reason_excluded_from_v1": "Role delineation beyond 'exists' was simplified to avoid management nuance",
+      "baseline_applicability": "Access control systems require designated management responsibility, universally applicable",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "System Management",
+      "concept": "Video surveillance system exists and is operational",
+      "reason_excluded_from_v1": "System existence was considered too specific for minimal baseline scope",
+      "baseline_applicability": "Video surveillance is a universal physical security capability applicable to all facility types",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Procedures",
+      "concept": "Documented procedures for video surveillance system operation and monitoring",
+      "reason_excluded_from_v1": "Procedural requirements were excluded to avoid operational constraint creep",
+      "baseline_applicability": "Basic operational procedures for video surveillance are universally applicable across facility types",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Maintenance",
+      "concept": "Video surveillance system maintenance activities are performed",
+      "reason_excluded_from_v1": "Maintenance requirements were excluded to avoid operational constraint creep",
+      "baseline_applicability": "System maintenance is a universal requirement for operational video surveillance systems",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "System Management",
+      "concept": "Intrusion detection system exists and is operational",
+      "reason_excluded_from_v1": "System existence was considered too specific for minimal baseline scope",
+      "baseline_applicability": "Intrusion detection is a universal physical security capability applicable to all facility types",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Procedures",
+      "concept": "Documented procedures for intrusion detection system operation and alarm response",
+      "reason_excluded_from_v1": "Procedural requirements were excluded to avoid operational constraint creep",
+      "baseline_applicability": "Basic alarm response procedures are universally applicable across facility types",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Physical Barriers",
+      "concept": "Perimeter barriers exist to define facility boundary",
+      "reason_excluded_from_v1": "Physical barrier requirements were excluded to avoid environment-specific nuance",
+      "baseline_applicability": "Perimeter definition through barriers is a universal physical security concept",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "System Management",
+      "concept": "Perimeter security measures are maintained",
+      "reason_excluded_from_v1": "Maintenance requirements were excluded to avoid operational constraint creep",
+      "baseline_applicability": "Perimeter security maintenance is universally applicable to all facilities with defined perimeters",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Security Lighting",
+      "subtype": "System Management",
+      "concept": "Security lighting exists for facility perimeter and critical areas",
+      "reason_excluded_from_v1": "Lighting requirements were excluded to avoid environment-specific nuance",
+      "baseline_applicability": "Security lighting is a universal physical security capability applicable to all facility types",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Security Lighting",
+      "subtype": "Maintenance",
+      "concept": "Security lighting systems are maintained",
+      "reason_excluded_from_v1": "Maintenance requirements were excluded to avoid operational constraint creep",
+      "baseline_applicability": "Lighting system maintenance is universally applicable to all facilities with security lighting",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Security Personnel",
+      "subtype": "Personnel",
+      "concept": "Security personnel roles and responsibilities are defined",
+      "reason_excluded_from_v1": "Expanded role delineation beyond 'exists' was simplified to avoid management nuance",
+      "baseline_applicability": "Security personnel role definition is universally applicable where security personnel exist",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Security Personnel",
+      "subtype": "Procedures",
+      "concept": "Documented procedures for security personnel operations",
+      "reason_excluded_from_v1": "Procedural requirements were excluded to avoid operational constraint creep",
+      "baseline_applicability": "Basic operational procedures for security personnel are universally applicable",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Security Operations",
+      "subtype": "System Management",
+      "concept": "Security operations center or monitoring capability exists",
+      "reason_excluded_from_v1": "Operational capability requirements were excluded to avoid context-driven management requirements",
+      "baseline_applicability": "Security monitoring capability is a universal physical security concept",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Security Operations",
+      "subtype": "Procedures",
+      "concept": "Documented procedures for security operations and response",
+      "reason_excluded_from_v1": "Procedural requirements were excluded to avoid operational constraint creep",
+      "baseline_applicability": "Basic security operations procedures are universally applicable across facility types",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Visitor Management",
+      "subtype": "System Management",
+      "concept": "Visitor management process or system exists",
+      "reason_excluded_from_v1": "Visitor management was excluded to avoid operational constraint creep",
+      "baseline_applicability": "Visitor management is a universal physical security capability applicable to facilities that receive visitors",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Visitor Management",
+      "subtype": "Procedures",
+      "concept": "Documented procedures for visitor management",
+      "reason_excluded_from_v1": "Procedural requirements were excluded to avoid operational constraint creep",
+      "baseline_applicability": "Basic visitor management procedures are universally applicable",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Emergency Response",
+      "subtype": "Procedures",
+      "concept": "Emergency response procedures exist",
+      "reason_excluded_from_v1": "Emergency procedures were excluded to avoid context-driven management requirements",
+      "baseline_applicability": "Emergency response procedures are universally applicable to all facilities",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Emergency Response",
+      "subtype": "Personnel",
+      "concept": "Personnel with responsibility for emergency response coordination",
+      "reason_excluded_from_v1": "Role delineation beyond 'exists' was simplified to avoid management nuance",
+      "baseline_applicability": "Emergency response coordination responsibility is universally applicable",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Security Maintenance",
+      "subtype": "Maintenance",
+      "concept": "Security system maintenance activities are performed",
+      "reason_excluded_from_v1": "Maintenance requirements were excluded to avoid operational constraint creep",
+      "baseline_applicability": "Security system maintenance is a universal requirement for operational security systems",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Security Maintenance",
+      "subtype": "Procedures",
+      "concept": "Documented procedures for security system maintenance",
+      "reason_excluded_from_v1": "Procedural requirements were excluded to avoid operational constraint creep",
+      "baseline_applicability": "Maintenance procedures are universally applicable to all facilities with security systems",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Security Testing",
+      "subtype": "Procedures",
+      "concept": "Security system testing activities are performed",
+      "reason_excluded_from_v1": "Testing requirements were excluded to avoid operational constraint creep",
+      "baseline_applicability": "Security system testing is a universal requirement for verifying system functionality",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Security Documentation",
+      "subtype": "Procedures",
+      "concept": "Security documentation exists for system operations",
+      "reason_excluded_from_v1": "Documentation requirements beyond policy were excluded to avoid operational constraint creep",
+      "baseline_applicability": "Security system documentation is universally applicable to all facilities with security systems",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Security Systems Integration",
+      "subtype": "System Management",
+      "concept": "Security systems are integrated or coordinated",
+      "reason_excluded_from_v1": "Integration requirements were excluded to avoid context-driven management requirements",
+      "baseline_applicability": "System integration is a universal physical security capability where multiple systems exist",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Physical Barriers",
+      "subtype": "System Management",
+      "concept": "Interior physical barriers exist for asset protection",
+      "reason_excluded_from_v1": "Interior barrier requirements were excluded to avoid environment-specific nuance",
+      "baseline_applicability": "Interior physical barriers are a universal physical security capability",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Security Communications",
+      "subtype": "System Management",
+      "concept": "Security communications system exists",
+      "reason_excluded_from_v1": "Communication system requirements were excluded to avoid operational constraint creep",
+      "baseline_applicability": "Security communications are a universal physical security capability",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Procedures",
+      "concept": "Documented procedures for security program management",
+      "reason_excluded_from_v1": "Procedural requirements beyond policy were excluded to avoid operational constraint creep",
+      "baseline_applicability": "Security program management procedures are universally applicable",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Personnel",
+      "concept": "Security management personnel responsibilities are documented",
+      "reason_excluded_from_v1": "Expanded role documentation was simplified to avoid management nuance",
+      "baseline_applicability": "Security management responsibility documentation is universally applicable",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Maintenance",
+      "concept": "Access control system maintenance activities are performed",
+      "reason_excluded_from_v1": "Maintenance requirements were excluded to avoid operational constraint creep",
+      "baseline_applicability": "Access control system maintenance is universally applicable to all facilities with access control systems",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Personnel",
+      "concept": "Personnel with responsibility for video surveillance system management",
+      "reason_excluded_from_v1": "Role delineation beyond 'exists' was simplified to avoid management nuance",
+      "baseline_applicability": "Video surveillance management responsibility is universally applicable",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Maintenance",
+      "concept": "Intrusion detection system maintenance activities are performed",
+      "reason_excluded_from_v1": "Maintenance requirements were excluded to avoid operational constraint creep",
+      "baseline_applicability": "Intrusion detection system maintenance is universally applicable to all facilities with intrusion detection systems",
+      "sector_dependency": false
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Personnel",
+      "concept": "Personnel with responsibility for intrusion detection system management",
+      "reason_excluded_from_v1": "Role delineation beyond 'exists' was simplified to avoid management nuance",
+      "baseline_applicability": "Intrusion detection management responsibility is universally applicable",
+      "sector_dependency": false
+    }
+  ],
+  "summary": {
+    "total_gap_concepts": 32,
+    "disciplines_covered": 13,
+    "exclusion_reasons": {
+      "System existence too specific for minimal baseline": 7,
+      "Procedural requirements excluded to avoid operational constraint creep": 12,
+      "Role delineation simplified to avoid management nuance": 6,
+      "Maintenance requirements excluded to avoid operational constraint creep": 5,
+      "Environment-specific nuance avoided": 2
+    },
+    "top_exclusion_reasons": [
+      "Procedural requirements excluded to avoid operational constraint creep",
+      "System existence too specific for minimal baseline",
+      "Role delineation simplified to avoid management nuance",
+      "Maintenance requirements excluded to avoid operational constraint creep",
+      "Environment-specific nuance avoided"
+    ]
+  }
+}
+

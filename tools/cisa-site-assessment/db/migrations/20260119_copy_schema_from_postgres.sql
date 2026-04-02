@@ -1,0 +1,49 @@
+-- ============================================================================
+-- COPY SCHEMA FROM EXISTING POSTGRES DATABASE
+-- ============================================================================
+-- If you have an existing RUNTIME database (postgres) with the full schema,
+-- you can copy the schema structure to psa_runtime using pg_dump.
+--
+-- This is a guide, not an executable SQL script.
+-- ============================================================================
+
+-- STEP 1: Export schema from existing postgres database (no data)
+-- Run this command from your terminal:
+--
+-- pg_dump -h db.wivohgbuuwxoyfyzntsd.supabase.co -U postgres -p 5432 \
+--   --schema-only --no-owner --no-privileges \
+--   -d postgres > runtime_schema_export.sql
+--
+-- Or for Supabase connection pooler (port 6543):
+-- pg_dump -h db.wivohgbuuwxoyfyzntsd.supabase.co -U postgres -p 6543 \
+--   --schema-only --no-owner --no-privileges \
+--   -d postgres > runtime_schema_export.sql
+
+-- STEP 2: Modify the exported SQL file:
+-- - Change any database-specific references if needed
+-- - Remove any CREATE DATABASE statements
+-- - Ensure it targets the 'public' schema
+
+-- STEP 3: Import schema into psa_runtime
+-- Connect to psa_runtime database and run:
+-- psql -h db.wivohgbuuwxoyfyzntsd.supabase.co -U postgres -p 5432 -d psa_runtime -f runtime_schema_export.sql
+--
+-- Or in Supabase SQL Editor:
+-- - Connect to psa_runtime database
+-- - Copy/paste the contents of runtime_schema_export.sql
+-- - Run it
+
+-- STEP 4: Verify tables exist
+-- SELECT table_name 
+-- FROM information_schema.tables 
+-- WHERE table_schema = 'public' 
+-- ORDER BY table_name;
+--
+-- Should include:
+-- - assessments
+-- - ofc_library_citations
+-- - assessment_instances
+-- - assessment_responses
+-- - assessment_definitions
+-- - facilities
+-- - etc.

@@ -10,7 +10,7 @@
  * 5. Follow-up data used downstream (manual audit; this guard flags orphan follow-ups)
  *
  * To enable strict mode: requireStructuredHelp: true, failOnUndefinedTerms: true
- * (fails until all questions migrated per audit/missing_or_invalid_help_report.md)
+ * (fails until all questions migrated per audit)
  */
 
 import {

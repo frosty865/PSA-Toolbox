@@ -1,0 +1,11 @@
+[
+  {
+    "candidate_id": "REPLACE_ME",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q001",
+    "question_text": "MUST MATCH candidate_text (whitespace-only normalization allowed)"
+  }
+]
+

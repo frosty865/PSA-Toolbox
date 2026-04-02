@@ -82,6 +82,15 @@ export function SectionTabsShell({ renderContent, getBlockingError, activeTabId:
         role="tablist"
         aria-label="Assessment sections"
         className="section-tabs-tablist"
+        style={{
+          display: 'flex',
+          flexWrap: 'nowrap',
+          overflowX: 'auto',
+          gap: 0,
+          borderBottom: '1px solid var(--cisa-gray-light)',
+          marginBottom: '1rem',
+          paddingBottom: 0,
+        }}
         onKeyDown={handleTabKeyDown}
       >
         {tabs.map((tab) => (
@@ -94,7 +103,16 @@ export function SectionTabsShell({ renderContent, getBlockingError, activeTabId:
             id={`tab-${tab.id}`}
             tabIndex={activeTabId === tab.id ? 0 : -1}
             onClick={() => setActiveTabId(tab.id as SectionTabId)}
-            className={`section-tabs-tab-btn ${activeTabId === tab.id ? 'is-active' : ''}`}
+            style={{
+              flexShrink: 0,
+              padding: '0.5rem 1rem',
+              border: 'none',
+              borderBottom: activeTabId === tab.id ? '2px solid var(--cisa-blue, #0071bc)' : '2px solid transparent',
+              background: activeTabId === tab.id ? 'var(--background-alt, #f0f4f8)' : 'transparent',
+              cursor: 'pointer',
+              fontWeight: activeTabId === tab.id ? 600 : 400,
+              fontSize: 'var(--font-size-sm, 0.875rem)',
+            }}
           >
             {tab.title}
           </button>
@@ -110,11 +128,11 @@ export function SectionTabsShell({ renderContent, getBlockingError, activeTabId:
         {renderContent(activeTabId)}
       </div>
 
-      <div className="section-tabs-nav">
-        <div className="section-tabs-nav-actions">
+      <div className="section-tabs-nav" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
           <button
             type="button"
-            className="ida-btn ida-btn-secondary"
+            className="btn btn-secondary"
             onClick={goPrev}
             disabled={!canGoPrev}
             aria-label="Previous section"
@@ -123,7 +141,7 @@ export function SectionTabsShell({ renderContent, getBlockingError, activeTabId:
           </button>
           <button
             type="button"
-            className="ida-btn ida-btn-primary"
+            className="btn btn-primary"
             onClick={goNext}
             disabled={!canGoNext || hasBlockingError}
             aria-label="Next section"

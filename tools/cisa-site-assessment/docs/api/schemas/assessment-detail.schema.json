@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://psa-tool.com/schemas/assessment-detail.json",
+  "title": "Assessment Detail (Context Header)",
+  "description": "Schema for GET /api/assessments/[assessmentId] response - context header only",
+  "type": "object",
+  "required": ["assessment_id", "name", "facility", "status"],
+  "properties": {
+    "assessment_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "facility": {
+      "type": "object",
+      "required": ["sector_id", "sector_name", "subsector_id", "subsector_name"],
+      "properties": {
+        "sector_id": {
+          "type": ["string", "null"],
+          "format": "uuid"
+        },
+        "sector_name": {
+          "type": ["string", "null"]
+        },
+        "subsector_id": {
+          "type": ["string", "null"],
+          "format": "uuid"
+        },
+        "subsector_name": {
+          "type": ["string", "null"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "completed"]
+    }
+  },
+  "additionalProperties": false
+}

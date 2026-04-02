@@ -1,0 +1,1484 @@
+
+> psa-rebuild@0.1.0 lint
+> eslint app --max-warnings 0 --format=stylish
+
+
+D:\PSA_System\psa_rebuild\app\admin\assessments\page.tsx
+  115:6   warning  React Hook useEffect has a missing dependency: 'loadAssessments'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  122:6   warning  React Hook useEffect has a missing dependency: 'loadQuestions'. Either include it or remove the dependency array    react-hooks/exhaustive-deps
+  129:6   warning  React Hook useEffect has a missing dependency: 'loadOfcs'. Either include it or remove the dependency array         react-hooks/exhaustive-deps
+  197:17  error    Unexpected any. Specify a different type                                                                            @typescript-eslint/no-explicit-any
+  200:16  warning  'parseError' is defined but never used                                                                              @typescript-eslint/no-unused-vars
+  216:22  error    Unexpected any. Specify a different type                                                                            @typescript-eslint/no-explicit-any
+  447:74  error    Unexpected any. Specify a different type                                                                            @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\admin\module-data\page.tsx
+   56:6   warning  React Hook useEffect has a missing dependency: 'loadModuleOfcs'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  141:26  error    Unexpected any. Specify a different type                                                                           @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\admin\module-management\page.tsx
+  73:62  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\admin\modules\[moduleCode]\TemplatePanel.tsx
+   6:36  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  56:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  74:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\admin\modules\[moduleCode]\edit\page.tsx
+   20:6    warning  React Hook useEffect has a missing dependency: 'loadModuleData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+   34:17   error    Unexpected any. Specify a different type                                                                           @typescript-eslint/no-explicit-any
+   42:9    warning  'validationResult' is assigned a value but never used                                                              @typescript-eslint/no-unused-vars
+   53:14   warning  'parseError' is defined but never used                                                                             @typescript-eslint/no-unused-vars
+   71:14   warning  'e' is defined but never used                                                                                      @typescript-eslint/no-unused-vars
+  119:26   error    Unexpected any. Specify a different type                                                                           @typescript-eslint/no-explicit-any
+  303:90   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                    react/no-unescaped-entities
+  303:106  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                    react/no-unescaped-entities
+
+D:\PSA_System\psa_rebuild\app\admin\modules\[moduleCode]\page.tsx
+    10:36   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+    14:50   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+    18:50   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+    46:10   warning  'standardDetail' is assigned a value but never used                                                                                                     @typescript-eslint/no-unused-vars
+    58:28   warning  'setStandardLoadHint' is assigned a value but never used                                                                                                @typescript-eslint/no-unused-vars
+    60:69   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+    90:17   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+    98:6    warning  React Hook useEffect has a missing dependency: 'loadData'. Either include it or remove the dependency array                                             react-hooks/exhaustive-deps
+   112:62   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   113:58   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   115:6    warning  React Hook useEffect has a missing dependency: 'reviewCriteriaEdits'. Either include it or remove the dependency array                                  react-hooks/exhaustive-deps
+   125:6    warning  React Hook useEffect has missing dependencies: 'STANDARD_CLASS_OPTIONS' and 'data.module_instance'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+   140:17   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   226:27   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   354:49   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   356:66   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   386:27   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   418:100  error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   434:35   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   434:43   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   435:34   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   455:51   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   455:86   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   455:97   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   459:48   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   462:96   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   468:50   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   538:33   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   569:26   warning  '_' is defined but never used                                                                                                                           @typescript-eslint/no-unused-vars
+   599:48   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   654:45   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   703:26   warning  '_' is defined but never used                                                                                                                           @typescript-eslint/no-unused-vars
+   726:39   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   781:40   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   829:50   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   830:27   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   830:35   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   831:26   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   833:74   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   833:98   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   869:53   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+   941:33   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1021:33   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1064:31   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1097:53   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1105:49   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1193:72   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1205:53   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1205:110  error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1223:45   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1251:43   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1267:72   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1280:53   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1280:127  error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1298:45   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1326:43   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1362:39   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1393:35   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1432:35   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1507:117  error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1507:156  error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1516:134  error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1535:31   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1578:149  error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1578:188  error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1589:62   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1593:50   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1620:31   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1649:46   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1684:53   error    Unexpected any. Specify a different type                                                                                                                @typescript-eslint/no-explicit-any
+  1705:88   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                         react/no-unescaped-entities
+  1705:101  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                         react/no-unescaped-entities
+
+D:\PSA_System\psa_rebuild\app\admin\modules\author\page.tsx
+   47:85  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  223:29  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  223:37  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\PSA_System\psa_rebuild\app\admin\modules\builder\page.tsx
+   94:82  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  261:31  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  261:39  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\PSA_System\psa_rebuild\app\admin\modules\import\help\page.tsx
+   30:140  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   30:167  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  143:58   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  143:71   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  143:89   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  143:102  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  256:107  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  267:62   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  267:68   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  267:71   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  267:84   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  268:65   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  268:73   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  268:76   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  268:91   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  274:29   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  274:48   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\PSA_System\psa_rebuild\app\admin\modules\import\page.tsx
+   44:42  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   45:40  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   49:10  warning  'showAutoFix' is assigned a value but never used       @typescript-eslint/no-unused-vars
+   51:30  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   72:9   warning  'validationResult' is assigned a value but never used  @typescript-eslint/no-unused-vars
+   83:14  warning  'parseError' is defined but never used                 @typescript-eslint/no-unused-vars
+  104:14  warning  'e' is defined but never used                          @typescript-eslint/no-unused-vars
+  133:14  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  165:17  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  254:34  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\admin\modules\new\page.tsx
+  88:63  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  95:62  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\admin\modules\new\steps\DefineStep.tsx
+  72:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\admin\modules\new\steps\GenerateStep.tsx
+   16:82  warning  'loading' is defined but never used                                                                                                                                                                                                                                                                                    @typescript-eslint/no-unused-vars
+   16:91  warning  'setLoading' is defined but never used                                                                                                                                                                                                                                                                                 @typescript-eslint/no-unused-vars
+   66:21  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+   75:6   warning  React Hook useEffect has missing dependencies: 'generating', 'onError', 'onNext', 'onUpdate', and 'state.generated_content?.questions?.length'. Either include them or remove the dependency array. If 'onError' changes too often, find the parent component that defines it and wrap that definition in useCallback  react-hooks/exhaustive-deps
+  131:19  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\admin\modules\new\steps\PublishStep.tsx
+  15:63  warning  'loading' is defined but never used       @typescript-eslint/no-unused-vars
+  15:72  warning  'setLoading' is defined but never used    @typescript-eslint/no-unused-vars
+  53:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\admin\modules\new\steps\ReviewStep.tsx
+  16:71  warning  'onError' is defined but never used       @typescript-eslint/no-unused-vars
+  16:80  warning  'loading' is defined but never used       @typescript-eslint/no-unused-vars
+  16:89  warning  'setLoading' is defined but never used    @typescript-eslint/no-unused-vars
+  30:70  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  36:65  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\admin\modules\new\steps\SourcesStep.tsx
+   53:54  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   55:32  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  118:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  156:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\admin\modules\page.tsx
+   17:56  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   71:17  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  254:35  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  535:18  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+  545:39  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  549:47  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  555:63  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\admin\ofcs\[ofc_id]\page.tsx
+  28:9  warning  'router' is assigned a value but never used                                                                        @typescript-eslint/no-unused-vars
+  39:6  warning  React Hook useEffect has a missing dependency: 'loadOFCDetails'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\PSA_System\psa_rebuild\app\admin\problem-candidates\page.tsx
+   4:8  warning  'Link' is defined but never used                                                                                   @typescript-eslint/no-unused-vars
+   7:6  warning  'Status' is defined but never used                                                                                 @typescript-eslint/no-unused-vars
+  53:6  warning  React Hook useEffect has a missing dependency: 'loadCandidates'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\PSA_System\psa_rebuild\app\admin\reports\subtype-coverage\page.tsx
+  74:32  error  Compilation Skipped: Existing memoization could not be preserved
+
+React Compiler has skipped optimizing this component because the existing manual memoization could not be preserved. The inferred dependencies did not match the manually specified dependencies, which could cause the value to change more or less frequently than expected. The inferred dependency was `report.rows`, but the source dependencies were [report?.rows, filter, search]. Inferred different dependency than source.
+
+D:\PSA_System\psa_rebuild\app\admin\reports\subtype-coverage\page.tsx:74:32
+  72 |   }, []);
+  73 |
+> 74 |   const filteredRows = useMemo(() => {
+     |                                ^^^^^^^
+> 75 |     if (!report?.rows) return [];
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 76 |     let r = report.rows;
+     ΓÇª
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 90 |     return r;
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 91 |   }, [report?.rows, filter, search]);
+     | ^^^^ Could not preserve existing manual memoization
+  92 |
+  93 |   const handleExport = () => {
+  94 |     if (!report) return;  react-hooks/preserve-manual-memoization
+
+D:\PSA_System\psa_rebuild\app\admin\server-tools\page.tsx
+  200:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\admin\source-registry\page.tsx
+     4:80   warning  'formatZodIssues' is defined but never used                                                                     @typescript-eslint/no-unused-vars
+     5:10   warning  'z' is defined but never used                                                                                   @typescript-eslint/no-unused-vars
+    54:10   warning  'extractingMetadata' is assigned a value but never used                                                         @typescript-eslint/no-unused-vars
+    54:30   warning  'setExtractingMetadata' is assigned a value but never used                                                      @typescript-eslint/no-unused-vars
+    56:10   warning  'activeSources' is assigned a value but never used                                                              @typescript-eslint/no-unused-vars
+    57:10   warning  'loadingSources' is assigned a value but never used                                                             @typescript-eslint/no-unused-vars
+    82:6    warning  React Hook useEffect has a missing dependency: 'loadSources'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+   144:50   error    Unexpected any. Specify a different type                                                                        @typescript-eslint/no-explicit-any
+   182:69   error    Unexpected any. Specify a different type                                                                        @typescript-eslint/no-explicit-any
+   185:44   error    Unexpected any. Specify a different type                                                                        @typescript-eslint/no-explicit-any
+   378:97   error    Unexpected any. Specify a different type                                                                        @typescript-eslint/no-explicit-any
+   379:20   error    Unexpected any. Specify a different type                                                                        @typescript-eslint/no-explicit-any
+   436:44   error    Unexpected any. Specify a different type                                                                        @typescript-eslint/no-explicit-any
+   454:97   error    Unexpected any. Specify a different type                                                                        @typescript-eslint/no-explicit-any
+   455:20   error    Unexpected any. Specify a different type                                                                        @typescript-eslint/no-explicit-any
+   518:44   error    Unexpected any. Specify a different type                                                                        @typescript-eslint/no-explicit-any
+   665:9    warning  'pageSources' is assigned a value but never used                                                                @typescript-eslint/no-unused-vars
+  1106:99   error    Unexpected any. Specify a different type                                                                        @typescript-eslint/no-explicit-any
+  1109:92   error    Unexpected any. Specify a different type                                                                        @typescript-eslint/no-explicit-any
+  1112:92   error    Unexpected any. Specify a different type                                                                        @typescript-eslint/no-explicit-any
+  1115:92   error    Unexpected any. Specify a different type                                                                        @typescript-eslint/no-explicit-any
+  1118:94   error    Unexpected any. Specify a different type                                                                        @typescript-eslint/no-explicit-any
+  1121:108  error    Unexpected any. Specify a different type                                                                        @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\citations\integrity-audit\route.ts
+   14:27  warning  'request' is defined but never used       @typescript-eslint/no-unused-vars
+   59:69  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   79:59  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  103:50  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\diagnostics\candidates\source-type-counts\route.ts
+  27:27  warning  'request' is defined but never used       @typescript-eslint/no-unused-vars
+  48:37  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  72:34  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  79:26  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  80:26  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  81:25  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  83:37  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\diagnostics\db-audit\route.ts
+  14:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  15:51  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  38:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  40:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  41:54  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  57:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  58:34  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  59:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  60:54  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\diagnostics\ownership\route.ts
+  20:13  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  24:32  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  35:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\diagnostics\pool-identity\route.ts
+   13:27  warning  'request' is defined but never used       @typescript-eslint/no-unused-vars
+   14:18  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   60:14  warning  'error' is defined but never used         @typescript-eslint/no-unused-vars
+   60:21  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   70:16  warning  'error' is defined but never used         @typescript-eslint/no-unused-vars
+   70:23  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  110:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  130:14  warning  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  130:21  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  168:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\diagnostics\source-registry-location\route.ts
+   13:27  warning  'request' is defined but never used       @typescript-eslint/no-unused-vars
+   14:18  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   75:28  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   76:28  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   77:32  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   89:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  145:29  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  146:29  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  147:33  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  158:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\health\dbs\route.ts
+  21:27  warning  'request' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\api\admin\module-drafts\[draftId]\generate\route.ts
+  88:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\module-drafts\[draftId]\publish\route.ts
+  93:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\module-drafts\[draftId]\questions\[draftQuestionId]\route.ts
+  78:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\module-drafts\[draftId]\route.ts
+  43:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  92:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\module-drafts\[draftId]\scenario-context\route.ts
+   4:3   warning  'isThreatScenario' is defined but never used  @typescript-eslint/no-unused-vars
+   5:3   warning  'isEnvironment' is defined but never used     @typescript-eslint/no-unused-vars
+   6:3   warning  'isAssetAtRisk' is defined but never used     @typescript-eslint/no-unused-vars
+   7:3   warning  'isPhase' is defined but never used           @typescript-eslint/no-unused-vars
+   8:8   warning  'ScenarioContext' is defined but never used   @typescript-eslint/no-unused-vars
+  39:15  error    Unexpected any. Specify a different type      @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\module-drafts\route.ts
+  55:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\module-ofcs\create\route.ts
+  126:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\module-ofcs\list\route.ts
+   39:55  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   40:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   67:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  112:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  121:41  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  130:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  131:18  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\module-ofcs\update\[id]\route.ts
+  50:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\module-sources\route.ts
+  17:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  58:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\[moduleCode]\export\route.ts
+   30:5   error  Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable  @next/next/no-assign-module-variable
+   65:38  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+   77:41  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  104:47  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  113:38  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  122:46  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  134:19  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\[moduleCode]\ofcs\[moduleOfcId]\register\route.ts
+   97:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  112:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\[moduleCode]\ofcs\registrations\route.ts
+  34:60  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  48:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  49:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  57:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\[moduleCode]\process-incoming-pdfs\route.ts
+   23:16  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+   99:18  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  100:18  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\[moduleCode]\route.ts
+   29:36  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+   30:29  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+   58:5   error  Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable  @next/next/no-assign-module-variable
+   62:19  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+   82:35  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  132:26  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  139:22  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  162:19  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  167:15  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  186:35  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  206:19  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  211:38  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  226:35  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  264:50  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  278:42  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  297:47  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  307:23  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  329:38  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  339:19  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  377:36  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  378:29  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  396:5   error  Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable  @next/next/no-assign-module-variable
+  416:19  error  Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\[moduleCode]\sources\[moduleSourceId]\route.ts
+  49:34  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\[moduleCode]\sources\add-from-url\route.ts
+  167:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  195:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\[moduleCode]\sources\attach-corpus\route.ts
+  117:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\[moduleCode]\sources\report\route.ts
+   39:5   error    Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable  @next/next/no-assign-module-variable
+   64:11  warning  'sourceIds' is assigned a value but never used                                                           @typescript-eslint/no-unused-vars
+   64:44  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+   67:48  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+   81:43  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+   89:46  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  100:44  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  143:73  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  187:46  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  188:47  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  203:49  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  204:48  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  205:42  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  208:42  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  209:45  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  210:41  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  214:58  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  215:61  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  220:49  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  221:52  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  222:61  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  223:50  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  250:19  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\[moduleCode]\sources\route.ts
+   24:26  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+   70:41  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+   76:11  warning  'sourceIds' is assigned a value but never used  @typescript-eslint/no-unused-vars
+   76:44  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+   79:48  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+   93:43  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+  102:47  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+  114:48  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+  149:55  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+  198:47  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+  199:50  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+  200:46  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+  204:19  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\[moduleCode]\standard\generate\route.ts
+  179:11  warning  'standardId' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  321:16  warning  '_' is defined but never used                    @typescript-eslint/no-unused-vars
+  372:18  warning  '_' is defined but never used                    @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\[moduleCode]\template\route.ts
+  9:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\[moduleCode]\vofcs\route.ts
+  42:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\breakdown\route.ts
+  28:27  warning  'request' is defined but never used                                                                      @typescript-eslint/no-unused-vars
+  67:7   error    Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable  @next/next/no-assign-module-variable
+  99:19  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\create\route.ts
+  90:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  96:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\import\route.ts
+  72:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\library\route.ts
+   12:27  warning  'request' is defined but never used       @typescript-eslint/no-unused-vars
+   17:25  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   40:26  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   69:36  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   70:29  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   97:26  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  141:38  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  174:32  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  194:45  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  252:53  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  266:23  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  297:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  355:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\research\route.ts
+  234:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\route.ts
+   13:27  warning  'request' is defined but never used       @typescript-eslint/no-unused-vars
+   27:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  108:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\wizard\create\route.ts
+  2:10  warning  'getRuntimePool' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\wizard\generate\route.ts
+  60:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\wizard\sources\add-existing\route.ts
+  111:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  118:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\wizard\sources\add-url\route.ts
+  77:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  84:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\modules\wizard\sources\upload\route.ts
+  84:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  91:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\ofc-library\route.ts
+  91:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\ofcs\candidates\[candidate_id]\route.ts
+   11:32  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   11:97  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   97:15  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  100:14  warning  'parseError' is defined but never used    @typescript-eslint/no-unused-vars
+  175:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  271:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\ofcs\review-queue\route.ts
+   52:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   99:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  102:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  210:58  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  236:56  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\problem-candidates\route.ts
+  34:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\reports\subtype-coverage\route.ts
+  105:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  120:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  202:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\server-tools\run\route.ts
+  173:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\server-tools\status\route.ts
+  121:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\source-registry\[sourceKey]\ingest\route.ts
+  6:3  warning  'mapAuthorityTierToScope' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\api\admin\source-registry\[sourceKey]\route.ts
+  92:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\source-registry\active\route.ts
+  42:51  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\source-registry\download-to-incoming\route.ts
+  125:13  warning  'maxSize' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  159:21  error    Unexpected any. Specify a different type      @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\source-registry\extract-pdf-metadata\route.ts
+    7:10  warning  'execSync' is defined but never used    @typescript-eslint/no-unused-vars
+    8:10  warning  'existsSync' is defined but never used  @typescript-eslint/no-unused-vars
+  123:20  warning  'parseError' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\api\admin\source-registry\fetch-metadata\route.ts
+   65:21  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  155:9   warning  'visiblePublisher' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\api\admin\source-registry\report\route.ts
+   16:27  warning  'request' is defined but never used       @typescript-eslint/no-unused-vars
+   39:53  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   48:31  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   49:31  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   50:31  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   54:33  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   55:33  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   56:33  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   58:36  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   59:40  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   63:30  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   76:30  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  104:30  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  117:41  warning  'key' is defined but never used           @typescript-eslint/no-unused-vars
+  128:40  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  129:36  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  130:34  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  131:47  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  132:49  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  154:36  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\source-registry\route.ts
+   55:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  156:43  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  197:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\admin\source-registry\upload\route.ts
+   2:10  warning  'writeFile' is defined but never used                          @typescript-eslint/no-unused-vars
+   3:10  warning  'join' is defined but never used                               @typescript-eslint/no-unused-vars
+   4:10  warning  'tmpdir' is defined but never used                             @typescript-eslint/no-unused-vars
+   5:10  warning  'randomUUID' is defined but never used                         @typescript-eslint/no-unused-vars
+   7:3   warning  'ingestDocumentFromFile' is defined but never used             @typescript-eslint/no-unused-vars
+   8:3   warning  'updateSourceRegistryWithIngestion' is defined but never used  @typescript-eslint/no-unused-vars
+   9:3   warning  'mapAuthorityTierToScope' is defined but never used            @typescript-eslint/no-unused-vars
+  11:10  warning  'validateAndNormalizeCreate' is defined but never used         @typescript-eslint/no-unused-vars
+  11:38  warning  'extractStatusFromNotes' is defined but never used             @typescript-eslint/no-unused-vars
+  12:10  warning  'createSourceRegistryRow' is defined but never used            @typescript-eslint/no-unused-vars
+  13:10  warning  'getCorpusPool' is defined but never used                      @typescript-eslint/no-unused-vars
+  14:10  warning  'guardDocumentSourceBeforeIngest' is defined but never used    @typescript-eslint/no-unused-vars
+  15:10  warning  'DEFAULT_PDF_SOURCE_SET' is defined but never used             @typescript-eslint/no-unused-vars
+  32:28  warning  'request' is defined but never used                            @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\api\assessment\scoring\route.ts
+  160:53  error    Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  170:73  error    Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  179:51  error    Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  232:30  error    Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  250:19  warning  'subtypeCode' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\api\baseline\spines\route.ts
+  30:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\ofc\canonical\route.ts
+   46:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   86:51  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  100:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\ofc\nominations\[nomination_id]\decide\route.ts
+  143:51  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  147:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\ofc\nominations\route.ts
+  201:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\ofcs\for-question\route.ts
+  72:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\ofcs\list\route.ts
+  64:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\reference\baseline-questions\route.ts
+  46:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\reference\discipline-subtypes\route.ts
+  25:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  51:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\reference\disciplines\route.ts
+   30:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   55:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   87:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  104:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  105:36  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  122:67  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  147:70  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  163:33  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\reference\question-focus\[discipline]\[subtype]\route.ts
+  110:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  131:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\reference\question-focus\route.ts
+   2:19  warning  'readFile' is defined but never used      @typescript-eslint/no-unused-vars
+   2:29  warning  'stat' is defined but never used          @typescript-eslint/no-unused-vars
+  58:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  67:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\admin\purge-test-assessments\route.ts
+   38:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   62:58  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   83:56  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  134:60  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\component-capability\questions\route.ts
+  53:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\component-capability\responses\route.ts
+   2:10  warning  'getRuntimePool' is defined but never used  @typescript-eslint/no-unused-vars
+  30:19  error    Unexpected any. Specify a different type    @typescript-eslint/no-explicit-any
+  87:19  error    Unexpected any. Specify a different type    @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\expansion-profiles\route.ts
+   88:64  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  107:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\expansion-responses\route.ts
+  93:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\followups\route.ts
+  146:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\modules\[moduleCode]\attach\route.ts
+  93:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  99:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\modules\[moduleCode]\questions\[moduleQuestionId]\route.ts
+  52:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\modules\[moduleCode]\questions\route.ts
+  49:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\modules\reconcile\route.ts
+  66:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\modules\route.ts
+   50:19  error    Unexpected any. Specify a different type     @typescript-eslint/no-explicit-any
+  170:21  error    Unexpected any. Specify a different type     @typescript-eslint/no-explicit-any
+  177:19  error    Unexpected any. Specify a different type     @typescript-eslint/no-explicit-any
+  242:11  warning  'result' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  256:19  error    Unexpected any. Specify a different type     @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\ofcs\promote\route.ts
+    4:10  warning  'assertTableOnOwnerPool' is defined but never used       @typescript-eslint/no-unused-vars
+  296:27  error    Unexpected any. Specify a different type                 @typescript-eslint/no-explicit-any
+  339:11  warning  'corpusUpdateResult' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  377:26  error    Unexpected any. Specify a different type                 @typescript-eslint/no-explicit-any
+  396:19  error    Unexpected any. Specify a different type                 @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\ofcs\route.ts
+  62:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\questions\route.ts
+  135:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  153:84  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  186:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  192:65  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  258:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  288:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  317:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  340:26  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  349:79  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  356:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  421:83  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  431:59  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  432:62  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  453:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  454:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  455:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  456:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  457:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\reference-impl\route.ts
+  15:27  warning  '_assessmentId' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\responses\route.ts
+   41:34  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   50:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   86:95  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  120:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  136:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\results\route.ts
+   58:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  164:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\route.ts
+  49:59  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  95:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  96:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  97:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  98:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  99:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\subsector\route.ts
+  102:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  109:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\tech-overlay-questions\responses\route.ts
+   74:18  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   75:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  115:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\tech-overlay-questions\route.ts
+  44:63  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  45:66  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  66:54  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  67:26  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  93:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\tech-profiles\route.ts
+  133:18  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  134:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  196:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\[assessmentId]\technology-profiles\route.ts
+  105:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  313:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\assessments\route.ts
+    11:50  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+    11:68  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+    20:36  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+    22:13  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+    29:17  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+    57:17  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   103:59  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   139:19  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   181:33  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   298:79  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   302:35  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   328:19  warning  'isUUID' is assigned a value but never used            @typescript-eslint/no-unused-vars
+   406:11  warning  'paramIndex' is assigned a value but never used        @typescript-eslint/no-unused-vars
+   474:43  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   477:25  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   537:46  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   540:25  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   569:18  warning  'err' is defined but never used                        @typescript-eslint/no-unused-vars
+   577:60  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   590:66  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   627:23  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   695:23  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   750:25  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   762:15  warning  'templateIdIsText' is assigned a value but never used  @typescript-eslint/no-unused-vars
+   802:47  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   807:37  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   867:33  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   905:33  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   953:25  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+   973:34  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  1005:37  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  1011:41  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  1045:32  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  1058:23  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  1108:72  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  1124:14  warning  'err' is defined but never used                        @typescript-eslint/no-unused-vars
+  1131:19  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  1232:21  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  1269:9   warning  'tableJustCreated' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  1288:29  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  1332:29  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  1393:21  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  1427:32  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  1460:33  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  1466:37  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  1484:41  warning  'reject' is defined but never used                     @typescript-eslint/no-unused-vars
+  1496:13  warning  'stdout' is assigned a value but never used            @typescript-eslint/no-unused-vars
+  1524:28  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+  1536:19  error    Unexpected any. Specify a different type               @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\depth2-question-tags\route.ts
+  44:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\expansion-profiles\route.ts
+  49:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\health\route.ts
+   18:27  warning  'request' is defined but never used       @typescript-eslint/no-unused-vars
+   44:17  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  106:32  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\intent-for-question\route.ts
+  2:38  warning  'IntentPayload' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\api\runtime\metadata\route.ts
+   52:56  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   79:43  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   82:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   91:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  121:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  126:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  153:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  160:54  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  174:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\ofc-candidates\route.ts
+  61:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\ofc-library\[ofcId]\citations\route.ts
+   57:47  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   63:46  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   77:49  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   83:41  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   98:23  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  168:47  warning  '_sort_order' is defined but never used   @typescript-eslint/no-unused-vars
+  168:60  warning  '_created_at' is defined but never used   @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\api\runtime\ofc-library\route.ts
+   16:32  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   16:97  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  250:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  363:51  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  379:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\question-coverage\route.ts
+  33:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  48:51  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\subtype-checklists\route.ts
+  38:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\runtime\test-assessments\route.ts
+   23:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  133:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  209:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  227:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  231:33  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  270:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  291:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  296:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  336:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  395:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  481:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  491:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  519:61  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  521:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  590:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  630:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\api\system\security-mode\route.ts
+  10:27  warning  'request' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\api\vulnerabilities\route.ts
+   34:14  warning  'err' is defined but never used           @typescript-eslint/no-unused-vars
+   66:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  102:51  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  116:24  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\assessments\[assessmentId]\page.tsx
+    19:8   warning  'GateOrderedQuestions' is defined but never used                                                                                                                                                                                                                               @typescript-eslint/no-unused-vars
+    23:10  warning  'shouldRenderSpineAsQuestion' is defined but never used                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+    54:30  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                       @typescript-eslint/no-explicit-any
+    77:41  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                       @typescript-eslint/no-explicit-any
+    91:16  warning  'saveResponseProvider' is defined but never used                                                                                                                                                                                                                               @typescript-eslint/no-unused-vars
+   144:16  warning  'updateAssessmentStatus' is defined but never used                                                                                                                                                                                                                             @typescript-eslint/no-unused-vars
+   176:15  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                       @typescript-eslint/no-explicit-any
+   209:9   warning  'router' is assigned a value but never used                                                                                                                                                                                                                                    @typescript-eslint/no-unused-vars
+   214:36  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                       @typescript-eslint/no-explicit-any
+   220:10  warning  'submitting' is assigned a value but never used                                                                                                                                                                                                                                @typescript-eslint/no-unused-vars
+   220:22  warning  'setSubmitting' is assigned a value but never used                                                                                                                                                                                                                             @typescript-eslint/no-unused-vars
+   259:64  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                       @typescript-eslint/no-explicit-any
+   318:46  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                       @typescript-eslint/no-explicit-any
+   356:21  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                       @typescript-eslint/no-explicit-any
+   372:21  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                       @typescript-eslint/no-explicit-any
+   372:29  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                       @typescript-eslint/no-explicit-any
+   425:25  warning  The ref value 'pendingSavesRef.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'pendingSavesRef.current' to a variable inside the effect, and use that variable in the cleanup function  react-hooks/exhaustive-deps
+   657:34  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                       @typescript-eslint/no-explicit-any
+  1131:72  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                       @typescript-eslint/no-explicit-any
+  1203:52  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                       @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\assessments\[assessmentId]\results\page.tsx
+  117:39  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  118:37  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  144:34  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\assessments\[assessmentId]\runner\page.tsx
+  10:9    error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  16:11   error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  19:6    warning  'QuestionText' is defined but never used  @typescript-eslint/no-unused-vars
+  24:109  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  61:60   error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\assessments\page.tsx
+  91:58  warning  'instanceId' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\components\AssessmentModuleList.tsx
+  28:6   warning  React Hook useEffect has a missing dependency: 'fetchModules'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  52:14  warning  'err' is defined but never used                                                                                  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\components\CapabilitySelector.tsx
+   3:10  warning  'useState' is defined but never used        @typescript-eslint/no-unused-vars
+   3:20  warning  'useEffect' is defined but never used       @typescript-eslint/no-unused-vars
+  25:3   warning  'disciplineCode' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\components\CitationIntegrityBadge.tsx
+  25:16  warning  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\components\CreateAssessmentDialog.tsx
+    4:31  warning  'isGoogleMapsConfigured' is defined but never used  @typescript-eslint/no-unused-vars
+    9:13  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+   18:36  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+   52:34  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+   57:75  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+   74:25  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+   79:22  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+  104:27  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+  140:55  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+  350:17  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+  618:37  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+  642:52  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\components\DisciplineSectionBlock.tsx
+    6:29  warning  'isGateSatisfied' is defined but never used                                                              @typescript-eslint/no-unused-vars
+   30:22  error    Unexpected any. Specify a different type                                                                 @typescript-eslint/no-explicit-any
+  184:14  warning  'error' is defined but never used                                                                        @typescript-eslint/no-unused-vars
+  197:14  warning  'error' is defined but never used                                                                        @typescript-eslint/no-unused-vars
+  297:6   warning  React Hook useMemo has a missing dependency: 'gateOk'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  364:9   warning  'getSelectedTagsForSubtype' is assigned a value but never used                                           @typescript-eslint/no-unused-vars
+  364:38  warning  'subtypeCode' is defined but never used                                                                  @typescript-eslint/no-unused-vars
+  371:9   warning  'getVisibleDepth2ForSubtype' is assigned a value but never used                                          @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\components\FollowupQuestions.tsx
+  18:106  error    Unexpected any. Specify a different type         @typescript-eslint/no-explicit-any
+  31:3    warning  'disciplineSubtypeId' is defined but never used  @typescript-eslint/no-unused-vars
+  53:36   error    Unexpected any. Specify a different type         @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\components\GateOrderedQuestions.tsx
+   21:15  error    Unexpected any. Specify a different type                           @typescript-eslint/no-explicit-any
+   36:7   warning  'GATE_LABELS' is assigned a value but never used                   @typescript-eslint/no-unused-vars
+   42:7   warning  'GATE_DESCRIPTIONS' is assigned a value but never used             @typescript-eslint/no-unused-vars
+  177:9   warning  'elementsBySubtype' is assigned a value but never used             @typescript-eslint/no-unused-vars
+  280:90  warning  'isWithinDisciplineCard' is assigned a value but never used        @typescript-eslint/no-unused-vars
+  336:9   warning  'renderSubtypeQuestionsLegacy' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  457:34  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`    react/no-unescaped-entities
+  457:38  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`    react/no-unescaped-entities
+  463:32  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`    react/no-unescaped-entities
+  463:36  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`    react/no-unescaped-entities
+  711:34  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`    react/no-unescaped-entities
+  711:38  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`    react/no-unescaped-entities
+  717:32  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`    react/no-unescaped-entities
+  717:36  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`    react/no-unescaped-entities
+
+D:\PSA_System\psa_rebuild\app\components\IntentPanel.tsx
+  40:3  warning  'subtypeCode' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\components\OFCReviewQueue.tsx
+  51:6  warning  React Hook useEffect has a missing dependency: 'loadReviewQueue'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\PSA_System\psa_rebuild\app\components\QuestionSearch.tsx
+  169:39  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  169:53  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\PSA_System\psa_rebuild\app\components\ReviewerQuestionCard.tsx
+  39:10  warning  'isIntentOpen' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  39:24  warning  'setIsIntentOpen' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\components\SubtypeQuestionBlock.tsx
+    7:15   warning  'ChecklistItem' is defined but never used                                                                                 @typescript-eslint/no-unused-vars
+   16:22   error    Unexpected any. Specify a different type                                                                                  @typescript-eslint/no-explicit-any
+   62:54   error    Unexpected any. Specify a different type                                                                                  @typescript-eslint/no-explicit-any
+  113:39   error    Unexpected any. Specify a different type                                                                                  @typescript-eslint/no-explicit-any
+  136:132  error    Unexpected any. Specify a different type                                                                                  @typescript-eslint/no-explicit-any
+  175:14   warning  'error' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
+  184:14   warning  'error' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
+  195:16   warning  'error' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
+  212:6    warning  React Hook useMemo has a missing dependency: 'normalizedSpineResponse'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  215:9    warning  'showChecklist' is assigned a value but never used                                                                        @typescript-eslint/no-unused-vars
+  478:81   error    Unexpected any. Specify a different type                                                                                  @typescript-eslint/no-explicit-any
+  491:121  error    Unexpected any. Specify a different type                                                                                  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\components\SubtypeReferenceImplPanel.tsx
+  249:18  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  249:24  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\PSA_System\psa_rebuild\app\components\TechOverlayQuestions.tsx
+   44:6   warning  React Hook useEffect has missing dependencies: 'loadQuestions' and 'techTypes.length'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+   44:34  warning  React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked   react-hooks/exhaustive-deps
+   55:6   warning  React Hook useEffect has a missing dependency: 'loadQuestions'. Either include it or remove the dependency array                           react-hooks/exhaustive-deps
+   76:19  error    Unexpected any. Specify a different type                                                                                                   @typescript-eslint/no-explicit-any
+  118:19  error    Unexpected any. Specify a different type                                                                                                   @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\components\TechnologyProfilePanel.tsx
+    3:31  warning  'useCallback' is defined but never used                                                                            @typescript-eslint/no-unused-vars
+   58:6   warning  React Hook useEffect has a missing dependency: 'loadSelections'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+   74:13  error    Unexpected any. Specify a different type                                                                           @typescript-eslint/no-explicit-any
+   77:54  error    Unexpected any. Specify a different type                                                                           @typescript-eslint/no-explicit-any
+   82:19  error    Unexpected any. Specify a different type                                                                           @typescript-eslint/no-explicit-any
+  121:21  error    Unexpected any. Specify a different type                                                                           @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\components\TechnologyProfileSelector.tsx
+   57:6   warning  React Hook useEffect has a missing dependency: 'loadTechTypeCatalog'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+   80:19  error    Unexpected any. Specify a different type                                                                                @typescript-eslint/no-explicit-any
+   93:6   warning  React Hook useEffect has a missing dependency: 'loadProfiles'. Either include it or remove the dependency array         react-hooks/exhaustive-deps
+  118:19  error    Unexpected any. Specify a different type                                                                                @typescript-eslint/no-explicit-any
+  144:21  error    Unexpected any. Specify a different type                                                                                @typescript-eslint/no-explicit-any
+  197:19  error    Unexpected any. Specify a different type                                                                                @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\components\expansion\ExpansionProfileSelector.tsx
+  39:6   warning  React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  93:38  warning  'profileId' is defined but never used                                                                         @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\components\expansion\ExpansionQuestionList.tsx
+  14:11  warning  'ExpansionResponse' is defined but never used                                                                 @typescript-eslint/no-unused-vars
+  36:6   warning  React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\PSA_System\psa_rebuild\app\components\reference-impl\ReferenceImplementationPanel.tsx
+    7:39  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   70:19  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  116:28  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  119:13  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  143:28  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  143:34  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\PSA_System\psa_rebuild\app\contexts\SecurityModeContext.tsx
+  57:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  94:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\coverage\[documentId]\CoverageDetailClient.tsx
+   22:20  error    Unexpected any. Specify a different type     @typescript-eslint/no-explicit-any
+   26:48  warning  'rawCoverageData' is defined but never used  @typescript-eslint/no-unused-vars
+  113:54  error    Unexpected any. Specify a different type     @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\coverage\[documentId]\DocumentRoleEditor.tsx
+  18:6  warning  React Hook useEffect has a missing dependency: 'loadDocumentRole'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\PSA_System\psa_rebuild\app\coverage\[documentId]\page.tsx
+   29:74  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   76:21  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  131:65  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  131:81  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\PSA_System\psa_rebuild\app\coverage\page.tsx
+   11:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   12:14  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   40:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   41:36  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  101:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  102:14  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  116:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  141:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  142:14  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  158:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  181:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  182:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  183:16  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\engineering\ofcs\review\page.tsx
+   35:28  warning  'setDisciplineFilter' is assigned a value but never used                                                            @typescript-eslint/no-unused-vars
+   36:25  warning  'setSubtypeFilter' is assigned a value but never used                                                               @typescript-eslint/no-unused-vars
+   37:37  warning  'setReferenceUnresolvedFilter' is assigned a value but never used                                                   @typescript-eslint/no-unused-vars
+   49:6   warning  React Hook useEffect has a missing dependency: 'loadNominations'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  101:19  error    Unexpected any. Specify a different type                                                                            @typescript-eslint/no-explicit-any
+  152:19  error    Unexpected any. Specify a different type                                                                            @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\hooks\useDraftAutosave.ts
+  3:21  warning  'useMemo' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\lib\admin\moduleDraftBuilder.ts
+  181:15  warning  'stId' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\lib\admin\module_creation.ts
+  97:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\admin\module_import.ts
+   93:49  error    Unexpected any. Specify a different type         @typescript-eslint/no-explicit-any
+  268:11  warning  'sourcesNew' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  277:27  error    Unexpected any. Specify a different type         @typescript-eslint/no-explicit-any
+  348:15  error    Unexpected any. Specify a different type         @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\admin\module_import_linter.ts
+   52:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   53:18  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   54:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  105:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  129:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\admin\module_import_v2.ts
+   81:10  warning  'validateModuleQuestion' is defined but never used  @typescript-eslint/no-unused-vars
+  117:10  warning  'validateModuleOFC' is defined but never used       @typescript-eslint/no-unused-vars
+  156:15  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+  263:21  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+  433:50  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+  563:15  error    Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\admin\module_json_validator.ts
+    8:15  warning  'ModuleImportPayloadInput' is defined but never used  @typescript-eslint/no-unused-vars
+   21:19  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+   28:30  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+   29:17  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+   30:16  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+   30:24  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+   35:19  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+   40:43  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+   64:17  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+   66:43  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+   80:22  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+   81:19  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+   84:39  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+  105:17  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+  107:39  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+  123:22  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+  124:19  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+  127:43  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+  153:22  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+  154:19  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+  157:43  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+  179:17  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+  181:43  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+  194:22  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+  195:19  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+  198:38  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+  220:17  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+  222:38  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+  236:19  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+  269:43  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+  337:9   error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+  374:48  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+  392:43  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\admin\module_validators\discipline_ownership_validator.ts
+  74:3  warning  'questionIndex' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\lib\admin\module_validators\event_trigger_validator.ts
+  57:3  warning  'questionIndex' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\lib\admin\source_registration.ts
+  331:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\baselineClient.ts
+  85:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\baselineLoader.ts
+   14:10  warning  'getSubtypeGuidance' is defined but never used  @typescript-eslint/no-unused-vars
+   65:24  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+   98:57  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+  174:26  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\citation\__tests__\validateSourceKeys.test.ts
+  33:61  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  33:79  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  63:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\citation\__tests__\validation.test.ts
+  13:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\citation\guards.ts
+  31:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  43:60  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  62:51  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\citation\validateSourceKeys.ts
+  37:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\citation\validation.ts
+   57:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  102:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\contracts\runtimeQuestion.ts
+  37:7  warning  'RESPONSE_ENUM_VALID' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\lib\corpus\reprocess_document.ts
+  66:38  error  A `require()` style import is forbidden   @typescript-eslint/no-require-imports
+  91:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\db\corpus_client.ts
+   68:16  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+   90:21  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  135:78  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  155:22  warning  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  155:29  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  176:29  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  216:22  warning  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  216:29  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  229:25  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  295:64  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  295:82  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  312:32  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\db\pool_guard.ts
+   9:35  warning  'DbClient' is defined but never used      @typescript-eslint/no-unused-vars
+  23:20  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  24:21  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  45:32  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  70:52  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  71:54  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  73:51  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  74:53  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\db\pool_guards.ts
+  13:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  13:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  40:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  41:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  43:47  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  44:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\db\pool_introspection.ts
+  8:33  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  8:60  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\db\runtime_client.ts
+   84:18  warning  'err' is defined but never used                  @typescript-eslint/no-unused-vars
+  156:18  warning  'e' is defined but never used                    @typescript-eslint/no-unused-vars
+  178:23  error    Unexpected any. Specify a different type         @typescript-eslint/no-explicit-any
+  205:9   warning  'projectRef' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  230:15  warning  'isSupabase' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  259:20  warning  'err' is defined but never used                  @typescript-eslint/no-unused-vars
+  282:24  warning  'error' is defined but never used                @typescript-eslint/no-unused-vars
+  282:31  error    Unexpected any. Specify a different type         @typescript-eslint/no-explicit-any
+  303:31  error    Unexpected any. Specify a different type         @typescript-eslint/no-explicit-any
+  343:24  warning  'error' is defined but never used                @typescript-eslint/no-unused-vars
+  343:31  error    Unexpected any. Specify a different type         @typescript-eslint/no-explicit-any
+  379:20  warning  'error' is defined but never used                @typescript-eslint/no-unused-vars
+  409:21  error    Unexpected any. Specify a different type         @typescript-eslint/no-explicit-any
+  456:33  error    Unexpected any. Specify a different type         @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\db\table_exists.ts
+  2:33  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  2:60  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\expansion\validation.ts
+  67:56  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\gateMetadata.ts
+   94:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   94:54  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  107:57  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  107:98  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  108:56  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  134:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  144:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\gateMetadataClient.ts
+  39:12  warning  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  60:20  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  70:44  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\intentLoader.ts
+  175:78  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  182:73  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\modules\draft_builder.ts
+  22:7  warning  'CAPABILITY_NEEDS' is assigned a value but only used as a type  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\lib\modules\generation\generate_module_content.ts
+   66:22  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   67:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  111:22  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  115:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  174:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\modules\module_suggestions.ts
+   10:12  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   45:22  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   61:14  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  106:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\modules\table_access_guards.ts
+   89:9  warning  'sqlUpper' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  143:9  warning  'sqlUpper' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\lib\ofc-utils.ts
+  22:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  64:9   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  66:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\ofc\guardrails.ts
+  31:68  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\ofc\ranking.ts
+  60:3  warning  'question_discipline_id' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\lib\ofc_library\eligibility.ts
+  67:9  warning  'scopePrecedence' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\lib\overlayLoader.ts
+   9:10  warning  'getSubtypeGuidance' is defined but never used  @typescript-eslint/no-unused-vars
+  24:22  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+  44:17  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+  92:56  error    Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\python\venv.ts
+  70:28  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+D:\PSA_System\psa_rebuild\app\lib\runtime\python_runner.ts
+  20:21  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+D:\PSA_System\psa_rebuild\app\lib\runtime\reference_impl_cache.ts
+  37:16  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+D:\PSA_System\psa_rebuild\app\lib\sourceRegistry\ingestion.ts
+    2:10  warning  'execSync' is defined but never used      @typescript-eslint/no-unused-vars
+    4:10  warning  'existsSync' is defined but never used    @typescript-eslint/no-unused-vars
+   85:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  100:51  error    A `require()` style import is forbidden   @typescript-eslint/no-require-imports
+  167:20  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+  343:17  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  439:25  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  469:16  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\sourceRegistry\repo.ts
+  65:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  82:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\sourceRegistry\schema.ts
+  148:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  173:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  174:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  175:30  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  176:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  179:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  202:11  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  208:68  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  209:56  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  210:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  219:11  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  222:14  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  295:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\technology\technology_types.ts
+  54:3  warning  'discipline_id' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\lib\triage\run_triage.ts
+   10:14  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   11:11  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   54:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   55:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  109:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\lib\triage\triage.ts
+  107:24  warning  'incomingRoot' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\lib\types\baseline.ts
+  39:18  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\ofc\page.tsx
+  78:6  warning  React Hook useEffect has missing dependencies: 'loadOFCs' and 'loadVulnerabilities'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\PSA_System\psa_rebuild\app\ofcs\library\page.tsx
+  41:46  error    Unexpected any. Specify a different type                                                                     @typescript-eslint/no-explicit-any
+  47:6   warning  React Hook useEffect has a missing dependency: 'loadOFCs'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\PSA_System\psa_rebuild\app\ofcs\nominate\page.tsx
+  133:19  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  256:52  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  256:56  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\PSA_System\psa_rebuild\app\ofcs\page.tsx
+  3:10  warning  'useRouter' is defined but never used  @typescript-eslint/no-unused-vars
+  4:10  warning  'useEffect' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\page.tsx
+   27:73  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  105:58  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\PSA_System\psa_rebuild\app\reference\baseline-questions\page.tsx
+    4:8   warning  'Link' is defined but never used                                 @typescript-eslint/no-unused-vars
+   87:21  error    Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  112:9   warning  'uniqueCapabilityDimensions' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\PSA_System\psa_rebuild\app\reference\disciplines\page.tsx
+   12:18  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   23:18  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  242:54  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  242:72  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  257:63  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  272:23  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  273:21  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  273:29  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  284:20  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  365:35  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  376:28  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  386:16  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+  667:63  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  814:63  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\reference\question-focus\[discipline]\[subtype]\page.tsx
+  37:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\reference\question-focus\page.tsx
+   48:79  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   60:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  125:72  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  135:70  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  326:86  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  397:39  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  397:47  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  398:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\reference\sectors\page.tsx
+  154:75  warning  'sectorName' is defined but never used                           @typescript-eslint/no-unused-vars
+  243:42  error    Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  244:69  error    Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  253:62  error    Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  289:21  error    Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  290:19  error    Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  290:27  error    Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  331:23  error    Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  332:21  error    Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  332:29  error    Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  347:40  error    Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  351:21  error    Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  410:36  error    Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  529:41  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  529:54  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  611:53  error    Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+
+D:\PSA_System\psa_rebuild\app\review\quarantined\page.tsx
+   87:20  warning  'parseError' is defined but never used    @typescript-eslint/no-unused-vars
+   96:21  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  230:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+Γ£û 1025 problems (816 errors, 209 warnings)
+

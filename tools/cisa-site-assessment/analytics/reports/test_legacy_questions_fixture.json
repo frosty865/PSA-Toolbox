@@ -1,0 +1,102 @@
+[
+  {
+    "id": "test-1",
+    "code": "BASE-001",
+    "question_id": "test-1",
+    "question_code": "BASE-001",
+    "discipline_code": "ACS",
+    "subtype_code": "ACS_CREDENTIAL_BADGE_SYSTEMS",
+    "question": "Do access control systems perform their basic function?",
+    "question_text": "Do access control systems perform their basic function?"
+  },
+  {
+    "id": "test-2",
+    "code": "BASE-002",
+    "question_id": "test-2",
+    "question_code": "BASE-002",
+    "discipline_code": "ACS",
+    "subtype_code": "ACS_BIOMETRIC_ACCESS",
+    "question": "Are biometric access systems effective?",
+    "question_text": "Are biometric access systems effective?"
+  },
+  {
+    "id": "test-3",
+    "code": "BASE-003",
+    "question_id": "test-3",
+    "question_code": "BASE-003",
+    "discipline_code": "VSS",
+    "subtype_code": "VSS_RECORDING_STORAGE_NVR_DVR",
+    "question": "Are NVR systems installed and operational?",
+    "question_text": "Are NVR systems installed and operational?"
+  },
+  {
+    "id": "test-4",
+    "code": "BASE-004",
+    "question_id": "test-4",
+    "question_code": "BASE-004",
+    "discipline_code": "ACS",
+    "subtype_code": "ACS_CREDENTIAL_BADGE_SYSTEMS",
+    "question": "Are documented procedures in place for access control systems?",
+    "question_text": "Are documented procedures in place for access control systems?"
+  },
+  {
+    "id": "test-5",
+    "code": "BASE-005",
+    "question_id": "test-5",
+    "question_code": "BASE-005",
+    "discipline_code": "IDS",
+    "subtype_code": "IDS_ALARM_MONITORING",
+    "question": "Are roles and responsibilities defined for alarm monitoring?",
+    "question_text": "Are roles and responsibilities defined for alarm monitoring?"
+  },
+  {
+    "id": "test-6",
+    "code": "BASE-006",
+    "question_id": "test-6",
+    "question_code": "BASE-006",
+    "discipline_code": "PER",
+    "subtype_code": "PER_VEHICLE_ACCESS_CONTROL_POINTS",
+    "question": "Are crowd control measures in place for large events?",
+    "question_text": "Are crowd control measures in place for large events?"
+  },
+  {
+    "id": "test-7",
+    "code": "BASE-007",
+    "question_id": "test-7",
+    "question_code": "BASE-007",
+    "discipline_code": "VSS",
+    "subtype_code": "VSS_MONITORING_WORKSTATIONS",
+    "question": "Is video monitoring capability present?",
+    "question_text": "Is video monitoring capability present?"
+  },
+  {
+    "id": "test-8",
+    "code": "BASE-008",
+    "question_id": "test-8",
+    "question_code": "BASE-008",
+    "discipline_code": "EAP",
+    "subtype_code": "EAP_EVACUATION_PROCEDURES",
+    "question": "Are documented procedures in place for evacuation?",
+    "question_text": "Are documented procedures in place for evacuation?"
+  },
+  {
+    "id": "test-9",
+    "code": "BASE-009",
+    "question_id": "test-9",
+    "question_code": "BASE-009",
+    "discipline_code": "INT",
+    "subtype_code": "INT_RESTRICTED_AREAS",
+    "question": "Are restricted areas properly secured?",
+    "question_text": "Are restricted areas properly secured?"
+  },
+  {
+    "id": "test-10",
+    "code": "BASE-010",
+    "question_id": "test-10",
+    "question_code": "BASE-010",
+    "discipline_code": "FAC",
+    "subtype_code": "FAC_CRITICAL_FUNCTION_PROTECTION",
+    "question": "Are critical functions protected?",
+    "question_text": "Are critical functions protected?"
+  }
+]

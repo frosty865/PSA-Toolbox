@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-01-14T00:08:07.729535Z",
+  "base_question_count": 36,
+  "expansion_question_count": 0,
+  "total_questions": 36,
+  "base_count_valid": true,
+  "index_path": "D:\\psa-workspace\\psa_rebuild\\analytics\\runtime\\question_matcher_index.json",
+  "alt_safe_source": "D:\\psa-workspace\\psa_rebuild\\analytics\\runtime\\alt_safe_model_extracted.json"
+}

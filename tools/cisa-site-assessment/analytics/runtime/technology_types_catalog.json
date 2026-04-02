@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "generated_at": "2025-01-13T00:00:00Z",
+    "description": "Canonical catalog of allowed technology types per discipline and subtype"
+  },
+  "catalog": {
+    "VSS": {
+      "VSS_FIXED_CAMERAS": [
+        {
+          "value": "CCTV_ANALOG",
+          "label": "CCTV Analog"
+        },
+        {
+          "value": "CCTV_DIGITAL_DVR",
+          "label": "CCTV Digital DVR"
+        },
+        {
+          "value": "IP_CAMERA_VMS",
+          "label": "IP Camera VMS"
+        },
+        {
+          "value": "HYBRID_ANALOG_IP",
+          "label": "Hybrid Analog/IP"
+        },
+        {
+          "value": "CLOUD_MANAGED_VIDEO",
+          "label": "Cloud Managed Video"
+        }
+      ],
+      "VSS_MOBILE_TRAILER": [
+        {
+          "value": "MOBILE_TRAILER_SYSTEM",
+          "label": "Mobile Trailer System"
+        },
+        {
+          "value": "IP_CAMERA_VMS",
+          "label": "IP Camera VMS"
+        }
+      ],
+      "VSS_BODY_WORN": [
+        {
+          "value": "BODY_WORN_VIDEO",
+          "label": "Body Worn Video"
+        }
+      ]
+    },
+    "ACS": {
+      "ACS_DOOR_READERS": [
+        {
+          "value": "PROX_CARD_READER",
+          "label": "Proximity Card Reader"
+        },
+        {
+          "value": "SMARTCARD_READER",
+          "label": "Smart Card Reader"
+        },
+        {
+          "value": "PIN_KEYPAD",
+          "label": "PIN Keypad"
+        },
+        {
+          "value": "BIOMETRIC_READER",
+          "label": "Biometric Reader"
+        },
+        {
+          "value": "MOBILE_CREDENTIAL_READER",
+          "label": "Mobile Credential Reader"
+        },
+        {
+          "value": "KEYPAD_ONLY",
+          "label": "Keypad Only"
+        },
+        {
+          "value": "MULTI_FACTOR_READER",
+          "label": "Multi-Factor Reader"
+        }
+      ],
+      "ACS_CREDENTIAL_BADGE_SYSTEMS": [
+        {
+          "value": "PROX_CARD",
+          "label": "Proximity Card"
+        },
+        {
+          "value": "SMARTCARD",
+          "label": "Smart Card"
+        },
+        {
+          "value": "MOBILE_CREDENTIAL",
+          "label": "Mobile Credential"
+        },
+        {
+          "value": "BIOMETRIC_ENROLLMENT",
+          "label": "Biometric Enrollment"
+        }
+      ],
+      "ACS_BIOMETRIC_ACCESS": [
+        {
+          "value": "FINGERPRINT_SCANNER",
+          "label": "Fingerprint Scanner"
+        },
+        {
+          "value": "IRIS_SCANNER",
+          "label": "Iris Scanner"
+        },
+        {
+          "value": "FACIAL_RECOGNITION",
+          "label": "Facial Recognition"
+        },
+        {
+          "value": "PALM_SCANNER",
+          "label": "Palm Scanner"
+        }
+      ],
+      "ACS_DOOR_MONITORING": [
+        {
+          "value": "DOOR_POSITION_SWITCH",
+          "label": "Door Position Switch"
+        },
+        {
+          "value": "REX_SENSOR",
+          "label": "Request to Exit (REX) Sensor"
+        },
+        {
+          "value": "MAGNETIC_CONTACT",
+          "label": "Magnetic Contact"
+        }
+      ],
+      "ACS_ELECTRIC_STRIKES_MAG_LOCKS": [
+        {
+          "value": "ELECTRIC_STRIKE",
+          "label": "Electric Strike"
+        },
+        {
+          "value": "MAGNETIC_LOCK",
+          "label": "Magnetic Lock"
+        },
+        {
+          "value": "ELECTRIC_DEADBOLT",
+          "label": "Electric Deadbolt"
+        }
+      ]
+    }
+  }
+}
+

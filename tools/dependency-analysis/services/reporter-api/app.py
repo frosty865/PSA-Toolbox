@@ -118,7 +118,7 @@ def create_app():
                 status=200,
                 mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
                 headers={
-                    "Content-Disposition": 'attachment; filename="Asset-Dependency-Assessment-Report.docx"',
+                    "Content-Disposition": 'attachment; filename="Infrastructure-Dependency-Tool-Report.docx"',
                 },
             )
         except Exception as e:

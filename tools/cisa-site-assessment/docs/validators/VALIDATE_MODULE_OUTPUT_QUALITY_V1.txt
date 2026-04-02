@@ -1,0 +1,77 @@
+VALIDATOR: SHARED MODULE OUTPUT QUALITY (V1)
+
+PURPOSE
+Prevent the recurring failure modes:
+- "What are..." questions
+- <2 OFCs
+- garbled OFCs ("EC -" / fragments)
+- invalid evidence/citation alignment
+
+INPUT
+A single module generation JSON output with:
+- summary_findings[]
+- items[]
+- Each citation includes chunk_id, source_file, page_range
+
+REQUIRED EXTERNAL INPUT
+A map of chunk_id -> chunk_text used for generation (exact text).
+
+PASS/FAIL RULES (DETERMINISTIC)
+
+A) Question form (items[])
+For each item:
+1) DROP if question starts with any of:
+   - "What"
+   - "How"
+   - "Why"
+   - "Describe"
+   - "Explain"
+2) DROP unless question starts with one of:
+   - "Is there"
+   - "Are there"
+   - "Is"
+   - "Are"
+   - "Does"
+   - "Do"
+   - "Can"
+   - "Has"
+   - "Have"
+
+B) OFC count and OFC style (items[])
+For each item:
+1) DROP if ofcs length < 2
+2) If ofcs length > 4, truncate to first 4
+3) DROP if ANY OFC starts with an imperative verb (case-insensitive):
+   - "Ensure"
+   - "Provide"
+   - "Implement"
+   - "Install"
+   - "Use"
+   - "Include"
+   - "Add"
+4) DROP if ANY OFC appears garbled or fragmentary:
+   - length < 12 characters
+   - matches pattern like "EC -" (<=3 letters then hyphen)
+   - mostly numeric outline fragments like "5.1 Organizational controls" (starts with digit and <=4 words total)
+
+C) Evidence excerpt presence (summary_findings[] and items[])
+For each finding in summary_findings[] and each item in items[]:
+1) evidence_excerpt must contain 1–2 phrases separated by " | "
+2) For each phrase, DROP the finding/item unless the phrase appears verbatim in at least one cited chunk_text.
+
+D) Citation existence and minimum structure
+For each item in items[]:
+1) DROP if citations is missing or empty
+2) DROP if any citation object is missing chunk_id, source_file, or page_range
+
+OUTPUT ACTIONS
+- Remove invalid findings/items per above rules.
+- Return cleaned JSON.
+
+LOGGING (REQUIRED)
+For each dropped finding/item, record:
+- finding_id or item id
+- rule(s) triggered
+- first offending phrase/term when applicable
+
+END

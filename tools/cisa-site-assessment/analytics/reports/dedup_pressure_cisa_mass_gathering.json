@@ -1,0 +1,500 @@
+{
+  "source_set": "CISA_MASS_GATHERING",
+  "rows": [
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q024",
+      "link_count": 12,
+      "distinct_locators": 8,
+      "spam_ratio_links_per_locator": 1.5,
+      "avg_score": 0.3238633866133866,
+      "max_score": 1.0
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q023",
+      "link_count": 9,
+      "distinct_locators": 5,
+      "spam_ratio_links_per_locator": 1.8,
+      "avg_score": 0.32767643467643465,
+      "max_score": 1.0
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q022",
+      "link_count": 9,
+      "distinct_locators": 6,
+      "spam_ratio_links_per_locator": 1.5,
+      "avg_score": 0.24612479308131482,
+      "max_score": 0.36
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q016",
+      "link_count": 6,
+      "distinct_locators": 5,
+      "spam_ratio_links_per_locator": 1.2,
+      "avg_score": 0.378562271062271,
+      "max_score": 1.0
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q027",
+      "link_count": 6,
+      "distinct_locators": 5,
+      "spam_ratio_links_per_locator": 1.2,
+      "avg_score": 0.3299580682475419,
+      "max_score": 1.0
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q019",
+      "link_count": 6,
+      "distinct_locators": 5,
+      "spam_ratio_links_per_locator": 1.2,
+      "avg_score": 0.3623717948717949,
+      "max_score": 1.0
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q049",
+      "link_count": 4,
+      "distinct_locators": 2,
+      "spam_ratio_links_per_locator": 2.0,
+      "avg_score": 0.5466165413533834,
+      "max_score": 1.0
+    },
+    {
+      "question_universe": "BASE",
+      "question_code": "SecurityPersonnel",
+      "link_count": 3,
+      "distinct_locators": 3,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.2,
+      "max_score": 0.2
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q012",
+      "link_count": 3,
+      "distinct_locators": 3,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.22991452991452993,
+      "max_score": 0.36923076923076925
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q015",
+      "link_count": 3,
+      "distinct_locators": 3,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.4683333333333333,
+      "max_score": 1.0
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q028",
+      "link_count": 3,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 3.0,
+      "avg_score": 0.3222222222222222,
+      "max_score": 0.6461538461538461
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q051",
+      "link_count": 3,
+      "distinct_locators": 2,
+      "spam_ratio_links_per_locator": 1.5,
+      "avg_score": 0.2937062937062937,
+      "max_score": 0.39999999999999997
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q080",
+      "link_count": 2,
+      "distinct_locators": 2,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.16666666666666666,
+      "max_score": 0.16666666666666666
+    },
+    {
+      "question_universe": "BASE",
+      "question_code": "RiskAssessment",
+      "link_count": 2,
+      "distinct_locators": 2,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.17333333333333334,
+      "max_score": 0.18
+    },
+    {
+      "question_universe": "BASE",
+      "question_code": "SecurityPlan",
+      "link_count": 2,
+      "distinct_locators": 2,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.20549450549450549,
+      "max_score": 0.2571428571428571
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q005",
+      "link_count": 2,
+      "distinct_locators": 2,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.17692307692307693,
+      "max_score": 0.2
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q006",
+      "link_count": 2,
+      "distinct_locators": 2,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.6285714285714286,
+      "max_score": 1.0
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q013",
+      "link_count": 2,
+      "distinct_locators": 2,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.21838235294117647,
+      "max_score": 0.22499999999999998
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q014",
+      "link_count": 2,
+      "distinct_locators": 2,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.16666666666666666,
+      "max_score": 0.16666666666666666
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q018",
+      "link_count": 2,
+      "distinct_locators": 2,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.1857142857142857,
+      "max_score": 0.19999999999999998
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q021",
+      "link_count": 2,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 2.0,
+      "avg_score": 0.59,
+      "max_score": 1.0
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q025",
+      "link_count": 2,
+      "distinct_locators": 2,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.62,
+      "max_score": 1.0
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q026",
+      "link_count": 2,
+      "distinct_locators": 2,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.5833333333333334,
+      "max_score": 1.0
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q029",
+      "link_count": 2,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 2.0,
+      "avg_score": 0.5769230769230769,
+      "max_score": 1.0
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q043",
+      "link_count": 2,
+      "distinct_locators": 2,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.2018181818181818,
+      "max_score": 0.24
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q045",
+      "link_count": 2,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 2.0,
+      "avg_score": 0.3361111111111111,
+      "max_score": 0.44999999999999996
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q048",
+      "link_count": 2,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 2.0,
+      "avg_score": 0.8,
+      "max_score": 1.0
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q050",
+      "link_count": 2,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 2.0,
+      "avg_score": 0.5947368421052631,
+      "max_score": 1.0
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q054",
+      "link_count": 2,
+      "distinct_locators": 2,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.20549450549450549,
+      "max_score": 0.2571428571428571
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q055",
+      "link_count": 2,
+      "distinct_locators": 2,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.17463768115942027,
+      "max_score": 0.1826086956521739
+    },
+    {
+      "question_universe": "BASE",
+      "question_code": "StandoffDistance",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.25,
+      "max_score": 0.25
+    },
+    {
+      "question_universe": "BASE",
+      "question_code": "LawComm",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.16666666666666666,
+      "max_score": 0.16666666666666666
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q071",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.24,
+      "max_score": 0.24
+    },
+    {
+      "question_universe": "BASE",
+      "question_code": "PlanTraining",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.15384615384615385,
+      "max_score": 0.15384615384615385
+    },
+    {
+      "question_universe": "BASE",
+      "question_code": "PlanCoordination",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.15384615384615385,
+      "max_score": 0.15384615384615385
+    },
+    {
+      "question_universe": "BASE",
+      "question_code": "AccessControl",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.2571428571428571,
+      "max_score": 0.2571428571428571
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q032",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.2222222222222222,
+      "max_score": 0.2222222222222222
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q036",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.24,
+      "max_score": 0.24
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q037",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.15384615384615385,
+      "max_score": 0.15384615384615385
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q061",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.19999999999999998,
+      "max_score": 0.19999999999999998
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q044",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.18181818181818182,
+      "max_score": 0.18181818181818182
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q062",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.36923076923076925,
+      "max_score": 0.36923076923076925
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q011",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.3272727272727272,
+      "max_score": 0.3272727272727272
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q009",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.16666666666666666,
+      "max_score": 0.16666666666666666
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q046",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.6,
+      "max_score": 0.6
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q064",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.2222222222222222,
+      "max_score": 0.2222222222222222
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q008",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.15384615384615385,
+      "max_score": 0.15384615384615385
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q004",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.18181818181818182,
+      "max_score": 0.18181818181818182
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q017",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.15384615384615385,
+      "max_score": 0.15384615384615385
+    },
+    {
+      "question_universe": "BASE",
+      "question_code": "LawEnforcement",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.18181818181818182,
+      "max_score": 0.18181818181818182
+    },
+    {
+      "question_universe": "BASE",
+      "question_code": "VideoSystemType",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.15384615384615385,
+      "max_score": 0.15384615384615385
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q020",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 1.0,
+      "max_score": 1.0
+    },
+    {
+      "question_universe": "EXPANSION",
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q067",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.1894736842105263,
+      "max_score": 0.1894736842105263
+    },
+    {
+      "question_universe": "BASE",
+      "question_code": "VideoMonitoring",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.16666666666666666,
+      "max_score": 0.16666666666666666
+    },
+    {
+      "question_universe": "BASE",
+      "question_code": "VideoAnalytics",
+      "link_count": 1,
+      "distinct_locators": 1,
+      "spam_ratio_links_per_locator": 1.0,
+      "avg_score": 0.15384615384615385,
+      "max_score": 0.15384615384615385
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "required_element_code": "BASE-054",
+    "parent_required_element_code": "BASE-001",
+    "sector_id": "a8ffa789-94d3-4747-bdb6-5cba71b567b9",
+    "sector_name": "Commercial Facilities",
+    "layer": "baseline",
+    "is_sector_depth": true,
+    "ofc_text": ""
+  }
+]

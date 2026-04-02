@@ -107,7 +107,7 @@ export function CrossDependenciesSection({ cross_dependencies = [], onUpdate }: 
               />
             </div>
             <div className="col-md-2 d-flex align-items-end">
-              <button type="button" className="ida-btn ida-btn-sm ida-btn-outline-secondary" onClick={() => remove(i)}>
+              <button type="button" className="btn btn-sm btn-outline-secondary" onClick={() => remove(i)}>
                 Remove
               </button>
             </div>
@@ -124,7 +124,7 @@ export function CrossDependenciesSection({ cross_dependencies = [], onUpdate }: 
           </div>
         </div>
       ))}
-      <button type="button" className="ida-btn ida-btn-sm ida-btn-outline-primary" onClick={add}>
+      <button type="button" className="btn btn-sm btn-outline-primary" onClick={add}>
         Add cross-dependency
       </button>
     </div>

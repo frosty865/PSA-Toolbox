@@ -287,7 +287,7 @@ export function SupplySourcesEditor({ categoryCode, value, onChange }: SupplySou
                     <td>
                       <button
                         type="button"
-                        className="ida-btn ida-btn-secondary ida-btn-sm"
+                        className="btn btn-secondary btn-sm"
                         onClick={() => removeSource(i)}
                         disabled={sources.length <= 2}
                         aria-label="Remove source"
@@ -300,7 +300,7 @@ export function SupplySourcesEditor({ categoryCode, value, onChange }: SupplySou
               </tbody>
             </table>
           </div>
-          <button type="button" className="ida-btn ida-btn-secondary mt-2" onClick={addSource}>
+          <button type="button" className="btn btn-secondary mt-2" onClick={addSource}>
             Add source
           </button>
         </div>

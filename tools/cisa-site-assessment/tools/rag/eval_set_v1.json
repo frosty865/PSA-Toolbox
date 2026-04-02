@@ -1,0 +1,7 @@
+[
+  {
+    "query": "collision protection for charging stations near parking areas",
+    "tags_filter": {"source_type": "CORPUS"},
+    "gold_chunk_ids": []
+  }
+]

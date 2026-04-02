@@ -1,0 +1,31 @@
+{
+  "count": 2,
+  "offenders": [
+    {
+      "id": "9671345a-ee5b-4711-b416-4b84eeb64c0b",
+      "file_hash": "598a1ee7b4859b19dfc0264d455ef75fe96d8a4aec59c28ec711f8807166d79c",
+      "original_filename": null,
+      "file_stem": null,
+      "inferred_title": "897519",
+      "title_confidence": 50,
+      "pdf_meta_title": null,
+      "publisher": null,
+      "publication_date": null,
+      "canonical_path": "D:\\psa-workspace\\PDF's\\897519.pdf",
+      "ingestion_warnings": []
+    },
+    {
+      "id": "8ab91140-72e3-4372-8279-619addb9fbb1",
+      "file_hash": "5316003eec712c4f372ba586534a395f1f7f4ba192870c234c75ba9587227466",
+      "original_filename": null,
+      "file_stem": null,
+      "inferred_title": "897539",
+      "title_confidence": 50,
+      "pdf_meta_title": null,
+      "publisher": null,
+      "publication_date": null,
+      "canonical_path": "D:\\psa-workspace\\PDF's\\897539.pdf",
+      "ingestion_warnings": []
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "sources": [
+    {
+      "source_label": "REPLACE_ME_SOURCE_LABEL",
+      "source_key": "REPLACE_ME_SOURCE_KEY",
+      "document_key": "EXTDOC_39BED3CE",
+      "locator_type": "PDF"
+    },
+    {
+      "source_label": "REPLACE_ME_SOURCE_LABEL",
+      "source_key": "REPLACE_ME_SOURCE_KEY",
+      "document_key": "EXTDOC_926EE3F3",
+      "locator_type": "PDF"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+VALIDATOR: PLAN SPINE FROM TEMPLATE TOC (V1)
+
+PURPOSE
+Plans should produce a critical content checklist. For authoritative templates, the table of contents defines required coverage.
+
+INPUT
+- standard_class (must be PHYSICAL_SECURITY_PLAN)
+- plan_sections[] extracted from the template TOC (ordered list of section titles)
+- generated items[] (questions)
+
+PASS/FAIL RULES (DETERMINISTIC)
+
+1) Applicability
+- If standard_class != "PHYSICAL_SECURITY_PLAN", SKIP validator.
+
+2) Coverage expectation
+- Each generated question must map to exactly one plan_sections[] entry by keyword overlap.
+- DROP any generated question that does not match any plan_sections[] entry.
+
+3) Question style
+- DROP any plan question not in checklist form:
+  Must start with:
+  - "Does the plan"
+  - "Do procedures"
+  - "Are roles"
+  - "Is there"
+  - "Are there"
+  - "Can personnel"
+  - "Are communications"
+  and must remain YES/NO/N/A compatible.
+
+4) Output shape
+- The cleaned items[] becomes the plan checklist.
+- If no items remain, output is valid but empty; generation should be re-run with a larger doc packet.
+
+LOGGING (REQUIRED)
+- For each dropped question: item id, reason, and best-matching section title (if any)
+
+END

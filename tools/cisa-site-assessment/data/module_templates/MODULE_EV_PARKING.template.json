@@ -1,0 +1,138 @@
+{
+  "module_code": "MODULE_EV_PARKING",
+  "title": "EV Parking & Charging",
+  "summary": "Evaluates whether the facility has planned, coordinated, and maintained capabilities to manage EV parking/charging hazards in parking areas.",
+  "scope": {
+    "hazards": [
+      "EV parking fire event",
+      "charging-area incident requiring emergency response"
+    ],
+    "areas": [
+      "parking garage",
+      "surface lot",
+      "charging locations"
+    ],
+    "exclusions": [
+      "electrical design compliance verification",
+      "vendor selection",
+      "installation specifications"
+    ]
+  },
+  "question_families": [
+    {
+      "family_code": "EVP_PLAN_INTEGRATION",
+      "title": "Plan integration",
+      "intent": "Plans and procedures explicitly address EV parking/charging hazards and responsibilities.",
+      "question_prompts": [
+        "Do facility emergency plans and procedures address EV parking/charging hazards for the site?",
+        "Are roles and responsibilities defined for facility actions during an EV parking/charging incident?"
+      ],
+      "anchors": {
+        "discipline_subtype_codes_allow": [
+          "EAP_GENERAL",
+          "EMR_CRISIS_MANAGEMENT"
+        ]
+      },
+      "evidence_signals": [
+        "electric vehicle",
+        "EV charging",
+        "thermal runaway",
+        "re-ignition",
+        "parking garage procedures",
+        "pre-incident plan"
+      ]
+    },
+    {
+      "family_code": "EVP_RESPONSE_CAPABILITY",
+      "title": "Facility response capability",
+      "intent": "The facility has an established capability to manage an EV fire/incident prior to responder arrival.",
+      "question_prompts": [
+        "Does the facility have an established capability to suppress or control an EV-related fire event in EV parking/charging areas until responders arrive?",
+        "Are staff actions and decision points defined for an EV parking/charging incident prior to responder arrival?"
+      ],
+      "anchors": {
+        "discipline_subtype_codes_allow": [
+          "EAP_GENERAL",
+          "SFO_POST_ORDERS",
+          "SMG_TRAINING_AWARENESS"
+        ]
+      },
+      "evidence_signals": [
+        "staff response",
+        "initial actions",
+        "isolation area",
+        "fire event procedures",
+        "internal response"
+      ]
+    },
+    {
+      "family_code": "EVP_RESPONDER_COORDINATION",
+      "title": "Responder coordination",
+      "intent": "Coordination with primary fire response agency for EV incidents is established and maintained.",
+      "question_prompts": [
+        "Has the facility coordinated with the primary fire response agency to confirm EV incident response considerations for this site (access, staging, constraints)?",
+        "Are EV parking/charging locations documented to support emergency responder access and operations?"
+      ],
+      "anchors": {
+        "discipline_subtype_codes_allow": [
+          "ISC_LE_LIAISON",
+          "ISC_FIRST_RESPONDER_COORDINATION"
+        ]
+      },
+      "evidence_signals": [
+        "fire department",
+        "preplan",
+        "site visit",
+        "apparatus access",
+        "staging",
+        "water supply"
+      ]
+    },
+    {
+      "family_code": "EVP_LAYOUT_STANDOFF",
+      "title": "Layout, separation, and cascading effects",
+      "intent": "Parking layout provides separation or controls to reduce cascading fire spread impacts.",
+      "question_prompts": [
+        "Do EV parking/charging locations provide sufficient separation or layout controls to reduce the likelihood of cascading fire spread to adjacent vehicles, building openings, or critical areas?"
+      ],
+      "anchors": {
+        "discipline_subtype_codes_allow": [
+          "CPTED_SITE_LAYOUT",
+          "PER_STANDOFF_DISTANCE",
+          "FAC_BUILDING_ENVELOPE"
+        ]
+      },
+      "evidence_signals": [
+        "separation distance",
+        "standoff",
+        "cascading",
+        "adjacent vehicles",
+        "garage fire spread",
+        "building openings"
+      ]
+    }
+  ],
+  "ofc_template_bank": [
+    {
+      "ofc_code": "EVP_OFC_PLAN_UPDATE",
+      "text_template": "Ensure facility emergency plans and procedures explicitly address EV parking/charging hazards, roles, and response actions for the site."
+    },
+    {
+      "ofc_code": "EVP_OFC_FACILITY_RESPONSE_CAPABILITY",
+      "text_template": "Establish and maintain a documented facility capability to manage EV parking/charging incident conditions prior to responder arrival, including defined staff actions and decision points."
+    },
+    {
+      "ofc_code": "EVP_OFC_FIRE_DEPT_COORDINATION",
+      "text_template": "Coordinate with the primary fire response agency to confirm EV incident response considerations for this site, including responder access, staging needs, and operational constraints."
+    },
+    {
+      "ofc_code": "EVP_OFC_LAYOUT_SEPARATION",
+      "text_template": "Implement site layout and parking-area controls that reduce the likelihood of cascading fire spread impacts from EV parking/charging locations to adjacent vehicles and critical building areas."
+    }
+  ],
+  "generation_rules": {
+    "min_questions_per_family": 1,
+    "min_ofc_candidates_per_family": 2,
+    "require_citation_locator": true
+  }
+}

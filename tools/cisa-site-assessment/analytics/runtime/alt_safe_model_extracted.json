@@ -1,0 +1,2304 @@
+{
+  "metadata": {
+    "extracted_at": "2026-01-13T21:00:41.866577Z",
+    "source": "ALT_SAFE_Assessment.html",
+    "version": "2.0",
+    "total_sections": 79,
+    "total_questions": 36
+  },
+  "sections": [
+    {
+      "section_key": "section_0",
+      "section_title": "ALT SAFE",
+      "question_items": []
+    },
+    {
+      "section_key": "section_1",
+      "section_title": "Welcome to ALT SAFE",
+      "question_items": []
+    },
+    {
+      "section_key": "section_2",
+      "section_title": "What is ALT SAFE?",
+      "question_items": []
+    },
+    {
+      "section_key": "section_3",
+      "section_title": "Simple Terms",
+      "question_items": []
+    },
+    {
+      "section_key": "section_4",
+      "section_title": "Assessment Methodology",
+      "question_items": []
+    },
+    {
+      "section_key": "section_5",
+      "section_title": "Your facility is doing well in this area.",
+      "question_items": []
+    },
+    {
+      "section_key": "section_6",
+      "section_title": "Your facility could improve in this area.",
+      "question_items": []
+    },
+    {
+      "section_key": "section_7",
+      "section_title": "This doesn't apply to your facility.",
+      "question_items": []
+    },
+    {
+      "section_key": "section_8",
+      "section_title": "Getting Started",
+      "question_items": []
+    },
+    {
+      "section_key": "section_9",
+      "section_title": "Facility Information",
+      "question_items": []
+    },
+    {
+      "section_key": "section_10",
+      "section_title": "Information Sharing & Communication",
+      "question_items": []
+    },
+    {
+      "section_key": "section_11",
+      "section_title": "1. Public Awareness Campaign",
+      "question_items": [
+        {
+          "question_key": "Awareness",
+          "question_text": "1. Public Awareness Campaign",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [
+            {
+              "selector_id": "publicAccess",
+              "selector_label": "",
+              "options": [
+                {
+                  "value": "",
+                  "label": "Select public access level..."
+                },
+                {
+                  "value": "Open to Public",
+                  "label": "Open to Public"
+                },
+                {
+                  "value": "Limited Public Access",
+                  "label": "Limited Public Access"
+                },
+                {
+                  "value": "By Appointment Only",
+                  "label": "By Appointment Only"
+                },
+                {
+                  "value": "No Public Access",
+                  "label": "No Public Access"
+                }
+              ],
+              "dependent_questions": [],
+              "dependent_detail_items": []
+            }
+          ],
+          "input_ids": [
+            "AwarenessYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_12",
+      "section_title": "2. Law Enforcement Agency Visits",
+      "question_items": [
+        {
+          "question_key": "LawEnforcement",
+          "question_text": "2. Law Enforcement Agency Visits",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "LawEnforcementYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_13",
+      "section_title": "3. Interoperable Communications with Law Enforcement",
+      "question_items": [
+        {
+          "question_key": "LawComm",
+          "question_text": "3. Interoperable Communications with Law Enforcement",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "LawCommYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_14",
+      "section_title": "4. Fire Response Agency Visits",
+      "question_items": [
+        {
+          "question_key": "FireAgency",
+          "question_text": "4. Fire Response Agency Visits",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "FireAgencyYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_15",
+      "section_title": "5. Interoperable Communications with Fire Response",
+      "question_items": [
+        {
+          "question_key": "FireComm",
+          "question_text": "5. Interoperable Communications with Fire Response",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "FireCommYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_16",
+      "section_title": "6. Emergency Medical Response Agency Visits",
+      "question_items": [
+        {
+          "question_key": "MedicalAgency",
+          "question_text": "6. Emergency Medical Response Agency Visits",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "MedicalAgencyYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_17",
+      "section_title": "7. Interoperable Communications with Emergency Medical Response",
+      "question_items": [
+        {
+          "question_key": "MedicalComm",
+          "question_text": "7. Interoperable Communications with Emergency Medical Response",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "MedicalCommYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_18",
+      "section_title": "8. FBI Information Exchange",
+      "question_items": [
+        {
+          "question_key": "FBIInfo",
+          "question_text": "8. FBI Information Exchange",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "FBIInfoYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_19",
+      "section_title": "9. ISAC Information Exchange",
+      "question_items": [
+        {
+          "question_key": "ISACInfo",
+          "question_text": "9. ISAC Information Exchange",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "ISACInfoYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_20",
+      "section_title": "10. HSIN Portal Information Exchange",
+      "question_items": [
+        {
+          "question_key": "HSINInfo",
+          "question_text": "10. HSIN Portal Information Exchange",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "HSINInfoYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_21",
+      "section_title": "11. InfraGard Information Exchange",
+      "question_items": [
+        {
+          "question_key": "InfraGard",
+          "question_text": "11. InfraGard Information Exchange",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "InfraGardYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_22",
+      "section_title": "12. Federal Agency Information Exchange",
+      "question_items": [
+        {
+          "question_key": "FederalInfo",
+          "question_text": "12. Federal Agency Information Exchange",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "FederalInfoYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_23",
+      "section_title": "13. State and Local Information Exchange",
+      "question_items": [
+        {
+          "question_key": "StateLocalInfo",
+          "question_text": "13. State and Local Information Exchange",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "StateLocalInfoYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_24",
+      "section_title": "14. Neighboring Facility Information Exchange",
+      "question_items": [
+        {
+          "question_key": "NeighborInfo",
+          "question_text": "14. Neighboring Facility Information Exchange",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [
+            {
+              "block_id": "AwarenessComp1",
+              "items": [
+                {
+                  "item_id": "AwarenessComp1",
+                  "label": "Regular employee training on suspicious activity recognition",
+                  "value": ""
+                },
+                {
+                  "item_id": "AwarenessComp2",
+                  "label": "Visible signage promoting the campaign",
+                  "value": ""
+                },
+                {
+                  "item_id": "AwarenessComp3",
+                  "label": "Clear reporting procedures for suspicious activity",
+                  "value": ""
+                },
+                {
+                  "item_id": "AwarenessNoOFC1",
+                  "label": "Consult your local PSA for information about the 'If You See Something, Say Something' public awareness campaign. For more information, visit the DHS website at https://www.dhs.gov/see-something-say-something/campaign-materials.",
+                  "value": ""
+                },
+                {
+                  "item_id": "LawEnforcementComp1",
+                  "label": "Annual or regular onsite visits",
+                  "value": ""
+                },
+                {
+                  "item_id": "LawEnforcementComp2",
+                  "label": "Facility tour provided to law enforcement",
+                  "value": ""
+                },
+                {
+                  "item_id": "LawEnforcementComp3",
+                  "label": "Emergency response booklet shared",
+                  "value": ""
+                },
+                {
+                  "item_id": "LawEnforcementNoOFC1",
+                  "label": "Invite the agency to visit the facility. Provide a tour to familiarize first responders with the site layout.",
+                  "value": ""
+                },
+                {
+                  "item_id": "LawEnforcementNoOFC2",
+                  "label": "Establish annual onsite visits for first responders to maintain their familiarity with the facility.",
+                  "value": ""
+                },
+                {
+                  "item_id": "LawEnforcementNoOFC3",
+                  "label": "Develop and provide emergency responders with an offsite emergency responder booklet that includes facility floor plans and identifies utility shutoffs, outside exits, etc.",
+                  "value": ""
+                },
+                {
+                  "item_id": "LawCommComp1",
+                  "label": "Direct radio communication capability",
+                  "value": ""
+                },
+                {
+                  "item_id": "LawCommComp2",
+                  "label": "Emergency communication protocols",
+                  "value": ""
+                },
+                {
+                  "item_id": "LawCommComp3",
+                  "label": "Regular communication testing",
+                  "value": ""
+                },
+                {
+                  "item_id": "LawCommNoOFC1",
+                  "label": "Collaborate with the agency on potential solutions to achieve cost-effective interoperable communications onsite.",
+                  "value": ""
+                },
+                {
+                  "item_id": "LawCommNoOFC2",
+                  "label": "Explore the option of an interconnect system, such as a gateway that can allow communication between radio systems that are otherwise incompatible because they operate on different frequency bands or using different technologies.",
+                  "value": ""
+                },
+                {
+                  "item_id": "FireAgencyComp1",
+                  "label": "Annual or regular onsite visits",
+                  "value": ""
+                },
+                {
+                  "item_id": "FireAgencyComp2",
+                  "label": "Facility tour provided to fire responders",
+                  "value": ""
+                },
+                {
+                  "item_id": "FireAgencyComp3",
+                  "label": "Fire safety information shared",
+                  "value": ""
+                },
+                {
+                  "item_id": "FireAgencyNoOFC1",
+                  "label": "Invite the agency to visit the facility. Provide a tour to familiarize first responders with the site layout.",
+                  "value": ""
+                },
+                {
+                  "item_id": "FireAgencyNoOFC2",
+                  "label": "Establish annual onsite visits for first responders to maintain their familiarity with the facility.",
+                  "value": ""
+                },
+                {
+                  "item_id": "FireCommComp1",
+                  "label": "Direct radio communication capability",
+                  "value": ""
+                },
+                {
+                  "item_id": "FireCommComp2",
+                  "label": "Emergency communication protocols",
+                  "value": ""
+                },
+                {
+                  "item_id": "FireCommComp3",
+                  "label": "Regular communication testing",
+                  "value": ""
+                },
+                {
+                  "item_id": "FireCommNoOFC1",
+                  "label": "Collaborate with the agency on potential solutions to achieve cost-effective interoperable communications onsite.",
+                  "value": ""
+                },
+                {
+                  "item_id": "MedicalAgencyComp1",
+                  "label": "Annual or regular onsite visits",
+                  "value": ""
+                },
+                {
+                  "item_id": "MedicalAgencyComp2",
+                  "label": "Facility tour provided to medical responders",
+                  "value": ""
+                },
+                {
+                  "item_id": "MedicalAgencyComp3",
+                  "label": "Medical emergency information shared",
+                  "value": ""
+                },
+                {
+                  "item_id": "MedicalAgencyNoOFC1",
+                  "label": "Invite the agency to visit the facility. Provide a tour to familiarize first responders with the site layout.",
+                  "value": ""
+                },
+                {
+                  "item_id": "MedicalAgencyNoOFC2",
+                  "label": "Establish annual onsite visits for first responders to maintain their familiarity with the facility.",
+                  "value": ""
+                },
+                {
+                  "item_id": "MedicalCommComp1",
+                  "label": "Direct radio communication capability",
+                  "value": ""
+                },
+                {
+                  "item_id": "MedicalCommComp2",
+                  "label": "Emergency communication protocols",
+                  "value": ""
+                },
+                {
+                  "item_id": "MedicalCommComp3",
+                  "label": "Regular communication testing",
+                  "value": ""
+                },
+                {
+                  "item_id": "MedicalCommNoOFC1",
+                  "label": "Collaborate with the agency on potential solutions to achieve cost-effective interoperable communications onsite.",
+                  "value": ""
+                },
+                {
+                  "item_id": "MedicalCommNoOFC2",
+                  "label": "Explore the option of an interconnect system, such as a gateway that can allow communication between radio systems that are otherwise incompatible because they operate on different frequency bands or using different technologies.",
+                  "value": ""
+                },
+                {
+                  "item_id": "FBIInfoComp1",
+                  "label": "Joint Terrorism Task Force (JTTF) participation",
+                  "value": ""
+                },
+                {
+                  "item_id": "FBIInfoComp2",
+                  "label": "Regular information sharing protocols",
+                  "value": ""
+                },
+                {
+                  "item_id": "FBIInfoComp3",
+                  "label": "Designated FBI liaison contact",
+                  "value": ""
+                },
+                {
+                  "item_id": "FBIInfoNoOFC1",
+                  "label": "Consult your local police department, sheriff's office, and/or PSA regarding opportunities to enhance information sharing with the JTTF. Information about JTTFs is also available via the FBI website, at https://www.fbi.gov/investigate/terrorism/joint-terrorism-task-forces.",
+                  "value": ""
+                },
+                {
+                  "item_id": "ISACInfoComp1",
+                  "label": "Active ISAC membership",
+                  "value": ""
+                },
+                {
+                  "item_id": "ISACInfoComp2",
+                  "label": "Regular threat intelligence updates",
+                  "value": ""
+                },
+                {
+                  "item_id": "ISACInfoComp3",
+                  "label": "Information sharing protocols established",
+                  "value": ""
+                },
+                {
+                  "item_id": "ISACInfoNoOFC1",
+                  "label": "Consult your local PSA regarding opportunities to enhance information sharing with the appropriate ISAC. Additional information is available via the National Council of ISACs website, at https://www.nationalisacs.org.",
+                  "value": ""
+                },
+                {
+                  "item_id": "HSINInfoComp1",
+                  "label": "HSIN community membership",
+                  "value": ""
+                },
+                {
+                  "item_id": "HSINInfoComp2",
+                  "label": "Regular information sharing activities",
+                  "value": ""
+                },
+                {
+                  "item_id": "HSINInfoComp3",
+                  "label": "Threat intelligence access",
+                  "value": ""
+                },
+                {
+                  "item_id": "HSINInfoNoOFC1",
+                  "label": "Consult your local PSA to become a member of the HSIN community. Information about HSIN is also available via the DHS website, at https://www.dhs.gov/homeland-security-information-network-hsin.",
+                  "value": ""
+                },
+                {
+                  "item_id": "InfraGardComp1",
+                  "label": "Active InfraGard membership",
+                  "value": ""
+                },
+                {
+                  "item_id": "InfraGardComp2",
+                  "label": "Local chapter participation",
+                  "value": ""
+                },
+                {
+                  "item_id": "InfraGardComp3",
+                  "label": "Information sharing activities",
+                  "value": ""
+                },
+                {
+                  "item_id": "InfraGardNoOFC1",
+                  "label": "Consult your local PSA about becoming a member of InfraGard. Additional information is also available via the InfraGard website, at https://www.infragard.org.",
+                  "value": ""
+                },
+                {
+                  "item_id": "FederalInfoComp1",
+                  "label": "DHS information sharing",
+                  "value": ""
+                },
+                {
+                  "item_id": "FederalInfoComp2",
+                  "label": "DOE information sharing",
+                  "value": ""
+                },
+                {
+                  "item_id": "FederalInfoComp3",
+                  "label": "Other federal agency contacts",
+                  "value": ""
+                },
+                {
+                  "item_id": "FederalInfoNoOFC1",
+                  "label": "Consult your local PSA regarding opportunities to enhance information sharing with federal agencies.",
+                  "value": ""
+                },
+                {
+                  "item_id": "FederalInfoNoOFC2",
+                  "label": "Consult your local police department, sheriff's office, and/or PSA regarding opportunities to enhance information sharing with federal agencies.",
+                  "value": ""
+                },
+                {
+                  "item_id": "StateLocalInfoComp1",
+                  "label": "State fusion center participation",
+                  "value": ""
+                },
+                {
+                  "item_id": "StateLocalInfoComp2",
+                  "label": "Local law enforcement information sharing",
+                  "value": ""
+                },
+                {
+                  "item_id": "StateLocalInfoComp3",
+                  "label": "Emergency management coordination",
+                  "value": ""
+                },
+                {
+                  "item_id": "StateLocalInfoNoOFC1",
+                  "label": "Consult your local PSA regarding opportunities to enhance information sharing with state and local agencies.",
+                  "value": ""
+                },
+                {
+                  "item_id": "StateLocalInfoNoOFC2",
+                  "label": "Consult your local police department, sheriff's office, and/or PSA regarding opportunities to enhance information sharing with state and local agencies.",
+                  "value": ""
+                },
+                {
+                  "item_id": "StateLocalInfoNoOFC3",
+                  "label": "Establish a liaison with state and/or major urban area fusion centers to enhance communication and information sharing.",
+                  "value": ""
+                },
+                {
+                  "item_id": "NeighborInfoComp1",
+                  "label": "Regular meetings with neighboring facilities",
+                  "value": ""
+                },
+                {
+                  "item_id": "NeighborInfoComp2",
+                  "label": "Information sharing protocols established",
+                  "value": ""
+                },
+                {
+                  "item_id": "NeighborInfoComp3",
+                  "label": "Emergency coordination procedures",
+                  "value": ""
+                },
+                {
+                  "item_id": "NeighborInfoNoOFC1",
+                  "label": "Establish relationships and open dialogue including regular meetings with neighboring facilities to enhance information sharing and coordination.",
+                  "value": ""
+                }
+              ]
+            }
+          ],
+          "conditional_logic": {
+            "show_details_when": "YES",
+            "trigger_answer": "YES"
+          },
+          "technology_selectors": [],
+          "input_ids": [
+            "NeighborInfoYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_25",
+      "section_title": "Security Plans & Management",
+      "question_items": []
+    },
+    {
+      "section_key": "section_26",
+      "section_title": "1. Security Manager",
+      "question_items": [
+        {
+          "question_key": "SecurityManager",
+          "question_text": "1. Security Manager",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "SecurityManagerYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_27",
+      "section_title": "2. Comprehensive Security Plan",
+      "question_items": [
+        {
+          "question_key": "SecurityPlan",
+          "question_text": "2. Comprehensive Security Plan",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "SecurityPlanYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_28",
+      "section_title": "3. Security Plan Training",
+      "question_items": [
+        {
+          "question_key": "PlanTraining",
+          "question_text": "3. Security Plan Training",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "PlanTrainingYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_29",
+      "section_title": "4. Security Plan Coordination",
+      "question_items": [
+        {
+          "question_key": "PlanCoordination",
+          "question_text": "4. Security Plan Coordination",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "PlanCoordinationYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_30",
+      "section_title": "5. Employee Security Training",
+      "question_items": [
+        {
+          "question_key": "EmployeeTraining",
+          "question_text": "5. Employee Security Training",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "EmployeeTrainingYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_31",
+      "section_title": "6. Security Plan Testing",
+      "question_items": [
+        {
+          "question_key": "PlanTesting",
+          "question_text": "6. Security Plan Testing",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "PlanTestingYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_32",
+      "section_title": "7. Security Risk Assessment",
+      "question_items": [
+        {
+          "question_key": "RiskAssessment",
+          "question_text": "7. Security Risk Assessment",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [
+            {
+              "block_id": "SecurityManagerComp1",
+              "items": [
+                {
+                  "item_id": "SecurityManagerComp1",
+                  "label": "Dedicated security manager position",
+                  "value": ""
+                },
+                {
+                  "item_id": "SecurityManagerComp2",
+                  "label": "Clear reporting structure to senior management",
+                  "value": ""
+                },
+                {
+                  "item_id": "SecurityManagerComp3",
+                  "label": "Security manager with appropriate qualifications",
+                  "value": ""
+                },
+                {
+                  "item_id": "SecurityManagerNoOFC1",
+                  "label": "Consider hiring a security manager or designate an employee to act as a security manager and develop a comprehensive security plan specific to the facility.",
+                  "value": ""
+                },
+                {
+                  "item_id": "SecurityPlanComp1",
+                  "label": "Written comprehensive security plan",
+                  "value": ""
+                },
+                {
+                  "item_id": "SecurityPlanComp2",
+                  "label": "Plan addresses physical security systems",
+                  "value": ""
+                },
+                {
+                  "item_id": "SecurityPlanComp3",
+                  "label": "Plan includes emergency response procedures",
+                  "value": ""
+                },
+                {
+                  "item_id": "SecurityPlanComp4",
+                  "label": "Plan addresses employee security awareness",
+                  "value": ""
+                },
+                {
+                  "item_id": "SecurityPlanNoOFC1",
+                  "label": "Develop a comprehensive security plan specific to the facility. The plan should address issues such as perimeter security, access control, electronic security systems (including video surveillance), physical security inspection programs, and employee security awareness training programs.",
+                  "value": ""
+                },
+                {
+                  "item_id": "SecurityPlanNoOFC2",
+                  "label": "Create a detailed security plan for your facility. The plan should cover things like identifying potential problems, looking at weak spots, managing risks, what to do in emergencies, and how to keep your business running during problems.",
+                  "value": ""
+                },
+                {
+                  "item_id": "SecurityPlanNoOFC3",
+                  "label": "Consult",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanTrainingComp1",
+                  "label": "Regular security plan training for all personnel",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanTrainingComp2",
+                  "label": "Training covers emergency response procedures",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanTrainingComp3",
+                  "label": "Training includes security awareness topics",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanTrainingComp4",
+                  "label": "Training documentation and records maintained",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanTrainingNoOFC1",
+                  "label": "Develop a comprehensive security plan specific to the facility. Train personnel on the plan, and exercise the plan at least once a year.",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanTrainingNoOFC2",
+                  "label": "Develop a comprehensive security plan specific to the facility. The plan should address issues such as perimeter security, access control, electronic security systems (including video surveillance), physical security inspection programs, and employee security awareness training programs.",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanTrainingNoOFC3",
+                  "label": "Create a detailed security plan for your facility. The plan should cover things like identifying potential problems, looking at weak spots, managing risks, what to do in emergencies, and how to keep your business running during problems.",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanTrainingNoOFC4",
+                  "label": "Consult",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanCoordinationComp1",
+                  "label": "Regular coordination meetings with law enforcement",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanCoordinationComp2",
+                  "label": "Mutual-aid agreements established",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanCoordinationComp3",
+                  "label": "Facility information shared with law enforcement",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanCoordinationComp4",
+                  "label": "Joint training and exercises conducted",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanCoordinationNoOFC1",
+                  "label": "Coordinate the security plan with local law enforcement. Consult",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanCoordinationNoOFC2",
+                  "label": "Coordinate the security plan with local law enforcement, and establish mutual-aid agreements to enhance emergency response capabilities.",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanCoordinationNoOFC3",
+                  "label": "Establish a liaison and regular communication with local law enforcement and other first responders to enhance coordination and information sharing.",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanCoordinationNoOFC4",
+                  "label": "Share critical information about the facility (e.g., floor plans, the location of critical assets, utility shutoffs, etc.) with local law enforcement to enhance their response capabilities.",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanCoordinationNoOFC5",
+                  "label": "Involve facility operators, security personnel, local police, and other government services, as appropriate, in the development and review of the security plan.",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanCoordinationNoOFC6",
+                  "label": "Conduct training and exercises with law enforcement and emergency responders to familiarize them with the facility and its security procedures.",
+                  "value": ""
+                },
+                {
+                  "item_id": "EmployeeTrainingComp1",
+                  "label": "Initial security training for new employees",
+                  "value": ""
+                },
+                {
+                  "item_id": "EmployeeTrainingComp2",
+                  "label": "Annual security awareness training",
+                  "value": ""
+                },
+                {
+                  "item_id": "EmployeeTrainingComp3",
+                  "label": "Suspicious activity reporting training",
+                  "value": ""
+                },
+                {
+                  "item_id": "EmployeeTrainingComp4",
+                  "label": "Emergency response procedures training",
+                  "value": ""
+                },
+                {
+                  "item_id": "EmployeeTrainingNoOFC1",
+                  "label": "Train employees to do the following: identify their responsibilities under the facility's security plan, understand the facility's security policies and procedures, and recognize and report suspicious activities.",
+                  "value": ""
+                },
+                {
+                  "item_id": "EmployeeTrainingNoOFC2",
+                  "label": "Train employees on why the facility requires protection strategies, what actions are required to protect specific assets and areas, what employees' security responsibilities are and how they can be fulfilled, how employees can report program violations, and how employees can identify indicators of risk or danger and how to respond appropriately.",
+                  "value": ""
+                },
+                {
+                  "item_id": "EmployeeTrainingNoOFC3",
+                  "label": "Train employees on suspicious activity reporting procedures, security incident (e.g. bomb threat, active shooter) response procedures, and emergency evacuation procedures.",
+                  "value": ""
+                },
+                {
+                  "item_id": "EmployeeTrainingNoOFC4",
+                  "label": "Enhance the level of employee security awareness through the distribution of a security-related newsletter, regular security briefings, or other awareness activities.",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanTestingComp1",
+                  "label": "Regular security drills and exercises",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanTestingComp2",
+                  "label": "Annual comprehensive exercise",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanTestingComp3",
+                  "label": "Employee participation in exercises",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanTestingComp4",
+                  "label": "First responder involvement in exercises",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanTestingNoOFC1",
+                  "label": "Test the security plan regularly with drills and tabletop exercises to ensure that adequate security measures are in place and that personnel are familiar with their roles and responsibilities.",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanTestingNoOFC2",
+                  "label": "Exercise the plan at least once annually to ensure it remains applicable as changes occur at the facility.",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanTestingNoOFC3",
+                  "label": "Exercise the plan regularly with employees and other appropriate personnel (e.g., building management, security personnel) to ensure familiarity with procedures.",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanTestingNoOFC4",
+                  "label": "Involve first responders in exercises to familiarize them with the facility and its security procedures.",
+                  "value": ""
+                },
+                {
+                  "item_id": "PlanTestingNoOFC5",
+                  "label": "Consult the Ready.gov website for more information, at https://www.ready.gov/exercises.",
+                  "value": ""
+                },
+                {
+                  "item_id": "RiskAssessmentComp1",
+                  "label": "Regular security risk assessments",
+                  "value": ""
+                },
+                {
+                  "item_id": "RiskAssessmentComp2",
+                  "label": "Looking at potential problems and weak spots",
+                  "value": ""
+                },
+                {
+                  "item_id": "RiskAssessmentComp3",
+                  "label": "Identifying your most important assets",
+                  "value": ""
+                },
+                {
+                  "item_id": "RiskAssessmentComp4",
+                  "label": "Ways to reduce risks",
+                  "value": ""
+                },
+                {
+                  "item_id": "RiskAssessmentNoOFC1",
+                  "label": "Conduct an assessment of possible security risks, including a review of threats to, and vulnerabilities of, facility operations and activities.",
+                  "value": ""
+                },
+                {
+                  "item_id": "RiskAssessmentNoOFC2",
+                  "label": "Identify key personnel responsible for security (e.g., the security manager or a designated representative) and first responders.",
+                  "value": ""
+                },
+                {
+                  "item_id": "RiskAssessmentNoOFC3",
+                  "label": "Identify critical assets or areas, including management and use of physical security systems, perimeter security, parking/delivery/standoff distance, locks and technologies, video surveillance systems, intrusion detection or alarm systems, illumination, key control program, and physical security inspection program.",
+                  "value": ""
+                }
+              ]
+            }
+          ],
+          "conditional_logic": {
+            "show_details_when": "YES",
+            "trigger_answer": "YES"
+          },
+          "technology_selectors": [],
+          "input_ids": [
+            "RiskAssessmentYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_33",
+      "section_title": "Physical Security",
+      "question_items": []
+    },
+    {
+      "section_key": "section_34",
+      "section_title": "1. Security Personnel",
+      "question_items": [
+        {
+          "question_key": "SecurityPersonnel",
+          "question_text": "1. Security Personnel",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "SecurityPersonnelYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_35",
+      "section_title": "2. Perimeter Fencing and Barriers",
+      "question_items": [
+        {
+          "question_key": "PerimeterFencing",
+          "question_text": "2. Perimeter Fencing and Barriers",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "PerimeterFencingYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_36",
+      "section_title": "3. Access Control Systems",
+      "question_items": [
+        {
+          "question_key": "AccessControl",
+          "question_text": "3. Access Control Systems",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "AccessControlYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_37",
+      "section_title": "4. Security Lighting",
+      "question_items": [
+        {
+          "question_key": "SecurityLighting",
+          "question_text": "4. Security Lighting",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "SecurityLightingYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_38",
+      "section_title": "5. Parking and Standoff Distance",
+      "question_items": [
+        {
+          "question_key": "StandoffDistance",
+          "question_text": "5. Parking and Standoff Distance",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "StandoffDistanceYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_39",
+      "section_title": "6. Building Envelope Security",
+      "question_items": [
+        {
+          "question_key": "BuildingEnvelope",
+          "question_text": "6. Building Envelope Security",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "BuildingEnvelopeYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_40",
+      "section_title": "7. Key Control Program",
+      "question_items": [
+        {
+          "question_key": "KeyControl",
+          "question_text": "7. Key Control Program",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [
+            {
+              "block_id": "SecurityPersonnelComp1",
+              "items": [
+                {
+                  "item_id": "SecurityPersonnelComp1",
+                  "label": "Trained security personnel with appropriate certifications",
+                  "value": ""
+                },
+                {
+                  "item_id": "SecurityPersonnelComp2",
+                  "label": "24/7 security coverage",
+                  "value": ""
+                },
+                {
+                  "item_id": "SecurityPersonnelComp3",
+                  "label": "Appropriate equipment and communications",
+                  "value": ""
+                },
+                {
+                  "item_id": "SecurityPersonnelNoOFC1",
+                  "label": "Consider implementing dedicated security personnel or contract security services to provide consistent security coverage.",
+                  "value": ""
+                },
+                {
+                  "item_id": "SecurityPersonnelNoOFC2",
+                  "label": "Ensure security personnel receive appropriate training and certifications for their assigned duties.",
+                  "value": ""
+                },
+                {
+                  "item_id": "PerimeterFencingComp1",
+                  "label": "Perimeter fencing with appropriate height and construction",
+                  "value": ""
+                },
+                {
+                  "item_id": "PerimeterFencingComp2",
+                  "label": "Vehicle barriers and bollards at access points",
+                  "value": ""
+                },
+                {
+                  "item_id": "PerimeterFencingComp3",
+                  "label": "Controlled access points with proper signage",
+                  "value": ""
+                },
+                {
+                  "item_id": "PerimeterFencingNoOFC1",
+                  "label": "Implement perimeter fencing with appropriate height and construction to establish clear facility boundaries.",
+                  "value": ""
+                },
+                {
+                  "item_id": "PerimeterFencingNoOFC2",
+                  "label": "Install vehicle barriers and bollards at critical access points to prevent unauthorized vehicle access.",
+                  "value": ""
+                },
+                {
+                  "item_id": "AccessControlComp1",
+                  "label": "Electronic access control at main entrances",
+                  "value": ""
+                },
+                {
+                  "item_id": "AccessControlComp2",
+                  "label": "Card-based or biometric access systems",
+                  "value": ""
+                },
+                {
+                  "item_id": "AccessControlComp3",
+                  "label": "Visitor management system",
+                  "value": ""
+                },
+                {
+                  "item_id": "AccessControlNoOFC1",
+                  "label": "Implement electronic access control systems to manage and monitor facility access.",
+                  "value": ""
+                },
+                {
+                  "item_id": "AccessControlNoOFC2",
+                  "label": "Establish a visitor management system to track and control visitor access.",
+                  "value": ""
+                },
+                {
+                  "item_id": "SecurityLightingComp1",
+                  "label": "Perimeter lighting with appropriate illumination",
+                  "value": ""
+                },
+                {
+                  "item_id": "SecurityLightingComp2",
+                  "label": "Parking area lighting",
+                  "value": ""
+                },
+                {
+                  "item_id": "SecurityLightingComp3",
+                  "label": "Backup power for critical lighting",
+                  "value": ""
+                },
+                {
+                  "item_id": "SecurityLightingNoOFC1",
+                  "label": "Install security lighting for fences, gates, and/or parking areas to enhance visibility and deter unauthorized access.",
+                  "value": ""
+                },
+                {
+                  "item_id": "SecurityLightingNoOFC2",
+                  "label": "Ensure lighting uniformity to eliminate dark areas and shadows where intruders could go undetected.",
+                  "value": ""
+                },
+                {
+                  "item_id": "StandoffDistanceComp1",
+                  "label": "Adequate standoff distance between parking and buildings",
+                  "value": ""
+                },
+                {
+                  "item_id": "StandoffDistanceComp2",
+                  "label": "Vehicle barriers to prevent close approach",
+                  "value": ""
+                },
+                {
+                  "item_id": "StandoffDistanceComp3",
+                  "label": "Controlled parking areas with access restrictions",
+                  "value": ""
+                },
+                {
+                  "item_id": "StandoffDistanceNoOFC1",
+                  "label": "Establish adequate standoff distance between parking areas and buildings to prevent vehicle-borne threats.",
+                  "value": ""
+                },
+                {
+                  "item_id": "StandoffDistanceNoOFC2",
+                  "label": "Install vehicle barriers and bollards to prevent unauthorized vehicles from approaching buildings.",
+                  "value": ""
+                },
+                {
+                  "item_id": "BuildingEnvelopeComp1",
+                  "label": "Secured doors and windows with appropriate locks",
+                  "value": ""
+                },
+                {
+                  "item_id": "BuildingEnvelopeComp2",
+                  "label": "Glazing protection on ground floor windows",
+                  "value": ""
+                },
+                {
+                  "item_id": "BuildingEnvelopeComp3",
+                  "label": "Controlled entry points with proper access controls",
+                  "value": ""
+                },
+                {
+                  "item_id": "BuildingEnvelopeNoOFC1",
+                  "label": "Implement appropriate locks and security measures on all doors and windows.",
+                  "value": ""
+                },
+                {
+                  "item_id": "BuildingEnvelopeNoOFC2",
+                  "label": "Install glazing protection on ground floor windows to prevent unauthorized entry.",
+                  "value": ""
+                },
+                {
+                  "item_id": "KeyControlComp1",
+                  "label": "Formal key issuance and tracking procedures",
+                  "value": ""
+                },
+                {
+                  "item_id": "KeyControlComp2",
+                  "label": "Key return procedures for departing employees",
+                  "value": ""
+                },
+                {
+                  "item_id": "KeyControlComp3",
+                  "label": "Regular key inventory and audit procedures",
+                  "value": ""
+                },
+                {
+                  "item_id": "KeyControlNoOFC1",
+                  "label": "Implement a formal key control program to track and manage facility keys.",
+                  "value": ""
+                },
+                {
+                  "item_id": "KeyControlNoOFC2",
+                  "label": "Establish procedures for key issuance, tracking, and return to prevent unauthorized access.",
+                  "value": ""
+                }
+              ]
+            }
+          ],
+          "conditional_logic": {
+            "show_details_when": "YES",
+            "trigger_answer": "YES"
+          },
+          "technology_selectors": [],
+          "input_ids": [
+            "KeyControlYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_41",
+      "section_title": "Security Systems",
+      "question_items": []
+    },
+    {
+      "section_key": "section_42",
+      "section_title": "1. Video Surveillance Systems (VSS)",
+      "question_items": [
+        {
+          "question_key": "VideoSystemType",
+          "question_text": "1. Video Surveillance Systems (VSS)",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "VideoSystemTypeDigital"
+          ],
+          "extraction_rule": "section_title_fallback"
+        },
+        {
+          "question_key": "VideoAnalytics",
+          "question_text": "1. Video Surveillance Systems (VSS)",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "VideoAnalyticsYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_43",
+      "section_title": "2. Video Surveillance Coverage",
+      "question_items": [
+        {
+          "question_key": "VideoCoverage",
+          "question_text": "2. Video Surveillance Coverage",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "VideoCoverageYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_44",
+      "section_title": "3. Video Surveillance Monitoring",
+      "question_items": [
+        {
+          "question_key": "VideoMonitoring",
+          "question_text": "3. Video Surveillance Monitoring",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "VideoMonitoringYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_45",
+      "section_title": "4. Video Recording and Storage",
+      "question_items": [
+        {
+          "question_key": "VideoRecording",
+          "question_text": "4. Video Recording and Storage",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "VideoRecordingYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_46",
+      "section_title": "5. Intrusion Detection Systems (IDS)",
+      "question_items": [
+        {
+          "question_key": "IntrusionDetection",
+          "question_text": "5. Intrusion Detection Systems (IDS)",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "IntrusionDetectionYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_47",
+      "section_title": "6. Alarm System Monitoring",
+      "question_items": [
+        {
+          "question_key": "AlarmMonitoring",
+          "question_text": "6. Alarm System Monitoring",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [],
+          "conditional_logic": {},
+          "technology_selectors": [],
+          "input_ids": [
+            "AlarmMonitoringYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_48",
+      "section_title": "7. Security System Integration",
+      "question_items": [
+        {
+          "question_key": "SystemIntegration",
+          "question_text": "7. Security System Integration",
+          "response_enum": [
+            "YES",
+            "NO",
+            "N_A"
+          ],
+          "conditional_detail_blocks": [
+            {
+              "block_id": "VideoAnalyticsComp1",
+              "items": [
+                {
+                  "item_id": "VideoAnalyticsComp1",
+                  "label": "Motion Detection – automated alerts for movement in designated areas",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoAnalyticsComp2",
+                  "label": "Intrusion Detection – monitoring restricted areas for unauthorized entry",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoAnalyticsComp3",
+                  "label": "Object Left Behind Detection – alerting when items are placed and left unattended",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoAnalyticsComp4",
+                  "label": "People Counting – tracking the number of individuals in defined zones",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoAnalyticsComp5",
+                  "label": "Line Crossing Detection – alerts when people cross defined virtual boundaries",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoAnalyticsComp6",
+                  "label": "Loitering Detection – identifying individuals lingering in sensitive areas",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoAnalyticsComp7",
+                  "label": "Tailgating Detection – alerting when multiple people enter on single authorization",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoAnalyticsComp8",
+                  "label": "License Plate Recognition (LPR) – automated reading of vehicle license plates",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoAnalyticsComp9",
+                  "label": "Vehicle Analytics – vehicle counting and parking monitoring",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoAnalyticsComp10",
+                  "label": "Fire & Smoke Detection – early warning through video-based recognition",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoAnalyticsComp11",
+                  "label": "Heat Mapping – visualizing movement patterns for facility optimization",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoAnalyticsComp12",
+                  "label": "Facial Recognition – identifying individuals against watchlists (if legally compliant)",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoAnalyticsNoOFC1",
+                  "label": "Consider upgrading to a digital/IP-based system to enable advanced video analytics capabilities",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoAnalyticsNoOFC2",
+                  "label": "Evaluate the cost-benefit of implementing video analytics for your specific security requirements",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoAnalyticsNoOFC3",
+                  "label": "Consult with security system integrators about available analytics solutions for your facility",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoSurveillanceNoOFC1",
+                  "label": "Explore the feasibility of installing a comprehensive video surveillance system onsite. Site-specific factors must be considered when selecting components that comprise a particular system.",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoSurveillanceNoOFC2",
+                  "label": "Consult",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoCoverageComp1",
+                  "label": "Perimeter surveillance coverage",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoCoverageComp2",
+                  "label": "Entry and exit point monitoring",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoCoverageComp3",
+                  "label": "Parking area surveillance",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoCoverageComp4",
+                  "label": "Critical asset monitoring",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoCoverageNoOFC1",
+                  "label": "Evaluate video surveillance coverage of critical areas to determine if it meets the facility's security requirements. Explore options to increase coverage as necessary.",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoCoverageNoOFC2",
+                  "label": "Install cameras in areas such as the main entrance, at all vehicle access control points, guard booths, cashier booths, and elevator lobbies on every floor.",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoMonitoringComp1",
+                  "label": "Dedicated monitoring staff",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoMonitoringComp2",
+                  "label": "24/7 monitoring coverage",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoMonitoringComp3",
+                  "label": "Response procedures for suspicious activity",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoMonitoringNoOFC1",
+                  "label": "Evaluate the need for dedicated, trained security staff to monitor the video surveillance system. Explore options to maximize the effectiveness of monitoring and observation.",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoRecordingComp1",
+                  "label": "Adequate recording duration and quality",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoRecordingComp2",
+                  "label": "Secure storage and backup systems",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoRecordingComp3",
+                  "label": "Video retention policies and procedures",
+                  "value": ""
+                },
+                {
+                  "item_id": "VideoRecordingNoOFC1",
+                  "label": "Evaluate the need to record video surveillance footage, and select video recording and storage systems for the facility as appropriate.",
+                  "value": ""
+                },
+                {
+                  "item_id": "IntrusionDetectionComp1",
+                  "label": "Perimeter intrusion detection sensors",
+                  "value": ""
+                },
+                {
+                  "item_id": "IntrusionDetectionComp2",
+                  "label": "Door and window alarm systems",
+                  "value": ""
+                },
+                {
+                  "item_id": "IntrusionDetectionComp3",
+                  "label": "Motion detection systems",
+                  "value": ""
+                },
+                {
+                  "item_id": "IntrusionDetectionComp4",
+                  "label": "Central monitoring station",
+                  "value": ""
+                },
+                {
+                  "item_id": "IntrusionDetectionNoOFC1",
+                  "label": "Consider implementing intrusion detection systems to provide early warning of unauthorized access attempts.",
+                  "value": ""
+                },
+                {
+                  "item_id": "IntrusionDetectionNoOFC2",
+                  "label": "Install door and window alarm systems to detect unauthorized entry.",
+                  "value": ""
+                },
+                {
+                  "item_id": "AlarmMonitoringComp1",
+                  "label": "24/7 central station monitoring",
+                  "value": ""
+                },
+                {
+                  "item_id": "AlarmMonitoringComp2",
+                  "label": "On-site security personnel monitoring",
+                  "value": ""
+                },
+                {
+                  "item_id": "AlarmMonitoringComp3",
+                  "label": "Automated notification procedures",
+                  "value": ""
+                },
+                {
+                  "item_id": "AlarmMonitoringNoOFC1",
+                  "label": "Implement central station monitoring or on-site security personnel monitoring for alarm systems.",
+                  "value": ""
+                },
+                {
+                  "item_id": "AlarmMonitoringNoOFC2",
+                  "label": "Establish automated notification procedures for alarm activations.",
+                  "value": ""
+                },
+                {
+                  "item_id": "SystemIntegrationComp1",
+                  "label": "Integrated access control and video surveillance",
+                  "value": ""
+                },
+                {
+                  "item_id": "SystemIntegrationComp2",
+                  "label": "Coordinated alarm and response procedures",
+                  "value": ""
+                },
+                {
+                  "item_id": "SystemIntegrationComp3",
+                  "label": "Centralized security management system",
+                  "value": ""
+                },
+                {
+                  "item_id": "SystemIntegrationNoOFC1",
+                  "label": "Consider integrating security systems to provide coordinated response capabilities and improve overall security effectiveness.",
+                  "value": ""
+                },
+                {
+                  "item_id": "SystemIntegrationNoOFC2",
+                  "label": "Implement centralized security management to coordinate system responses and improve incident management.",
+                  "value": ""
+                }
+              ]
+            }
+          ],
+          "conditional_logic": {
+            "show_details_when": "YES",
+            "trigger_answer": "YES"
+          },
+          "technology_selectors": [],
+          "input_ids": [
+            "SystemIntegrationYes"
+          ],
+          "extraction_rule": "section_title_fallback"
+        }
+      ]
+    },
+    {
+      "section_key": "section_49",
+      "section_title": "Custom Vulnerabilities & Options for Consideration",
+      "question_items": []
+    },
+    {
+      "section_key": "section_50",
+      "section_title": "Custom Vulnerability 1",
+      "question_items": []
+    },
+    {
+      "section_key": "section_51",
+      "section_title": "Custom Vulnerability 2",
+      "question_items": []
+    },
+    {
+      "section_key": "section_52",
+      "section_title": "Custom Vulnerability 3",
+      "question_items": []
+    },
+    {
+      "section_key": "section_53",
+      "section_title": "Commendable Practices",
+      "question_items": []
+    },
+    {
+      "section_key": "section_54",
+      "section_title": "Commendable Action 1",
+      "question_items": []
+    },
+    {
+      "section_key": "section_55",
+      "section_title": "Commendable Action 2",
+      "question_items": []
+    },
+    {
+      "section_key": "section_56",
+      "section_title": "Commendable Action 3",
+      "question_items": []
+    },
+    {
+      "section_key": "section_57",
+      "section_title": "Points of Contact",
+      "question_items": []
+    },
+    {
+      "section_key": "section_58",
+      "section_title": "PSA Contact Information",
+      "question_items": []
+    },
+    {
+      "section_key": "section_59",
+      "section_title": "CSA Contact Information",
+      "question_items": []
+    },
+    {
+      "section_key": "section_60",
+      "section_title": "Assessment Facility Contact Information",
+      "question_items": []
+    },
+    {
+      "section_key": "section_61",
+      "section_title": "Emergency Contacts",
+      "question_items": []
+    },
+    {
+      "section_key": "section_62",
+      "section_title": "Report Review",
+      "question_items": []
+    },
+    {
+      "section_key": "section_63",
+      "section_title": "Executive Summary",
+      "question_items": []
+    },
+    {
+      "section_key": "section_64",
+      "section_title": "Security Assessment Overview",
+      "question_items": []
+    },
+    {
+      "section_key": "section_65",
+      "section_title": "Standards Lost (Get Started)",
+      "question_items": []
+    },
+    {
+      "section_key": "section_66",
+      "section_title": "Enhancement Options (Close the Loop)",
+      "question_items": []
+    },
+    {
+      "section_key": "section_67",
+      "section_title": "Assessment Summary",
+      "question_items": []
+    },
+    {
+      "section_key": "section_68",
+      "section_title": "Security Posture Overview",
+      "question_items": []
+    },
+    {
+      "section_key": "section_69",
+      "section_title": "Category Performance",
+      "question_items": []
+    },
+    {
+      "section_key": "section_70",
+      "section_title": "Commendable Practices & Achievements",
+      "question_items": []
+    },
+    {
+      "section_key": "section_71",
+      "section_title": "Executive Insights",
+      "question_items": []
+    },
+    {
+      "section_key": "section_72",
+      "section_title": "🎯 Key Takeaway",
+      "question_items": []
+    },
+    {
+      "section_key": "section_73",
+      "section_title": "💡 Top Priority",
+      "question_items": []
+    },
+    {
+      "section_key": "section_74",
+      "section_title": "📈 Quick Win",
+      "question_items": []
+    },
+    {
+      "section_key": "section_75",
+      "section_title": "Final Report",
+      "question_items": []
+    },
+    {
+      "section_key": "section_76",
+      "section_title": "Report Information",
+      "question_items": []
+    },
+    {
+      "section_key": "section_77",
+      "section_title": "Cybersecurity and Infrastructure Security Agency",
+      "question_items": []
+    },
+    {
+      "section_key": "section_78",
+      "section_title": "Contact Information",
+      "question_items": []
+    }
+  ],
+  "extraction_diagnostics": {
+    "prompt_extraction": [
+      {
+        "question_key": "Awareness",
+        "extracted_prompt": "1. Public Awareness Campaign",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "LawEnforcement",
+        "extracted_prompt": "2. Law Enforcement Agency Visits",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "LawComm",
+        "extracted_prompt": "3. Interoperable Communications with Law Enforcement",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "FireAgency",
+        "extracted_prompt": "4. Fire Response Agency Visits",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "FireComm",
+        "extracted_prompt": "5. Interoperable Communications with Fire Response",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "MedicalAgency",
+        "extracted_prompt": "6. Emergency Medical Response Agency Visits",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "MedicalComm",
+        "extracted_prompt": "7. Interoperable Communications with Emergency Medical Response",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "FBIInfo",
+        "extracted_prompt": "8. FBI Information Exchange",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "ISACInfo",
+        "extracted_prompt": "9. ISAC Information Exchange",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "HSINInfo",
+        "extracted_prompt": "10. HSIN Portal Information Exchange",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "InfraGard",
+        "extracted_prompt": "11. InfraGard Information Exchange",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "FederalInfo",
+        "extracted_prompt": "12. Federal Agency Information Exchange",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "StateLocalInfo",
+        "extracted_prompt": "13. State and Local Information Exchange",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "NeighborInfo",
+        "extracted_prompt": "14. Neighboring Facility Information Exchange",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "SecurityManager",
+        "extracted_prompt": "1. Security Manager",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "SecurityPlan",
+        "extracted_prompt": "2. Comprehensive Security Plan",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "PlanTraining",
+        "extracted_prompt": "3. Security Plan Training",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "PlanCoordination",
+        "extracted_prompt": "4. Security Plan Coordination",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "EmployeeTraining",
+        "extracted_prompt": "5. Employee Security Training",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "PlanTesting",
+        "extracted_prompt": "6. Security Plan Testing",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "RiskAssessment",
+        "extracted_prompt": "7. Security Risk Assessment",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "SecurityPersonnel",
+        "extracted_prompt": "1. Security Personnel",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "PerimeterFencing",
+        "extracted_prompt": "2. Perimeter Fencing and Barriers",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "AccessControl",
+        "extracted_prompt": "3. Access Control Systems",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "SecurityLighting",
+        "extracted_prompt": "4. Security Lighting",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "StandoffDistance",
+        "extracted_prompt": "5. Parking and Standoff Distance",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "BuildingEnvelope",
+        "extracted_prompt": "6. Building Envelope Security",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "KeyControl",
+        "extracted_prompt": "7. Key Control Program",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "VideoSystemType",
+        "extracted_prompt": "1. Video Surveillance Systems (VSS)",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "VideoAnalytics",
+        "extracted_prompt": "1. Video Surveillance Systems (VSS)",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "VideoCoverage",
+        "extracted_prompt": "2. Video Surveillance Coverage",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "VideoMonitoring",
+        "extracted_prompt": "3. Video Surveillance Monitoring",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "VideoRecording",
+        "extracted_prompt": "4. Video Recording and Storage",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "IntrusionDetection",
+        "extracted_prompt": "5. Intrusion Detection Systems (IDS)",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "AlarmMonitoring",
+        "extracted_prompt": "6. Alarm System Monitoring",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      },
+      {
+        "question_key": "SystemIntegration",
+        "extracted_prompt": "7. Security System Integration",
+        "rule_used": "section_title_fallback",
+        "is_valid": true
+      }
+    ],
+    "usable_prompt_count": 36,
+    "invalid_prompt_count": 0
+  }
+}

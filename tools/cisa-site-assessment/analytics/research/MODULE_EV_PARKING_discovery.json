@@ -1,0 +1,45 @@
+{
+  "module_code": "MODULE_EV_PARKING",
+  "topic": "Electric Vehicle Parking (garages and lots) physical safety and security",
+  "provider": "none",
+  "queries": [],
+  "seed_urls_count": 5,
+  "candidates": [
+    {
+      "url": "https://www.nfpa.org/news-blogs-and-articles/blogs/2022/11/28/evs-and-parking-structures",
+      "title": null,
+      "publisher": null,
+      "published_date": null,
+      "source": "seed"
+    },
+    {
+      "url": "https://www.nfpa.org/news-blogs-and-articles/blogs/2024/07/12/parking-garages-and-evs",
+      "title": null,
+      "publisher": null,
+      "published_date": null,
+      "source": "seed"
+    },
+    {
+      "url": "https://www.usfa.fema.gov/downloads/pdf/publications/electric-vehicle-fire-rescue-response-operations.pdf",
+      "title": null,
+      "publisher": null,
+      "published_date": null,
+      "source": "seed"
+    },
+    {
+      "url": "https://www.euralarm.org/static/f453879d-3d6a-46a7-b0db81db22f02225/Guidance-document-on-Fire-Safety-of-EV-Parking-Garages.pdf",
+      "title": null,
+      "publisher": null,
+      "published_date": null,
+      "source": "seed"
+    },
+    {
+      "url": "https://theicct.org/wp-content/uploads/2024/02/ID-103-%E2%80%93-BEV-fire-IZEVA-light-A4-65016-v7.pdf",
+      "title": null,
+      "publisher": null,
+      "published_date": null,
+      "source": "seed"
+    }
+  ],
+  "generated_at_utc": "2026-01-22T19:27:03.877552+00:00"
+}

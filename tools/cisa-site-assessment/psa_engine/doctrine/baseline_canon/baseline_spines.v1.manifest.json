@@ -1,0 +1,37 @@
+{
+  "version": "v1",
+  "source_dir": "D:\\PSA_System\\psa_rebuild\\psa_engine\\doctrine\\baseline_canon\\spines",
+  "total_spines": 25,
+  "by_discipline": {
+    "ACS": 1,
+    "COM": 2,
+    "CPTED": 2,
+    "EAP": 2,
+    "EMR": 2,
+    "FAC": 1,
+    "IDS": 1,
+    "INT": 1,
+    "ISC": 2,
+    "KEY": 1,
+    "PER": 2,
+    "SFO": 2,
+    "SMG": 3,
+    "VSS": 3
+  },
+  "files_included": [
+    "ACS_spines.v1.json",
+    "COM_spines.v1.json",
+    "CPTED_spines.v1.json",
+    "EAP_spines.v1.json",
+    "EMR_spines.v1.json",
+    "FAC_spines.v1.json",
+    "IDS_spines.v1.json",
+    "INT_spines.v1.json",
+    "ISC_spines.v1.json",
+    "KEY_spines.v1.json",
+    "PER_spines.v1.json",
+    "SFO_spines.v1.json",
+    "SMG_spines.v1.json",
+    "VSS_spines.v1.json"
+  ]
+}

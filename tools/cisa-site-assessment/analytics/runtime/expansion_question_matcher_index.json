@@ -1,0 +1,1252 @@
+{
+  "expansion_questions": [
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q001",
+      "question_text": "What are the aspects of a secure credentialing program?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "aspects",
+        "credentialing",
+        "program",
+        "secure",
+        "what"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q002",
+      "question_text": "What types of credentials exist?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "credentials",
+        "exist",
+        "types",
+        "what"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q003",
+      "question_text": "unlocked? Should any locks be reassessed?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "any",
+        "locks",
+        "reassessed",
+        "unlocked"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q004",
+      "question_text": "protocol differ during regular business hours?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "business",
+        "differ",
+        "during",
+        "hours",
+        "protocol",
+        "regular"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q005",
+      "question_text": "What are your practices around visitor access?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "access",
+        "around",
+        "practices",
+        "visitor",
+        "what",
+        "your"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q006",
+      "question_text": "What are your hours of operation for your patrons and staff?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "hours",
+        "operation",
+        "patrons",
+        "staff",
+        "what",
+        "your"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q007",
+      "question_text": "Consider how to report incidents: Do people call an internal operations center or 9-1-1?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "1",
+        "9",
+        "call",
+        "center",
+        "consider",
+        "how",
+        "incidents",
+        "internal",
+        "operations",
+        "people",
+        "report"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q008",
+      "question_text": "organization\u2019s policies last updated?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "last",
+        "organization",
+        "policies",
+        "s",
+        "updated"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q009",
+      "question_text": "threats to the organization and the surrounding community?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "community",
+        "organization",
+        "surrounding",
+        "threats"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q010",
+      "question_text": "(CCTV) technology in the event of an armed or hostage-taking incident?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "armed",
+        "cctv",
+        "event",
+        "hostage",
+        "incident",
+        "taking",
+        "technology"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q011",
+      "question_text": "insider threat information?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "information",
+        "insider",
+        "threat"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q012",
+      "question_text": "of concerning behavior and/or suspicious activity?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "activity",
+        "behavior",
+        "concerning",
+        "suspicious"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q013",
+      "question_text": "What potential security threats have your employees expressed concern about?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "about",
+        "concern",
+        "employees",
+        "expressed",
+        "potential",
+        "security",
+        "threats",
+        "what",
+        "your"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q014",
+      "question_text": "security vulnerabilities?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "security",
+        "vulnerabilities"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q015",
+      "question_text": "Do you have a public relations manager to control communication with media during an event?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "communication",
+        "control",
+        "during",
+        "event",
+        "manager",
+        "media",
+        "public",
+        "relations",
+        "you"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q016",
+      "question_text": "What man-made or external threats could hurt your organization, facility, staff, and/or customers?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "customers",
+        "external",
+        "facility",
+        "hurt",
+        "made",
+        "man",
+        "organization",
+        "staff",
+        "threats",
+        "what",
+        "your"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q017",
+      "question_text": "Have you conducted a vulnerability assessment in the past?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "assessment",
+        "conducted",
+        "past",
+        "vulnerability",
+        "you"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q018",
+      "question_text": "people / processes / security systems to deter, detect, delay, or defend against a potential threat?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "against",
+        "defend",
+        "delay",
+        "detect",
+        "deter",
+        "people",
+        "potential",
+        "processes",
+        "security",
+        "systems",
+        "threat"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q019",
+      "question_text": "What are the most likely threats to your organization?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "likely",
+        "most",
+        "organization",
+        "threats",
+        "what",
+        "your"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q020",
+      "question_text": "Which vulnerabilities should be prioritized ahead of others?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "ahead",
+        "others",
+        "prioritized",
+        "vulnerabilities",
+        "which"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q021",
+      "question_text": "What is the likelihood of any given threat to occur?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "any",
+        "given",
+        "likelihood",
+        "occur",
+        "threat",
+        "what"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q022",
+      "question_text": "greatest danger(s) to your organization?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "danger",
+        "greatest",
+        "organization",
+        "s",
+        "your"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q023",
+      "question_text": "What is your organization\u2019s willingness to accept the associated consequences of each risk?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "accept",
+        "associated",
+        "consequences",
+        "each",
+        "organization",
+        "risk",
+        "s",
+        "what",
+        "willingness",
+        "your"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q024",
+      "question_text": "What is your organization\u2019s attitude toward security practices?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "attitude",
+        "organization",
+        "practices",
+        "s",
+        "security",
+        "toward",
+        "what",
+        "your"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q025",
+      "question_text": "What personnel resources do you have to direct, manage, and oversee security operations?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "direct",
+        "manage",
+        "operations",
+        "oversee",
+        "personnel",
+        "resources",
+        "security",
+        "what",
+        "you"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q026",
+      "question_text": "What is your budget to support security initiatives, both immediate and long-term?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "both",
+        "budget",
+        "immediate",
+        "initiatives",
+        "long",
+        "security",
+        "support",
+        "term",
+        "what",
+        "your"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q027",
+      "question_text": "How will you maintain lines of communication during an emergency incident and recovery efforts?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "communication",
+        "during",
+        "efforts",
+        "emergency",
+        "how",
+        "incident",
+        "lines",
+        "maintain",
+        "recovery",
+        "you"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q028",
+      "question_text": "How will you sustain the most essential business functions?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "business",
+        "essential",
+        "functions",
+        "how",
+        "most",
+        "sustain",
+        "you"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q029",
+      "question_text": "How will you protect critical information, records, and IT systems?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "critical",
+        "how",
+        "information",
+        "it",
+        "protect",
+        "records",
+        "systems",
+        "you"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q030",
+      "question_text": "Kroman, David. \u201cHow often do cars crash into buildings in Seattle? Way more than you think.\u201d Seattle Times. February 12, 2023.",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "12",
+        "2023",
+        "buildings",
+        "cars",
+        "crash",
+        "david",
+        "february",
+        "how",
+        "into",
+        "kroman",
+        "more",
+        "often",
+        "seattle",
+        "than",
+        "think",
+        "times",
+        "way",
+        "you"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q031",
+      "question_text": "Does the tool collect my information?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "collect",
+        "information",
+        "my",
+        "tool"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q032",
+      "question_text": "separated from vehicular traffic?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "from",
+        "separated",
+        "traffic",
+        "vehicular"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q033",
+      "question_text": "\u25a0 What angles of attack could a vehicle use to harm my infrastructure?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "angles",
+        "attack",
+        "harm",
+        "infrastructure",
+        "my",
+        "use",
+        "vehicle",
+        "what"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q034",
+      "question_text": "\u25a0 Are there any natural vehicle barriers already in place?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "already",
+        "any",
+        "barriers",
+        "natural",
+        "place",
+        "there",
+        "vehicle"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q035",
+      "question_text": "\u25a0 Are there any delivery vehicle access points?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "access",
+        "any",
+        "delivery",
+        "points",
+        "there",
+        "vehicle"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q036",
+      "question_text": "\u25a0 Where are vehicle parking spots, lots, or garages?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "garages",
+        "lots",
+        "parking",
+        "spots",
+        "vehicle",
+        "where"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q037",
+      "question_text": "\u25a0 Are there security guards at entry control points?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "control",
+        "entry",
+        "guards",
+        "points",
+        "security",
+        "there"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q038",
+      "question_text": "\u25a0 Is there an entry control point for vehicles? If so, how far from infrastructure is it located?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "control",
+        "entry",
+        "far",
+        "from",
+        "how",
+        "if",
+        "infrastructure",
+        "it",
+        "located",
+        "point",
+        "so",
+        "there",
+        "vehicles"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q039",
+      "question_text": "\u25a0 What is the maximum speed a vehicle could attain going over the land?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "attain",
+        "going",
+        "land",
+        "maximum",
+        "over",
+        "speed",
+        "vehicle",
+        "what"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q040",
+      "question_text": "\u25a0 What types of vehicles could traverse the land?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "land",
+        "traverse",
+        "types",
+        "vehicles",
+        "what"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q041",
+      "question_text": "\u25a0 Is my land, the adjacent land, or the surrounding land traversable by vehicles?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "adjacent",
+        "land",
+        "my",
+        "surrounding",
+        "traversable",
+        "vehicles"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q042",
+      "question_text": "\u25a0 Are there any traffic-calming areas?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "any",
+        "areas",
+        "calming",
+        "there",
+        "traffic"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q043",
+      "question_text": "Figure 4. What is the Vehicle Ramming Self-Assessment Tool?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "4",
+        "assessment",
+        "figure",
+        "ramming",
+        "self",
+        "tool",
+        "vehicle",
+        "what"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q044",
+      "question_text": "How can I access the tool?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "access",
+        "how",
+        "i",
+        "tool"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q045",
+      "question_text": "Conduct a consequence analysis. What could happen? How bad could it be?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "analysis",
+        "bad",
+        "conduct",
+        "consequence",
+        "happen",
+        "how",
+        "it",
+        "what"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q046",
+      "question_text": "Does the venue own or control the asset? If not, is the owner known?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "asset",
+        "control",
+        "if",
+        "known",
+        "not",
+        "own",
+        "owner",
+        "venue"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q047",
+      "question_text": "Is this a place where people gather?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "gather",
+        "people",
+        "place",
+        "this",
+        "where"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q048",
+      "question_text": "Are procedures in place to manage pedestrian traffic?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "manage",
+        "pedestrian",
+        "place",
+        "procedures",
+        "traffic"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q049",
+      "question_text": "Are procedures in place to separate vehicle traffic from pedestrian traffic?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "from",
+        "pedestrian",
+        "place",
+        "procedures",
+        "separate",
+        "traffic",
+        "vehicle"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q050",
+      "question_text": "If an evacuation or shelter-in-place plan exists, does it cover this area?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "area",
+        "cover",
+        "evacuation",
+        "exists",
+        "if",
+        "it",
+        "place",
+        "plan",
+        "shelter",
+        "this"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q051",
+      "question_text": "controlled area) are in place for this area?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "area",
+        "controlled",
+        "place",
+        "this"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q052",
+      "question_text": "How is command structure established?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "command",
+        "established",
+        "how",
+        "structure"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q053",
+      "question_text": "What type of command structure has been established?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "command",
+        "established",
+        "structure",
+        "type",
+        "what"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q054",
+      "question_text": "Does the event or gathering have a written security or emergency operations plan(s)?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "emergency",
+        "event",
+        "gathering",
+        "operations",
+        "plan",
+        "s",
+        "security",
+        "written"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q055",
+      "question_text": "What systems are in place to support mass notification at the event?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "event",
+        "mass",
+        "notification",
+        "place",
+        "support",
+        "systems",
+        "what"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q056",
+      "question_text": "Will event planners conduct or receive a threat assessment prior to the event?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "assessment",
+        "conduct",
+        "event",
+        "planners",
+        "prior",
+        "receive",
+        "threat"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q057",
+      "question_text": "Has the policy been coordinated with first responders?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "coordinated",
+        "first",
+        "policy",
+        "responders"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q058",
+      "question_text": "Does a protocol for assisting a lost child/lost person exist?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "assisting",
+        "child",
+        "exist",
+        "lost",
+        "person",
+        "protocol"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q059",
+      "question_text": "If yes, does a policy for addressing violations exist?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "addressing",
+        "exist",
+        "if",
+        "policy",
+        "violations",
+        "yes"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q060",
+      "question_text": "Does a policy regarding unmanned aerial systems exist?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "aerial",
+        "exist",
+        "policy",
+        "regarding",
+        "systems",
+        "unmanned"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q061",
+      "question_text": "Is the shelter big enough for everyone and safe enough for the most likely hazards?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "big",
+        "enough",
+        "everyone",
+        "hazards",
+        "likely",
+        "most",
+        "safe",
+        "shelter"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q062",
+      "question_text": "Have event planners developed an evacuation and/or shelter-in-place plan?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "developed",
+        "evacuation",
+        "event",
+        "place",
+        "plan",
+        "planners",
+        "shelter"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q063",
+      "question_text": "Are the plans trained or exercised?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "exercised",
+        "plans",
+        "trained"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q064",
+      "question_text": "Who conducts security and safety inspections?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "conducts",
+        "inspections",
+        "safety",
+        "security",
+        "who"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q065",
+      "question_text": "Does a process exist to inspect the venue for suspicious items prior to the event?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "event",
+        "exist",
+        "inspect",
+        "items",
+        "prior",
+        "process",
+        "suspicious",
+        "venue"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q066",
+      "question_text": "Is this a recurring event?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "event",
+        "recurring",
+        "this"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q067",
+      "question_text": "Are employees, volunteers, vendors, spectators, and participants permitted to carry firearms?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "carry",
+        "employees",
+        "firearms",
+        "participants",
+        "permitted",
+        "spectators",
+        "vendors",
+        "volunteers"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q068",
+      "question_text": "Are off-duty officers permitted to retain firearms?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "duty",
+        "firearms",
+        "off",
+        "officers",
+        "permitted",
+        "retain"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q069",
+      "question_text": "How is the perimeter of the event defined?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "defined",
+        "event",
+        "how",
+        "perimeter"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q070",
+      "question_text": "Do security planners use multiple layers of protection to enhance perimeter security at the event?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "enhance",
+        "event",
+        "layers",
+        "multiple",
+        "perimeter",
+        "planners",
+        "protection",
+        "security",
+        "use"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q071",
+      "question_text": "Does the venue have a high-speed avenue of approach?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "approach",
+        "avenue",
+        "high",
+        "speed",
+        "venue"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q072",
+      "question_text": "Are layers of entry control established?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "control",
+        "entry",
+        "established",
+        "layers"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q073",
+      "question_text": "slated to occur inside a building, has the building been designed to host this type of event safely?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "building",
+        "designed",
+        "event",
+        "host",
+        "inside",
+        "occur",
+        "safely",
+        "slated",
+        "this",
+        "type"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q074",
+      "question_text": "located nearby? Will participants arrive early to tailgate or celebrate afterwards?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "afterwards",
+        "arrive",
+        "celebrate",
+        "early",
+        "located",
+        "nearby",
+        "participants",
+        "tailgate"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q075",
+      "question_text": "What is the expected crowd density?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "crowd",
+        "density",
+        "expected",
+        "what"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q076",
+      "question_text": "Who will be attending the event?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "attending",
+        "event",
+        "who"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q077",
+      "question_text": "Will alcohol consumption be permitted?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "alcohol",
+        "consumption",
+        "permitted"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q078",
+      "question_text": "Can patrons bring alcohol into the event?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "alcohol",
+        "bring",
+        "event",
+        "into",
+        "patrons"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q079",
+      "question_text": "Has the alcohol policy been coordinated with first responders?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "alcohol",
+        "coordinated",
+        "first",
+        "policy",
+        "responders"
+      ]
+    },
+    {
+      "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q080",
+      "question_text": "Can the event cease alcohol sales during the event?",
+      "scope_type": "SUBSECTOR",
+      "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+      "expansion_version": "EXPANSION_QUESTIONS_V1",
+      "keywords": [
+        "alcohol",
+        "cease",
+        "during",
+        "event",
+        "sales"
+      ]
+    }
+  ],
+  "total_count": 80,
+  "by_scope_type": {
+    "SUBSECTOR": 80
+  },
+  "overlay_snapshot": {
+    "active_sector_codes": [],
+    "active_subsector_codes": [
+      "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES"
+    ],
+    "active_technology_codes": []
+  }
+}

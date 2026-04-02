@@ -1,0 +1,12 @@
+{
+  "discipline_code": "COM",
+  "version": "v1",
+  "constraints": [
+    {
+      "constraint_id": "BASE-COM-CONSTRAINT-001",
+      "type": "EXCLUDE_LEGACY_SUBTYPES_FROM_SPINES",
+      "value": ["COM_*"],
+      "reason": "COM legacy items are implementation depth and cannot form baseline spines."
+    }
+  ]
+}

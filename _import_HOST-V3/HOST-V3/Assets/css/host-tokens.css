@@ -1,0 +1,15 @@
+/**
+ * HOST — shared design tokens (screen + print).
+ * Single source for DHS/CISA blues and print palette used by styles.css and host-report.css.
+ */
+:root {
+    --host-print-margin-x: 0.7in;
+    --host-dhs-blue: #005288;
+    --host-dhs-light-blue: #0078ae;
+    --host-dhs-dark-gray: #5a5b5d;
+    --host-dhs-gray-10: #fcfdfd;
+    --host-dhs-gray-15: #f5f5f6;
+    --host-dhs-gray-40: #cfd1d2;
+    --host-dhs-red: #c41230;
+    --host-body-text-print: #000000;
+}

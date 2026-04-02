@@ -1,0 +1,11 @@
+{
+  "discipline_code": "CPTED",
+  "version": "v1",
+  "source": "review_packets",
+  "source_files": [
+    "psa_engine/doctrine/baseline_canon/review_packets/CPTED_COMPONENT_CHECKLIST.md",
+    "psa_engine/doctrine/baseline_canon/review_packets/CPTED_DROP.md",
+    "psa_engine/doctrine/baseline_canon/review_packets/CPTED_packets.data.json"
+  ],
+  "notes": "CPTED component depth includes defensible space, landscaping, lighting/visibility tactics, territorial reinforcement measures, and other design implementation details. Baseline spines remain universal and avoid subjective quality claims, authored canonically."
+}

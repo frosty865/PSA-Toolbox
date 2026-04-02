@@ -1,0 +1,1299 @@
+{
+  "generated_at": "2026-01-24T15:43:17.740Z",
+  "tables": {
+    "public.ofc_candidate_queue": {
+      "corpus": {
+        "exists": true,
+        "row_count": 17,
+        "primary_key_columns": [
+          "candidate_id"
+        ],
+        "columns": [
+          {
+            "name": "candidate_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "source_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "snippet_text",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "locator",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "excerpt",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "sector",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "subsector",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "status",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "reviewed_at",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "name": "reviewed_by",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "best_universal_target",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "best_context_target",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "source_set",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "document_id",
+            "type": "uuid",
+            "nullable": true
+          },
+          {
+            "name": "locator_type",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "field_name",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "candidate_hash",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "section_heading",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "document_chunk_id",
+            "type": "uuid",
+            "nullable": true
+          },
+          {
+            "name": "title",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "discipline_subtype_id",
+            "type": "uuid",
+            "nullable": true
+          },
+          {
+            "name": "source_registry_id",
+            "type": "uuid",
+            "nullable": true
+          },
+          {
+            "name": "approved",
+            "type": "boolean",
+            "nullable": false
+          },
+          {
+            "name": "ofc_origin",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "discipline_id",
+            "type": "uuid",
+            "nullable": true
+          },
+          {
+            "name": "ofc_class",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "check_constraints": [
+          {
+            "name": "ofc_candidate_queue_approved_status_consistency",
+            "definition": "CHECK ((((approved = false) AND (status = ANY (ARRAY['PENDING'::text, 'REVIEWED'::text, 'REJECTED'::text]))) OR ((approved = true) AND (status = 'PROMOTED'::text))))"
+          },
+          {
+            "name": "ofc_candidate_queue_ofc_class_chk",
+            "definition": "CHECK ((ofc_class = ANY (ARRAY['FOUNDATIONAL'::text, 'OPERATIONAL'::text, 'PHYSICAL'::text])))"
+          },
+          {
+            "name": "ofc_candidate_queue_ofc_origin_chk",
+            "definition": "CHECK ((ofc_origin = ANY (ARRAY['CORPUS'::text, 'MODULE'::text])))"
+          },
+          {
+            "name": "ofc_candidate_queue_status_check",
+            "definition": "CHECK ((status = ANY (ARRAY['PENDING'::text, 'REVIEWED'::text, 'PROMOTED'::text, 'REJECTED'::text])))"
+          },
+          {
+            "name": "ofc_candidate_queue_status_chk",
+            "definition": "CHECK ((status = ANY (ARRAY['PENDING'::text, 'REVIEWED'::text, 'PROMOTED'::text, 'REJECTED'::text])))"
+          }
+        ],
+        "foreign_keys": [
+          {
+            "name": "ofc_candidate_queue_document_chunk_id_fkey",
+            "constraint_name": "ofc_candidate_queue_document_chunk_id_fkey",
+            "referenced_table": "public.document_chunks",
+            "referenced_columns": [
+              "chunk_id"
+            ],
+            "columns": [
+              "document_chunk_id"
+            ]
+          },
+          {
+            "name": "ofc_candidate_queue_document_id_fkey",
+            "constraint_name": "ofc_candidate_queue_document_id_fkey",
+            "referenced_table": "public.documents",
+            "referenced_columns": [
+              "document_id"
+            ],
+            "columns": [
+              "document_id"
+            ]
+          },
+          {
+            "name": "ofc_candidate_queue_source_id_fkey",
+            "constraint_name": "ofc_candidate_queue_source_id_fkey",
+            "referenced_table": "public.canonical_sources",
+            "referenced_columns": [
+              "source_id"
+            ],
+            "columns": [
+              "source_id"
+            ]
+          }
+        ],
+        "indexes": [
+          {
+            "name": "idx_ofc_candidate_queue_approved",
+            "definition": "CREATE INDEX idx_ofc_candidate_queue_approved ON public.ofc_candidate_queue USING btree (approved) WHERE (approved = true)",
+            "unique": false
+          },
+          {
+            "name": "idx_ofc_candidate_queue_class_approved",
+            "definition": "CREATE INDEX idx_ofc_candidate_queue_class_approved ON public.ofc_candidate_queue USING btree (ofc_class, approved) WHERE (approved = true)",
+            "unique": false
+          },
+          {
+            "name": "idx_ofc_candidate_queue_discipline_id",
+            "definition": "CREATE INDEX idx_ofc_candidate_queue_discipline_id ON public.ofc_candidate_queue USING btree (discipline_id) WHERE (discipline_id IS NOT NULL)",
+            "unique": false
+          },
+          {
+            "name": "idx_ofc_candidate_queue_discipline_subtype_id",
+            "definition": "CREATE INDEX idx_ofc_candidate_queue_discipline_subtype_id ON public.ofc_candidate_queue USING btree (discipline_subtype_id) WHERE (discipline_subtype_id IS NOT NULL)",
+            "unique": false
+          },
+          {
+            "name": "idx_ofc_candidate_queue_document_id",
+            "definition": "CREATE INDEX idx_ofc_candidate_queue_document_id ON public.ofc_candidate_queue USING btree (document_id) WHERE (document_id IS NOT NULL)",
+            "unique": false
+          },
+          {
+            "name": "idx_ofc_candidate_queue_hash",
+            "definition": "CREATE INDEX idx_ofc_candidate_queue_hash ON public.ofc_candidate_queue USING btree (source_set, candidate_hash)",
+            "unique": false
+          },
+          {
+            "name": "idx_ofc_candidate_queue_locator_type",
+            "definition": "CREATE INDEX idx_ofc_candidate_queue_locator_type ON public.ofc_candidate_queue USING btree (source_set, locator_type)",
+            "unique": false
+          },
+          {
+            "name": "idx_ofc_candidate_queue_ofc_class",
+            "definition": "CREATE INDEX idx_ofc_candidate_queue_ofc_class ON public.ofc_candidate_queue USING btree (ofc_class)",
+            "unique": false
+          },
+          {
+            "name": "idx_ofc_candidate_queue_ofc_origin",
+            "definition": "CREATE INDEX idx_ofc_candidate_queue_ofc_origin ON public.ofc_candidate_queue USING btree (ofc_origin)",
+            "unique": false
+          },
+          {
+            "name": "idx_ofc_candidate_queue_ofc_origin_status",
+            "definition": "CREATE INDEX idx_ofc_candidate_queue_ofc_origin_status ON public.ofc_candidate_queue USING btree (ofc_origin, status)",
+            "unique": false
+          },
+          {
+            "name": "idx_ofc_candidate_queue_sector_subsector",
+            "definition": "CREATE INDEX idx_ofc_candidate_queue_sector_subsector ON public.ofc_candidate_queue USING btree (sector, subsector) WHERE (sector IS NOT NULL)",
+            "unique": false
+          },
+          {
+            "name": "idx_ofc_candidate_queue_source",
+            "definition": "CREATE INDEX idx_ofc_candidate_queue_source ON public.ofc_candidate_queue USING btree (source_id)",
+            "unique": false
+          },
+          {
+            "name": "idx_ofc_candidate_queue_source_registry_id",
+            "definition": "CREATE INDEX idx_ofc_candidate_queue_source_registry_id ON public.ofc_candidate_queue USING btree (source_registry_id) WHERE (source_registry_id IS NOT NULL)",
+            "unique": false
+          },
+          {
+            "name": "idx_ofc_candidate_queue_source_set",
+            "definition": "CREATE INDEX idx_ofc_candidate_queue_source_set ON public.ofc_candidate_queue USING btree (source_set)",
+            "unique": false
+          },
+          {
+            "name": "idx_ofc_candidate_queue_status",
+            "definition": "CREATE INDEX idx_ofc_candidate_queue_status ON public.ofc_candidate_queue USING btree (status)",
+            "unique": false
+          },
+          {
+            "name": "idx_ofc_heading",
+            "definition": "CREATE INDEX idx_ofc_heading ON public.ofc_candidate_queue USING btree (document_id, section_heading)",
+            "unique": false
+          },
+          {
+            "name": "ofc_candidate_queue_pkey",
+            "definition": "CREATE UNIQUE INDEX ofc_candidate_queue_pkey ON public.ofc_candidate_queue USING btree (candidate_id)",
+            "unique": true
+          },
+          {
+            "name": "uq_ofc_candidate_queue_locator_hash",
+            "definition": "CREATE UNIQUE INDEX uq_ofc_candidate_queue_locator_hash ON public.ofc_candidate_queue USING btree (source_set, document_id, locator_type, locator, field_name, candidate_hash)",
+            "unique": true
+          }
+        ],
+        "created_at_range": {
+          "min": "2026-01-24T01:56:43.241Z",
+          "max": "2026-01-24T02:19:27.291Z"
+        },
+        "sample_ids": null
+      },
+      "runtime": {
+        "exists": true,
+        "row_count": 0,
+        "primary_key_columns": [
+          "candidate_id"
+        ],
+        "columns": [
+          {
+            "name": "candidate_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "source_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "snippet_text",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "page_locator",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "excerpt",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "sector",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "subsector",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "status",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "reviewed_at",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "name": "reviewed_by",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "best_universal_target",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "best_context_target",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "check_constraints": [
+          {
+            "name": "ofc_candidate_queue_status_check",
+            "definition": "CHECK ((status = ANY (ARRAY['PENDING'::text, 'REVIEWED'::text, 'PROMOTED'::text, 'REJECTED'::text])))"
+          }
+        ],
+        "foreign_keys": [],
+        "indexes": [
+          {
+            "name": "idx_ofc_candidate_queue_sector_subsector",
+            "definition": "CREATE INDEX idx_ofc_candidate_queue_sector_subsector ON public.ofc_candidate_queue USING btree (sector, subsector) WHERE (sector IS NOT NULL)",
+            "unique": false
+          },
+          {
+            "name": "idx_ofc_candidate_queue_source",
+            "definition": "CREATE INDEX idx_ofc_candidate_queue_source ON public.ofc_candidate_queue USING btree (source_id)",
+            "unique": false
+          },
+          {
+            "name": "idx_ofc_candidate_queue_status",
+            "definition": "CREATE INDEX idx_ofc_candidate_queue_status ON public.ofc_candidate_queue USING btree (status)",
+            "unique": false
+          },
+          {
+            "name": "ofc_candidate_queue_pkey",
+            "definition": "CREATE UNIQUE INDEX ofc_candidate_queue_pkey ON public.ofc_candidate_queue USING btree (candidate_id)",
+            "unique": true
+          }
+        ],
+        "created_at_range": {
+          "min": null,
+          "max": null
+        },
+        "sample_ids": null
+      }
+    },
+    "public.disciplines": {
+      "corpus": {
+        "exists": true,
+        "row_count": 14,
+        "primary_key_columns": [
+          "id"
+        ],
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "name",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "description",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "category",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "is_active",
+            "type": "boolean",
+            "nullable": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "code",
+            "type": "text",
+            "nullable": false
+          }
+        ],
+        "check_constraints": [],
+        "foreign_keys": [],
+        "indexes": [
+          {
+            "name": "disciplines_code_ux",
+            "definition": "CREATE UNIQUE INDEX disciplines_code_ux ON public.disciplines USING btree (code)",
+            "unique": true
+          },
+          {
+            "name": "disciplines_pkey",
+            "definition": "CREATE UNIQUE INDEX disciplines_pkey ON public.disciplines USING btree (id)",
+            "unique": true
+          }
+        ],
+        "created_at_range": {
+          "min": "2026-01-24T02:57:28.375Z",
+          "max": "2026-01-24T02:57:28.375Z"
+        },
+        "sample_ids": [
+          "18d45ffa-6a44-4817-becb-828231b9e1e7",
+          "41d7fc06-a4e8-436b-bf70-4bdc6f68c0a7",
+          "49c0275c-f511-4ab1-970c-097d00969a6e"
+        ]
+      },
+      "runtime": {
+        "exists": true,
+        "row_count": 14,
+        "primary_key_columns": [
+          "id"
+        ],
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "name",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "description",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "category",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "is_active",
+            "type": "boolean",
+            "nullable": true
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "name": "code",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "check_constraints": [],
+        "foreign_keys": [],
+        "indexes": [
+          {
+            "name": "disciplines_name_key",
+            "definition": "CREATE UNIQUE INDEX disciplines_name_key ON public.disciplines USING btree (name)",
+            "unique": true
+          },
+          {
+            "name": "disciplines_pkey",
+            "definition": "CREATE UNIQUE INDEX disciplines_pkey ON public.disciplines USING btree (id)",
+            "unique": true
+          },
+          {
+            "name": "idx_disciplines_code",
+            "definition": "CREATE INDEX idx_disciplines_code ON public.disciplines USING btree (code)",
+            "unique": false
+          },
+          {
+            "name": "idx_disciplines_name",
+            "definition": "CREATE INDEX idx_disciplines_name ON public.disciplines USING btree (name)",
+            "unique": false
+          }
+        ],
+        "created_at_range": {
+          "min": "2025-10-22T13:38:57.638Z",
+          "max": "2025-11-17T12:42:46.259Z"
+        },
+        "sample_ids": [
+          "18d45ffa-6a44-4817-becb-828231b9e1e7",
+          "41d7fc06-a4e8-436b-bf70-4bdc6f68c0a7",
+          "49c0275c-f511-4ab1-970c-097d00969a6e"
+        ]
+      }
+    },
+    "public.discipline_subtypes": {
+      "corpus": {
+        "exists": true,
+        "row_count": 105,
+        "primary_key_columns": [
+          "id"
+        ],
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "discipline_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "name",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "description",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "code",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "is_active",
+            "type": "boolean",
+            "nullable": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          }
+        ],
+        "check_constraints": [],
+        "foreign_keys": [],
+        "indexes": [
+          {
+            "name": "discipline_subtypes_active_ix",
+            "definition": "CREATE INDEX discipline_subtypes_active_ix ON public.discipline_subtypes USING btree (is_active)",
+            "unique": false
+          },
+          {
+            "name": "discipline_subtypes_discipline_id_idx",
+            "definition": "CREATE INDEX discipline_subtypes_discipline_id_idx ON public.discipline_subtypes USING btree (discipline_id)",
+            "unique": false
+          },
+          {
+            "name": "discipline_subtypes_discipline_id_ix",
+            "definition": "CREATE INDEX discipline_subtypes_discipline_id_ix ON public.discipline_subtypes USING btree (discipline_id)",
+            "unique": false
+          },
+          {
+            "name": "discipline_subtypes_pkey",
+            "definition": "CREATE UNIQUE INDEX discipline_subtypes_pkey ON public.discipline_subtypes USING btree (id)",
+            "unique": true
+          }
+        ],
+        "created_at_range": {
+          "min": "2026-01-24T01:50:52.762Z",
+          "max": "2026-01-24T01:51:05.201Z"
+        },
+        "sample_ids": [
+          "03012b3f-77db-4f5c-b98f-7e1ab218278a",
+          "03e40c3c-6b9d-4c23-8926-8fa0864ac8ab",
+          "05b22c7d-67f1-423e-bab1-8b6485345a8e"
+        ]
+      },
+      "runtime": {
+        "exists": true,
+        "row_count": 105,
+        "primary_key_columns": [
+          "id"
+        ],
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "discipline_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "name",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "description",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "code",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "is_active",
+            "type": "boolean",
+            "nullable": true
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "name": "overview",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "indicators_of_risk",
+            "type": "ARRAY",
+            "nullable": true
+          },
+          {
+            "name": "common_failures",
+            "type": "ARRAY",
+            "nullable": true
+          },
+          {
+            "name": "assessment_questions",
+            "type": "ARRAY",
+            "nullable": true
+          },
+          {
+            "name": "mitigation_guidance",
+            "type": "ARRAY",
+            "nullable": true
+          },
+          {
+            "name": "standards_references",
+            "type": "ARRAY",
+            "nullable": true
+          },
+          {
+            "name": "psa_notes",
+            "type": "text",
+            "nullable": true
+          }
+        ],
+        "check_constraints": [],
+        "foreign_keys": [
+          {
+            "name": "fk_discipline_subtypes_discipline",
+            "constraint_name": "fk_discipline_subtypes_discipline",
+            "referenced_table": "public.disciplines",
+            "referenced_columns": [
+              "id"
+            ],
+            "columns": [
+              "discipline_id"
+            ]
+          }
+        ],
+        "indexes": [
+          {
+            "name": "discipline_subtypes_pkey",
+            "definition": "CREATE UNIQUE INDEX discipline_subtypes_pkey ON public.discipline_subtypes USING btree (id)",
+            "unique": true
+          },
+          {
+            "name": "idx_discipline_subtypes_active",
+            "definition": "CREATE INDEX idx_discipline_subtypes_active ON public.discipline_subtypes USING btree (is_active) WHERE (is_active = true)",
+            "unique": false
+          },
+          {
+            "name": "idx_discipline_subtypes_code",
+            "definition": "CREATE INDEX idx_discipline_subtypes_code ON public.discipline_subtypes USING btree (code) WHERE (code IS NOT NULL)",
+            "unique": false
+          },
+          {
+            "name": "idx_discipline_subtypes_discipline_id",
+            "definition": "CREATE INDEX idx_discipline_subtypes_discipline_id ON public.discipline_subtypes USING btree (discipline_id)",
+            "unique": false
+          }
+        ],
+        "created_at_range": {
+          "min": "2026-01-16T03:42:57.009Z",
+          "max": "2026-01-16T20:28:04.107Z"
+        },
+        "sample_ids": [
+          "03012b3f-77db-4f5c-b98f-7e1ab218278a",
+          "03e40c3c-6b9d-4c23-8926-8fa0864ac8ab",
+          "05b22c7d-67f1-423e-bab1-8b6485345a8e"
+        ]
+      }
+    },
+    "public.ofc_candidate_targets": {
+      "corpus": {
+        "exists": true,
+        "row_count": 0,
+        "primary_key_columns": [
+          "candidate_id",
+          "target_type",
+          "target_key",
+          "match_mode"
+        ],
+        "columns": [
+          {
+            "name": "candidate_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "target_type",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "target_key",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "match_mode",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "match_score",
+            "type": "numeric",
+            "nullable": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          }
+        ],
+        "check_constraints": [
+          {
+            "name": "ofc_candidate_targets_match_mode_check",
+            "definition": "CHECK ((match_mode = ANY (ARRAY['UNIVERSAL'::text, 'CONTEXT'::text])))"
+          },
+          {
+            "name": "ofc_candidate_targets_match_score_check",
+            "definition": "CHECK (((match_score >= 0.000) AND (match_score <= 1.000)))"
+          },
+          {
+            "name": "ofc_candidate_targets_target_type_check",
+            "definition": "CHECK ((target_type = ANY (ARRAY['BASE_PRIMARY'::text, 'EXPANSION_QUESTION'::text])))"
+          }
+        ],
+        "foreign_keys": [
+          {
+            "name": "ofc_candidate_targets_candidate_id_fkey",
+            "constraint_name": "ofc_candidate_targets_candidate_id_fkey",
+            "referenced_table": "public.ofc_candidate_queue",
+            "referenced_columns": [
+              "candidate_id"
+            ],
+            "columns": [
+              "candidate_id"
+            ]
+          }
+        ],
+        "indexes": [
+          {
+            "name": "idx_oct_candidate",
+            "definition": "CREATE INDEX idx_oct_candidate ON public.ofc_candidate_targets USING btree (candidate_id)",
+            "unique": false
+          },
+          {
+            "name": "idx_oct_mode_score",
+            "definition": "CREATE INDEX idx_oct_mode_score ON public.ofc_candidate_targets USING btree (match_mode, match_score DESC)",
+            "unique": false
+          },
+          {
+            "name": "idx_oct_target",
+            "definition": "CREATE INDEX idx_oct_target ON public.ofc_candidate_targets USING btree (target_type, target_key)",
+            "unique": false
+          },
+          {
+            "name": "ofc_candidate_targets_pkey",
+            "definition": "CREATE UNIQUE INDEX ofc_candidate_targets_pkey ON public.ofc_candidate_targets USING btree (candidate_id, target_type, target_key, match_mode)",
+            "unique": true
+          }
+        ],
+        "created_at_range": {
+          "min": null,
+          "max": null
+        },
+        "sample_ids": null
+      },
+      "runtime": {
+        "exists": true,
+        "row_count": 0,
+        "primary_key_columns": [
+          "candidate_id",
+          "target_type",
+          "target_key",
+          "match_mode"
+        ],
+        "columns": [
+          {
+            "name": "candidate_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "target_type",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "target_key",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "match_mode",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "match_score",
+            "type": "numeric",
+            "nullable": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          }
+        ],
+        "check_constraints": [
+          {
+            "name": "ofc_candidate_targets_match_mode_check",
+            "definition": "CHECK ((match_mode = ANY (ARRAY['UNIVERSAL'::text, 'CONTEXT'::text])))"
+          },
+          {
+            "name": "ofc_candidate_targets_match_score_check",
+            "definition": "CHECK (((match_score >= 0.000) AND (match_score <= 1.000)))"
+          },
+          {
+            "name": "ofc_candidate_targets_target_type_check",
+            "definition": "CHECK ((target_type = ANY (ARRAY['BASE_PRIMARY'::text, 'EXPANSION_QUESTION'::text])))"
+          }
+        ],
+        "foreign_keys": [
+          {
+            "name": "ofc_candidate_targets_candidate_id_fkey",
+            "constraint_name": "ofc_candidate_targets_candidate_id_fkey",
+            "referenced_table": "public.ofc_candidate_queue",
+            "referenced_columns": [
+              "candidate_id"
+            ],
+            "columns": [
+              "candidate_id"
+            ]
+          }
+        ],
+        "indexes": [
+          {
+            "name": "idx_oct_candidate",
+            "definition": "CREATE INDEX idx_oct_candidate ON public.ofc_candidate_targets USING btree (candidate_id)",
+            "unique": false
+          },
+          {
+            "name": "idx_oct_mode_score",
+            "definition": "CREATE INDEX idx_oct_mode_score ON public.ofc_candidate_targets USING btree (match_mode, match_score DESC)",
+            "unique": false
+          },
+          {
+            "name": "idx_oct_target",
+            "definition": "CREATE INDEX idx_oct_target ON public.ofc_candidate_targets USING btree (target_type, target_key)",
+            "unique": false
+          },
+          {
+            "name": "ofc_candidate_targets_pkey",
+            "definition": "CREATE UNIQUE INDEX ofc_candidate_targets_pkey ON public.ofc_candidate_targets USING btree (candidate_id, target_type, target_key, match_mode)",
+            "unique": true
+          }
+        ],
+        "created_at_range": {
+          "min": null,
+          "max": null
+        },
+        "sample_ids": null
+      }
+    },
+    "public.expansion_questions": {
+      "corpus": {
+        "exists": true,
+        "row_count": 0,
+        "primary_key_columns": [
+          "id"
+        ],
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "expansion_version",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "scope_type",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "scope_code",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "question_code",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "question_text",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "response_enum",
+            "type": "jsonb",
+            "nullable": false
+          },
+          {
+            "name": "is_active",
+            "type": "boolean",
+            "nullable": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          }
+        ],
+        "check_constraints": [
+          {
+            "name": "expansion_questions_scope_type_check",
+            "definition": "CHECK ((scope_type = ANY (ARRAY['SECTOR'::text, 'SUBSECTOR'::text, 'TECHNOLOGY'::text])))"
+          }
+        ],
+        "foreign_keys": [],
+        "indexes": [
+          {
+            "name": "expansion_questions_pkey",
+            "definition": "CREATE UNIQUE INDEX expansion_questions_pkey ON public.expansion_questions USING btree (id)",
+            "unique": true
+          },
+          {
+            "name": "idx_expansion_questions_active",
+            "definition": "CREATE INDEX idx_expansion_questions_active ON public.expansion_questions USING btree (is_active) WHERE (is_active = true)",
+            "unique": false
+          },
+          {
+            "name": "idx_expansion_questions_scope",
+            "definition": "CREATE INDEX idx_expansion_questions_scope ON public.expansion_questions USING btree (scope_type, scope_code, is_active)",
+            "unique": false
+          },
+          {
+            "name": "uq_expansion_questions_version_code",
+            "definition": "CREATE UNIQUE INDEX uq_expansion_questions_version_code ON public.expansion_questions USING btree (expansion_version, question_code)",
+            "unique": true
+          }
+        ],
+        "created_at_range": {
+          "min": null,
+          "max": null
+        },
+        "sample_ids": null
+      },
+      "runtime": {
+        "exists": true,
+        "row_count": 0,
+        "primary_key_columns": [
+          "question_id"
+        ],
+        "columns": [
+          {
+            "name": "question_id",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "profile_id",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "subtype_code",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "question_text",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "response_enum",
+            "type": "ARRAY",
+            "nullable": false
+          },
+          {
+            "name": "introduced_version",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "status",
+            "type": "text",
+            "nullable": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": false
+          }
+        ],
+        "check_constraints": [
+          {
+            "name": "expansion_questions_introduced_version_check",
+            "definition": "CHECK ((introduced_version > 0))"
+          },
+          {
+            "name": "expansion_questions_status_check",
+            "definition": "CHECK ((status = ANY (ARRAY['ACTIVE'::text, 'RETIRED'::text])))"
+          }
+        ],
+        "foreign_keys": [
+          {
+            "name": "fk_eq_profile",
+            "constraint_name": "fk_eq_profile",
+            "referenced_table": "public.sector_expansion_profiles",
+            "referenced_columns": [
+              "profile_id"
+            ],
+            "columns": [
+              "profile_id"
+            ]
+          }
+        ],
+        "indexes": [
+          {
+            "name": "expansion_questions_pkey",
+            "definition": "CREATE UNIQUE INDEX expansion_questions_pkey ON public.expansion_questions USING btree (question_id)",
+            "unique": true
+          },
+          {
+            "name": "idx_eq_profile_subtype",
+            "definition": "CREATE INDEX idx_eq_profile_subtype ON public.expansion_questions USING btree (profile_id, subtype_code)",
+            "unique": false
+          },
+          {
+            "name": "idx_eq_status",
+            "definition": "CREATE INDEX idx_eq_status ON public.expansion_questions USING btree (status)",
+            "unique": false
+          }
+        ],
+        "created_at_range": {
+          "min": null,
+          "max": null
+        },
+        "sample_ids": null
+      }
+    },
+    "public.ofc_library_citations": {
+      "corpus": {
+        "exists": false,
+        "row_count": null,
+        "primary_key_columns": [],
+        "columns": [],
+        "check_constraints": [],
+        "foreign_keys": [],
+        "indexes": [],
+        "created_at_range": null,
+        "sample_ids": null
+      },
+      "runtime": {
+        "exists": true,
+        "row_count": 0,
+        "primary_key_columns": [
+          "ofc_id",
+          "source_id"
+        ],
+        "columns": [
+          {
+            "name": "ofc_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "source_id",
+            "type": "uuid",
+            "nullable": false
+          },
+          {
+            "name": "excerpt",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "locator",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "source_key",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "locator_type",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "retrieved_at",
+            "type": "timestamp with time zone",
+            "nullable": true
+          }
+        ],
+        "check_constraints": [
+          {
+            "name": "chk_citation_has_source",
+            "definition": "CHECK (((source_key IS NOT NULL) OR (source_id IS NOT NULL)))"
+          },
+          {
+            "name": "ofc_library_citations_locator_type_check",
+            "definition": "CHECK ((locator_type = ANY (ARRAY['page'::text, 'section'::text, 'paragraph'::text, 'url_fragment'::text])))"
+          }
+        ],
+        "foreign_keys": [
+          {
+            "name": "ofc_library_citations_ofc_id_fkey",
+            "constraint_name": "ofc_library_citations_ofc_id_fkey",
+            "referenced_table": "public.ofc_library",
+            "referenced_columns": [
+              "ofc_id"
+            ],
+            "columns": [
+              "ofc_id"
+            ]
+          }
+        ],
+        "indexes": [
+          {
+            "name": "idx_ofc_library_citations_ofc",
+            "definition": "CREATE INDEX idx_ofc_library_citations_ofc ON public.ofc_library_citations USING btree (ofc_id)",
+            "unique": false
+          },
+          {
+            "name": "idx_ofc_library_citations_source",
+            "definition": "CREATE INDEX idx_ofc_library_citations_source ON public.ofc_library_citations USING btree (source_id)",
+            "unique": false
+          },
+          {
+            "name": "idx_ofc_library_citations_source_key",
+            "definition": "CREATE INDEX idx_ofc_library_citations_source_key ON public.ofc_library_citations USING btree (source_key)",
+            "unique": false
+          },
+          {
+            "name": "ofc_library_citations_pkey",
+            "definition": "CREATE UNIQUE INDEX ofc_library_citations_pkey ON public.ofc_library_citations USING btree (ofc_id, source_id)",
+            "unique": true
+          }
+        ],
+        "created_at_range": null,
+        "sample_ids": null
+      }
+    },
+    "public.assessment_responses": {
+      "corpus": {
+        "exists": false,
+        "row_count": null,
+        "primary_key_columns": [],
+        "columns": [],
+        "check_constraints": [],
+        "foreign_keys": [],
+        "indexes": [],
+        "created_at_range": null,
+        "sample_ids": null
+      },
+      "runtime": {
+        "exists": false,
+        "row_count": null,
+        "primary_key_columns": [],
+        "columns": [],
+        "check_constraints": [],
+        "foreign_keys": [],
+        "indexes": [],
+        "created_at_range": null,
+        "sample_ids": null
+      }
+    }
+  }
+}

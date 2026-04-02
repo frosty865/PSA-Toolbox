@@ -1,0 +1,20 @@
+{
+  "link_method": "LEXICAL_HYBRID_V1",
+  "eligible_pairs_count": 0,
+  "health_check": {
+    "questions_total": 130,
+    "questions_with_discipline_subtype_id": 111,
+    "ofcs_total": 19,
+    "ofcs_with_discipline_subtype_id": 3,
+    "cited_ofcs_total": 14,
+    "external_verified_ofcs_total": 0,
+    "eligible_ofcs_total": 14,
+    "question_subtypes_distinct": 105,
+    "eligible_ofc_subtypes_distinct": 3,
+    "matching_subtypes_count": 3,
+    "join_health_ratio": 0.02857142857142857
+  },
+  "diagnosis": "No eligible pairs found - check subtype compatibility and citation coverage",
+  "score_statistics": null,
+  "suggested_thresholds": null
+}

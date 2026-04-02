@@ -1,0 +1,129 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://psa-tool.com/schemas/scoring-results.json",
+  "title": "Scoring Results",
+  "description": "Schema for GET /api/assessment/scoring?documentId=[id] response",
+  "type": "object",
+  "required": ["baseline"],
+  "definitions": {
+    "disciplineResult": {
+      "type": "object",
+      "required": [
+        "discipline_id",
+        "discipline_name",
+        "numerator",
+        "denominator",
+        "percent",
+        "status"
+      ],
+      "properties": {
+        "discipline_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "discipline_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "numerator": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of YES responses (counted in score)"
+        },
+        "denominator": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of YES + NO responses (total scorable)"
+        },
+        "percent": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Percentage score (numerator / denominator * 100). null when denominator = 0."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["PASS", "FAIL", "N/A"],
+          "description": "Display status (computed upstream)"
+        }
+      },
+      "additionalProperties": false
+    },
+    "summaryResult": {
+      "type": "object",
+      "required": ["numerator", "denominator", "percent"],
+      "properties": {
+        "numerator": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "denominator": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "percent": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "additionalProperties": false
+    },
+    "baselineResults": {
+      "type": "object",
+      "required": ["disciplines", "summary"],
+      "properties": {
+        "disciplines": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/disciplineResult"
+          }
+        },
+        "summary": {
+          "$ref": "#/definitions/summaryResult"
+        }
+      },
+      "additionalProperties": false
+    },
+    "sectorResults": {
+      "type": "object",
+      "required": ["sector_id", "sector_name", "disciplines", "summary"],
+      "properties": {
+        "sector_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "sector_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "disciplines": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/disciplineResult"
+          }
+        },
+        "summary": {
+          "$ref": "#/definitions/summaryResult"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "baseline": {
+      "$ref": "#/definitions/baselineResults"
+    },
+    "sector": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/sectorResults"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

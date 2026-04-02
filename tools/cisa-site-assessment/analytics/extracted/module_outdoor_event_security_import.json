@@ -1,0 +1,269 @@
+{
+  "module_code": "MODULE_OUTDOOR_EVENT_SECURITY",
+  "title": "Outdoor Event Security",
+  "description": "Additive module for physical security considerations specific to temporary outdoor events, including perimeter control, crowd management, temporary structure security, and emergency coordination.",
+  "import_source": "module_outdoor_event_security_research.md",
+  "mode": "REPLACE",
+  "module_questions": [
+    {
+      "id": "MODULEQ_OUTDOOR_EVENT_001",
+      "text": "Are event perimeter access points monitored and controlled to prevent unauthorized entry?",
+      "order": 1,
+      "discipline_id": "69a28796-c8fe-42c1-88af-950a90d0a5e4",
+      "discipline_subtype_id": "0ee9db0c-5daa-4f7e-8070-48bd16ca9318",
+      "asset_or_location": "event perimeter access points",
+      "event_trigger": "TAMPERING"
+    },
+    {
+      "id": "MODULEQ_OUTDOOR_EVENT_002",
+      "text": "Is temporary fencing secured against tampering or unauthorized removal at event perimeter boundaries?",
+      "order": 2,
+      "discipline_id": "69a28796-c8fe-42c1-88af-950a90d0a5e4",
+      "discipline_subtype_id": "e69bf4fd-c476-489d-a73f-a5b8c9d90e33",
+      "asset_or_location": "temporary fencing",
+      "event_trigger": "TAMPERING"
+    },
+    {
+      "id": "MODULEQ_OUTDOOR_EVENT_003",
+      "text": "Are temporary structures such as stages and equipment areas secured against unauthorized access?",
+      "order": 3,
+      "discipline_id": "18d45ffa-6a44-4817-becb-828231b9e1e7",
+      "discipline_subtype_id": "3227ab36-7f31-4be4-a0c2-0f838518fa96",
+      "asset_or_location": "temporary structures",
+      "event_trigger": "TAMPERING"
+    },
+    {
+      "id": "MODULEQ_OUTDOOR_EVENT_004",
+      "text": "Are vendor areas secured with access controls to prevent unauthorized entry to equipment and supplies?",
+      "order": 4,
+      "discipline_id": "18d45ffa-6a44-4817-becb-828231b9e1e7",
+      "discipline_subtype_id": "3227ab36-7f31-4be4-a0c2-0f838518fa96",
+      "asset_or_location": "vendor areas",
+      "event_trigger": "TAMPERING"
+    },
+    {
+      "id": "MODULEQ_OUTDOOR_EVENT_005",
+      "text": "Is adequate lighting provided in parking areas and perimeter zones to support visibility and deter criminal activity?",
+      "order": 5,
+      "discipline_id": "b6e2ad14-2a0f-4009-9269-9a35d3599f55",
+      "discipline_subtype_id": "950cb111-c938-4d36-b82f-1f39d8ea2084",
+      "asset_or_location": "parking areas",
+      "event_trigger": "TAMPERING"
+    },
+    {
+      "id": "MODULEQ_OUTDOOR_EVENT_006",
+      "text": "Are crowd areas monitored to detect security incidents and enable timely response?",
+      "order": 6,
+      "discipline_id": "83d34bf8-b228-49ca-abb9-66168d4a8681",
+      "discipline_subtype_id": "8317b7c8-633e-46ca-8914-319e0cbab9cd",
+      "asset_or_location": "crowd areas",
+      "event_trigger": "IMPACT"
+    },
+    {
+      "id": "MODULEQ_OUTDOOR_EVENT_007",
+      "text": "Are emergency egress routes clearly marked and maintained unobstructed during events?",
+      "order": 7,
+      "discipline_id": "a295aed8-a841-41b0-b893-a8a018867b83",
+      "discipline_subtype_id": "03e40c3c-6b9d-4c23-8926-8fa0864ac8ab",
+      "asset_or_location": "emergency egress routes",
+      "event_trigger": "FIRE"
+    },
+    {
+      "id": "MODULEQ_OUTDOOR_EVENT_008",
+      "text": "Are roles and responsibilities defined for coordinating physical security response between security personnel and event staff?",
+      "order": 8,
+      "discipline_id": "ecfc1d4f-873b-4645-93e5-a9812ed779c3",
+      "discipline_subtype_id": "7eb102ab-7c09-4647-9b30-ef7a2f993b73",
+      "asset_or_location": "event security operations",
+      "event_trigger": "IMPACT"
+    },
+    {
+      "id": "MODULEQ_OUTDOOR_EVENT_009",
+      "text": "Is power distribution equipment for temporary structures secured against physical tampering?",
+      "order": 9,
+      "discipline_id": "18d45ffa-6a44-4817-becb-828231b9e1e7",
+      "discipline_subtype_id": "3227ab36-7f31-4be4-a0c2-0f838518fa96",
+      "asset_or_location": "power distribution equipment",
+      "event_trigger": "TAMPERING"
+    }
+  ],
+  "module_ofcs": [
+    {
+      "ofc_id": "MOD_OFC_OUTDOOR_EVENT_001",
+      "ofc_text": "Establish controlled access points at event perimeter with monitoring and verification procedures. Addresses: Uncontrolled access points can allow unauthorized entry and potential threats.",
+      "order_index": 1,
+      "source_system": "RESEARCH",
+      "source_locator": {
+        "source": "FEMA - Special Events Contingency Planning",
+        "vulnerability": "Perimeter Control"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "FEMA - Special Events Contingency Planning (2019)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_OUTDOOR_EVENT_002",
+      "ofc_text": "Implement perimeter monitoring and detection capabilities to identify breaches promptly. Addresses: Perimeter breaches can compromise event security if not detected and responded to promptly.",
+      "order_index": 2,
+      "source_system": "RESEARCH",
+      "source_locator": {
+        "source": "DHS - Special Events Security Planning Guide",
+        "vulnerability": "Perimeter Control"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "DHS - Special Events Security Planning Guide (2020)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_OUTDOOR_EVENT_003",
+      "ofc_text": "Secure temporary fencing against tampering or unauthorized removal through proper installation and monitoring. Addresses: Temporary fencing may be vulnerable to tampering or unauthorized removal.",
+      "order_index": 3,
+      "source_system": "RESEARCH",
+      "source_locator": {
+        "source": "DHS - Special Events Security Planning Guide",
+        "vulnerability": "Perimeter Control"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "DHS - Special Events Security Planning Guide (2020)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_OUTDOOR_EVENT_004",
+      "ofc_text": "Implement physical security measures for temporary structures to prevent unauthorized access to critical systems. Addresses: Temporary structures require physical security measures to prevent unauthorized access to critical systems.",
+      "order_index": 4,
+      "source_system": "RESEARCH",
+      "source_locator": {
+        "source": "NFPA 101 - Life Safety Code",
+        "vulnerability": "Temporary Structure Security"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "NFPA 101 - Life Safety Code (2021) - Temporary Structures"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_OUTDOOR_EVENT_005",
+      "ofc_text": "Provide adequate lighting in parking areas and perimeter zones to improve visibility and deter criminal activity. Addresses: Insufficient lighting in parking and perimeter areas increases vulnerability to criminal activity.",
+      "order_index": 5,
+      "source_system": "RESEARCH",
+      "source_locator": {
+        "source": "FEMA - Special Events Contingency Planning",
+        "vulnerability": "Parking Area Security"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "FEMA - Special Events Contingency Planning (2019)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_OUTDOOR_EVENT_006",
+      "ofc_text": "Establish monitoring capabilities for crowd areas to detect security incidents and enable timely response. Addresses: Insufficient visibility and monitoring in crowd areas may allow security incidents to go undetected.",
+      "order_index": 6,
+      "source_system": "RESEARCH",
+      "source_locator": {
+        "source": "Event Safety Alliance - Event Safety Guide",
+        "vulnerability": "Crowd Area Monitoring"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "Event Safety Alliance - Event Safety Guide (2022)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_OUTDOOR_EVENT_007",
+      "ofc_text": "Maintain clear and unobstructed emergency egress routes with adequate signage. Addresses: Unclear or obstructed emergency egress routes can delay evacuation during incidents.",
+      "order_index": 7,
+      "source_system": "RESEARCH",
+      "source_locator": {
+        "source": "FEMA - Special Events Contingency Planning",
+        "vulnerability": "Emergency Egress"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "FEMA - Special Events Contingency Planning (2019)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_OUTDOOR_EVENT_008",
+      "ofc_text": "Establish coordination procedures between security personnel and event staff to prevent security gaps. Addresses: Insufficient coordination between security personnel and event staff can create security gaps.",
+      "order_index": 8,
+      "source_system": "RESEARCH",
+      "source_locator": {
+        "source": "Event Safety Alliance - Event Safety Guide",
+        "vulnerability": "Coordination and Communication"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "Event Safety Alliance - Event Safety Guide (2022)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_OUTDOOR_EVENT_009",
+      "ofc_text": "Implement access controls for vendor areas to protect equipment and supplies. Addresses: Vendor areas without access controls may be vulnerable to theft or tampering.",
+      "order_index": 9,
+      "source_system": "RESEARCH",
+      "source_locator": {
+        "source": "Event Safety Alliance - Event Safety Guide",
+        "vulnerability": "Vendor Area Access Control"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "Event Safety Alliance - Event Safety Guide (2022)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_OUTDOOR_EVENT_010",
+      "ofc_text": "Secure power distribution equipment with physical protection measures to prevent tampering. Addresses: Power distribution equipment requires physical protection to prevent tampering.",
+      "order_index": 10,
+      "source_system": "RESEARCH",
+      "source_locator": {
+        "source": "NFPA 101 - Life Safety Code",
+        "vulnerability": "Temporary Structure Security"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "NFPA 101 - Life Safety Code (2021) - Temporary Structures"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_OUTDOOR_EVENT_011",
+      "ofc_text": "Implement vehicle access control measures to prevent vehicle-borne threats at event perimeters. Addresses: Vehicle access control is critical to prevent vehicle-borne threats.",
+      "order_index": 11,
+      "source_system": "RESEARCH",
+      "source_locator": {
+        "source": "DHS - Special Events Security Planning Guide",
+        "vulnerability": "Parking Area Security"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "DHS - Special Events Security Planning Guide (2020)"
+        }
+      ]
+    }
+  ],
+  "risk_drivers": []
+}

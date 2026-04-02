@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://psa-tool.com/schemas/save-response-request.json",
+  "title": "Save Response Request",
+  "description": "Schema for PATCH /api/assessments/[assessmentId]/responses request body",
+  "type": "object",
+  "required": ["element_id", "response"],
+  "properties": {
+    "element_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "response": {
+      "type": "string",
+      "enum": ["YES", "NO", "N/A"]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,646 @@
+'use client'
+
+import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
+import { fetchJson } from '@/app/lib/http/apiJson'
+import {
+  parseSectorsPayload,
+  parseSubsectorsPayload,
+  type SectorDto as Sector,
+  type SubsectorDto as Subsector,
+} from '@/app/lib/dto/reference'
+
+// Comprehensive subsector descriptions for educational purposes
+const SUBSECTOR_DESCRIPTIONS = {
+  // Chemical Sector
+  'Chemical Distribution': 'Facilities and systems involved in the storage, transportation, and distribution of chemical products, including warehouses, distribution centers, and transportation networks that move chemicals from manufacturers to end users.',
+  'Chemical Manufacturing': 'Industrial facilities that produce chemical products through synthesis, processing, and formulation, including petrochemical plants, specialty chemical manufacturers, and pharmaceutical ingredient production.',
+  'Chemical Storage': 'Facilities designed for the safe storage of chemical materials, including bulk storage tanks, warehouses, and specialized containment systems that prevent environmental contamination and ensure worker safety.',
+  'Chemical Supply Chain': 'The interconnected network of suppliers, manufacturers, distributors, and logistics providers that ensure the secure and reliable flow of chemical products from raw materials to end users.',
+  'Chemical Transportation': 'Systems and infrastructure for moving chemical products safely, including specialized tanker trucks, rail cars, pipelines, and maritime vessels with appropriate safety and security measures.',
+  
+  // Commercial Facilities
+  'Gaming and Entertainment': 'Casinos, gaming facilities, amusement parks, and entertainment venues that host large gatherings and require security measures to protect patrons, employees, and assets.',
+  'Lodging': 'Hotels, motels, resorts, and other accommodation facilities that provide temporary housing and services to travelers, requiring security for guests, staff, and property.',
+  'Outdoor Events': 'Large-scale outdoor gatherings such as concerts, festivals, sporting events, and public celebrations that require crowd management, security, and emergency response planning.',
+  'Public Assembly': 'Venues designed for large public gatherings including convention centers, arenas, stadiums, theaters, and community centers that need security and safety measures.',
+  'Real Estate': 'Commercial and residential real estate properties, including office buildings, shopping centers, and mixed-use developments that require physical security and access control.',
+  'Religious Facilities': 'Churches, synagogues, mosques, temples, and other places of worship that serve as community gathering spaces and may be targets for security threats.',
+  'Retail': 'Shopping malls, retail stores, and commercial establishments open to the public that require security measures to protect customers, employees, and merchandise.',
+  'Sports Leagues': 'Professional and amateur sports organizations, leagues, and facilities including stadiums, training facilities, and administrative offices.',
+  
+  // Communications
+  'Broadcasting': 'Television and radio broadcast facilities, networks, and transmission systems that provide news, entertainment, and emergency communications to the public.',
+  'Cable': 'Cable television and broadband internet service providers, including network infrastructure, headend facilities, and customer service operations.',
+  'Internet Service Providers': 'Companies and organizations that provide internet connectivity services, including fiber optic networks, wireless broadband, and data transmission infrastructure.',
+  'Satellite': 'Satellite communications systems including satellite operators, ground stations, and satellite-based services for telecommunications, broadcasting, and data transmission.',
+  'Voice over Internet Protocol': 'VoIP service providers and systems that enable voice communications over internet networks, including business and residential VoIP services.',
+  'Wireless': 'Cellular networks, mobile communications providers, and wireless infrastructure including cell towers, base stations, and mobile network equipment.',
+  'Wireline': 'Traditional landline telephone services and fixed-line telecommunications infrastructure including copper and fiber optic networks.',
+  
+  // Critical Manufacturing
+  'Appliance Manufacturing': 'Facilities that produce household and commercial appliances including refrigerators, washing machines, HVAC systems, and other consumer and industrial equipment.',
+  'Component Manufacturing': 'Production of specialized components and parts used in larger systems, including electronic components, mechanical parts, and sub-assemblies for various industries.',
+  'Electrical Equipment Manufacturing': 'Facilities producing electrical equipment including transformers, generators, motors, switchgear, and power distribution equipment.',
+  'Machinery Manufacturing': 'Production of industrial machinery, manufacturing equipment, construction machinery, and specialized tools used across multiple industries.',
+  'Primary Metals Manufacturing': 'Facilities involved in the production of primary metals including steel mills, aluminum smelters, foundries, and metal processing plants.',
+  'Transportation Equipment Manufacturing': 'Production of vehicles and transportation equipment including automobiles, aircraft, ships, rail cars, and related components.',
+  
+  // Dams
+  'Flood Control Systems': 'Dams, levees, and water management structures designed to prevent flooding and protect communities, infrastructure, and agricultural land from water damage.',
+  'Hydroelectric Power Generation': 'Dams and facilities that generate electricity from flowing water, providing renewable energy and requiring security for power generation infrastructure.',
+  'Irrigation Systems': 'Dams, canals, and water distribution systems that provide water for agricultural irrigation, supporting food production and rural economies.',
+  'Levees': 'Earthen or concrete structures built along rivers and coastlines to prevent flooding, protecting communities and critical infrastructure from water damage.',
+  'Navigation Locks': 'Waterway structures that enable ships and boats to navigate elevation changes in rivers and canals, supporting commercial and recreational transportation.',
+  'Water Storage': 'Reservoirs and storage facilities created by dams that hold water for municipal supply, irrigation, industrial use, and environmental purposes.',
+  
+  // Defense Industrial Base
+  'Aerospace': 'Companies and facilities involved in the design, development, and production of aircraft, spacecraft, and related systems for defense and commercial applications.',
+  'Ammunition and Explosives': 'Facilities that manufacture, store, and handle ammunition, explosives, and ordnance for military and law enforcement use.',
+  'Military Communications': 'Communication systems, equipment, and networks designed for military use including secure communications, command and control systems, and tactical radios.',
+  'Military Electronics': 'Electronic systems and components for military applications including radar, sensors, guidance systems, and electronic warfare equipment.',
+  'Military Optics': 'Optical systems and equipment for military use including targeting systems, night vision devices, surveillance equipment, and precision optics.',
+  'Military Research and Development': 'Research facilities, laboratories, and development centers that create new technologies, weapons systems, and capabilities for defense applications.',
+  'Military Software': 'Software systems and applications developed for military use including command and control systems, simulation software, and cybersecurity tools.',
+  'Military Vehicles': 'Production of military vehicles including tanks, armored personnel carriers, tactical vehicles, and specialized military transportation equipment.',
+  'Missiles and Space Systems': 'Development and production of missiles, rockets, satellites, and space systems for defense, intelligence, and strategic applications.',
+  'Radar and Navigation': 'Radar systems, navigation equipment, and positioning systems used for military surveillance, targeting, and navigation purposes.',
+  'Ships': 'Naval shipbuilding, maintenance, and support facilities including shipyards, dry docks, and facilities that build and service military vessels.',
+  'Weapons': 'Manufacturing of weapons systems including firearms, artillery, and advanced weaponry for military and law enforcement applications.',
+  
+  // Emergency Services
+  'Emergency Management': 'Organizations and systems responsible for coordinating disaster response, emergency planning, and recovery operations at local, state, and federal levels.',
+  'Emergency Medical Services': 'Ambulance services, paramedic units, and medical response teams that provide emergency medical care and transportation to healthcare facilities.',
+  'Fire and Emergency Services': 'Fire departments, firefighting equipment, and emergency response services that protect lives and property from fires and other emergencies.',
+  'Law Enforcement': 'Police departments, sheriff\'s offices, and law enforcement agencies responsible for public safety, crime prevention, and maintaining order.',
+  'Public Works': 'Municipal services and infrastructure including water and sewer systems, road maintenance, public buildings, and utilities that support community operations.',
+  'Search and Rescue': 'Specialized teams and resources for locating and rescuing people in emergency situations including wilderness, water, and urban search and rescue operations.',
+  
+  // Energy
+  'Coal': 'Coal mining operations, processing facilities, and coal-fired power plants that extract and utilize coal as an energy source for electricity generation.',
+  'Electric Power': 'Electricity generation, transmission, and distribution systems including power plants, electrical grids, substations, and power lines that deliver electricity to consumers.',
+  'Energy Storage': 'Facilities and systems for storing energy including battery storage, pumped hydro storage, and other technologies that help balance electricity supply and demand.',
+  'Natural Gas': 'Natural gas extraction, processing, transportation, and distribution including pipelines, storage facilities, and gas-fired power plants.',
+  'Nuclear': 'Nuclear power plants, nuclear fuel processing facilities, and nuclear waste storage sites that generate electricity using nuclear fission.',
+  'Petroleum': 'Oil extraction, refining, transportation, and distribution including oil fields, refineries, pipelines, and fuel distribution networks.',
+  'Renewable Energy': 'Solar, wind, hydroelectric, geothermal, and other renewable energy facilities that generate electricity from sustainable sources.',
+  
+  // Financial Services
+  'Banking': 'Commercial banks, savings banks, and financial institutions that provide deposit accounts, loans, and other banking services to consumers and businesses.',
+  'Credit Unions': 'Member-owned financial cooperatives that provide banking services, loans, and financial products to their members and communities.',
+  'Financial Market Utilities': 'Critical infrastructure that supports financial markets including payment systems, clearinghouses, and settlement systems that enable financial transactions.',
+  'Insurance': 'Insurance companies and providers that offer life, health, property, and casualty insurance to protect individuals and businesses from financial losses.',
+  'Non-Depository Credit Intermediation': 'Financial institutions that provide credit and lending services without accepting deposits, including finance companies and lending institutions.',
+  'Savings Associations': 'Financial institutions that accept deposits and provide loans, typically focused on residential mortgage lending and community banking.',
+  'Securities and Investments': 'Investment firms, brokerages, asset management companies, and securities exchanges that facilitate investment and trading activities.',
+  
+  // Food and Agriculture
+  'Agricultural Distribution': 'Systems and facilities for distributing agricultural products including food distribution centers, wholesale markets, and supply chain networks.',
+  'Agricultural Inputs': 'Production and distribution of agricultural inputs including seeds, fertilizers, pesticides, and equipment needed for farming operations.',
+  'Agricultural Processing': 'Facilities that process raw agricultural products into food and other products including grain mills, food processing plants, and packaging facilities.',
+  'Agricultural Production': 'Farms, ranches, and agricultural operations that produce crops, livestock, and other agricultural products for food and industrial use.',
+  'Food Distribution': 'Warehouses, distribution centers, and logistics networks that move food products from processors to retailers, restaurants, and consumers.',
+  'Food Processing': 'Facilities that transform raw agricultural products into finished food products including canning, freezing, packaging, and preparation of food items.',
+  'Food Production': 'Manufacturing facilities that produce processed foods, beverages, and food products for commercial distribution and consumption.',
+  
+  // Government Facilities
+  'Correctional Facilities': 'Prisons, jails, and detention centers that house individuals in custody, requiring security measures to protect staff, inmates, and the public.',
+  'Educational Facilities': 'Public and private schools, colleges, and universities that provide education and serve as community gathering places requiring security and safety measures.',
+  'Election Infrastructure': 'Systems and facilities that support democratic elections including voting equipment, polling places, and election administration offices.',
+  'Federal Facilities': 'Buildings and facilities owned or operated by the federal government including federal offices, courthouses, and government service centers.',
+  'Local Facilities': 'Municipal buildings, city halls, county offices, and other facilities operated by local governments to provide public services.',
+  'State Facilities': 'State government buildings, offices, and facilities that house state agencies and provide services to state residents.',
+  'Tribal Facilities': 'Buildings and facilities operated by Native American tribes and tribal governments to provide services to tribal communities.',
+  
+  // Healthcare and Public Health
+  'Ambulatory Care': 'Outpatient healthcare facilities including clinics, urgent care centers, and medical offices that provide non-emergency medical services.',
+  'Blood': 'Blood banks, plasma collection centers, and blood processing facilities that collect, test, and distribute blood products for medical use.',
+  'Home Healthcare': 'Healthcare services provided in patients\' homes including home health agencies, hospice care, and visiting nurse services.',
+  'Hospitals': 'Medical facilities that provide inpatient and emergency medical care, surgery, and specialized medical services to patients.',
+  'Laboratories': 'Medical and research laboratories that conduct diagnostic testing, medical research, and analysis of biological samples.',
+  'Long-term Care': 'Nursing homes, assisted living facilities, and long-term care centers that provide extended care and support for elderly and disabled individuals.',
+  'Medical Devices': 'Manufacturing and distribution of medical equipment and devices including diagnostic equipment, surgical instruments, and patient monitoring systems.',
+  'Medical Research': 'Research institutions, laboratories, and facilities that conduct medical research, clinical trials, and development of new treatments and therapies.',
+  'Pharmaceuticals': 'Manufacturing, distribution, and research facilities for pharmaceutical products including drug manufacturing plants and pharmaceutical research laboratories.',
+  
+  // Information Technology
+  'Cloud Computing': 'Cloud service providers and infrastructure that deliver computing resources, storage, and software services over the internet to businesses and consumers.',
+  'Data Centers': 'Facilities that house computer systems, servers, and networking equipment for storing, processing, and managing digital data and applications.',
+  'IT Hardware': 'Manufacturing and distribution of computer hardware including servers, networking equipment, storage devices, and computer components.',
+  'IT Services': 'Companies that provide information technology services including system integration, managed services, consulting, and technical support.',
+  'IT Software': 'Development, distribution, and support of software applications, operating systems, and software products for business and consumer use.',
+  'IT Support Services': 'Technical support, help desk services, and IT maintenance services that help organizations manage and troubleshoot their technology systems.',
+  'IT Training': 'Educational and training services that provide IT skills development, certification programs, and technology education for professionals and organizations.',
+  
+  // Nuclear Reactors, Materials, and Waste
+  'Nuclear Fuel Cycle': 'Facilities involved in the nuclear fuel cycle including uranium mining, enrichment, fuel fabrication, and spent fuel processing.',
+  'Nuclear Materials': 'Production, handling, and storage of nuclear materials including enriched uranium, plutonium, and other materials used in nuclear applications.',
+  'Nuclear Power Plants': 'Commercial nuclear reactors and power generation facilities that produce electricity using nuclear fission, requiring security and safety measures.',
+  'Nuclear Security': 'Security systems, personnel, and protocols designed to protect nuclear facilities, materials, and information from theft, sabotage, and terrorism.',
+  'Nuclear Waste': 'Storage and disposal facilities for radioactive waste including spent nuclear fuel, low-level waste, and high-level waste storage sites.',
+  'Research Reactors': 'Nuclear reactors used for research, education, and medical isotope production rather than commercial power generation.',
+  
+  // Transportation Systems
+  'Aviation': 'Airports, air traffic control systems, airlines, and aviation infrastructure that support commercial and general aviation operations.',
+  'Freight Rail': 'Railroad systems and infrastructure dedicated to transporting freight, cargo, and goods including rail lines, freight yards, and intermodal facilities.',
+  'Highway Infrastructure': 'Roads, bridges, tunnels, and highway systems that support vehicular transportation including interstate highways and major road networks.',
+  'Maritime Transportation': 'Ports, harbors, shipping facilities, and maritime infrastructure that support commercial shipping, cargo handling, and maritime commerce.',
+  'Mass Transit': 'Public transportation systems including buses, subways, light rail, and commuter rail that provide transportation services to the public.',
+  'Pipeline Systems': 'Oil, natural gas, and other pipeline networks that transport energy products and materials across long distances.',
+  'Postal and Shipping': 'Postal services, package delivery companies, and shipping infrastructure that move mail and packages across the country and internationally.',
+  'Rail Transportation': 'Passenger and freight rail systems including Amtrak, commuter rail, and freight railroads that provide transportation services.',
+  
+  // Water and Wastewater Systems
+  'Drinking Water': 'Water treatment facilities, distribution systems, and infrastructure that provide safe, clean drinking water to communities and consumers.',
+  'Stormwater Management': 'Systems and infrastructure designed to manage stormwater runoff including drainage systems, retention ponds, and flood control measures.',
+  'Wastewater Treatment': 'Facilities and systems that treat and process wastewater and sewage before returning it to the environment, protecting public health and water quality.',
+  'Water Distribution': 'Pipelines, pumping stations, and infrastructure that deliver treated water from treatment plants to homes, businesses, and other consumers.',
+  'Water Treatment': 'Facilities that treat raw water from sources like rivers, lakes, and groundwater to make it safe for drinking and other uses.',
+}
+
+// Function to check if a description is generic/non-descriptive
+ 
+function isGenericDescription(description: string, subsectorName: string, _sectorName: string) {
+  if (!description) return true
+  
+  const desc = description.toLowerCase().trim()
+  const patterns = [
+    /^subsector within the/i,
+    /^a subsector within/i,
+    /^subsector of/i,
+    /^part of the/i,
+    /^component of/i,
+    /^within the .* sector$/i,
+    /^subsector$/i,
+    /^subsector \d+$/i
+  ]
+  
+  // Check if description matches generic patterns
+  if (patterns.some(pattern => pattern.test(desc))) {
+    return true
+  }
+  
+  // Check if description is too short or just repeats the name
+  if (desc.length < 30) {
+    return true
+  }
+  
+  // Check if it's just the subsector name with minimal text
+  const nameWords = subsectorName.toLowerCase().split(/\s+/).filter(w => w.length > 2)
+  const descWords = desc.split(/\s+/).filter(w => w.length > 2)
+  if (nameWords.length > 0 && descWords.length <= nameWords.length + 3) {
+    return true
+  }
+  
+  return false
+}
+
+// Function to get a descriptive subsector description
+function getSubsectorDescription(subsectorName: string, sectorName: string) {
+  if (!subsectorName) {
+    return `A subsector within the ${sectorName} sector.`
+  }
+  
+  // Normalize the name for matching (trim, remove extra spaces)
+  const normalized = subsectorName.trim()
+  const lowerName = normalized.toLowerCase()
+  
+  // First try exact match (case-sensitive)
+  if (SUBSECTOR_DESCRIPTIONS[normalized as keyof typeof SUBSECTOR_DESCRIPTIONS]) {
+    return SUBSECTOR_DESCRIPTIONS[normalized as keyof typeof SUBSECTOR_DESCRIPTIONS]
+  }
+  
+  // Try case-insensitive exact match
+  for (const [key, value] of Object.entries(SUBSECTOR_DESCRIPTIONS)) {
+    if (key.toLowerCase() === lowerName) {
+      return value
+    }
+  }
+  
+  // Try partial match - check if subsector name contains key words or vice versa
+  // This handles cases where database might have slightly different names
+  for (const [key, value] of Object.entries(SUBSECTOR_DESCRIPTIONS)) {
+    const keyLower = key.toLowerCase()
+    
+    // Direct substring match
+    if (lowerName.includes(keyLower) || keyLower.includes(lowerName)) {
+      // Make sure it's a meaningful match (not just a single word)
+      if (keyLower.length > 5 || lowerName.length > 5) {
+        return value
+      }
+    }
+    
+    // Word-by-word matching for multi-word names
+    const keyWords = keyLower.split(/\s+/).filter(w => w.length > 2) // Filter out short words
+    const nameWords = lowerName.split(/\s+/).filter(w => w.length > 2)
+    
+    if (keyWords.length > 1 && nameWords.length > 0) {
+      // Count matching words
+      const matchingWords = nameWords.filter(word => keyWords.includes(word))
+      // If most words match, consider it a match
+      if (matchingWords.length >= Math.min(keyWords.length - 1, nameWords.length)) {
+        return value
+      }
+    }
+  }
+  
+  // Fallback: generate a contextual description (improved)
+  return `Infrastructure and facilities within the ${sectorName} sector that focus specifically on ${normalized.toLowerCase()}. This subsector represents a specialized area requiring specific security, safety, and operational considerations.`
+}
+
+export default function SectorsPage() {
+  const [sectors, setSectors] = useState<Sector[]>([])
+  const [subsectorsMap, setSubsectorsMap] = useState<Record<string, Subsector[]>>({})
+  const [expandedSectors, setExpandedSectors] = useState<Set<string>>(new Set())
+  const [searchTerm, setSearchTerm] = useState('')
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  const [loadingSubsectors, setLoadingSubsectors] = useState<Set<string>>(new Set())
+
+  // Load subsectors for a specific sector (on-demand or background)
+  const loadSubsectorsForSector = useCallback(async (sector: Sector, showLoading = true) => {
+    const sectorId = sector.id  // UUID
+    if (!sectorId) return
+    
+    // Skip if already loaded
+    if (subsectorsMap[sectorId] && subsectorsMap[sectorId].length > 0) {
+      return
+    }
+    
+    // Skip if already loading
+    if (loadingSubsectors.has(sectorId)) {
+      return
+    }
+    
+    try {
+      if (showLoading) {
+        setLoadingSubsectors(prev => new Set(prev).add(sectorId))
+      }
+      
+      const subsData = await fetchJson(
+        `/api/reference/subsectors?sectorId=${encodeURIComponent(sectorId)}`,
+        {
+          cache: 'no-store',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        },
+        parseSubsectorsPayload
+      )
+      const subsList = subsData.subsectors
+        .filter((s) => s.is_active !== false)
+        .sort((a, b) => String(a.name ?? '').localeCompare(String(b.name ?? '')))
+      
+      // Update subsectors map
+      setSubsectorsMap(prev => ({ ...prev, [sectorId]: subsList }))
+    } catch (err) {
+      console.error(`[SectorsPage] Exception loading subsectors for ${sector.sector_name || sector.name}:`, err)
+      setSubsectorsMap(prev => ({ ...prev, [sectorId]: [] }))
+    } finally {
+      if (showLoading) {
+        setLoadingSubsectors(prev => {
+          const newSet = new Set(prev)
+          newSet.delete(sectorId)
+          return newSet
+        })
+      }
+    }
+  }, [subsectorsMap, loadingSubsectors])
+
+  // Load sectors immediately (don't wait for subsectors)
+  // Use a ref to track if sectors have been loaded to prevent infinite loops
+  const sectorsLoadedRef = useRef(false)
+  
+  useEffect(() => {
+    // Only load sectors once on mount
+    if (sectorsLoadedRef.current) {
+      return
+    }
+    
+    const loadSectors = async () => {
+      try {
+        sectorsLoadedRef.current = true
+        setLoading(true)
+        const data = await fetchJson(
+          '/api/reference/sectors',
+          { cache: 'no-store' },
+          parseSectorsPayload
+        )
+        const sectorsData = data.sectors
+        
+        // Filter to only active sectors, sort by name
+        const activeSectors = sectorsData
+          .filter((s) => s.is_active !== false)
+          .sort((a, b) => {
+            const nameA = (a.sector_name || a.name || '').toLowerCase()
+            const nameB = (b.sector_name || b.name || '').toLowerCase()
+            // Put "General" at the end
+            if (nameA === 'general') return 1
+            if (nameB === 'general') return -1
+            return nameA.localeCompare(nameB)
+          })
+        
+        setSectors(activeSectors)
+        setError(null)
+        setLoading(false) // Show sectors immediately
+        
+        // Prefetch subsectors in the background (non-blocking)
+        // This will populate subsectorsMap as they load, but won't block the UI
+        activeSectors.forEach((sector: Sector) => {
+          // Load in background without blocking
+          loadSubsectorsForSector(sector, false)
+        })
+      } catch (err: unknown) {
+        console.error('Error loading sectors:', err)
+        setError(err instanceof Error ? err.message : String(err))
+        setLoading(false)
+        sectorsLoadedRef.current = false // Allow retry on error
+      }
+    }
+
+    loadSectors()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []) // Empty deps - only run once on mount
+
+  // Toggle sector expansion and load subsectors on-demand
+  const toggleSector = (sectorId: string) => {
+    setExpandedSectors(prev => {
+      const newSet = new Set(prev)
+      const isExpanding = !newSet.has(sectorId)
+      
+      if (isExpanding) {
+        newSet.add(sectorId)
+        // Load subsectors when expanding (if not already loaded)
+        const sector = sectors.find(s => s.id === sectorId)
+        if (sector && (!subsectorsMap[sectorId] || subsectorsMap[sectorId].length === 0)) {
+          loadSubsectorsForSector(sector, true)
+        }
+      } else {
+        newSet.delete(sectorId)
+      }
+      return newSet
+    })
+  }
+
+  // Expand/collapse all
+  const expandAll = () => {
+    setExpandedSectors(new Set(sectors.map(s => s.id)))
+  }
+
+  const collapseAll = () => {
+    setExpandedSectors(new Set())
+  }
+
+  // Filter sectors based on search term
+  const filteredSectors = useMemo(() => {
+    if (!searchTerm.trim()) {
+      return sectors
+    }
+
+    const term = searchTerm.toLowerCase()
+    return sectors.filter(sector => {
+      const sectorName = (sector.sector_name || sector.name || '').toLowerCase()
+      const sectorDesc = (sector.description || '').toLowerCase()
+      
+      // Check if sector matches
+      if (sectorName.includes(term) || sectorDesc.includes(term)) {
+        return true
+      }
+
+      // Check if any subsector matches
+      const subsectors = subsectorsMap[sector.id] || []
+      return subsectors.some((sub) => {
+        const subName = (sub.name || '').toLowerCase()
+        const subDesc = (sub.description || '').toLowerCase()
+        return subName.includes(term) || subDesc.includes(term)
+      })
+    })
+  }, [sectors, subsectorsMap, searchTerm])
+
+  // Calculate statistics
+  const stats = useMemo(() => {
+    const totalSubsectors = Object.values(subsectorsMap).reduce((sum, subs) => sum + subs.length, 0)
+    const dhsSectors = sectors.filter(s => {
+      const name = (s.sector_name || s.name || '').toLowerCase()
+      return name !== 'general'
+    }).length
+    
+    return {
+      totalSectors: sectors.length,
+      dhsSectors,
+      generalSector: sectors.find(s => (s.sector_name || s.name || '').toLowerCase() === 'general') ? 1 : 0,
+      totalSubsectors
+    }
+  }, [sectors, subsectorsMap])
+
+  if (loading) {
+    return (
+      <section className="section active">
+        <div className="card" style={{ textAlign: 'center', padding: 'var(--spacing-xl)' }}>
+          <div className="spinner" style={{ margin: '0 auto var(--spacing-md)' }}></div>
+          <p>Loading sectors and subsectors...</p>
+        </div>
+      </section>
+    )
+  }
+
+  if (error) {
+    return (
+      <section className="section active">
+        <div className="alert alert-danger">
+          <h2>Error Loading Sectors</h2>
+          <p>{error}</p>
+        </div>
+      </section>
+    )
+  }
+
+  return (
+    <section className="section active">
+      <div className="section-header">
+        <p style={{ fontSize: 'var(--font-size-sm)', color: 'var(--cisa-gray)', marginBottom: 'var(--spacing-xs)' }}>
+          Taxonomy Education
+        </p>
+        <h1 className="section-title">DHS Critical Infrastructure Sectors</h1>
+        <p style={{ fontSize: 'var(--font-size-base)', color: 'var(--cisa-gray)', lineHeight: 1.6, marginTop: 'var(--spacing-md)' }}>
+          This page summarizes the Department of Homeland Security (DHS) Critical Infrastructure Sectors and the
+          subsectors that help classify vulnerabilities and Options for Consideration.
+        </p>
+      </div>
+
+      <div className="card mb-4">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 'var(--spacing-md)' }}>
+          <div style={{ textAlign: 'center', padding: 'var(--spacing-md)' }}>
+            <div style={{ fontSize: 'var(--font-size-2xl)', fontWeight: 700, color: 'var(--cisa-blue)' }}>
+              {stats.dhsSectors}
+            </div>
+            <div style={{ fontSize: 'var(--font-size-sm)', color: 'var(--cisa-gray)' }}>DHS Sectors</div>
+          </div>
+          <div style={{ textAlign: 'center', padding: 'var(--spacing-md)' }}>
+            <div style={{ fontSize: 'var(--font-size-2xl)', fontWeight: 700, color: 'var(--cisa-blue)' }}>
+              {stats.totalSectors}
+            </div>
+            <div style={{ fontSize: 'var(--font-size-sm)', color: 'var(--cisa-gray)' }}>Total Sectors</div>
+          </div>
+          <div style={{ textAlign: 'center', padding: 'var(--spacing-md)' }}>
+            <div style={{ fontSize: 'var(--font-size-2xl)', fontWeight: 700, color: 'var(--cisa-blue)' }}>
+              {stats.totalSubsectors}
+            </div>
+            <div style={{ fontSize: 'var(--font-size-sm)', color: 'var(--cisa-gray)' }}>Total Subsectors</div>
+          </div>
+        </div>
+      </div>
+
+      <div className="card mb-4">
+        <div style={{ display: 'flex', gap: 'var(--spacing-md)', flexWrap: 'wrap', alignItems: 'center' }}>
+          <input
+            type="search"
+            placeholder="Search sectors or subsectors..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            style={{
+              flex: 1,
+              minWidth: '200px',
+              padding: 'var(--spacing-sm) var(--spacing-md)',
+              border: '1px solid var(--cisa-gray-light)',
+              borderRadius: 'var(--border-radius)',
+              fontSize: 'var(--font-size-base)'
+            }}
+          />
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={expandAll}
+          >
+            Expand All
+          </button>
+          <button
+            type="button"
+            className="btn btn-secondary"
+            onClick={collapseAll}
+          >
+            Collapse All
+          </button>
+        </div>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-md)' }}>
+        {filteredSectors.length === 0 ? (
+          <div className="card">
+            <p style={{ textAlign: 'center', color: 'var(--cisa-gray)' }}>
+              No sectors found matching &quot;{searchTerm}&quot;
+            </p>
+          </div>
+        ) : (
+          filteredSectors.map((sector) => {
+            const sectorName = sector.sector_name || sector.name || 'Unknown Sector'
+            const sectorDesc = sector.description || ''
+            const sectorId = sector.id
+            const subsectors = subsectorsMap[sectorId] || []
+            const isExpanded = expandedSectors.has(sectorId)
+            const isGeneral = sectorName.toLowerCase() === 'general'
+            const subsectorCount = subsectors.length
+
+            return (
+              <div
+                key={sectorId || sectorName}
+                className="card"
+                style={{
+                  border: isGeneral ? '2px solid var(--cisa-warning)' : '1px solid var(--cisa-gray-light)'
+                }}
+              >
+                <div
+                  style={{
+                    backgroundColor: isGeneral ? 'var(--cisa-warning-light)' : 'var(--cisa-blue)',
+                    color: 'white',
+                    padding: 'var(--spacing-lg)',
+                    borderRadius: 'var(--border-radius) var(--border-radius) 0 0'
+                  }}
+                >
+                  <button
+                    type="button"
+                    onClick={() => toggleSector(sectorId)}
+                    style={{
+                      width: '100%',
+                      textAlign: 'left',
+                      backgroundColor: 'transparent',
+                      color: 'inherit',
+                      border: 'none',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      padding: 0
+                    }}
+                  >
+                    <div>
+                      <h2 style={{ margin: 0, fontSize: 'var(--font-size-xl)', fontWeight: 600 }}>
+                        {sectorName}
+                        {isGeneral && (
+                          <span style={{ marginLeft: 'var(--spacing-sm)', fontSize: 'var(--font-size-sm)', opacity: 0.9 }}>
+                            (Special Category)
+                          </span>
+                        )}
+                      </h2>
+                      <p style={{ margin: 'var(--spacing-xs) 0 0', fontSize: 'var(--font-size-sm)', opacity: 0.95 }}>
+                        {subsectorCount} {subsectorCount === 1 ? 'subsector' : 'subsectors'}
+                      </p>
+                    </div>
+                    <span style={{ fontSize: 'var(--font-size-xl)', fontWeight: 600 }}>
+                      {isExpanded ? '▼' : '▶'}
+                    </span>
+                  </button>
+                  {sectorDesc && (
+                    <p style={{ marginTop: 'var(--spacing-md)', fontSize: 'var(--font-size-base)', lineHeight: 1.6, opacity: 0.95 }}>
+                      {sectorDesc}
+                    </p>
+                  )}
+                </div>
+
+                {isExpanded && (
+                  <div style={{ padding: 'var(--spacing-lg)' }}>
+                    {loadingSubsectors.has(sectorId) ? (
+                      <div style={{ textAlign: 'center', padding: 'var(--spacing-lg)' }}>
+                        <div className="spinner spinner--sm" style={{ margin: '0 auto var(--spacing-md)' }}></div>
+                        <p>Loading subsectors...</p>
+                      </div>
+                    ) : subsectors.length === 0 ? (
+                      <p style={{ color: 'var(--cisa-gray)', fontStyle: 'italic' }}>
+                        No subsectors available for this sector.
+                      </p>
+                    ) : (
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 'var(--spacing-md)' }}>
+                        {subsectors.map((subsector) => {
+                          const subsectorName = subsector.name || 'Unknown Subsector'
+                          const dbDescription = subsector.description?.trim()
+                          const hasMeaningfulDescription =
+                            dbDescription &&
+                            !isGenericDescription(dbDescription, subsectorName, sectorName)
+                          const subsectorDesc = hasMeaningfulDescription
+                            ? dbDescription
+                            : getSubsectorDescription(subsectorName, sectorName)
+                          const key = subsector.id || subsectorName
+
+                          return (
+                            <div key={key} className="card" style={{ padding: 'var(--spacing-md)' }}>
+                              <h3 style={{ margin: '0 0 var(--spacing-xs)', fontSize: 'var(--font-size-base)', fontWeight: 600, color: 'var(--cisa-blue)' }}>
+                                {subsectorName}
+                              </h3>
+                              <p style={{ margin: 0, fontSize: 'var(--font-size-sm)', color: 'var(--cisa-gray-dark)', lineHeight: 1.6 }}>
+                                {subsectorDesc}
+                              </p>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            )
+          })
+        )}
+      </div>
+    </section>
+  )
+}

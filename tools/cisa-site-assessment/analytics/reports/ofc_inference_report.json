@@ -1,0 +1,46 @@
+{
+  "mode": "APPLY",
+  "chunks_scanned": 2000,
+  "matches_by_template_id": {
+    "PSS_LIGHTING_COVERAGE_001": 5,
+    "PSS_ENTRY_CONTROL_001": 1
+  },
+  "candidates_generated": 6,
+  "candidates_inserted": 6,
+  "skipped_by_reason": {
+    "meta_preamble": 95,
+    "state_vulnerability_cognitive": 27
+  },
+  "example_pairs": [
+    {
+      "evidence_sentence": "Security Systems Illumination Select the most representative description of illumination for the overall event location: \uf081 The venue and surrounding area is not illuminated at all, or illumination app",
+      "inferred_ofc": "Exterior lighting is implemented for critical areas to provide adequate visibility for security monitoring and deterrence.",
+      "template_id": "PSS_LIGHTING_COVERAGE_001"
+    },
+    {
+      "evidence_sentence": "\uf081 Illumination appears to be similar and consistent in type; however, light pattern coverage does not overlap, causing shadows or dark areas.",
+      "inferred_ofc": "Exterior lighting is implemented for critical areas to provide adequate visibility for security monitoring and deterrence.",
+      "template_id": "PSS_LIGHTING_COVERAGE_001"
+    },
+    {
+      "evidence_sentence": "\uf081 Update the lighting system to include overlapping cones of light to eliminate or reduce shadows and dark areas.",
+      "inferred_ofc": "Exterior lighting is implemented for critical areas to provide adequate visibility for security monitoring and deterrence.",
+      "template_id": "PSS_LIGHTING_COVERAGE_001"
+    },
+    {
+      "evidence_sentence": "Category: Vehicle Access Control Vulnerability: The facility has limited or no vehicle access control policies/procedures.",
+      "inferred_ofc": "Vehicle access control systems are implemented for critical areas to manage and monitor vehicle entry and exit.",
+      "template_id": "PSS_ENTRY_CONTROL_001"
+    },
+    {
+      "evidence_sentence": "Lighting that does not overlap can cause shadows or dark areas where intruders can go undetected.",
+      "inferred_ofc": "Exterior lighting is implemented for critical areas to provide adequate visibility for security monitoring and deterrence.",
+      "template_id": "PSS_LIGHTING_COVERAGE_001"
+    },
+    {
+      "evidence_sentence": "Category: Fences, Gates, and Parking Areas Vulnerability: Lighting for fences, gates, and/or parking areas is uneven and dissimilar, causing glare and shadows, and resulting in inconsistent coverage, ",
+      "inferred_ofc": "Exterior lighting is implemented for parking areas to provide adequate visibility for security monitoring and deterrence.",
+      "template_id": "PSS_LIGHTING_COVERAGE_001"
+    }
+  ]
+}

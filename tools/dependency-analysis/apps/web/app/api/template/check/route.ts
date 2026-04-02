@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import path from 'path';
 import fs from 'fs';
 import { checkTemplateAnchors } from '@/app/lib/template/validateAnchors';
 import {
@@ -7,15 +8,28 @@ import {
   assertCanonicalTemplatePath,
 } from '@/app/lib/template/path';
 
+const MAIN_PY_RELATIVE = path.join('apps', 'reporter', 'main.py');
+
+function findRootWithReporter(): string {
+  const root = getRepoRoot();
+  if (fs.existsSync(path.join(root, MAIN_PY_RELATIVE))) return root;
+  const cwd = process.cwd();
+  const candidates = [cwd, path.join(cwd, '..'), path.join(cwd, '..', '..'), path.join(cwd, 'asset-dependency-tool')];
+  for (const dir of candidates) {
+    if (fs.existsSync(path.join(dir, MAIN_PY_RELATIVE))) return path.resolve(dir);
+  }
+  return root;
+}
+
 export const dynamic = 'force-dynamic';
 
 /**
  * GET /api/template/check
- * Returns template readiness for the same template export uses.
+ * Returns template readiness for the same template export uses (ADA/report template.docx at findRootWithReporter()).
  */
 export async function GET() {
   try {
-    const repoRoot = getRepoRoot();
+    const repoRoot = findRootWithReporter();
     const templatePath = getCanonicalTemplatePath(repoRoot);
     assertCanonicalTemplatePath(templatePath);
     if (!fs.existsSync(templatePath)) {

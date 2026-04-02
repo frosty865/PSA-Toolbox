@@ -1,0 +1,47 @@
+[
+  {
+    "candidate_id": "1e059890-c2df-4538-8d24-a213e56bdda8",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 16",
+    "question_text": "What is the process for notifying facility occupants and first responders of an incident?",
+    "context": "What is the process for notifying facility occupants and first responders of an incident?",
+    "lane_reason": "appears generally applicable across facilities; store for baseline governance review (no auto-promotion)",
+    "general_applicability_score": 0.5
+  },
+  {
+    "candidate_id": "deadd812-2994-4fbb-ac57-ff109dbfd338",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 39",
+    "question_text": "• How will you ensure employee/staff/member safety?",
+    "context": "• How will you ensure employee/staff/member safety?",
+    "lane_reason": "appears generally applicable across facilities; store for baseline governance review (no auto-promotion)",
+    "general_applicability_score": 0.5
+  },
+  {
+    "candidate_id": "7ef23aa3-672b-405d-baf4-0b5c4f7dd70e",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 13",
+    "question_text": "Are employees and or volunteers trained on the security and emergency operations plan(s)?",
+    "context": "Are employees and or volunteers trained on the security and emergency operations plan(s)?",
+    "lane_reason": "appears generally applicable across facilities; store for baseline governance review (no auto-promotion)",
+    "general_applicability_score": 0.5
+  },
+  {
+    "candidate_id": "089e059b-e3bf-40ee-9c3e-1a18be40d73b",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 14",
+    "question_text": "Has any type of exercise been conducted to test the security and emergency plans?",
+    "context": "Has any type of exercise been conducted to test the security and emergency plans?",
+    "lane_reason": "appears generally applicable across facilities; store for baseline governance review (no auto-promotion)",
+    "general_applicability_score": 0.5
+  },
+  {
+    "candidate_id": "5080a906-e209-43ba-8fab-471f210236d4",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 18",
+    "question_text": "Are the plans coordinated with first responders or emergency management?",
+    "context": "Are the plans coordinated with first responders or emergency management?",
+    "lane_reason": "appears generally applicable across facilities; store for baseline governance review (no auto-promotion)",
+    "general_applicability_score": 0.5
+  }
+]

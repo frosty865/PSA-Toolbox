@@ -1,0 +1,1618 @@
+{
+  "all_tables": [
+    "archive_normalized_evidence_links",
+    "archive_normalized_vulnerabilities",
+    "archive_source_documents",
+    "archive_source_statements",
+    "assessment_applied_ofcs",
+    "assessment_applied_vulnerabilities",
+    "assessment_definitions",
+    "assessment_expansion_profiles",
+    "assessment_expansion_responses",
+    "assessment_instances",
+    "assessment_question_responses",
+    "assessment_question_universe",
+    "assessment_required_elements",
+    "assessment_responses",
+    "assessment_status",
+    "assessment_technology_profiles",
+    "assessment_templates",
+    "assessment_vulnerability_sectors",
+    "assessments",
+    "audit_log",
+    "baseline_questions",
+    "baseline_questions_legacy",
+    "baseline_responses",
+    "canonical_disciplines",
+    "canonical_manifest",
+    "canonical_ofc_citations",
+    "canonical_ofc_patterns",
+    "canonical_ofcs",
+    "canonical_question_no_map",
+    "canonical_question_templates",
+    "canonical_sources",
+    "canonical_subtypes",
+    "canonical_vulnerability_patterns",
+    "citation_bindings",
+    "citation_requests",
+    "compliance_report",
+    "coverage_runs",
+    "discipline_subtypes",
+    "disciplines",
+    "document_subtype_relevance",
+    "drift_scan",
+    "expansion_questions",
+    "facilities",
+    "normalized_evidence_links",
+    "normalized_findings",
+    "normalized_ofcs",
+    "normalized_vulnerabilities",
+    "observed_vulnerabilities",
+    "ofc_candidate_queue",
+    "ofc_candidate_targets",
+    "ofc_library",
+    "ofc_library_citations",
+    "ofc_nomination_decisions",
+    "ofc_nominations",
+    "ofc_wipe_log",
+    "phase6_reviews",
+    "report_snapshots",
+    "rls_verification",
+    "sector_expansion_profiles",
+    "sector_metrics",
+    "sectors",
+    "subdiscipline_sector_filter",
+    "subsector_discipline_map",
+    "subsector_discipline_weight_history",
+    "subsector_metrics",
+    "subsectors",
+    "system_settings",
+    "tech_question_responses",
+    "tech_question_templates",
+    "technology_maturity_definitions",
+    "technology_maturity_lookup",
+    "test_assessment_purge_log",
+    "user_profiles",
+    "v_active_baseline_questions",
+    "v_candidate_targets_with_details",
+    "v_canonical_ofcs_publish_ready",
+    "v_eligible_ofc_library",
+    "v_normalized_summary",
+    "v_question_coverage"
+  ],
+  "question_tables": [
+    "assessment_question_responses",
+    "assessment_question_universe",
+    "baseline_questions",
+    "baseline_questions_legacy",
+    "canonical_question_no_map",
+    "canonical_question_templates",
+    "expansion_questions",
+    "tech_question_responses",
+    "tech_question_templates",
+    "v_active_baseline_questions",
+    "v_question_coverage"
+  ],
+  "set_tables": [
+    "assessment_applied_ofcs",
+    "assessment_applied_vulnerabilities",
+    "assessment_definitions",
+    "assessment_expansion_profiles",
+    "assessment_expansion_responses",
+    "assessment_instances",
+    "assessment_question_responses",
+    "assessment_question_universe",
+    "assessment_required_elements",
+    "assessment_responses",
+    "assessment_status",
+    "assessment_technology_profiles",
+    "assessment_templates",
+    "assessment_vulnerability_sectors",
+    "assessments",
+    "system_settings",
+    "test_assessment_purge_log"
+  ],
+  "dimension_tables": [
+    "canonical_disciplines",
+    "canonical_subtypes",
+    "discipline_subtypes",
+    "disciplines",
+    "document_subtype_relevance",
+    "subdiscipline_sector_filter",
+    "subsector_discipline_map",
+    "subsector_discipline_weight_history"
+  ],
+  "question_table_details": {
+    "assessment_question_responses": [
+      {
+        "name": "id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "assessment_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "question_code",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "response_enum",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "detail",
+        "type": "jsonb",
+        "nullable": false
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      }
+    ],
+    "assessment_question_universe": [
+      {
+        "name": "assessment_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "layer",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "question_code",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "order_index",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "meta",
+        "type": "jsonb",
+        "nullable": false
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      }
+    ],
+    "baseline_questions": [
+      {
+        "name": "id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "discipline",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "subdiscipline",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "question_code",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "question_text",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "question_order",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "version",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "status",
+        "type": "text",
+        "nullable": false
+      }
+    ],
+    "baseline_questions_legacy": [
+      {
+        "name": "id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "discipline",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "subdiscipline",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "question_code",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "question_text",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "question_order",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "version",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "legacy_version",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "status",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "deprecated_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "deprecated_reason",
+        "type": "text",
+        "nullable": false
+      }
+    ],
+    "canonical_question_no_map": [
+      {
+        "name": "question_id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "vulnerability_pattern_id",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "ofc_pattern_id",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "id",
+        "type": "text",
+        "nullable": false
+      }
+    ],
+    "canonical_question_templates": [
+      {
+        "name": "template_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "question_template_code",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "template_type",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "discipline_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "discipline_subtype_id",
+        "type": "uuid",
+        "nullable": true
+      },
+      {
+        "name": "text",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "parent_template_code",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "created_by",
+        "type": "text",
+        "nullable": false
+      }
+    ],
+    "expansion_questions": [
+      {
+        "name": "question_id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "profile_id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "subtype_code",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "question_text",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "response_enum",
+        "type": "ARRAY",
+        "nullable": false
+      },
+      {
+        "name": "introduced_version",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "status",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      }
+    ],
+    "tech_question_responses": [
+      {
+        "name": "id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "assessment_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "tech_question_template_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "response",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "notes",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "responded_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      }
+    ],
+    "tech_question_templates": [
+      {
+        "name": "id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "tech_type",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "discipline_code",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "subtype_code",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "question_text",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "response_enum",
+        "type": "ARRAY",
+        "nullable": false
+      },
+      {
+        "name": "overlay_level",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "order_index",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "is_active",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      }
+    ],
+    "v_active_baseline_questions": [
+      {
+        "name": "id",
+        "type": "uuid",
+        "nullable": true
+      },
+      {
+        "name": "discipline",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "subdiscipline",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "question_code",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "question_text",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "question_order",
+        "type": "integer",
+        "nullable": true
+      },
+      {
+        "name": "version",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "nullable": true
+      },
+      {
+        "name": "status",
+        "type": "text",
+        "nullable": true
+      }
+    ],
+    "v_question_coverage": [
+      {
+        "name": "target_type",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "target_key",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "universal_candidate_count",
+        "type": "bigint",
+        "nullable": true
+      },
+      {
+        "name": "context_candidate_count",
+        "type": "bigint",
+        "nullable": true
+      },
+      {
+        "name": "best_universal_score",
+        "type": "numeric",
+        "nullable": true
+      },
+      {
+        "name": "best_context_score",
+        "type": "numeric",
+        "nullable": true
+      },
+      {
+        "name": "promoted_ofc_count",
+        "type": "bigint",
+        "nullable": true
+      }
+    ]
+  },
+  "set_table_details": {
+    "assessment_applied_ofcs": [
+      {
+        "name": "id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "assessment_instance_id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "ofc_pattern_id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "linked_vulnerability_pattern_id",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "applied_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "canonical_ofc_id",
+        "type": "uuid",
+        "nullable": true
+      }
+    ],
+    "assessment_applied_vulnerabilities": [
+      {
+        "name": "id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "assessment_instance_id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "vulnerability_pattern_id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "applied_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      }
+    ],
+    "assessment_definitions": [
+      {
+        "name": "assessment_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "baseline_core_version",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "sector_code",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "subsector_code",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "modules",
+        "type": "jsonb",
+        "nullable": false
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "facility_id",
+        "type": "uuid",
+        "nullable": true
+      },
+      {
+        "name": "facility_snapshot",
+        "type": "jsonb",
+        "nullable": false
+      }
+    ],
+    "assessment_expansion_profiles": [
+      {
+        "name": "assessment_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "profile_id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "applied_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "applied_by",
+        "type": "text",
+        "nullable": true
+      }
+    ],
+    "assessment_expansion_responses": [
+      {
+        "name": "assessment_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "question_id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "response",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      }
+    ],
+    "assessment_instances": [
+      {
+        "name": "id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "template_id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "facility_id",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "facility_name",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "started_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "completed_at",
+        "type": "timestamp with time zone",
+        "nullable": true
+      },
+      {
+        "name": "status",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "metadata",
+        "type": "jsonb",
+        "nullable": true
+      },
+      {
+        "name": "created_by",
+        "type": "uuid",
+        "nullable": true
+      }
+    ],
+    "assessment_question_responses": [
+      {
+        "name": "id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "assessment_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "question_code",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "response_enum",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "detail",
+        "type": "jsonb",
+        "nullable": false
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      }
+    ],
+    "assessment_question_universe": [
+      {
+        "name": "assessment_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "layer",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "question_code",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "order_index",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "meta",
+        "type": "jsonb",
+        "nullable": false
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      }
+    ],
+    "assessment_required_elements": [
+      {
+        "name": "id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "assessment_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "element_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "element_code",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "layer",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "title",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "question_text",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "discipline_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "discipline_name",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "discipline_subtype_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "discipline_subtype_name",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "sector_id",
+        "type": "uuid",
+        "nullable": true
+      },
+      {
+        "name": "subsector_id",
+        "type": "uuid",
+        "nullable": true
+      },
+      {
+        "name": "order_index",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      }
+    ],
+    "assessment_responses": [
+      {
+        "name": "id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "assessment_instance_id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "question_template_id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "response",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "notes",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "responded_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      }
+    ],
+    "assessment_status": [
+      {
+        "name": "assessment_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "status",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      }
+    ],
+    "assessment_technology_profiles": [
+      {
+        "name": "id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "assessment_instance_id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "discipline_subtype_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "technology_code",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "notes",
+        "type": "text",
+        "nullable": true
+      }
+    ],
+    "assessment_templates": [
+      {
+        "name": "id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "name",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "description",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "discipline_ids",
+        "type": "ARRAY",
+        "nullable": false
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      }
+    ],
+    "assessment_vulnerability_sectors": [
+      {
+        "name": "assessment_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "vulnerability_id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "sector",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "subsector",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "manifestation_text",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "source_document",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "page",
+        "type": "integer",
+        "nullable": true
+      }
+    ],
+    "assessments": [
+      {
+        "name": "id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "facility_name",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "sector_id",
+        "type": "uuid",
+        "nullable": true
+      },
+      {
+        "name": "sector_name",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "subsector_id",
+        "type": "uuid",
+        "nullable": true
+      },
+      {
+        "name": "subsector_name",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "status",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "created_by",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "submitted_by",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "submitted_at",
+        "type": "timestamp with time zone",
+        "nullable": true
+      },
+      {
+        "name": "locked_by",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "locked_at",
+        "type": "timestamp with time zone",
+        "nullable": true
+      },
+      {
+        "name": "baseline_version",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "sector_version",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "subsector_version",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "ofc_version",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "qa_flag",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "name": "test_run_id",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "test_purpose",
+        "type": "text",
+        "nullable": true
+      }
+    ],
+    "system_settings": [
+      {
+        "name": "key",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "value",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "updated_by",
+        "type": "text",
+        "nullable": false
+      }
+    ],
+    "test_assessment_purge_log": [
+      {
+        "name": "purge_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "purged_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "purged_by",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "mode",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "filters_applied",
+        "type": "jsonb",
+        "nullable": false
+      },
+      {
+        "name": "counts",
+        "type": "jsonb",
+        "nullable": false
+      },
+      {
+        "name": "assessment_ids_deleted",
+        "type": "ARRAY",
+        "nullable": true
+      },
+      {
+        "name": "notes",
+        "type": "text",
+        "nullable": true
+      }
+    ]
+  },
+  "dimension_table_details": {
+    "canonical_disciplines": [
+      {
+        "name": "id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "name",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "description",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "sha256",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      }
+    ],
+    "canonical_subtypes": [
+      {
+        "name": "id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "discipline_id",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "name",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "description",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "sha256",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      }
+    ],
+    "discipline_subtypes": [
+      {
+        "name": "id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "discipline_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "name",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "description",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "code",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "is_active",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "nullable": true
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp with time zone",
+        "nullable": true
+      },
+      {
+        "name": "overview",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "indicators_of_risk",
+        "type": "ARRAY",
+        "nullable": true
+      },
+      {
+        "name": "common_failures",
+        "type": "ARRAY",
+        "nullable": true
+      },
+      {
+        "name": "assessment_questions",
+        "type": "ARRAY",
+        "nullable": true
+      },
+      {
+        "name": "mitigation_guidance",
+        "type": "ARRAY",
+        "nullable": true
+      },
+      {
+        "name": "standards_references",
+        "type": "ARRAY",
+        "nullable": true
+      },
+      {
+        "name": "psa_notes",
+        "type": "text",
+        "nullable": true
+      }
+    ],
+    "disciplines": [
+      {
+        "name": "id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "name",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "description",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "category",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "is_active",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "nullable": true
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp with time zone",
+        "nullable": true
+      },
+      {
+        "name": "code",
+        "type": "text",
+        "nullable": true
+      }
+    ],
+    "document_subtype_relevance": [
+      {
+        "name": "id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "document_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "discipline_code",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "subtype_code",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "relevance",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "name": "confidence_score",
+        "type": "numeric",
+        "nullable": true
+      },
+      {
+        "name": "rationale",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      }
+    ],
+    "subdiscipline_sector_filter": [
+      {
+        "name": "id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "subdiscipline_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "sector_id",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "subsector_id",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "is_active",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "name": "priority",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "notes",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "created_by",
+        "type": "uuid",
+        "nullable": true
+      }
+    ],
+    "subsector_discipline_map": [
+      {
+        "name": "id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "discipline_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "manual_weight",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "auto_weight_score",
+        "type": "numeric",
+        "nullable": true
+      },
+      {
+        "name": "manual_override",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "name": "notes",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp with time zone",
+        "nullable": true
+      },
+      {
+        "name": "subsector_id",
+        "type": "text",
+        "nullable": true
+      }
+    ],
+    "subsector_discipline_weight_history": [
+      {
+        "name": "id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "subsector_id_uuid",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "discipline_id",
+        "type": "uuid",
+        "nullable": false
+      },
+      {
+        "name": "manual_weight",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "auto_weight_score",
+        "type": "numeric",
+        "nullable": true
+      },
+      {
+        "name": "final_weight",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "source",
+        "type": "text",
+        "nullable": false
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "nullable": false
+      }
+    ]
+  }
+}

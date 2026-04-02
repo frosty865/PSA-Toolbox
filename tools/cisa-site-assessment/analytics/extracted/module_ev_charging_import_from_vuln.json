@@ -1,0 +1,195 @@
+{
+  "module_code": "MODULE_EV_CHARGING",
+  "title": "Electric Vehicle Charging",
+  "description": "Additive module for EV charging station-related physical security, operations, and governance considerations.",
+  "import_source": "ev_charging_vulnerabilities.json",
+  "mode": "REPLACE",
+  "module_questions": [],
+  "module_ofcs": [
+    {
+      "ofc_id": "MOD_OFC_EV_CHARGING_001",
+      "ofc_text": "Implement RFID Access Control Addresses: May lead to tampering with charging infrastructure, resulting in data breaches or service disruptions.",
+      "order_index": 1,
+      "source_system": "VULN_JSON",
+      "source_locator": {
+        "vulnerability_index": 0,
+        "option_index": 0,
+        "vulnerability": "Unauthorized Access"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "Cyber Threats to EV Charging Infrastructure - SEC Consult (January 15, 2025)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_EV_CHARGING_002",
+      "ofc_text": "Install Surveillance Cameras Addresses: May lead to tampering with charging infrastructure, resulting in data breaches or service disruptions.",
+      "order_index": 2,
+      "source_system": "VULN_JSON",
+      "source_locator": {
+        "vulnerability_index": 0,
+        "option_index": 1,
+        "vulnerability": "Unauthorized Access"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "Electric Vehicle Charger Security Risks - VicOne (August 26, 2025)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_EV_CHARGING_003",
+      "ofc_text": "Conduct Regular Security Audits Addresses: May lead to tampering with charging infrastructure, resulting in data breaches or service disruptions.",
+      "order_index": 3,
+      "source_system": "VULN_JSON",
+      "source_locator": {
+        "vulnerability_index": 0,
+        "option_index": 2,
+        "vulnerability": "Unauthorized Access"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "Sandia Studies Vulnerabilities of Electric Vehicle Charging Infrastructure (November 15, 2022)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_EV_CHARGING_004",
+      "ofc_text": "Enhance Lighting Around Stations Addresses: Increased likelihood of vandalism or theft due to lack of visibility, making installations attractive targets for criminal activity.",
+      "order_index": 4,
+      "source_system": "VULN_JSON",
+      "source_locator": {
+        "vulnerability_index": 1,
+        "option_index": 0,
+        "vulnerability": "Insufficient Lighting and Blind Spots"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "Improving Public EV Charger Locations - GreenTech (March 12, 2025)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_EV_CHARGING_005",
+      "ofc_text": "Design Stations with Visibility in Mind Addresses: Increased likelihood of vandalism or theft due to lack of visibility, making installations attractive targets for criminal activity.",
+      "order_index": 5,
+      "source_system": "VULN_JSON",
+      "source_locator": {
+        "vulnerability_index": 1,
+        "option_index": 1,
+        "vulnerability": "Insufficient Lighting and Blind Spots"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "Public Space Design - Urban Planning Journal (July 18, 2023)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_EV_CHARGING_006",
+      "ofc_text": "Install Panic Buttons or Alert Systems Addresses: Increased likelihood of vandalism or theft due to lack of visibility, making installations attractive targets for criminal activity.",
+      "order_index": 6,
+      "source_system": "VULN_JSON",
+      "source_locator": {
+        "vulnerability_index": 1,
+        "option_index": 2,
+        "vulnerability": "Insufficient Lighting and Blind Spots"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "Modern Security Solutions for EV Chargers - TechSecure (June 21, 2024)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_EV_CHARGING_007",
+      "ofc_text": "Use Tamper-Proof Hardware Addresses: Physical tampering can lead to equipment damage and hazardous situations, compromising user safety.",
+      "order_index": 7,
+      "source_system": "VULN_JSON",
+      "source_locator": {
+        "vulnerability_index": 2,
+        "option_index": 0,
+        "vulnerability": "Exposed Cables and Insecure Hardware"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "How to Address the Increasing Threat of Cyberattacks on EV Charging Stations - Virta (May 14, 2025)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_EV_CHARGING_008",
+      "ofc_text": "Regular Maintenance Checks Addresses: Physical tampering can lead to equipment damage and hazardous situations, compromising user safety.",
+      "order_index": 8,
+      "source_system": "VULN_JSON",
+      "source_locator": {
+        "vulnerability_index": 2,
+        "option_index": 1,
+        "vulnerability": "Exposed Cables and Insecure Hardware"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "Charging Station Security Standards - Electric Vehicle Infrastructure Alliance (March 10, 2023)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_EV_CHARGING_009",
+      "ofc_text": "Create Awareness Training for Staff Addresses: Physical tampering can lead to equipment damage and hazardous situations, compromising user safety.",
+      "order_index": 9,
+      "source_system": "VULN_JSON",
+      "source_locator": {
+        "vulnerability_index": 2,
+        "option_index": 2,
+        "vulnerability": "Exposed Cables and Insecure Hardware"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "The Importance of Staff Training in EV Charger Security - ChargeLab (October 02, 2024)"
+        }
+      ]
+    }
+  ],
+  "risk_drivers": [
+    {
+      "driver_type": "FRAUD_DRIVER",
+      "driver_text": "Data Theft and Skimming: Install Encryption for Transactions — Potential for identity theft and fraud, leading to financial losses for users and damage to trust in the charging infrastructure.",
+      "source_locator": {
+        "vulnerability_index": 3,
+        "option_index": 0,
+        "vulnerability": "Data Theft and Skimming"
+      },
+      "reference": "Cybersecurity Best Practices for EV Charging Stations - Connect EV (February 17, 2025)"
+    },
+    {
+      "driver_type": "FRAUD_DRIVER",
+      "driver_text": "Data Theft and Skimming: Utilize Two-Factor Authentication (2FA) — Potential for identity theft and fraud, leading to financial losses for users and damage to trust in the charging infrastructure.",
+      "source_locator": {
+        "vulnerability_index": 3,
+        "option_index": 1,
+        "vulnerability": "Data Theft and Skimming"
+      },
+      "reference": "Securing Payment Systems for EV Chargers - FinTech Research Group (August 25, 2023)"
+    },
+    {
+      "driver_type": "CYBER_DRIVER",
+      "driver_text": "Data Theft and Skimming: Monitor Network Traffic for Anomalies — Potential for identity theft and fraud, leading to financial losses for users and damage to trust in the charging infrastructure.",
+      "source_locator": {
+        "vulnerability_index": 3,
+        "option_index": 2,
+        "vulnerability": "Data Theft and Skimming"
+      },
+      "reference": "Cybersecurity Risks in EV Charging - Driivz (May 19, 2025)"
+    }
+  ]
+}

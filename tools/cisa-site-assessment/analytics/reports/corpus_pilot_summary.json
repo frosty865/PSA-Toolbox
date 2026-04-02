@@ -1,0 +1,31 @@
+{
+  "pilot_executed_at": "2026-01-13T20:15:00Z",
+  "source_document": "Protecting Patrons at Public Gathering Locations",
+  "source_file": "D:\\psa-workspace\\PDF's\\Protecting-Patrons-at-Public-Gathering-Locations_508_20250805.pdf",
+  "authority_scope": "BASELINE_AUTHORITY",
+  "results": {
+    "document_id": "d523bcbe-60db-47bf-8487-80b533673d29",
+    "source_id": "2d9688eb-fb45-4504-92b7-1a23682538c5",
+    "chunks_count": 6,
+    "candidates_count": 9,
+    "pages_extracted": 2
+  },
+  "success_criteria": {
+    "documents_count": 1,
+    "chunks_count_target": ">= 20",
+    "chunks_count_actual": 6,
+    "chunks_met": false,
+    "candidates_count_target": ">= 5",
+    "candidates_count_actual": 9,
+    "candidates_met": true,
+    "no_runtime_writes": true,
+    "traceable_to_pages": true
+  },
+  "notes": [
+    "PDF extraction may need improvement - only 2 pages extracted from 426KB file",
+    "All candidates are traceable to page numbers",
+    "No writes occurred to RUNTIME database",
+    "CORPUS is now a durable, replayable text source"
+  ]
+}
+

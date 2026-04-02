@@ -1,0 +1,11 @@
+[
+  {
+    "candidate_id": "69d90308-c973-47ea-b0df-9b0c92c80bd9",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 7",
+    "question_text": "Will any very-important-persons (VIPs), senior officials, or dignitaries attend the event?",
+    "context": "Will any very-important-persons (VIPs), senior officials, or dignitaries attend the event?",
+    "lane_reason": "context/facility-info style prompt (not a security control question set item)",
+    "general_applicability_score": 0.0
+  }
+]

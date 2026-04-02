@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "generated_at": "2026-01-13T18:05:37.437027Z",
+    "baseline_version": "Baseline_Questions_v2",
+    "total_assessments_processed": 10
+  },
+  "summary": {
+    "total_ofcs_generated": 2,
+    "total_validation_errors": 0,
+    "total_skipped": 1
+  },
+  "by_gate": {
+    "CONTROL_OPERABLE": 1,
+    "CONTROL_EXISTS": 1
+  },
+  "by_discipline": {
+    "Access Control Systems": 2
+  },
+  "by_assessment": {
+    "test-instance-7b93e23c": {
+      "total_ofcs": 0,
+      "by_gate": {},
+      "by_discipline": {}
+    },
+    "4fe710a3-2339-4337-a18a-31551bac3c31": {
+      "total_ofcs": 0,
+      "by_gate": {},
+      "by_discipline": {}
+    },
+    "test-instance-aa18cbde": {
+      "total_ofcs": 0,
+      "by_gate": {},
+      "by_discipline": {}
+    },
+    "test-instance-91bedb9f": {
+      "total_ofcs": 0,
+      "by_gate": {},
+      "by_discipline": {}
+    },
+    "test-instance-001": {
+      "total_ofcs": 0,
+      "by_gate": {},
+      "by_discipline": {}
+    },
+    "test-instance-68a40b7c": {
+      "total_ofcs": 0,
+      "by_gate": {},
+      "by_discipline": {}
+    },
+    "test-instance-22ccf5b0": {
+      "total_ofcs": 0,
+      "by_gate": {},
+      "by_discipline": {}
+    },
+    "test-instance-f5df6a1e": {
+      "total_ofcs": 0,
+      "by_gate": {},
+      "by_discipline": {}
+    },
+    "test-instance-4c296c5a": {
+      "total_ofcs": 0,
+      "by_gate": {},
+      "by_discipline": {}
+    },
+    "cfbfca41-3f8c-4c69-99a8-5b2546910e88": {
+      "total_ofcs": 2,
+      "by_gate": {
+        "CONTROL_OPERABLE": 1,
+        "CONTROL_EXISTS": 1
+      },
+      "by_discipline": {
+        "Access Control Systems": 2
+      }
+    }
+  }
+}

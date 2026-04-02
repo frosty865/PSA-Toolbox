@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "mode": "threshold",
+  "taxonomy_total": 105,
+  "subtypes_seen": 105,
+  "guidance_required_count": 19,
+  "guidance_present_count": 103,
+  "guidance_coverage": 0.9809523809523809,
+  "required_effective_count": 0,
+  "required_effective_missing": [],
+  "explicit_required_count": 19,
+  "explicit_required_missing": [],
+  "violations_count": 0,
+  "violations": [],
+  "duplicate_subtype_codes": []
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "description": "Subtype-bound reference implementations for baseline intent + descriptive branching. Authoritative per subtype only.",
+  "items": [
+    {
+      "discipline_subtype_id": "20d11544-f449-46f2-9aa8-39cfcf8a134b",
+      "discipline_name": "Key Control",
+      "discipline_subtype_name": "Rekeying Procedures",
+      "file": "KEY_REKEYING_PROCEDURES.json"
+    },
+    {
+      "discipline_subtype_id": "6abbccac-a6ba-4b8d-a451-1bc099e62b96",
+      "discipline_name": "Access Control Systems",
+      "discipline_subtype_name": "Visitor Management Systems",
+      "file": "ACS_VISITOR_MANAGEMENT_SYSTEMS.json"
+    }
+  ]
+}

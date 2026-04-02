@@ -1,0 +1,18 @@
+{
+  "items": [
+    {
+      "legacy_id": "test-6",
+      "legacy_code": "BASE-006",
+      "discipline_code": "PER",
+      "subtype_code": "PER_VEHICLE_ACCESS_CONTROL_POINTS",
+      "question": "Are crowd control measures in place for large events?",
+      "outcome": "MOVE_TO_EXPANSION",
+      "reason_codes": [
+        "SECTOR_SUBSECTOR_CONTEXT_REQUIRED"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "Question requires sector/subsector context; belongs in expansion layer"
+    }
+  ]
+}

@@ -51,7 +51,7 @@ class handler(BaseHTTPRequestHandler):
             docx_bytes = run_from_payload(data, work_dir, TEMPLATE_PATH)
             self.send_response(200)
             self.send_header("Content-Type", "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
-            self.send_header("Content-Disposition", 'attachment; filename="Asset-Dependency-Assessment-Report.docx"')
+            self.send_header("Content-Disposition", 'attachment; filename="Infrastructure-Dependency-Tool-Report.docx"')
             self.end_headers()
             self.wfile.write(docx_bytes)
         except Exception as e:

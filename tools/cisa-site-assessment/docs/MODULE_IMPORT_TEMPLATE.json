@@ -1,0 +1,152 @@
+{
+  "_comment": "PSA Module Import Template - Use this as a guide for creating module import JSON files",
+  "_documentation": "See docs/MODULE_IMPORT_GUIDE.md for detailed instructions",
+  
+  "module_code": "MODULE_EXAMPLE",
+  "_module_code_note": "Must start with 'MODULE_' and contain only uppercase letters, numbers, and underscores. Example: MODULE_EV_CHARGING, MODULE_EV_PARKING",
+  
+  "title": "Example Module Title",
+  "_title_note": "Human-readable module name. This will be displayed in the UI.",
+  
+  "description": "Optional description of what this module covers and when it should be used.",
+  "_description_note": "Optional field. Provide context about the module's purpose and scope.",
+  
+  "import_source": "example_module_import.json",
+  "_import_source_note": "Optional. Name of the source file or system that generated this import.",
+  
+  "mode": "REPLACE",
+  "_mode_note": "Either 'REPLACE' (default) or 'APPEND'. REPLACE deletes all existing module content before importing. APPEND adds to existing content.",
+  
+  "module_questions": [
+    {
+      "_comment": "Module questions are additive, technology/situation-specific questions. They must NOT reference baseline questions.",
+      "_validation_rules": [
+        "Question IDs must start with 'MODULEQ_' followed by module code (e.g., MODULEQ_EV_CHARGING_001)",
+        "Question text must be non-generic and technology/situation dependent",
+        "Each question must be assigned to a valid discipline/subtype pair",
+        "Discipline and subtype must match semantic content of the question",
+        "Event trigger must match the question's semantic content",
+        "No baseline question IDs (BASE-*) are allowed"
+      ],
+      
+      "id": "MODULEQ_EXAMPLE_001",
+      "_id_note": "Must be unique and follow pattern: MODULEQ_<MODULE_CODE>_###",
+      
+      "text": "Is physical access to [specific asset/location] restricted to authorized personnel?",
+      "_text_note": "Must be specific, non-generic, and technology/situation dependent. Avoid phrases like 'supports physical security'.",
+      
+      "order": 1,
+      "_order_note": "Display order (1-based). Questions will be shown in this order.",
+      
+      "discipline_id": "00000000-0000-0000-0000-000000000000",
+      "_discipline_id_note": "UUID of the discipline from public.disciplines table. Use scripts/get_discipline_uuids_for_modules.js to get valid UUIDs.",
+      "_discipline_examples": {
+        "ACS": "Access Control Systems - for access, restricted areas, authorized personnel questions",
+        "VSS": "Video Surveillance Systems - for camera, video coverage, surveillance questions",
+        "EMR": "Emergency Management & Resilience - for panic, duress, assistance, emergency questions",
+        "SMG": "Security Management & Governance - for procedures, responsibilities, coordination questions"
+      },
+      
+      "discipline_subtype_id": "00000000-0000-0000-0000-000000000000",
+      "_discipline_subtype_id_note": "UUID of the subtype from public.discipline_subtypes table. Must belong to the discipline_id. Generic subtypes (General, Other) are rejected.",
+      
+      "asset_or_location": "Specific asset or location name",
+      "_asset_or_location_note": "Required. Must be non-empty. Describes what asset or location the question applies to (e.g., 'EV charging equipment', 'Parking garage').",
+      
+      "event_trigger": "TAMPERING",
+      "_event_trigger_note": "One of: FIRE, TAMPERING, IMPACT, OUTAGE, OTHER",
+      "_event_trigger_rules": {
+        "TAMPERING": "Required for: access, inspection, cable, hardware, lighting/visibility questions",
+        "OTHER": "Required for: panic, duress, assistance, emergency questions",
+        "OUTAGE": "Required for: recovery, restoration, continuity, coordination questions",
+        "FIRE": "For fire-related questions",
+        "IMPACT": "For impact-related questions"
+      }
+    },
+    {
+      "id": "MODULEQ_EXAMPLE_002",
+      "text": "Is video coverage implemented for [specific location] to support incident detection?",
+      "order": 2,
+      "discipline_id": "00000000-0000-0000-0000-000000000000",
+      "discipline_subtype_id": "00000000-0000-0000-0000-000000000000",
+      "asset_or_location": "Specific location",
+      "event_trigger": "TAMPERING"
+    }
+  ],
+  
+  "module_ofcs": [
+    {
+      "_comment": "Module OFCs (Options For Consideration) are additive, module-specific recommendations.",
+      "_validation_rules": [
+        "OFC IDs must start with 'MOD_OFC_' followed by module code (e.g., MOD_OFC_EV_CHARGING_001)",
+        "OFC text must be PSA-scope (physical security only, no cyber controls)",
+        "Sources are optional but recommended for traceability"
+      ],
+      
+      "ofc_id": "MOD_OFC_EXAMPLE_001",
+      "_ofc_id_note": "Must be unique and follow pattern: MOD_OFC_<MODULE_CODE>_###",
+      
+      "ofc_text": "Consider implementing [specific physical security measure] at [location] to [achieve physical security outcome].",
+      "_ofc_text_note": "Must be physical security focused. Cyber controls (encryption, 2FA, authentication) are NOT allowed in OFCs.",
+      
+      "order_index": 1,
+      "_order_index_note": "Display order (1-based). OFCs will be shown in this order.",
+      
+      "source_system": "VULN_JSON",
+      "_source_system_note": "Optional. Identifier for the source system (e.g., 'VULN_JSON', 'IST_HTML'). Used for traceability.",
+      
+      "source_ofc_id": null,
+      "_source_ofc_id_note": "Optional. Original OFC ID from source system. Stored for traceability but NOT displayed.",
+      
+      "source_ofc_num": null,
+      "_source_ofc_num_note": "Optional. Original OFC number from source system.",
+      
+      "sources": [
+        {
+          "url": "https://example.com/source-document.pdf",
+          "label": "Source Document Title (Author, Date)"
+        },
+        {
+          "url": "",
+          "label": "Reference-only source without URL"
+        }
+      ],
+      "_sources_note": "Optional array of source references. URL can be empty if label is provided (for reference-only sources)."
+    },
+    {
+      "ofc_id": "MOD_OFC_EXAMPLE_002",
+      "ofc_text": "An option for consideration is [specific measure] to [achieve outcome].",
+      "order_index": 2,
+      "sources": []
+    }
+  ],
+  
+  "risk_drivers": [
+    {
+      "_comment": "Risk drivers provide context about cyber/fraud vulnerabilities that may impact physical security.",
+      "_validation_rules": [
+        "Risk drivers are context-only (never become questions or OFCs)",
+        "One driver per vulnerability per type (CYBER_DRIVER or FRAUD_DRIVER)",
+        "Driver text must describe a single initiating cause with physical-security impact",
+        "No garbage concatenation (lists of options, repeated phrases)"
+      ],
+      
+      "driver_type": "CYBER_DRIVER",
+      "_driver_type_note": "Either 'CYBER_DRIVER' or 'FRAUD_DRIVER'",
+      
+      "driver_text": "Unauthorized access to [system] may enable physical tampering or unsafe conditions at [location].",
+      "_driver_text_note": "Must describe a single initiating cause with physical-security impact. Should be a complete sentence, not a list of options.",
+      
+      "source_locator": {
+        "_comment": "Optional. Used to track which vulnerability this driver came from.",
+        "vulnerability": "Unauthorized Access",
+        "vulnerability_index": 0,
+        "option_index": 0
+      }
+    },
+    {
+      "driver_type": "FRAUD_DRIVER",
+      "driver_text": "Payment skimming or data theft at [location] may increase criminal targeting of [location] and associated users."
+    }
+  ]
+}

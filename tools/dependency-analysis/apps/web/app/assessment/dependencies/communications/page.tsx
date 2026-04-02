@@ -4,7 +4,7 @@ import { CommsQuestionnaireSection } from './CommsQuestionnaireSection';
 
 export default function CommunicationsDependencyPage() {
   return (
-    <main className="ida-section active">
+    <main className="section active">
       <CommsQuestionnaireSection embedded={false} />
     </main>
   );

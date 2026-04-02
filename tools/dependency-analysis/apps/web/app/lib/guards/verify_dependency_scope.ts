@@ -3,7 +3,7 @@
  * Run via: pnpm run verify:dependency-scope
  *
  * Hard fail. No warnings. No auto-fixes.
- * Doctrine: doctrine/dependencies/it_vs_communications_boundary.md
+ * IT vs Communications crossover rules live in infrastructure specs (it_spec / comms_spec).
  */
 
 import {

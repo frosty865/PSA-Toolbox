@@ -1,0 +1,418 @@
+{
+  "sources": [
+    {
+      "source_key": "DOMAIN_482D1D3B",
+      "domain": "poa.asisonline.org",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 165 citation links"
+    },
+    {
+      "source_key": "DOMAIN_2E6123C4",
+      "domain": "www.fema.gov",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 153 citation links"
+    },
+    {
+      "source_key": "DOMAIN_24E52904",
+      "domain": "www.dhs.gov",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 86 citation links"
+    },
+    {
+      "source_key": "DOMAIN_DE020104",
+      "domain": "shop.bsigroup.com",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 74 citation links"
+    },
+    {
+      "source_key": "DOMAIN_A724153C",
+      "domain": "www.ready.gov",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 55 citation links"
+    },
+    {
+      "source_key": "DOMAIN_E1A3ADD0",
+      "domain": "www.elsevier.com",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 55 citation links"
+    },
+    {
+      "source_key": "DOMAIN_8EC07635",
+      "domain": "www.nist.gov",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 52 citation links"
+    },
+    {
+      "source_key": "DOMAIN_1EB04074",
+      "domain": "www.asisonline.org",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 42 citation links"
+    },
+    {
+      "source_key": "DOMAIN_282B1624",
+      "domain": "www.nfpa.org",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 31 citation links"
+    },
+    {
+      "source_key": "DOMAIN_1CF112AC",
+      "domain": "www.iso.org",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 29 citation links"
+    },
+    {
+      "source_key": "DOMAIN_68E0DFD4",
+      "domain": "fas.org",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 29 citation links"
+    },
+    {
+      "source_key": "DOMAIN_334359B9",
+      "domain": "#",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 22 citation links"
+    },
+    {
+      "source_key": "DOMAIN_DDD24AB7",
+      "domain": "www.ndsu.edu",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 20 citation links"
+    },
+    {
+      "source_key": "DOMAIN_7B42E4AB",
+      "domain": "csrc.nist.gov",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 19 citation links"
+    },
+    {
+      "source_key": "DOMAIN_53C74AEF",
+      "domain": "www.wbdg.org",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 15 citation links"
+    },
+    {
+      "source_key": "DOMAIN_DDA6BDC7",
+      "domain": "www.fas.org",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 13 citation links"
+    },
+    {
+      "source_key": "DOMAIN_CD3DF57D",
+      "domain": "www.nyc.gov",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 13 citation links"
+    },
+    {
+      "source_key": "DOMAIN_A5D5A2F4",
+      "domain": "store.elsevier.com",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 10 citation links"
+    },
+    {
+      "source_key": "DOMAIN_8612522E",
+      "domain": "www.securitymanagement.com",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 9 citation links"
+    },
+    {
+      "source_key": "DOMAIN_D444EBB0",
+      "domain": "www.globalspec.com",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 8 citation links"
+    },
+    {
+      "source_key": "DOMAIN_58214102",
+      "domain": "nvlpubs.nist.gov",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 8 citation links"
+    },
+    {
+      "source_key": "DOMAIN_767EFFEA",
+      "domain": "www.fbi.gov",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 7 citation links"
+    },
+    {
+      "source_key": "DOMAIN_808B9E81",
+      "domain": "www.protiviti.com",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 6 citation links"
+    },
+    {
+      "source_key": "DOMAIN_C2919644",
+      "domain": "www.usfa.fema.gov",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 5 citation links"
+    },
+    {
+      "source_key": "DOMAIN_65053FFF",
+      "domain": "www.cdc.gov",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 3 citation links"
+    },
+    {
+      "source_key": "DOMAIN_737C3F85",
+      "domain": "training.fema.gov",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 3 citation links"
+    },
+    {
+      "source_key": "DOMAIN_1F21987E",
+      "domain": "www.crcpress.com",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 3 citation links"
+    },
+    {
+      "source_key": "DOMAIN_E80B83D7",
+      "domain": "www.wiley.com",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 2 citation links"
+    },
+    {
+      "source_key": "DOMAIN_DDDCB15D",
+      "domain": "texasforestservice.tamu.edu",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 2 citation links"
+    },
+    {
+      "source_key": "DOMAIN_8EAE792B",
+      "domain": "www.llis.dhs.gov",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 2 citation links"
+    },
+    {
+      "source_key": "DOMAIN_9449B91E",
+      "domain": "pdc.usace.army.mil",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 2 citation links"
+    },
+    {
+      "source_key": "DOMAIN_80CA5806",
+      "domain": "www.gao.gov",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 2 citation links"
+    },
+    {
+      "source_key": "DOMAIN_B8A303ED",
+      "domain": "www.merriam-webster.com",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 2 citation links"
+    },
+    {
+      "source_key": "DOMAIN_9F3FC7B7",
+      "domain": "transition.fcc.gov",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 1 citation links"
+    },
+    {
+      "source_key": "DOMAIN_CE10DF15",
+      "domain": "www.cumminspower.com",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 1 citation links"
+    },
+    {
+      "source_key": "DOMAIN_1270C2BE",
+      "domain": "www1.eere.energy.gov",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 1 citation links"
+    },
+    {
+      "source_key": "DOMAIN_71AF3719",
+      "domain": "www.isaccouncil.org",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 1 citation links"
+    },
+    {
+      "source_key": "DOMAIN_0AD668DD",
+      "domain": "www.infragard.org",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 1 citation links"
+    },
+    {
+      "source_key": "DOMAIN_2439AF6D",
+      "domain": "alerts.weather.gov",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 1 citation links"
+    },
+    {
+      "source_key": "DOMAIN_1D18418D",
+      "domain": "www.usgs.gov",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 1 citation links"
+    },
+    {
+      "source_key": "DOMAIN_CB67EEE7",
+      "domain": "www.phconnect.org",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 1 citation links"
+    },
+    {
+      "source_key": "DOMAIN_205E8091",
+      "domain": "www.uscg.mil",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 1 citation links"
+    },
+    {
+      "source_key": "DOMAIN_C3A40EEE",
+      "domain": "iacd.iac.anl.gov",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 1 citation links"
+    },
+    {
+      "source_key": "DOMAIN_1CB7DD53",
+      "domain": "www.drj.com",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 1 citation links"
+    },
+    {
+      "source_key": "DOMAIN_B8F7FBFA",
+      "domain": "www.training.fema.gov",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 1 citation links"
+    },
+    {
+      "source_key": "DOMAIN_68C18155",
+      "domain": "www.redcross.org",
+      "publisher": "REPLACE_ME",
+      "title": "REPLACE_ME",
+      "authority_tier": "BASELINE_AUTHORITY",
+      "status": "ACTIVE",
+      "notes": "Auto-generated from IST viewer; seen 1 citation links"
+    }
+  ]
+}

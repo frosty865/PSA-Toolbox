@@ -1,12 +1,13 @@
 'use client';
 
 import React, { useMemo, useState } from 'react';
-import Link from 'next/link';
+import Link from '@/components/FieldLink';
 import { useAssessment } from '@/lib/assessment-context';
 import type { Assessment } from 'schema';
 import { isPraSlaEnabled } from '@/lib/pra-sla-enabled';
 import { isCrossDependencyEnabled } from '@/lib/cross-dependency-enabled';
 import { buildReportVMForReview } from '@/app/lib/report/build_report_vm_client';
+import { getTemplateCheck } from '@/lib/api';
 import { computeCompletion } from '@/app/lib/assessment/completion';
 import { reviewExportCopy } from '@/lib/uiCopy/reviewExportCopy';
 import { AssessmentStatusStrip } from './AssessmentStatusStrip';
@@ -75,16 +76,9 @@ export function ReviewExportPage() {
 
   // Fetch template status on mount
   React.useEffect(() => {
-    const fetchTemplateStatus = async () => {
-      try {
-        const response = await fetch('/api/template/check');
-        const result = await response.json();
-        setTemplateReady(result.ok ?? false);
-      } catch (e) {
-        setTemplateReady(false);
-      }
-    };
-    fetchTemplateStatus();
+    getTemplateCheck()
+      .then((r) => setTemplateReady(r.ok))
+      .catch(() => setTemplateReady(false));
   }, []);
 
   const toggleSection = (sectionKey: keyof typeof expandedSections) => {
@@ -95,36 +89,36 @@ export function ReviewExportPage() {
   };
 
   return (
-    <div className="ida-review-shell">
+    <div style={{ paddingBottom: '200px' }}>
       {/* HEADER */}
-      <section className="card ida-review-card">
-        <div className="ida-review-header">
+      <section className="card" style={{ marginBottom: 'var(--spacing-lg)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
           <div>
             <h2 className="card-title">{reviewExportCopy.pageTitle}</h2>
-            <p className="text-secondary ida-review-description">
+            <p className="text-secondary" style={{ marginBottom: 'var(--spacing-md)' }}>
               {reviewExportCopy.pageDescription}
             </p>
             {templateReady !== null && (
-              <p className="ida-review-template-status">
+              <p style={{ fontSize: 'var(--font-size-sm)', marginTop: 'var(--spacing-sm)' }}>
                 {reviewExportCopy.templateLabel}{' '}
                 {templateReady ? (
-                  <span className="ida-review-template-ok">{reviewExportCopy.templateReady}</span>
+                  <span style={{ color: 'var(--color-success, #0a0)', fontWeight: 600 }}>{reviewExportCopy.templateReady}</span>
                 ) : (
-                  <span className="ida-review-template-error">
+                  <span style={{ color: 'var(--color-danger, #c00)', fontWeight: 600 }}>
                     {reviewExportCopy.templateMissingAnchors} {' '}
-                    <Link href="/template-readiness?dev=1" className="ida-review-template-link">{reviewExportCopy.templateDetailsLink}</Link>
+                    <Link href="/template-readiness?dev=1" style={{ fontSize: 'inherit' }}>{reviewExportCopy.templateDetailsLink}</Link>
                   </span>
                 )}
               </p>
             )}
           </div>
-          <div className="ida-review-header-actions">
+          <div style={{ display: 'flex', gap: 'var(--spacing-sm)', alignItems: 'center' }}>
             {process.env.NEXT_PUBLIC_REPORT_DEBUG === '1' && (
-              <label className="ida-review-debug-toggle">
+              <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--font-size-sm)' }}>
                 <input
                   type="checkbox"
                   defaultChecked={false}
-                  className="ida-review-debug-input"
+                  style={{ cursor: 'pointer' }}
                 />
                 {reviewExportCopy.debugPreview}
               </label>
@@ -143,16 +137,24 @@ export function ReviewExportPage() {
       <AssessmentStatusStrip completion={completion} reportVM={reportVM} />
 
       {/* EXECUTIVE SUMMARY PREVIEW */}
-      <section className="card ida-review-card">
+      <section className="card" style={{ marginBottom: 'var(--spacing-lg)' }}>
         <div
-          className={`ida-accordion-header ${expandedSections.executiveSummary ? 'is-open' : ''}`}
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            cursor: 'pointer',
+            padding: 'var(--spacing-md)',
+            marginBottom: expandedSections.executiveSummary ? 'var(--spacing-md)' : 0,
+            borderBottom: expandedSections.executiveSummary ? '1px solid var(--cisa-gray-light)' : 'none',
+          }}
           onClick={() => toggleSection('executiveSummary')}
         >
-          <h3 className="ida-accordion-title">{reviewExportCopy.executiveSummary}</h3>
-          <span className="ida-accordion-indicator">{expandedSections.executiveSummary ? reviewExportCopy.expandIndicator : reviewExportCopy.collapseIndicator}</span>
+          <h3 style={{ fontSize: 'var(--font-size-lg)', fontWeight: 600, margin: 0 }}>{reviewExportCopy.executiveSummary}</h3>
+          <span style={{ fontSize: '1.5rem' }}>{expandedSections.executiveSummary ? reviewExportCopy.expandIndicator : reviewExportCopy.collapseIndicator}</span>
         </div>
         {expandedSections.executiveSummary && (
-          <div className="ida-accordion-body">
+          <div style={{ padding: 'var(--spacing-md)' }}>
             <ExecutiveSummaryPreview assessment={mergedAssessment} reportVM={reportVM} completion={completion} showHelp={true} />
           </div>
         )}
@@ -169,18 +171,26 @@ export function ReviewExportPage() {
 
       {/* CROSS-DEPENDENCY PREVIEW */}
       {crossDependencyEnabled && (
-        <section className="card ida-review-card">
+        <section className="card" style={{ marginBottom: 'var(--spacing-lg)' }}>
           <div
-            className={`ida-accordion-header ${expandedSections.crossDependency ? 'is-open' : ''}`}
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              cursor: 'pointer',
+              padding: 'var(--spacing-md)',
+              marginBottom: expandedSections.crossDependency ? 'var(--spacing-md)' : 0,
+              borderBottom: expandedSections.crossDependency ? '1px solid var(--cisa-gray-light)' : 'none',
+            }}
             onClick={() => toggleSection('crossDependency')}
           >
-            <h3 className="ida-accordion-title">
+            <h3 style={{ fontSize: 'var(--font-size-lg)', fontWeight: 600, margin: 0 }}>
               {reviewExportCopy.crossDependencyCascadingRisk}
             </h3>
-            <span className="ida-accordion-indicator">{expandedSections.crossDependency ? reviewExportCopy.expandIndicator : reviewExportCopy.collapseIndicator}</span>
+            <span style={{ fontSize: '1.5rem' }}>{expandedSections.crossDependency ? reviewExportCopy.expandIndicator : reviewExportCopy.collapseIndicator}</span>
           </div>
           {expandedSections.crossDependency && (
-            <div className="ida-accordion-body">
+            <div style={{ padding: 'var(--spacing-md)' }}>
               <CrossDependencyPreview assessment={mergedAssessment} reportVM={reportVM} showHelp={true} />
             </div>
           )}
@@ -188,39 +198,55 @@ export function ReviewExportPage() {
       )}
 
       {/* SYNTHESIS PREVIEW */}
-      <section className="card ida-review-card">
+      <section className="card" style={{ marginBottom: 'var(--spacing-lg)' }}>
         <div
-          className={`ida-accordion-header ${expandedSections.synthesis ? 'is-open' : ''}`}
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            cursor: 'pointer',
+            padding: 'var(--spacing-md)',
+            marginBottom: expandedSections.synthesis ? 'var(--spacing-md)' : 0,
+            borderBottom: expandedSections.synthesis ? '1px solid var(--cisa-gray-light)' : 'none',
+          }}
           onClick={() => toggleSection('synthesis')}
         >
-          <h3 className="ida-accordion-title">{reviewExportCopy.synthesisAnalysis}</h3>
-          <span className="ida-accordion-indicator">{expandedSections.synthesis ? reviewExportCopy.expandIndicator : reviewExportCopy.collapseIndicator}</span>
+          <h3 style={{ fontSize: 'var(--font-size-lg)', fontWeight: 600, margin: 0 }}>{reviewExportCopy.synthesisAnalysis}</h3>
+          <span style={{ fontSize: '1.5rem' }}>{expandedSections.synthesis ? reviewExportCopy.expandIndicator : reviewExportCopy.collapseIndicator}</span>
         </div>
         {expandedSections.synthesis && (
-          <div className="ida-accordion-body">
+          <div style={{ padding: 'var(--spacing-md)' }}>
             <SynthesisPreview assessment={assessment} reportVM={reportVM ?? null} showHelp={true} />
           </div>
         )}
       </section>
 
       {/* METHODOLOGY & APPENDICES (collapsed by default) */}
-      <section className="card ida-review-card ida-review-card-final">
+      <section className="card" style={{ marginBottom: '200px' }}>
         <div
-          className={`ida-accordion-header ${expandedSections.methodology ? 'is-open' : ''}`}
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            cursor: 'pointer',
+            padding: 'var(--spacing-md)',
+            marginBottom: expandedSections.methodology ? 'var(--spacing-md)' : 0,
+            borderBottom: expandedSections.methodology ? '1px solid var(--cisa-gray-light)' : 'none',
+          }}
           onClick={() => toggleSection('methodology')}
         >
-          <h3 className="ida-accordion-title">{reviewExportCopy.methodologyAppendices}</h3>
-          <span className="ida-accordion-indicator">{expandedSections.methodology ? reviewExportCopy.expandIndicator : reviewExportCopy.collapseIndicator}</span>
+          <h3 style={{ fontSize: 'var(--font-size-lg)', fontWeight: 600, margin: 0 }}>{reviewExportCopy.methodologyAppendices}</h3>
+          <span style={{ fontSize: '1.5rem' }}>{expandedSections.methodology ? reviewExportCopy.expandIndicator : reviewExportCopy.collapseIndicator}</span>
         </div>
         {expandedSections.methodology && (
-          <div className="ida-accordion-body">
+          <div style={{ padding: 'var(--spacing-md)' }}>
             {reportVM?.methodology?.sections?.length ? (
-              <div className="ida-review-methodology-list">
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-md)' }}>
                 {reportVM.methodology.sections.map((section, idx) => (
                   <div key={idx}>
-                    <h5 className="ida-review-methodology-heading">{section.heading}</h5>
+                    <h5 style={{ fontSize: 'var(--font-size-sm)', fontWeight: 600, margin: '0 0 var(--spacing-sm) 0' }}>{section.heading}</h5>
                     {section.paragraphs?.map((p, pidx) => (
-                      <p key={pidx} className={`text-secondary ida-review-methodology-copy ${pidx ? 'ida-review-methodology-copy-gap' : ''}`}>
+                      <p key={pidx} className="text-secondary" style={{ fontSize: 'var(--font-size-sm)', margin: pidx ? '0.5rem 0 0 0' : 0, lineHeight: 1.6 }}>
                         {p}
                       </p>
                     ))}
@@ -228,7 +254,7 @@ export function ReviewExportPage() {
                 ))}
               </div>
             ) : (
-              <p className="text-secondary ida-review-methodology-empty">
+              <p className="text-secondary" style={{ fontSize: 'var(--font-size-sm)' }}>
                 Not available (not generated). Complete the assessment to populate methodology.
               </p>
             )}

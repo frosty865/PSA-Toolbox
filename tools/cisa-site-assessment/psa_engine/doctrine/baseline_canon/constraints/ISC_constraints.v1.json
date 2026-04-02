@@ -1,0 +1,12 @@
+{
+  "discipline_code": "ISC",
+  "version": "v1",
+  "constraints": [
+    {
+      "constraint_id": "BASE-ISC-CONSTRAINT-001",
+      "type": "EXCLUDE_LEGACY_SUBTYPES_FROM_SPINES",
+      "value": ["ISC_*"],
+      "reason": "ISC legacy items are procedural/assurance depth and cannot form baseline spines."
+    }
+  ]
+}

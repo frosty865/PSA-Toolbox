@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-01-13T21:08:23.325344Z",
+  "document_id": "70bbe86c-f353-43fc-86bc-a80b4e7533c6",
+  "document_title": "SAFE VOFC Library",
+  "candidate_count": 101,
+  "target_link_count": 8,
+  "base_index_count": 36,
+  "expansion_index_count": 0,
+  "candidates_with_zero_targets": 93,
+  "top_10_targets": [
+    {
+      "target_type": "BASE_PRIMARY",
+      "target_key": "AccessControl",
+      "count": 8,
+      "avg_score": 0.442
+    }
+  ],
+  "notes": [
+    "No expansion questions in index",
+    "93 candidates have no target matches"
+  ]
+}

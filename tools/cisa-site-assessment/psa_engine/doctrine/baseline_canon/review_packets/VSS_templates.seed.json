@@ -1,0 +1,73 @@
+{
+  "generated_from": "D:/psa-workspace/psa_rebuild/analytics/reports/legacy_baseline_refactor_map.json",
+  "discipline": "VSS",
+  "note": "Fill template strings with YES/NO-form boundary control assertions. Keys must match discipline_subtype_code exactly.",
+  "templates": {
+    "VSS_ANALYTICS_BEHAVIOR_DETECTION": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are analytics behavior detection sensors installed?"
+      ]
+    },
+    "VSS_CAMERA_COVERAGE_LINE_OF_SIGHT": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are camera coverage line of sight cameras installed?"
+      ]
+    },
+    "VSS_EXTERIOR_CAMERAS": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are exterior cameras cameras installed?"
+      ]
+    },
+    "VSS_FIXED_CAMERAS": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are fixed cameras cameras installed?"
+      ]
+    },
+    "VSS_INTERIOR_CAMERAS": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are interior cameras cameras installed?"
+      ]
+    },
+    "VSS_IP_CAMERAS": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are ip cameras cameras installed?"
+      ]
+    },
+    "VSS_MONITORING_WORKSTATIONS": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are monitoring workstations systems installed?"
+      ]
+    },
+    "VSS_PTZ_CAMERAS": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are ptz cameras cameras installed?"
+      ]
+    },
+    "VSS_RECORDING_STORAGE_NVR_DVR": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are recording storage recorders installed?"
+      ]
+    },
+    "VSS_SYSTEM_ARCHITECTURE": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are system architecture systems installed?"
+      ]
+    },
+    "VSS_VIDEO_WALL_DISPLAY_SYSTEMS": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are video wall display systems installed?"
+      ]
+    }
+  }
+}

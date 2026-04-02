@@ -1,0 +1,16 @@
+{
+  "source_file": "D:\\psa-workspace\\psa_rebuild\\analytics\\reports\\legacy_baseline_refactor_map.json",
+  "discipline": "VSS",
+  "counts": {
+    "total": 44,
+    "rewrite": 3,
+    "component_checklist": 37,
+    "drop": 4,
+    "fail_closed": 0,
+    "by_outcome": {
+      "DROP": 4,
+      "MOVE_TO_COMPONENT_CHECKLIST": 37,
+      "REWRITE_TO_CONTROL_ASSERTION": 3
+    }
+  }
+}

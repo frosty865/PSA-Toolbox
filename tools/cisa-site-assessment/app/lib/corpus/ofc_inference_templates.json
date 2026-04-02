@@ -1,0 +1,366 @@
+{
+  "version": "1.0",
+  "description": "Deterministic OFC inference templates mapping document findings/intent to canonical OFC capabilities",
+  "templates": [
+    {
+      "template_id": "VSS_COVERAGE_ENTRYWAYS_001",
+      "discipline_subtype_code": "VSS_EXTERIOR_CAMERAS",
+      "capability_dimension": "SYSTEMS",
+      "triggers_any": [
+        "cctv coverage is limited",
+        "camera coverage is limited",
+        "limited video coverage",
+        "blind spot",
+        "coverage gap",
+        "no camera coverage",
+        "lack of video surveillance",
+        "insufficient camera coverage"
+      ],
+      "evidence_type": "FINDING",
+      "ofc_text_template": "Video coverage is implemented for {asset_or_area} and immediate approaches to support incident detection and post-incident review.",
+      "asset_extraction_hints": ["gates", "entryways", "entrances", "exits", "parking", "loading dock", "perimeter", "critical areas"],
+      "notes": "Template-bound inference from coverage gaps to required coverage capability."
+    },
+    {
+      "template_id": "VSS_COVERAGE_INTERIOR_001",
+      "discipline_subtype_code": "VSS_INTERIOR_CAMERAS",
+      "capability_dimension": "SYSTEMS",
+      "triggers_any": [
+        "interior camera coverage is limited",
+        "no interior surveillance",
+        "lack of interior cameras",
+        "interior blind spots",
+        "insufficient interior coverage"
+      ],
+      "evidence_type": "FINDING",
+      "ofc_text_template": "Interior video surveillance is implemented for {asset_or_area} to support security monitoring and incident response.",
+      "asset_extraction_hints": ["lobbies", "hallways", "corridors", "common areas", "critical areas"],
+      "notes": "Interior coverage gaps to capability requirement."
+    },
+    {
+      "template_id": "ACS_ACCESS_POINT_MONITORING_001",
+      "discipline_subtype_code": "ACS_DOOR_MONITORING",
+      "capability_dimension": "SYSTEMS",
+      "triggers_any": [
+        "doors are not monitored",
+        "lack of door monitoring",
+        "no door status monitoring",
+        "unmonitored access points",
+        "doors lack monitoring",
+        "propped doors",
+        "door monitoring is insufficient"
+      ],
+      "evidence_type": "FINDING",
+      "ofc_text_template": "Door monitoring is implemented for {asset_or_area} to detect unauthorized access, forced entry, and propped door conditions.",
+      "asset_extraction_hints": ["exterior doors", "entry points", "controlled doors", "critical access points", "critical areas"],
+      "notes": "Door monitoring gaps to monitoring capability."
+    },
+    {
+      "template_id": "ACS_CREDENTIAL_MANAGEMENT_001",
+      "discipline_subtype_code": "ACS_CREDENTIAL_BADGE_SYSTEMS",
+      "capability_dimension": "PROCESSES",
+      "triggers_any": [
+        "badge management is inadequate",
+        "credential issuance lacks controls",
+        "no badge tracking",
+        "credentials are not tracked",
+        "lack of credential management",
+        "insufficient badge controls"
+      ],
+      "evidence_type": "FINDING",
+      "ofc_text_template": "Credential and badge management processes are established to track issuance, revocation, and lifecycle of access credentials.",
+      "asset_extraction_hints": ["credentials", "badges", "access cards", "critical areas"],
+      "notes": "Credential management gaps to process capability."
+    },
+    {
+      "template_id": "PSS_PERIMETER_BARRIERS_001",
+      "discipline_subtype_code": "PER_FENCING",
+      "capability_dimension": "SYSTEMS",
+      "triggers_any": [
+        "perimeter fencing is inadequate",
+        "fence is insufficient",
+        "perimeter barriers are lacking",
+        "no perimeter barrier",
+        "fencing gaps",
+        "perimeter is not secured"
+      ],
+      "evidence_type": "FINDING",
+      "ofc_text_template": "Perimeter barriers and fencing are implemented for {asset_or_area} to establish controlled boundaries and deter unauthorized access.",
+      "asset_extraction_hints": ["perimeter", "property boundary", "facility perimeter", "critical areas"],
+      "notes": "Perimeter barrier gaps to barrier capability."
+    },
+    {
+      "template_id": "PSS_LIGHTING_COVERAGE_001",
+      "discipline_subtype_code": "PER_PERIMETER_LIGHTING",
+      "capability_dimension": "SYSTEMS",
+      "triggers_any": [
+        "lighting is inadequate",
+        "insufficient lighting",
+        "poor lighting",
+        "dark areas",
+        "lack of lighting",
+        "lighting gaps",
+        "inadequate illumination"
+      ],
+      "evidence_type": "FINDING",
+      "ofc_text_template": "Exterior lighting is implemented for {asset_or_area} to provide adequate visibility for security monitoring and deterrence.",
+      "asset_extraction_hints": ["parking areas", "perimeter", "entry points", "walkways", "critical areas"],
+      "notes": "Lighting gaps to lighting capability."
+    },
+    {
+      "template_id": "EMR_EMERGENCY_COMMUNICATIONS_001",
+      "discipline_subtype_code": "EMR_EMERGENCY_COMMUNICATIONS",
+      "capability_dimension": "SYSTEMS",
+      "triggers_any": [
+        "emergency communications are lacking",
+        "no emergency communication system",
+        "lack of emergency notification",
+        "emergency alerting is insufficient",
+        "no way to alert personnel",
+        "emergency communication gaps"
+      ],
+      "evidence_type": "FINDING",
+      "ofc_text_template": "Emergency communication systems are implemented to enable rapid notification and coordination during emergency situations.",
+      "asset_extraction_hints": ["facility", "building", "critical areas"],
+      "notes": "Emergency communication gaps to communication capability."
+    },
+    {
+      "template_id": "EMR_DURESS_ALARMS_001",
+      "discipline_subtype_code": "IDS_PANIC_DURESS_BUTTONS",
+      "capability_dimension": "SYSTEMS",
+      "triggers_any": [
+        "no duress alarms",
+        "lack of panic buttons",
+        "no way to call for help",
+        "duress system is missing",
+        "panic alarms are not available",
+        "no emergency assistance system"
+      ],
+      "evidence_type": "FINDING",
+      "ofc_text_template": "Duress alarm systems are implemented for {asset_or_area} to enable personnel to request immediate assistance during security incidents.",
+      "asset_extraction_hints": ["reception areas", "cash handling areas", "isolated work areas", "critical areas"],
+      "notes": "Duress alarm gaps to alarm capability."
+    },
+    {
+      "template_id": "SMG_INCIDENT_RESPONSE_001",
+      "discipline_subtype_code": "SMG_SECURITY_PROCEDURES",
+      "capability_dimension": "PROCESSES",
+      "triggers_any": [
+        "incident response procedures are lacking",
+        "no incident response plan",
+        "response procedures are inadequate",
+        "lack of incident response",
+        "no defined response process",
+        "incident handling is insufficient"
+      ],
+      "evidence_type": "FINDING",
+      "ofc_text_template": "Incident response procedures are established to guide personnel actions during security incidents and ensure appropriate escalation and coordination.",
+      "asset_extraction_hints": ["facility", "organization", "critical areas"],
+      "notes": "Incident response gaps to process capability."
+    },
+    {
+      "template_id": "SMG_SECURITY_TRAINING_001",
+      "discipline_subtype_code": "SMG_SECURITY_TRAINING_PROGRAMS",
+      "capability_dimension": "PROCESSES",
+      "triggers_any": [
+        "security training is lacking",
+        "no security awareness training",
+        "personnel are not trained",
+        "training is insufficient",
+        "lack of security training",
+        "no training program"
+      ],
+      "evidence_type": "FINDING",
+      "ofc_text_template": "Security training programs are established to ensure personnel understand security policies, procedures, and their roles in maintaining facility security.",
+      "asset_extraction_hints": ["personnel", "staff", "employees", "critical areas"],
+      "notes": "Training gaps to training capability."
+    },
+    {
+      "template_id": "VSS_RECORDING_STORAGE_001",
+      "discipline_subtype_code": "VSS_RECORDING_STORAGE_NVR_DVR",
+      "capability_dimension": "SYSTEMS",
+      "triggers_any": [
+        "video storage is inadequate",
+        "recording retention is insufficient",
+        "no video storage",
+        "lack of recording capability",
+        "storage capacity is limited",
+        "retention period is too short"
+      ],
+      "evidence_type": "FINDING",
+      "ofc_text_template": "Video recording and storage systems are implemented with sufficient capacity and retention period to support incident investigation and evidence preservation.",
+      "asset_extraction_hints": ["video systems", "surveillance systems", "critical areas"],
+      "notes": "Storage gaps to storage capability."
+    },
+    {
+      "template_id": "ACS_VISITOR_MANAGEMENT_001",
+      "discipline_subtype_code": "ACS_VISITOR_MANAGEMENT_SYSTEMS",
+      "capability_dimension": "PROCESSES",
+      "triggers_any": [
+        "visitor management is lacking",
+        "no visitor tracking",
+        "visitors are not logged",
+        "lack of visitor controls",
+        "visitor procedures are inadequate",
+        "no visitor management system"
+      ],
+      "evidence_type": "FINDING",
+      "ofc_text_template": "Visitor management processes are established to track visitor access, verify identity, and ensure appropriate escort and access controls.",
+      "asset_extraction_hints": ["visitors", "contractors", "guests", "critical areas"],
+      "notes": "Visitor management gaps to process capability."
+    },
+    {
+      "template_id": "PSS_ENTRY_CONTROL_001",
+      "discipline_subtype_code": "PER_GATES",
+      "capability_dimension": "SYSTEMS",
+      "triggers_any": [
+        "vehicle access is not controlled",
+        "no vehicle access control",
+        "vehicle gates lack controls",
+        "vehicle entry is unmonitored",
+        "lack of vehicle access management",
+        "vehicle access is uncontrolled"
+      ],
+      "evidence_type": "FINDING",
+      "ofc_text_template": "Vehicle access control systems are implemented for {asset_or_area} to manage and monitor vehicle entry and exit.",
+      "asset_extraction_hints": ["vehicle gates", "parking entrances", "loading docks", "critical areas"],
+      "notes": "Vehicle access gaps to access control capability."
+    },
+    {
+      "template_id": "SMG_SECURITY_POLICIES_001",
+      "discipline_subtype_code": "SMG_SECURITY_POLICIES",
+      "capability_dimension": "PROCESSES",
+      "triggers_any": [
+        "security policies are lacking",
+        "no documented security policies",
+        "policies are not defined",
+        "lack of security policies",
+        "policies are inadequate",
+        "no written security procedures"
+      ],
+      "evidence_type": "FINDING",
+      "ofc_text_template": "Security policies and procedures are documented and communicated to establish clear expectations and guidelines for security operations.",
+      "asset_extraction_hints": ["organization", "facility", "critical areas"],
+      "notes": "Policy gaps to policy capability."
+    },
+    {
+      "template_id": "EMR_EVACUATION_PROCEDURES_001",
+      "discipline_subtype_code": "EAP_EVACUATION_PROCEDURES",
+      "capability_dimension": "PROCESSES",
+      "triggers_any": [
+        "evacuation procedures are lacking",
+        "no evacuation plan",
+        "evacuation procedures are not defined",
+        "lack of evacuation procedures",
+        "no emergency evacuation plan",
+        "evacuation planning is insufficient"
+      ],
+      "evidence_type": "FINDING",
+      "ofc_text_template": "Evacuation procedures are established and communicated to ensure safe and orderly evacuation during emergency situations.",
+      "asset_extraction_hints": ["facility", "building", "critical areas"],
+      "notes": "Evacuation procedure gaps to procedure capability."
+    },
+    {
+      "template_id": "PSS_STANOFF_DISTANCE_001",
+      "discipline_subtype_code": "PER_CLEAR_ZONES",
+      "capability_dimension": "SYSTEMS",
+      "triggers_any": [
+        "standoff distance is inadequate",
+        "insufficient standoff",
+        "no standoff distance",
+        "standoff is lacking",
+        "facility lacks standoff",
+        "standoff distance is too short"
+      ],
+      "evidence_type": "FINDING",
+      "ofc_text_template": "Standoff distance and protective barriers are implemented to provide separation between potential threats and critical assets.",
+      "asset_extraction_hints": ["facility", "building", "critical assets", "critical areas"],
+      "notes": "Standoff distance gaps to standoff capability."
+    },
+    {
+      "template_id": "ACS_ACCESS_LOG_REVIEW_001",
+      "discipline_subtype_code": "ACS_ELECTRONIC_ACCESS_CONTROL",
+      "capability_dimension": "PROCESSES",
+      "triggers_any": [
+        "access logs are not reviewed",
+        "no log review process",
+        "access logs are not monitored",
+        "lack of log review",
+        "log review is insufficient",
+        "no access log analysis"
+      ],
+      "evidence_type": "FINDING",
+      "ofc_text_template": "Access log review processes are established to monitor access patterns, detect anomalies, and support security investigations.",
+      "asset_extraction_hints": ["access systems", "critical areas"],
+      "notes": "Log review gaps to review capability."
+    },
+    {
+      "template_id": "VSS_MONITORING_CENTER_001",
+      "discipline_subtype_code": "VSS_MONITORING_WORKSTATIONS",
+      "capability_dimension": "SYSTEMS",
+      "triggers_any": [
+        "no monitoring center",
+        "lack of monitoring facility",
+        "monitoring center is missing",
+        "no central monitoring",
+        "surveillance is not monitored",
+        "no active monitoring"
+      ],
+      "evidence_type": "FINDING",
+      "ofc_text_template": "A monitoring center or designated monitoring location is established to enable real-time surveillance monitoring and incident response coordination.",
+      "asset_extraction_hints": ["facility", "security office", "critical areas"],
+      "notes": "Monitoring center gaps to monitoring capability."
+    },
+    {
+      "template_id": "SMG_SECURITY_ASSESSMENTS_001",
+      "discipline_subtype_code": "SMG_RISK_ASSESSMENT_RISK_MANAGEMENT",
+      "capability_dimension": "PROCESSES",
+      "triggers_any": [
+        "security assessments are not conducted",
+        "no security assessment process",
+        "assessments are lacking",
+        "no regular assessments",
+        "assessment process is missing",
+        "security reviews are not performed"
+      ],
+      "evidence_type": "FINDING",
+      "ofc_text_template": "Security assessment processes are established to periodically evaluate security posture, identify vulnerabilities, and prioritize security improvements.",
+      "asset_extraction_hints": ["facility", "organization", "critical areas"],
+      "notes": "Assessment gaps to assessment capability."
+    },
+    {
+      "template_id": "EMR_BUSINESS_CONTINUITY_001",
+      "discipline_subtype_code": "EMR_BUSINESS_CONTINUITY",
+      "capability_dimension": "PROCESSES",
+      "triggers_any": [
+        "business continuity planning is lacking",
+        "no continuity plan",
+        "continuity procedures are missing",
+        "lack of business continuity",
+        "no recovery planning",
+        "continuity planning is insufficient"
+      ],
+      "evidence_type": "FINDING",
+      "ofc_text_template": "Business continuity planning processes are established to ensure critical operations can be maintained or restored following security incidents or disruptions.",
+      "asset_extraction_hints": ["organization", "facility", "critical areas"],
+      "notes": "Continuity planning gaps to continuity capability."
+    },
+    {
+      "template_id": "PSS_INTRUSION_DETECTION_001",
+      "discipline_subtype_code": "IDS_PERIMETER_IDS",
+      "capability_dimension": "SYSTEMS",
+      "triggers_any": [
+        "intrusion detection is lacking",
+        "no intrusion detection system",
+        "lack of intrusion alarms",
+        "intrusion detection is insufficient",
+        "no perimeter intrusion detection",
+        "intrusion sensors are missing"
+      ],
+      "evidence_type": "FINDING",
+      "ofc_text_template": "Intrusion detection systems are implemented for {asset_or_area} to detect unauthorized entry attempts and trigger appropriate response.",
+      "asset_extraction_hints": ["perimeter", "exterior", "boundary", "critical areas"],
+      "notes": "Intrusion detection gaps to detection capability."
+    }
+  ]
+}

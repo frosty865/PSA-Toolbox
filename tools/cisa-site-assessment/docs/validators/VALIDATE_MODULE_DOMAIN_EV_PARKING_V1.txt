@@ -1,0 +1,67 @@
+VALIDATOR: MODULE DOMAIN SEPARATION — EV PARKING (V1)
+
+PURPOSE
+Enforce doctrine: EV Parking and EV Charging are separate modules. EV Parking outputs must only reflect spatial/exposure mitigation.
+
+INPUT
+A single module generation JSON output with:
+- module_domain
+- summary_findings[]
+- items[] (each has vulnerability, question, finding, ofcs[], evidence_excerpt, citations[])
+
+PASS/FAIL RULES (DETERMINISTIC)
+
+1) Domain match
+- FAIL if module_domain != "EV_PARKING"
+
+2) Forbidden blended phrasing
+- FAIL if ANY of these substrings appear anywhere in the output text:
+  - "parking/charging"
+  - "charging/parking"
+
+3) EV CHARGING equipment/interface terms are forbidden in EV PARKING output
+- FAIL if ANY of these terms appear in ANY of:
+  vulnerability, question, finding, ofcs entries:
+  - "charger"
+  - "charging station"
+  - "connector"
+  - "charging cable"
+  - "plug"
+  - "energized"
+  - "electrical"
+  - "disconnect"
+  - "isolation switch"
+  - "shutoff"
+  - "emergency stop"
+  - "e-stop"
+  - "charge point operator"
+  - "CPO"
+
+4) Required spatial/exposure signal per item
+For each item in items[]:
+- PASS the item only if the concatenated text of (vulnerability + question + finding + OFCs) includes AT LEAST ONE of:
+  - "spacing"
+  - "separation"
+  - "distance"
+  - "layout"
+  - "siting"
+  - "location"
+  - "adjacent"
+  - "cascading"
+  - "exposure"
+  - "egress"
+  - "occupied"
+  - "building proximity"
+- Otherwise DROP the item.
+
+OUTPUT ACTIONS
+- Remove any item that violates Rule 3 or Rule 4.
+- If after removals items[] is empty, the module output is VALID but contains zero items.
+
+LOGGING (REQUIRED)
+For each dropped item, record:
+- item id
+- violated rule number(s)
+- the triggering term(s) if Rule 3 triggered
+
+END

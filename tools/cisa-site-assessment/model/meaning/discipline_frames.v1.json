@@ -1,0 +1,197 @@
+{
+  "version": "v1",
+  "frames": [
+    {
+      "discipline": "CPTED",
+      "meaning_goal": "Explain how space design influences behavior and visibility.",
+      "allowed_concepts": [
+        "layout",
+        "visibility",
+        "movement",
+        "behavior",
+        "territorial cues",
+        "natural surveillance",
+        "access routing",
+        "space design",
+        "territoriality",
+        "defensible space"
+      ],
+      "forbidden_concepts": [
+        "maintenance",
+        "inspection",
+        "wear",
+        "degradation",
+        "reliability",
+        "hardware failure",
+        "sensor",
+        "camera",
+        "electronic",
+        "technology"
+      ]
+    },
+    {
+      "discipline": "ACS",
+      "meaning_goal": "Explain how access control systems verify identity and control entry.",
+      "allowed_concepts": [
+        "identity verification",
+        "entry control",
+        "credentials",
+        "badges",
+        "biometric",
+        "access decision",
+        "authorization",
+        "authentication",
+        "entry point",
+        "access point"
+      ],
+      "forbidden_concepts": [
+        "maintenance schedule",
+        "inspection frequency",
+        "wear patterns",
+        "degradation over time",
+        "reliability metrics",
+        "sensor calibration"
+      ]
+    },
+    {
+      "discipline": "PER",
+      "meaning_goal": "Explain how perimeter security detects and deters unauthorized entry.",
+      "allowed_concepts": [
+        "perimeter",
+        "boundary",
+        "detection",
+        "deterrence",
+        "barrier",
+        "fence",
+        "wall",
+        "intrusion",
+        "boundary control",
+        "perimeter defense"
+      ],
+      "forbidden_concepts": [
+        "maintenance",
+        "inspection",
+        "wear",
+        "degradation",
+        "reliability",
+        "hardware failure",
+        "sensor",
+        "electronic"
+      ]
+    },
+    {
+      "discipline": "INT",
+      "meaning_goal": "Explain how intelligence gathering supports security decision-making.",
+      "allowed_concepts": [
+        "intelligence",
+        "information gathering",
+        "threat assessment",
+        "risk analysis",
+        "information sharing",
+        "intelligence analysis",
+        "threat intelligence",
+        "information sources"
+      ],
+      "forbidden_concepts": [
+        "maintenance",
+        "inspection",
+        "wear",
+        "degradation",
+        "reliability",
+        "hardware failure",
+        "sensor",
+        "electronic",
+        "technology"
+      ]
+    },
+    {
+      "discipline": "VSS",
+      "meaning_goal": "Explain how video surveillance systems monitor and record activity.",
+      "allowed_concepts": [
+        "video surveillance",
+        "monitoring",
+        "recording",
+        "camera",
+        "observation",
+        "visual monitoring",
+        "surveillance coverage",
+        "video system"
+      ],
+      "forbidden_concepts": [
+        "maintenance schedule",
+        "inspection frequency",
+        "wear patterns",
+        "degradation over time",
+        "reliability metrics"
+      ]
+    },
+    {
+      "discipline": "GOV",
+      "meaning_goal": "Explain how governance structures define security policies and oversight.",
+      "allowed_concepts": [
+        "governance",
+        "policy",
+        "oversight",
+        "authority",
+        "decision-making",
+        "organizational structure",
+        "accountability",
+        "responsibility",
+        "governance framework"
+      ],
+      "forbidden_concepts": [
+        "maintenance",
+        "inspection",
+        "wear",
+        "degradation",
+        "reliability",
+        "hardware failure",
+        "sensor",
+        "electronic",
+        "technology"
+      ]
+    },
+    {
+      "discipline": "EMR",
+      "meaning_goal": "Explain how emergency management prepares for and responds to incidents.",
+      "allowed_concepts": [
+        "emergency",
+        "incident response",
+        "preparedness",
+        "evacuation",
+        "emergency planning",
+        "crisis management",
+        "emergency procedures",
+        "response planning"
+      ],
+      "forbidden_concepts": [
+        "maintenance schedule",
+        "inspection frequency",
+        "wear patterns",
+        "degradation over time",
+        "reliability metrics",
+        "hardware failure"
+      ]
+    },
+    {
+      "discipline": "COM",
+      "meaning_goal": "Explain how communication systems enable coordination during operations.",
+      "allowed_concepts": [
+        "communication",
+        "coordination",
+        "information sharing",
+        "radio",
+        "two-way communication",
+        "communication protocols",
+        "emergency communication"
+      ],
+      "forbidden_concepts": [
+        "maintenance schedule",
+        "inspection frequency",
+        "wear patterns",
+        "degradation over time",
+        "reliability metrics"
+      ]
+    }
+  ]
+}

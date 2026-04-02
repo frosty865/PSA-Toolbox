@@ -1,0 +1,12 @@
+[
+  {
+    "required_element_code": "BASE-054",
+    "parent_required_element_code": "BASE-001",
+    "sector_id": "14962993-0e23-4fef-9fe6-07f68fbd97dc",
+    "subsector_id": "294f3112-6343-4518-b902-1a4a5f19b75e",
+    "sector_name": "Transportation Systems",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": ""
+  }
+]

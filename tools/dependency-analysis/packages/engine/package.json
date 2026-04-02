@@ -31,6 +31,14 @@
     "./client": {
       "types": "./dist/client.d.ts",
       "default": "./dist/client.js"
+    },
+    "./summary": {
+      "types": "./dist/summary.d.ts",
+      "default": "./dist/summary.js"
+    },
+    "./export/export_guard": {
+      "types": "./dist/export/export_guard.d.ts",
+      "default": "./dist/export/export_guard.js"
     }
   }
 }

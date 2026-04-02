@@ -1,0 +1,236 @@
+{
+  "items": [
+    {
+      "legacy_id": "BASE-000",
+      "legacy_code": "BASE-000",
+      "discipline_name": "Access Control Systems",
+      "discipline_subtype_code": "ACS_BIOMETRIC_ACCESS",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are biometric access systems installed at entry points?",
+      "outcome": "REWRITE_TO_CONTROL_ASSERTION",
+      "reason_codes": [],
+      "rewrite_template": "Are biometric identity verification decisions made at controlled entry points before access is granted?",
+      "proposed_rewrite": "Are biometric identity verification decisions made at controlled entry points before access is granted?",
+      "notes": "Template available for rewrite",
+      "lint": {
+        "ok": true,
+        "severity": "PASS",
+        "reason_codes": [],
+        "notes": [],
+        "normalized": "Are biometric identity verification decisions made at controlled entry points before access is granted?"
+      }
+    },
+    {
+      "legacy_id": "BASE-004",
+      "legacy_code": "BASE-004",
+      "discipline_name": "Access Control Systems",
+      "discipline_subtype_code": "ACS_CREDENTIAL_BADGE_SYSTEMS",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are credential badge systems installed?",
+      "outcome": "REWRITE_TO_CONTROL_ASSERTION",
+      "reason_codes": [
+        "UNANCHORED_NO_BOUNDARY"
+      ],
+      "rewrite_template": "Are access credential decisions made at controlled entry points based on presented credentials?",
+      "proposed_rewrite": "Are access credential decisions made at controlled entry points based on presented credentials?",
+      "notes": "Unanchored question; rewritten with boundary anchor",
+      "lint": {
+        "ok": true,
+        "severity": "PASS",
+        "reason_codes": [],
+        "notes": [],
+        "normalized": "Are access credential decisions made at controlled entry points based on presented credentials?"
+      }
+    },
+    {
+      "legacy_id": "BASE-204",
+      "legacy_code": "BASE-204",
+      "discipline_name": "Interior Security & Barriers",
+      "discipline_subtype_code": "INT_ACCESS_RESTRICTED_AREAS",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are access-restricted areas systems installed at entry points?",
+      "outcome": "REWRITE_TO_CONTROL_ASSERTION",
+      "reason_codes": [],
+      "rewrite_template": "Are restricted areas controlled at their entry points?",
+      "proposed_rewrite": "Are restricted areas controlled at their entry points?",
+      "notes": "Template available for rewrite",
+      "lint": {
+        "ok": true,
+        "severity": "PASS",
+        "reason_codes": [],
+        "notes": [],
+        "normalized": "Are restricted areas controlled at their entry points?"
+      }
+    },
+    {
+      "legacy_id": "BASE-232",
+      "legacy_code": "BASE-232",
+      "discipline_name": "Intrusion Detection Systems",
+      "discipline_subtype_code": "IDS_ALARM_MONITORING",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are alarm monitoring sensors installed?",
+      "outcome": "REWRITE_TO_CONTROL_ASSERTION",
+      "reason_codes": [
+        "UNANCHORED_NO_BOUNDARY"
+      ],
+      "rewrite_template": "Are intrusion alarms monitored at a defined monitoring point where alarm events are received?",
+      "proposed_rewrite": "Are intrusion alarms monitored at a defined monitoring point where alarm events are received?",
+      "notes": "Unanchored question; rewritten with boundary anchor",
+      "lint": {
+        "ok": true,
+        "severity": "PASS",
+        "reason_codes": [],
+        "notes": [],
+        "normalized": "Are intrusion alarms monitored at a defined monitoring point where alarm events are received?"
+      }
+    },
+    {
+      "legacy_id": "BASE-280",
+      "legacy_code": "BASE-280",
+      "discipline_name": "Perimeter Security",
+      "discipline_subtype_code": "PER_BOLLARDS_BARRIERS",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are bollards barriers barriers installed?",
+      "outcome": "REWRITE_TO_CONTROL_ASSERTION",
+      "reason_codes": [
+        "UNANCHORED_NO_BOUNDARY"
+      ],
+      "rewrite_template": "Are vehicle approach points or vulnerable perimeter segments identified and controlled using vehicle-stopping or vehicle-channeling measures?",
+      "proposed_rewrite": "Are vehicle approach points or vulnerable perimeter segments identified and controlled using vehicle-stopping or vehicle-channeling measures?",
+      "notes": "Unanchored question; rewritten with boundary anchor",
+      "lint": {
+        "ok": true,
+        "severity": "PASS",
+        "reason_codes": [],
+        "notes": [],
+        "normalized": "Are vehicle approach points or vulnerable perimeter segments identified and controlled using vehicle-stopping or vehicle-channeling measures?"
+      }
+    },
+    {
+      "legacy_id": "BASE-284",
+      "legacy_code": "BASE-284",
+      "discipline_name": "Perimeter Security",
+      "discipline_subtype_code": "PER_BOUNDARY_DEMARCATION",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are boundary demarcation systems installed?",
+      "outcome": "REWRITE_TO_CONTROL_ASSERTION",
+      "reason_codes": [
+        "UNANCHORED_NO_BOUNDARY"
+      ],
+      "rewrite_template": "Is the site perimeter or property boundary clearly identified and controlled as a defined security boundary?",
+      "proposed_rewrite": "Is the site perimeter or property boundary clearly identified and controlled as a defined security boundary?",
+      "notes": "Unanchored question; rewritten with boundary anchor",
+      "lint": {
+        "ok": true,
+        "severity": "PASS",
+        "reason_codes": [],
+        "notes": [],
+        "normalized": "Is the site perimeter or property boundary clearly identified and controlled as a defined security boundary?"
+      }
+    },
+    {
+      "legacy_id": "BASE-296",
+      "legacy_code": "BASE-296",
+      "discipline_name": "Perimeter Security",
+      "discipline_subtype_code": "PER_GATES",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are gates systems installed?",
+      "outcome": "REWRITE_TO_CONTROL_ASSERTION",
+      "reason_codes": [
+        "UNANCHORED_NO_BOUNDARY"
+      ],
+      "rewrite_template": "Are perimeter vehicle and pedestrian gates identified and controlled as access points to the site?",
+      "proposed_rewrite": "Are perimeter vehicle and pedestrian gates identified and controlled as access points to the site?",
+      "notes": "Unanchored question; rewritten with boundary anchor",
+      "lint": {
+        "ok": true,
+        "severity": "PASS",
+        "reason_codes": [],
+        "notes": [],
+        "normalized": "Are perimeter vehicle and pedestrian gates identified and controlled as access points to the site?"
+      }
+    },
+    {
+      "legacy_id": "BASE-308",
+      "legacy_code": "BASE-308",
+      "discipline_name": "Perimeter Security",
+      "discipline_subtype_code": "PER_VEHICLE_ACCESS_CONTROL_POINTS",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are vehicle access control points systems installed at entry points?",
+      "outcome": "REWRITE_TO_CONTROL_ASSERTION",
+      "reason_codes": [],
+      "rewrite_template": "Are vehicle access points identified and controlled at the site perimeter?",
+      "proposed_rewrite": "Are vehicle access points identified and controlled at the site perimeter?",
+      "notes": "Template available for rewrite",
+      "lint": {
+        "ok": true,
+        "severity": "PASS",
+        "reason_codes": [],
+        "notes": [],
+        "normalized": "Are vehicle access points identified and controlled at the site perimeter?"
+      }
+    },
+    {
+      "legacy_id": "BASE-380",
+      "legacy_code": "BASE-380",
+      "discipline_name": "Video Surveillance Systems",
+      "discipline_subtype_code": "VSS_EXTERIOR_CAMERAS",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are exterior cameras cameras installed?",
+      "outcome": "REWRITE_TO_CONTROL_ASSERTION",
+      "reason_codes": [],
+      "rewrite_template": "Are exterior areas requiring observation monitored using video coverage at the site?",
+      "proposed_rewrite": "Are exterior areas requiring observation monitored using video coverage at the site?",
+      "notes": "Template available for rewrite",
+      "lint": {
+        "ok": true,
+        "severity": "PASS",
+        "reason_codes": [],
+        "notes": [],
+        "normalized": "Are exterior areas requiring observation monitored using video coverage at the site?"
+      }
+    },
+    {
+      "legacy_id": "BASE-392",
+      "legacy_code": "BASE-392",
+      "discipline_name": "Video Surveillance Systems",
+      "discipline_subtype_code": "VSS_INTERIOR_CAMERAS",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are interior cameras cameras installed?",
+      "outcome": "REWRITE_TO_CONTROL_ASSERTION",
+      "reason_codes": [],
+      "rewrite_template": "Are interior areas requiring observation monitored using video coverage at the site?",
+      "proposed_rewrite": "Are interior areas requiring observation monitored using video coverage at the site?",
+      "notes": "Template available for rewrite",
+      "lint": {
+        "ok": true,
+        "severity": "PASS",
+        "reason_codes": [],
+        "notes": [],
+        "normalized": "Are interior areas requiring observation monitored using video coverage at the site?"
+      }
+    },
+    {
+      "legacy_id": "BASE-404",
+      "legacy_code": "BASE-404",
+      "discipline_name": "Video Surveillance Systems",
+      "discipline_subtype_code": "VSS_RECORDING_STORAGE_NVR_DVR",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are recording storage recorders installed?",
+      "outcome": "REWRITE_TO_CONTROL_ASSERTION",
+      "reason_codes": [
+        "UNANCHORED_NO_BOUNDARY"
+      ],
+      "rewrite_template": "Are video recordings recorded for areas requiring observation at the site?",
+      "proposed_rewrite": "Are video recordings recorded for areas requiring observation at the site?",
+      "notes": "Unanchored question; rewritten with boundary anchor",
+      "lint": {
+        "ok": true,
+        "severity": "PASS",
+        "reason_codes": [],
+        "notes": [],
+        "normalized": "Are video recordings recorded for areas requiring observation at the site?"
+      }
+    }
+  ]
+}

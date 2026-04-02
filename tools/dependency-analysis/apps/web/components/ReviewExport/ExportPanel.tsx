@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useMemo, useRef, useState } from 'react';
-import Link from 'next/link';
+import Link from '@/components/FieldLink';
 import { useAssessment } from '@/lib/assessment-context';
-import { exportFinal, downloadReportDocx, ApiError } from '@/lib/api';
+import { exportFinal, downloadFinalExport, ApiError } from '@/lib/api';
+import { isFieldStaticMode } from '@/lib/field/isFieldStaticMode';
 import { loadEnergyAnswers } from '@/app/lib/dependencies/persistence';
 import { reviewExportCopy, getExportFilename } from '@/lib/uiCopy/reviewExportCopy';
 import { sanitizeAssessmentBeforeSave } from '@/app/lib/assessment/sanitize_assessment';
@@ -92,7 +93,7 @@ export function ExportPanel({
       });
 
       setReportStage('done');
-      downloadReportDocx(blob);
+      downloadFinalExport(blob, assessmentForReport);
     } catch (e) {
       setReportStage('error');
       const msg = e instanceof ApiError ? e.message : e instanceof Error ? e.message : 'Report generation failed';
@@ -165,7 +166,7 @@ export function ExportPanel({
       <div style={{ display: 'flex', gap: 'var(--spacing-sm)', alignItems: 'center', flexWrap: 'wrap' }}>
         <button
           type="button"
-          className="ida-btn ida-btn-secondary"
+          className="btn btn-secondary"
           onClick={handleExportJson}
           disabled={!currentAssessment}
         >
@@ -174,13 +175,15 @@ export function ExportPanel({
 
         <button
           type="button"
-          className="ida-btn ida-btn-primary"
+          className="btn btn-primary"
           onClick={handleDownloadReport}
           disabled={!preflight.canExport || (reportStage !== 'idle' && reportStage !== 'done' && reportStage !== 'error')}
         >
           {reportStage === 'rendering' || reportStage === 'assembling' || reportStage === 'loading_assessment' || reportStage === 'validating' || reportStage === 'starting'
             ? reviewExportCopy.generatingReport
-            : reviewExportCopy.exportDocxButton}
+            : isFieldStaticMode()
+              ? 'Export report (JSON)'
+              : reviewExportCopy.exportDocxButton}
         </button>
 
         {reportStage !== 'idle' && reportStage !== 'done' && reportStage !== 'error' && (
@@ -193,12 +196,12 @@ export function ExportPanel({
         )}
 
         {reportStage === 'error' && (
-          <button type="button" className="ida-btn ida-btn-secondary" onClick={handleReportRetry}>
+          <button type="button" className="btn btn-secondary" onClick={handleReportRetry}>
             {reviewExportCopy.retryButton}
           </button>
         )}
 
-        <Link href="/assessment/new/" className="ida-btn ida-btn-secondary">
+        <Link href="/assessment/new/" className="btn btn-secondary">
           {reviewExportCopy.exportImportJsonLink}
         </Link>
       </div>

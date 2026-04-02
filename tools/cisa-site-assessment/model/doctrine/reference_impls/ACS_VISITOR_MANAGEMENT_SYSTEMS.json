@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "discipline_subtype_id": "6abbccac-a6ba-4b8d-a451-1bc099e62b96",
+  "discipline_name": "Access Control Systems",
+  "discipline_subtype_name": "Visitor Management Systems",
+
+  "section_1_baseline_existence_question": {
+    "question_text": "Is a visitor management process utilized?",
+    "response_enum": ["YES", "NO", "N_A"],
+    "clarification": {
+      "yes_means": "A recognized visitor sign-in / identification process exists.",
+      "no_means": "No recognized visitor sign-in / identification process exists.",
+      "na_applies_only_if": "The facility does not receive visitors, contractors, or non-staff entrants as part of operations."
+    }
+  },
+
+  "section_2_right_looks_like_authoritative": [
+    "A recognized process exists to identify and account for visitors and non-staff entrants before granting access beyond initial reception or entry points.",
+    "Visitors are distinguishable from staff using an identification method the facility uses during visits (e.g., visitor badge or other recognized marker).",
+    "Ownership for administering visitor entry and exit steps is identifiable (e.g., reception, security, host, designated staff).",
+    "The process is recognizable in practice as the facility's standard approach to visitor intake and accountability."
+  ],
+
+  "section_3_descriptive_branching_yes_only": [
+    {
+      "question_text": "Which format is used for visitor management?",
+      "response_type": "ENUM",
+      "response_enum": ["PAPER", "DIGITAL", "HYBRID"]
+    },
+    {
+      "question_text": "How are visitors identified or distinguished from staff during a visit? (e.g., badge, credential, other method)",
+      "response_type": "TEXT"
+    },
+    {
+      "question_text": "Who administers or coordinates the visitor management process? (e.g., reception, security, host, other)",
+      "response_type": "TEXT"
+    },
+    {
+      "question_text": "What types of non-staff entrants use the process? (e.g., contractors, vendors, guests, deliveries, volunteers)",
+      "response_type": "TEXT"
+    },
+    {
+      "question_text": "Is visitor entry/exit documented or tracked? (Describe what records exist, if any.)",
+      "response_type": "TEXT"
+    },
+    {
+      "question_text": "Are there recognized escort expectations for certain visitor types or areas? (Describe, if applicable.)",
+      "response_type": "TEXT"
+    }
+  ],
+
+  "section_4_ofc_trigger_notes_non_user_facing": {
+    "how_to_use_indicators_and_failures_after_capture": [
+      "Use the captured description (format, identification method, process owner, visitor categories, tracking, escort expectations) to narrow OFCs to the relevant capability gap class.",
+      "If baseline is YES but visitors are not distinguishable from staff in practice, select OFCs that establish clearer visitor identification/accountability capability without adequacy scoring.",
+      "If baseline is YES but process ownership is unclear or inconsistent, select OFCs that establish role ownership and coordination for visitor intake/accountability.",
+      "If baseline is NO, select OFCs that establish a recognized visitor management capability as a facility process (intake, identification, accountability)."
+    ],
+    "constraints": [
+      "OFCs mitigate problem classes; they do not restate questions.",
+      "No priorities, costs, timelines, technologies, or regulatory language.",
+      "No assessor enforcement, demands, or implied judgment."
+    ]
+  }
+}

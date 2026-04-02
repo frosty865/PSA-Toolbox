@@ -1,0 +1,1250 @@
+[
+  {
+    "question_code": "0076b183-1280-4b17-b9d3-fa00e3c82f79",
+    "question_text": "Does the facility have a defined approach to camera coverage?"
+  },
+  {
+    "question_code": "00a2d3d3-8c0a-4be5-82f7-42a9ff3dbf0d",
+    "question_text": "Does the facility have any defined and implemented approach to staff emergency role assignment?"
+  },
+  {
+    "question_code": "01838fec-25eb-4336-b942-7bf791b5ab0d",
+    "question_text": "Does the facility have defined reunification procedures?"
+  },
+  {
+    "question_code": "01d0e35c-08a7-4c82-a22a-cfa90a31b479",
+    "question_text": "Does the facility have any defined and implemented approach to emergency guidance materials?"
+  },
+  {
+    "question_code": "03220cbf-e4ef-44e2-b6c5-5f508fe04d49",
+    "question_text": "Does the facility have a defined approach to ISAC/ISAO engagement?"
+  },
+  {
+    "question_code": "0444d6ec-1eb7-4223-bac8-cd9e2a37806c",
+    "question_text": "Does the facility have any defined and implemented approach to bollard and barrier perimeter protection?"
+  },
+  {
+    "question_code": "0446ead1-71ce-484b-9f33-f28f314240d3",
+    "question_text": "Does the facility have any defined and implemented approach to interior door security?"
+  },
+  {
+    "question_code": "05617652-6862-4dd0-81b5-f536cd98de07",
+    "question_text": "Does the facility have any defined and implemented approach to hard-interior barriers?"
+  },
+  {
+    "question_code": "05fb73a5-0b45-4ebc-bd27-b9b4d5a055ee",
+    "question_text": "Does the facility have a defined process for maintaining emergency guidance materials?"
+  },
+  {
+    "question_code": "06d42630-2e2d-423c-8b39-c40da48bfbd0",
+    "question_text": "Does the facility have any defined and implemented approach to wayfinding for security?"
+  },
+  {
+    "question_code": "08cc7c01-c1c7-46bb-988a-5ff38036c51f",
+    "question_text": "Does the facility have PTZ cameras installed?"
+  },
+  {
+    "question_code": "08d7e523-dd43-48c3-9544-9c527c74c3f3",
+    "question_text": "Does the facility have a defined process for maintaining interior lighting?"
+  },
+  {
+    "question_code": "09b49b42-40c9-4759-ad7c-16b6064913b7",
+    "question_text": "Does the facility have a defined process for using the paging system?"
+  },
+  {
+    "question_code": "0c83644a-8b62-4f6a-905e-91dfff8f025d",
+    "question_text": "Does the facility have a defined process for maintaining bollards or barriers?"
+  },
+  {
+    "question_code": "0ccf083d-43e4-414f-b8ee-229f9ba031ab",
+    "question_text": "Does the facility have any defined and implemented approach to access-restricted area designation?"
+  },
+  {
+    "question_code": "0d82f341-b4e7-493d-a227-a05505370892",
+    "question_text": "Does the facility have a defined process for managing vestibule access?"
+  },
+  {
+    "question_code": "0ddbd5bb-1842-43f7-9ca5-d4cd312e5a47",
+    "question_text": "Does the facility have a defined process for maintaining perimeter signage?"
+  },
+  {
+    "question_code": "0e3bf5ec-ef37-4e32-a39d-cb4762a0b0d4",
+    "question_text": "Does the facility have video wall or display systems?"
+  },
+  {
+    "question_code": "0ee9ee01-6459-4e86-bd4f-7707fa199f05",
+    "question_text": "Does the facility have any defined and implemented approach to blast mitigation?"
+  },
+  {
+    "question_code": "0face908-add6-4644-9b81-8c342b65c4a2",
+    "question_text": "Does the facility have any defined and implemented approach to secure room designation?"
+  },
+  {
+    "question_code": "10d003ac-5bfe-4cce-9d11-38063c1e2ca1",
+    "question_text": "Does the facility have any defined and implemented approach to video recording and storage?"
+  },
+  {
+    "question_code": "1130fb09-7412-4e62-a63b-f4740f45b9f7",
+    "question_text": "Does the facility have any defined and implemented approach to patrol route designation?"
+  },
+  {
+    "question_code": "12728a98-e078-4908-9c81-4bf7ba15ece6",
+    "question_text": "Does the facility have a defined process for training staff on evacuation procedures?"
+  },
+  {
+    "question_code": "1279bd78-2924-4591-b6d6-36721f80fcd2",
+    "question_text": "Does the facility have a defined process for testing motion detectors?"
+  },
+  {
+    "question_code": "15a57667-6e51-4576-abe9-dbf04250608a",
+    "question_text": "Does the facility have designated muster points or rally areas?"
+  },
+  {
+    "question_code": "16d3b7a6-01b5-4c64-b231-10347933ad8a",
+    "question_text": "Does the facility have any defined and implemented approach to on-site law enforcement coordination?"
+  },
+  {
+    "question_code": "16df679c-7e7c-48f5-a674-d19c10fd7a85",
+    "question_text": "Does the facility have any defined and implemented approach to policy compliance tracking?"
+  },
+  {
+    "question_code": "1712433f-4bda-4abf-bd69-509798d089aa",
+    "question_text": "Does the facility have radios for security operations?"
+  },
+  {
+    "question_code": "18ba8ded-7d48-463b-b24a-ad17bd123276",
+    "question_text": "Does the facility implement natural surveillance principles?"
+  },
+  {
+    "question_code": "18f0d992-38da-442c-977f-61d3f0578e9d",
+    "question_text": "Does the facility have any defined and implemented approach to vehicle access control point designation?"
+  },
+  {
+    "question_code": "19c643b6-83d6-4320-93df-04c86da24774",
+    "question_text": "Does the facility have backup communication systems?"
+  },
+  {
+    "question_code": "1a1b1b93-741a-410c-b017-21128fff4ced",
+    "question_text": "Does the facility have a defined process for maintaining blast mitigation measures?"
+  },
+  {
+    "question_code": "1bb6153c-1762-425c-8ce8-7ac450928452",
+    "question_text": "Does the facility have a defined process for conducting emergency drills?"
+  },
+  {
+    "question_code": "1c8d47ab-5a02-4143-af49-7e4c10712e96",
+    "question_text": "Does the facility have any defined and implemented approach to keypad and PIN entry access control?"
+  },
+  {
+    "question_code": "1ce205f6-e6a5-4f08-8104-ae25a75aa771",
+    "question_text": "Does the facility have a defined process for controlling access to master keys?"
+  },
+  {
+    "question_code": "1db8cdfa-f37c-46db-976a-4843eda78540",
+    "question_text": "Does the facility have a defined process for testing electric strikes or magnetic locks?"
+  },
+  {
+    "question_code": "1dd7e234-b8be-41a8-b6b4-4cc40ee403ea",
+    "question_text": "Does the facility have glass break sensors installed?"
+  },
+  {
+    "question_code": "1f0e42b0-206e-4d34-8fa6-bef3cdf250fd",
+    "question_text": "Does the facility have a defined approach to natural surveillance?"
+  },
+  {
+    "question_code": "1fda84c5-5b3a-4ef7-8c13-40ba62ebd5e4",
+    "question_text": "Does the facility have ballistic barriers installed?"
+  },
+  {
+    "question_code": "2012506f-baa0-4195-b433-3203e378ac2d",
+    "question_text": "Does the facility have a defined process for maintaining locking hardware?"
+  },
+  {
+    "question_code": "205c9e5a-cc47-4f33-80fc-c1ce8e95413f",
+    "question_text": "Does the facility have wayfinding signage?"
+  },
+  {
+    "question_code": "207b19b8-177d-496f-ad58-1677df750445",
+    "question_text": "Does the facility have any defined and implemented approach to credential and badge management?"
+  },
+  {
+    "question_code": "235edf77-7eda-4de0-9c1c-16ff24b07b81",
+    "question_text": "Does the facility have any defined and implemented approach to reunification procedures?"
+  },
+  {
+    "question_code": "25a9077c-3f61-4f4f-81cf-9801a6075add",
+    "question_text": "Does the facility have a defined process for controlling access to sensitive item storage?"
+  },
+  {
+    "question_code": "26741323-f72f-42c1-bc40-099fc82fcf04",
+    "question_text": "Does the facility have a defined process for monitoring door status?"
+  },
+  {
+    "question_code": "28c66bbc-3ec5-4c71-babe-25edfe03820b",
+    "question_text": "Does the facility have a defined process for maintaining perimeter fencing?"
+  },
+  {
+    "question_code": "29532fd6-ce12-4281-93ed-fd4a498ccb8f",
+    "question_text": "Does the facility have any defined and implemented approach to door reader access control?"
+  },
+  {
+    "question_code": "2a23f109-b789-469e-ab1d-df4f3a09bd37",
+    "question_text": "Does the facility have a defined process for maintaining wayfinding signage?"
+  },
+  {
+    "question_code": "2a2a05af-747a-407b-9bc3-47b53ecfd1b6",
+    "question_text": "Does the facility have defined incident reporting procedures?"
+  },
+  {
+    "question_code": "2b38f9ae-3ebd-47eb-963c-11000873072a",
+    "question_text": "Does the facility have any defined and implemented approach to door status monitoring?"
+  },
+  {
+    "question_code": "2bfde22f-bf54-4adb-a866-f06a334bf0e9",
+    "question_text": "Does the facility have a defined process for managing identified risks?"
+  },
+  {
+    "question_code": "2c50ffba-fa43-478a-9383-84e350fb9e08",
+    "question_text": "Does the facility implement territorial reinforcement measures?"
+  },
+  {
+    "question_code": "2dacb685-d2d8-4155-b3ad-ca3d1154d86d",
+    "question_text": "Does the facility have a defined process for maintaining exterior cameras?"
+  },
+  {
+    "question_code": "2f6ada9f-797f-4811-8802-ad91b045e330",
+    "question_text": "Does the facility have a paging system?"
+  },
+  {
+    "question_code": "2f876022-efc1-47bc-8688-064d140cfb9b",
+    "question_text": "Does the facility have any defined and implemented approach to key logging and accountability?"
+  },
+  {
+    "question_code": "31fd98f0-b37f-4686-b398-2a8ae11b10b5",
+    "question_text": "Does the facility have emergency communication equipment?"
+  },
+  {
+    "question_code": "334b2b27-b763-42ae-9e4a-484c8a01988c",
+    "question_text": "Does the facility have a mass notification system?"
+  },
+  {
+    "question_code": "3493bff9-cf52-481f-b0c4-b0818229cbe8",
+    "question_text": "Does the facility have a defined process for controlling access to restricted areas?"
+  },
+  {
+    "question_code": "349bbff4-4435-4d63-9493-0cfb56b66fc1",
+    "question_text": "Does the facility have a defined approach to landscaping control?"
+  },
+  {
+    "question_code": "3546deb4-dacc-4dcd-bb65-fe299e4b1b86",
+    "question_text": "Does the facility implement sightline maintenance measures?"
+  },
+  {
+    "question_code": "3558ec72-8b1a-41e8-a9bf-ba01fb9f6c33",
+    "question_text": "Does the facility have a defined process for communicating with external entities?"
+  },
+  {
+    "question_code": "35c36bf2-a5b0-4847-8a23-8474a19ef3e7",
+    "question_text": "Does the facility have a defined process for maintaining window film?"
+  },
+  {
+    "question_code": "3706ca31-fd74-49d4-beed-1abfcc75035c",
+    "question_text": "Does the facility have a defined approach to ICS/NIMS integration?"
+  },
+  {
+    "question_code": "39ff6a6d-a3a1-479b-9fe6-0b78f45a4f28",
+    "question_text": "Does the facility implement defensible space principles?"
+  },
+  {
+    "question_code": "3a03039c-f5df-49ff-af24-5ec2c608a19d",
+    "question_text": "Does the facility have any defined and implemented approach to perimeter intrusion detection?"
+  },
+  {
+    "question_code": "3ab23c84-16c8-4e90-bd3e-0eca86ce8d66",
+    "question_text": "Does the facility have any defined and implemented approach to impact-resistant glazing?"
+  },
+  {
+    "question_code": "3bd73ad9-20e8-46d6-a2f4-fe0e006deae5",
+    "question_text": "Does the facility have video analytics or behavior detection capabilities?"
+  },
+  {
+    "question_code": "3db21d46-9dc1-4673-9b4c-fdd53a546517",
+    "question_text": "Does the facility have designated safe rooms?"
+  },
+  {
+    "question_code": "3f0888ff-0ea9-4075-a8fb-114f51698516",
+    "question_text": "Does the facility have locking mechanisms on interior doors in restricted areas?"
+  },
+  {
+    "question_code": "4130e147-d77d-4302-b5b3-1c68aa1e0523",
+    "question_text": "Does the facility have a defined process for interoperable communications?"
+  },
+  {
+    "question_code": "422ebf39-16cb-47e1-b84f-4a7a98982d32",
+    "question_text": "Does the facility have defined patrol routes?"
+  },
+  {
+    "question_code": "43290c2f-54c6-4460-b56d-113f69bc8cc2",
+    "question_text": "Does the facility have designated access-restricted areas?"
+  },
+  {
+    "question_code": "44389303-e73d-4bc9-9445-e09af6ddc794",
+    "question_text": "Does the facility have any defined and implemented approach to Joint Terrorism Task Force engagement?"
+  },
+  {
+    "question_code": "447c1c5b-6648-45e3-bcd2-a3687a80420b",
+    "question_text": "Does the facility have a defined process for testing backup systems?"
+  },
+  {
+    "question_code": "453da0b1-7fcb-4e89-8326-6f12adad17b6",
+    "question_text": "Does the facility have a defined approach to fusion center interface?"
+  },
+  {
+    "question_code": "4559db33-0a26-40b3-8c3c-a12b9531d7d1",
+    "question_text": "Does the facility have any defined and implemented approach to alarm monitoring?"
+  },
+  {
+    "question_code": "456227a8-64a7-4aa2-90b8-33d6f922ae7f",
+    "question_text": "Does the facility have window film installed?"
+  },
+  {
+    "question_code": "458b42f2-d147-4e09-bad2-a0496870157c",
+    "question_text": "Does the facility have a defined process for tracking visitor access?"
+  },
+  {
+    "question_code": "467100d5-ac6e-4bcf-b31b-d0397bfe5968",
+    "question_text": "Does the facility have perimeter signage?"
+  },
+  {
+    "question_code": "4823ee3a-e5ab-4758-be1d-a3b3c126a2f9",
+    "question_text": "Does the facility have any defined and implemented approach to security procedures?"
+  },
+  {
+    "question_code": "488aac5d-ad2d-4a23-a65b-abe9c6c1ea9b",
+    "question_text": "Does the facility have a defined process for maintaining interior cameras?"
+  },
+  {
+    "question_code": "488d9613-319a-4565-9da5-5be47bf03371",
+    "question_text": "Does the facility have fixed cameras installed?"
+  },
+  {
+    "question_code": "49bfb94e-e0bd-4eae-84ee-8f2ee8d41c61",
+    "question_text": "Does the facility have hard-interior barriers installed?"
+  },
+  {
+    "question_code": "49dbee04-a7d2-4b57-8ce1-a69a97f5b592",
+    "question_text": "Does the facility have a defined process for managing PIN codes?"
+  },
+  {
+    "question_code": "4c5df4ae-5901-423e-aeb9-89856c358dbd",
+    "question_text": "Does the facility have a defined process for revoking credentials?"
+  },
+  {
+    "question_code": "4c9a8ccc-d243-424d-9c6d-41703a6d1500",
+    "question_text": "Does the facility have a defined process for activating the crisis management plan?"
+  },
+  {
+    "question_code": "4d13f50c-fdf6-4d5d-a286-e18e8152bda5",
+    "question_text": "Does the facility have a resilience plan?"
+  },
+  {
+    "question_code": "4e6e6ca4-d3d9-48ca-bfb8-ffb536a4bd2b",
+    "question_text": "Does the facility have any defined and implemented approach to radio communications for security operations?"
+  },
+  {
+    "question_code": "4eaf388f-cf5f-4810-a459-8fdba1bb1a0d",
+    "question_text": "Does the facility have a defined approach to defensible space design?"
+  },
+  {
+    "question_code": "4ec626bf-03cb-49d4-8a83-7e359836a3fd",
+    "question_text": "Does the facility have a defined process for testing glass break sensors?"
+  },
+  {
+    "question_code": "4fc25cc0-aa7b-4441-b938-290771f2cfc9",
+    "question_text": "Does the facility have a defined process for responding to perimeter intrusion detections?"
+  },
+  {
+    "question_code": "500e03fc-ddf6-45fe-9d2c-8c3bbb6e9c68",
+    "question_text": "Does the facility have any defined and implemented approach to motion detectors?"
+  },
+  {
+    "question_code": "50561f0b-a227-4984-9f8b-537c359c3c1b",
+    "question_text": "Does the facility have panic or duress buttons installed?"
+  },
+  {
+    "question_code": "50ed0f5e-213e-4691-8986-f570d8351a64",
+    "question_text": "Does the facility have alarm panels installed?"
+  },
+  {
+    "question_code": "50fa1dac-92a9-4143-acd2-34755011c647",
+    "question_text": "Does the facility have any defined and implemented approach to structural hardening?"
+  },
+  {
+    "question_code": "51c0f448-d65f-4bed-97d1-cdbcd78a0c48",
+    "question_text": "Does the facility have a defined process for managing IP camera networks?"
+  },
+  {
+    "question_code": "52d16e04-b7d5-42c2-8f98-988358b44b58",
+    "question_text": "Does the facility have a defined process for staffing monitoring workstations?"
+  },
+  {
+    "question_code": "55a96d01-5d8e-4bde-883c-08f1e6497395",
+    "question_text": "Does the facility have any defined and implemented approach to panic or duress button activation?"
+  },
+  {
+    "question_code": "58654036-7b95-49a7-a51a-86b6da4e8ffc",
+    "question_text": "Does the facility have any defined and implemented approach to law enforcement liaison?"
+  },
+  {
+    "question_code": "5ac0ea90-4da4-4a93-aade-3999178fd96c",
+    "question_text": "Does the facility have any defined and implemented approach to external reporting?"
+  },
+  {
+    "question_code": "5ad3bdcb-d9d7-4c0e-87ca-c4f29b6480ff",
+    "question_text": "Does the facility have established communication channels with fusion centers?"
+  },
+  {
+    "question_code": "5af53d6f-8d42-49da-ba3a-1230cd512c40",
+    "question_text": "Does the facility have defined security response procedures?"
+  },
+  {
+    "question_code": "5b6b7469-ecfb-4501-be29-9874ef252f5c",
+    "question_text": "Does the facility have exterior cameras installed?"
+  },
+  {
+    "question_code": "5bbfff29-574b-45c3-a16c-d283a5d3db64",
+    "question_text": "Does the facility have a defined approach to territorial reinforcement?"
+  },
+  {
+    "question_code": "5bd6c09e-6b07-4b06-bcfe-aa584d12afeb",
+    "question_text": "Does the facility have designated vehicle access control points?"
+  },
+  {
+    "question_code": "5cf06857-38c7-46f6-a285-ab6a66279625",
+    "question_text": "Does the facility have exterior lighting installed?"
+  },
+  {
+    "question_code": "5dc3a895-ea3e-409b-80f6-30a281cd9052",
+    "question_text": "Does the facility have a defined process for maintaining hard-interior barriers?"
+  },
+  {
+    "question_code": "5e6c8fb5-3bf2-402a-a303-91da52c21937",
+    "question_text": "Does the facility have electric strikes or magnetic locks installed at controlled access points?"
+  },
+  {
+    "question_code": "5ec026b3-fe40-4a8e-ac60-bc91be7ab227",
+    "question_text": "Does the facility have any defined and implemented approach to security response procedures?"
+  },
+  {
+    "question_code": "5f2bad31-a7b7-467d-b405-96caab75d990",
+    "question_text": "Does the facility have a business continuity plan?"
+  },
+  {
+    "question_code": "5f43932b-813c-4f95-91dc-c9a4c4c7b9ef",
+    "question_text": "Does the facility have defined coordination protocols?"
+  },
+  {
+    "question_code": "609e1462-d822-4b35-958b-b489d66a11cf",
+    "question_text": "Does the facility have defined lockdown procedures?"
+  },
+  {
+    "question_code": "60a4b7fb-f42a-4033-bb25-e4eea383037f",
+    "question_text": "Does the facility have a defined process for documenting compliance activities?"
+  },
+  {
+    "question_code": "61289902-7c2e-452b-8613-935c3d89f5da",
+    "question_text": "Does the facility have any defined and implemented approach to interior security lighting?"
+  },
+  {
+    "question_code": "6276fce1-bf29-42d9-a2b1-d8d2f91293a4",
+    "question_text": "Does the facility have designated guard posts?"
+  },
+  {
+    "question_code": "62f68613-898d-419b-b821-e5f1b9d141bf",
+    "question_text": "Does the facility have established communication channels with law enforcement?"
+  },
+  {
+    "question_code": "6424df18-aa9f-47a4-84de-99a9e18b52a0",
+    "question_text": "Does the facility have a defined process for conducting security officer training?"
+  },
+  {
+    "question_code": "646db1df-831f-424c-82a8-a84badb6e449",
+    "question_text": "Does the facility have a Security Operations Center?"
+  },
+  {
+    "question_code": "6484552a-340a-46a7-8773-5cfc835823fc",
+    "question_text": "Does the facility have any defined and implemented approach to clear zone maintenance?"
+  },
+  {
+    "question_code": "65471e86-9b8c-4ab6-af18-14dd5cab4005",
+    "question_text": "Does the facility have a defined process for conducting security training?"
+  },
+  {
+    "question_code": "6649471a-95bd-47c1-accc-92488c83b172",
+    "question_text": "Does the facility have a defined process for controlling access to key cabinets?"
+  },
+  {
+    "question_code": "66feb631-82be-477c-a081-599ac26cabb2",
+    "question_text": "Does the facility have any defined and implemented approach to territorial reinforcement?"
+  },
+  {
+    "question_code": "675d55c5-e807-49ce-8b5e-9ea3913a2258",
+    "question_text": "Does the facility have a defined process for responding to alarm activations?"
+  },
+  {
+    "question_code": "6898fb73-69b6-45be-8cd7-5956770b012c",
+    "question_text": "Does the facility have defined boundaries?"
+  },
+  {
+    "question_code": "6c95f216-14c1-498c-8c26-9b00cc0d24f6",
+    "question_text": "Does the facility have backup systems for critical functions?"
+  },
+  {
+    "question_code": "6e70d415-f733-4836-b38f-e6d7c52813c3",
+    "question_text": "Does the facility have defined shelter-in-place procedures?"
+  },
+  {
+    "question_code": "6fa80270-aca1-4c6d-93e4-522a3666c426",
+    "question_text": "Does the facility have a defined process for staffing guard posts?"
+  },
+  {
+    "question_code": "700d8c50-c31e-4312-bd6b-469185dcb9bc",
+    "question_text": "Does the facility have a defined process for submitting external reports?"
+  },
+  {
+    "question_code": "70cb88cb-0f60-4e8f-8215-1335a984f5fe",
+    "question_text": "Does the facility have door contact sensors installed?"
+  },
+  {
+    "question_code": "70eccd8b-a08f-4031-8c04-01edf07d93e1",
+    "question_text": "Does the facility have any defined and implemented approach to window film protection?"
+  },
+  {
+    "question_code": "7222eded-9167-4203-b293-6cd28505c0bb",
+    "question_text": "Does the facility have any defined and implemented approach to two-way radio communication?"
+  },
+  {
+    "question_code": "72d4f3af-ab3b-4328-85b4-97ab8f51bc2e",
+    "question_text": "Does the facility have a defined process for enrolling biometric identifiers?"
+  },
+  {
+    "question_code": "72f04544-aff4-4dba-a5db-3e00411f35a7",
+    "question_text": "Does the facility have any defined and implemented approach to door contact sensors?"
+  },
+  {
+    "question_code": "73094da6-9cc1-4213-99a7-d60ff57bc2aa",
+    "question_text": "Does the facility have any defined and implemented approach to lockdown and lockout procedures?"
+  },
+  {
+    "question_code": "738bc3c8-ff37-4771-a70d-4c1cbfc295a9",
+    "question_text": "Does the facility have any defined and implemented approach to ISAC or ISAO engagement?"
+  },
+  {
+    "question_code": "76112bb4-78bf-462e-af3e-9c1e3f5bc93a",
+    "question_text": "Does the facility have any defined and implemented approach to landscaping control for security?"
+  },
+  {
+    "question_code": "78e95ccb-1570-4658-8703-5e794c8819ee",
+    "question_text": "Does the facility have an alarm monitoring system?"
+  },
+  {
+    "question_code": "79237b73-10bc-4108-9b1a-049920d04422",
+    "question_text": "Does the facility have a defined process for responding to panic or duress activations?"
+  },
+  {
+    "question_code": "79d89987-242b-4467-a4d0-3b58bf977e73",
+    "question_text": "Does the facility have any defined and implemented approach to fixed video surveillance cameras?"
+  },
+  {
+    "question_code": "7b33610a-422b-456c-8a50-6991d2062f89",
+    "question_text": "Does the facility have any defined and implemented approach to mass notification?"
+  },
+  {
+    "question_code": "7b730006-298d-4721-90d3-9bb8f6626c8e",
+    "question_text": "Does the facility have cameras positioned to provide coverage of critical areas?"
+  },
+  {
+    "question_code": "7bea99e2-31ab-41ca-b05a-17ff9595cd26",
+    "question_text": "Does the facility conduct emergency drills on a regular schedule?"
+  },
+  {
+    "question_code": "7bf63472-827a-41d7-8a1e-c3490a39824b",
+    "question_text": "Does the facility have any defined and implemented approach to locking hardware access control?"
+  },
+  {
+    "question_code": "7ddb6c37-df46-4523-8a69-eacc9639ac47",
+    "question_text": "Does the facility have a School Resource Officer program?"
+  },
+  {
+    "question_code": "7e096622-d72c-4a0d-ad19-65ba579bb5e2",
+    "question_text": "Does the facility have any defined and implemented approach to ICS/NIMS integration?"
+  },
+  {
+    "question_code": "7e22f8e4-3911-4c46-bac6-e3ca7ba5d574",
+    "question_text": "Does the facility have a defined approach to interior door security?"
+  },
+  {
+    "question_code": "7e3b1e55-7f2b-4c46-86cc-4ca075f7ee35",
+    "question_text": "Does the facility have designated secure rooms?"
+  },
+  {
+    "question_code": "7f08652d-3b4f-4bfe-aa78-d7fe575cd94e",
+    "question_text": "Does the facility have any defined and implemented approach to ballistic protection?"
+  },
+  {
+    "question_code": "7f7df2fa-d167-4be6-9a01-c6ae9731852e",
+    "question_text": "Does the facility have a defined process for coordinating with School Resource Officers?"
+  },
+  {
+    "question_code": "7faf9eae-09f3-4299-a059-c242868667b3",
+    "question_text": "Does the facility have any defined and implemented approach to evacuation procedures?"
+  },
+  {
+    "question_code": "8103365f-4733-4bad-ace7-63d06684b611",
+    "question_text": "Does the facility have any defined and implemented approach to video monitoring workstations?"
+  },
+  {
+    "question_code": "81234872-527a-4b68-9a88-5613c02ed031",
+    "question_text": "Does the facility have any defined and implemented approach to glass break sensors?"
+  },
+  {
+    "question_code": "81a7b1ee-ac25-4a8d-b14e-bd060a341236",
+    "question_text": "Does the facility have a defined process for maintaining security documentation?"
+  },
+  {
+    "question_code": "81b71556-cfc6-495a-9ddd-2517aa3f96ec",
+    "question_text": "Does the facility have a defined process for receiving threat information?"
+  },
+  {
+    "question_code": "8295ee1c-d375-4752-a189-2ab16c2d759f",
+    "question_text": "Does the facility have a defined process for testing door contact sensors?"
+  },
+  {
+    "question_code": "83085398-3c54-4f12-b22f-83195b864766",
+    "question_text": "Does the facility have any defined and implemented approach to interoperable communications?"
+  },
+  {
+    "question_code": "84468118-7693-408f-abb1-6719ac9c2272",
+    "question_text": "Does the facility have any defined and implemented approach to exterior wall reinforcement?"
+  },
+  {
+    "question_code": "8591865d-d2a6-4296-8f4c-f6672c6f3c0f",
+    "question_text": "Does the facility have established communication channels with JTTF?"
+  },
+  {
+    "question_code": "866c56a4-1fda-4408-af29-fdb30202129a",
+    "question_text": "Does the facility have a crisis management plan?"
+  },
+  {
+    "question_code": "869a0d15-4699-4459-8692-766f3b052903",
+    "question_text": "Does the facility have any defined and implemented approach to defensible space design?"
+  },
+  {
+    "question_code": "8703b1f2-98e1-490e-a9e2-5f2a5713b991",
+    "question_text": "Does the facility have a defined process for managing restricted keys?"
+  },
+  {
+    "question_code": "87cf6518-53fd-41db-ae2c-0277191641d0",
+    "question_text": "Does the facility have communication equipment capable of interoperability?"
+  },
+  {
+    "question_code": "896e281d-7632-40da-9272-edcd9b1224c8",
+    "question_text": "Does the facility have a defined process for managing radio communications?"
+  },
+  {
+    "question_code": "89ee8969-94e7-442d-833a-b3e681c32be5",
+    "question_text": "Does the facility have a defined process for training staff on emergency roles?"
+  },
+  {
+    "question_code": "8b5d57d3-4505-4887-b71c-5eeae24b05e6",
+    "question_text": "Does the facility have interior cameras installed?"
+  },
+  {
+    "question_code": "8c72c3ac-469b-4a4c-bf3d-d3624fe1bed7",
+    "question_text": "Does the facility have a defined process for managing master keys?"
+  },
+  {
+    "question_code": "8d665788-d4c3-4820-b230-48876ac4686f",
+    "question_text": "Does the facility have any defined and implemented approach to secured vestibule access control?"
+  },
+  {
+    "question_code": "8d7e707a-1a06-4a53-ae25-b81c7fb364de",
+    "question_text": "Does the facility have an electronic access control system?"
+  },
+  {
+    "question_code": "8da38580-e76b-482d-8f73-6fa8a04c60f6",
+    "question_text": "Does the facility have any defined and implemented approach to video surveillance system architecture?"
+  },
+  {
+    "question_code": "8dd7826d-6c29-4332-b9f1-306840740ad7",
+    "question_text": "Does the facility have video recording and storage systems?"
+  },
+  {
+    "question_code": "8e4fe9c9-fe59-4904-bbdd-dd91525ce116",
+    "question_text": "Does the facility have perimeter fencing?"
+  },
+  {
+    "question_code": "90b40b23-9edd-4589-bdad-b882bbe0be44",
+    "question_text": "Does the facility have a defined process for tracking key accountability?"
+  },
+  {
+    "question_code": "9199bcc4-cb21-41e8-9539-b2b2c344947d",
+    "question_text": "Does the facility have any defined and implemented approach to camera coverage and line of sight?"
+  },
+  {
+    "question_code": "91aedbce-cffc-4dd5-99a2-c7b3ad1f7e77",
+    "question_text": "Does the facility have perimeter gates?"
+  },
+  {
+    "question_code": "923defda-cf9c-4ef3-ba76-39d64895fd77",
+    "question_text": "Does the facility have emergency guides or flip charts available?"
+  },
+  {
+    "question_code": "9249e06f-84e4-4665-9061-05fcad385208",
+    "question_text": "Does the facility have any defined and implemented approach to muster point and rally area designation?"
+  },
+  {
+    "question_code": "928e8e85-2b08-4c61-b523-68683569be52",
+    "question_text": "Does the facility have any defined and implemented approach to perimeter gate access control?"
+  },
+  {
+    "question_code": "92df5f99-a705-4728-a531-72cc1e5d560d",
+    "question_text": "Does the facility have a defined process for staffing the Security Operations Center?"
+  },
+  {
+    "question_code": "937d6fa9-cd36-45eb-9c68-34c0f9038f6a",
+    "question_text": "Does the facility have defined rekeying procedures?"
+  },
+  {
+    "question_code": "94eba08f-ce43-4bd5-996b-c732508d33be",
+    "question_text": "Does the facility have impact-resistant glazing installed?"
+  },
+  {
+    "question_code": "97dd05ef-df28-40a9-9290-b9f9ae56d7c2",
+    "question_text": "Does the facility have a defined process for controlling vehicle access?"
+  },
+  {
+    "question_code": "97e0659a-bb67-46c9-8116-9105a2219b98",
+    "question_text": "Does the facility have a defined process for training staff on shelter-in-place procedures?"
+  },
+  {
+    "question_code": "995d6a81-edc0-45ad-a252-d2c921fa0e3a",
+    "question_text": "Does the facility have video monitoring workstations?"
+  },
+  {
+    "question_code": "997e10ef-018b-4529-8370-8fc1d16b37bf",
+    "question_text": "Does the facility have secured vestibules at controlled access points?"
+  },
+  {
+    "question_code": "9b025aaf-d0e0-40f0-ac48-8b5e91cad9e6",
+    "question_text": "Does the facility participate in ISAC or ISAO activities?"
+  },
+  {
+    "question_code": "9b359ade-c34c-4b8e-8371-faa2d1ed06e7",
+    "question_text": "Does the facility have a defined process for maintaining fixed cameras?"
+  },
+  {
+    "question_code": "9b67ad06-4bca-4764-a6bd-639617def75a",
+    "question_text": "Does the facility have a defined process for maintaining perimeter lighting?"
+  },
+  {
+    "question_code": "9c20c544-3b70-4ee8-af16-5acbcb84dd82",
+    "question_text": "Does the facility have any defined and implemented approach to interior video surveillance?"
+  },
+  {
+    "question_code": "9d954def-194a-4b25-b0de-2c6c544bfcf3",
+    "question_text": "Does the facility have a defined process for conducting risk assessments?"
+  },
+  {
+    "question_code": "9e2a6833-57e3-43bd-9de0-bfe48f5e5c78",
+    "question_text": "Does the facility have a defined approach to JTTF engagement?"
+  },
+  {
+    "question_code": "9e3cb0e3-0b79-489a-8c80-52570c2b4ed3",
+    "question_text": "Does the facility have any defined and implemented approach to redundancy and backup systems?"
+  },
+  {
+    "question_code": "9ffdbaac-dbec-4909-af89-71d4b72640a5",
+    "question_text": "Does the facility have any defined and implemented approach to key cabinet storage?"
+  },
+  {
+    "question_code": "a0fa18bb-4ddf-4682-b162-48fe674f64a5",
+    "question_text": "Does the facility have a defined process for maintaining structural hardening?"
+  },
+  {
+    "question_code": "a1dbb6a2-c96f-4429-9029-3854fa79efdf",
+    "question_text": "Does the facility have any defined and implemented approach to public address communication?"
+  },
+  {
+    "question_code": "a475c4e0-1f9e-4f64-b531-194fc25c90c3",
+    "question_text": "Does the facility have defined clear zones?"
+  },
+  {
+    "question_code": "a4901f42-df60-4898-8dd5-a68519f5a158",
+    "question_text": "Does the facility have a defined process for controlling access to secure rooms?"
+  },
+  {
+    "question_code": "a49b5231-a71c-4dd6-a4ae-840bf78e610d",
+    "question_text": "Does the facility have structural hardening measures?"
+  },
+  {
+    "question_code": "a4e5739a-eedb-4c15-a79f-addae71f72ff",
+    "question_text": "Does the facility have any defined and implemented approach to electric strike and magnetic lock access control?"
+  },
+  {
+    "question_code": "a4fb59d4-a9b4-4edf-8814-e40239822871",
+    "question_text": "Does the facility have a defined process for testing the business continuity plan?"
+  },
+  {
+    "question_code": "a501d6d9-48d6-455e-91d2-f5e5183888b6",
+    "question_text": "Does the facility have a defined process for managing door reader access permissions?"
+  },
+  {
+    "question_code": "a5e6b1f3-6a12-45eb-bd0c-d78bda733909",
+    "question_text": "Does the facility have any defined and implemented approach to restricted key management?"
+  },
+  {
+    "question_code": "a6897b31-e4f0-4a3e-a549-98e62994e52b",
+    "question_text": "Does the facility have any defined and implemented approach to alarm panel operation?"
+  },
+  {
+    "question_code": "a7815fd3-2378-48d8-8d87-7e9b7faf0015",
+    "question_text": "Does the facility have a defined process for managing radio communications?"
+  },
+  {
+    "question_code": "a7dc0101-61ee-45fa-98f4-1fea9cb29c0f",
+    "question_text": "Does the facility have radios or two-way communication devices?"
+  },
+  {
+    "question_code": "aabfeddf-df1b-4210-b831-18e2cd71ea39",
+    "question_text": "Does the facility have door readers installed at controlled access points?"
+  },
+  {
+    "question_code": "aaf83bdb-b630-47d1-8892-7864e0cec8d3",
+    "question_text": "Does the facility have a defined process for operating PTZ cameras?"
+  },
+  {
+    "question_code": "ab735c0f-e1bb-4c03-a8ec-1fedf2da6bb1",
+    "question_text": "Does the facility have a defined process for tracking policy compliance?"
+  },
+  {
+    "question_code": "ab8550f3-9f1c-4529-aadb-9f0f00093a79",
+    "question_text": "Does the facility implement landscaping control measures?"
+  },
+  {
+    "question_code": "ad4eaced-b68d-47c0-8662-d32c78b1e721",
+    "question_text": "Does the facility have any defined and implemented approach to master key management?"
+  },
+  {
+    "question_code": "adeb1b1c-afe5-46be-a468-cfef687658d1",
+    "question_text": "Does the facility have defined security training programs?"
+  },
+  {
+    "question_code": "adfe4e01-0bdd-4e75-ad25-35749ea641fd",
+    "question_text": "Does the facility have any defined and implemented approach to risk assessment and risk management?"
+  },
+  {
+    "question_code": "aec8a09d-ae34-4d15-85c3-e981d33cc43d",
+    "question_text": "Does the facility have a defined process for sharing threat information?"
+  },
+  {
+    "question_code": "b0392db9-0d4e-4d7c-ab91-d5db2abfd6f3",
+    "question_text": "Does the facility have a defined process for managing electronic access control permissions?"
+  },
+  {
+    "question_code": "b03ee6aa-7a5f-4231-b4ff-e6e335f62050",
+    "question_text": "Does the facility have any defined and implemented approach to shelter-in-place procedures?"
+  },
+  {
+    "question_code": "b3222e65-fb7c-4277-8222-66362d047105",
+    "question_text": "Does the facility have any defined and implemented approach to perimeter lighting?"
+  },
+  {
+    "question_code": "b414afd8-9630-4508-81f7-22bdb4020a12",
+    "question_text": "Does the facility have any defined and implemented approach to security documentation?"
+  },
+  {
+    "question_code": "b4e2d21f-e591-4f8d-816e-8681fa00e23c",
+    "question_text": "Does the facility have a defined process for maintaining exterior wall reinforcement?"
+  },
+  {
+    "question_code": "b59b3753-02d7-4309-856b-a009120d31b5",
+    "question_text": "Does the facility have a defined process for revoking biometric access?"
+  },
+  {
+    "question_code": "b63d521e-5661-4662-9c3b-ba05208d61c2",
+    "question_text": "Does the facility have a defined process for controlling gate access?"
+  },
+  {
+    "question_code": "b7a5bb2c-234e-4a6e-98a0-f9dc5a6dc7f6",
+    "question_text": "Does the facility have any defined and implemented approach to safe room designation?"
+  },
+  {
+    "question_code": "b824bac0-cd45-4b60-9580-91000d8cbaa3",
+    "question_text": "Does the facility maintain clear zones?"
+  },
+  {
+    "question_code": "b87b97bd-9c60-4179-a492-4d5e761b5b0d",
+    "question_text": "Does the facility have a defined process for maintaining the system architecture?"
+  },
+  {
+    "question_code": "b90ad253-3bbf-4aea-ac5f-8b74392c6726",
+    "question_text": "Does the facility have keypads or PIN entry systems at controlled access points?"
+  },
+  {
+    "question_code": "baca9787-d970-4b96-876e-94dc310ea493",
+    "question_text": "Does the facility have a defined process for reviewing and updating security policies?"
+  },
+  {
+    "question_code": "bae6b012-64ec-40df-99c4-fd8f9dc750f6",
+    "question_text": "Does the facility have a defined process for training staff on communication protocols?"
+  },
+  {
+    "question_code": "bd49b7de-7207-4271-ab50-3b7baf218e3c",
+    "question_text": "Does the facility have exterior wall reinforcement?"
+  },
+  {
+    "question_code": "be9d3081-0448-4bf3-a4b2-5671014878cc",
+    "question_text": "Does the facility have any defined and implemented approach to business continuity planning?"
+  },
+  {
+    "question_code": "bf237b15-c840-478e-87a5-866ef2393ba8",
+    "question_text": "Does the facility have any defined and implemented approach to boundary demarcation?"
+  },
+  {
+    "question_code": "c046c77a-f0b7-432b-93f9-84084ad8d179",
+    "question_text": "Does the facility have any defined and implemented approach to Security Operations Center operations?"
+  },
+  {
+    "question_code": "c067278c-4360-413e-bcab-6c4c71dd5b57",
+    "question_text": "Does the facility have motion detectors installed?"
+  },
+  {
+    "question_code": "c0d45cae-d2ca-4173-9639-5b74f5fa8d97",
+    "question_text": "Does the facility have any defined and implemented approach to biometric access control?"
+  },
+  {
+    "question_code": "c0fca904-ab48-40d8-b7f2-026ea9047562",
+    "question_text": "Does the facility have defined security procedures?"
+  },
+  {
+    "question_code": "c2324627-0b78-420e-bee6-0f34c2511643",
+    "question_text": "Does the facility have interior lighting installed?"
+  },
+  {
+    "question_code": "c2f205b3-b006-47e1-b772-e1b354aee883",
+    "question_text": "Does the facility have defined security governance structure?"
+  },
+  {
+    "question_code": "c31411e4-722a-44b7-846c-804e0c07be15",
+    "question_text": "Does the facility have designated storage areas for sensitive items?"
+  },
+  {
+    "question_code": "c314769e-8ebd-4579-a644-0b7d85ae7b17",
+    "question_text": "Does the facility have any defined and implemented approach to security policies?"
+  },
+  {
+    "question_code": "c3a5eeab-9cec-4a9b-992d-89477edfc6fe",
+    "question_text": "Does the facility have any defined and implemented approach to visitor access management?"
+  },
+  {
+    "question_code": "c49eb251-9345-47fc-9c18-e056bdc7e1cb",
+    "question_text": "Does the facility have a defined process for reviewing and updating security procedures?"
+  },
+  {
+    "question_code": "c6adb196-f313-4531-8892-b34db0f8a773",
+    "question_text": "Does the facility have a defined process for operating video wall or display systems?"
+  },
+  {
+    "question_code": "c727c728-71bf-4293-92a7-30170d45e0e7",
+    "question_text": "Does the facility have any defined and implemented approach to security training programs?"
+  },
+  {
+    "question_code": "c736bed7-f02a-4a98-b603-15186042abf0",
+    "question_text": "Does the facility have a defined process for updating the resilience plan?"
+  },
+  {
+    "question_code": "c78b2175-7e20-466a-ba7e-9b27cf4f203b",
+    "question_text": "Does the facility have any defined and implemented approach to video analytics and behavior detection?"
+  },
+  {
+    "question_code": "c7bf2780-6561-4c65-9ef4-6efcdc9c1583",
+    "question_text": "Does the facility have any defined and implemented approach to backup communication capabilities?"
+  },
+  {
+    "question_code": "c7dc9e62-1f8d-4e96-a56b-5f444e86cf25",
+    "question_text": "Does the facility have defined staff emergency roles?"
+  },
+  {
+    "question_code": "c8851d80-0b3a-436f-8138-3d12727687b1",
+    "question_text": "Does the facility have a defined process for maintaining impact-resistant glazing?"
+  },
+  {
+    "question_code": "ca6dc380-2035-4734-bbcb-15e5c7f3184b",
+    "question_text": "Does the facility have any defined and implemented approach to security officer training?"
+  },
+  {
+    "question_code": "caa50dc8-fa87-4937-9ea7-243e064e19f2",
+    "question_text": "Does the facility have defined security officer training requirements?"
+  },
+  {
+    "question_code": "cac09fc8-df0c-4a35-9170-73e19a6ddeb1",
+    "question_text": "Does the facility have a defined video surveillance system architecture?"
+  },
+  {
+    "question_code": "cbaac6d1-0fa8-4a2d-9f26-d33fd86d3b15",
+    "question_text": "Does the facility have any defined and implemented approach to security governance and oversight?"
+  },
+  {
+    "question_code": "ce9df516-ce30-4e48-acaf-3d497cecb88c",
+    "question_text": "Does the facility have a defined process for communicating muster point locations?"
+  },
+  {
+    "question_code": "cea35093-146c-4a8a-b272-14e6d9837c3f",
+    "question_text": "Does the facility have a defined process for managing video storage retention?"
+  },
+  {
+    "question_code": "d0105222-5194-4ab6-8ac6-0061f49fb3ef",
+    "question_text": "Does the facility have a defined approach to law enforcement liaison?"
+  },
+  {
+    "question_code": "d0786b4e-fe8f-40ca-91b0-7dc4e2e5e9e2",
+    "question_text": "Does the facility have a public address system?"
+  },
+  {
+    "question_code": "d1ee7e26-daf3-4c28-be39-c05ac0170054",
+    "question_text": "Does the facility have defined lockout procedures?"
+  },
+  {
+    "question_code": "d2f79615-c8cd-4354-bbf2-4df965543a08",
+    "question_text": "Does the facility have perimeter intrusion detection systems?"
+  },
+  {
+    "question_code": "d3f27c84-8c19-40d4-a002-f69562ca20c4",
+    "question_text": "Does the facility have any defined and implemented approach to IP-based video surveillance?"
+  },
+  {
+    "question_code": "d4bad639-9b8a-40c7-8ecc-1016ed4c7692",
+    "question_text": "Does the facility have any defined and implemented approach to exterior security lighting?"
+  },
+  {
+    "question_code": "d5615d07-a7eb-4f61-9ee1-946047b55fbb",
+    "question_text": "Does the facility have a defined process for documenting rekeying activities?"
+  },
+  {
+    "question_code": "d758980f-b636-4957-9465-64e7f05ab55f",
+    "question_text": "Does the facility have any defined and implemented approach to natural surveillance?"
+  },
+  {
+    "question_code": "d812deec-562b-448b-a5e9-b4da45d83d48",
+    "question_text": "Does the facility have any defined and implemented approach to coordination protocols with external entities?"
+  },
+  {
+    "question_code": "d8fca87e-f3f8-4a3c-9ee6-71375fad5b21",
+    "question_text": "Does the facility have any defined and implemented approach to electronic access control?"
+  },
+  {
+    "question_code": "d95165c5-0f82-4d40-ad7d-54ae4377933f",
+    "question_text": "Does the facility have any defined and implemented approach to resilience planning?"
+  },
+  {
+    "question_code": "da333642-ff85-4dcd-b5b5-e6cac1c02e55",
+    "question_text": "Does the facility have a defined process for training staff on response procedures?"
+  },
+  {
+    "question_code": "dacafee6-0763-4146-9e16-999d2dffbd13",
+    "question_text": "Does the facility have a defined process for responding to analytics alerts?"
+  },
+  {
+    "question_code": "dbc3e24d-0aea-4b12-9d74-cc0cfbd7894b",
+    "question_text": "Does the facility have defined security policies?"
+  },
+  {
+    "question_code": "dc565d7c-51ad-419d-b677-731b55be8f91",
+    "question_text": "Does the facility have any defined and implemented approach to controllable video surveillance?"
+  },
+  {
+    "question_code": "dcbf734a-ed8c-4487-a8d3-74a1aff42756",
+    "question_text": "Does the facility have any defined and implemented approach to guard post designation?"
+  },
+  {
+    "question_code": "dd0d8a9a-712b-4706-947f-c435c9266195",
+    "question_text": "Does the facility have any defined and implemented approach to incident reporting?"
+  },
+  {
+    "question_code": "de050172-71b0-4100-97b4-36c84e28ce7c",
+    "question_text": "Does the facility have defined communication protocols?"
+  },
+  {
+    "question_code": "de32b248-d7bb-4269-8c0c-55d0d6b99376",
+    "question_text": "Does the facility have a defined process for documenting incidents?"
+  },
+  {
+    "question_code": "de44597f-9137-4bf1-a4a7-7892730100fb",
+    "question_text": "Does the facility have defined security documentation requirements?"
+  },
+  {
+    "question_code": "dea63d8b-8a45-4ae2-9986-20e161694b35",
+    "question_text": "Does the facility have any defined and implemented approach to threat information sharing?"
+  },
+  {
+    "question_code": "df645a14-6a87-42a8-9723-6478d1af8022",
+    "question_text": "Does the facility have a defined process for maintaining exterior lighting?"
+  },
+  {
+    "question_code": "e02f56d4-4de0-47d7-b8ff-2ab0be85c125",
+    "question_text": "Does the facility have a defined approach to maintaining sightlines?"
+  },
+  {
+    "question_code": "e15bf527-5f2d-44a2-a60f-a34bd464a67a",
+    "question_text": "Does the facility have a defined process for training staff on reunification procedures?"
+  },
+  {
+    "question_code": "e1b78d62-987c-481c-9a61-328b5a0b853c",
+    "question_text": "Does the facility have a defined process for issuing credentials?"
+  },
+  {
+    "question_code": "e476ae3e-3d7b-49fc-9e91-15b01cb5466b",
+    "question_text": "Does the facility have a defined process for registering visitors?"
+  },
+  {
+    "question_code": "e528560f-3241-42cd-8d53-a3ad086b0421",
+    "question_text": "Does the facility have any defined and implemented approach to sightline maintenance?"
+  },
+  {
+    "question_code": "e52c5dc6-30fc-4eb4-a5fe-215dd32450e8",
+    "question_text": "Does the facility have a defined process for documenting patrol activities?"
+  },
+  {
+    "question_code": "e5672120-34de-48fc-81c7-7e12010e67e2",
+    "question_text": "Does the facility have any defined and implemented approach to exterior video surveillance?"
+  },
+  {
+    "question_code": "e743363f-dcb8-48b0-aa5d-ddc97c2ca17a",
+    "question_text": "Does the facility have a defined process for using safe rooms?"
+  },
+  {
+    "question_code": "e8647e7c-b01b-47c2-b17b-2122a384a359",
+    "question_text": "Does the facility have a defined process for logging key usage?"
+  },
+  {
+    "question_code": "e9293455-1bc4-458c-9b1a-b21793e2b123",
+    "question_text": "Does the facility have defined emergency communication procedures?"
+  },
+  {
+    "question_code": "eb45ad4d-764a-463f-bc18-501e1a1c68a4",
+    "question_text": "Does the facility have key cabinets for storing keys?"
+  },
+  {
+    "question_code": "ebb4d41b-b8e8-4d8a-bb06-76c60b8800dc",
+    "question_text": "Does the facility have blast mitigation measures?"
+  },
+  {
+    "question_code": "ece2c849-7b1c-43bb-b083-ed63a6e03162",
+    "question_text": "Does the facility have any defined and implemented approach to emergency drill execution?"
+  },
+  {
+    "question_code": "eceb9aa0-aa82-47f3-903f-85bbf607d2e7",
+    "question_text": "Does the facility have bollards or barriers installed at perimeter access points?"
+  },
+  {
+    "question_code": "ecec8e43-67a8-4851-b6e7-4f0e0e1eb035",
+    "question_text": "Does the facility have any defined and implemented approach to communication protocols?"
+  },
+  {
+    "question_code": "eda328ea-b5df-4583-9795-78cfa0b52b03",
+    "question_text": "Does the facility have a defined process for testing backup communication systems?"
+  },
+  {
+    "question_code": "ee066653-c2b3-4290-9145-61110855bee4",
+    "question_text": "Does the facility have perimeter lighting installed?"
+  },
+  {
+    "question_code": "efe1f594-4727-45fc-b6d4-18d775325077",
+    "question_text": "Does the facility have a defined process for maintaining ballistic barriers?"
+  },
+  {
+    "question_code": "f0f3fef7-9965-4935-8160-fbeeca73d8d0",
+    "question_text": "Does the facility have a defined process for testing the public address system?"
+  },
+  {
+    "question_code": "f11a6bb4-ba1a-4945-8e67-15aa5d686d0b",
+    "question_text": "Does the facility have a defined process for controlling access to restricted keys?"
+  },
+  {
+    "question_code": "f29039b1-b8e9-4f1e-ba72-4656beab9763",
+    "question_text": "Does the facility have visible boundary demarcation?"
+  },
+  {
+    "question_code": "f3a51337-b9c1-4e2c-811e-27086aa70ece",
+    "question_text": "Does the facility have a defined process for recording access events?"
+  },
+  {
+    "question_code": "f450c965-a523-4ad9-8d53-70c5ce3ee756",
+    "question_text": "Does the facility have any defined and implemented approach to video wall and display systems?"
+  },
+  {
+    "question_code": "f46d0cb5-43ff-4628-890a-2eaf4185da27",
+    "question_text": "Does the facility have a defined process for operating alarm panels?"
+  },
+  {
+    "question_code": "f735fe99-dcf4-420c-a1bd-7f3c86881147",
+    "question_text": "Does the facility have defined evacuation procedures?"
+  },
+  {
+    "question_code": "f751f511-37d3-475a-8b65-c0bc11d3aac4",
+    "question_text": "Does the facility have any defined and implemented approach to perimeter signage?"
+  },
+  {
+    "question_code": "f820f074-6673-4497-afc0-c9e7b650d39f",
+    "question_text": "Does the facility have any defined and implemented approach to emergency communications?"
+  },
+  {
+    "question_code": "f8a4353a-bc77-4776-8328-0b5022ebf4fa",
+    "question_text": "Does the facility have staff trained in ICS/NIMS?"
+  },
+  {
+    "question_code": "f9363808-3260-488b-b730-d2751e9f5bad",
+    "question_text": "Does the facility have IP cameras installed?"
+  },
+  {
+    "question_code": "f96417aa-2d7e-4cce-84b3-ab297ebf039f",
+    "question_text": "Does the facility have locking hardware installed at controlled access points?"
+  },
+  {
+    "question_code": "f9dc9c9d-cd55-4532-a7c5-abf3f55eedae",
+    "question_text": "Does the facility have any defined and implemented approach to crisis management?"
+  },
+  {
+    "question_code": "faf4a513-5358-491b-8453-b6fa36c4cd36",
+    "question_text": "Does the facility have any defined and implemented approach to fusion center interface?"
+  },
+  {
+    "question_code": "fc21e002-e715-4978-b444-050f13c5970d",
+    "question_text": "Does the facility have a defined process for testing the mass notification system?"
+  },
+  {
+    "question_code": "fc85d001-6146-4eb1-9fdf-97c308a2264b",
+    "question_text": "Does the facility have a defined process for security oversight?"
+  },
+  {
+    "question_code": "fcc13e12-2572-419f-8229-de9b2f269ff7",
+    "question_text": "Does the facility have any defined and implemented approach to sensitive item storage?"
+  },
+  {
+    "question_code": "fd4adaf2-a2dd-4634-a96f-fd859724acee",
+    "question_text": "Does the facility have any defined and implemented approach to perimeter fencing?"
+  },
+  {
+    "question_code": "fd9fa2d3-ec5d-4907-ae81-a096d885b2ad",
+    "question_text": "Does the facility have any defined and implemented approach to paging communication?"
+  },
+  {
+    "question_code": "fe8c0161-fc89-4f0a-92d6-d7c32bd84b7f",
+    "question_text": "Does the facility have defined external reporting procedures?"
+  },
+  {
+    "question_code": "ff852d27-47c9-424e-8c68-50595de470b6",
+    "question_text": "Does the facility have any defined and implemented approach to rekeying procedures?"
+  }
+]

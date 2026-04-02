@@ -1,0 +1,149 @@
+{
+  "generated_at": "2026-01-14T00:09:14.380060Z",
+  "source_set": "CISA_MASS_GATHERING",
+  "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+  "overlay_snapshot": {
+    "active_sector_codes": [],
+    "active_subsector_codes": [
+      "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES"
+    ],
+    "active_technology_codes": []
+  },
+  "summary": {
+    "base_questions_with_links": 12,
+    "base_questions_total": 36,
+    "expansion_questions_with_links": 43,
+    "expansion_questions_total": 80,
+    "total_candidates_matched": 70
+  },
+  "base_coverage": {
+    "top_10": [
+      {
+        "question_code": "SecurityPersonnel",
+        "candidate_count": 3,
+        "avg_score": 0.2,
+        "max_score": 0.2
+      },
+      {
+        "question_code": "SecurityPlan",
+        "candidate_count": 2,
+        "avg_score": 0.20549450549450549,
+        "max_score": 0.2571428571428571
+      },
+      {
+        "question_code": "RiskAssessment",
+        "candidate_count": 2,
+        "avg_score": 0.17333333333333334,
+        "max_score": 0.18
+      },
+      {
+        "question_code": "AccessControl",
+        "candidate_count": 1,
+        "avg_score": 0.2571428571428571,
+        "max_score": 0.2571428571428571
+      },
+      {
+        "question_code": "StandoffDistance",
+        "candidate_count": 1,
+        "avg_score": 0.25,
+        "max_score": 0.25
+      },
+      {
+        "question_code": "LawEnforcement",
+        "candidate_count": 1,
+        "avg_score": 0.18181818181818182,
+        "max_score": 0.18181818181818182
+      },
+      {
+        "question_code": "VideoMonitoring",
+        "candidate_count": 1,
+        "avg_score": 0.16666666666666666,
+        "max_score": 0.16666666666666666
+      },
+      {
+        "question_code": "LawComm",
+        "candidate_count": 1,
+        "avg_score": 0.16666666666666666,
+        "max_score": 0.16666666666666666
+      },
+      {
+        "question_code": "VideoSystemType",
+        "candidate_count": 1,
+        "avg_score": 0.15384615384615385,
+        "max_score": 0.15384615384615385
+      },
+      {
+        "question_code": "PlanCoordination",
+        "candidate_count": 1,
+        "avg_score": 0.15384615384615385,
+        "max_score": 0.15384615384615385
+      }
+    ],
+    "total_questions_covered": 12
+  },
+  "expansion_coverage": {
+    "top_10": [
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q024",
+        "candidate_count": 12,
+        "avg_score": 0.3238633866133866,
+        "max_score": 1.0
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q023",
+        "candidate_count": 9,
+        "avg_score": 0.32767643467643465,
+        "max_score": 1.0
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q022",
+        "candidate_count": 9,
+        "avg_score": 0.24612479308131482,
+        "max_score": 0.36
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q016",
+        "candidate_count": 6,
+        "avg_score": 0.378562271062271,
+        "max_score": 1.0
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q019",
+        "candidate_count": 6,
+        "avg_score": 0.3623717948717949,
+        "max_score": 1.0
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q027",
+        "candidate_count": 6,
+        "avg_score": 0.3299580682475419,
+        "max_score": 1.0
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q049",
+        "candidate_count": 4,
+        "avg_score": 0.5466165413533834,
+        "max_score": 1.0
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q015",
+        "candidate_count": 3,
+        "avg_score": 0.4683333333333333,
+        "max_score": 1.0
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q028",
+        "candidate_count": 3,
+        "avg_score": 0.3222222222222222,
+        "max_score": 0.6461538461538461
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q051",
+        "candidate_count": 3,
+        "avg_score": 0.2937062937062937,
+        "max_score": 0.39999999999999997
+      }
+    ],
+    "total_questions_covered": 43
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "mode": "APPLY",
+  "chunks_scanned": 614,
+  "documents_scanned": 5,
+  "candidates_extracted": 141,
+  "candidates_inserted": 141,
+  "rejected_counts_by_reason": {
+    "no_option_language": 983,
+    "forbidden_impl_detail": 104,
+    "duplicate": 21,
+    "empty_or_noise": 2,
+    "short_fragment": 139,
+    "missing_source_id": 141,
+    "observation_not_option": 22,
+    "meta_preamble": 14,
+    "vulnerability_finding": 69,
+    "state_vulnerability_cognitive": 7
+  },
+  "top_documents_by_candidates": {
+    "867e8661-8927-4252-b9fa-e21fff5b3112": 103,
+    "98c85d31-7b26-490e-b90c-afbe0349b67d": 38
+  },
+  "subtype_assignment": {
+    "enabled": true,
+    "subtype_assigned_count": 6,
+    "subtype_unassigned_count": 135,
+    "top_assigned_subtypes": {
+      "EAP_EMERGENCY_GUIDES_FLIP_CHARTS": 2,
+      "ACS_DOOR_READERS": 1,
+      "ISC_LAW_ENFORCEMENT_LIAISON": 1,
+      "SFO_INCIDENT_REPORTING": 1,
+      "PER_VEHICLE_ACCESS_CONTROL_POINTS": 1
+    }
+  },
+  "selection": {
+    "source_set": null,
+    "document_id": null,
+    "max_chunks": null
+  },
+  "tables": {
+    "document_chunks": "public.document_chunks",
+    "destination": "public.ofc_candidate_queue",
+    "citations": "public.ofc_candidate_queue"
+  }
+}

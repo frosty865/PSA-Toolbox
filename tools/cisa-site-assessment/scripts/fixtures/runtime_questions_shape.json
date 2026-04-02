@@ -1,0 +1,30 @@
+{
+  "description": "Authoritative allowed keys for /api/runtime/questions items. Any drift fails build.",
+  "allowed_keys_sorted": [
+    "canon_id",
+    "discipline_code",
+    "discipline_subtype_id",
+    "layer",
+    "question_code",
+    "question_text",
+    "response_enum",
+    "subtype_code"
+  ],
+  "rules": {
+    "no_extra_keys": true,
+    "no_missing_keys": true,
+    "nullability": {
+      "discipline_subtype_id": "uuid|string|null",
+      "subtype_code": "string|null"
+    },
+    "forbidden_key_fragments_case_insensitive": [
+      "intent",
+      "what_counts_as_yes",
+      "what-counts-as-yes",
+      "evidence",
+      "tips",
+      "enforcement",
+      "field"
+    ]
+  }
+}

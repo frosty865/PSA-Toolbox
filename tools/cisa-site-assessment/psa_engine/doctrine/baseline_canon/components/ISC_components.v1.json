@@ -1,0 +1,11 @@
+{
+  "discipline_code": "ISC",
+  "version": "v1",
+  "source": "review_packets",
+  "source_files": [
+    "psa_engine/doctrine/baseline_canon/review_packets/ISC_COMPONENT_CHECKLIST.md",
+    "psa_engine/doctrine/baseline_canon/review_packets/ISC_DROP.md",
+    "psa_engine/doctrine/baseline_canon/review_packets/ISC_packets.data.json"
+  ],
+  "notes": "ISC component depth includes specific procedures, liaison/partner details, agreements, and assurance language. Baseline spines remain universal and solution-agnostic, authored canonically."
+}

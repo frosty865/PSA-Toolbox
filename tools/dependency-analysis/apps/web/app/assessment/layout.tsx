@@ -1,9 +1,9 @@
-import { AssessmentChrome } from '@/components/AssessmentChrome';
+import { AssessmentDisclaimerGate } from '@/components/AssessmentDisclaimerGate';
 
 export default function AssessmentLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <AssessmentChrome>{children}</AssessmentChrome>;
+  return <AssessmentDisclaimerGate>{children}</AssessmentDisclaimerGate>;
 }

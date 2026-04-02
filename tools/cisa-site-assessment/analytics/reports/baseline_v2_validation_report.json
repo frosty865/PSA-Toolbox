@@ -1,0 +1,75 @@
+{
+  "metadata": {
+    "validation_date": "2025-12-28T20:46:01.164367",
+    "baseline_version": "Baseline_Questions_v2"
+  },
+  "summary": {
+    "total_questions": 416,
+    "active_questions": 208,
+    "retired_questions": 208,
+    "by_gate": {
+      "CONTROL_EXISTS": 104,
+      "CONTROL_OPERABLE": 97,
+      "CONTROL_RESILIENCE": 7
+    },
+    "by_discipline": {
+      "Access Control Systems": 20,
+      "CPTED": 14,
+      "Communications": 12,
+      "Emergency Action Planning": 16,
+      "Emergency Management & Resilience": 14,
+      "Facility Hardening": 12,
+      "Information Sharing & Coordination": 14,
+      "Interior Security & Barriers": 14,
+      "Intrusion Detection Systems": 14,
+      "Key Control": 10,
+      "Perimeter Security": 16,
+      "Security Force / Operations": 16,
+      "Security Management & Governance": 14,
+      "Video Surveillance Systems": 22
+    },
+    "validation_errors": 0,
+    "validation_warnings": 20
+  },
+  "validation_results": {
+    "gate_coverage": {
+      "passed": true,
+      "errors": []
+    },
+    "language_enforcement": {
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "BASE-100: Contains 'procedures' in system name (acceptable but non-ideal)",
+        "BASE-102: Contains 'procedures' in system name (acceptable but non-ideal)",
+        "BASE-104: Contains 'procedures' in system name (acceptable but non-ideal)",
+        "BASE-106: Contains 'procedures' in system name (acceptable but non-ideal)",
+        "BASE-112: Contains 'procedures' in system name (acceptable but non-ideal)",
+        "BASE-114: Contains 'procedures' in system name (acceptable but non-ideal)",
+        "BASE-120: Contains 'roles' in system name (acceptable but non-ideal)",
+        "BASE-122: Contains 'roles' in system name (acceptable but non-ideal)",
+        "BASE-272: Contains 'procedures' in system name (acceptable but non-ideal)",
+        "BASE-274: Contains 'procedures' in system name (acceptable but non-ideal)",
+        "BASE-328: Contains 'procedures' in system name (acceptable but non-ideal)",
+        "BASE-330: Contains 'procedures' in system name (acceptable but non-ideal)",
+        "BASE-356: Contains 'documentation' in system name (acceptable but non-ideal)",
+        "BASE-358: Contains 'documentation' in system name (acceptable but non-ideal)",
+        "BASE-360: Contains 'policies' in system name (acceptable but non-ideal)",
+        "BASE-362: Contains 'policies' in system name (acceptable but non-ideal)",
+        "BASE-364: Contains 'procedures' in system name (acceptable but non-ideal)",
+        "BASE-366: Contains 'procedures' in system name (acceptable but non-ideal)",
+        "BASE-368: Contains 'program' in system name (acceptable but non-ideal)",
+        "BASE-370: Contains 'program' in system name (acceptable but non-ideal)"
+      ]
+    },
+    "structure": {
+      "passed": true,
+      "errors": []
+    },
+    "regression": {
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    }
+  }
+}

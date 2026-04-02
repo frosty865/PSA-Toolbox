@@ -1,0 +1,10 @@
+{
+  "version": "v1",
+  "required_files": [
+    "ofc_templates_baseline_v1.json",
+    "ofc_templates_depth_baseline_v1.json",
+    "ofc_templates_depth_sector_v1.json",
+    "ofc_templates_depth_subsector_v1.json"
+  ]
+}
+

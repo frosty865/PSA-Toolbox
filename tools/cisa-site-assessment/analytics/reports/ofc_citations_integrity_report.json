@@ -1,0 +1,13 @@
+{
+  "integrity_check": "PASSED",
+  "issues": [],
+  "stats": {
+    "total_candidates": 5856,
+    "mined_candidates": "N/A (submitted_by column not found)",
+    "candidates_with_citations": 4848,
+    "unique_chunk_citations": 3780,
+    "duplicate_text_groups": 0,
+    "duplicate_candidate_count": 0
+  },
+  "sample_duplicates": []
+}

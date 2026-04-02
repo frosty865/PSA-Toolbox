@@ -375,7 +375,7 @@ function CriticalProductsTable({
                 <td>
                   <button
                     type="button"
-                    className="ida-btn ida-btn-secondary ida-btn-sm"
+                    className="btn btn-secondary btn-sm"
                     onClick={() => removeRow(i)}
                     aria-label="Remove row"
                   >
@@ -388,7 +388,7 @@ function CriticalProductsTable({
         </table>
       </div>
       {rows.length < maxRows && (
-        <button type="button" className="ida-btn ida-btn-secondary mt-2" onClick={addRow}>
+        <button type="button" className="btn btn-secondary mt-2" onClick={addRow}>
           Add row
         </button>
       )}
@@ -720,7 +720,7 @@ export function DependencySection({
                   }
                   if (field.key.includes('loss_fraction') && field.displayAs === 'fraction') {
                     throw new Error(
-                      'loss_fraction fields must be rendered as percent per UI_REFERENCE_ELECTRICITY.md'
+                      'loss_fraction fields must be rendered as percent (electric power UI)'
                     );
                   }
                 }

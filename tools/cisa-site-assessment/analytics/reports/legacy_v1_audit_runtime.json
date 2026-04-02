@@ -1,0 +1,985 @@
+{
+  "generated_at": "2026-01-24T16:00:13.446Z",
+  "database": "RUNTIME",
+  "tables": [
+    {
+      "schema": "public",
+      "table": "archive_source_statements",
+      "est_rows": "13288",
+      "bytes": 21536768,
+      "fk_out_count": 0,
+      "fk_in_count": 0,
+      "has_created_at": true,
+      "has_updated_at": false,
+      "newest_timestamp": "2025-12-18T20:39:33.950Z",
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "discipline_subtypes",
+      "est_rows": "105",
+      "bytes": 532480,
+      "fk_out_count": 1,
+      "fk_in_count": 2,
+      "has_created_at": true,
+      "has_updated_at": true,
+      "newest_timestamp": "2026-01-24T02:53:16.429Z",
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "ofc_question_links",
+      "est_rows": "89",
+      "bytes": 303104,
+      "fk_out_count": 0,
+      "fk_in_count": 0,
+      "has_created_at": true,
+      "has_updated_at": true,
+      "newest_timestamp": "2026-01-21T20:05:15.520Z",
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "ofc_nominations",
+      "est_rows": "0",
+      "bytes": 253952,
+      "fk_out_count": 1,
+      "fk_in_count": 0,
+      "has_created_at": false,
+      "has_updated_at": false,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "assessments",
+      "est_rows": "11",
+      "bytes": 204800,
+      "fk_out_count": 0,
+      "fk_in_count": 8,
+      "has_created_at": true,
+      "has_updated_at": true,
+      "newest_timestamp": "2026-01-21T14:19:02.287Z",
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "canonical_ofcs",
+      "est_rows": "111",
+      "bytes": 155648,
+      "fk_out_count": 1,
+      "fk_in_count": 3,
+      "has_created_at": true,
+      "has_updated_at": false,
+      "newest_timestamp": "2026-01-13T18:15:38.693Z",
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "baseline_spines_runtime",
+      "est_rows": "130",
+      "bytes": 147456,
+      "fk_out_count": 1,
+      "fk_in_count": 1,
+      "has_created_at": false,
+      "has_updated_at": false,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "archive_source_documents",
+      "est_rows": "213",
+      "bytes": 139264,
+      "fk_out_count": 0,
+      "fk_in_count": 0,
+      "has_created_at": false,
+      "has_updated_at": false,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "module_questions",
+      "est_rows": "-1",
+      "bytes": 131072,
+      "fk_out_count": 3,
+      "fk_in_count": 0,
+      "has_created_at": true,
+      "has_updated_at": false,
+      "newest_timestamp": "2026-01-22T17:02:58.246Z",
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "subsectors",
+      "est_rows": "123",
+      "bytes": 122880,
+      "fk_out_count": 1,
+      "fk_in_count": 13,
+      "has_created_at": true,
+      "has_updated_at": true,
+      "newest_timestamp": "2025-11-17T21:04:24.559Z",
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "module_ofcs",
+      "est_rows": "6",
+      "bytes": 114688,
+      "fk_out_count": 2,
+      "fk_in_count": 1,
+      "has_created_at": true,
+      "has_updated_at": false,
+      "newest_timestamp": "2026-01-22T17:02:58.246Z",
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "module_sources",
+      "est_rows": "-1",
+      "bytes": 114688,
+      "fk_out_count": 1,
+      "fk_in_count": 1,
+      "has_created_at": true,
+      "has_updated_at": false,
+      "newest_timestamp": "2026-01-22T18:58:21.983Z",
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "assessment_definitions",
+      "est_rows": "-1",
+      "bytes": 81920,
+      "fk_out_count": 1,
+      "fk_in_count": 0,
+      "has_created_at": true,
+      "has_updated_at": true,
+      "newest_timestamp": "2026-01-21T14:19:02.287Z",
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "canonical_ofc_citations",
+      "est_rows": "111",
+      "bytes": 81920,
+      "fk_out_count": 1,
+      "fk_in_count": 0,
+      "has_created_at": true,
+      "has_updated_at": false,
+      "newest_timestamp": "2026-01-13T18:15:38.693Z",
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "disciplines",
+      "est_rows": "-1",
+      "bytes": 81920,
+      "fk_out_count": 0,
+      "fk_in_count": 14,
+      "has_created_at": true,
+      "has_updated_at": true,
+      "newest_timestamp": "2025-11-17T12:42:46.259Z",
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "module_import_batches",
+      "est_rows": "-1",
+      "bytes": 81920,
+      "fk_out_count": 1,
+      "fk_in_count": 1,
+      "has_created_at": false,
+      "has_updated_at": false,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "sectors",
+      "est_rows": "-1",
+      "bytes": 81920,
+      "fk_out_count": 0,
+      "fk_in_count": 12,
+      "has_created_at": true,
+      "has_updated_at": true,
+      "newest_timestamp": "2025-11-17T01:34:23.630Z",
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "archive_normalized_vulnerabilities",
+      "est_rows": "56",
+      "bytes": 73728,
+      "fk_out_count": 0,
+      "fk_in_count": 0,
+      "has_created_at": true,
+      "has_updated_at": true,
+      "newest_timestamp": "2025-12-19T12:32:30.467Z",
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "assessment_module_questions",
+      "est_rows": "-1",
+      "bytes": 65536,
+      "fk_out_count": 2,
+      "fk_in_count": 0,
+      "has_created_at": true,
+      "has_updated_at": false,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "coverage_runs",
+      "est_rows": "-1",
+      "bytes": 65536,
+      "fk_out_count": 0,
+      "fk_in_count": 0,
+      "has_created_at": false,
+      "has_updated_at": false,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "module_risk_drivers",
+      "est_rows": "-1",
+      "bytes": 65536,
+      "fk_out_count": 1,
+      "fk_in_count": 0,
+      "has_created_at": true,
+      "has_updated_at": false,
+      "newest_timestamp": "2026-01-22T17:02:58.246Z",
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "assessment_required_elements",
+      "est_rows": "-1",
+      "bytes": 57344,
+      "fk_out_count": 1,
+      "fk_in_count": 0,
+      "has_created_at": true,
+      "has_updated_at": false,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "ofc_library",
+      "est_rows": "-1",
+      "bytes": 57344,
+      "fk_out_count": 0,
+      "fk_in_count": 1,
+      "has_created_at": true,
+      "has_updated_at": true,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "overlay_spines_runtime",
+      "est_rows": "-1",
+      "bytes": 57344,
+      "fk_out_count": 2,
+      "fk_in_count": 1,
+      "has_created_at": true,
+      "has_updated_at": true,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "assessment_instances",
+      "est_rows": "6",
+      "bytes": 49152,
+      "fk_out_count": 1,
+      "fk_in_count": 4,
+      "has_created_at": false,
+      "has_updated_at": false,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "assessment_module_instances",
+      "est_rows": "-1",
+      "bytes": 49152,
+      "fk_out_count": 2,
+      "fk_in_count": 0,
+      "has_created_at": false,
+      "has_updated_at": false,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "assessment_module_question_responses",
+      "est_rows": "-1",
+      "bytes": 49152,
+      "fk_out_count": 2,
+      "fk_in_count": 0,
+      "has_created_at": true,
+      "has_updated_at": true,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "assessment_modules",
+      "est_rows": "1",
+      "bytes": 49152,
+      "fk_out_count": 0,
+      "fk_in_count": 10,
+      "has_created_at": true,
+      "has_updated_at": true,
+      "newest_timestamp": "2026-01-22T17:02:58.246Z",
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "assessment_technology_profiles",
+      "est_rows": "-1",
+      "bytes": 49152,
+      "fk_out_count": 2,
+      "fk_in_count": 0,
+      "has_created_at": true,
+      "has_updated_at": true,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "facilities",
+      "est_rows": "-1",
+      "bytes": 49152,
+      "fk_out_count": 0,
+      "fk_in_count": 0,
+      "has_created_at": true,
+      "has_updated_at": true,
+      "newest_timestamp": "2026-01-21T14:19:02.287Z",
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "module_ofc_sources",
+      "est_rows": "-1",
+      "bytes": 49152,
+      "fk_out_count": 1,
+      "fk_in_count": 0,
+      "has_created_at": true,
+      "has_updated_at": false,
+      "newest_timestamp": "2026-01-22T17:02:58.246Z",
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "system_settings",
+      "est_rows": "-1",
+      "bytes": 49152,
+      "fk_out_count": 0,
+      "fk_in_count": 0,
+      "has_created_at": false,
+      "has_updated_at": true,
+      "newest_timestamp": "2025-12-22T15:51:19.044Z",
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "module_chunk_links",
+      "est_rows": "-1",
+      "bytes": 40960,
+      "fk_out_count": 1,
+      "fk_in_count": 0,
+      "has_created_at": false,
+      "has_updated_at": false,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "subsector_module_policy",
+      "est_rows": "-1",
+      "bytes": 40960,
+      "fk_out_count": 2,
+      "fk_in_count": 0,
+      "has_created_at": true,
+      "has_updated_at": false,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "tech_question_responses",
+      "est_rows": "-1",
+      "bytes": 40960,
+      "fk_out_count": 2,
+      "fk_in_count": 0,
+      "has_created_at": false,
+      "has_updated_at": true,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "tech_question_templates",
+      "est_rows": "-1",
+      "bytes": 40960,
+      "fk_out_count": 0,
+      "fk_in_count": 1,
+      "has_created_at": true,
+      "has_updated_at": true,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "assessment_applied_ofcs",
+      "est_rows": "-1",
+      "bytes": 32768,
+      "fk_out_count": 4,
+      "fk_in_count": 0,
+      "has_created_at": false,
+      "has_updated_at": false,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "assessment_question_responses",
+      "est_rows": "-1",
+      "bytes": 32768,
+      "fk_out_count": 0,
+      "fk_in_count": 0,
+      "has_created_at": false,
+      "has_updated_at": true,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "assessment_status",
+      "est_rows": "-1",
+      "bytes": 32768,
+      "fk_out_count": 0,
+      "fk_in_count": 0,
+      "has_created_at": false,
+      "has_updated_at": true,
+      "newest_timestamp": "2026-01-17T23:41:16.140Z",
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "assessment_templates",
+      "est_rows": "-1",
+      "bytes": 32768,
+      "fk_out_count": 0,
+      "fk_in_count": 0,
+      "has_created_at": true,
+      "has_updated_at": true,
+      "newest_timestamp": "2026-01-17T23:25:47.013Z",
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "audit_log",
+      "est_rows": "-1",
+      "bytes": 32768,
+      "fk_out_count": 0,
+      "fk_in_count": 0,
+      "has_created_at": true,
+      "has_updated_at": false,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "expansion_questions",
+      "est_rows": "-1",
+      "bytes": 32768,
+      "fk_out_count": 1,
+      "fk_in_count": 1,
+      "has_created_at": true,
+      "has_updated_at": true,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "module_source_documents",
+      "est_rows": "-1",
+      "bytes": 32768,
+      "fk_out_count": 1,
+      "fk_in_count": 0,
+      "has_created_at": false,
+      "has_updated_at": false,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "sector_expansion_profiles",
+      "est_rows": "-1",
+      "bytes": 32768,
+      "fk_out_count": 0,
+      "fk_in_count": 2,
+      "has_created_at": true,
+      "has_updated_at": true,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "assessment_applied_vulnerabilities",
+      "est_rows": "-1",
+      "bytes": 24576,
+      "fk_out_count": 2,
+      "fk_in_count": 0,
+      "has_created_at": false,
+      "has_updated_at": false,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "assessment_expansion_profiles",
+      "est_rows": "-1",
+      "bytes": 24576,
+      "fk_out_count": 2,
+      "fk_in_count": 0,
+      "has_created_at": false,
+      "has_updated_at": false,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "assessment_expansion_responses",
+      "est_rows": "-1",
+      "bytes": 24576,
+      "fk_out_count": 2,
+      "fk_in_count": 0,
+      "has_created_at": false,
+      "has_updated_at": true,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "assessment_question_universe",
+      "est_rows": "-1",
+      "bytes": 24576,
+      "fk_out_count": 1,
+      "fk_in_count": 0,
+      "has_created_at": true,
+      "has_updated_at": false,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "baseline_spines_runtime_loads",
+      "est_rows": "-1",
+      "bytes": 24576,
+      "fk_out_count": 0,
+      "fk_in_count": 0,
+      "has_created_at": false,
+      "has_updated_at": false,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "normalized_evidence_links",
+      "est_rows": "-1",
+      "bytes": 24576,
+      "fk_out_count": 1,
+      "fk_in_count": 0,
+      "has_created_at": false,
+      "has_updated_at": false,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "normalized_vulnerabilities",
+      "est_rows": "-1",
+      "bytes": 24576,
+      "fk_out_count": 0,
+      "fk_in_count": 1,
+      "has_created_at": true,
+      "has_updated_at": true,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "overlay_spine_order_registry",
+      "est_rows": "-1",
+      "bytes": 24576,
+      "fk_out_count": 1,
+      "fk_in_count": 0,
+      "has_created_at": false,
+      "has_updated_at": true,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "test_assessment_purge_log",
+      "est_rows": "-1",
+      "bytes": 24576,
+      "fk_out_count": 0,
+      "fk_in_count": 0,
+      "has_created_at": false,
+      "has_updated_at": false,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "assessment_responses",
+      "est_rows": "-1",
+      "bytes": 16384,
+      "fk_out_count": 0,
+      "fk_in_count": 0,
+      "has_created_at": true,
+      "has_updated_at": true,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "archive_normalized_evidence_links",
+      "est_rows": "60",
+      "bytes": 8192,
+      "fk_out_count": 0,
+      "fk_in_count": 0,
+      "has_created_at": false,
+      "has_updated_at": false,
+      "newest_timestamp": null,
+      "code_refs": 0,
+      "code_ref_locations": [],
+      "likely_legacy": false,
+      "legacy_reason": [
+        "No code references found",
+        "No incoming foreign keys (nothing depends on it)"
+      ]
+    }
+  ],
+  "summary": {
+    "total_tables": 55,
+    "likely_legacy_count": 0,
+    "zero_row_count": 0,
+    "no_code_refs": 55,
+    "no_dependencies": 37
+  }
+}

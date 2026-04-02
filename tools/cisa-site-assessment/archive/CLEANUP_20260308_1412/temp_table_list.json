@@ -1,0 +1,38 @@
+node:internal/process/promises:391
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+Error: Transform failed with 1 error:
+/eval.ts:1:302: ERROR: Unexpected end of file
+    at failureErrorWithLog (C:\Users\frost\AppData\Local\npm-cache\_npx\fd45a72a545557e9\node_modules\esbuild\lib\main.js:1467:15)
+    at C:\Users\frost\AppData\Local\npm-cache\_npx\fd45a72a545557e9\node_modules\esbuild\lib\main.js:736:50
+    at responseCallbacks.<computed> (C:\Users\frost\AppData\Local\npm-cache\_npx\fd45a72a545557e9\node_modules\esbuild\lib\main.js:603:9)
+    at handleIncomingPacket (C:\Users\frost\AppData\Local\npm-cache\_npx\fd45a72a545557e9\node_modules\esbuild\lib\main.js:658:12)
+    at Socket.readFromStdout (C:\Users\frost\AppData\Local\npm-cache\_npx\fd45a72a545557e9\node_modules\esbuild\lib\main.js:581:7)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:191:23) {
+  errors: [
+    {
+      detail: undefined,
+      id: '',
+      location: {
+        column: 302,
+        file: '/eval.ts',
+        length: 0,
+        line: 1,
+        lineText: "import * as dotenv from 'dotenv'; dotenv.config({ path: '.env.local' }); import { getCorpusPool } from './app/lib/db/corpus_client'; import { getRuntimePool } from './app/lib/db/runtime_client'; const corpus = getCorpusPool(); const runtime = getRuntimePool(); const corpusTables = await corpus.query(\\",
+        namespace: '',
+        suggestion: ''
+      },
+      notes: [],
+      pluginName: '',
+      text: 'Unexpected end of file'
+    }
+  ],
+  warnings: []
+}
+
+Node.js v20.20.0

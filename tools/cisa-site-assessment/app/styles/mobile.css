@@ -1,0 +1,137 @@
+/* Mobile Responsiveness Improvements - Phase 1.4 */
+
+/* Ensure touch targets are at least 44x44px for mobile */
+@media (max-width: 768px) {
+  /* Radio buttons and checkboxes */
+  .usa-radio__input,
+  .usa-checkbox__input {
+    min-height: 44px;
+    min-width: 44px;
+    margin-right: 12px;
+  }
+
+  .usa-radio__label,
+  .usa-checkbox__label {
+    min-height: 44px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Buttons */
+  .usa-button {
+    min-height: 44px;
+    padding: 12px 24px;
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+
+  /* Form inputs */
+  .usa-input,
+  .usa-select,
+  .usa-textarea {
+    min-height: 44px;
+    font-size: 16px; /* Prevent zoom on iOS */
+    padding: 12px;
+  }
+
+  /* Question cards */
+  .question-card,
+  .card {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  /* Assessment cards */
+  .assessment-card {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  /* Progress bar */
+  .progress-bar-container {
+    margin-bottom: 16px;
+  }
+
+  /* Section headers */
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 12px;
+  }
+
+  .section-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .section-actions .usa-button {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  /* Create assessment dialog */
+  .dialog-content {
+    padding: 16px;
+  }
+
+  .dialog-step {
+    padding: 16px 0;
+  }
+
+  /* Forms - stack vertically on mobile */
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  /* Tables - horizontal scroll on mobile */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Spacing adjustments */
+  .usa-form-group {
+    margin-bottom: 16px;
+  }
+
+  /* Navigation */
+  nav {
+    padding: 12px;
+  }
+
+  /* Hide non-essential elements on mobile */
+  .desktop-only {
+    display: none;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .usa-button {
+    min-height: 40px;
+    padding: 10px 20px;
+  }
+
+  .section-header {
+    flex-wrap: wrap;
+  }
+}
+
+/* Ensure proper spacing for touch targets */
+@media (hover: none) and (pointer: coarse) {
+  /* Touch device specific styles */
+  .usa-radio,
+  .usa-checkbox {
+    margin-bottom: 12px;
+  }
+
+  .usa-button {
+    margin-bottom: 8px;
+  }
+}

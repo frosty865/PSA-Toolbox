@@ -1,0 +1,175 @@
+D:\PSA_System\psa_rebuild\tools\fs\map_download_folders.py:3: SyntaxWarning: "\P" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\P"? A raw string is also an option.
+  Map the download folder structure (D:\PSA_System\data\download).
+≡ƒôü Download Folder Map: D:\PSA_System\data\download
+
+================================================================================
+
+Γ£ô chemical (Chemical)
+  Γ£ô   ΓööΓöÇ Chemical_Distribution (Chemical Distribution)
+  Γ£ô   ΓööΓöÇ Chemical_Manufacturing (Chemical Manufacturing)
+  Γ£ô   ΓööΓöÇ Chemical_Storage (Chemical Storage)
+  Γ£ô   ΓööΓöÇ Chemical_Supply_Chain (Chemical Supply Chain)
+  Γ£ô   ΓööΓöÇ Chemical_Transportation (Chemical Transportation)
+
+Γ£ô commercial_facilities (Commercial Facilities)
+  Γ£ô   ΓööΓöÇ Gaming_and_Entertainment (Gaming and Entertainment)
+  Γ£ô   ΓööΓöÇ Lodging (Lodging)
+  Γ£ô   ΓööΓöÇ Outdoor_Events (Outdoor Events)
+  Γ£ô   ΓööΓöÇ Public_Assembly (Public Assembly)
+  Γ£ô   ΓööΓöÇ Real_Estate (Real Estate)
+  Γ£ô   ΓööΓöÇ Religious_Facilities (Religious Facilities)
+  Γ£ô   ΓööΓöÇ Retail (Retail)
+  Γ£ô   ΓööΓöÇ Sports_Leagues (Sports Leagues)
+
+Γ£ô communications (Communications)
+  Γ£ô   ΓööΓöÇ Broadcasting (Broadcasting)
+  Γ£ô   ΓööΓöÇ Cable (Cable)
+  Γ£ô   ΓööΓöÇ Internet_Service_Providers (Internet Service Providers)
+  Γ£ô   ΓööΓöÇ Satellite (Satellite)
+  Γ£ô   ΓööΓöÇ Voice_over_Internet_Protocol (Voice over Internet Protocol)
+  Γ£ô   ΓööΓöÇ Wireless (Wireless)
+  Γ£ô   ΓööΓöÇ Wireline (Wireline)
+
+Γ£ô critical_manufacturing (Critical Manufacturing)
+  Γ£ô   ΓööΓöÇ Appliance_Manufacturing (Appliance Manufacturing)
+  Γ£ô   ΓööΓöÇ Component_Manufacturing (Component Manufacturing)
+  Γ£ô   ΓööΓöÇ Electrical_Equipment_Manufacturing (Electrical Equipment Manufacturing)
+  Γ£ô   ΓööΓöÇ Machinery_Manufacturing (Machinery Manufacturing)
+  Γ£ô   ΓööΓöÇ Primary_Metals_Manufacturing (Primary Metals Manufacturing)
+  Γ£ô   ΓööΓöÇ Transportation_Equipment_Manufacturing (Transportation Equipment Manufacturing)
+
+Γ£ô dams (Dams)
+  Γ£ô   ΓööΓöÇ Flood_Control_Systems (Flood Control Systems)
+  Γ£ô   ΓööΓöÇ Hydroelectric_Power_Generation (Hydroelectric Power Generation)
+  Γ£ô   ΓööΓöÇ Irrigation_Systems (Irrigation Systems)
+  Γ£ô   ΓööΓöÇ Levees (Levees)
+  Γ£ô   ΓööΓöÇ Navigation_Locks (Navigation Locks)
+  Γ£ô   ΓööΓöÇ Water_Storage (Water Storage)
+
+Γ£ô defense_industrial_base (Defense Industrial Base)
+  Γ£ô   ΓööΓöÇ Aerospace (Aerospace)
+  Γ£ô   ΓööΓöÇ Ammunition_and_Explosives (Ammunition and Explosives)
+  Γ£ô   ΓööΓöÇ Military_Communications (Military Communications)
+  Γ£ô   ΓööΓöÇ Military_Electronics (Military Electronics)
+  Γ£ô   ΓööΓöÇ Military_Optics (Military Optics)
+  Γ£ô   ΓööΓöÇ Military_Research_and_Development (Military Research and Development)
+  Γ£ô   ΓööΓöÇ Military_Software (Military Software)
+  Γ£ô   ΓööΓöÇ Military_Vehicles (Military Vehicles)
+  Γ£ô   ΓööΓöÇ Missiles_and_Space_Systems (Missiles and Space Systems)
+  Γ£ô   ΓööΓöÇ Radar_and_Navigation (Radar and Navigation)
+  Γ£ô   ΓööΓöÇ Ships (Ships)
+  Γ£ô   ΓööΓöÇ Weapons (Weapons)
+
+Γ£ô education_facilities (Education Facilities)
+  Γ£ô   ΓööΓöÇ Childcare__Early_Learning (Childcare / Early Learning)
+  Γ£ô   ΓööΓöÇ Higher_Education (Higher Education)
+  Γ£ô   ΓööΓöÇ K12_Schools (KΓÇô12 Schools)
+  Γ£ô   ΓööΓöÇ Private__Independent_Schools (Private / Independent Schools)
+  Γ£ô   ΓööΓöÇ Training_Centers__Academies (Training Centers / Academies)
+
+Γ£ô emergency_services (Emergency Services)
+  Γ£ô   ΓööΓöÇ Emergency_Management (Emergency Management)
+  Γ£ô   ΓööΓöÇ Emergency_Medical_Services (Emergency Medical Services)
+  Γ£ô   ΓööΓöÇ Fire_and_Emergency_Services (Fire and Emergency Services)
+  Γ£ô   ΓööΓöÇ Law_Enforcement (Law Enforcement)
+  Γ£ô   ΓööΓöÇ Public_Works (Public Works)
+  Γ£ô   ΓööΓöÇ Search_and_Rescue (Search and Rescue)
+
+Γ£ô energy (Energy)
+  Γ£ô   ΓööΓöÇ Coal (Coal)
+  Γ£ô   ΓööΓöÇ Electric_Power (Electric Power)
+  Γ£ô   ΓööΓöÇ Energy_Storage (Energy Storage)
+  Γ£ô   ΓööΓöÇ Natural_Gas (Natural Gas)
+  Γ£ô   ΓööΓöÇ Nuclear (Nuclear)
+  Γ£ô   ΓööΓöÇ Petroleum (Petroleum)
+  Γ£ô   ΓööΓöÇ Renewable_Energy (Renewable Energy)
+
+Γ£ô financial_services (Financial Services)
+  Γ£ô   ΓööΓöÇ Banking (Banking)
+  Γ£ô   ΓööΓöÇ Credit_Unions (Credit Unions)
+  Γ£ô   ΓööΓöÇ Financial_Market_Utilities (Financial Market Utilities)
+  Γ£ô   ΓööΓöÇ Insurance (Insurance)
+  Γ£ô   ΓööΓöÇ Non-Depository_Credit_Intermediation (Non-Depository Credit Intermediation)
+  Γ£ô   ΓööΓöÇ Savings_Associations (Savings Associations)
+  Γ£ô   ΓööΓöÇ Securities_and_Investments (Securities and Investments)
+
+Γ£ô food_and_agriculture (Food and Agriculture)
+  Γ£ô   ΓööΓöÇ Agricultural_Distribution (Agricultural Distribution)
+  Γ£ô   ΓööΓöÇ Agricultural_Inputs (Agricultural Inputs)
+  Γ£ô   ΓööΓöÇ Agricultural_Processing (Agricultural Processing)
+  Γ£ô   ΓööΓöÇ Agricultural_Production (Agricultural Production)
+  Γ£ô   ΓööΓöÇ Food_Distribution (Food Distribution)
+  Γ£ô   ΓööΓöÇ Food_Processing (Food Processing)
+  Γ£ô   ΓööΓöÇ Food_Production (Food Production)
+
+Γ£ô general (General)
+  Γ£ô   ΓööΓöÇ General_All_Sectors (General (All Sectors))
+
+Γ£ô government_facilities (Government Facilities)
+  Γ£ô   ΓööΓöÇ SLTT (Local Facilities, State Facilities, Tribal Facilities)
+  Γ£ô   ΓööΓöÇ Correctional_Facilities (Correctional Facilities)
+  Γ£ô   ΓööΓöÇ Election_Infrastructure (Election Infrastructure)
+  Γ£ô   ΓööΓöÇ Federal_Facilities (Federal Facilities)
+
+Γ£ô healthcare_and_public_health (Healthcare and Public Health)
+  Γ£ô   ΓööΓöÇ Ambulatory_Care (Ambulatory Care)
+  Γ£ô   ΓööΓöÇ Blood (Blood)
+  Γ£ô   ΓööΓöÇ Home_Healthcare (Home Healthcare)
+  Γ£ô   ΓööΓöÇ Hospitals (Hospitals)
+  Γ£ô   ΓööΓöÇ Laboratories (Laboratories)
+  Γ£ô   ΓööΓöÇ Long-term_Care (Long-term Care)
+  Γ£ô   ΓööΓöÇ Medical_Devices (Medical Devices)
+  Γ£ô   ΓööΓöÇ Medical_Research (Medical Research)
+  Γ£ô   ΓööΓöÇ Pharmaceuticals (Pharmaceuticals)
+
+Γ£ô information_technology (Information Technology)
+  Γ£ô   ΓööΓöÇ Cloud_Computing (Cloud Computing)
+  Γ£ô   ΓööΓöÇ Data_Centers (Data Centers)
+  Γ£ô   ΓööΓöÇ IT_Hardware (IT Hardware)
+  Γ£ô   ΓööΓöÇ IT_Services (IT Services)
+  Γ£ô   ΓööΓöÇ IT_Software (IT Software)
+  Γ£ô   ΓööΓöÇ IT_Support_Services (IT Support Services)
+  Γ£ô   ΓööΓöÇ IT_Training (IT Training)
+
+Γ£ù nuclear_reactors,_materials,_and_waste (Nuclear Reactors, Materials, and Waste)
+  Γ£ù   ΓööΓöÇ Nuclear_Fuel_Cycle (Nuclear Fuel Cycle)
+  Γ£ù   ΓööΓöÇ Nuclear_Materials (Nuclear Materials)
+  Γ£ù   ΓööΓöÇ Nuclear_Power_Plants (Nuclear Power Plants)
+  Γ£ù   ΓööΓöÇ Nuclear_Security (Nuclear Security)
+  Γ£ù   ΓööΓöÇ Nuclear_Waste (Nuclear Waste)
+  Γ£ù   ΓööΓöÇ Research_Reactors (Research Reactors)
+
+Γ£ô transportation_systems (Transportation Systems)
+  Γ£ô   ΓööΓöÇ Aviation (Aviation)
+  Γ£ô   ΓööΓöÇ Freight_Rail (Freight Rail)
+  Γ£ô   ΓööΓöÇ Highway_Infrastructure (Highway Infrastructure)
+  Γ£ô   ΓööΓöÇ Maritime_Transportation (Maritime Transportation)
+  Γ£ô   ΓööΓöÇ Mass_Transit (Mass Transit)
+  Γ£ô   ΓööΓöÇ Pipeline_Systems (Pipeline Systems)
+  Γ£ô   ΓööΓöÇ Postal_and_Shipping (Postal and Shipping)
+  Γ£ô   ΓööΓöÇ Rail_Transportation (Rail Transportation)
+
+Γ£ô water_and_wastewater_systems (Water and Wastewater Systems)
+  Γ£ô   ΓööΓöÇ Drinking_Water (Drinking Water)
+  Γ£ô   ΓööΓöÇ Stormwater_Management (Stormwater Management)
+  Γ£ô   ΓööΓöÇ Wastewater_Treatment (Wastewater Treatment)
+  Γ£ô   ΓööΓöÇ Water_Distribution (Water Distribution)
+  Γ£ô   ΓööΓöÇ Water_Treatment (Water Treatment)
+
+================================================================================
+Summary:
+  Sectors: 17/18 folders exist
+  Subsectors: 112/118 folders exist
+
+ΓÜá Missing folders (7):
+    nuclear_reactors,_materials,_and_waste/
+    nuclear_reactors,_materials,_and_waste/Nuclear_Fuel_Cycle/
+    nuclear_reactors,_materials,_and_waste/Nuclear_Materials/
+    nuclear_reactors,_materials,_and_waste/Nuclear_Power_Plants/
+    nuclear_reactors,_materials,_and_waste/Nuclear_Security/
+    nuclear_reactors,_materials,_and_waste/Nuclear_Waste/
+    nuclear_reactors,_materials,_and_waste/Research_Reactors/
+
+ΓÜá Extra folders not in taxonomy (2):
+  module/
+  nuclear_reactors_materials_and_waste/

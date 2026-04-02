@@ -1,0 +1,74 @@
+{
+  "required_elements": [
+    {
+      "element_id": "BASE-001",
+      "element_code": "BASE-001",
+      "layer": "baseline",
+      "title": "Security Responsibility Designation",
+      "question_text": "The facility has a designated individual responsible for security.",
+      "discipline_id": "00000000-0000-0000-0000-000000000001",
+      "discipline_name": "Security Management & Governance",
+      "discipline_subtype_id": "00000000-0000-0000-0000-000000000011",
+      "discipline_subtype_name": "Governance",
+      "sector_id": null,
+      "subsector_id": null,
+      "order_index": 0
+    },
+    {
+      "element_id": "BASE-002",
+      "element_code": "BASE-002",
+      "layer": "baseline",
+      "title": "Security Roles Defined",
+      "question_text": "The facility has defined security roles for key positions.",
+      "discipline_id": "00000000-0000-0000-0000-000000000001",
+      "discipline_name": "Security Management & Governance",
+      "discipline_subtype_id": "00000000-0000-0000-0000-000000000011",
+      "discipline_subtype_name": "Governance",
+      "sector_id": null,
+      "subsector_id": null,
+      "order_index": 1
+    },
+    {
+      "element_id": "SECTOR-TRANS-001",
+      "element_code": "SECTOR-TRANS-001",
+      "layer": "sector",
+      "title": "Transportation Security Protocol",
+      "question_text": "The facility has transportation-specific security protocols in place.",
+      "discipline_id": "00000000-0000-0000-0000-000000000004",
+      "discipline_name": "Transportation Security",
+      "discipline_subtype_id": "00000000-0000-0000-0000-000000000044",
+      "discipline_subtype_name": "Transportation Protocols",
+      "sector_id": "00000000-0000-0000-0000-000000000200",
+      "subsector_id": null,
+      "order_index": 1000
+    },
+    {
+      "element_id": "SUBSECTOR-AVI-001",
+      "element_code": "SUBSECTOR-AVI-001",
+      "layer": "subsector",
+      "title": "Aviation Access Control",
+      "question_text": "The facility has specialized access control measures for aviation operations.",
+      "discipline_id": "00000000-0000-0000-0000-000000000005",
+      "discipline_name": "Aviation Security",
+      "discipline_subtype_id": "00000000-0000-0000-0000-000000000055",
+      "discipline_subtype_name": "Access Control",
+      "sector_id": "00000000-0000-0000-0000-000000000200",
+      "subsector_id": "00000000-0000-0000-0000-000000000210",
+      "order_index": 2000
+    },
+    {
+      "element_id": "SUBSECTOR-AVI-002",
+      "element_code": "SUBSECTOR-AVI-002",
+      "layer": "subsector",
+      "title": "Aircraft Security",
+      "question_text": "The facility has security measures for aircraft and related infrastructure.",
+      "discipline_id": "00000000-0000-0000-0000-000000000005",
+      "discipline_name": "Aviation Security",
+      "discipline_subtype_id": "00000000-0000-0000-0000-000000000056",
+      "discipline_subtype_name": "Aircraft Protection",
+      "sector_id": "00000000-0000-0000-0000-000000000200",
+      "subsector_id": "00000000-0000-0000-0000-000000000210",
+      "order_index": 2001
+    }
+  ]
+}

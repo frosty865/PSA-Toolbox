@@ -1,0 +1,24 @@
+{
+  "documents": [
+    {
+      "document_key": "EXTDOC_39BED3CE",
+      "source_key": "REPLACE_ME_SOURCE_KEY",
+      "file_path": "REPLACE_ME_LOCAL_PATH",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_926EE3F3",
+      "source_key": "REPLACE_ME_SOURCE_KEY",
+      "file_path": "REPLACE_ME_LOCAL_PATH",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    }
+  ]
+}

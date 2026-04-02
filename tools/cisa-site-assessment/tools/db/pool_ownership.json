@@ -1,0 +1,15 @@
+{
+  "public.ofc_candidate_queue": "CORPUS",
+  "public.ofc_candidate_targets": "CORPUS",
+  "public.ofc_library_citations": "CORPUS",
+  "public.corpus_expansion_questions": "CORPUS",
+  "public.corpus_documents": "CORPUS",
+  "public.document_chunks": "CORPUS",
+  "public.source_registry": "CORPUS",
+  "public.disciplines": "RUNTIME",
+  "public.discipline_subtypes": "RUNTIME",
+  "public.expansion_questions": "RUNTIME",
+  "public.assessments": "RUNTIME",
+  "public.assessment_responses": "RUNTIME",
+  "public.baseline_spines_runtime": "RUNTIME"
+}

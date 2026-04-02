@@ -1,0 +1,28 @@
+{
+  "responses": [
+    {
+      "assessment_id": "fixture-assessment-002",
+      "element_id": "BASE-001",
+      "response": "YES",
+      "updated_at": "2025-12-15T11:00:00Z"
+    },
+    {
+      "assessment_id": "fixture-assessment-002",
+      "element_id": "BASE-002",
+      "response": "YES",
+      "updated_at": "2025-12-15T11:00:00Z"
+    },
+    {
+      "assessment_id": "fixture-assessment-002",
+      "element_id": "BASE-003",
+      "response": "YES",
+      "updated_at": "2025-12-15T11:00:00Z"
+    },
+    {
+      "assessment_id": "fixture-assessment-002",
+      "element_id": "SECTOR-HC-002",
+      "response": "NO",
+      "updated_at": "2025-12-15T11:00:00Z"
+    }
+  ]
+}

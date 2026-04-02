@@ -1,0 +1,2143 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap");
+@import url("host-tokens.css");
+
+/*
+ * HOST — canonical tsp-theme stylesheet (load LAST after cisa_styles + fontawesome-local).
+ * Design tokens: :root below. Avoid redefining the same selectors in cisa_styles; extend here.
+ */
+/* HOST portfolio layout */
+/* Public-facing styling for the HOST application */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Sora", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--brand-steel);
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
+        linear-gradient(90deg, transparent 0 calc(100% - 1px), rgba(192, 194, 196, 0.08) calc(100% - 1px)),
+        linear-gradient(transparent 0 calc(100% - 1px), rgba(192, 194, 196, 0.08) calc(100% - 1px)),
+        linear-gradient(180deg, #ffffff 0%, var(--host-dhs-gray-15) 100%);
+    background-size: auto, 120px 120px, 120px 120px, auto, auto;
+}
+
+body.tsp-theme {
+    color: var(--brand-ink);
+}
+
+/* Guard against shared stylesheet overrides that flatten HOST controls/layout. */
+body.tsp-theme .btn,
+body.tsp-theme .tsp-button,
+body.tsp-theme .progress-step {
+    text-transform: none !important;
+    letter-spacing: 0.01em !important;
+}
+
+body.tsp-theme .btn,
+body.tsp-theme .tsp-button {
+    font-size: 0.88rem !important;
+    min-height: 44px !important;
+}
+
+/* HOST brand palette */
+:root {
+    --brand-navy: #0f172a;
+    --brand-blue: #1d4ed8;
+    /* Darker hover / gradient end for primary actions (keeps HOST electric-blue stack distinct from DHS report blues) */
+    --brand-blue-deep: #1e40af;
+    --brand-blue-soft: #dbeafe;
+    --brand-steel: #334155;
+    --brand-slate: #64748b;
+    --brand-light: #f8fafc;
+    --brand-border: #cbd5e1;
+    --brand-white: #ffffff;
+    --brand-danger: #b91c1c;
+    --brand-success: #15803d;
+    --brand-warning: #b45309;
+    --brand-info: #0369a1;
+    --brand-paper: #ffffff;
+    --brand-paper-strong: #ffffff;
+    --brand-brass: #c48b49;
+    --brand-brass-soft: #e2e8f0;
+    --brand-night: #08111d;
+    --brand-ink: #0f172a;
+    --primary-blue: var(--brand-navy);
+    --secondary-blue: var(--brand-blue);
+    --accent-blue: var(--brand-info);
+    --light-blue: var(--brand-blue-soft);
+    --success-green: var(--brand-success);
+    --warning-orange: var(--brand-warning);
+    --danger-red: var(--brand-danger);
+    --neutral-gray: var(--brand-slate);
+    --light-gray: var(--brand-light);
+    --border-gray: var(--brand-border);
+
+    /* CISA in-house / DHS — authoritative hex in host-tokens.css (Primary #005288, Secondary #0078AE, Dark Gray #5A5B5D, Gray #C0C2C4, Red #C41230, Green #5E9732) */
+    --cisa-dhs-blue: var(--host-dhs-blue);
+    --cisa-dhs-blue-light: var(--host-dhs-light-blue);
+    --cisa-dhs-gray-mid: #c0c2c4;
+    --cisa-dhs-red: var(--host-dhs-red);
+    /* Legacy names used by fontawesome-local + parts of cisa_styles.css (canonical DHS — loads last) */
+    --cisa-primary-blue: var(--host-dhs-blue);
+    --cisa-light-blue: var(--host-dhs-light-blue);
+    --cisa-surface-page: #eef2f7;
+    --cisa-surface-card: #ffffff;
+    --cisa-surface-header: #f1f5f9;
+    --cisa-surface-header-end: #e8eef4;
+    --cisa-text-heading: #112e51;
+    --cisa-text-body: #1e293b;
+    --cisa-text-muted: #475569;
+    --cisa-border: rgba(0, 82, 136, 0.2);
+    --cisa-panel-dark: linear-gradient(180deg, rgba(0, 40, 70, 0.96), rgba(0, 31, 51, 0.94));
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-weight: 700;
+    color: var(--brand-navy);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.875rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; }
+
+/* Layout Container */
+.container {
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header — DHS blues only (no portfolio indigo / brass). */
+.header, .site-security-header {
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        radial-gradient(circle at 18% 18%, rgba(0, 120, 174, 0.18), transparent 24%),
+        linear-gradient(135deg, var(--host-dhs-blue-deep) 0%, var(--host-dhs-blue) 45%, var(--host-dhs-light-blue) 100%) !important;
+    background-size: 150px 150px, auto, auto !important;
+    color: white !important;
+    padding: 2rem 0 !important;
+    margin-bottom: 0.5rem !important;
+    display: block !important;
+    width: 100% !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+.header-content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+    margin: 0 auto !important;
+    padding: 0 1rem !important;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.logo-text {
+    text-align: left;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+}
+
+.brand-logo {
+    display: block;
+    width: auto;
+    height: 58px;
+    max-width: min(44vw, 240px);
+}
+
+.header-text h1 {
+    color: white !important;
+    margin: 0 !important;
+    font-size: 2rem !important;
+}
+
+.header-text p {
+    color: #e2e8f0 !important;
+    margin: 0 !important;
+    font-size: 1rem !important;
+}
+
+.assessment-info {
+    color: white !important;
+}
+
+.assessment-info p {
+    color: white !important;
+    margin: 0.25rem 0 !important;
+}
+
+.assessment-info strong {
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+/* Ensure header is visible */
+.site-security-header {
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        radial-gradient(circle at 18% 18%, rgba(0, 120, 174, 0.18), transparent 24%),
+        linear-gradient(135deg, var(--host-dhs-blue-deep) 0%, var(--host-dhs-blue) 45%, var(--host-dhs-light-blue) 100%) !important;
+    background-size: 150px 150px, auto, auto !important;
+    color: white !important;
+    padding: 2rem 0 !important;
+    margin-bottom: 0.5rem !important;
+    display: block !important;
+    width: 100% !important;
+    position: relative !important;
+    z-index: 10 !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+.site-security-header .header-content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    gap: 2rem !important;
+    margin: 0 auto !important;
+    padding: 0 1rem !important;
+}
+
+.site-security-header .header-left {
+    display: flex !important;
+    align-items: center !important;
+    gap: 2rem !important;
+    flex: 1 !important;
+}
+
+.site-security-header .header-right {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.site-security-header .logo-text h1 {
+    color: white !important;
+    margin: 0 !important;
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+}
+
+.site-security-header .logo-text p {
+    color: #e2e8f0 !important;
+    margin: 0 !important;
+    font-size: 1rem !important;
+}
+
+.site-security-header .assessment-info {
+    color: white !important;
+    text-align: right !important;
+}
+
+.site-security-header .assessment-info p {
+    color: white !important;
+    margin: 0.25rem 0 !important;
+    font-size: 0.9rem !important;
+}
+
+.site-security-header .assessment-info strong {
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+.site-security-header .auto-save-status {
+    color: #e2e8f0 !important;
+    font-size: 0.8rem !important;
+    font-style: italic !important;
+}
+
+
+/* Progress Section */
+.progress-section {
+    background:
+        linear-gradient(180deg, rgba(0, 40, 70, 0.96), rgba(0, 31, 51, 0.94)),
+        linear-gradient(135deg, rgba(0, 120, 174, 0.08), rgba(255, 255, 255, 0));
+    border: 1px solid rgba(203, 213, 225, 0.16);
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: 0 18px 42px rgba(2, 6, 23, 0.32);
+}
+
+/* Assessment Progress - Sticky positioning */
+.assessment-progress {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    background: rgba(8, 17, 29, 0.82);
+    border-bottom: 1px solid rgba(203, 213, 225, 0.16);
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 18px 40px rgba(2, 6, 23, 0.24);
+    backdrop-filter: blur(10px);
+}
+
+/* Return to Top Button */
+.return-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1001;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: none;
+}
+
+.return-to-top-btn:hover {
+    background: var(--secondary-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.return-to-top-btn.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.progress-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-left: auto;
+}
+
+.progress-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #f8fafc;
+}
+
+.progress-percentage {
+    background: linear-gradient(135deg, var(--host-dhs-blue-deep) 0%, var(--host-dhs-blue) 50%, var(--host-dhs-light-blue) 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-weight: 600;
+    box-shadow: 0 12px 28px rgba(0, 40, 70, 0.2);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(148, 163, 184, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--host-dhs-blue), #5e9732);
+    transition: width 0.3s ease;
+}
+
+/* Steps */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.step.completed {
+    background: color-mix(in srgb, var(--brand-blue) 22%, rgba(15, 23, 42, 0.92));
+    color: #f8fafc;
+    border: 1px solid rgba(96, 165, 250, 0.35);
+}
+
+.step.current {
+    background: color-mix(in srgb, var(--brand-blue) 28%, rgba(15, 23, 42, 0.92));
+    color: #f8fafc;
+    border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step.pending {
+    background: rgba(15, 23, 42, 0.78);
+    color: rgba(226, 232, 240, 0.88);
+    border: 1px solid rgba(203, 213, 225, 0.16);
+}
+
+.step-number {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.step.completed .step-number {
+    background: var(--success-green);
+    color: white;
+}
+
+.step.current .step-number {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f8fafc;
+}
+
+.step.pending .step-number {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f8fafc;
+}
+
+/* Main Content */
+.main-content {
+    margin-bottom: 0.5rem;
+    margin-top: 0 !important;
+    padding-top: 0.25rem;
+}
+
+.content-area {
+    background:
+        linear-gradient(180deg, rgba(0, 40, 70, 0.96), rgba(0, 31, 51, 0.94)),
+        linear-gradient(135deg, rgba(0, 120, 174, 0.08), rgba(255, 255, 255, 0));
+    border: 1px solid rgba(203, 213, 225, 0.16);
+    border-radius: 14px;
+    padding: 2rem;
+    box-shadow: 0 18px 42px rgba(2, 6, 23, 0.32);
+}
+
+/* Sections */
+.section {
+    display: none;
+    margin-bottom: 1rem;
+}
+
+.section.active {
+    display: block;
+}
+
+.section-header {
+    border-bottom: 1px solid rgba(203, 213, 225, 0.16);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-size: 1.875rem;
+    color: #f8fafc;
+    margin-bottom: 0.5rem;
+}
+
+.section-description {
+    color: rgba(226, 232, 240, 0.72);
+    font-size: 1rem;
+}
+
+.landing-content {
+    display: grid;
+    gap: 1.25rem;
+}
+
+/* Landing hero: CISA-style top band + 3-column main (copy | figure | panel) */
+.landing-hero--cisa {
+    --dhs-blue: #005288;
+    --dhs-light-blue: #0078ae;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 18px 42px rgba(2, 6, 23, 0.32);
+}
+
+.landing-hero-topband {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 1.25rem;
+    padding: 0.65rem 1.5rem;
+    background: linear-gradient(90deg, var(--dhs-blue) 0%, var(--dhs-light-blue) 50%, var(--dhs-blue) 100%);
+    background-size: 200% 100%;
+    color: #f8fafc;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.landing-hero-topband-title {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.98;
+}
+
+.landing-hero-topband-sub {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    opacity: 0.95;
+}
+
+.landing-hero-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(100px, 0.42fr) minmax(240px, 1fr);
+    grid-template-areas: "copy figure panel";
+    gap: 0;
+    align-items: stretch;
+    position: relative;
+    min-height: min(280px, 48vh);
+    background: #ffffff;
+}
+
+.landing-hero-figure {
+    grid-area: figure;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0.75rem;
+    overflow: hidden;
+}
+
+.landing-hero-figure-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(245, 245, 246, 0.95) 100%);
+    pointer-events: none;
+}
+
+.landing-hero-cisa-brand {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.landing-hero-cisa-logo {
+    display: block;
+    width: 100%;
+    max-width: min(200px, 28vw);
+    height: auto;
+    object-fit: contain;
+}
+
+.landing-hero-copy {
+    grid-area: copy;
+    position: relative;
+    z-index: 1;
+    padding: 1.75rem;
+    border-radius: 0;
+    border: none;
+    border-right: 1px solid rgba(192, 194, 196, 0.22);
+    background:
+        radial-gradient(circle at top right, rgba(0, 120, 174, 0.22), transparent 28%),
+        linear-gradient(135deg, rgba(0, 31, 51, 0.98) 0%, rgba(0, 82, 136, 0.96) 52%, rgba(0, 61, 92, 0.94) 100%);
+}
+
+.landing-eyebrow {
+    margin: 0 0 0.75rem;
+    color: #efdfc8;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.landing-title {
+    margin: 0;
+    color: #f8fafc;
+    font-size: clamp(2rem, 4vw, 3.35rem);
+    line-height: 1.05;
+}
+
+/* Keep hero headline out of global .section h2 / report header patterns (cisa_styles) */
+.landing-hero--cisa .landing-title {
+    text-align: left;
+    width: auto;
+    max-width: none;
+    padding: 0;
+    border-bottom: none;
+    font-family: "Sora", "Segoe UI", system-ui, sans-serif;
+    letter-spacing: -0.03em;
+}
+
+.landing-subtitle {
+    margin: 1rem 0 0;
+    max-width: 44rem;
+    color: rgba(226, 232, 240, 0.92);
+    font-size: 1rem;
+}
+
+.landing-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+/* HOST V3.html loads cisa_styles first; hero CTAs must not inherit global centered landing-actions */
+.landing-hero--cisa .landing-actions {
+    justify-content: flex-start;
+    text-align: left;
+    margin-top: 1.35rem;
+}
+
+.landing-status-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.landing-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 2.25rem;
+    padding: 0.35rem 0.8rem;
+    background: rgba(15, 23, 42, 0.38);
+    border: 1px solid rgba(239, 223, 200, 0.18);
+    border-radius: 999px;
+    color: rgba(248, 250, 252, 0.94);
+    font-size: 0.82rem;
+}
+
+.landing-hero-panel {
+    grid-area: panel;
+    width: 100%;
+}
+
+.landing-panel-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.landing-panel-item h5 {
+    margin-bottom: 0.35rem;
+    color: #f8fafc;
+}
+
+.landing-panel-item p {
+    color: rgba(226, 232, 240, 0.78);
+}
+
+.landing-support-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+/* Cards
+ * Facility Information (#facility_info) is the assessment UI reference: white surface, DHS blue border,
+ * dark type. All workflow sections under main.main-content use the same card chrome (not VOFC dashboard). */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 82, 136, 0.22);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+    color: #212529;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.1);
+    transform: translateY(-1px);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 82, 136, 0.18);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--cisa-text-heading);
+    margin: 0;
+}
+
+.card-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--host-dhs-blue);
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 0.5rem;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(203, 213, 225, 0.16);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(15, 23, 42, 0.86);
+    color: #f8fafc;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+    outline: none;
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.18);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+/* Tables — default: CISA light surfaces (assessment workflow). Dark “console” tables scoped below. */
+.table-container {
+    overflow-x: auto;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    border: 1px solid rgba(203, 213, 225, 0.55);
+    background: #ffffff;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+}
+
+.data-table th {
+    background: var(--cisa-surface-header);
+    color: var(--cisa-text-heading);
+    font-weight: 600;
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.data-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e8eef4;
+    vertical-align: top;
+    color: var(--cisa-text-body);
+    background: #ffffff;
+}
+
+.data-table tbody tr:nth-child(even) td {
+    background: #f8fafc;
+}
+
+.data-table tbody tr:hover td {
+    background: #f1f5f9;
+}
+
+/* Dark tool panels only — keep slate tables for VOFC dashboard / data management */
+body.tsp-theme .vulnerability-dashboard .data-table,
+body.tsp-theme .data-management-panel .data-table {
+    background: rgba(15, 23, 42, 0.86);
+}
+
+body.tsp-theme .vulnerability-dashboard .data-table th,
+body.tsp-theme .data-management-panel .data-table th {
+    background: rgba(15, 23, 42, 0.92);
+    color: #f8fafc;
+    border-bottom-color: rgba(203, 213, 225, 0.16);
+}
+
+body.tsp-theme .vulnerability-dashboard .data-table td,
+body.tsp-theme .data-management-panel .data-table td {
+    color: rgba(226, 232, 240, 0.88);
+    background: transparent;
+    border-bottom-color: rgba(203, 213, 225, 0.12);
+}
+
+body.tsp-theme .vulnerability-dashboard .data-table tbody tr:nth-child(even) td,
+body.tsp-theme .data-management-panel .data-table tbody tr:nth-child(even) td {
+    background: rgba(30, 41, 59, 0.35);
+}
+
+body.tsp-theme .vulnerability-dashboard .data-table tbody tr:hover td,
+body.tsp-theme .data-management-panel .data-table tbody tr:hover td {
+    background: rgba(30, 41, 59, 0.78);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 999px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--host-dhs-blue-deep) 0%, var(--host-dhs-blue) 48%, var(--host-dhs-light-blue) 100%);
+    color: white;
+    box-shadow: 0 16px 34px rgba(0, 40, 70, 0.22);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, rgba(0, 61, 92, 1) 0%, var(--host-dhs-blue) 55%, var(--host-dhs-light-blue) 100%);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.02);
+    color: #cbd5e1;
+    border: 1px solid rgba(203, 213, 225, 0.35);
+    box-shadow: none;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: #1d4ed8;
+    color: #f8fafc;
+}
+
+.btn-danger {
+    background: var(--danger-red);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c53030;
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+}
+
+/* Alerts */
+.alert {
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.alert-info {
+    background: rgba(29, 78, 216, 0.16);
+    color: #dbeafe;
+    border-left: 4px solid #60a5fa;
+}
+
+.alert-warning {
+    background: rgba(180, 83, 9, 0.14);
+    color: #fde68a;
+    border-left: 4px solid #f59e0b;
+}
+
+/* Dark “console” panels only — do not apply to assessment .section .cards (caused dark-on-dark + light-on-light clashes). */
+
+/* Progress + landing chrome: light CISA shell (see body.tsp-theme .assessment-progress below; avoid duplicate dark rules). */
+
+body[data-current-section="landing_page"] .progress-steps {
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+/* Legacy dark landing shell — skip when CISA tsp-theme is active (DHS masthead + light progress). */
+body:not(.tsp-theme)[data-current-section="landing_page"] .site-security-header {
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(135deg, rgba(0, 61, 92, 0.92), rgba(0, 40, 70, 0.82)) !important;
+    background-size: 140px 140px, auto !important;
+    margin-bottom: 0 !important;
+    box-shadow: none !important;
+}
+
+body[data-current-section="landing_page"] .header-content {
+    width: min(100%, 1180px);
+    padding: 0 1rem !important;
+}
+
+body:not(.tsp-theme)[data-current-section="landing_page"] .assessment-info {
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(203, 213, 225, 0.16);
+    border-radius: 16px;
+    background: rgba(15, 23, 42, 0.32);
+}
+
+body[data-current-section="landing_page"] .main-content {
+    padding-top: 0;
+}
+
+body:not(.tsp-theme)[data-current-section="landing_page"] .progress-text {
+    color: rgba(226, 232, 240, 0.84);
+}
+
+body[data-current-section="landing_page"] .progress-step {
+    min-width: 140px;
+}
+
+/* Light typography for dark tool panels only (not global headings — those are overridden below for CISA light forms). */
+body.tsp-theme .vulnerability-dashboard .card-title,
+body.tsp-theme .vulnerability-dashboard h1,
+body.tsp-theme .vulnerability-dashboard h2,
+body.tsp-theme .vulnerability-dashboard h3,
+body.tsp-theme .vulnerability-dashboard h4,
+body.tsp-theme .vulnerability-dashboard h5,
+body.tsp-theme .data-management .card-title,
+body.tsp-theme .data-management h1,
+body.tsp-theme .data-management h2,
+body.tsp-theme .data-management h3,
+body.tsp-theme .data-management h4 {
+    color: #f8fafc;
+}
+
+body.tsp-theme .assessment-info p,
+body.tsp-theme .step.pending {
+    color: rgba(226, 232, 240, 0.88);
+}
+
+body.tsp-theme .card-header,
+body.tsp-theme .table-container {
+    border-color: rgba(203, 213, 225, 0.16);
+}
+
+body.tsp-theme .vulnerability-dashboard .form-input,
+body.tsp-theme .vulnerability-dashboard .form-select,
+body.tsp-theme .vulnerability-dashboard .form-textarea,
+body.tsp-theme .data-management .form-input,
+body.tsp-theme .data-management .form-select,
+body.tsp-theme .data-management .form-textarea {
+    background: rgba(15, 23, 42, 0.86);
+    color: #f8fafc;
+}
+
+body.tsp-theme .main-content .section .data-table tr:hover td {
+    background: rgba(241, 245, 249, 0.92) !important;
+}
+
+body.tsp-theme .btn-secondary {
+    background: rgba(255, 255, 255, 0.02);
+    color: #cbd5e1;
+    border-color: rgba(203, 213, 225, 0.35);
+    box-shadow: none;
+}
+
+body.tsp-theme .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--host-dhs-blue);
+    color: #f8fafc;
+}
+
+body.tsp-theme .alert-info {
+    background: rgba(29, 78, 216, 0.16);
+    color: #dbeafe;
+    border-left-color: #60a5fa;
+}
+
+body.tsp-theme .alert-warning {
+    background: rgba(180, 83, 9, 0.14);
+    color: #fde68a;
+    border-left-color: #f59e0b;
+}
+
+/* CISA-style alerts on light surfaces: avoid light-on-light (pale blue text on pale blue fill). */
+body.tsp-theme .site-security-container .section .alert.alert-info,
+body.tsp-theme #landing_page .alert.alert-info {
+    background: #e8f4fc !important;
+    color: var(--cisa-text-body) !important;
+    border-left: 4px solid var(--cisa-dhs-blue) !important;
+}
+
+body.tsp-theme .site-security-container .section .alert.alert-info strong,
+body.tsp-theme #landing_page .alert.alert-info strong {
+    color: var(--cisa-text-heading) !important;
+}
+
+body.tsp-theme .site-security-container .section .alert.alert-warning,
+body.tsp-theme #landing_page .alert.alert-warning {
+    background: #fff8e6 !important;
+    color: #78350f !important;
+    border-left: 4px solid #b45309 !important;
+}
+
+body.tsp-theme .vulnerability-dashboard,
+body.tsp-theme .vulnerability-dashboard .summary-card,
+body.tsp-theme .vulnerability-item,
+body.tsp-theme .data-management {
+    background: var(--cisa-panel-dark),
+        linear-gradient(135deg, rgba(0, 120, 174, 0.08), rgba(255, 255, 255, 0));
+    border: 1px solid rgba(203, 213, 225, 0.16);
+    color: #f8fafc;
+    box-shadow: 0 18px 42px rgba(2, 6, 23, 0.32);
+}
+
+/* If any .card is ever used inside the VOFC panel, keep console styling (workflow cards default to light above). */
+body.tsp-theme .vulnerability-dashboard .card {
+    background: rgba(15, 23, 42, 0.88);
+    color: #f8fafc;
+    border-color: rgba(203, 213, 225, 0.22);
+    box-shadow: 0 12px 28px rgba(2, 6, 23, 0.28);
+}
+
+body.tsp-theme .vulnerability-dashboard .card .card-title {
+    color: #f8fafc !important;
+}
+
+body.tsp-theme .vulnerability-dashboard .card .card-header {
+    border-bottom-color: rgba(203, 213, 225, 0.22);
+}
+
+body.tsp-theme .dashboard-header h3,
+body.tsp-theme .vulnerability-title,
+body.tsp-theme .data-management-title {
+    color: #f8fafc;
+}
+
+body.tsp-theme .summary-card .label,
+body.tsp-theme .vulnerability-description,
+body.tsp-theme .severity-item .label {
+    color: #cbd5e1;
+}
+
+body.tsp-theme .severity-item.critical {
+    background: rgba(185, 28, 28, 0.16);
+    border-color: rgba(248, 113, 113, 0.35);
+}
+
+body.tsp-theme .severity-item.high {
+    background: rgba(180, 83, 9, 0.16);
+    border-color: rgba(251, 191, 36, 0.35);
+}
+
+body.tsp-theme .severity-item.medium {
+    background: rgba(29, 78, 216, 0.14);
+    border-color: rgba(96, 165, 250, 0.35);
+}
+
+body.tsp-theme .data-management-header {
+    border-bottom: 1px solid rgba(203, 213, 225, 0.16);
+    padding-bottom: 0.75rem;
+}
+
+body.tsp-theme .data-management button {
+    background: rgba(255, 255, 255, 0.02);
+    color: #cbd5e1;
+    border: 1px solid rgba(203, 213, 225, 0.35);
+}
+
+body.tsp-theme .data-management button:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: #1d4ed8;
+    color: #f8fafc;
+}
+
+.alert-success {
+    background: #f0fff4;
+    color: var(--success-green);
+    border-left: 4px solid var(--success-green);
+}
+
+/* Data Management Panel */
+.data-management {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-blue);
+    color: white;
+    border-radius: 12px;
+    padding: 0.1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    max-height: 200px;
+}
+
+.data-management.collapsed {
+    transform: translateY(calc(100% - 60px));
+}
+
+.data-management-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.data-management-title {
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.data-management-content {
+    display: grid;
+    gap: 0.25rem;
+}
+
+.data-management.collapsed .data-management-content {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+    .landing-hero-main {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "copy"
+            "figure"
+            "panel";
+        min-height: 0;
+    }
+
+    .landing-hero-figure {
+        min-height: 0;
+        max-height: none;
+        padding: 0.75rem 1rem 1rem;
+    }
+
+    .landing-hero-cisa-logo {
+        max-width: min(180px, 42vw);
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .landing-support-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .landing-hero-figure {
+        min-height: 0;
+    }
+
+    .landing-hero-cisa-logo {
+        max-width: min(160px, 48vw);
+    }
+
+    .progress-controls {
+        width: 100%;
+        justify-content: flex-start;
+        margin-left: 0;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .brand-logo {
+        height: 46px;
+        max-width: min(72vw, 220px);
+    }
+}
+
+body.tsp-theme {
+    color: var(--cisa-text-body);
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.97), rgba(255, 255, 255, 0.97)),
+        linear-gradient(90deg, transparent 0 calc(100% - 1px), rgba(0, 82, 136, 0.04) calc(100% - 1px)),
+        linear-gradient(transparent 0 calc(100% - 1px), rgba(0, 82, 136, 0.04) calc(100% - 1px)),
+        var(--host-dhs-gray-15) !important;
+    background-size: auto, 120px 120px, 120px 120px, auto !important;
+}
+
+body.tsp-theme h1,
+body.tsp-theme h2,
+body.tsp-theme h3,
+body.tsp-theme h4,
+body.tsp-theme h5,
+body.tsp-theme h6 {
+    color: var(--cisa-text-heading) !important;
+}
+
+/* DHS blue masthead (CISA in-house), not portfolio indigo */
+body.tsp-theme .site-security-header {
+    background: linear-gradient(135deg, var(--host-dhs-blue) 0%, var(--host-dhs-blue-deep) 42%, var(--host-dhs-light-blue) 100%) !important;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 8px 24px rgba(0, 40, 70, 0.22) !important;
+}
+
+body.tsp-theme[data-current-section="landing_page"] .site-security-header {
+    margin-bottom: 0 !important;
+}
+
+/* Masthead meta strip: light on DHS blue (not legacy slate chip). */
+body.tsp-theme[data-current-section="landing_page"] .site-security-header .assessment-info {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border: 1px solid rgba(255, 255, 255, 0.28) !important;
+}
+
+body.tsp-theme .site-security-header .logo-text h1,
+body.tsp-theme .site-security-header .header-text h1,
+body.tsp-theme .site-security-header .assessment-info,
+body.tsp-theme .site-security-header .assessment-info p,
+body.tsp-theme .site-security-header .assessment-info strong {
+    color: #ffffff !important;
+}
+
+body.tsp-theme .site-security-header .logo-text p,
+body.tsp-theme .site-security-header .auto-save-status {
+    color: rgba(255, 255, 255, 0.88) !important;
+}
+
+body.tsp-theme .assessment-progress,
+body.tsp-theme .data-management-header {
+    background: #ffffff !important;
+    border-color: rgba(0, 82, 136, 0.22) !important;
+    box-shadow: 0 8px 22px rgba(0, 40, 70, 0.08) !important;
+}
+
+body.tsp-theme .assessment-progress {
+    border-bottom: 2px solid var(--host-dhs-blue) !important;
+}
+
+body.tsp-theme .header-text h1,
+body.tsp-theme .progress-title,
+body.tsp-theme .section-title,
+body.tsp-theme .card-title,
+body.tsp-theme .dashboard-header h3,
+body.tsp-theme .data-management-title,
+body.tsp-theme .landing-title {
+    color: var(--cisa-text-heading) !important;
+}
+
+body.tsp-theme .header-text p,
+body.tsp-theme .progress-text,
+body.tsp-theme .section-description,
+body.tsp-theme .landing-subtitle,
+body.tsp-theme .landing-panel-item p,
+body.tsp-theme .landing-card p,
+body.tsp-theme .summary-card .label {
+    color: var(--cisa-text-muted) !important;
+}
+
+/* assessment-info lives in the DHS masthead — keep light text (do not inherit muted slate from above) */
+body.tsp-theme .site-security-header .assessment-info,
+body.tsp-theme .site-security-header .assessment-info p {
+    color: rgba(255, 255, 255, 0.92) !important;
+}
+
+body.tsp-theme .landing-subtitle {
+    font-size: 1.05rem !important;
+    line-height: 1.55 !important;
+}
+
+body.tsp-theme .landing-hero--cisa .btn-primary {
+    background: linear-gradient(135deg, var(--host-dhs-blue) 0%, var(--host-dhs-blue-deep) 45%, var(--host-dhs-light-blue) 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 10px 26px rgba(0, 40, 70, 0.28) !important;
+}
+
+body.tsp-theme .landing-hero--cisa .btn-primary:hover {
+    background: linear-gradient(135deg, var(--host-dhs-blue-deep) 0%, var(--host-dhs-blue) 55%, var(--host-dhs-light-blue) 100%) !important;
+    color: #ffffff !important;
+}
+
+body.tsp-theme .content-area,
+body.tsp-theme .card,
+body.tsp-theme .progress-section,
+body.tsp-theme .summary-card,
+body.tsp-theme .vulnerability-dashboard,
+body.tsp-theme .data-management,
+body.tsp-theme .landing-hero--cisa {
+    border: 1px solid rgba(0, 82, 136, 0.22) !important;
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.1) !important;
+}
+
+body.tsp-theme .landing-hero-topband {
+    background: linear-gradient(90deg, #005288 0%, #0078ae 48%, #005288 100%) !important;
+    color: #ffffff !important;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.22) !important;
+}
+
+body.tsp-theme .landing-hero-topband-title,
+body.tsp-theme .landing-hero-topband-sub {
+    color: #ffffff !important;
+}
+
+body.tsp-theme .landing-hero--cisa .landing-title {
+    font-family: "Sora", "Segoe UI", system-ui, sans-serif !important;
+}
+
+body.tsp-theme .landing-hero-main {
+    background: #ffffff !important;
+}
+
+body.tsp-theme .landing-hero-copy,
+body.tsp-theme .landing-hero-panel {
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+body.tsp-theme .landing-hero-copy {
+    border-right: 1px solid rgba(203, 213, 225, 0.85) !important;
+    background: #ffffff !important;
+}
+
+body.tsp-theme .landing-hero-figure {
+    background: #ffffff !important;
+    border-left: 1px solid rgba(0, 82, 136, 0.12) !important;
+    border-right: 1px solid rgba(0, 82, 136, 0.1) !important;
+}
+
+body.tsp-theme .landing-hero-figure-bg {
+    background: #ffffff !important;
+}
+
+body.tsp-theme .landing-hero-panel {
+    background: #ffffff !important;
+    border-left: none !important;
+    box-shadow: none !important;
+}
+
+body.tsp-theme .landing-eyebrow {
+    color: var(--host-dhs-blue) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.06em !important;
+}
+
+body.tsp-theme .landing-status-pill,
+body.tsp-theme .progress-percentage {
+    background: #ffffff !important;
+    border: 1px solid rgba(0, 82, 136, 0.35) !important;
+    color: var(--cisa-text-heading) !important;
+    box-shadow: 0 8px 20px rgba(0, 40, 70, 0.08) !important;
+}
+
+body.tsp-theme .step.pending,
+body.tsp-theme .progress-step,
+body.tsp-theme .tsp-nav-btn {
+    background: #ffffff !important;
+    color: var(--cisa-text-body) !important;
+    border-color: rgba(0, 82, 136, 0.18) !important;
+}
+
+body.tsp-theme .step.current,
+body.tsp-theme .step.completed,
+body.tsp-theme .progress-step.active {
+    background: rgba(0, 82, 136, 0.09) !important;
+    color: var(--cisa-text-heading) !important;
+    border-color: rgba(0, 82, 136, 0.35) !important;
+}
+
+body.tsp-theme .step-number,
+body.tsp-theme .progress-step .step-number {
+    background: linear-gradient(135deg, var(--host-dhs-blue) 0%, var(--host-dhs-light-blue) 100%) !important;
+    color: var(--brand-white) !important;
+}
+
+body.tsp-theme .progress-fill {
+    background: linear-gradient(90deg, var(--host-dhs-blue), var(--host-dhs-light-blue)) !important;
+}
+
+body.tsp-theme .btn-primary {
+    background: linear-gradient(135deg, var(--host-dhs-blue) 0%, var(--host-dhs-blue-deep) 48%, var(--host-dhs-light-blue) 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 12px 28px rgba(0, 40, 70, 0.22) !important;
+}
+
+body.tsp-theme .btn-primary:hover {
+    background: linear-gradient(135deg, var(--host-dhs-blue-deep) 0%, var(--host-dhs-blue) 50%, var(--host-dhs-light-blue) 100%) !important;
+    color: #ffffff !important;
+}
+
+body.tsp-theme input,
+body.tsp-theme select,
+body.tsp-theme textarea,
+body.tsp-theme .form-input,
+body.tsp-theme .form-select,
+body.tsp-theme .form-textarea {
+    color: var(--brand-ink) !important;
+    background: #ffffff !important;
+    border-color: rgba(203, 213, 225, 0.85) !important;
+}
+
+body.tsp-theme .data-table th {
+    color: var(--cisa-text-heading) !important;
+    background: var(--cisa-surface-header) !important;
+}
+
+body.tsp-theme .data-table td {
+    color: var(--cisa-text-body) !important;
+    background: #ffffff !important;
+}
+
+body.tsp-theme .data-table tbody tr:nth-child(even) td {
+    background: #f8fafc !important;
+}
+
+body.tsp-theme .vulnerability-dashboard .data-table th,
+body.tsp-theme .data-management-panel .data-table th {
+    color: #e2e8f0 !important;
+    background: rgba(15, 23, 42, 0.75) !important;
+}
+
+body.tsp-theme .vulnerability-dashboard .data-table td,
+body.tsp-theme .data-management-panel .data-table td {
+    color: #e2e8f0 !important;
+    background: transparent !important;
+}
+
+body.tsp-theme .vulnerability-dashboard .data-table tbody tr:nth-child(even) td,
+body.tsp-theme .data-management-panel .data-table tbody tr:nth-child(even) td {
+    background: rgba(30, 41, 59, 0.45) !important;
+}
+
+body.tsp-theme .vulnerability-dashboard .data-table tbody tr:hover td,
+body.tsp-theme .data-management-panel .data-table tbody tr:hover td {
+    background: rgba(30, 41, 59, 0.78) !important;
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+
+/* Fix gaps on pages 2-8 by targeting specific elements */
+.section .alert {
+    margin-top: 0 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.section .question-item {
+    margin-top: 0 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.section .question-item:first-child {
+    margin-top: 0 !important;
+}
+
+/* Remove any default margins from form elements in sections */
+.section .form-row,
+.section .form-group,
+.section .card,
+.section .card-body {
+    margin-top: 0 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Ensure consistent spacing for all content in sections 2-8 */
+.section > *:first-child {
+    margin-top: 0 !important;
+}
+
+.section > *:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* HOST UX refinement pass (workflow clarity + production readability) */
+body.tsp-theme .assessment-progress {
+    padding: 0.7rem 0;
+}
+
+body.tsp-theme .progress-header {
+    align-items: center;
+}
+
+body.tsp-theme .progress-text {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(203, 213, 225, 0.62);
+    background: #ffffff;
+    color: var(--brand-navy);
+    font-weight: 700;
+}
+
+.progress-hint {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2rem;
+    padding: 0.3rem 0.78rem;
+    border-radius: 999px;
+    border: 1px solid rgba(203, 213, 225, 0.62);
+    background: rgba(248, 250, 252, 0.92);
+    color: var(--brand-steel);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.progress-hint[data-state="analysis"] {
+    border-color: rgba(37, 99, 235, 0.5);
+    color: #1d4ed8;
+}
+
+.progress-hint[data-state="error"] {
+    border-color: rgba(185, 28, 28, 0.58);
+    color: #991b1b;
+}
+
+.progress-hint[data-state="final"] {
+    border-color: rgba(22, 163, 74, 0.5);
+    color: #166534;
+}
+
+body.tsp-theme .progress-step {
+    border-radius: 12px;
+    min-height: 2.8rem;
+    padding: 0.35rem 0.55rem;
+    transition: border-color 140ms ease, background-color 140ms ease, transform 140ms ease;
+}
+
+body.tsp-theme .progress-step.complete {
+    border-color: rgba(22, 163, 74, 0.45) !important;
+    background: rgba(240, 253, 244, 0.92) !important;
+    color: #166534 !important;
+}
+
+body.tsp-theme .progress-step.upcoming {
+    border-color: rgba(203, 213, 225, 0.74) !important;
+}
+
+body.tsp-theme .progress-step.active {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
+}
+
+body.tsp-theme .progress-step:focus-visible,
+body.tsp-theme .btn:focus-visible,
+body.tsp-theme .form-input:focus-visible,
+body.tsp-theme .form-select:focus-visible,
+body.tsp-theme .form-textarea:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--brand-blue) 45%, white 55%);
+    outline-offset: 2px;
+}
+
+body.tsp-theme .content-area {
+    padding: 1.5rem;
+}
+
+body.tsp-theme .section-header {
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+
+body.tsp-theme .section-description {
+    max-width: 78ch;
+    line-height: 1.45;
+}
+
+body.tsp-theme .form-row {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 0.9rem;
+}
+
+body.tsp-theme .form-group {
+    padding: 0.7rem;
+    border: 1px solid rgba(203, 213, 225, 0.62);
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+body.tsp-theme .form-label {
+    color: var(--brand-navy);
+    text-transform: none;
+    letter-spacing: 0.01em;
+    font-size: 0.84rem;
+}
+
+body.tsp-theme .form-input,
+body.tsp-theme .form-select,
+body.tsp-theme .form-textarea {
+    border-radius: 10px;
+    min-height: 2.5rem;
+}
+
+body.tsp-theme .table-container {
+    border-radius: 12px;
+    border-color: rgba(203, 213, 225, 0.72);
+}
+
+body.tsp-theme .data-table th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    font-size: 0.76rem;
+}
+
+body.tsp-theme .data-table td {
+    font-size: 0.86rem;
+    line-height: 1.35;
+}
+
+body.tsp-theme .vulnerability-dashboard {
+    border-radius: 14px;
+}
+
+body.tsp-theme .summary-card {
+    border-radius: 12px;
+    min-width: 120px;
+}
+
+body.tsp-theme .vulnerability-item {
+    border-radius: 10px;
+}
+
+body.tsp-theme #report-content,
+body.tsp-theme .report-content {
+    line-height: 1.45;
+}
+
+@media (max-width: 980px) {
+    .progress-hint {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    body.tsp-theme .progress-header {
+        gap: 0.5rem;
+    }
+}
+
+/* HOST UX polish overrides (resolve class collisions + improve readability). */
+body.tsp-theme .landing-support-grid .process-steps {
+    display: grid;
+    gap: 0.72rem;
+}
+
+body.tsp-theme .landing-support-grid .process-step {
+    display: grid;
+    grid-template-columns: 2.05rem minmax(0, 1fr);
+    align-items: start;
+    gap: 0.68rem;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    height: auto;
+    margin: 0;
+    padding: 0.68rem 0.72rem;
+    border: 1px solid rgba(203, 213, 225, 0.72);
+    border-radius: 12px;
+    background: #ffffff;
+    color: var(--brand-navy);
+    text-transform: none;
+    letter-spacing: normal;
+    box-shadow: none;
+}
+
+body.tsp-theme .landing-support-grid .step-icon {
+    width: 2.05rem;
+    height: 2.05rem;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.48);
+    background: rgba(248, 250, 252, 0.95);
+    color: var(--brand-blue);
+}
+
+body.tsp-theme .landing-support-grid .step-content h5 {
+    margin: 0 0 0.2rem;
+    color: var(--brand-navy);
+    font-family: "Sora", "Segoe UI", sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.3;
+}
+
+body.tsp-theme .landing-support-grid .step-content p {
+    margin: 0;
+    color: var(--brand-steel);
+    font-size: 0.82rem;
+    line-height: 1.42;
+}
+
+body.tsp-theme .landing-support-grid .icon-text {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+body.tsp-theme .landing-assessor-card .form-group {
+    background: #ffffff;
+}
+
+body.tsp-theme .final-report-container,
+body.tsp-theme #final_report .card,
+body.tsp-theme #final_report .alert {
+    background: #ffffff !important;
+    border: 1px solid rgba(203, 213, 225, 0.8) !important;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08) !important;
+    color: var(--brand-ink) !important;
+}
+
+body.tsp-theme #final_report h2,
+body.tsp-theme #final_report h3,
+body.tsp-theme #final_report h4 {
+    color: var(--brand-navy) !important;
+}
+
+/* Navy executive-dashboard metrics: scores must not use report heading h3 styling (was low-contrast navy-on-navy). */
+body.tsp-theme #final_report .executive-dashboard .dashboard-metrics .metric-card .metric-value {
+    font-family: "Sora", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size: clamp(2rem, 4.2vw, 2.75rem) !important;
+    font-weight: 800 !important;
+    line-height: 1.05 !important;
+    margin: 0 0 0.4rem 0 !important;
+    letter-spacing: -0.03em !important;
+    color: #f8fafc !important;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+body.tsp-theme #final_report .executive-dashboard .dashboard-metrics .metric-card .metric-value.score-excellent {
+    color: #bbf7d0 !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+}
+
+body.tsp-theme #final_report .executive-dashboard .dashboard-metrics .metric-card .metric-value.score-good {
+    color: #a5f3fc !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+}
+
+body.tsp-theme #final_report .executive-dashboard .dashboard-metrics .metric-card .metric-value.score-fair {
+    color: #fde68a !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+}
+
+body.tsp-theme #final_report .executive-dashboard .dashboard-metrics .metric-card .metric-value.score-poor {
+    color: #fecaca !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+}
+
+body.tsp-theme #final_report .executive-dashboard .dashboard-metrics .metric-card .metric-label {
+    font-family: "Sora", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: rgba(248, 250, 252, 0.95) !important;
+    margin: 0 0 0.45rem 0 !important;
+}
+
+body.tsp-theme #final_report .executive-dashboard .dashboard-metrics .metric-card .metric-description {
+    font-family: "Sora", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size: 0.8125rem !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+    color: rgba(241, 245, 249, 0.92) !important;
+    margin: 0 !important;
+}
+
+/* Light executive-summary metric grids: emphasize the count over the label */
+body.tsp-theme #final_report .executive-summary .metrics-grid .metric-card > h3 {
+    font-family: "Sora", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size: clamp(1.85rem, 3.2vw, 2.35rem) !important;
+    font-weight: 800 !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.03em !important;
+    color: var(--brand-navy) !important;
+    margin: 0 0 0.35rem 0 !important;
+}
+
+body.tsp-theme #final_report .executive-summary .metrics-grid .metric-card > p {
+    font-family: "Sora", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.07em !important;
+    color: var(--brand-slate) !important;
+    margin: 0 !important;
+}
+
+/* HOST visual corrections: section spacing, progress nav structure, and landing card contrast. */
+body.tsp-theme .site-security-container > .section,
+body.tsp-theme .site-security-container > .main-content > .section {
+    padding: 0 !important;
+    margin: 0 0 1rem !important;
+}
+
+body.tsp-theme .site-security-container > #landing_page {
+    margin-top: 0.35rem !important;
+}
+
+body.tsp-theme .assessment-progress .progress-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 0.55rem;
+    width: 100%;
+}
+
+body.tsp-theme .assessment-progress .progress-step {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    min-height: 2.7rem;
+    padding: 0.42rem 0.62rem;
+}
+
+body.tsp-theme .assessment-progress .progress-step .step-number {
+    flex: 0 0 1.55rem;
+    width: 1.55rem;
+    height: 1.55rem;
+    font-size: 0.74rem;
+}
+
+body.tsp-theme .assessment-progress .progress-step .step-label {
+    display: block;
+    font-size: 0.82rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+body.tsp-theme .assessment-info {
+    background: #ffffff !important;
+    border: 1px solid rgba(148, 163, 184, 0.38) !important;
+    color: var(--brand-navy) !important;
+}
+
+body.tsp-theme .assessment-info p,
+body.tsp-theme .assessment-info strong,
+body.tsp-theme #header_assessment_date,
+body.tsp-theme #header_facility_name {
+    color: var(--brand-navy) !important;
+}
+
+body.tsp-theme .assessment-info .auto-save-status {
+    color: var(--brand-slate) !important;
+}
+
+body.tsp-theme .card-body {
+    background: transparent !important;
+    color: var(--brand-steel) !important;
+}
+
+body.tsp-theme .landing-hero-panel .card-body {
+    background: transparent !important;
+}
+
+body.tsp-theme .landing-panel-item h5 {
+    color: var(--brand-navy) !important;
+}
+
+body.tsp-theme .landing-panel-item p {
+    color: var(--brand-steel) !important;
+}
+
+/*
+ * CISA-style assessment forms (main workflow): light surfaces + dark text.
+ * Facility Information (#facility_info) is the design reference for every section in main.main-content.
+ */
+body.tsp-theme .main-content .section .section-header {
+    border-bottom-color: rgba(0, 82, 136, 0.22) !important;
+}
+
+body.tsp-theme .main-content .section .help-text {
+    color: var(--cisa-text-muted) !important;
+}
+
+body.tsp-theme .main-content .section .card {
+    background: #ffffff !important;
+    border: 1px solid rgba(0, 82, 136, 0.22) !important;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06) !important;
+    color: #212529 !important;
+    border-radius: 10px !important;
+}
+
+body.tsp-theme .main-content .section .question-item {
+    background: #ffffff !important;
+    border: 1px solid rgba(0, 82, 136, 0.22) !important;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06) !important;
+    color: #212529 !important;
+    border-radius: 10px !important;
+    padding: 1rem 1.15rem !important;
+}
+
+body.tsp-theme .main-content .section .card-header {
+    background: linear-gradient(180deg, var(--host-dhs-gray-10) 0%, var(--host-dhs-gray-15) 100%) !important;
+    border-bottom: 2px solid var(--cisa-dhs-blue) !important;
+}
+
+body.tsp-theme .main-content .section .card-title {
+    color: var(--cisa-text-heading) !important;
+}
+
+body.tsp-theme .main-content .section .card-body {
+    background: transparent !important;
+    color: #212529 !important;
+}
+
+body.tsp-theme .main-content .section .checkbox-item label {
+    color: #212529 !important;
+    font-weight: 500;
+}
+
+body.tsp-theme .main-content .section .form-label {
+    color: #112e51 !important;
+}
+
+body.tsp-theme .main-content .section .form-input,
+body.tsp-theme .main-content .section .form-select,
+body.tsp-theme .main-content .section .form-textarea {
+    background: #ffffff !important;
+    color: #212529 !important;
+    border: 1px solid #cbd5e1 !important;
+}
+
+body.tsp-theme .main-content .section .data-table td {
+    color: var(--cisa-text-body) !important;
+    border-color: #e2e8f0 !important;
+}
+
+body.tsp-theme .main-content .section .data-table th {
+    color: var(--cisa-text-heading) !important;
+    background: var(--cisa-surface-header) !important;
+    border-color: #e2e8f0 !important;
+}
+
+body.tsp-theme .main-content .section .table-container {
+    background: #ffffff !important;
+    border-color: rgba(0, 82, 136, 0.18) !important;
+}
+
+body.tsp-theme .main-content .section .btn-secondary {
+    background: #ffffff !important;
+    color: var(--cisa-text-heading) !important;
+    border: 1px solid rgba(0, 82, 136, 0.35) !important;
+    box-shadow: none !important;
+}
+
+body.tsp-theme .main-content .section .btn-secondary:hover {
+    background: var(--cisa-surface-header) !important;
+    color: var(--cisa-text-heading) !important;
+    border-color: var(--cisa-dhs-blue) !important;
+}
+
+body.tsp-theme .main-content .section .question-item h4,
+body.tsp-theme .main-content .section .question-item h5 {
+    color: #112e51 !important;
+}
+
+body.tsp-theme .main-content .section .alert {
+    color: #1a1a1a !important;
+}
+
+body.tsp-theme .main-content .section .alert strong {
+    color: #112e51 !important;
+}
+
+/*
+ * Landing page: every card in .landing-content except the hero side panel
+ * (incl. process overview grid + assessor credentials — was dark chrome + navy title).
+ */
+body.tsp-theme #landing_page .landing-content .card:not(.landing-hero-panel) {
+    background: #ffffff !important;
+    border: 1px solid rgba(0, 82, 136, 0.22) !important;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06) !important;
+    color: #212529 !important;
+    border-radius: 10px !important;
+}
+
+body.tsp-theme #landing_page .landing-content .card:not(.landing-hero-panel) .card-header {
+    background: linear-gradient(180deg, var(--host-dhs-gray-10) 0%, var(--host-dhs-gray-15) 100%) !important;
+    border-bottom: 2px solid var(--cisa-dhs-blue) !important;
+}
+
+body.tsp-theme #landing_page .landing-content .card:not(.landing-hero-panel) .card-title {
+    color: var(--cisa-text-heading) !important;
+}
+
+body.tsp-theme #landing_page .landing-content .card:not(.landing-hero-panel) .card-body {
+    background: transparent !important;
+    color: #212529 !important;
+}
+
+body.tsp-theme #landing_page .landing-content .card:not(.landing-hero-panel) .form-label {
+    color: #112e51 !important;
+}
+
+body.tsp-theme #landing_page .landing-content .card:not(.landing-hero-panel) .form-input,
+body.tsp-theme #landing_page .landing-content .card:not(.landing-hero-panel) .form-select,
+body.tsp-theme #landing_page .landing-content .card:not(.landing-hero-panel) .form-textarea {
+    background: #ffffff !important;
+    color: #212529 !important;
+    border: 1px solid #cbd5e1 !important;
+}
+
+@media (max-width: 920px) {
+    body.tsp-theme .assessment-progress .progress-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    body.tsp-theme .assessment-progress .progress-steps {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* Help tooltips: parent overflow-x was clipping wide centered bubbles; sticky chrome tied z-index */
+body.tsp-theme .site-security-container {
+    overflow-x: visible !important;
+}
+
+body.tsp-theme .main-content .section .card-header {
+    overflow: visible !important;
+}
+
+body.tsp-theme .tooltip .tooltiptext {
+    z-index: 10050 !important;
+}
+
+/* Table headers: show help below the icon so bubbles are not clipped by .table-container overflow-x */
+body.tsp-theme .data-table th .tooltip .tooltiptext {
+    bottom: auto;
+    top: 100%;
+    margin-top: 6px;
+    transform: translateX(-50%);
+    /* th { text-transform: uppercase } must not apply to help — it turned guidance into label-like SHOUTING */
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    font-weight: 400 !important;
+    text-align: left !important;
+    min-width: min(320px, calc(100vw - 2rem));
+    max-width: min(420px, calc(100vw - 2rem));
+    white-space: normal;
+}
+
+body.tsp-theme .data-table th .tooltip .tooltiptext::after {
+    top: auto;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-color: transparent transparent #1f2937 transparent;
+}
+
+/* In-page generated report: executive summary tables — CISA light header (print uses host-report.css) */
+body.tsp-theme .metrics-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.75rem 0 1rem;
+    font-size: 0.9rem;
+}
+body.tsp-theme .metrics-table thead th {
+    background: var(--cisa-surface-header);
+    color: var(--cisa-text-heading);
+    border: 1px solid rgba(0, 82, 136, 0.22);
+    border-bottom: 2px solid var(--host-dhs-blue);
+    font-weight: 600;
+    text-align: left;
+    padding: 0.5rem 0.65rem;
+}
+body.tsp-theme .metrics-table tbody td {
+    border: 1px solid rgba(0, 82, 136, 0.16);
+    padding: 0.45rem 0.65rem;
+    vertical-align: top;
+    color: var(--cisa-text-body);
+}
+body.tsp-theme .metrics-table tbody tr:nth-child(even) td {
+    background: #f8fafc;
+}

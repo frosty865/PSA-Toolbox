@@ -1,0 +1,12 @@
+{
+  "discipline_code": "INT",
+  "version": "v1",
+  "constraints": [
+    {
+      "constraint_id": "INT-CONSTRAINT-001",
+      "type": "ALLOWLIST_SPINE_SUBTYPES",
+      "value": ["INT_ACCESS_RESTRICTED_AREAS"],
+      "reason": "Baseline INT has exactly one spine boundary; all other INT items are component depth."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "source_file": "D:\\psa-workspace\\psa_rebuild\\analytics\\reports\\legacy_baseline_refactor_map.json",
+  "discipline": "IDS",
+  "counts": {
+    "total": 28,
+    "rewrite": 1,
+    "component_checklist": 21,
+    "drop": 6,
+    "fail_closed": 0,
+    "by_outcome": {
+      "REWRITE_TO_CONTROL_ASSERTION": 1,
+      "MOVE_TO_COMPONENT_CHECKLIST": 21,
+      "DROP": 6
+    }
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "prompt_extraction": [
+    {
+      "question_key": "Awareness",
+      "extracted_prompt": "1. Public Awareness Campaign",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "LawEnforcement",
+      "extracted_prompt": "2. Law Enforcement Agency Visits",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "LawComm",
+      "extracted_prompt": "3. Interoperable Communications with Law Enforcement",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "FireAgency",
+      "extracted_prompt": "4. Fire Response Agency Visits",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "FireComm",
+      "extracted_prompt": "5. Interoperable Communications with Fire Response",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "MedicalAgency",
+      "extracted_prompt": "6. Emergency Medical Response Agency Visits",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "MedicalComm",
+      "extracted_prompt": "7. Interoperable Communications with Emergency Medical Response",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "FBIInfo",
+      "extracted_prompt": "8. FBI Information Exchange",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "ISACInfo",
+      "extracted_prompt": "9. ISAC Information Exchange",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "HSINInfo",
+      "extracted_prompt": "10. HSIN Portal Information Exchange",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "InfraGard",
+      "extracted_prompt": "11. InfraGard Information Exchange",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "FederalInfo",
+      "extracted_prompt": "12. Federal Agency Information Exchange",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "StateLocalInfo",
+      "extracted_prompt": "13. State and Local Information Exchange",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "NeighborInfo",
+      "extracted_prompt": "14. Neighboring Facility Information Exchange",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "SecurityManager",
+      "extracted_prompt": "1. Security Manager",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "SecurityPlan",
+      "extracted_prompt": "2. Comprehensive Security Plan",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "PlanTraining",
+      "extracted_prompt": "3. Security Plan Training",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "PlanCoordination",
+      "extracted_prompt": "4. Security Plan Coordination",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "EmployeeTraining",
+      "extracted_prompt": "5. Employee Security Training",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "PlanTesting",
+      "extracted_prompt": "6. Security Plan Testing",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "RiskAssessment",
+      "extracted_prompt": "7. Security Risk Assessment",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "SecurityPersonnel",
+      "extracted_prompt": "1. Security Personnel",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "PerimeterFencing",
+      "extracted_prompt": "2. Perimeter Fencing and Barriers",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "AccessControl",
+      "extracted_prompt": "3. Access Control Systems",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "SecurityLighting",
+      "extracted_prompt": "4. Security Lighting",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "StandoffDistance",
+      "extracted_prompt": "5. Parking and Standoff Distance",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "BuildingEnvelope",
+      "extracted_prompt": "6. Building Envelope Security",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "KeyControl",
+      "extracted_prompt": "7. Key Control Program",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "VideoSystemType",
+      "extracted_prompt": "1. Video Surveillance Systems (VSS)",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "VideoAnalytics",
+      "extracted_prompt": "1. Video Surveillance Systems (VSS)",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "VideoCoverage",
+      "extracted_prompt": "2. Video Surveillance Coverage",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "VideoMonitoring",
+      "extracted_prompt": "3. Video Surveillance Monitoring",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "VideoRecording",
+      "extracted_prompt": "4. Video Recording and Storage",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "IntrusionDetection",
+      "extracted_prompt": "5. Intrusion Detection Systems (IDS)",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "AlarmMonitoring",
+      "extracted_prompt": "6. Alarm System Monitoring",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    },
+    {
+      "question_key": "SystemIntegration",
+      "extracted_prompt": "7. Security System Integration",
+      "rule_used": "section_title_fallback",
+      "is_valid": true
+    }
+  ],
+  "usable_prompt_count": 36,
+  "invalid_prompt_count": 0
+}

@@ -1,0 +1,32 @@
+You are performing a COMPREHENSION PASS for a PSA physical security assessment module.
+
+Your job is NOT to write questions or options.
+Your job is to interpret what the chunk SUPPORTS and to label it in a structured way.
+
+DOMAINS (use only these strings):
+- LIFE_SAFETY
+- OPERATIONS
+- PHYSICAL_SECURITY
+- USER_SAFETY
+- CYBER_AWARENESS
+
+RULES:
+- PSA scope includes LIFE SAFETY and emergency response considerations when supported:
+  suppression/detection, thermal runaway awareness, Fire/EMS access, shutdown/isolation, separation/heat barriers,
+  coordination with local fire department, response procedures and notification.
+- Cyber is allowed ONLY at baseline awareness level:
+  phishing, scams, fraud, QR-code abuse, impersonation, social engineering, misleading support channels.
+  DO NOT include cyber technical controls or IT architecture: segmentation, firewalls, IDS/IPS, SIEM, encryption/TLS,
+  firmware/patching procedures, protocols (e.g., OCPP), credential systems, API design.
+- Mark site_observable=true only if an assessor could observe/verify it onsite (physical condition, signage, procedures, training records, drills, post orders).
+- supports_question_generation=true only if the chunk can justify asking a YES/NO question about an observable vulnerability/capability.
+- generation_priority:
+  HIGH = directly supports a module question for current/observed conditions
+  MEDIUM = useful but generic/background
+  LOW = tangential or too abstract for module questions
+- life_safety_signal=true if the chunk materially supports life safety extraction (not a passing mention).
+- ops_signal=true if it materially supports ownership, procedures, exercises, coordination, response.
+- cyber_awareness_signal=true only for phishing/scams/fraud/QR/social engineering risks (no technical).
+
+OUTPUT:
+Return JSON ONLY matching the schema. No prose.

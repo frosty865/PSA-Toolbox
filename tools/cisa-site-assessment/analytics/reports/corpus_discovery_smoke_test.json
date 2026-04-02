@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-01-13T20:07:13.879977Z",
+  "summary": {
+    "documents_count": 1,
+    "chunks_count": 37,
+    "candidates_count": 50,
+    "targets_count": 1
+  },
+  "top_targets": [
+    {
+      "target_type": "BASE_PRIMARY",
+      "target_key": "VideoSystemType",
+      "match_count": 1
+    }
+  ],
+  "documents": [
+    {
+      "document_id": "c4906796-813a-4d40-8175-1f0a9c14c4d8",
+      "title": "520008_vol3",
+      "page_count": 37,
+      "chunk_count": 37,
+      "candidate_count": 50
+    }
+  ]
+}

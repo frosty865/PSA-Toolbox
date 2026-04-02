@@ -1,0 +1,53 @@
+{
+  "baseline": {
+    "disciplines": [
+      {
+        "discipline_name": "Security Management & Governance",
+        "total": 3,
+        "yes": 3,
+        "no": 0,
+        "na": 0,
+        "percent": 100.0,
+        "subtypes": []
+      }
+    ],
+    "summary": {
+      "total": 3,
+      "yes": 3,
+      "no": 0,
+      "na": 0,
+      "percent": 100.0
+    },
+    "findings": []
+  },
+  "sector": {
+    "sector_id": "healthcare",
+    "sector_name": "Healthcare and Public Health",
+    "disciplines": [
+      {
+        "discipline_name": "Healthcare Security",
+        "total": 2,
+        "yes": 0,
+        "no": 1,
+        "na": 0,
+        "percent": 0.0,
+        "subtypes": []
+      }
+    ],
+    "summary": {
+      "total": 2,
+      "yes": 0,
+      "no": 1,
+      "na": 0,
+      "percent": 0.0
+    },
+    "findings": [
+      {
+        "element_code": "SECTOR-HC-002",
+        "title": "Medical Equipment Security",
+        "discipline": "Healthcare Security",
+        "subtype": null
+      }
+    ]
+  }
+}

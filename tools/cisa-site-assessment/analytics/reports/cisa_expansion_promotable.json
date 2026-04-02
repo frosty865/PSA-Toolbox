@@ -1,0 +1,821 @@
+[
+  {
+    "candidate_id": "56db9e28-f35e-4aa9-98e6-5f094119d5f2",
+    "document_id": "6e9aa552-7996-4967-976b-7202fc5ae23c",
+    "locator": "Page 4",
+    "question_text": "2.1 What is a credential?",
+    "context": "2.1 What is a credential?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "580a72f5-89dc-4532-ba01-05d646acc733",
+    "document_id": "6e9aa552-7996-4967-976b-7202fc5ae23c",
+    "locator": "Page 4",
+    "question_text": "2.2 What are the aspects of a secure credentialing program?",
+    "context": "2.2 What are the aspects of a secure credentialing program?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "5079fb3b-6fcb-4f9e-8fae-0316245587df",
+    "document_id": "6e9aa552-7996-4967-976b-7202fc5ae23c",
+    "locator": "Page 5",
+    "question_text": "2.3 What types of credentials exist?",
+    "context": "2.3 What types of credentials exist?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "fa7220e1-a828-4284-b95c-52d67b356a36",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 15",
+    "question_text": "unlocked? Should any locks be reassessed?",
+    "context": "unlocked? Should any locks be reassessed?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "72c2e53b-0c4b-43ae-af65-143144c068e4",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 15",
+    "question_text": "protocol differ during regular business hours?",
+    "context": "protocol differ during regular business hours?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "610e8c6f-4e8e-4e6f-b341-c8471422f2fb",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 15",
+    "question_text": "review and update them?",
+    "context": "review and update them?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "bdd47004-9c0a-44a4-88b8-d7b88b8ecf47",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 15",
+    "question_text": "• What are your practices around visitor access?",
+    "context": "• What are your practices around visitor access?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "e1aa02de-557e-4db6-b042-c65f8d6c8ab5",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 15",
+    "question_text": "• What are your hours of operation for your patrons and staff?",
+    "context": "• What are your hours of operation for your patrons and staff?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.25
+  },
+  {
+    "candidate_id": "d4dd4cd2-df30-40c0-a705-f7f0425da808",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 16",
+    "question_text": "• Consider how to report incidents: Do people call an internal operations center or 9-1-1?",
+    "context": "• Consider how to report incidents: Do people call an internal operations center or 9-1-1?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.25
+  },
+  {
+    "candidate_id": "4b7b4e18-9b58-408e-842d-6b1ba9e69dab",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 16",
+    "question_text": "organization’s policies last updated?",
+    "context": "organization’s policies last updated?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "b9e03309-72c0-45a4-8b51-dcfd84e4c06e",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 17",
+    "question_text": "threats to the organization and the surrounding community?",
+    "context": "threats to the organization and the surrounding community?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "7b12819a-e402-4b69-9c43-38e49d85557b",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 17",
+    "question_text": "(CCTV) technology in the event of an armed or hostage-taking incident?",
+    "context": "(CCTV) technology in the event of an armed or hostage-taking incident?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.25
+  },
+  {
+    "candidate_id": "7292d360-fdee-4cc3-8ad3-8771e54f8830",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 18",
+    "question_text": "reinvestigated?",
+    "context": "reinvestigated?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "cf57ea7f-8859-4585-95c7-70d5aaea93eb",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 18",
+    "question_text": "insider threat information?",
+    "context": "insider threat information?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "0dff7e4b-2bf6-4227-9a04-c2946cb71724",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 19",
+    "question_text": "of concerning behavior and/or suspicious activity?",
+    "context": "of concerning behavior and/or suspicious activity?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "000a803f-7f19-47e0-be9f-3647c5bcfaab",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 19",
+    "question_text": "• What potential security threats have your employees expressed concern about?",
+    "context": "• What potential security threats have your employees expressed concern about?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.25
+  },
+  {
+    "candidate_id": "ab38b9bc-6fbf-49bb-be5b-bf433acdea97",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 19",
+    "question_text": "security vulnerabilities?",
+    "context": "security vulnerabilities?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "fcd84bd1-e31f-4d32-b902-fe290b273f5e",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 20",
+    "question_text": "security strategy?",
+    "context": "security strategy?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "18a947d5-2d99-43d8-98de-fc7fcdcb6fa0",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 20",
+    "question_text": "• Do you have a public relations manager to control communication with media during an event?",
+    "context": "• Do you have a public relations manager to control communication with media during an event?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "182dab47-a5a8-4b1a-9c9a-5984d22c5c07",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 21",
+    "question_text": "• What man-made or external threats could hurt your organization, facility, staff, and/or customers?",
+    "context": "• What man-made or external threats could hurt your organization, facility, staff, and/or customers?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.25
+  },
+  {
+    "candidate_id": "6f0e1bd0-224d-4196-b5e1-59a92c6ce8fd",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 23",
+    "question_text": "Have you conducted a vulnerability assessment in the past?",
+    "context": "Have you conducted a vulnerability assessment in the past?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "0d4d651d-61c3-4b2d-9a78-c988401a6b2d",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 23",
+    "question_text": "people / processes / security systems to deter, detect, delay, or defend against a potential threat?",
+    "context": "people / processes / security systems to deter, detect, delay, or defend against a potential threat?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "a6618b8b-ac4f-44f4-8304-660de8185943",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 24",
+    "question_text": "• What are the most likely threats to your organization?",
+    "context": "• What are the most likely threats to your organization?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "127352ce-05fa-42bb-aa6a-a8ac37a3501e",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 24",
+    "question_text": "• Which vulnerabilities should be prioritized ahead of others?",
+    "context": "• Which vulnerabilities should be prioritized ahead of others?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "d3559002-4271-4819-9f91-6d755416621f",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 24",
+    "question_text": "• What is the likelihood of any given threat to occur?",
+    "context": "• What is the likelihood of any given threat to occur?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "03a69cfd-e30b-4e3c-9932-38763dd22ced",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 24",
+    "question_text": "greatest danger(s) to your organization?",
+    "context": "greatest danger(s) to your organization?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "24c9ffb3-da05-4f62-a374-40c3c5905003",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 24",
+    "question_text": "• What is your organization’s willingness to accept the associated consequences of each risk?",
+    "context": "• What is your organization’s willingness to accept the associated consequences of each risk?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "a0a5a26e-731e-4875-b8c3-0f29fe816874",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 24",
+    "question_text": "• What is your organization’s attitude toward security practices?",
+    "context": "• What is your organization’s attitude toward security practices?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "6fb49e21-e354-430d-aaf7-67ee87795bbf",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 24",
+    "question_text": "• What personnel resources do you have to direct, manage, and oversee security operations?",
+    "context": "• What personnel resources do you have to direct, manage, and oversee security operations?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.25
+  },
+  {
+    "candidate_id": "82d6ee5b-dfc0-4e18-b9e1-5a3d817f78c7",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 24",
+    "question_text": "• What is your budget to support security initiatives, both immediate and long-term?",
+    "context": "• What is your budget to support security initiatives, both immediate and long-term?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "e5f9340b-e305-4c53-926a-77d31b57df69",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 39",
+    "question_text": "• How will you maintain lines of communication during an emergency incident and recovery efforts?",
+    "context": "• How will you maintain lines of communication during an emergency incident and recovery efforts?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.25
+  },
+  {
+    "candidate_id": "905fec6e-629d-4f77-83b2-dc203704d64c",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 39",
+    "question_text": "• How will you sustain the most essential business functions?",
+    "context": "• How will you sustain the most essential business functions?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "c3539b83-9b23-4a90-8d2a-546e00b59087",
+    "document_id": "b2081d33-b1dd-4957-b04a-519391030253",
+    "locator": "Page 39",
+    "question_text": "• How will you protect critical information, records, and IT systems?",
+    "context": "• How will you protect critical information, records, and IT systems?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "4056ec6c-a3c0-48ec-a275-5fda57db480f",
+    "document_id": "d2757e6c-0b9b-43ae-bd10-f96f739b5f89",
+    "locator": "Page 10",
+    "question_text": "Kroman, David. “How often do cars crash into buildings in Seattle? Way more than you think.” Seattle Times. February 12, 2023.",
+    "context": "23. Kroman, David. “How often do cars crash into buildings in Seattle? Way more than you think.” Seattle Times. February 12, 2023.",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "f118627a-122f-457b-aec8-8d02879e8b4e",
+    "document_id": "d2757e6c-0b9b-43ae-bd10-f96f739b5f89",
+    "locator": "Page 18",
+    "question_text": "Can I save my data?",
+    "context": "Can I save my data?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "b50464a6-34b7-47f0-99e1-b3e80f5de5f2",
+    "document_id": "d2757e6c-0b9b-43ae-bd10-f96f739b5f89",
+    "locator": "Page 18",
+    "question_text": "Does the tool collect my information?",
+    "context": "Does the tool collect my information?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "37163158-0fdc-490e-9ddd-fcc2cda801b8",
+    "document_id": "d2757e6c-0b9b-43ae-bd10-f96f739b5f89",
+    "locator": "Page 18",
+    "question_text": "What is it?",
+    "context": "What is it?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "612c3c62-f9c9-48af-8ac3-6a710b015a83",
+    "document_id": "d2757e6c-0b9b-43ae-bd10-f96f739b5f89",
+    "locator": "Page 18",
+    "question_text": "separated from vehicular traffic?",
+    "context": "separated from vehicular traffic?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "215d1c18-b340-4f52-a8b8-801dbb7be1df",
+    "document_id": "d2757e6c-0b9b-43ae-bd10-f96f739b5f89",
+    "locator": "Page 18",
+    "question_text": "traversing?",
+    "context": "traversing?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "94c7814d-6b35-4963-bc69-06b327d1e7e8",
+    "document_id": "d2757e6c-0b9b-43ae-bd10-f96f739b5f89",
+    "locator": "Page 18",
+    "question_text": "■ What angles of attack could a vehicle use to harm my infrastructure?",
+    "context": "■ What angles of attack could a vehicle use to harm my infrastructure?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "c853025c-3e0d-4c9b-b17d-0d22a7381679",
+    "document_id": "d2757e6c-0b9b-43ae-bd10-f96f739b5f89",
+    "locator": "Page 18",
+    "question_text": "■ Are there any natural vehicle barriers already in place?",
+    "context": "■ Are there any natural vehicle barriers already in place?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "d243da7f-c8d7-4b66-b6a6-c5607e4cccd5",
+    "document_id": "d2757e6c-0b9b-43ae-bd10-f96f739b5f89",
+    "locator": "Page 18",
+    "question_text": "■ Are there any delivery vehicle access points?",
+    "context": "■ Are there any delivery vehicle access points?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "60947acc-fd58-40fe-8280-540ca1f8e2f6",
+    "document_id": "d2757e6c-0b9b-43ae-bd10-f96f739b5f89",
+    "locator": "Page 18",
+    "question_text": "■ Where are vehicle parking spots, lots, or garages?",
+    "context": "■ Where are vehicle parking spots, lots, or garages?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "930c45f2-f716-411f-9fcc-52dcb6e6a08c",
+    "document_id": "d2757e6c-0b9b-43ae-bd10-f96f739b5f89",
+    "locator": "Page 18",
+    "question_text": "■ Are there security guards at entry control points?",
+    "context": "■ Are there security guards at entry control points?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "73fc32da-15b6-4558-b5b9-84a3cd97989e",
+    "document_id": "d2757e6c-0b9b-43ae-bd10-f96f739b5f89",
+    "locator": "Page 18",
+    "question_text": "■ Is there an entry control point for vehicles? If so, how far from infrastructure is it located?",
+    "context": "■ Is there an entry control point for vehicles? If so, how far from infrastructure is it located?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "9435e5d0-7344-4810-86f5-f7d5a22b16b3",
+    "document_id": "d2757e6c-0b9b-43ae-bd10-f96f739b5f89",
+    "locator": "Page 18",
+    "question_text": "■ What is the maximum speed a vehicle could attain going over the land?",
+    "context": "■ What is the maximum speed a vehicle could attain going over the land?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "09941e48-3ae4-4f46-8385-93630b5eefd2",
+    "document_id": "d2757e6c-0b9b-43ae-bd10-f96f739b5f89",
+    "locator": "Page 18",
+    "question_text": "■ What types of vehicles could traverse the land?",
+    "context": "■ What types of vehicles could traverse the land?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "7568d40f-7487-4a8f-8483-9b25bf3bc240",
+    "document_id": "d2757e6c-0b9b-43ae-bd10-f96f739b5f89",
+    "locator": "Page 18",
+    "question_text": "■ Is my land, the adjacent land, or the surrounding land traversable by vehicles?",
+    "context": "■ Is my land, the adjacent land, or the surrounding land traversable by vehicles?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "1b47c648-211e-420e-9fa6-ea832a447ca5",
+    "document_id": "d2757e6c-0b9b-43ae-bd10-f96f739b5f89",
+    "locator": "Page 18",
+    "question_text": "■ Are there any traffic-calming areas?",
+    "context": "■ Are there any traffic-calming areas?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "d1efb56a-ba93-478e-b817-1d7ab159181b",
+    "document_id": "d2757e6c-0b9b-43ae-bd10-f96f739b5f89",
+    "locator": "Page 18",
+    "question_text": "Figure 4. What is the Vehicle Ramming Self-Assessment Tool?",
+    "context": "Figure 4. What is the Vehicle Ramming Self-Assessment Tool?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "e9230d14-f0c2-497c-ba68-0ca06801b4b8",
+    "document_id": "d2757e6c-0b9b-43ae-bd10-f96f739b5f89",
+    "locator": "Page 18",
+    "question_text": "How can I access the tool?",
+    "context": "How can I access the tool?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "4f844350-9c4c-46b2-86fe-e90fbb57be78",
+    "document_id": "d2757e6c-0b9b-43ae-bd10-f96f739b5f89",
+    "locator": "Page 18",
+    "question_text": "How does the tool work?",
+    "context": "How does the tool work?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "06d6b2e5-72b4-4737-a490-7ef74b381ea8",
+    "document_id": "d2757e6c-0b9b-43ae-bd10-f96f739b5f89",
+    "locator": "Page 51",
+    "question_text": "Conduct a consequence analysis. What could happen? How bad could it be?",
+    "context": "Conduct a consequence analysis. What could happen? How bad could it be?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "e5dfc97c-9198-452d-a7d4-ebac6704421b",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 10",
+    "question_text": "• Does the venue own or control the asset? If not, is the owner known?",
+    "context": "• Does the venue own or control the asset? If not, is the owner known?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "bfa6e811-e3aa-44e8-9814-0e38f8f94bc1",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 10",
+    "question_text": "• Is this a place where people gather?",
+    "context": "• Is this a place where people gather?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "b9c183fe-4519-4a63-ba26-fb3fd9b9b08d",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 10",
+    "question_text": "• Are procedures in place to manage pedestrian traffic?",
+    "context": "• Are procedures in place to manage pedestrian traffic?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.25
+  },
+  {
+    "candidate_id": "ebe8fe94-6885-4ad1-ab55-dacf41fcdec3",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 10",
+    "question_text": "• Are procedures in place to separate vehicle traffic from pedestrian traffic?",
+    "context": "• Are procedures in place to separate vehicle traffic from pedestrian traffic?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.25
+  },
+  {
+    "candidate_id": "21414547-aef6-43aa-9465-7d51f8b47840",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 10",
+    "question_text": "• If an evacuation or shelter-in-place plan exists, does it cover this area?",
+    "context": "• If an evacuation or shelter-in-place plan exists, does it cover this area?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.25
+  },
+  {
+    "candidate_id": "ec038e69-07b5-48f7-81e5-c99bcfc7254a",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 10",
+    "question_text": "controlled area) are in place for this area?",
+    "context": "controlled area) are in place for this area?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "220c0139-4c42-4934-bc93-4f10e600ed21",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 11",
+    "question_text": "How is command structure established?",
+    "context": "How is command structure established?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "204b17cd-5a19-4159-ac89-1d6c7367b75a",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 11",
+    "question_text": "What type of command structure has been established?",
+    "context": "What type of command structure has been established?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "aa939204-1fa0-4a78-a409-0c776abf7a06",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 12",
+    "question_text": "Does the event or gathering have a written security or emergency operations plan(s)?",
+    "context": "Does the event or gathering have a written security or emergency operations plan(s)?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.25
+  },
+  {
+    "candidate_id": "c5b8beb5-5267-45ed-94e4-42012ba2cd3f",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 15",
+    "question_text": "What systems are in place to support mass notification at the event?",
+    "context": "What systems are in place to support mass notification at the event?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.25
+  },
+  {
+    "candidate_id": "ad2ea183-489e-47ca-93f4-3fd20778b700",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 15",
+    "question_text": "Will event planners conduct or receive a threat assessment prior to the event?",
+    "context": "Will event planners conduct or receive a threat assessment prior to the event?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "4cc1681b-045d-4dc8-9d7e-2156e8998c63",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 16",
+    "question_text": "management agency?",
+    "context": "management agency?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "59995cd4-57ee-481a-b46f-b292e43fa331",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 16",
+    "question_text": "Has the policy been coordinated with first responders?",
+    "context": "Has the policy been coordinated with first responders?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.25
+  },
+  {
+    "candidate_id": "520f8b1d-4198-4d6d-9746-a5c3503473d8",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 16",
+    "question_text": "Does a protocol for assisting a lost child/lost person exist?",
+    "context": "Does a protocol for assisting a lost child/lost person exist?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "d4c6a589-71e7-4903-a153-8040da3cca12",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 17",
+    "question_text": "If yes, does a policy for addressing violations exist?",
+    "context": "If yes, does a policy for addressing violations exist?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "a7373a0a-360f-4895-84c3-a603349a5c95",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 17",
+    "question_text": "Does a policy regarding unmanned aerial systems exist?",
+    "context": "Does a policy regarding unmanned aerial systems exist?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "c9b1b087-3379-4c67-a474-2fc13d603ec9",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 17",
+    "question_text": "sponsor’s jurisdiction?",
+    "context": "sponsor’s jurisdiction?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "40e61e66-08a3-452b-b295-ca15452fcc7c",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 17",
+    "question_text": "of warning expected?",
+    "context": "of warning expected?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "00c54f5b-9aaa-4230-9619-bbbe6accb1f2",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 17",
+    "question_text": "Is the shelter big enough for everyone and safe enough for the most likely hazards?",
+    "context": "Is the shelter big enough for everyone and safe enough for the most likely hazards?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "e2f8d8f0-3c07-471a-82e2-3ea33a51da49",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 17",
+    "question_text": "Have event planners developed an evacuation and/or shelter-in-place plan?",
+    "context": "Have event planners developed an evacuation and/or shelter-in-place plan?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.25
+  },
+  {
+    "candidate_id": "601da8f4-5947-4ccf-9d9f-ab9a1c77eb09",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 18",
+    "question_text": "Are the plans trained or exercised?",
+    "context": "Are the plans trained or exercised?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.25
+  },
+  {
+    "candidate_id": "241722ee-266a-4ab2-9de5-099abb933acf",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 18",
+    "question_text": "Who conducts security and safety inspections?",
+    "context": "Who conducts security and safety inspections?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "37a70918-8753-490a-b84d-fc2ffbcba71c",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 19",
+    "question_text": "Does a process exist to inspect the venue for suspicious items prior to the event?",
+    "context": "Does a process exist to inspect the venue for suspicious items prior to the event?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "ac4458e4-67ed-4495-979b-3ee9c83cbe62",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 2",
+    "question_text": "Is this a recurring event?",
+    "context": "Is this a recurring event?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "4ce23e5f-537a-4425-8012-181c1e99f6b5",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 20",
+    "question_text": "Are employees, volunteers, vendors, spectators, and participants permitted to carry firearms?",
+    "context": "Are employees, volunteers, vendors, spectators, and participants permitted to carry firearms?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.25
+  },
+  {
+    "candidate_id": "09aa37ef-9687-47da-b148-a31a73db518c",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 20",
+    "question_text": "Are off-duty officers permitted to retain firearms?",
+    "context": "Are off-duty officers permitted to retain firearms?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "e6064370-7102-4c71-90c7-f073e17a7cbd",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 21",
+    "question_text": "How is the perimeter of the event defined?",
+    "context": "How is the perimeter of the event defined?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "8b143721-27a4-40e8-8e4b-4cc0c1887d88",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 22",
+    "question_text": "Do security planners use multiple layers of protection to enhance perimeter security at the event?",
+    "context": "Do security planners use multiple layers of protection to enhance perimeter security at the event?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "d7c6db23-e9da-4d0a-886e-d6da7604f3ca",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 24",
+    "question_text": "Does the venue have a high-speed avenue of approach?",
+    "context": "Does the venue have a high-speed avenue of approach?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "48ce2c58-08ae-4007-8397-e306f5da5ebc",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 27",
+    "question_text": "Are layers of entry control established?",
+    "context": "Are layers of entry control established?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "582441af-e313-4a72-be6b-b37582767095",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 4",
+    "question_text": "slated to occur inside a building, has the building been designed to host this type of event safely?",
+    "context": "slated to occur inside a building, has the building been designed to host this type of event safely?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "41d648d4-d29c-43f9-887f-b0676ac8956c",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 4",
+    "question_text": "located nearby? Will participants arrive early to tailgate or celebrate afterwards?",
+    "context": "located nearby? Will participants arrive early to tailgate or celebrate afterwards?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "e7f191d6-167c-47d0-918d-c9a4817017ca",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 5",
+    "question_text": "What is the expected crowd density?",
+    "context": "What is the expected crowd density?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "b691b54d-2417-4001-8bc5-3370f92695fe",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 5",
+    "question_text": "Who will be attending the event?",
+    "context": "Who will be attending the event?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "948618c1-af91-42a4-a6e0-90174edf9735",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 6",
+    "question_text": "Will alcohol consumption be permitted?",
+    "context": "Will alcohol consumption be permitted?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "71d79281-0ffe-44fc-93b1-59f2be8989e8",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 6",
+    "question_text": "Can patrons bring alcohol into the event?",
+    "context": "Can patrons bring alcohol into the event?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  },
+  {
+    "candidate_id": "af33c201-107a-425e-a5ce-325f4e1b1c0c",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 6",
+    "question_text": "Has the alcohol policy been coordinated with first responders?",
+    "context": "Has the alcohol policy been coordinated with first responders?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.25
+  },
+  {
+    "candidate_id": "8399a4e3-1331-476f-93a5-f28f08feb0d0",
+    "document_id": "f35caf5a-e839-4e9b-b3dd-4d52d3f6c019",
+    "locator": "Page 7",
+    "question_text": "Can the event cease alcohol sales during the event?",
+    "context": "Can the event cease alcohol sales during the event?",
+    "lane_reason": "event/venue-specific or not clearly general; keep as overlay expansion",
+    "general_applicability_score": 0.0
+  }
+]

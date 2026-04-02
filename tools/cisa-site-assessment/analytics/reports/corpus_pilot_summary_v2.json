@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-01-13T20:21:09.327730Z",
+  "document_id": "d523bcbe-60db-47bf-8487-80b533673d29",
+  "title": "Protecting Patrons at Public Gathering Locations",
+  "source": {
+    "citation_text": "CISA, Protecting Patrons at Public Gathering Locations, 2025-08-01",
+    "source_type": "PDF",
+    "file_hash": "069ebf820d69c4eb4df1efa6e143941f32c716d89243ca6ea2cc6769c28bf45d"
+  },
+  "extraction": {
+    "pages_total": 2,
+    "pages_extracted": 2,
+    "extraction_coverage_pct": 100.0,
+    "extractor_version": "pdfplumber_v1"
+  },
+  "processing": {
+    "chunks_count": 21,
+    "candidates_count": 12
+  },
+  "success_criteria": {
+    "pages_extracted_target": ">= 90%",
+    "pages_extracted_met": true,
+    "chunks_count_target": ">= 20",
+    "chunks_count_met": true,
+    "candidates_count_target": ">= 9",
+    "candidates_count_met": true,
+    "no_runtime_writes": true
+  }
+}

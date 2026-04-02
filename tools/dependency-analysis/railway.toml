@@ -1,0 +1,10 @@
+# Deploy with Railway root directory = asset-dependency-tool (this folder).
+# Set IDT_APP_ROOT=/app, mount or include ADA/report template.docx, optional FIELD_EXPORT_CORS_ORIGINS for hybrid static UI.
+
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+healthcheckPath = "/"
+restartPolicyType = "ON_FAILURE"

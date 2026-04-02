@@ -1,0 +1,16 @@
+[
+  {
+    "canon_id": "BASE-SFO-001",
+    "discipline_code": "SFO",
+    "subtype_code": null,
+    "question_text": "Is a security force or designated security response capability defined for the facility?",
+    "response_enum": ["YES","NO","N_A"]
+  },
+  {
+    "canon_id": "BASE-SFO-002",
+    "discipline_code": "SFO",
+    "subtype_code": null,
+    "question_text": "Are security response actions defined for incidents requiring protective intervention?",
+    "response_enum": ["YES","NO","N_A"]
+  }
+]

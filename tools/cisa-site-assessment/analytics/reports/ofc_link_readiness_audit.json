@@ -1,0 +1,595 @@
+{
+  "questions": {
+    "total": 130,
+    "with_subtype_populated": 111,
+    "subtype_population_rate": 0.8538461538461538,
+    "subtype_distinct_count": 105,
+    "subtype_column": "discipline_subtype_id",
+    "subtype_sample_counts": {
+      "18affcfc-955d-4e47-a471-f8846be8523c": 2,
+      "223f2d98-d8b8-41c1-937b-b6f565f9fce3": 2,
+      "3c34ff6f-8aa3-4125-892a-fc772e97d50b": 2,
+      "7ac2d54b-cd7c-4fa3-83e1-8ee669e94fd4": 2,
+      "8317b7c8-633e-46ca-8914-319e0cbab9cd": 2,
+      "beec7bed-a482-4624-8bef-2b28c565fb36": 2,
+      "03012b3f-77db-4f5c-b98f-7e1ab218278a": 1,
+      "03e40c3c-6b9d-4c23-8926-8fa0864ac8ab": 1,
+      "05b22c7d-67f1-423e-bab1-8b6485345a8e": 1,
+      "09335ae3-724b-48c5-b4cc-c97905ebe768": 1
+    }
+  },
+  "ofcs": {
+    "total": 111,
+    "with_subtype_populated": 111,
+    "subtype_population_rate": 1.0,
+    "subtype_distinct_count": 31,
+    "subtype_column": "discipline_subtype_id",
+    "subtype_sample_counts": {
+      "ee0eaec7-ba5b-414d-9b69-83f8d3c46c2b": 4,
+      "b31e0ca6-7813-466c-92c3-2cd660aed5aa": 4,
+      "3227ab36-7f31-4be4-a0c2-0f838518fa96": 4,
+      "95f8b59e-2a85-4ef6-986a-dd702310d445": 4,
+      "2a159f3f-6cef-40a2-bebb-ac6c1bb7001e": 4,
+      "5838c9d6-9172-4ff0-983c-62b93ee0b830": 4,
+      "184882ba-267a-4035-a77a-2fa4920782cb": 4,
+      "fc3078fc-5bfe-470b-bd3e-e3270ae091c6": 4,
+      "5ce9cd73-f53c-4044-aacc-4e90ce4d8d50": 4,
+      "8a77c088-6e84-4791-a60c-a611044f512f": 4
+    }
+  },
+  "citation_bound_ofcs": {
+    "total_cited": 111,
+    "cited_with_subtype_populated": 111,
+    "cited_subtype_population_rate": 1.0,
+    "cited_subtype_distinct_count": 31,
+    "cited_subtype_sample_counts": {
+      "ee0eaec7-ba5b-414d-9b69-83f8d3c46c2b": 4,
+      "b31e0ca6-7813-466c-92c3-2cd660aed5aa": 4,
+      "3227ab36-7f31-4be4-a0c2-0f838518fa96": 4,
+      "95f8b59e-2a85-4ef6-986a-dd702310d445": 4,
+      "2a159f3f-6cef-40a2-bebb-ac6c1bb7001e": 4,
+      "5838c9d6-9172-4ff0-983c-62b93ee0b830": 4,
+      "184882ba-267a-4035-a77a-2fa4920782cb": 4,
+      "fc3078fc-5bfe-470b-bd3e-e3270ae091c6": 4,
+      "5ce9cd73-f53c-4044-aacc-4e90ce4d8d50": 4,
+      "8a77c088-6e84-4791-a60c-a611044f512f": 4
+    }
+  },
+  "join_health": {
+    "question_subtypes_analyzed": 105,
+    "subtypes_with_matching_ofcs": 31,
+    "subtype_coverage": {
+      "03012b3f-77db-4f5c-b98f-7e1ab218278a": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "03e40c3c-6b9d-4c23-8926-8fa0864ac8ab": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "05b22c7d-67f1-423e-bab1-8b6485345a8e": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "09335ae3-724b-48c5-b4cc-c97905ebe768": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "09c4723a-5665-4661-a699-18f0ef3803a1": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "0a642d0c-e14b-45c9-bb2f-7b210111cbda": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "0ae2bca3-ae66-4a8d-b6a8-baa98e2a488a": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "0ee9db0c-5daa-4f7e-8070-48bd16ca9318": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "184882ba-267a-4035-a77a-2fa4920782cb": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "188ae906-0a31-4f36-b923-75ec28a32dce": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "18affcfc-955d-4e47-a471-f8846be8523c": {
+        "questions_count": 2,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "197cb197-88de-4a84-93cf-d52bc7037109": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 2,
+        "coverage_ratio": 2.0
+      },
+      "1dbe7509-76a7-4cfc-bd97-d73de4a85cb0": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "20d11544-f449-46f2-9aa8-39cfcf8a134b": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "218ae01b-45d0-4fd4-9fc9-09fc6e06ab61": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "223f2d98-d8b8-41c1-937b-b6f565f9fce3": {
+        "questions_count": 2,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "23d0fe7a-bd9f-4f66-8f3d-49d0e935a010": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "244c4ee1-2f2e-4014-96cc-8a32877ef1d2": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 3,
+        "coverage_ratio": 3.0
+      },
+      "25f2768b-77f0-4e3f-ad3d-71d68c2bbfea": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "2a159f3f-6cef-40a2-bebb-ac6c1bb7001e": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "2b6085c9-83c4-49b2-8952-22fcc70b7e8d": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "3227ab36-7f31-4be4-a0c2-0f838518fa96": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "36815b71-0947-4707-9f97-bf041262304a": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "382161e5-0f9c-47e1-978e-0475e41fe20b": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "3a8ecc24-f6d7-49e1-a214-96870cb822e0": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 3,
+        "coverage_ratio": 3.0
+      },
+      "3c34ff6f-8aa3-4125-892a-fc772e97d50b": {
+        "questions_count": 2,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "3d00be84-ca14-4054-b20b-a318414f4bbc": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "3d257d4a-a8f9-4d49-8342-40232231064e": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "3d371be7-9489-4563-af51-a2746d1b5e8b": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "4190644e-4847-49d1-8ccf-879b567d2b87": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "4358ddbf-6974-4174-adea-ad16e8142bf3": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "43bea7d5-02b0-405a-b4a4-07f6369b8f74": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "471076c9-5974-408d-88a7-40135e6637d4": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "49dc0a38-bed6-40fa-b196-ed2c2e7073b2": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "4ee36ce6-4659-4590-901d-5a6cbc009782": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "4f42afe6-9c5e-40c0-900a-76513bd5fbab": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "568712ed-322f-4062-b14c-ff7683151eb2": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "57faa5fb-4c92-45cd-91d4-ae64181d9e09": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 1,
+        "coverage_ratio": 1.0
+      },
+      "5838c9d6-9172-4ff0-983c-62b93ee0b830": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "5a112ba9-dfea-4009-b618-7a2bb9273623": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "5ce9cd73-f53c-4044-aacc-4e90ce4d8d50": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "5d3a8074-9ecb-49e0-a497-81377daa1521": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "613fafc4-7579-417c-89d3-4500eac5fd49": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "63def126-578a-4ed9-81eb-2b854c7779c1": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "66384ade-010f-495c-ac4f-e0127f0f9507": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 2,
+        "coverage_ratio": 2.0
+      },
+      "6a2654c9-0ee5-4a6a-8267-23d78aa2320e": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "6abbccac-a6ba-4b8d-a451-1bc099e62b96": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 3,
+        "coverage_ratio": 3.0
+      },
+      "6b36053e-e5c0-4da8-a272-01330311f7fd": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "6e278b41-f84d-4b76-8886-2593dab37fd4": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "75bdbc99-1b8d-44c4-8143-9df875be3e64": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "7ac2d54b-cd7c-4fa3-83e1-8ee669e94fd4": {
+        "questions_count": 2,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "7eb102ab-7c09-4647-9b30-ef7a2f993b73": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "8317b7c8-633e-46ca-8914-319e0cbab9cd": {
+        "questions_count": 2,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "854f3562-08a1-4548-9510-16ba43728014": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "888c377c-351f-46f0-8f9a-4ee0d563bd3d": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "8a2c1efb-6326-4957-bc4c-dcc53ae79f2b": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "8a77c088-6e84-4791-a60c-a611044f512f": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "8c3e82d1-a7c9-40b2-8836-cfa3da36d40c": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "8c44d0fa-ddbf-43ab-b6d1-78da89b36b32": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "8e3816eb-d69d-4410-9bf6-54f6dc5d3326": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "9080f9f9-15ad-42fb-98ea-9f83824a92ed": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "90eb86ac-406d-4aa7-8aa9-196328041434": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "919a08df-9fbe-4470-aaa4-a69e49885d00": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "927444d9-3cc2-4b89-8c7d-c9a1744b731b": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "950cb111-c938-4d36-b82f-1f39d8ea2084": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 3,
+        "coverage_ratio": 3.0
+      },
+      "95f8b59e-2a85-4ef6-986a-dd702310d445": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "99cf5dee-e0ab-4fe1-be4d-506790a0a87a": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "9a15c737-7b60-4aee-b0a0-b3b13e854c9c": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "9a84b834-8fe5-4c25-a11b-750276b2f76e": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "9ad62209-3efe-4339-b079-e17f9810f6b0": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 3,
+        "coverage_ratio": 3.0
+      },
+      "9ae3d6d4-4ecd-4006-9d3f-3721227231be": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "a3cf4746-2ac9-48ea-91bb-1b0a9f6aa2ee": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "aa821b9d-248a-44ee-8e8a-28eaf2c6e9a9": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "ae65413f-ef25-469c-bb60-867450f09d5e": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "af15f081-26a4-41d5-abd4-2f1fcb73ed18": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "b31e0ca6-7813-466c-92c3-2cd660aed5aa": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "b738eda6-9bb8-4934-8c74-92f5ab46068c": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 3,
+        "coverage_ratio": 3.0
+      },
+      "b7fefab1-cd13-4781-93d4-fedd133cdf67": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "bb6c21bc-8d44-45b6-bdb3-c962886579af": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "be90faef-f3b6-4c33-9313-5a3b977f2109": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "bedba7d7-6ba3-48da-8ea8-5e48d20f09f4": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "beec7bed-a482-4624-8bef-2b28c565fb36": {
+        "questions_count": 2,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "c63f91bf-05ab-43e8-8979-10d02c20ed2d": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "c6f67323-5b53-4592-ab7e-ac2663404964": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "c8ba9282-9aa1-48da-a5ac-2aab48eb08e4": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "cabf30b9-fba4-4712-94aa-71d5bb420942": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "d03d3677-1835-4ec7-9b48-51189a4138a8": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "d121ce36-7c01-4eb3-ad45-34c9add6c96d": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "d3a74561-34a4-4b38-94bd-fd50c363cda4": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "d596c56e-df59-4311-90d2-7af8147b0770": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "ddc50132-2cb2-48e4-8022-d3c568dc4fc9": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "ded67053-d321-445c-95f9-d2326b72b6e6": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "df97267d-514d-4016-9e21-30b36fac4f27": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "e25cb583-3392-4eb8-9f32-92fa9f31f0cd": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "e2f98c7a-f099-45c8-a002-8d3d97f9ed4b": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "e69bf4fd-c476-489d-a73f-a5b8c9d90e33": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "e7e2aa40-e832-48bc-a142-cad9986620db": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "ee0eaec7-ba5b-414d-9b69-83f8d3c46c2b": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "eeb09a9c-b830-4118-ab27-535b48359303": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "f08e661e-09b0-4982-9045-4941a6db6d4f": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "f903d94d-34e1-4aca-bfc5-cec8a6ce6df4": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "fa863670-6e40-4da8-9887-148d48b4f13c": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "fbd859ef-9c2e-40d4-8ab0-95efee01dd60": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      },
+      "fc3078fc-5bfe-470b-bd3e-e3270ae091c6": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 4,
+        "coverage_ratio": 4.0
+      },
+      "fd57faba-7b13-4b39-8b75-fca0bba4f208": {
+        "questions_count": 1,
+        "cited_ofcs_matching_subtype": 0,
+        "coverage_ratio": 0.0
+      }
+    }
+  },
+  "diagnosis": {
+    "subtype_compatibility": "partial_match",
+    "bottleneck": [
+      "Only 31/105 question subtypes have matching cited OFCs"
+    ]
+  }
+}

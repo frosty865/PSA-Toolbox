@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import Link from '@/components/FieldLink';
 import { usePathname } from 'next/navigation';
 import { PraSlaToggle } from './PraSlaToggle';
 import { CrossDependencyToggle } from './CrossDependencyToggle';
@@ -12,61 +12,55 @@ export function AssessmentChrome({ children }: { children: React.ReactNode }) {
   const isNew = pathname?.includes('/new');
   const isReview = pathname?.includes('/review');
   const isReport = pathname?.includes('/report');
-  const currentWorkspace = isCategories
-    ? 'Category data workspace'
-    : isNew
-      ? 'Revision export and restore workspace'
-      : isReview
-        ? 'Review and export workspace'
-        : isReport
-          ? 'Printable report workspace'
-          : 'Assessment workspace';
 
   return (
-    <div className="ida-workspace-shell">
-      <div className="ida-workspace-topbar">
-        <div className="ida-workspace-context">
-          <p className="ida-workspace-eyebrow">Operator Workspace</p>
-          <h2 className="ida-workspace-title">{currentWorkspace}</h2>
-        </div>
-        <nav className="ida-workspace-nav" aria-label="Assessment workspace navigation">
-          <Link href="/" className="ida-btn ida-btn-outline-secondary ida-btn-sm">
+    <>
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          gap: '1rem',
+          padding: '0.5rem 0',
+          marginBottom: '1rem',
+          borderBottom: '1px solid var(--cisa-gray-light)',
+        }}
+      >
+        <nav style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
+          <Link href="/" className="btn btn-outline-secondary btn-sm">
             ← Home
           </Link>
           <Link
             href="/assessment/categories/"
-            className={isCategories ? 'ida-btn ida-btn-primary ida-btn-sm' : 'ida-btn ida-btn-outline-secondary ida-btn-sm'}
+            className={isCategories ? 'btn btn-primary btn-sm' : 'btn btn-outline-secondary btn-sm'}
           >
-            Category workspace
+            Category data
           </Link>
           <Link
             href="/assessment/new/"
-            className={isNew ? 'ida-btn ida-btn-primary ida-btn-sm' : 'ida-btn ida-btn-outline-secondary ida-btn-sm'}
+            className={isNew ? 'btn btn-primary btn-sm' : 'btn btn-outline-secondary btn-sm'}
           >
-            Revision exports
+            Export / Import
           </Link>
           <Link
             href="/assessment/review/"
-            className={isReview ? 'ida-btn ida-btn-primary ida-btn-sm' : 'ida-btn ida-btn-outline-secondary ida-btn-sm'}
+            className={isReview ? 'btn btn-primary btn-sm' : 'btn btn-outline-secondary btn-sm'}
           >
-            Review and export
+            Review &amp; Export
           </Link>
           <Link
             href="/assessment/report/"
-            className={isReport ? 'ida-btn ida-btn-primary ida-btn-sm' : 'ida-btn ida-btn-outline-secondary ida-btn-sm'}
+            className={isReport ? 'btn btn-primary btn-sm' : 'btn btn-outline-secondary btn-sm'}
           >
-            Printable report
+            Report
           </Link>
         </nav>
-        <div className="ida-workspace-toggles">
+        <div style={{ marginLeft: 'auto', display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
           <PraSlaToggle />
           <CrossDependencyToggle />
         </div>
       </div>
-      <p className="ida-workspace-note">
-        Progress saves locally while you navigate tabs, review dependencies, and generate exports.
-      </p>
       {children}
-    </div>
+    </>
   );
 }

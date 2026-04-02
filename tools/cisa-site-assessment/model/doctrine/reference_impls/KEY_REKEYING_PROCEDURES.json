@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "discipline_subtype_id": "20d11544-f449-46f2-9aa8-39cfcf8a134b",
+  "discipline_name": "Key Control",
+  "discipline_subtype_name": "Rekeying Procedures",
+
+  "section_1_baseline_existence_question": {
+    "question_text": "Are rekeying procedures utilized?",
+    "response_enum": ["YES", "NO", "N_A"],
+    "clarification": {
+      "yes_means": "A recognized rekeying process exists.",
+      "no_means": "No recognized rekeying process exists.",
+      "na_applies_only_if": "The facility does not use keyed locking mechanisms."
+    }
+  },
+
+  "section_2_right_looks_like_authoritative": [
+    "A recognized procedure exists for rekeying when control of keys is lost or compromised.",
+    "A recognized procedure exists for rekeying when access requirements change.",
+    "The rekeying approach is identifiable as the facility's standard method (not an ad hoc workaround).",
+    "Ownership for initiating or coordinating rekeying actions is identifiable."
+  ],
+
+  "section_3_descriptive_branching_yes_only": [
+    {
+      "question_text": "What recognized events or conditions trigger rekeying? (e.g., lost keys, stolen keys, suspected compromise, access requirement changes)",
+      "response_type": "TEXT"
+    },
+    {
+      "question_text": "What is the typical scope of rekeying when it occurs? (e.g., specific locks, specific areas, system-wide)",
+      "response_type": "TEXT"
+    },
+    {
+      "question_text": "Who initiates or coordinates rekeying actions? (e.g., security, facilities, designated authority, locksmith/vendor coordination)",
+      "response_type": "TEXT"
+    },
+    {
+      "question_text": "What method is used to perform rekeying? (e.g., cylinder rekeying, lock replacement, key system modification)",
+      "response_type": "TEXT"
+    },
+    {
+      "question_text": "Is rekeying documented or tracked? (Describe what records exist, if any.)",
+      "response_type": "TEXT"
+    }
+  ],
+
+  "section_4_ofc_trigger_notes_non_user_facing": {
+    "how_to_use_indicators_and_failures_after_capture": [
+      "Use Indicators of Risk and Common Failures only after descriptive context is captured (triggers, scope, ownership, method, tracking).",
+      "Use that context to select OFCs that strengthen the missing capability aspect (e.g., trigger definition, authorization clarity, coordination, tracking) without restating the baseline question.",
+      "If baseline is YES but triggers/ownership are unclear, select OFCs that establish recognized decision criteria and role ownership without implying blame.",
+      "If baseline is NO, select OFCs that establish a recognized rekeying capability as a defined facility process."
+    ],
+    "constraints": [
+      "OFCs mitigate problem classes; they do not restate questions.",
+      "No priorities, costs, timelines, technologies, or regulatory language.",
+      "No assessor enforcement, demands, or implied judgment."
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "ofcs": [
+    {
+      "ofc_ref_num": 6,
+      "ofc_text": "(1) Determine the facility\u2019s susceptibility to blast. Consult Reference Manual to Mitigate Potential Terrorist Attacks Against Buildings (FEMA 426/BIPS 06) , available at http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf , for more information, especially Chapters 2 and 3: Chapter 2 discusses blast design concerns and protective measures for areas surrounding buildings. Chapter 3 discusses the nature of explosive blasts, their effects on buildings and occupants, and the concept of levels of protection. In addition, review the DHS Bomb Threat Stand-off Chart , available through the Lessons Learned Information Sharing national, online network, at https://www.llis.dhs.gov/sites/default/files/DHS-BombThreatChart-6-5-09.pdf . (2) Based on the facility\u2019s potential vulnerabilities, explore the feasibility of conducting a preliminary blast analysis using simple, commercially available building modeling and software designed to support the ability to address blast mitigation and potential VBIED threats, such as A.T.-BLAST by ARA Applied Research Associates. (3) Based on the results from the preliminary blast analysis, explore the feasibility of consulting with an engineering firm that specializes in structural fragility to procure a professional blast assessment to inform capital investments intended to protect personnel and the facility against blast.",
+      "source_url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+      "source_label": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+      "context_question": "Can any vehicle be placed (legally or illegally) within 400 feet of the facility? / Yes / Is parking: Uncontrolled / Placement Type: Adjacent on street"
+    },
+    {
+      "ofc_ref_num": 31,
+      "ofc_text": "Evaluate the need to provide security staffing for vehicle access control points. Security force personnel may be trained and authorized to conduct vehicle searches and deny vehicle access.",
+      "source_url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+      "source_label": "Source",
+      "context_question": "Can any vehicle be placed (legally or illegally) within 400 feet of the facility? / During Operating Hours is the Parking/Standoff/Delivery Area Attended? / Attended / If Attended, personnel-call box: Call Button without Validation"
+    },
+    {
+      "ofc_ref_num": 31,
+      "ofc_text": "Evaluate the need to provide security staffing for vehicle access control points. Security force personnel may be trained and authorized to conduct vehicle searches and deny vehicle access.",
+      "source_url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+      "source_label": "Source",
+      "context_question": "Can any vehicle be placed (legally or illegally) within 400 feet of the facility? / Is Off-Business Hours Parking/Standoff/Delivery Controlled? / Attended / If attended, personnel-controls are face-to-face / Ticket or Toll Agent"
+    },
+    {
+      "ofc_ref_num": 31,
+      "ofc_text": "Evaluate the need to provide security staffing for vehicle access control points. Security force personnel may be trained and authorized to conduct vehicle searches and deny vehicle access.",
+      "source_url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+      "source_label": "Source",
+      "context_question": "Can any vehicle be placed (legally or illegally) within 400 feet of the facility? / Is Off-Business Hours Parking/Standoff/Delivery Controlled? / Attended / If attended, personnel-controls are face-to-face / Call button without Validation"
+    },
+    {
+      "ofc_ref_num": 32,
+      "ofc_text": "Explore the feasibility of executing searches on all vehicles entering the controlled parking area for the facility.",
+      "source_url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+      "source_label": "Source",
+      "context_question": "Can any vehicle be placed (legally or illegally) within 400 feet of the facility? / Is Off-Business Hours Parking/Standoff/Delivery Controlled? / Is there a vehicle search? / No"
+    },
+    {
+      "ofc_ref_num": 33,
+      "ofc_text": "Execute random searches on vehicles entering the controlled parking area for the facility. Evaluate the need to conduct searches on all vehicles at elevated threat levels.",
+      "source_url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+      "source_label": "Source",
+      "context_question": "Can any vehicle be placed (legally or illegally) within 400 feet of the facility? / Is Off-Business Hours Parking/Standoff/Delivery Controlled? / Is there a vehicle search? / No"
+    },
+    {
+      "ofc_ref_num": 3,
+      "ofc_text": "Consult Reference Manual to Mitigate Potential Terrorist Attacks Against Buildings (FEMA 426/BIPS 06) , available at http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf , for more information.",
+      "source_url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+      "source_label": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+      "context_question": "Is the facility in a building? / Does the facility have an air handling system? / Location of the weakest external air intake in the facility / Greater than 10 feet but less than or equal to 30 feet (above ground level)"
+    },
+    {
+      "ofc_ref_num": 6,
+      "ofc_text": "Evaluate the need to implement enhanced protective measures for water system components, such as intrusion detection sensors and CCTV.",
+      "source_url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+      "source_label": null,
+      "context_question": "Is external water required for the Facility Core Operations (Produce Key Services, Goods)? / Yes / Are components of the water supply located outside of the building (but still within control of facility) are protected from vandalism or accidental damage? / No"
+    }
+  ]
+}

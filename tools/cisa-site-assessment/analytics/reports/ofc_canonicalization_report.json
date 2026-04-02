@@ -1,0 +1,9 @@
+{
+  "mode": "DRY_RUN",
+  "scanned_ofcs": 50,
+  "modified_ofcs": 0,
+  "skipped_ofcs_by_reason": {
+    "no_boilerplate": 50
+  },
+  "examples_before_after": []
+}

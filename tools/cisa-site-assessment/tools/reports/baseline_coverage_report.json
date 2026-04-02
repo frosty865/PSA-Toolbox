@@ -1,0 +1,2297 @@
+{
+  "generated_at": "2026-01-18T15:38:31.298Z",
+  "totals": {
+    "total_active_questions": 123,
+    "distinct_subtypes_with_questions": 104,
+    "distinct_disciplines_with_questions": 14,
+    "total_canonical_subtypes": 105,
+    "baseline_eligible_subtypes": 104,
+    "excluded_subtypes": 1,
+    "subtypes_missing_all_questions": 0
+  },
+  "excluded_subtypes": [
+    {
+      "subtype_code": "SFO_SCHOOL_RESOURCE_OFFICER_SRO",
+      "subtype_name": "School Resource Officer (SRO)",
+      "discipline_code": "SFO",
+      "reason": "baseline_eligible=false"
+    }
+  ],
+  "per_subtype": [
+    {
+      "subtype_code": "ACS_BIOMETRIC_ACCESS",
+      "subtype_name": "Biometric Access",
+      "discipline_code": "ACS",
+      "discipline_name": "Access Control Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Biometric Access capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "ACS_CREDENTIAL_BADGE_SYSTEMS",
+      "subtype_name": "Credential / Badge Systems",
+      "discipline_code": "ACS",
+      "discipline_name": "Access Control Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Credential / Badge Systems capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "ACS_DOOR_MONITORING",
+      "subtype_name": "Door Monitoring",
+      "discipline_code": "ACS",
+      "discipline_name": "Access Control Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Door Monitoring capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "ACS_DOOR_READERS",
+      "subtype_name": "Door Readers",
+      "discipline_code": "ACS",
+      "discipline_name": "Access Control Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Door Readers capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "ACS_ELECTRIC_STRIKES_MAG_LOCKS",
+      "subtype_name": "Electric Strikes / Mag Locks",
+      "discipline_code": "ACS",
+      "discipline_name": "Access Control Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is an Electric Strikes / Mag Locks capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "ACS_ELECTRONIC_ACCESS_CONTROL",
+      "subtype_name": "Electronic Access Control",
+      "discipline_code": "ACS",
+      "discipline_name": "Access Control Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is an Electronic Access Control capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "ACS_KEYPADS_PIN_ENTRY",
+      "subtype_name": "Keypads / PIN Entry",
+      "discipline_code": "ACS",
+      "discipline_name": "Access Control Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Keypads / PIN Entry capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "ACS_LOCKING_HARDWARE",
+      "subtype_name": "Locking Hardware",
+      "discipline_code": "ACS",
+      "discipline_name": "Access Control Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Locking Hardware capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "ACS_SECURED_VESTIBULES",
+      "subtype_name": "Secured Vestibules",
+      "discipline_code": "ACS",
+      "discipline_name": "Access Control Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Secured Vestibules capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "ACS_VISITOR_MANAGEMENT_SYSTEMS",
+      "subtype_name": "Visitor Management Systems",
+      "discipline_code": "ACS",
+      "discipline_name": "Access Control Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Visitor Management Systems capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "COM_BACKUP_COMMUNICATIONS",
+      "subtype_name": "Backup Communications",
+      "discipline_code": "COM",
+      "discipline_name": "Communications",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Backup Communications capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "COM_COMMUNICATION_PROTOCOLS",
+      "subtype_name": "Communication Protocols",
+      "discipline_code": "COM",
+      "discipline_name": "Communications",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Communication Protocols capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "COM_INTEROPERABLE_COMMUNICATIONS",
+      "subtype_name": "Interoperable Communications",
+      "discipline_code": "COM",
+      "discipline_name": "Communications",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is an Interoperable Communications capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "COM_PA_SYSTEMS",
+      "subtype_name": "PA Systems",
+      "discipline_code": "COM",
+      "discipline_name": "Communications",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a PA Systems capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "COM_PAGING_SYSTEMS",
+      "subtype_name": "Paging Systems",
+      "discipline_code": "COM",
+      "discipline_name": "Communications",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Paging Systems capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "COM_RADIOS_TWO_WAY",
+      "subtype_name": "Radios / Two-Way",
+      "discipline_code": "COM",
+      "discipline_name": "Communications",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Radios / Two-Way capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "CPTED_DEFENSIBLE_SPACE",
+      "subtype_name": "Defensible Space",
+      "discipline_code": "CPTED",
+      "discipline_name": "CPTED",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Defensible Space capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "CPTED_EXTERIOR_LIGHTING",
+      "subtype_name": "Exterior Lighting",
+      "discipline_code": "CPTED",
+      "discipline_name": "CPTED",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is an Exterior Lighting capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "CPTED_LANDSCAPING_CONTROL",
+      "subtype_name": "Landscaping Control",
+      "discipline_code": "CPTED",
+      "discipline_name": "CPTED",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Landscaping Control capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "CPTED_NATURAL_SURVEILLANCE",
+      "subtype_name": "Natural Surveillance",
+      "discipline_code": "CPTED",
+      "discipline_name": "CPTED",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Natural Surveillance capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "CPTED_SIGHTLINES",
+      "subtype_name": "Sightlines",
+      "discipline_code": "CPTED",
+      "discipline_name": "CPTED",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Sightlines capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "CPTED_TERRITORIAL_REINFORCEMENT",
+      "subtype_name": "Territorial Reinforcement",
+      "discipline_code": "CPTED",
+      "discipline_name": "CPTED",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Territorial Reinforcement capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "CPTED_WAYFINDING",
+      "subtype_name": "Wayfinding",
+      "discipline_code": "CPTED",
+      "discipline_name": "CPTED",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Wayfinding capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "EAP_EMERGENCY_DRILLS",
+      "subtype_name": "Emergency Drills",
+      "discipline_code": "EAP",
+      "discipline_name": "Emergency Action Planning",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is an Emergency Drills capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "EAP_EMERGENCY_GUIDES_FLIP_CHARTS",
+      "subtype_name": "Emergency Guides / Flip Charts",
+      "discipline_code": "EAP",
+      "discipline_name": "Emergency Action Planning",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is an Emergency Guides / Flip Charts capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "EAP_EVACUATION_PROCEDURES",
+      "subtype_name": "Evacuation Procedures",
+      "discipline_code": "EAP",
+      "discipline_name": "Emergency Action Planning",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is an Evacuation Procedures capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "EAP_LOCKDOWN_LOCKOUT_PROCEDURES",
+      "subtype_name": "Lockdown / Lockout Procedures",
+      "discipline_code": "EAP",
+      "discipline_name": "Emergency Action Planning",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Lockdown / Lockout Procedures capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "EAP_MUSTER_POINTS_RALLY_AREAS",
+      "subtype_name": "Muster Points / Rally Areas",
+      "discipline_code": "EAP",
+      "discipline_name": "Emergency Action Planning",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Muster Points / Rally Areas capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "EAP_REUNIFICATION_PROCEDURES",
+      "subtype_name": "Reunification Procedures",
+      "discipline_code": "EAP",
+      "discipline_name": "Emergency Action Planning",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Reunification Procedures capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "EAP_SHELTER_IN_PLACE",
+      "subtype_name": "Shelter-in-Place",
+      "discipline_code": "EAP",
+      "discipline_name": "Emergency Action Planning",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Shelter-in-Place capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "EAP_STAFF_EMERGENCY_ROLES",
+      "subtype_name": "Staff Emergency Roles",
+      "discipline_code": "EAP",
+      "discipline_name": "Emergency Action Planning",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Staff Emergency Roles capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "EMR_BUSINESS_CONTINUITY",
+      "subtype_name": "Business Continuity",
+      "discipline_code": "EMR",
+      "discipline_name": "Emergency Management & Resilience",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Business Continuity capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "EMR_CRISIS_MANAGEMENT",
+      "subtype_name": "Crisis Management",
+      "discipline_code": "EMR",
+      "discipline_name": "Emergency Management & Resilience",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Crisis Management capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "EMR_EMERGENCY_COMMUNICATIONS",
+      "subtype_name": "Emergency Communications",
+      "discipline_code": "EMR",
+      "discipline_name": "Emergency Management & Resilience",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is an Emergency Communications capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "EMR_ICS_NIMS_INTEGRATION",
+      "subtype_name": "ICS/NIMS Integration",
+      "discipline_code": "EMR",
+      "discipline_name": "Emergency Management & Resilience",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is an ICS/NIMS Integration capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "EMR_MASS_NOTIFICATION",
+      "subtype_name": "Mass Notification",
+      "discipline_code": "EMR",
+      "discipline_name": "Emergency Management & Resilience",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Mass Notification capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "EMR_REDUNDANCY_BACKUP_SYSTEMS",
+      "subtype_name": "Redundancy / Backup Systems",
+      "discipline_code": "EMR",
+      "discipline_name": "Emergency Management & Resilience",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Redundancy / Backup Systems capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "EMR_RESILIENCE_PLANNING",
+      "subtype_name": "Resilience Planning",
+      "discipline_code": "EMR",
+      "discipline_name": "Emergency Management & Resilience",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Resilience Planning capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "FAC_BALLISTIC_BARRIERS",
+      "subtype_name": "Ballistic Barriers",
+      "discipline_code": "FAC",
+      "discipline_name": "Facility Hardening",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Ballistic Barriers capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "FAC_BLAST_MITIGATION",
+      "subtype_name": "Blast Mitigation",
+      "discipline_code": "FAC",
+      "discipline_name": "Facility Hardening",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Blast Mitigation capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "FAC_EXTERIOR_WALL_REINFORCEMENT",
+      "subtype_name": "Exterior Wall Reinforcement",
+      "discipline_code": "FAC",
+      "discipline_name": "Facility Hardening",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is an Exterior Wall Reinforcement capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "FAC_IMPACT_RESISTANT_GLAZING",
+      "subtype_name": "Impact-Resistant Glazing",
+      "discipline_code": "FAC",
+      "discipline_name": "Facility Hardening",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is an Impact-Resistant Glazing capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "FAC_STRUCTURAL_HARDENING",
+      "subtype_name": "Structural Hardening",
+      "discipline_code": "FAC",
+      "discipline_name": "Facility Hardening",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Structural Hardening capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "FAC_WINDOW_FILM",
+      "subtype_name": "Window Film",
+      "discipline_code": "FAC",
+      "discipline_name": "Facility Hardening",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Window Film capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "IDS_ALARM_MONITORING",
+      "subtype_name": "Alarm Monitoring",
+      "discipline_code": "IDS",
+      "discipline_name": "Intrusion Detection Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is an Alarm Monitoring capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "IDS_ALARM_PANELS",
+      "subtype_name": "Alarm Panels",
+      "discipline_code": "IDS",
+      "discipline_name": "Intrusion Detection Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is an Alarm Panels capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "IDS_DOOR_CONTACTS",
+      "subtype_name": "Door Contacts",
+      "discipline_code": "IDS",
+      "discipline_name": "Intrusion Detection Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Door Contacts capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "IDS_GLASS_BREAK_SENSORS",
+      "subtype_name": "Glass Break Sensors",
+      "discipline_code": "IDS",
+      "discipline_name": "Intrusion Detection Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Glass Break Sensors capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "IDS_MOTION_DETECTORS",
+      "subtype_name": "Motion Detectors",
+      "discipline_code": "IDS",
+      "discipline_name": "Intrusion Detection Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Motion Detectors capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "IDS_PANIC_DURESS_BUTTONS",
+      "subtype_name": "Panic / Duress Buttons",
+      "discipline_code": "IDS",
+      "discipline_name": "Intrusion Detection Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Panic / Duress Buttons capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "IDS_PERIMETER_IDS",
+      "subtype_name": "Perimeter IDS",
+      "discipline_code": "IDS",
+      "discipline_name": "Intrusion Detection Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Perimeter IDS capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "INT_ACCESS_RESTRICTED_AREAS",
+      "subtype_name": "Access-Restricted Areas",
+      "discipline_code": "INT",
+      "discipline_name": "Interior Security & Barriers",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Are restricted areas controlled at their entry points?"
+      ]
+    },
+    {
+      "subtype_code": "INT_HARD_INTERIOR_BARRIERS",
+      "subtype_name": "Hard-Interior Barriers",
+      "discipline_code": "INT",
+      "discipline_name": "Interior Security & Barriers",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Hard-Interior Barriers capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "INT_INTERIOR_DOORS",
+      "subtype_name": "Interior Doors",
+      "discipline_code": "INT",
+      "discipline_name": "Interior Security & Barriers",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is an Interior Doors capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "INT_INTERIOR_LIGHTING",
+      "subtype_name": "Interior Lighting",
+      "discipline_code": "INT",
+      "discipline_name": "Interior Security & Barriers",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is an Interior Lighting capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "INT_SAFE_ROOMS",
+      "subtype_name": "Safe Rooms",
+      "discipline_code": "INT",
+      "discipline_name": "Interior Security & Barriers",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Safe Rooms capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "INT_SECURE_ROOMS",
+      "subtype_name": "Secure Rooms",
+      "discipline_code": "INT",
+      "discipline_name": "Interior Security & Barriers",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Secure Rooms capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "INT_SENSITIVE_ITEM_STORAGE",
+      "subtype_name": "Sensitive Item Storage",
+      "discipline_code": "INT",
+      "discipline_name": "Interior Security & Barriers",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Sensitive Item Storage capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "ISC_COORDINATION_PROTOCOLS",
+      "subtype_name": "Coordination Protocols",
+      "discipline_code": "ISC",
+      "discipline_name": "Information Sharing & Coordination",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Coordination Protocols capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "ISC_EXTERNAL_REPORTING",
+      "subtype_name": "External Reporting",
+      "discipline_code": "ISC",
+      "discipline_name": "Information Sharing & Coordination",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is an External Reporting capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "ISC_FUSION_CENTER_INTERFACE",
+      "subtype_name": "Fusion Center Interface",
+      "discipline_code": "ISC",
+      "discipline_name": "Information Sharing & Coordination",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Fusion Center Interface capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "ISC_ISAC_ISAOS",
+      "subtype_name": "ISAC / ISAOs",
+      "discipline_code": "ISC",
+      "discipline_name": "Information Sharing & Coordination",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is an ISAC / ISAOs capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "ISC_JTTF_ENGAGEMENT",
+      "subtype_name": "JTTF Engagement",
+      "discipline_code": "ISC",
+      "discipline_name": "Information Sharing & Coordination",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a JTTF Engagement capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "ISC_LAW_ENFORCEMENT_LIAISON",
+      "subtype_name": "Law Enforcement Liaison",
+      "discipline_code": "ISC",
+      "discipline_name": "Information Sharing & Coordination",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Law Enforcement Liaison capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "ISC_THREAT_INFORMATION_SHARING",
+      "subtype_name": "Threat Information Sharing",
+      "discipline_code": "ISC",
+      "discipline_name": "Information Sharing & Coordination",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Threat Information Sharing capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "KEY_KEY_CABINETS",
+      "subtype_name": "Key Cabinets",
+      "discipline_code": "KEY",
+      "discipline_name": "Key Control",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Key Cabinets capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "KEY_KEY_LOGS_ACCOUNTABILITY",
+      "subtype_name": "Key Logs / Accountability",
+      "discipline_code": "KEY",
+      "discipline_name": "Key Control",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Key Logs / Accountability capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "KEY_MASTER_KEY_MANAGEMENT",
+      "subtype_name": "Master Key Management",
+      "discipline_code": "KEY",
+      "discipline_name": "Key Control",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Master Key Management capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "KEY_REKEYING_PROCEDURES",
+      "subtype_name": "Rekeying Procedures",
+      "discipline_code": "KEY",
+      "discipline_name": "Key Control",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Rekeying Procedures capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "KEY_RESTRICTED_KEYS",
+      "subtype_name": "Restricted Keys",
+      "discipline_code": "KEY",
+      "discipline_name": "Key Control",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Restricted Keys capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "PER_BOLLARDS_BARRIERS",
+      "subtype_name": "Bollards / Barriers",
+      "discipline_code": "PER",
+      "discipline_name": "Perimeter Security",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Bollards / Barriers capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "PER_BOUNDARY_DEMARCATION",
+      "subtype_name": "Boundary Demarcation",
+      "discipline_code": "PER",
+      "discipline_name": "Perimeter Security",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Boundary Demarcation capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "PER_CLEAR_ZONES",
+      "subtype_name": "Clear Zones",
+      "discipline_code": "PER",
+      "discipline_name": "Perimeter Security",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Clear Zones capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "PER_FENCING",
+      "subtype_name": "Fencing",
+      "discipline_code": "PER",
+      "discipline_name": "Perimeter Security",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Fencing capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "PER_GATES",
+      "subtype_name": "Gates",
+      "discipline_code": "PER",
+      "discipline_name": "Perimeter Security",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Gates capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "PER_PEDESTRIAN_ACCESS_CONTROL_POINTS",
+      "subtype_name": "Pedestrian Access Control Points",
+      "discipline_code": "PER",
+      "discipline_name": "Perimeter Security",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is pedestrian access at the site perimeter controlled at designated entry points?"
+      ]
+    },
+    {
+      "subtype_code": "PER_PERIMETER_LIGHTING",
+      "subtype_name": "Perimeter Lighting",
+      "discipline_code": "PER",
+      "discipline_name": "Perimeter Security",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Perimeter Lighting capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "PER_PERIMETER_SIGNAGE",
+      "subtype_name": "Perimeter Signage",
+      "discipline_code": "PER",
+      "discipline_name": "Perimeter Security",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Perimeter Signage capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "PER_VEHICLE_ACCESS_CONTROL_POINTS",
+      "subtype_name": "Vehicle Access Control Points",
+      "discipline_code": "PER",
+      "discipline_name": "Perimeter Security",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is vehicle access at the site perimeter controlled at designated entry points?"
+      ]
+    },
+    {
+      "subtype_code": "SFO_GUARD_POSTS",
+      "subtype_name": "Guard Posts",
+      "discipline_code": "SFO",
+      "discipline_name": "Security Force / Operations",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Guard Posts capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "SFO_INCIDENT_REPORTING",
+      "subtype_name": "Incident Reporting",
+      "discipline_code": "SFO",
+      "discipline_name": "Security Force / Operations",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is an Incident Reporting capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "SFO_PATROL_ROUTES",
+      "subtype_name": "Patrol Routes",
+      "discipline_code": "SFO",
+      "discipline_name": "Security Force / Operations",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Patrol Routes capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "SFO_RADIO_COMMUNICATIONS",
+      "subtype_name": "Radio Communications",
+      "discipline_code": "SFO",
+      "discipline_name": "Security Force / Operations",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Radio Communications capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "SFO_RESPONSE_PROCEDURES",
+      "subtype_name": "Response Procedures",
+      "discipline_code": "SFO",
+      "discipline_name": "Security Force / Operations",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Response Procedures capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "SFO_SECURITY_OFFICER_TRAINING",
+      "subtype_name": "Security Officer Training",
+      "discipline_code": "SFO",
+      "discipline_name": "Security Force / Operations",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Security Officer Training capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "SFO_SECURITY_OPERATIONS_CENTER_SOC",
+      "subtype_name": "Security Operations Center (SOC)",
+      "discipline_code": "SFO",
+      "discipline_name": "Security Force / Operations",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Security Operations Center (SOC) capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "SMG_GOVERNANCE_OVERSIGHT",
+      "subtype_name": "Governance & Oversight",
+      "discipline_code": "SMG",
+      "discipline_name": "Security Management & Governance",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Governance & Oversight capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "SMG_POLICY_COMPLIANCE_TRACKING",
+      "subtype_name": "Policy Compliance Tracking",
+      "discipline_code": "SMG",
+      "discipline_name": "Security Management & Governance",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Policy Compliance Tracking capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "SMG_RISK_ASSESSMENT_RISK_MANAGEMENT",
+      "subtype_name": "Risk Assessment / Risk Management",
+      "discipline_code": "SMG",
+      "discipline_name": "Security Management & Governance",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Risk Assessment / Risk Management capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "SMG_SECURITY_DOCUMENTATION",
+      "subtype_name": "Security Documentation",
+      "discipline_code": "SMG",
+      "discipline_name": "Security Management & Governance",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Security Documentation capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "SMG_SECURITY_POLICIES",
+      "subtype_name": "Security Policies",
+      "discipline_code": "SMG",
+      "discipline_name": "Security Management & Governance",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Security Policies capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "SMG_SECURITY_PROCEDURES",
+      "subtype_name": "Security Procedures",
+      "discipline_code": "SMG",
+      "discipline_name": "Security Management & Governance",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Security Procedures capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "SMG_SECURITY_TRAINING_PROGRAMS",
+      "subtype_name": "Security Training Programs",
+      "discipline_code": "SMG",
+      "discipline_name": "Security Management & Governance",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Security Training Programs capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "VSS_ANALYTICS_BEHAVIOR_DETECTION",
+      "subtype_name": "Analytics / Behavior Detection",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is an Analytics / Behavior Detection capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "VSS_CAMERA_COVERAGE_LINE_OF_SIGHT",
+      "subtype_name": "Camera Coverage / Line of Sight",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Camera Coverage / Line of Sight capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "VSS_EXTERIOR_CAMERAS",
+      "subtype_name": "Exterior Cameras",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Are exterior areas requiring observation covered by cameras?"
+      ]
+    },
+    {
+      "subtype_code": "VSS_FIXED_CAMERAS",
+      "subtype_name": "Fixed Cameras",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Fixed Cameras capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "VSS_INTERIOR_CAMERAS",
+      "subtype_name": "Interior Cameras",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Are interior areas requiring observation covered by cameras?"
+      ]
+    },
+    {
+      "subtype_code": "VSS_IP_CAMERAS",
+      "subtype_name": "IP Cameras",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is an IP Cameras capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "VSS_MONITORING_WORKSTATIONS",
+      "subtype_name": "Monitoring / Workstations",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Monitoring / Workstations capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "VSS_PTZ_CAMERAS",
+      "subtype_name": "PTZ Cameras",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a PTZ Cameras capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "VSS_RECORDING_STORAGE_NVR_DVR",
+      "subtype_name": "Recording / Storage (NVR/DVR)",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is video recorded for cameras covering areas requiring observation?"
+      ]
+    },
+    {
+      "subtype_code": "VSS_SYSTEM_ARCHITECTURE",
+      "subtype_name": "System Architecture",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a System Architecture capability implemented?"
+      ]
+    },
+    {
+      "subtype_code": "VSS_VIDEO_WALL_DISPLAY_SYSTEMS",
+      "subtype_name": "Video Wall / Display Systems",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "count_total": 1,
+      "counts_by_component": {
+        "UNSPECIFIED": 1
+      },
+      "sample_questions": [
+        "Is a Video Wall / Display Systems capability implemented?"
+      ]
+    }
+  ],
+  "gaps": {
+    "subtypes_missing_all_questions": [],
+    "subtypes_missing_component": [
+      {
+        "subtype_code": "ACS_BIOMETRIC_ACCESS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "ACS_CREDENTIAL_BADGE_SYSTEMS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "ACS_DOOR_MONITORING",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "ACS_DOOR_READERS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "ACS_ELECTRIC_STRIKES_MAG_LOCKS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "ACS_ELECTRONIC_ACCESS_CONTROL",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "ACS_KEYPADS_PIN_ENTRY",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "ACS_LOCKING_HARDWARE",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "ACS_SECURED_VESTIBULES",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "ACS_VISITOR_MANAGEMENT_SYSTEMS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "COM_BACKUP_COMMUNICATIONS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "COM_COMMUNICATION_PROTOCOLS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "COM_INTEROPERABLE_COMMUNICATIONS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "COM_PA_SYSTEMS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "COM_PAGING_SYSTEMS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "COM_RADIOS_TWO_WAY",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "CPTED_DEFENSIBLE_SPACE",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "CPTED_EXTERIOR_LIGHTING",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "CPTED_LANDSCAPING_CONTROL",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "CPTED_NATURAL_SURVEILLANCE",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "CPTED_SIGHTLINES",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "CPTED_TERRITORIAL_REINFORCEMENT",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "CPTED_WAYFINDING",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "EAP_EMERGENCY_DRILLS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "EAP_EMERGENCY_GUIDES_FLIP_CHARTS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "EAP_EVACUATION_PROCEDURES",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "EAP_LOCKDOWN_LOCKOUT_PROCEDURES",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "EAP_MUSTER_POINTS_RALLY_AREAS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "EAP_REUNIFICATION_PROCEDURES",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "EAP_SHELTER_IN_PLACE",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "EAP_STAFF_EMERGENCY_ROLES",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "EMR_BUSINESS_CONTINUITY",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "EMR_CRISIS_MANAGEMENT",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "EMR_EMERGENCY_COMMUNICATIONS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "EMR_ICS_NIMS_INTEGRATION",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "EMR_MASS_NOTIFICATION",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "EMR_REDUNDANCY_BACKUP_SYSTEMS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "EMR_RESILIENCE_PLANNING",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "FAC_BALLISTIC_BARRIERS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "FAC_BLAST_MITIGATION",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "FAC_EXTERIOR_WALL_REINFORCEMENT",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "FAC_IMPACT_RESISTANT_GLAZING",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "FAC_STRUCTURAL_HARDENING",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "FAC_WINDOW_FILM",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "IDS_ALARM_MONITORING",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "IDS_ALARM_PANELS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "IDS_DOOR_CONTACTS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "IDS_GLASS_BREAK_SENSORS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "IDS_MOTION_DETECTORS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "IDS_PANIC_DURESS_BUTTONS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "IDS_PERIMETER_IDS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "INT_ACCESS_RESTRICTED_AREAS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "INT_HARD_INTERIOR_BARRIERS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "INT_INTERIOR_DOORS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "INT_INTERIOR_LIGHTING",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "INT_SAFE_ROOMS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "INT_SECURE_ROOMS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "INT_SENSITIVE_ITEM_STORAGE",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "ISC_COORDINATION_PROTOCOLS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "ISC_EXTERNAL_REPORTING",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "ISC_FUSION_CENTER_INTERFACE",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "ISC_ISAC_ISAOS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "ISC_JTTF_ENGAGEMENT",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "ISC_LAW_ENFORCEMENT_LIAISON",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "ISC_THREAT_INFORMATION_SHARING",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "KEY_KEY_CABINETS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "KEY_KEY_LOGS_ACCOUNTABILITY",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "KEY_MASTER_KEY_MANAGEMENT",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "KEY_REKEYING_PROCEDURES",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "KEY_RESTRICTED_KEYS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "PER_BOLLARDS_BARRIERS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "PER_BOUNDARY_DEMARCATION",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "PER_CLEAR_ZONES",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "PER_FENCING",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "PER_GATES",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "PER_PEDESTRIAN_ACCESS_CONTROL_POINTS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "PER_PERIMETER_LIGHTING",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "PER_PERIMETER_SIGNAGE",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "PER_VEHICLE_ACCESS_CONTROL_POINTS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "SFO_GUARD_POSTS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "SFO_INCIDENT_REPORTING",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "SFO_PATROL_ROUTES",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "SFO_RADIO_COMMUNICATIONS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "SFO_RESPONSE_PROCEDURES",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "SFO_SECURITY_OFFICER_TRAINING",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "SFO_SECURITY_OPERATIONS_CENTER_SOC",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "SMG_GOVERNANCE_OVERSIGHT",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "SMG_POLICY_COMPLIANCE_TRACKING",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "SMG_RISK_ASSESSMENT_RISK_MANAGEMENT",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "SMG_SECURITY_DOCUMENTATION",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "SMG_SECURITY_POLICIES",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "SMG_SECURITY_PROCEDURES",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "SMG_SECURITY_TRAINING_PROGRAMS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "VSS_ANALYTICS_BEHAVIOR_DETECTION",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "VSS_CAMERA_COVERAGE_LINE_OF_SIGHT",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "VSS_EXTERIOR_CAMERAS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "VSS_FIXED_CAMERAS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "VSS_INTERIOR_CAMERAS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "VSS_IP_CAMERAS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "VSS_MONITORING_WORKSTATIONS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "VSS_PTZ_CAMERAS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "VSS_RECORDING_STORAGE_NVR_DVR",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "VSS_SYSTEM_ARCHITECTURE",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      },
+      {
+        "subtype_code": "VSS_VIDEO_WALL_DISPLAY_SYSTEMS",
+        "missing_components": [
+          "PEOPLE",
+          "PROCESS",
+          "SYSTEMS"
+        ]
+      }
+    ]
+  },
+  "by_discipline": {
+    "ACS": {
+      "discipline_name": "Access Control Systems",
+      "subtypes_covered": 10,
+      "total_subtypes": 10,
+      "coverage_percentage": 100
+    },
+    "COM": {
+      "discipline_name": "Communications",
+      "subtypes_covered": 6,
+      "total_subtypes": 6,
+      "coverage_percentage": 100
+    },
+    "CPTED": {
+      "discipline_name": "CPTED",
+      "subtypes_covered": 7,
+      "total_subtypes": 7,
+      "coverage_percentage": 100
+    },
+    "EAP": {
+      "discipline_name": "Emergency Action Planning",
+      "subtypes_covered": 8,
+      "total_subtypes": 8,
+      "coverage_percentage": 100
+    },
+    "EMR": {
+      "discipline_name": "Emergency Management & Resilience",
+      "subtypes_covered": 7,
+      "total_subtypes": 7,
+      "coverage_percentage": 100
+    },
+    "FAC": {
+      "discipline_name": "Facility Hardening",
+      "subtypes_covered": 6,
+      "total_subtypes": 6,
+      "coverage_percentage": 100
+    },
+    "IDS": {
+      "discipline_name": "Intrusion Detection Systems",
+      "subtypes_covered": 7,
+      "total_subtypes": 7,
+      "coverage_percentage": 100
+    },
+    "INT": {
+      "discipline_name": "Interior Security & Barriers",
+      "subtypes_covered": 7,
+      "total_subtypes": 7,
+      "coverage_percentage": 100
+    },
+    "ISC": {
+      "discipline_name": "Information Sharing & Coordination",
+      "subtypes_covered": 7,
+      "total_subtypes": 7,
+      "coverage_percentage": 100
+    },
+    "KEY": {
+      "discipline_name": "Key Control",
+      "subtypes_covered": 5,
+      "total_subtypes": 5,
+      "coverage_percentage": 100
+    },
+    "PER": {
+      "discipline_name": "Perimeter Security",
+      "subtypes_covered": 9,
+      "total_subtypes": 9,
+      "coverage_percentage": 100
+    },
+    "SFO": {
+      "discipline_name": "Security Force / Operations",
+      "subtypes_covered": 7,
+      "total_subtypes": 7,
+      "coverage_percentage": 100
+    },
+    "SMG": {
+      "discipline_name": "Security Management & Governance",
+      "subtypes_covered": 7,
+      "total_subtypes": 7,
+      "coverage_percentage": 100
+    },
+    "VSS": {
+      "discipline_name": "Video Surveillance Systems",
+      "subtypes_covered": 11,
+      "total_subtypes": 11,
+      "coverage_percentage": 100
+    }
+  }
+}

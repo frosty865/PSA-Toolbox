@@ -1,0 +1,12 @@
+{
+  "discipline_code": "EMR",
+  "version": "v1",
+  "constraints": [
+    {
+      "constraint_id": "BASE-EMR-CONSTRAINT-001",
+      "type": "EXCLUDE_LEGACY_SUBTYPES_FROM_SPINES",
+      "value": ["EMR_*"],
+      "reason": "EMR legacy items are procedural/assurance depth and cannot form baseline spines."
+    }
+  ]
+}

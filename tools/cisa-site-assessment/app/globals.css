@@ -1,0 +1,118 @@
+@import "tailwindcss";
+@import "../styles/cisa.css";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  /* CISA Colors - Primary (Blue) */
+  --color-primary: var(--cisa-blue);
+  --color-primary-dark: var(--cisa-blue-light);
+  --color-primary-darker: var(--cisa-blue);
+  --color-primary-darkest: var(--cisa-blue);
+  --color-primary-light: var(--cisa-blue-lighter);
+  --color-primary-lighter: var(--cisa-blue-lightest);
+  --color-primary-lightest: var(--cisa-blue-lightest);
+  
+  /* CISA Colors - Base/Gray */
+  --color-base: var(--cisa-gray);
+  --color-base-darkest: var(--cisa-black);
+  --color-base-darker: var(--cisa-gray);
+  --color-base-dark: var(--cisa-gray);
+  --color-base-light: var(--cisa-gray-light);
+  --color-base-lighter: var(--cisa-gray-lighter);
+  --color-base-lightest: var(--cisa-gray-lighter);
+  
+  /* CISA Colors - Secondary/Red */
+  --color-secondary: var(--cisa-red);
+  --color-secondary-dark: var(--cisa-red-dark);
+  --color-secondary-darker: var(--cisa-red-dark);
+  --color-secondary-darkest: var(--cisa-red-dark);
+  --color-secondary-light: var(--cisa-red-light);
+  --color-secondary-lighter: var(--cisa-red-light);
+  --color-secondary-lightest: var(--cisa-red-light);
+  
+  /* CISA Colors - Status */
+  --color-success: var(--cisa-success);
+  --color-warning: var(--cisa-warning);
+  --color-danger: var(--cisa-red);
+  --color-info: var(--cisa-info);
+  
+  /* CISA Spacing */
+  --spacing-0: 0;
+  --spacing-1: var(--spacing-xs);  /* 0.25rem / 4px */
+  --spacing-2: var(--spacing-sm);  /* 0.5rem / 8px */
+  --spacing-3: var(--spacing-md);  /* 1rem / 16px */
+  --spacing-4: var(--spacing-lg);  /* 1.5rem / 24px */
+  --spacing-5: var(--spacing-xl);  /* 2rem / 32px */
+  --spacing-6: var(--spacing-xxl); /* 3rem / 48px */
+  --spacing-8: 2rem;   /* 32px */
+  --spacing-10: 2.5rem; /* 40px */
+  --spacing-12: 3rem;  /* 48px */
+  --spacing-16: 4rem;   /* 64px */
+  --spacing-20: 5rem;   /* 80px */
+  
+  /* CISA Typography */
+  --font-sans: var(--font-family);
+  --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "Roboto Mono", "Bitstream Vera Sans Mono", "Consolas", "Courier New", Courier, monospace;
+  
+  /* Font sizes from CISA */
+  --font-size-xs: var(--font-size-xs);    /* 12px */
+  --font-size-sm: var(--font-size-sm);    /* 14px */
+  --font-size-base: var(--font-size-base); /* 16px */
+  --font-size-lg: var(--font-size-lg);    /* 18px */
+  --font-size-xl: var(--font-size-xl);    /* 24px */
+  --font-size-2xl: var(--font-size-xxl);  /* 32px */
+  --font-size-3xl: 2.5rem;   /* 40px */
+  --font-size-4xl: 3rem;     /* 48px */
+  --font-size-5xl: 4rem;     /* 64px */
+  
+  /* Legacy support */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+/* Auto-save spinner animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Skeleton loading animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Site-wide: only vertical scrolling; no horizontal scroll */
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-family);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+

@@ -1,16 +1,19 @@
-# Package the Asset Dependency Tool into a standalone ADT folder (e.g. C:\ADT).
+# Package the Infrastructure Dependency Tool into a standalone IDT folder (e.g. C:\IDT).
 # Run from asset-dependency-tool repo root. Requires: build:web and reporter.exe already built.
-# Usage: .\scripts\package-adt.ps1 [-AdtPath C:\ADT]
+# Usage: .\scripts\package-adt.ps1 [-AdtPath C:\IDT]
 
 param(
-  [string]$AdtPath = $env:ADT_PACKAGE_PATH
+  [string]$AdtPath
 )
 $ErrorActionPreference = "Stop"
 
 $RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 if (-not $AdtPath) {
-  $AdtPath = "C:\ADT"
-  Write-Host "Using default ADT path: $AdtPath (set ADT_PACKAGE_PATH or -AdtPath to override)"
+  $AdtPath = if ($env:IDT_PACKAGE_PATH) { $env:IDT_PACKAGE_PATH } else { $env:ADT_PACKAGE_PATH }
+}
+if (-not $AdtPath) {
+  $AdtPath = "C:\IDT"
+  Write-Host "Using default IDT path: $AdtPath (set IDT_PACKAGE_PATH, legacy ADT_PACKAGE_PATH, or -AdtPath to override)"
 }
 
 # Create layout
@@ -47,12 +50,12 @@ if (Test-Path $vofcSrc) {
   Copy-Item -Path $vofcSrc -Destination (Join-Path $resDir "VOFC_Library.xlsx") -Force
 }
 
-# Launchers and docs (copy from ADT if present, else create minimal)
+# Launchers and docs (copy from target folder if present, else create minimal)
 $adtReadme = Join-Path $AdtPath "README.md"
 if (-not (Test-Path $adtReadme)) {
-  Write-Host "Copy Start-ADT.ps1, Start-ADT.bat, README.md, DEPLOYMENT.md into $AdtPath if not already there."
+  Write-Host "Copy launcher scripts and README.md into $AdtPath if not already there."
 }
 
 Write-Host "Package layout created at: $AdtPath"
 Write-Host "Next: cd $appDir ; npm install --production"
-Write-Host "Then run Start-ADT.ps1 or Start-ADT.bat from $AdtPath"
+Write-Host "Then run your IDT launcher from $AdtPath"

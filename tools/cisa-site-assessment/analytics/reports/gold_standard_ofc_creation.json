@@ -1,0 +1,84 @@
+{
+  "timestamp": "D:\\PSA_System\\psa_rebuild\\analytics\\reports\\gold_standard_ofc_creation.json",
+  "total_ofcs": 15,
+  "created": 15,
+  "failed": 0,
+  "created_ofcs": [
+    {
+      "title": "Access Control Policy Framework",
+      "id": "c736135a-1e44-482e-b15b-49dba9aff463",
+      "status": "PENDING"
+    },
+    {
+      "title": "Access Control System Design",
+      "id": "58228200-1598-433d-a87c-4d31632598ea",
+      "status": "PENDING"
+    },
+    {
+      "title": "Access Control Monitoring",
+      "id": "28938aca-b07e-4d24-90c1-e08568905822",
+      "status": "PENDING"
+    },
+    {
+      "title": "Access Control Activity Logging",
+      "id": "41aa34d3-1c99-4f82-958a-69bbbcddf94f",
+      "status": "PENDING"
+    },
+    {
+      "title": "Access Control Point Coverage",
+      "id": "70ee5d3e-0669-49fc-8273-f2c10de68aa2",
+      "status": "PENDING"
+    },
+    {
+      "title": "Door Monitoring Procedures",
+      "id": "a94bfc35-9be0-48c0-a317-4dd207da8d85",
+      "status": "PENDING"
+    },
+    {
+      "title": "Door Status Monitoring",
+      "id": "0375c928-55f7-4dbe-9233-be6a7853d35a",
+      "status": "PENDING"
+    },
+    {
+      "title": "Door Alarm Response",
+      "id": "fe6518d2-ce22-4db0-be57-c0fe93f307cc",
+      "status": "PENDING"
+    },
+    {
+      "title": "Door Alarm Investigation Process",
+      "id": "ae834bb0-ea21-4919-ad08-6c54021dc5b2",
+      "status": "PENDING"
+    },
+    {
+      "title": "Door Monitoring Sensor Installation",
+      "id": "d424e1b4-aa51-4f75-8fa9-fe216b7bfe2e",
+      "status": "PENDING"
+    },
+    {
+      "title": "Visitor Management Policy",
+      "id": "55a7f1a3-cd31-4203-a7b1-6a4c56fd1978",
+      "status": "PENDING"
+    },
+    {
+      "title": "Visitor Authorization Procedures",
+      "id": "9e479e5f-62cb-4c81-983c-29d038dffea7",
+      "status": "PENDING"
+    },
+    {
+      "title": "Visitor Identification and Verification",
+      "id": "c2d8be44-8db2-4b37-b387-880259c670fe",
+      "status": "PENDING"
+    },
+    {
+      "title": "Visitor Escort Requirements",
+      "id": "4a4bb6c2-482b-41e2-bc43-6543125c5aea",
+      "status": "PENDING"
+    },
+    {
+      "title": "Visitor Accountability During Incidents",
+      "id": "e5604cf3-ade9-4a6b-8e4e-4732d22b137d",
+      "status": "PENDING"
+    }
+  ],
+  "failed_ofcs": []
+}

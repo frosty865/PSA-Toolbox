@@ -1,0 +1,1672 @@
+{
+  "metadata": {
+    "rewrite_date": "2025-12-28T20:42:48.064793",
+    "total_rewritten": 208
+  },
+  "rewrite_log": [
+    {
+      "question_id": "BASE-000",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have biometric access capabilities?",
+      "new_text": "Are biometric access systems installed at entry points?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-002",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure biometric access capabilities are maintained?",
+      "new_text": "Do biometric access systems respond to access attempts?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-004",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have credential / badge capabilities?",
+      "new_text": "Are credential badge systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-006",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure credential / badge capabilities are maintained?",
+      "new_text": "Do credential badge systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-008",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have door monitoring capabilities?",
+      "new_text": "Are door monitoring systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-010",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure door monitoring capabilities are maintained?",
+      "new_text": "Do door monitoring systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-012",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have door readers capabilities?",
+      "new_text": "Are door readers systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-014",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure door readers capabilities are maintained?",
+      "new_text": "Do door readers systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-016",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have electric strikes / mag locks capabilities?",
+      "new_text": "Are electric strikes mag locks systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-018",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure electric strikes / mag locks capabilities are maintained?",
+      "new_text": "Do electric strikes mag locks systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-020",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have electronic access control capabilities?",
+      "new_text": "Are electronic access control systems installed at entry points?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-022",
+      "mapped_gate": "CONTROL_RESILIENCE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure electronic access control capabilities are maintained?",
+      "new_text": "Does failure of a single component disable the entire system?",
+      "rewrite_reason": "Rewritten for CONTROL_RESILIENCE gate"
+    },
+    {
+      "question_id": "BASE-024",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have keypads / pin entry capabilities?",
+      "new_text": "Are keypads pin entry systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-026",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure keypads / pin entry capabilities are maintained?",
+      "new_text": "Do keypads pin entry systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-028",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have locking hardware capabilities?",
+      "new_text": "Are locking hardware systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-030",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure locking hardware capabilities are maintained?",
+      "new_text": "Do locking hardware systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-032",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have secured vestibules capabilities?",
+      "new_text": "Are secured vestibules systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-034",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure secured vestibules capabilities are maintained?",
+      "new_text": "Do secured vestibules systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-036",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have visitor management capabilities?",
+      "new_text": "Are visitor systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-038",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure visitor management capabilities are maintained?",
+      "new_text": "Do visitor systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-040",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have defensible space capabilities?",
+      "new_text": "Are defensible space systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-042",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure defensible space capabilities are maintained?",
+      "new_text": "Do defensible space systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-044",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have exterior lighting capabilities?",
+      "new_text": "Are exterior lighting fixtures installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-046",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure exterior lighting capabilities are maintained?",
+      "new_text": "Do exterior lighting fixtures illuminate when activated?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-048",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have landscaping control capabilities?",
+      "new_text": "Are landscaping control systems installed at entry points?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-050",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure landscaping control capabilities are maintained?",
+      "new_text": "Do landscaping control systems respond to access attempts?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-052",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have natural surveillance capabilities?",
+      "new_text": "Are natural surveillance cameras installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-054",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure natural surveillance capabilities are maintained?",
+      "new_text": "Are natural surveillance cameras recording?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-056",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have sightlines capabilities?",
+      "new_text": "Are sightlines systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-058",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure sightlines capabilities are maintained?",
+      "new_text": "Do sightlines systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-060",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have territorial reinforcement capabilities?",
+      "new_text": "Are territorial reinforcement systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-062",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure territorial reinforcement capabilities are maintained?",
+      "new_text": "Do territorial reinforcement systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-064",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have wayfinding capabilities?",
+      "new_text": "Are wayfinding systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-066",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure wayfinding capabilities are maintained?",
+      "new_text": "Do wayfinding systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-068",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have backup communications capabilities?",
+      "new_text": "Are backup communications systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-070",
+      "mapped_gate": "CONTROL_RESILIENCE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure backup communications capabilities are maintained?",
+      "new_text": "Are backup systems operational and available?",
+      "rewrite_reason": "Rewritten for CONTROL_RESILIENCE gate"
+    },
+    {
+      "question_id": "BASE-072",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have communication protocols capabilities?",
+      "new_text": "Are communication protocols systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-074",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure communication protocols capabilities are maintained?",
+      "new_text": "Do communication protocols systems transmit and receive?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-076",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have interoperable communications capabilities?",
+      "new_text": "Are interoperable communications systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-078",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure interoperable communications capabilities are maintained?",
+      "new_text": "Do interoperable communications systems transmit and receive?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-080",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have pa systems capabilities?",
+      "new_text": "Are pa systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-082",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure pa systems capabilities are maintained?",
+      "new_text": "Do pa systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-084",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have paging systems capabilities?",
+      "new_text": "Are paging systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-086",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure paging systems capabilities are maintained?",
+      "new_text": "Do paging systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-088",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have radios / two-way capabilities?",
+      "new_text": "Are radios two-way systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-090",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure radios / two-way capabilities are maintained?",
+      "new_text": "Do radios two-way systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-092",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have emergency drills capabilities?",
+      "new_text": "Are emergency drills systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-094",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure emergency drills capabilities are maintained?",
+      "new_text": "Do emergency drills systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-096",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have emergency guides / flip charts capabilities?",
+      "new_text": "Are emergency guides flip charts systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-098",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure emergency guides / flip charts capabilities are maintained?",
+      "new_text": "Do emergency guides flip charts systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-100",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have evacuation procedures capabilities?",
+      "new_text": "Are evacuation procedures systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-102",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure evacuation procedures capabilities are maintained?",
+      "new_text": "Do evacuation procedures systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-104",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have lockdown / lockout procedures capabilities?",
+      "new_text": "Are lockdown lockout procedures systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-106",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure lockdown / lockout procedures capabilities are maintained?",
+      "new_text": "Do lockdown lockout procedures systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-108",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have muster points / rally areas capabilities?",
+      "new_text": "Are muster points rally areas systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-110",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure muster points / rally areas capabilities are maintained?",
+      "new_text": "Do muster points rally areas systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-112",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have reunification procedures capabilities?",
+      "new_text": "Are reunification procedures systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-114",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure reunification procedures capabilities are maintained?",
+      "new_text": "Do reunification procedures systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-116",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have shelter-in-place capabilities?",
+      "new_text": "Are shelter-in-place systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-118",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure shelter-in-place capabilities are maintained?",
+      "new_text": "Do shelter-in-place systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-120",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have staff emergency roles capabilities?",
+      "new_text": "Are staff emergency roles systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-122",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure staff emergency roles capabilities are maintained?",
+      "new_text": "Do staff emergency roles systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-124",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have business continuity capabilities?",
+      "new_text": "Are business continuity systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-126",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure business continuity capabilities are maintained?",
+      "new_text": "Do business continuity systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-128",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have crisis management capabilities?",
+      "new_text": "Are crisis systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-130",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure crisis management capabilities are maintained?",
+      "new_text": "Do crisis systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-132",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have emergency communications capabilities?",
+      "new_text": "Are emergency communications systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-134",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure emergency communications capabilities are maintained?",
+      "new_text": "Do emergency communications systems transmit and receive?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-136",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have ics/nims integration capabilities?",
+      "new_text": "Are ics/nims integration systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-138",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure ics/nims integration capabilities are maintained?",
+      "new_text": "Do ics/nims integration systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-140",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have mass notification capabilities?",
+      "new_text": "Are mass notification systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-142",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure mass notification capabilities are maintained?",
+      "new_text": "Do mass notification systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-144",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have redundancy / backup systems capabilities?",
+      "new_text": "Are redundancy backup systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-146",
+      "mapped_gate": "CONTROL_RESILIENCE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure redundancy / backup systems capabilities are maintained?",
+      "new_text": "Are backup systems operational and available?",
+      "rewrite_reason": "Rewritten for CONTROL_RESILIENCE gate"
+    },
+    {
+      "question_id": "BASE-148",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have resilience planning capabilities?",
+      "new_text": "Are resilience planning systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-150",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure resilience planning capabilities are maintained?",
+      "new_text": "Do resilience planning systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-152",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have ballistic barriers capabilities?",
+      "new_text": "Are ballistic barriers barriers installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-154",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure ballistic barriers capabilities are maintained?",
+      "new_text": "Do ballistic barriers barriers open and close?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-156",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have blast mitigation capabilities?",
+      "new_text": "Are blast mitigation systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-158",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure blast mitigation capabilities are maintained?",
+      "new_text": "Do blast mitigation systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-160",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have exterior wall reinforcement capabilities?",
+      "new_text": "Are exterior wall reinforcement systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-162",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure exterior wall reinforcement capabilities are maintained?",
+      "new_text": "Do exterior wall reinforcement systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-164",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have impact-resistant glazing capabilities?",
+      "new_text": "Are impact-resistant glazing systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-166",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure impact-resistant glazing capabilities are maintained?",
+      "new_text": "Do impact-resistant glazing systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-168",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have structural hardening capabilities?",
+      "new_text": "Are structural hardening systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-170",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure structural hardening capabilities are maintained?",
+      "new_text": "Do structural hardening systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-172",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have window film capabilities?",
+      "new_text": "Are window film systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-174",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure window film capabilities are maintained?",
+      "new_text": "Do window film systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-176",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have coordination protocols capabilities?",
+      "new_text": "Are coordination protocols systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-178",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure coordination protocols capabilities are maintained?",
+      "new_text": "Do coordination protocols systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-180",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have external reporting capabilities?",
+      "new_text": "Are external reporting systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-182",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure external reporting capabilities are maintained?",
+      "new_text": "Do external reporting systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-184",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have fusion center interface capabilities?",
+      "new_text": "Are fusion center interface systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-186",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure fusion center interface capabilities are maintained?",
+      "new_text": "Do fusion center interface systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-188",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have isac / isaos capabilities?",
+      "new_text": "Are isac isaos systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-190",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure isac / isaos capabilities are maintained?",
+      "new_text": "Do isac isaos systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-192",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have jttf engagement capabilities?",
+      "new_text": "Are jttf engagement systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-194",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure jttf engagement capabilities are maintained?",
+      "new_text": "Do jttf engagement systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-196",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have law enforcement liaison capabilities?",
+      "new_text": "Are law enforcement liaison systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-198",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure law enforcement liaison capabilities are maintained?",
+      "new_text": "Do law enforcement liaison systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-200",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have threat information sharing capabilities?",
+      "new_text": "Are threat information sharing systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-202",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure threat information sharing capabilities are maintained?",
+      "new_text": "Do threat information sharing systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-204",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have access-restricted areas capabilities?",
+      "new_text": "Are access-restricted areas systems installed at entry points?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-206",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure access-restricted areas capabilities are maintained?",
+      "new_text": "Do access-restricted areas systems respond to access attempts?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-208",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have hard-interior barriers capabilities?",
+      "new_text": "Are hard-interior barriers barriers installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-210",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure hard-interior barriers capabilities are maintained?",
+      "new_text": "Do hard-interior barriers barriers open and close?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-212",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have interior doors capabilities?",
+      "new_text": "Are interior doors systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-214",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure interior doors capabilities are maintained?",
+      "new_text": "Do interior doors systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-216",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have interior lighting capabilities?",
+      "new_text": "Are interior lighting fixtures installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-218",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure interior lighting capabilities are maintained?",
+      "new_text": "Do interior lighting fixtures illuminate when activated?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-220",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have safe rooms capabilities?",
+      "new_text": "Are safe rooms systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-222",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure safe rooms capabilities are maintained?",
+      "new_text": "Do safe rooms systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-224",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have secure rooms capabilities?",
+      "new_text": "Are secure rooms systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-226",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure secure rooms capabilities are maintained?",
+      "new_text": "Do secure rooms systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-228",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have sensitive item storage capabilities?",
+      "new_text": "Are sensitive item storage recorders installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-230",
+      "mapped_gate": "CONTROL_RESILIENCE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure sensitive item storage capabilities are maintained?",
+      "new_text": "Does failure of a single recorder disable all recording?",
+      "rewrite_reason": "Rewritten for CONTROL_RESILIENCE gate"
+    },
+    {
+      "question_id": "BASE-232",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have alarm monitoring capabilities?",
+      "new_text": "Are alarm monitoring sensors installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-234",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure alarm monitoring capabilities are maintained?",
+      "new_text": "Do alarm monitoring sensors trigger when activated?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-236",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have alarm panels capabilities?",
+      "new_text": "Are alarm panels panels installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-238",
+      "mapped_gate": "CONTROL_RESILIENCE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure alarm panels capabilities are maintained?",
+      "new_text": "Does failure of a single panel disable all connected devices?",
+      "rewrite_reason": "Rewritten for CONTROL_RESILIENCE gate"
+    },
+    {
+      "question_id": "BASE-240",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have door contacts capabilities?",
+      "new_text": "Are door contacts systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-242",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure door contacts capabilities are maintained?",
+      "new_text": "Do door contacts systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-244",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have glass break sensors capabilities?",
+      "new_text": "Are glass break sensors systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-246",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure glass break sensors capabilities are maintained?",
+      "new_text": "Do glass break sensors systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-248",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have motion detectors capabilities?",
+      "new_text": "Are motion detectors systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-250",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure motion detectors capabilities are maintained?",
+      "new_text": "Do motion detectors systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-252",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have panic / duress buttons capabilities?",
+      "new_text": "Are panic duress buttons systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-254",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure panic / duress buttons capabilities are maintained?",
+      "new_text": "Do panic duress buttons systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-256",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have perimeter ids capabilities?",
+      "new_text": "Are perimeter ids systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-258",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure perimeter ids capabilities are maintained?",
+      "new_text": "Do perimeter ids systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-260",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have key cabinets capabilities?",
+      "new_text": "Are key cabinets systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-262",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure key cabinets capabilities are maintained?",
+      "new_text": "Do key cabinets systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-264",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have key logs / accountability capabilities?",
+      "new_text": "Are key logs accountability systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-266",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure key logs / accountability capabilities are maintained?",
+      "new_text": "Do key logs accountability systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-268",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have master key management capabilities?",
+      "new_text": "Are master key systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-270",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure master key management capabilities are maintained?",
+      "new_text": "Do master key systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-272",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have rekeying procedures capabilities?",
+      "new_text": "Are rekeying procedures systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-274",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure rekeying procedures capabilities are maintained?",
+      "new_text": "Do rekeying procedures systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-276",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have restricted keys capabilities?",
+      "new_text": "Are restricted keys systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-278",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure restricted keys capabilities are maintained?",
+      "new_text": "Do restricted keys systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-280",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have bollards / barriers capabilities?",
+      "new_text": "Are bollards barriers barriers installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-282",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure bollards / barriers capabilities are maintained?",
+      "new_text": "Do bollards barriers barriers open and close?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-284",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have boundary demarcation capabilities?",
+      "new_text": "Are boundary demarcation systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-286",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure boundary demarcation capabilities are maintained?",
+      "new_text": "Do boundary demarcation systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-288",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have clear zones capabilities?",
+      "new_text": "Are clear zones systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-290",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure clear zones capabilities are maintained?",
+      "new_text": "Do clear zones systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-292",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have fencing capabilities?",
+      "new_text": "Are fencing systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-294",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure fencing capabilities are maintained?",
+      "new_text": "Do fencing systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-296",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have gates capabilities?",
+      "new_text": "Are gates systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-298",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure gates capabilities are maintained?",
+      "new_text": "Do gates systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-300",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have perimeter lighting capabilities?",
+      "new_text": "Are perimeter lighting fixtures installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-302",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure perimeter lighting capabilities are maintained?",
+      "new_text": "Do perimeter lighting fixtures illuminate when activated?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-304",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have perimeter signage capabilities?",
+      "new_text": "Are perimeter signage systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-306",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure perimeter signage capabilities are maintained?",
+      "new_text": "Do perimeter signage systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-308",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have vehicle access control points capabilities?",
+      "new_text": "Are vehicle access control points systems installed at entry points?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-310",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure vehicle access control points capabilities are maintained?",
+      "new_text": "Do vehicle access control points systems respond to access attempts?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-312",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have guard posts capabilities?",
+      "new_text": "Are guard posts systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-314",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure guard posts capabilities are maintained?",
+      "new_text": "Do guard posts systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-316",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have incident reporting capabilities?",
+      "new_text": "Are incident reporting systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-318",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure incident reporting capabilities are maintained?",
+      "new_text": "Do incident reporting systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-320",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have patrol routes capabilities?",
+      "new_text": "Are patrol routes systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-322",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure patrol routes capabilities are maintained?",
+      "new_text": "Do patrol routes systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-324",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have radio communications capabilities?",
+      "new_text": "Are radio communications systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-326",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure radio communications capabilities are maintained?",
+      "new_text": "Do radio communications systems transmit and receive?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-328",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have response procedures capabilities?",
+      "new_text": "Are response procedures systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-330",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure response procedures capabilities are maintained?",
+      "new_text": "Do response procedures systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-332",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have school resource officer (sro) capabilities?",
+      "new_text": "Are school resource officer systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-334",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure school resource officer (sro) capabilities are maintained?",
+      "new_text": "Do school resource officer systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-336",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have security officer training capabilities?",
+      "new_text": "Are security officer training systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-338",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure security officer training capabilities are maintained?",
+      "new_text": "Do security officer training systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-340",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have security operations center (soc) capabilities?",
+      "new_text": "Are security operations center systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-342",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure security operations center (soc) capabilities are maintained?",
+      "new_text": "Do security operations center systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-344",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have governance and oversight capabilities?",
+      "new_text": "Are & systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-346",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure governance and oversight capabilities are maintained?",
+      "new_text": "Do & systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-348",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have policy compliance tracking capabilities?",
+      "new_text": "Are policy compliance tracking systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-350",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure policy compliance tracking capabilities are maintained?",
+      "new_text": "Do policy compliance tracking systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-352",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have risk assessment / risk management capabilities?",
+      "new_text": "Are risk assessment risk systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-354",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure risk assessment / risk management capabilities are maintained?",
+      "new_text": "Do risk assessment risk systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-356",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have security documentation capabilities?",
+      "new_text": "Are security documentation systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-358",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure security documentation capabilities are maintained?",
+      "new_text": "Do security documentation systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-360",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have security policies capabilities?",
+      "new_text": "Are security policies systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-362",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure security policies capabilities are maintained?",
+      "new_text": "Do security policies systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-364",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have security procedures capabilities?",
+      "new_text": "Are security procedures systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-366",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure security procedures capabilities are maintained?",
+      "new_text": "Do security procedures systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-368",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have security training programs capabilities?",
+      "new_text": "Are security training programs systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-370",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure security training programs capabilities are maintained?",
+      "new_text": "Do security training programs systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-372",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have analytics / behavior detection capabilities?",
+      "new_text": "Are analytics behavior detection sensors installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-374",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure analytics / behavior detection capabilities are maintained?",
+      "new_text": "Do analytics behavior detection sensors trigger when activated?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-376",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have camera coverage / line of sight capabilities?",
+      "new_text": "Are camera coverage line of sight cameras installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-378",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure camera coverage / line of sight capabilities are maintained?",
+      "new_text": "Are camera coverage line of sight cameras recording?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-380",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have exterior cameras capabilities?",
+      "new_text": "Are exterior cameras cameras installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-382",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure exterior cameras capabilities are maintained?",
+      "new_text": "Are exterior cameras cameras recording?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-384",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have fixed cameras capabilities?",
+      "new_text": "Are fixed cameras cameras installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-386",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure fixed cameras capabilities are maintained?",
+      "new_text": "Are fixed cameras cameras recording?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-388",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have ip cameras capabilities?",
+      "new_text": "Are ip cameras cameras installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-390",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure ip cameras capabilities are maintained?",
+      "new_text": "Are ip cameras cameras recording?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-392",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have interior cameras capabilities?",
+      "new_text": "Are interior cameras cameras installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-394",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure interior cameras capabilities are maintained?",
+      "new_text": "Are interior cameras cameras recording?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-396",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have monitoring / workstations capabilities?",
+      "new_text": "Are monitoring workstations systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-398",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure monitoring / workstations capabilities are maintained?",
+      "new_text": "Do monitoring workstations systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-400",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have ptz cameras capabilities?",
+      "new_text": "Are ptz cameras cameras installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-402",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure ptz cameras capabilities are maintained?",
+      "new_text": "Are ptz cameras cameras recording?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    },
+    {
+      "question_id": "BASE-404",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have recording / storage (nvr/dvr) capabilities?",
+      "new_text": "Are recording storage recorders installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-406",
+      "mapped_gate": "CONTROL_RESILIENCE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure recording / storage (nvr/dvr) capabilities are maintained?",
+      "new_text": "Does failure of a single recorder disable all recording?",
+      "rewrite_reason": "Rewritten for CONTROL_RESILIENCE gate"
+    },
+    {
+      "question_id": "BASE-408",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have system architecture capabilities?",
+      "new_text": "Are system architecture systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-410",
+      "mapped_gate": "CONTROL_RESILIENCE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure system architecture capabilities are maintained?",
+      "new_text": "Does failure of a single component disable the entire system?",
+      "rewrite_reason": "Rewritten for CONTROL_RESILIENCE gate"
+    },
+    {
+      "question_id": "BASE-412",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "old_text": "Does the facility have video wall / display capabilities?",
+      "new_text": "Are video wall display systems installed?",
+      "rewrite_reason": "Rewritten for CONTROL_EXISTS gate"
+    },
+    {
+      "question_id": "BASE-414",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "old_text": "Are processes in place to ensure video wall / display capabilities are maintained?",
+      "new_text": "Do video wall display systems perform their basic function?",
+      "rewrite_reason": "Rewritten for CONTROL_OPERABLE gate"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "_comment": "Fixed version of EV Parking module import - Replace placeholder UUIDs with actual values from database",
+  "_instructions": "Run 'node scripts/get_discipline_uuids_for_modules.js' to get valid discipline/subtype UUIDs",
+  
+  "module_code": "MODULE_EV_PARKING",
+  "title": "Electric Vehicle Parking Safety",
+  "description": "This module covers physical security concerns related to electric vehicle (EV) parking areas.",
+  "import_source": "ev_parking_import.json",
+  "mode": "REPLACE",
+  "module_questions": [
+    {
+      "_comment": "Camera/video question - using VSS (Video Surveillance Systems) discipline with Exterior Cameras subtype",
+      "id": "MODULEQ_EV_PARKING_001",
+      "text": "Is video coverage implemented for EV charging stations and their immediate approaches to support incident detection and post-incident review?",
+      "order": 1,
+      "discipline_id": "83d34bf8-b228-49ca-abb9-66168d4a8681",
+      "discipline_subtype_id": "8317b7c8-633e-46ca-8914-319e0cbab9cd",
+      "asset_or_location": "EV charging stations",
+      "event_trigger": "TAMPERING"
+    },
+    {
+      "_comment": "Access control question - using ACS (Access Control Systems) discipline with Electronic Access Control subtype",
+      "id": "MODULEQ_EV_PARKING_002",
+      "text": "Is physical access to EV charging areas restricted to authorized personnel?",
+      "order": 2,
+      "discipline_id": "18d45ffa-6a44-4817-becb-828231b9e1e7",
+      "discipline_subtype_id": "3227ab36-7f31-4be4-a0c2-0f838518fa96",
+      "asset_or_location": "EV charging areas",
+      "event_trigger": "TAMPERING"
+    }
+  ],
+  "module_ofcs": [
+    {
+      "ofc_id": "MOD_OFC_EV_PARKING_001",
+      "ofc_text": "Consider implementing video coverage for EV charging stations and their immediate approaches to support incident detection and post-incident review.",
+      "order_index": 1,
+      "sources": [
+        {
+          "url": "https://chargelab.co/blog/why-ev-charger-security-matters",
+          "label": "Why EV Charger Security Matters (ChargeLab, October 2024)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_EV_PARKING_002",
+      "ofc_text": "Consider implementing adequate lighting at EV parking areas to improve safety and visibility during hours of darkness.",
+      "order_index": 2,
+      "sources": []
+    }
+  ],
+  "risk_drivers": [
+    {
+      "_comment": "Property crime risk - use FRAUD_DRIVER for theft-related risks",
+      "driver_type": "FRAUD_DRIVER",
+      "driver_text": "Electric vehicle charging stations may be attractive targets for theft due to valuable components, increasing criminal targeting of charging locations."
+    },
+    {
+      "_comment": "Cyber/hacking risk - use CYBER_DRIVER",
+      "driver_type": "CYBER_DRIVER",
+      "driver_text": "Unauthorized access to EV charging systems may enable physical tampering or unsafe conditions at charging stations."
+    }
+  ]
+}

@@ -1,0 +1,517 @@
+{
+  "meta": {
+    "version": "2026-02-04",
+    "notes": [
+      "This is the single source of truth for which pool owns which table.",
+      "Startup guards and diagnostics rely on this mapping.",
+      "Synced with db_ownership.json on 2026-02-04T13:11:10.945Z"
+    ]
+  },
+  "tables": [
+    {
+      "schema": "public",
+      "table": "corpus_candidate_question_links",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "corpus_documents",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "corpus_expansion_questions",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "corpus_match_runs",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "corpus_overlay_control",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "corpus_reprocess_queue",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "corpus_source_set_control",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "document_chunks",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "ingestion_run_documents",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "ingestion_runs",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "library_candidates",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "library_jobs",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "library_logs",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "module_chunk_links",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "module_source_documents",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "module_standard_attributes",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "module_standard_citations",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "module_standard_criteria",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "module_standard_criterion_ofc_templates",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "module_standard_references",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "module_standards",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "ofc_candidate_queue",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "ofc_candidate_targets",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "ofc_question_links",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "question_candidate_queue",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "rag_chunks",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "public",
+      "table": "source_registry",
+      "pool": "CORPUS"
+    },
+    {
+      "schema": "archive",
+      "table": "archive_normalized_evidence_links",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "archive",
+      "table": "archive_normalized_vulnerabilities",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "archive",
+      "table": "archive_source_documents",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "archive",
+      "table": "archive_source_statements",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "assessment_applied_ofcs",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "assessment_applied_vulnerabilities",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "assessment_definitions",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "assessment_expansion_profiles",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "assessment_expansion_responses",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "assessment_instances",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "assessment_module_instances",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "assessment_module_question_responses",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "assessment_module_questions",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "assessment_modules",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "assessment_question_responses",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "assessment_question_universe",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "assessment_required_elements",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "assessment_responses",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "assessment_status",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "assessment_technology_profiles",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "assessment_templates",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "assessments",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "audit_log",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "baseline_spines_runtime",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "baseline_spines_runtime_loads",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "canonical_ofc_citations",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "canonical_ofcs",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "canonical_sources",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "coverage_runs",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "discipline_subtype_reference_impl",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "discipline_subtypes",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "disciplines",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "document_blobs",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "expansion_questions",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "facilities",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_chunk_comprehension",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_chunks",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_corpus_links",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_documents",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_draft_questions",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_draft_sources",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_drafts",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_import_batches",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_instance_checklist_groups",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_instance_checklist_items",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_instance_citations",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_instance_criteria",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_instance_criterion_responses",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_instance_ofcs",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_instances",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_ofc_citations",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_ofc_library",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_ofc_sources",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_ofcs",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_questions",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_risk_drivers",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_sources",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "module_vulnerability_candidates",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "normalized_evidence_links",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "normalized_vulnerabilities",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "ofc_library",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "ofc_library_citations",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "ofc_nominations",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "overlay_spine_order_registry",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "overlay_spines_runtime",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "problem_candidates",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "sector_expansion_profiles",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "sectors",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "subsector_module_policy",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "subsectors",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "system_settings",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "tech_question_responses",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "tech_question_templates",
+      "pool": "RUNTIME"
+    },
+    {
+      "schema": "public",
+      "table": "test_assessment_purge_log",
+      "pool": "RUNTIME"
+    }
+  ]
+}

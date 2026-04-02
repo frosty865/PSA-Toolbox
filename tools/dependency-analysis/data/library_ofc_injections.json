@@ -258,7 +258,7 @@
         "Evaluate the feasibility of establishing additional electric service connections with geographic separation."
       ],
       "library_citations": [
-        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+        "data/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
       ]
     },
     {
@@ -271,7 +271,7 @@
         "Evaluate the feasibility of establishing additional electric service connections with geographic separation to address co-located entry points."
       ],
       "library_citations": [
-        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+        "data/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
       ]
     },
     {
@@ -285,7 +285,7 @@
         "Formalize fuel sustainment and resupply coordination plans for multi-day outages."
       ],
       "library_citations": [
-        "docs/design/ENERGY_QUESTIONS.md:1",
+        "spec:energy_questions",
         "femap1019.pdf:17"
       ]
     },
@@ -299,7 +299,7 @@
         "Conduct regular testing and maintenance of backup fuel systems to ensure reliability during extended outages."
       ],
       "library_citations": [
-        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+        "data/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
       ]
     },
     {
@@ -314,9 +314,9 @@
         "Reroute or relocate critical exterior electrical equipment away from high-traffic areas to reduce the risk of vehicle impacts."
       ],
       "library_citations": [
-        "docs/implementation/QUESTION_FLOW_REORDER_IMPLEMENTATION.md:1",
-        "docs/implementation/QUESTION_FLOW_REORDER_IMPLEMENTATION.md:1",
-        "docs/implementation/QUESTION_FLOW_REORDER_IMPLEMENTATION.md:1"
+        "spec:question_flow",
+        "spec:question_flow",
+        "spec:question_flow"
       ]
     },
     {
@@ -347,8 +347,8 @@
         "Coordinate with utility providers to establish priority restoration agreements for shared entry points."
       ],
       "library_citations": [
-        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
-        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+        "data/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
+        "data/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
       ]
     },
     {
@@ -364,10 +364,10 @@
         "Consider using Telecommunications Service Priority (TSP) to expedite restoration of critical voice communication services."
       ],
       "library_citations": [
-        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
-        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
-        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
-        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+        "data/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
+        "data/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
+        "data/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
+        "data/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
       ]
     },
     {
@@ -381,8 +381,8 @@
         "Increase standoff distance between exterior communications components and potential impact zones."
       ],
       "library_citations": [
-        "docs/design/COMMS_QUESTIONS.md:1",
-        "docs/design/COMMS_QUESTIONS.md:1"
+        "spec:comms_questions",
+        "spec:comms_questions"
       ]
     },
     {
@@ -396,8 +396,8 @@
         "Maintain a detailed record of current carrier contacts and escalation procedures for rapid reporting and restoration coordination during outages."
       ],
       "library_citations": [
-        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
-        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+        "data/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
+        "data/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
       ]
     },
     {
@@ -411,8 +411,8 @@
         "Develop a secondary communication pathway for critical voice coordination to ensure redundancy in case of primary pathway failure."
       ],
       "library_citations": [
-        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
-        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+        "data/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
+        "data/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
       ]
     },
     {
@@ -425,7 +425,7 @@
         "Consider implementing a secondary data transport provider for critical services to ensure redundancy."
       ],
       "library_citations": [
-        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+        "data/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
       ]
     },
     {
@@ -438,7 +438,7 @@
         "Consider establishing a contingency plan with IT service providers for rapid restoration in case of disruptions."
       ],
       "library_citations": [
-        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+        "data/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
       ]
     },
     {
@@ -452,8 +452,8 @@
         "Construct reinforced barriers or concrete walls around exterior IT infrastructure to provide additional protection against vehicle impact."
       ],
       "library_citations": [
-        "docs/design/IT_QUESTIONS_OUTPUT.md:1",
-        "docs/design/IT_QUESTIONS_OUTPUT.md:1"
+        "spec:it_questions_output",
+        "spec:it_questions_output"
       ]
     },
     {
@@ -468,7 +468,7 @@
       ],
       "library_citations": [
         "audit/question_audit_report.json:1",
-        "docs/design/WATER_QUESTIONS.md:1"
+        "spec:water_questions"
       ]
     },
     {
@@ -484,10 +484,10 @@
         "Coordinate with local utilities and emergency services to ensure they understand the critical nature of separate utility corridors for water service."
       ],
       "library_citations": [
-        "docs/design/WATER_QUESTIONS.md:1",
-        "docs/design/WATER_QUESTIONS.md:1",
-        "docs/design/WATER_QUESTIONS.md:1",
-        "docs/design/WATER_QUESTIONS.md:1"
+        "spec:water_questions",
+        "spec:water_questions",
+        "spec:water_questions",
+        "spec:water_questions"
       ]
     },
     {
@@ -501,8 +501,8 @@
         "Develop a detailed emergency response plan that includes specific steps for contacting the water provider and initiating restoration procedures."
       ],
       "library_citations": [
-        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
-        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+        "data/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
+        "data/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
       ]
     },
     {
@@ -515,7 +515,7 @@
         "Consider developing a detailed contingency plan with specific steps and timelines for communication, resource allocation, and operational adjustments during extended disruptions."
       ],
       "library_citations": [
-        "docs/design/WATER_QUESTIONS.md:1"
+        "spec:water_questions"
       ]
     },
     {
@@ -530,9 +530,9 @@
         "Consider implementing a system to monitor and manage the usage of the alternate water source in real-time, ensuring efficient allocation during disruptions."
       ],
       "library_citations": [
-        "docs/design/WATER_QUESTIONS.md:1",
-        "docs/design/WATER_QUESTIONS.md:1",
-        "docs/design/WATER_QUESTIONS.md:1"
+        "spec:water_questions",
+        "spec:water_questions",
+        "spec:water_questions"
       ]
     },
     {
@@ -548,8 +548,8 @@
       ],
       "library_citations": [
         "audit/question_audit_report.json:1",
-        "docs/design/WATER_QUESTIONS.md:1",
-        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+        "spec:water_questions",
+        "data/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
       ]
     },
     {
@@ -566,9 +566,9 @@
       ],
       "library_citations": [
         "audit/question_audit_report.json:1",
-        "docs/design/WATER_QUESTIONS.md:1",
-        "docs/design/WATER_QUESTIONS.md:1",
-        "docs/design/WATER_QUESTIONS.md:1"
+        "spec:water_questions",
+        "spec:water_questions",
+        "spec:water_questions"
       ]
     },
     {
@@ -581,7 +581,7 @@
         "Explore the installation of solar-powered or other renewable energy sources to provide backup power for critical water pumping systems."
       ],
       "library_citations": [
-        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
+        "data/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1"
       ]
     },
     {
@@ -596,9 +596,9 @@
         "Install physical barriers and signage to protect the shared wastewater entry point from accidental vehicle impacts."
       ],
       "library_citations": [
-        "docs/design/WASTEWATER_QUESTIONS.md:1",
-        "docs/design/WASTEWATER_QUESTIONS.md:1",
-        "docs/design/WASTEWATER_QUESTIONS.md:1"
+        "spec:wastewater_questions",
+        "spec:wastewater_questions",
+        "spec:wastewater_questions"
       ]
     },
     {
@@ -613,9 +613,9 @@
         "Develop a contingency plan that includes alternative wastewater service connections to mitigate disruptions caused by shared utility corridors."
       ],
       "library_citations": [
-        "docs/design/WASTEWATER_QUESTIONS.md:1",
-        "docs/design/WASTEWATER_QUESTIONS.md:1",
-        "docs/design/WASTEWATER_QUESTIONS.md:1"
+        "spec:wastewater_questions",
+        "spec:wastewater_questions",
+        "spec:wastewater_questions"
       ]
     },
     {
@@ -641,7 +641,7 @@
         "Consider installing a dedicated generator or uninterruptible power supply (UPS) specifically for the wastewater pumping system."
       ],
       "library_citations": [
-        "docs/design/WASTEWATER_QUESTIONS.md:1"
+        "spec:wastewater_questions"
       ]
     },
     {
@@ -655,7 +655,7 @@
         "Consider evaluating the feasibility of on-site treatment options to manage wastewater during service disruptions."
       ],
       "library_citations": [
-        "docs/design/WASTEWATER_QUESTIONS.md:1",
+        "spec:wastewater_questions",
         "data/dependency_vofc_local.json:1"
       ]
     },
@@ -673,7 +673,7 @@
       ],
       "library_citations": [
         "data/dependency_vofc_local.json:1",
-        "docs/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
+        "data/CURATED_TOP_LEVEL_VULNS_AND_OFCS.md:1",
         "data/dependency_vofc_local.json:1",
         "data/dependency_vofc_local.json:1"
       ]

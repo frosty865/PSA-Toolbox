@@ -1,0 +1,956 @@
+{
+  "metadata": {
+    "generated_at": "2026-01-16T15:11:55.505Z",
+    "total_candidates": 105,
+    "source_file": "D:\\psa-workspace\\psa_rebuild\\taxonomy\\discipline_subtypes.json",
+    "from_suggested_questions": 0,
+    "from_generated_fallback": 105
+  },
+  "candidates": [
+    {
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_BIOMETRIC_ACCESS",
+      "subtype_name": "Biometric Access",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Biometric Access capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_CREDENTIAL_BADGE_SYSTEMS",
+      "subtype_name": "Credential / Badge Systems",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Credential / Badge Systems capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_DOOR_MONITORING",
+      "subtype_name": "Door Monitoring",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Door Monitoring capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_DOOR_READERS",
+      "subtype_name": "Door Readers",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Door Readers capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_ELECTRIC_STRIKES_MAG_LOCKS",
+      "subtype_name": "Electric Strikes / Mag Locks",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Electric Strikes / Mag Locks capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_ELECTRONIC_ACCESS_CONTROL",
+      "subtype_name": "Electronic Access Control",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Electronic Access Control capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_KEYPADS_PIN_ENTRY",
+      "subtype_name": "Keypads / PIN Entry",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Keypads / PIN Entry capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_LOCKING_HARDWARE",
+      "subtype_name": "Locking Hardware",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Locking Hardware capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_SECURED_VESTIBULES",
+      "subtype_name": "Secured Vestibules",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Secured Vestibules capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_VISITOR_MANAGEMENT_SYSTEMS",
+      "subtype_name": "Visitor Management Systems",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Visitor Management Systems capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "COM",
+      "subtype_code": "COM_BACKUP_COMMUNICATIONS",
+      "subtype_name": "Backup Communications",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Backup Communications capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "COM",
+      "subtype_code": "COM_COMMUNICATION_PROTOCOLS",
+      "subtype_name": "Communication Protocols",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Communication Protocols capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "COM",
+      "subtype_code": "COM_INTEROPERABLE_COMMUNICATIONS",
+      "subtype_name": "Interoperable Communications",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Interoperable Communications capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "COM",
+      "subtype_code": "COM_PA_SYSTEMS",
+      "subtype_name": "PA Systems",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a PA Systems capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "COM",
+      "subtype_code": "COM_PAGING_SYSTEMS",
+      "subtype_name": "Paging Systems",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Paging Systems capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "COM",
+      "subtype_code": "COM_RADIOS_TWO_WAY",
+      "subtype_name": "Radios / Two-Way",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Radios / Two-Way capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "CPTED",
+      "subtype_code": "CPTED_DEFENSIBLE_SPACE",
+      "subtype_name": "Defensible Space",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Defensible Space capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "CPTED",
+      "subtype_code": "CPTED_EXTERIOR_LIGHTING",
+      "subtype_name": "Exterior Lighting",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Exterior Lighting capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "CPTED",
+      "subtype_code": "CPTED_LANDSCAPING_CONTROL",
+      "subtype_name": "Landscaping Control",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Landscaping Control capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "CPTED",
+      "subtype_code": "CPTED_NATURAL_SURVEILLANCE",
+      "subtype_name": "Natural Surveillance",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Natural Surveillance capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "CPTED",
+      "subtype_code": "CPTED_SIGHTLINES",
+      "subtype_name": "Sightlines",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Sightlines capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "CPTED",
+      "subtype_code": "CPTED_TERRITORIAL_REINFORCEMENT",
+      "subtype_name": "Territorial Reinforcement",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Territorial Reinforcement capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "CPTED",
+      "subtype_code": "CPTED_WAYFINDING",
+      "subtype_name": "Wayfinding",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Wayfinding capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "EAP",
+      "subtype_code": "EAP_EMERGENCY_DRILLS",
+      "subtype_name": "Emergency Drills",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Emergency Drills capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "EAP",
+      "subtype_code": "EAP_EMERGENCY_GUIDES_FLIP_CHARTS",
+      "subtype_name": "Emergency Guides / Flip Charts",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Emergency Guides / Flip Charts capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "EAP",
+      "subtype_code": "EAP_EVACUATION_PROCEDURES",
+      "subtype_name": "Evacuation Procedures",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Evacuation Procedures capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "EAP",
+      "subtype_code": "EAP_LOCKDOWN_LOCKOUT_PROCEDURES",
+      "subtype_name": "Lockdown / Lockout Procedures",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Lockdown / Lockout Procedures capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "EAP",
+      "subtype_code": "EAP_MUSTER_POINTS_RALLY_AREAS",
+      "subtype_name": "Muster Points / Rally Areas",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Muster Points / Rally Areas capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "EAP",
+      "subtype_code": "EAP_REUNIFICATION_PROCEDURES",
+      "subtype_name": "Reunification Procedures",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Reunification Procedures capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "EAP",
+      "subtype_code": "EAP_SHELTER_IN_PLACE",
+      "subtype_name": "Shelter-in-Place",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Shelter-in-Place capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "EAP",
+      "subtype_code": "EAP_STAFF_EMERGENCY_ROLES",
+      "subtype_name": "Staff Emergency Roles",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Staff Emergency Roles capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "EMR",
+      "subtype_code": "EMR_BUSINESS_CONTINUITY",
+      "subtype_name": "Business Continuity",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Business Continuity capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "EMR",
+      "subtype_code": "EMR_CRISIS_MANAGEMENT",
+      "subtype_name": "Crisis Management",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Crisis Management capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "EMR",
+      "subtype_code": "EMR_EMERGENCY_COMMUNICATIONS",
+      "subtype_name": "Emergency Communications",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Emergency Communications capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "EMR",
+      "subtype_code": "EMR_ICS_NIMS_INTEGRATION",
+      "subtype_name": "ICS/NIMS Integration",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a ICS/NIMS Integration capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "EMR",
+      "subtype_code": "EMR_MASS_NOTIFICATION",
+      "subtype_name": "Mass Notification",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Mass Notification capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "EMR",
+      "subtype_code": "EMR_REDUNDANCY_BACKUP_SYSTEMS",
+      "subtype_name": "Redundancy / Backup Systems",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Redundancy / Backup Systems capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "EMR",
+      "subtype_code": "EMR_RESILIENCE_PLANNING",
+      "subtype_name": "Resilience Planning",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Resilience Planning capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "FAC",
+      "subtype_code": "FAC_BALLISTIC_BARRIERS",
+      "subtype_name": "Ballistic Barriers",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Ballistic Barriers capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "FAC",
+      "subtype_code": "FAC_BLAST_MITIGATION",
+      "subtype_name": "Blast Mitigation",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Blast Mitigation capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "FAC",
+      "subtype_code": "FAC_EXTERIOR_WALL_REINFORCEMENT",
+      "subtype_name": "Exterior Wall Reinforcement",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Exterior Wall Reinforcement capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "FAC",
+      "subtype_code": "FAC_IMPACT_RESISTANT_GLAZING",
+      "subtype_name": "Impact-Resistant Glazing",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Impact-Resistant Glazing capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "FAC",
+      "subtype_code": "FAC_STRUCTURAL_HARDENING",
+      "subtype_name": "Structural Hardening",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Structural Hardening capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "FAC",
+      "subtype_code": "FAC_WINDOW_FILM",
+      "subtype_name": "Window Film",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Window Film capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "IDS",
+      "subtype_code": "IDS_ALARM_MONITORING",
+      "subtype_name": "Alarm Monitoring",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Alarm Monitoring capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "IDS",
+      "subtype_code": "IDS_ALARM_PANELS",
+      "subtype_name": "Alarm Panels",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Alarm Panels capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "IDS",
+      "subtype_code": "IDS_DOOR_CONTACTS",
+      "subtype_name": "Door Contacts",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Door Contacts capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "IDS",
+      "subtype_code": "IDS_GLASS_BREAK_SENSORS",
+      "subtype_name": "Glass Break Sensors",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Glass Break Sensors capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "IDS",
+      "subtype_code": "IDS_MOTION_DETECTORS",
+      "subtype_name": "Motion Detectors",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Motion Detectors capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "IDS",
+      "subtype_code": "IDS_PANIC_DURESS_BUTTONS",
+      "subtype_name": "Panic / Duress Buttons",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Panic / Duress Buttons capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "IDS",
+      "subtype_code": "IDS_PERIMETER_IDS",
+      "subtype_name": "Perimeter IDS",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Perimeter IDS capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "INT",
+      "subtype_code": "INT_ACCESS_RESTRICTED_AREAS",
+      "subtype_name": "Access-Restricted Areas",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Access-Restricted Areas capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "INT",
+      "subtype_code": "INT_HARD_INTERIOR_BARRIERS",
+      "subtype_name": "Hard-Interior Barriers",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Hard-Interior Barriers capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "INT",
+      "subtype_code": "INT_INTERIOR_DOORS",
+      "subtype_name": "Interior Doors",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Interior Doors capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "INT",
+      "subtype_code": "INT_INTERIOR_LIGHTING",
+      "subtype_name": "Interior Lighting",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Interior Lighting capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "INT",
+      "subtype_code": "INT_SAFE_ROOMS",
+      "subtype_name": "Safe Rooms",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Safe Rooms capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "INT",
+      "subtype_code": "INT_SECURE_ROOMS",
+      "subtype_name": "Secure Rooms",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Secure Rooms capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "INT",
+      "subtype_code": "INT_SENSITIVE_ITEM_STORAGE",
+      "subtype_name": "Sensitive Item Storage",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Sensitive Item Storage capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "ISC",
+      "subtype_code": "ISC_COORDINATION_PROTOCOLS",
+      "subtype_name": "Coordination Protocols",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Coordination Protocols capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "ISC",
+      "subtype_code": "ISC_EXTERNAL_REPORTING",
+      "subtype_name": "External Reporting",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a External Reporting capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "ISC",
+      "subtype_code": "ISC_FUSION_CENTER_INTERFACE",
+      "subtype_name": "Fusion Center Interface",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Fusion Center Interface capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "ISC",
+      "subtype_code": "ISC_ISAC_ISAOS",
+      "subtype_name": "ISAC / ISAOs",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a ISAC / ISAOs capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "ISC",
+      "subtype_code": "ISC_JTTF_ENGAGEMENT",
+      "subtype_name": "JTTF Engagement",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a JTTF Engagement capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "ISC",
+      "subtype_code": "ISC_LAW_ENFORCEMENT_LIAISON",
+      "subtype_name": "Law Enforcement Liaison",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Law Enforcement Liaison capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "ISC",
+      "subtype_code": "ISC_THREAT_INFORMATION_SHARING",
+      "subtype_name": "Threat Information Sharing",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Threat Information Sharing capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "KEY",
+      "subtype_code": "KEY_KEY_CABINETS",
+      "subtype_name": "Key Cabinets",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Key Cabinets capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "KEY",
+      "subtype_code": "KEY_KEY_LOGS_ACCOUNTABILITY",
+      "subtype_name": "Key Logs / Accountability",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Key Logs / Accountability capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "KEY",
+      "subtype_code": "KEY_MASTER_KEY_MANAGEMENT",
+      "subtype_name": "Master Key Management",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Master Key Management capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "KEY",
+      "subtype_code": "KEY_REKEYING_PROCEDURES",
+      "subtype_name": "Rekeying Procedures",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Rekeying Procedures capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "KEY",
+      "subtype_code": "KEY_RESTRICTED_KEYS",
+      "subtype_name": "Restricted Keys",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Restricted Keys capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "PER",
+      "subtype_code": "PER_BOLLARDS_BARRIERS",
+      "subtype_name": "Bollards / Barriers",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Bollards / Barriers capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "PER",
+      "subtype_code": "PER_BOUNDARY_DEMARCATION",
+      "subtype_name": "Boundary Demarcation",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Boundary Demarcation capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "PER",
+      "subtype_code": "PER_CLEAR_ZONES",
+      "subtype_name": "Clear Zones",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Clear Zones capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "PER",
+      "subtype_code": "PER_FENCING",
+      "subtype_name": "Fencing",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Fencing capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "PER",
+      "subtype_code": "PER_GATES",
+      "subtype_name": "Gates",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Gates capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "PER",
+      "subtype_code": "PER_PERIMETER_LIGHTING",
+      "subtype_name": "Perimeter Lighting",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Perimeter Lighting capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "PER",
+      "subtype_code": "PER_PERIMETER_SIGNAGE",
+      "subtype_name": "Perimeter Signage",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Perimeter Signage capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "PER",
+      "subtype_code": "PER_VEHICLE_ACCESS_CONTROL_POINTS",
+      "subtype_name": "Vehicle Access Control Points",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Vehicle Access Control Points capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "PER",
+      "subtype_code": "PER_PEDESTRIAN_ACCESS_CONTROL_POINTS",
+      "subtype_name": "Pedestrian Access Control Points",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Pedestrian Access Control Points capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "SFO",
+      "subtype_code": "SFO_GUARD_POSTS",
+      "subtype_name": "Guard Posts",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Guard Posts capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "SFO",
+      "subtype_code": "SFO_INCIDENT_REPORTING",
+      "subtype_name": "Incident Reporting",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Incident Reporting capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "SFO",
+      "subtype_code": "SFO_PATROL_ROUTES",
+      "subtype_name": "Patrol Routes",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Patrol Routes capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "SFO",
+      "subtype_code": "SFO_RADIO_COMMUNICATIONS",
+      "subtype_name": "Radio Communications",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Radio Communications capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "SFO",
+      "subtype_code": "SFO_RESPONSE_PROCEDURES",
+      "subtype_name": "Response Procedures",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Response Procedures capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "SFO",
+      "subtype_code": "SFO_SCHOOL_RESOURCE_OFFICER_SRO",
+      "subtype_name": "School Resource Officer (SRO)",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a School Resource Officer (SRO) capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "SFO",
+      "subtype_code": "SFO_SECURITY_OFFICER_TRAINING",
+      "subtype_name": "Security Officer Training",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Security Officer Training capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "SFO",
+      "subtype_code": "SFO_SECURITY_OPERATIONS_CENTER_SOC",
+      "subtype_name": "Security Operations Center (SOC)",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Security Operations Center (SOC) capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "SMG",
+      "subtype_code": "SMG_GOVERNANCE_OVERSIGHT",
+      "subtype_name": "Governance & Oversight",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Governance & Oversight capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "SMG",
+      "subtype_code": "SMG_POLICY_COMPLIANCE_TRACKING",
+      "subtype_name": "Policy Compliance Tracking",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Policy Compliance Tracking capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "SMG",
+      "subtype_code": "SMG_RISK_ASSESSMENT_RISK_MANAGEMENT",
+      "subtype_name": "Risk Assessment / Risk Management",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Risk Assessment / Risk Management capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "SMG",
+      "subtype_code": "SMG_SECURITY_DOCUMENTATION",
+      "subtype_name": "Security Documentation",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Security Documentation capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "SMG",
+      "subtype_code": "SMG_SECURITY_POLICIES",
+      "subtype_name": "Security Policies",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Security Policies capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "SMG",
+      "subtype_code": "SMG_SECURITY_PROCEDURES",
+      "subtype_name": "Security Procedures",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Security Procedures capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "SMG",
+      "subtype_code": "SMG_SECURITY_TRAINING_PROGRAMS",
+      "subtype_name": "Security Training Programs",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Security Training Programs capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_ANALYTICS_BEHAVIOR_DETECTION",
+      "subtype_name": "Analytics / Behavior Detection",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Analytics / Behavior Detection capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_CAMERA_COVERAGE_LINE_OF_SIGHT",
+      "subtype_name": "Camera Coverage / Line of Sight",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Camera Coverage / Line of Sight capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_EXTERIOR_CAMERAS",
+      "subtype_name": "Exterior Cameras",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Exterior Cameras capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_FIXED_CAMERAS",
+      "subtype_name": "Fixed Cameras",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Fixed Cameras capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_INTERIOR_CAMERAS",
+      "subtype_name": "Interior Cameras",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Interior Cameras capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_IP_CAMERAS",
+      "subtype_name": "IP Cameras",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a IP Cameras capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_MONITORING_WORKSTATIONS",
+      "subtype_name": "Monitoring / Workstations",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Monitoring / Workstations capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_PTZ_CAMERAS",
+      "subtype_name": "PTZ Cameras",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a PTZ Cameras capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_RECORDING_STORAGE_NVR_DVR",
+      "subtype_name": "Recording / Storage (NVR/DVR)",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Recording / Storage (NVR/DVR) capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_SYSTEM_ARCHITECTURE",
+      "subtype_name": "System Architecture",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a System Architecture capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    },
+    {
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_VIDEO_WALL_DISPLAY_SYSTEMS",
+      "subtype_name": "Video Wall / Display Systems",
+      "component": "PROCESS",
+      "proposed_question_text": "Is a Video Wall / Display Systems capability implemented?",
+      "source": "generated_fallback",
+      "review_status": "PENDING"
+    }
+  ]
+}

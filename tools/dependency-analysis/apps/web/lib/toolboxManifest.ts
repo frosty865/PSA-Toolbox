@@ -1,5 +1,4 @@
 import fs from 'fs';
-import fsPromises from 'fs/promises';
 import path from 'path';
 
 export type ToolboxManifestTool = {
@@ -8,15 +7,9 @@ export type ToolboxManifestTool = {
   relativePath: string;
   description: string;
   readmeRelativePath?: string;
-  /** Same-origin path for this dev server (respect next.config trailingSlash). */
   entryPath?: string;
-  /** Optional absolute URL when the tool is served elsewhere. */
   externalUrl?: string;
-  start?: {
-    kind: string;
-    scriptRelativePath: string;
-    arguments?: string[];
-  };
+  start?: { kind: string; scriptRelativePath?: string; arguments?: string[] };
 };
 
 export type ToolboxManifest = {
@@ -24,38 +17,46 @@ export type ToolboxManifest = {
   tools: ToolboxManifestTool[];
 };
 
-const MANIFEST_NAME = 'tools-manifest.json';
+function getRepoRoot(): string {
+  const env = process.env.PSA_TOOLBOX_ROOT?.trim();
+  if (env) return path.resolve(env);
 
-/**
- * Walks up from cwd (and honors PSA_TOOLBOX_ROOT) to find the repo-root manifest.
- */
-export function findToolboxManifestPath(): string | null {
-  const envRoot = process.env.PSA_TOOLBOX_ROOT?.trim();
-  if (envRoot) {
-    const p = path.join(envRoot, MANIFEST_NAME);
-    if (fs.existsSync(p)) return p;
+  const walk = (start: string, maxUp: number): string | null => {
+    let cur = path.resolve(start);
+    for (let i = 0; i <= maxUp; i++) {
+      const manifest = path.join(cur, 'tools-manifest.json');
+      try {
+        if (fs.existsSync(manifest)) return cur;
+      } catch {
+        /* ignore */
+      }
+      const parent = path.dirname(cur);
+      if (parent === cur) break;
+      cur = parent;
+    }
+    return null;
   }
 
-  let dir = process.cwd();
-  for (let i = 0; i < 16; i++) {
-    const candidate = path.join(dir, MANIFEST_NAME);
-    if (fs.existsSync(candidate)) return candidate;
-    const parent = path.dirname(dir);
-    if (parent === dir) break;
-    dir = parent;
-  }
-  return null;
+  const fromCwd = walk(process.cwd(), 8);
+  if (fromCwd) return fromCwd;
+
+  // apps/web → four levels up to repo root when dev cwd is apps/web
+  return path.resolve(process.cwd(), '..', '..', '..', '..');
 }
 
 export async function loadToolboxManifest(): Promise<ToolboxManifest | null> {
-  const manifestPath = findToolboxManifestPath();
-  if (!manifestPath) return null;
   try {
-    const raw = await fsPromises.readFile(manifestPath, 'utf8');
-    const data = JSON.parse(raw) as ToolboxManifest;
-    if (!data || typeof data.version !== 'number' || !Array.isArray(data.tools)) return null;
-    return data;
+    const root = getRepoRoot();
+    const p = path.join(root, 'tools-manifest.json');
+    const raw = await fs.promises.readFile(p, 'utf8');
+    return JSON.parse(raw) as ToolboxManifest;
   } catch {
     return null;
   }
+}
+
+export async function getToolById(id: string): Promise<ToolboxManifestTool | null> {
+  const manifest = await loadToolboxManifest();
+  if (!manifest) return null;
+  return manifest.tools.find((t) => t.id === id) ?? null;
 }

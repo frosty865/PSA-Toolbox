@@ -1,0 +1,22 @@
+{
+  "responses": [
+    {
+      "assessment_id": "fixture-assessment-001",
+      "element_id": "BASE-002",
+      "response": "YES",
+      "updated_at": "2025-12-15T10:00:00Z"
+    },
+    {
+      "assessment_id": "fixture-assessment-001",
+      "element_id": "BASE-003",
+      "response": "NO",
+      "updated_at": "2025-12-15T10:00:00Z"
+    },
+    {
+      "assessment_id": "fixture-assessment-001",
+      "element_id": "BASE-005",
+      "response": "YES",
+      "updated_at": "2025-12-15T10:00:00Z"
+    }
+  ]
+}

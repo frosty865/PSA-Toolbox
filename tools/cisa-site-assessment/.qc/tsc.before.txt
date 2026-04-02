@@ -1,0 +1,82 @@
+
+> psa-rebuild@0.1.0 typecheck
+> tsc --noEmit
+
+app/admin/modules/[moduleCode]/page.tsx(1036,17): error TS2322: Type 'boolean | null' is not assignable to type 'boolean | undefined'.
+  Type 'null' is not assignable to type 'boolean | undefined'.
+app/admin/modules/[moduleCode]/page.tsx(1084,63): error TS18048: 'generatePreview.missingOfcCitations.length' is possibly 'undefined'.
+app/admin/modules/[moduleCode]/page.tsx(1088,24): error TS18048: 'generatePreview.missingOfcCitations' is possibly 'undefined'.
+app/admin/modules/new/steps/DefineStep.tsx(68,9): error TS2322: Type 'string | null' is not assignable to type 'string | undefined'.
+  Type 'null' is not assignable to type 'string | undefined'.
+app/admin/modules/page.tsx(707,62): error TS2339: Property 'chunk_count' does not exist on type 'ModuleBreakdown'.
+app/admin/source-registry/page.tsx(1818,138): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+app/api/admin/modules/[moduleCode]/sources/report/route.ts(179,18): error TS2551: Property 'corpus_source_details' does not exist on type '{ id: any; source_type: any; corpus_source_id: any; source_url: any; source_label: any; content_type: any; storage_relpath: any; sha256: any; fetch_status: any; fetch_error: any; fetched_at: any; created_at: any; linked_documents_count: number; file_exists: boolean | null; file_error: string | null; }'. Did you mean 'corpus_source_id'?
+app/api/admin/modules/wizard/create/route.ts(73,74): error TS2304: Cannot find name 'body'.
+app/api/admin/modules/wizard/sources/add-existing/route.ts(81,11): error TS18047: 'existingCheck.rowCount' is possibly 'null'.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(14,1): error TS2304: Cannot find name 'jest'.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(15,18): error TS2304: Cannot find name 'jest'.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(18,1): error TS2582: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha`.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(20,12): error TS2304: Cannot find name 'jest'.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(23,3): error TS2304: Cannot find name 'beforeEach'.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(24,5): error TS2304: Cannot find name 'jest'.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(25,23): error TS2503: Cannot find namespace 'jest'.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(28,3): error TS2582: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha`.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(29,11): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(32,3): error TS2582: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha`.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(33,11): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(36,3): error TS2582: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha`.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(46,5): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(47,5): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(53,3): error TS2582: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha`.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(62,7): error TS2304: Cannot find name 'fail'.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(64,7): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(65,7): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(66,7): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(67,7): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(71,3): error TS2582: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha`.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(80,11): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(83,3): error TS2582: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha`.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(90,5): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(91,5): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(92,7): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validateSourceKeys.test.ts(93,7): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validation.test.ts(7,47): error TS2305: Module '"../validation"' has no exported member 'guardCitationsNotEmpty'.
+app/lib/citation/__tests__/validation.test.ts(11,1): error TS2304: Cannot find name 'jest'.
+app/lib/citation/__tests__/validation.test.ts(12,19): error TS2304: Cannot find name 'jest'.
+app/lib/citation/__tests__/validation.test.ts(13,12): error TS2304: Cannot find name 'jest'.
+app/lib/citation/__tests__/validation.test.ts(26,1): error TS2582: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha`.
+app/lib/citation/__tests__/validation.test.ts(27,3): error TS2582: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha`.
+app/lib/citation/__tests__/validation.test.ts(28,5): error TS2582: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha`.
+app/lib/citation/__tests__/validation.test.ts(36,7): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validation.test.ts(39,5): error TS2582: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha`.
+app/lib/citation/__tests__/validation.test.ts(46,7): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validation.test.ts(47,7): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validation.test.ts(50,5): error TS2582: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha`.
+app/lib/citation/__tests__/validation.test.ts(58,7): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validation.test.ts(59,7): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validation.test.ts(63,3): error TS2582: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha`.
+app/lib/citation/__tests__/validation.test.ts(64,5): error TS2582: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha`.
+app/lib/citation/__tests__/validation.test.ts(66,7): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validation.test.ts(67,7): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validation.test.ts(70,5): error TS2582: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha`.
+app/lib/citation/__tests__/validation.test.ts(80,7): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validation.test.ts(84,3): error TS2582: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha`.
+app/lib/citation/__tests__/validation.test.ts(85,5): error TS2582: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha`.
+app/lib/citation/__tests__/validation.test.ts(87,7): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validation.test.ts(90,5): error TS2582: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha`.
+app/lib/citation/__tests__/validation.test.ts(92,7): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validation.test.ts(96,3): error TS2582: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha`.
+app/lib/citation/__tests__/validation.test.ts(97,5): error TS2582: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha`.
+app/lib/citation/__tests__/validation.test.ts(107,7): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validation.test.ts(108,7): error TS2304: Cannot find name 'expect'.
+app/lib/citation/__tests__/validation.test.ts(111,5): error TS2582: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha`.
+app/lib/citation/__tests__/validation.test.ts(121,7): error TS2304: Cannot find name 'expect'.
+app/lib/db/corpus_client.ts(110,11): error TS2353: Object literal may only specify known properties, and 'max' does not exist in type 'ClientConfig'.
+app/lib/db/runtime_client.ts(75,11): error TS2353: Object literal may only specify known properties, and 'max' does not exist in type 'ClientConfig'.
+app/lib/db/runtime_client.ts(251,13): error TS2353: Object literal may only specify known properties, and 'max' does not exist in type 'ClientConfig'.
+app/lib/modules/generation/generate_module_content_from_chunks.ts(114,20): error TS2339: Property 'code' does not exist on type 'Error'.
+app/lib/modules/generation/generate_module_content_from_chunks.ts(116,24): error TS2339: Property 'code' does not exist on type 'Error'.
+app/lib/modules/resolve_discipline_subtype.ts(28,3): error TS2322: Type 'string | boolean' is not assignable to type 'boolean'.
+  Type 'string' is not assignable to type 'boolean'.
+app/lib/modules/table_access_guards.ts(181,11): error TS2304: Cannot find name 'CORPUS_READ_ONLY_TABLES'.

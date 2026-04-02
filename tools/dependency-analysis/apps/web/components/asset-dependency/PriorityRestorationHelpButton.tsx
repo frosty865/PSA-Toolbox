@@ -72,7 +72,7 @@ export function PriorityRestorationHelpButton(props: PriorityRestorationHelpButt
     <>
       <button
         type="button"
-        className="ida-btn ida-btn-primary"
+        className="btn btn-primary"
         onClick={() => setOpen(true)}
         aria-label={`Add Priority Restoration and Service Level Agreement — ${TOPIC_LABELS[topicKey]}`}
       >

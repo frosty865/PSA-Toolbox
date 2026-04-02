@@ -54,7 +54,9 @@ function normalizeAssessmentNullStrings(assessment: Record<string, unknown>): vo
   normalizeObjectNullStrings(assessment, 0);
 }
 
-const TOOL_NAME = 'asset-dependency-tool';
+const TOOL_ID = 'infrastructure-dependency-tool';
+const LEGACY_TOOL_IDS = new Set(['asset-dependency-tool']);
+const TOOL_DISPLAY_NAME = 'Infrastructure Dependency Tool (IDT)';
 export const PROGRESS_VERSION_V1 = 1;
 export const PROGRESS_VERSION_V2 = 2;
 
@@ -82,7 +84,7 @@ export type ProgressFileV1 = {
 };
 
 export type ProgressFileV2 = {
-  tool: typeof TOOL_NAME;
+  tool: typeof TOOL_ID;
   version: 2;
   saved_at_iso: string;
   assessment: Assessment;
@@ -123,7 +125,7 @@ export function buildProgressFile(
 ): ProgressFileV1 {
   const sanitized = sanitizeAssessmentBeforeSave(assessment);
   const file: ProgressFileV1 = {
-    tool: TOOL_NAME,
+    tool: TOOL_ID,
     version: PROGRESS_VERSION_V1,
     saved_at_iso: new Date().toISOString(),
     assessment: sanitized,
@@ -144,7 +146,7 @@ export function buildProgressFileV2(
 ): ProgressFileV2 {
   const sanitized = sanitizeAssessmentBeforeSave(assessment);
   const file: ProgressFileV2 = {
-    tool: TOOL_NAME,
+    tool: TOOL_ID,
     version: 2,
     saved_at_iso: new Date().toISOString(),
     assessment: sanitized,
@@ -157,7 +159,7 @@ export function buildProgressFileV2(
 
 export function downloadProgress(state: ProgressFileV1 | ProgressFileV2): void {
   if (typeof document === 'undefined' || typeof URL === 'undefined') return;
-  const filename = `asset-dependency-progress-${state.saved_at_iso.slice(0, 10)}.json`;
+  const filename = `idt-progress-${state.saved_at_iso.slice(0, 10)}.json`;
   const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
@@ -200,8 +202,9 @@ export function parseProgressFile(raw: string): ImportResult {
     return { ok: false, error: 'Invalid progress file format.' };
   }
 
-  if (v.tool !== TOOL_NAME) {
-    return { ok: false, error: 'This file is not from the Asset Dependency Tool.' };
+  const toolId = typeof v.tool === 'string' ? v.tool : '';
+  if (toolId !== TOOL_ID && !LEGACY_TOOL_IDS.has(toolId)) {
+    return { ok: false, error: `This file is not from the ${TOOL_DISPLAY_NAME}.` };
   }
 
   const version = v.version;

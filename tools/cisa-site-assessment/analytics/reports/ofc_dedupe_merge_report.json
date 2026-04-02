@@ -1,0 +1,22 @@
+{
+  "mode": "DRY_RUN",
+  "submitted_by": "MINED",
+  "candidates_analyzed": 5856,
+  "groups_found": 0,
+  "groups_processed": 0,
+  "rows_merged": 0,
+  "citations_moved": 0,
+  "links_updated": 0,
+  "candidates_deleted": 0,
+  "sample_groups": [],
+  "citations_info": {
+    "table": "public.ofc_candidate_queue",
+    "ofc_id_col": "candidate_id",
+    "chunk_id_col": "document_chunk_id",
+    "use_direct_fk": true
+  },
+  "link_info": {
+    "table": "public.ofc_question_links",
+    "ofc_id_col": "ofc_id"
+  }
+}

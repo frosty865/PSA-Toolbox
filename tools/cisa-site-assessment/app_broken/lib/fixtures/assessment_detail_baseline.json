@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "assessment_id": "fixture-assessment-001",
+    "facility_name": "Sample Facility (Baseline Only)",
+    "sector": null,
+    "subsector": null
+  },
+  "required_elements": [
+    {
+      "element_id": "BASE-001",
+      "layer": "baseline",
+      "title": "Security Responsibility Designation",
+      "question_text": "The facility has a designated individual responsible for security.",
+      "current_response": null
+    },
+    {
+      "element_id": "BASE-002",
+      "layer": "baseline",
+      "title": "Security Roles Defined",
+      "question_text": "The facility has defined security roles for key positions.",
+      "current_response": "YES"
+    },
+    {
+      "element_id": "BASE-003",
+      "layer": "baseline",
+      "title": "Written Security Policy",
+      "question_text": "The facility has a written security policy or equivalent statement.",
+      "current_response": "NO"
+    },
+    {
+      "element_id": "BASE-004",
+      "layer": "baseline",
+      "title": "Security Policy Review",
+      "question_text": "The facility reviews its security policy on a regular schedule.",
+      "current_response": null
+    },
+    {
+      "element_id": "BASE-005",
+      "layer": "baseline",
+      "title": "Incident Reporting Process",
+      "question_text": "The facility has a documented process to report security incidents.",
+      "current_response": "YES"
+    }
+  ]
+}

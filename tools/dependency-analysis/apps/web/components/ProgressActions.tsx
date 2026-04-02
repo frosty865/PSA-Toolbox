@@ -86,16 +86,16 @@ export function ProgressActions({ assessment, setAssessment, onLoadSuccess, onCl
   return (
     <>
       <div className="progress-actions mb-3" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignItems: 'center' }}>
-        <button type="button" className="ida-btn ida-btn-secondary" onClick={handleSaveClick}>
+        <button type="button" className="btn btn-secondary" onClick={handleSaveClick}>
           Save Progress
         </button>
-        <button type="button" className="ida-btn ida-btn-secondary" onClick={handleLoadClick}>
+        <button type="button" className="btn btn-secondary" onClick={handleLoadClick}>
           Load Progress
         </button>
-        <button type="button" className="ida-btn ida-btn-secondary" onClick={handleClear}>
+        <button type="button" className="btn btn-secondary" onClick={handleClear}>
           Clear Session
         </button>
-        <button type="button" className="ida-btn ida-btn-secondary" onClick={handleWipeLocal} title="Remove saved data from this device">
+        <button type="button" className="btn btn-secondary" onClick={handleWipeLocal} title="Remove saved data from this device">
           Wipe local data
         </button>
         <input
@@ -146,10 +146,10 @@ export function ProgressActions({ assessment, setAssessment, onLoadSuccess, onCl
               {SAVE_WARNING}
             </p>
             <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end' }}>
-              <button type="button" className="ida-btn ida-btn-secondary" onClick={() => setSaveModalOpen(false)}>
+              <button type="button" className="btn btn-secondary" onClick={() => setSaveModalOpen(false)}>
                 Cancel
               </button>
-              <button type="button" className="ida-btn ida-btn-primary" onClick={handleSaveConfirm}>
+              <button type="button" className="btn btn-primary" onClick={handleSaveConfirm}>
                 Download JSON
               </button>
             </div>

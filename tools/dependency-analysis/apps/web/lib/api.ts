@@ -1,6 +1,10 @@
 import type { Assessment } from 'schema';
 import type { VOFCCollection } from 'schema';
 import { getApiBase } from '@/lib/platform/apiBase';
+import { isFieldStaticMode } from '@/lib/field/isFieldStaticMode';
+import * as fieldApi from '@/lib/field/apiFieldStatic';
+import { getFieldExportBaseUrl, isFieldRemoteDocxEnabled } from '@/lib/field/remoteExport';
+import { getExportFilename } from '@/lib/uiCopy/reviewExportCopy';
 import { purgeAllLocalState } from '@/app/lib/io/purge';
 import { buildVofcCollectionFromAssessment } from '@/app/lib/vofc/build_vofc_collection';
 import { isPraSlaEnabled } from '@/lib/pra-sla-enabled';
@@ -30,6 +34,7 @@ export type TemplateCheckResponse = {
 export type VofcReadyResponse = { ready: true } | { ready: false; error: string };
 
 export async function getVofcReady(): Promise<VofcReadyResponse> {
+  if (isFieldStaticMode()) return fieldApi.getVofcReady();
   const res = await fetch(`${getApiBase()}/api/vofc/ready`);
   const j = (await res.json().catch(() => ({}))) as { ready?: boolean; error?: string };
   if (j.ready === true) return { ready: true };
@@ -37,6 +42,7 @@ export async function getVofcReady(): Promise<VofcReadyResponse> {
 }
 
 export async function getTemplateCheck(): Promise<TemplateCheckResponse> {
+  if (isFieldStaticMode()) return fieldApi.getTemplateCheck();
   const res = await fetch(`${getApiBase()}/api/template/check`);
   if (!res.ok) {
     const j = await res.json().catch(() => ({}));
@@ -89,6 +95,7 @@ export async function exportDraft(
   passphrase: string,
   sessions?: DependencySessionsMap
 ): Promise<Blob> {
+  if (isFieldStaticMode()) return fieldApi.exportDraft(assessment, passphrase, sessions);
   const res = await fetch(`${getApiBase()}/api/export/draft`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -140,19 +147,20 @@ export type DependencySectionPayload = {
   knowledgeGaps?: KnowledgeGapPayload[];
 };
 
-export async function exportFinal(
-  assessment: Assessment,
+async function postExportFinalRequest(
+  url: string,
+  payload: Assessment,
   options?: {
     timeoutMs?: number;
     energy_dependency?: EnergyReportSectionPayload;
     dependency_sections?: DependencySectionPayload[];
-  }
+  },
+  crossOrigin?: boolean
 ): Promise<Blob> {
   const timeoutMs = options?.timeoutMs ?? 120000;
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
 
-  const payload = prepareAssessmentForVofcApi(assessment);
   const body: {
     assessment: Assessment;
     energy_dependency?: EnergyReportSectionPayload;
@@ -161,23 +169,27 @@ export async function exportFinal(
   if (options?.energy_dependency) body.energy_dependency = options.energy_dependency;
   if (options?.dependency_sections?.length) body.dependency_sections = options.dependency_sections;
 
-  const res = await fetch(`${getApiBase()}/api/export/final`, {
+  const res = await fetch(url, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'X-Request-Id': typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID().slice(0, 8) : '' },
+    ...(crossOrigin ? { mode: 'cors' as const, credentials: 'omit' as const } : {}),
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Request-Id': typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID().slice(0, 8) : '',
+    },
     body: JSON.stringify(body),
     signal: controller.signal,
   }).finally(() => clearTimeout(timeoutId));
 
   if (!res.ok) {
     const text = await res.text();
-    let payload: ExportFinalErrorPayload | { error?: string } = {};
+    let errPayload: ExportFinalErrorPayload | { error?: string } = {};
     try {
-      payload = JSON.parse(text) as ExportFinalErrorPayload | { error?: string };
+      errPayload = JSON.parse(text) as ExportFinalErrorPayload | { error?: string };
     } catch {
-      payload = { message: text?.slice(0, 200) || `HTTP ${res.status}` } as ExportFinalErrorPayload | { error?: string };
+      errPayload = { message: text?.slice(0, 200) || `HTTP ${res.status}` } as ExportFinalErrorPayload | { error?: string };
     }
-    const p = payload as ExportFinalErrorPayload;
-    const message = p?.message ?? (p as { error?: string }).error ?? `Final export failed (${res.status})`;
+    const p = errPayload as ExportFinalErrorPayload;
+    const message = p?.message ?? (errPayload as { error?: string }).error ?? `Final export failed (${res.status})`;
     console.error('[export/final]', res.status, message, p?.details ?? {});
     const err = new ApiError(message, res.status, p?.code, {
       request_id: p?.request_id,
@@ -191,7 +203,28 @@ export async function exportFinal(
   return res.blob();
 }
 
+export async function exportFinal(
+  assessment: Assessment,
+  options?: {
+    timeoutMs?: number;
+    energy_dependency?: EnergyReportSectionPayload;
+    dependency_sections?: DependencySectionPayload[];
+  }
+): Promise<Blob> {
+  const payload = prepareAssessmentForVofcApi(assessment);
+  if (isFieldStaticMode()) {
+    const remote = getFieldExportBaseUrl();
+    if (remote) {
+      return postExportFinalRequest(`${remote}/api/export/final`, payload, options, true);
+    }
+    return fieldApi.exportFinal(payload, options);
+  }
+
+  return postExportFinalRequest(`${getApiBase()}/api/export/final`, payload, options);
+}
+
 export async function exportRevisionPackage(assessment: Assessment, passphrase: string): Promise<Blob> {
+  if (isFieldStaticMode()) return fieldApi.exportRevisionPackage(assessment, passphrase);
   const res = await fetch(`${getApiBase()}/api/revision/export`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -212,6 +245,7 @@ export type RevisionPackageMetadata = {
 };
 
 export async function getRevisionPackageMetadata(file: File, passphrase: string): Promise<RevisionPackageMetadata> {
+  if (isFieldStaticMode()) return fieldApi.getRevisionPackageMetadata(file, passphrase);
   const form = new FormData();
   form.set('file', file);
   form.set('passphrase', passphrase);
@@ -229,6 +263,7 @@ export async function getRevisionPackageMetadata(file: File, passphrase: string)
 export type ImportRevisionResult = { assessment: Assessment; sessions?: DependencySessionsMap };
 
 export async function importRevisionPackage(file: File, passphrase: string): Promise<ImportRevisionResult> {
+  if (isFieldStaticMode()) return fieldApi.importRevisionPackage(file, passphrase);
   const form = new FormData();
   form.set('file', file);
   form.set('passphrase', passphrase);
@@ -261,5 +296,18 @@ export function downloadDraftZip(blob: Blob) {
 }
 
 export function downloadReportDocx(blob: Blob) {
-  downloadBlob(blob, 'Asset-Dependency-Assessment-Report.docx');
+  downloadBlob(blob, 'Infrastructure-Dependency-Tool-Report.docx');
+}
+
+/** Final export: DOCX for IT-hosted builds; JSON for field static unless hybrid remote export URL is set at build time. */
+export function downloadFinalExport(blob: Blob, assessment: Assessment) {
+  if (isFieldStaticMode()) {
+    if (isFieldRemoteDocxEnabled()) {
+      downloadReportDocx(blob);
+      return;
+    }
+    downloadBlob(blob, getExportFilename(assessment.meta?.created_at_iso, 'json'));
+    return;
+  }
+  downloadReportDocx(blob);
 }

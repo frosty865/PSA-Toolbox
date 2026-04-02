@@ -1,0 +1,16 @@
+[
+  {
+    "canon_id": "BASE-COM-001",
+    "discipline_code": "COM",
+    "subtype_code": null,
+    "question_text": "Is there a defined means for security or operations to communicate during incidents?",
+    "response_enum": ["YES","NO","N_A"]
+  },
+  {
+    "canon_id": "BASE-COM-002",
+    "discipline_code": "COM",
+    "subtype_code": null,
+    "question_text": "Is there a defined means to notify occupants when protective actions are required?",
+    "response_enum": ["YES","NO","N_A"]
+  }
+]

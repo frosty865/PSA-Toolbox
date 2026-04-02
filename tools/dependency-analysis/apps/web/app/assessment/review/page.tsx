@@ -8,7 +8,7 @@ import { ReviewExportPage } from '@/components/ReviewExport/ReviewExportPage';
  */
 export default function ReviewPage() {
   return (
-    <main className="ida-section active">
+    <main className="section active">
       <ReviewExportPage />
     </main>
   );

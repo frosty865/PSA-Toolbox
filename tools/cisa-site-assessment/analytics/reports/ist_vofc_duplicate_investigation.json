@@ -1,0 +1,63 @@
+{
+  "investigation_summary": "Analysis of duplicate OFC #6 entries with conflicting text",
+  "findings": {
+    "duplicate_ofc_ref_num": 6,
+    "occurrences": 2,
+    "details": [
+      {
+        "index": 0,
+        "ofc_ref_num": 6,
+        "text_preview": "(1) Determine the facility's susceptibility to blast. Consult Reference Manual to Mitigate Potential Terrorist Attacks Against Buildings (FEMA 426/BIPS 06)...",
+        "text_length": 523,
+        "source_url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+        "source_label": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+        "context_question": "Can any vehicle be placed (legally or illegally) within 400 feet of the facility? / Yes / Is parking: Uncontrolled / Placement Type: Adjacent on street",
+        "mentions_additional_url": true,
+        "additional_url": "https://www.llis.dhs.gov/sites/default/files/DHS-BombThreatChart-6-5-09.pdf"
+      },
+      {
+        "index": 1,
+        "ofc_ref_num": 6,
+        "text_preview": "Evaluate the need to implement enhanced protective measures for water system components, such as intrusion detection sensors and CCTV.",
+        "text_length": 120,
+        "source_url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+        "source_label": null,
+        "context_question": "Is external water required for the Facility Core Operations (Produce Key Services, Goods)? / Yes / Are components of the water supply located outside of the building (but still within control of facility) are protected from vandalism or accidental damage? / No",
+        "mentions_additional_url": false,
+        "additional_url": null
+      }
+    ],
+    "analysis": {
+      "same_url": true,
+      "same_text": false,
+      "text_similarity": "Completely different topics - blast analysis vs water system protection",
+      "possible_causes": [
+        "Source HTML may have reused OFC ref #6 for different OFC texts in different contexts",
+        "Parser extracted different text from different HTML table cells",
+        "Data quality issue: same reference number used for semantically different OFCs"
+      ],
+      "validation_behavior": "Correctly flagged as ERROR per requirements: 'if duplicates have different text/URLs -> ERROR'",
+      "recommendation": "Review source HTML to determine if this is expected (same ref_num for different contexts) or a data quality issue"
+    }
+  },
+  "other_duplicates": {
+    "ofc_ref_num_31": {
+      "occurrences": 3,
+      "all_same_text": true,
+      "all_same_url": true,
+      "only_differ_by_context": true,
+      "validation_status": "PASS - These will dedupe correctly (same text + URL)"
+    }
+  },
+  "parser_behavior": {
+    "extraction_method": "Finds all occurrences of '(Ref: OFC #N)' pattern in HTML table cells",
+    "deduplication": "None - creates one entry per occurrence",
+    "url_fallback": "If URL missing, checks if same OFC ref_num was seen before and reuses URL",
+    "text_extraction": "Removes '(Ref: OFC #N)' pattern and trailing 'Source' label from cell text"
+  },
+  "validation_requirements": {
+    "dedupe_by": "ofc_ref_num",
+    "error_condition": "If duplicates have different text/URLs -> ERROR",
+    "current_status": "FAIL - OFC #6 has conflicting text"
+  }
+}

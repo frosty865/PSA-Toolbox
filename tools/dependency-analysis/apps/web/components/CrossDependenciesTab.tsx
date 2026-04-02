@@ -349,7 +349,7 @@ export function CrossDependenciesTab({ assessment, onUpdate, setAssessment: setA
       <div className="mb-4" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
         <button
           type="button"
-          className="ida-btn ida-btn-outline-secondary ida-btn-sm"
+          className="btn btn-outline-secondary btn-sm"
           onClick={refreshSuggestions}
           title="Recompute suggestions from current assessment"
         >
@@ -357,7 +357,7 @@ export function CrossDependenciesTab({ assessment, onUpdate, setAssessment: setA
         </button>
         <button
           type="button"
-          className="ida-btn ida-btn-outline-primary ida-btn-sm"
+          className="btn btn-outline-primary btn-sm"
           onClick={acceptAll}
           disabled={suggestions.length === 0}
         >
@@ -433,21 +433,21 @@ export function CrossDependenciesTab({ assessment, onUpdate, setAssessment: setA
                     <span style={{ display: 'flex', gap: '0.25rem' }}>
                       <button
                         type="button"
-                        className="ida-btn ida-btn-sm ida-btn-success"
+                        className="btn btn-sm btn-success"
                         onClick={() => accept(e)}
                       >
                         Accept
                       </button>
                       <button
                         type="button"
-                        className="ida-btn ida-btn-sm ida-btn-outline-secondary"
+                        className="btn btn-sm btn-outline-secondary"
                         onClick={() => reject(e)}
                       >
                         Reject
                       </button>
                       <button
                         type="button"
-                        className="ida-btn ida-btn-sm ida-btn-outline-primary"
+                        className="btn btn-sm btn-outline-primary"
                         onClick={() => openEdit(e, null, true)}
                       >
                         Edit
@@ -456,7 +456,7 @@ export function CrossDependenciesTab({ assessment, onUpdate, setAssessment: setA
                   </div>
                   <button
                     type="button"
-                    className="ida-btn ida-btn-sm ida-btn-link p-0 text-decoration-none"
+                    className="btn btn-sm btn-link p-0 text-decoration-none"
                     onClick={() => setExpandedReasonIndex(isExpanded ? null : i)}
                     style={{ fontSize: '0.875rem' }}
                   >
@@ -525,14 +525,14 @@ export function CrossDependenciesTab({ assessment, onUpdate, setAssessment: setA
                 <span style={{ display: 'flex', gap: '0.25rem' }}>
                   <button
                     type="button"
-                    className="ida-btn ida-btn-sm ida-btn-outline-primary"
+                    className="btn btn-sm btn-outline-primary"
                     onClick={() => openEdit(e, i, false)}
                   >
                     Edit
                   </button>
                   <button
                     type="button"
-                    className="ida-btn ida-btn-sm ida-btn-outline-danger"
+                    className="btn btn-sm btn-outline-danger"
                     onClick={() => removeConfirmed(i)}
                   >
                     Remove
@@ -583,7 +583,7 @@ export function CrossDependenciesTab({ assessment, onUpdate, setAssessment: setA
                           {edge ? (
                             <button
                               type="button"
-                              className="ida-btn ida-btn-sm ida-btn-outline-primary"
+                              className="btn btn-sm btn-outline-primary"
                               style={{ fontSize: '0.7rem', padding: '0.15rem 0.35rem' }}
                               onClick={() => {
                                 const idx = confirmed.indexOf(edge);
@@ -809,10 +809,10 @@ function EdgeEditorDrawer({
         />
       </div>
       <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
-        <button type="button" className="ida-btn ida-btn-primary ida-btn-sm" onClick={() => onSave(form)}>
+        <button type="button" className="btn btn-primary btn-sm" onClick={() => onSave(form)}>
           Save
         </button>
-        <button type="button" className="ida-btn ida-btn-outline-secondary ida-btn-sm" onClick={onCancel}>
+        <button type="button" className="btn btn-outline-secondary btn-sm" onClick={onCancel}>
           Cancel
         </button>
       </div>

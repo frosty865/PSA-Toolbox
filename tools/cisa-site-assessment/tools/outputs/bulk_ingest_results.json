@@ -1,0 +1,45 @@
+{
+  "total": 4,
+  "ingested": [
+    {
+      "file": "D:\\PSA_System\\data\\incoming\\981507131-Vulnerability-Assessment-of-Physical-Protection-Systems-ISBN-9780750677882-0750677880-eBook-Full-Text.pdf",
+      "status": "ingested",
+      "source_registry_id": "168b0138-7c66-46ae-a8b1-29b959cf3d53",
+      "document_id": "7d597fc8-7a73-44cf-a904-5b9c08ca5b98",
+      "error": null,
+      "chunks": 70,
+      "pages": "15/15"
+    },
+    {
+      "file": "D:\\PSA_System\\data\\incoming\\Method to Assess the Vulnerability of U.S. Chemical Facilities.pdf",
+      "status": "ingested",
+      "source_registry_id": "dda535ec-606c-4926-92f3-b2d2e9eca734",
+      "document_id": "76ea4e4a-2d96-49f5-acaa-e2b99e83c188",
+      "error": null,
+      "chunks": 227,
+      "pages": "33/33"
+    },
+    {
+      "file": "D:\\PSA_System\\data\\incoming\\p16021coll11_4210.pdf",
+      "status": "ingested",
+      "source_registry_id": "5a3fee35-9071-4036-9ee0-62bdc34bdad2",
+      "document_id": "517b27d6-beb2-4c63-97e9-68bafa0f6827",
+      "error": null,
+      "chunks": 12,
+      "pages": "1/1"
+    },
+    {
+      "file": "D:\\PSA_System\\data\\incoming\\Risk-Informed Approaches for Physical Security.pdf",
+      "status": "ingested",
+      "source_registry_id": "6447f7c3-60b8-4151-a112-73fe878a0134",
+      "document_id": "5cc0c621-6f23-41bd-b039-c639e991009f",
+      "error": null,
+      "chunks": 86,
+      "pages": "9/9"
+    }
+  ],
+  "already_ingested": [],
+  "registration_failed": [],
+  "failed": [],
+  "would_ingest": []
+}

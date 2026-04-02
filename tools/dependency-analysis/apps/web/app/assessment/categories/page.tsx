@@ -1,7 +1,7 @@
 'use client';
 
 import React, { Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import Link from 'next/link';
+import Link from '@/components/FieldLink';
 import { useSearchParams } from 'next/navigation';
 import { useAssessment } from '@/lib/assessment-context';
 import { saveAssessmentToLocal } from '@/app/lib/io/assessmentStorage';
@@ -49,6 +49,7 @@ import { isPraSlaEnabled } from '@/lib/pra-sla-enabled';
 import { isCrossDependencyEnabled } from '@/lib/cross-dependency-enabled';
 import { deriveCurveValuesFromCategoryInput } from '@/app/lib/assessment/normalize_curve_storage';
 import { categoryCodeToInfrastructure, mergeCurveIntoCategory, setCurveValues } from '@/app/lib/curves/curve_accessors';
+import { CisaCommandHero } from '@/components/CisaCommandHero';
 
 /**
  * Build dependency rows for the Hosted Services continuity block only.
@@ -432,10 +433,11 @@ function CategoriesPageContent() {
                 />
                 {/* Cyber / Continuity / Recovery — single block after IT questionnaire */}
                 <section
-                  className="card p-4 mb-4 ida-it-continuity-card"
+                  className="card p-4 mb-4"
+                  style={{ borderLeft: '4px solid var(--cisa-blue-lighter)' }}
                   aria-labelledby="it-cyber-continuity-heading"
                 >
-                  <h3 id="it-cyber-continuity-heading" className="text-lg font-semibold mb-4 ida-it-continuity-title">
+                  <h3 id="it-cyber-continuity-heading" className="text-lg font-semibold mb-4" style={{ color: 'var(--cisa-blue)' }}>
                     Cyber / Continuity / Recovery
                   </h3>
                   <fieldset className="mb-4 border-0 p-0">
@@ -464,7 +466,7 @@ function CategoriesPageContent() {
                   </fieldset>
                   {(input as Record<string, unknown>).it_continuity_plan_exists === 'yes' && (
                     <>
-                      <fieldset className="mb-4 pl-4 border-0 p-0 ida-subfieldset">
+                      <fieldset className="mb-4 pl-4 border-0 p-0" style={{ borderLeft: '2px solid var(--cisa-gray-light)' }}>
                         <legend className="font-medium mb-2 text-base">
                           Has the information technology continuity or recovery plan been exercised or tested?
                         </legend>
@@ -493,7 +495,7 @@ function CategoriesPageContent() {
                         </div>
                       </fieldset>
                       {String((input as Record<string, unknown>).it_plan_exercised ?? '').startsWith('yes_') && (
-                        <fieldset className="mb-0 pl-4 border-0 p-0 ida-subfieldset-light">
+                        <fieldset className="mb-0 pl-4 border-0 p-0" style={{ borderLeft: '2px solid var(--cisa-gray-lighter)' }}>
                           <legend className="font-medium mb-2 text-base">
                             What was the scope of the most recent exercise or test?
                           </legend>
@@ -586,7 +588,7 @@ function CategoriesPageContent() {
                     {(() => {
                       const paceDebug = getCommsPaceCurveDebug(input as import('schema').CategoryInput);
                       return paceDebug ? (
-                        <details className="mt-3 border rounded p-3 ida-debug-details">
+                        <details className="mt-3 border rounded p-3" style={{ borderColor: 'var(--cisa-gray-light)' }}>
                           <summary className="cursor-pointer font-medium">How this curve was built</summary>
                           <div className="mt-2 text-sm space-y-2">
                             <p>Scenario: {paceDebug.scenario}. Layers with LIKELY_FAIL_REGIONAL or same upstream as failed Primary are excluded.</p>
@@ -693,11 +695,11 @@ function CategoriesPageContent() {
     (tabId: SectionTabId) => {
       if (!DEPENDENCY_TAB_IDS.includes(tabId)) return null;
       return (
-        <div className="ida-inline-actions">
-          <button type="button" className="ida-btn ida-btn-primary" onClick={handleDependencySave}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <button type="button" className="btn btn-primary" onClick={handleDependencySave}>
             Save
           </button>
-          {saveFeedback && <span className="text-success ida-inline-feedback">{saveFeedback}</span>}
+          {saveFeedback && <span className="text-success" style={{ fontSize: 'var(--font-size-sm)' }}>{saveFeedback}</span>}
         </div>
       );
     },
@@ -705,9 +707,45 @@ function CategoriesPageContent() {
   );
 
   return (
-    <main className="ida-section active">
-      <div className="ida-section-intro">
-        <h2 className="ida-section-title">Category data</h2>
+    <main className="section active">
+      <div style={{ marginBottom: '1.5rem' }}>
+        <CisaCommandHero
+          topbandSub="Infrastructure Dependency Assessment"
+          eyebrow="Assessment command center"
+          title="Infrastructure Dependency Assessment"
+          subtitle="Enter dependency data by section to mirror workbook sheets, track completion, and move toward export-ready outputs. Your session persists in the browser while you work."
+          cta={{ href: '#category-workspace', label: 'Start category data entry' }}
+          chips={[
+            { label: 'Browser session autosave', icon: 'sync' },
+            { label: 'Report-ready workflow', icon: 'file' },
+            { label: 'IDA', icon: 'shield' },
+          ]}
+          howItFits={[
+            {
+              title: 'Assess',
+              body: 'Capture asset, dependency, and resilience inputs across electric, IT, water, wastewater, communications, and related sections.',
+            },
+            {
+              title: 'Analyze',
+              body: 'Use tabs and charts to validate entries, cross-dependencies, and summary views before export.',
+            },
+            {
+              title: 'Deliver',
+              body: 'Save progress locally and use the review/export path when the assessment is complete.',
+            },
+          ]}
+        />
+      </div>
+      <div
+        id="category-workspace"
+        style={{
+          backgroundColor: 'var(--cisa-gray-lighter, #f1f1f2)',
+          paddingBottom: '1rem',
+          marginBottom: '0.5rem',
+          borderBottom: '1px solid var(--cisa-gray-light)',
+        }}
+      >
+        <h2 className="section-title">Category data</h2>
         <p className="text-secondary mb-4">
           Enter dependency assessment data for each section. Use the tabs to match the workbook sheets.
         </p>
@@ -738,7 +776,7 @@ function CategoriesPageContent() {
 
 export default function CategoriesPage() {
   return (
-    <Suspense fallback={<div className="ida-section active"><p className="text-secondary">Loading…</p></div>}>
+    <Suspense fallback={<div className="section active"><p className="text-secondary">Loading…</p></div>}>
       <CategoriesPageContent />
     </Suspense>
   );

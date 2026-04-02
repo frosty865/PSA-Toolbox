@@ -1,0 +1,214 @@
+{
+  "items": [
+    {
+      "legacy_id": "BASE-041",
+      "legacy_code": "BASE-041",
+      "discipline_name": "CPTED",
+      "discipline_subtype_code": "CPTED_DEFENSIBLE_SPACE",
+      "capability_dimension": "PLANS_PROCEDURES",
+      "question": "Are documented procedures in place for defensible space?",
+      "outcome": "MOVE_TO_SMG",
+      "reason_codes": [
+        "SUBTYPE_LEVEL_PROCEDURE_QUESTION"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "Procedural detail moved to SMG"
+    },
+    {
+      "legacy_id": "BASE-043",
+      "legacy_code": "BASE-043",
+      "discipline_name": "CPTED",
+      "discipline_subtype_code": "CPTED_DEFENSIBLE_SPACE",
+      "capability_dimension": "PERSONNEL_RESPONSIBILITY",
+      "question": "Are roles and responsibilities defined for defensible space?",
+      "outcome": "MOVE_TO_SMG",
+      "reason_codes": [
+        "SUBTYPE_LEVEL_ROLES_QUESTION"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "Governance/roles belong in SMG, not per-subtype"
+    },
+    {
+      "legacy_id": "BASE-045",
+      "legacy_code": "BASE-045",
+      "discipline_name": "CPTED",
+      "discipline_subtype_code": "CPTED_EXTERIOR_LIGHTING",
+      "capability_dimension": "PLANS_PROCEDURES",
+      "question": "Are documented procedures in place for exterior lighting?",
+      "outcome": "MOVE_TO_SMG",
+      "reason_codes": [
+        "SUBTYPE_LEVEL_PROCEDURE_QUESTION"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "Procedural detail moved to SMG"
+    },
+    {
+      "legacy_id": "BASE-047",
+      "legacy_code": "BASE-047",
+      "discipline_name": "CPTED",
+      "discipline_subtype_code": "CPTED_EXTERIOR_LIGHTING",
+      "capability_dimension": "PERSONNEL_RESPONSIBILITY",
+      "question": "Are roles and responsibilities defined for exterior lighting?",
+      "outcome": "MOVE_TO_SMG",
+      "reason_codes": [
+        "SUBTYPE_LEVEL_ROLES_QUESTION"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "Governance/roles belong in SMG, not per-subtype"
+    },
+    {
+      "legacy_id": "BASE-049",
+      "legacy_code": "BASE-049",
+      "discipline_name": "CPTED",
+      "discipline_subtype_code": "CPTED_LANDSCAPING_CONTROL",
+      "capability_dimension": "PLANS_PROCEDURES",
+      "question": "Are documented procedures in place for landscaping control?",
+      "outcome": "MOVE_TO_SMG",
+      "reason_codes": [
+        "SUBTYPE_LEVEL_PROCEDURE_QUESTION"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "Procedural detail moved to SMG"
+    },
+    {
+      "legacy_id": "BASE-051",
+      "legacy_code": "BASE-051",
+      "discipline_name": "CPTED",
+      "discipline_subtype_code": "CPTED_LANDSCAPING_CONTROL",
+      "capability_dimension": "PERSONNEL_RESPONSIBILITY",
+      "question": "Are roles and responsibilities defined for landscaping control?",
+      "outcome": "MOVE_TO_SMG",
+      "reason_codes": [
+        "SUBTYPE_LEVEL_ROLES_QUESTION"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "Governance/roles belong in SMG, not per-subtype"
+    },
+    {
+      "legacy_id": "BASE-053",
+      "legacy_code": "BASE-053",
+      "discipline_name": "CPTED",
+      "discipline_subtype_code": "CPTED_NATURAL_SURVEILLANCE",
+      "capability_dimension": "PLANS_PROCEDURES",
+      "question": "Are documented procedures in place for natural surveillance?",
+      "outcome": "MOVE_TO_SMG",
+      "reason_codes": [
+        "SUBTYPE_LEVEL_PROCEDURE_QUESTION"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "Procedural detail moved to SMG"
+    },
+    {
+      "legacy_id": "BASE-055",
+      "legacy_code": "BASE-055",
+      "discipline_name": "CPTED",
+      "discipline_subtype_code": "CPTED_NATURAL_SURVEILLANCE",
+      "capability_dimension": "PERSONNEL_RESPONSIBILITY",
+      "question": "Are roles and responsibilities defined for natural surveillance?",
+      "outcome": "MOVE_TO_SMG",
+      "reason_codes": [
+        "SUBTYPE_LEVEL_ROLES_QUESTION"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "Governance/roles belong in SMG, not per-subtype"
+    },
+    {
+      "legacy_id": "BASE-057",
+      "legacy_code": "BASE-057",
+      "discipline_name": "CPTED",
+      "discipline_subtype_code": "CPTED_SIGHTLINES",
+      "capability_dimension": "PLANS_PROCEDURES",
+      "question": "Are documented procedures in place for sightlines?",
+      "outcome": "MOVE_TO_SMG",
+      "reason_codes": [
+        "SUBTYPE_LEVEL_PROCEDURE_QUESTION"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "Procedural detail moved to SMG"
+    },
+    {
+      "legacy_id": "BASE-059",
+      "legacy_code": "BASE-059",
+      "discipline_name": "CPTED",
+      "discipline_subtype_code": "CPTED_SIGHTLINES",
+      "capability_dimension": "PERSONNEL_RESPONSIBILITY",
+      "question": "Are roles and responsibilities defined for sightlines?",
+      "outcome": "MOVE_TO_SMG",
+      "reason_codes": [
+        "SUBTYPE_LEVEL_ROLES_QUESTION"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "Governance/roles belong in SMG, not per-subtype"
+    },
+    {
+      "legacy_id": "BASE-061",
+      "legacy_code": "BASE-061",
+      "discipline_name": "CPTED",
+      "discipline_subtype_code": "CPTED_TERRITORIAL_REINFORCEMENT",
+      "capability_dimension": "PLANS_PROCEDURES",
+      "question": "Are documented procedures in place for territorial reinforcement?",
+      "outcome": "MOVE_TO_SMG",
+      "reason_codes": [
+        "SUBTYPE_LEVEL_PROCEDURE_QUESTION"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "Procedural detail moved to SMG"
+    },
+    {
+      "legacy_id": "BASE-063",
+      "legacy_code": "BASE-063",
+      "discipline_name": "CPTED",
+      "discipline_subtype_code": "CPTED_TERRITORIAL_REINFORCEMENT",
+      "capability_dimension": "PERSONNEL_RESPONSIBILITY",
+      "question": "Are roles and responsibilities defined for territorial reinforcement?",
+      "outcome": "MOVE_TO_SMG",
+      "reason_codes": [
+        "SUBTYPE_LEVEL_ROLES_QUESTION"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "Governance/roles belong in SMG, not per-subtype"
+    },
+    {
+      "legacy_id": "BASE-065",
+      "legacy_code": "BASE-065",
+      "discipline_name": "CPTED",
+      "discipline_subtype_code": "CPTED_WAYFINDING",
+      "capability_dimension": "PLANS_PROCEDURES",
+      "question": "Are documented procedures in place for wayfinding?",
+      "outcome": "MOVE_TO_SMG",
+      "reason_codes": [
+        "SUBTYPE_LEVEL_PROCEDURE_QUESTION"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "Procedural detail moved to SMG"
+    },
+    {
+      "legacy_id": "BASE-067",
+      "legacy_code": "BASE-067",
+      "discipline_name": "CPTED",
+      "discipline_subtype_code": "CPTED_WAYFINDING",
+      "capability_dimension": "PERSONNEL_RESPONSIBILITY",
+      "question": "Are roles and responsibilities defined for wayfinding?",
+      "outcome": "MOVE_TO_SMG",
+      "reason_codes": [
+        "SUBTYPE_LEVEL_ROLES_QUESTION"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "Governance/roles belong in SMG, not per-subtype"
+    }
+  ]
+}

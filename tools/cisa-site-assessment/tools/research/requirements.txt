@@ -1,0 +1,4 @@
+# Requirements for module research downloader
+# Install with: pip install -r tools/research/requirements.txt
+
+requests>=2.31.0

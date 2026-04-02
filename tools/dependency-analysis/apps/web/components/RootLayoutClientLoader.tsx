@@ -1,7 +1,7 @@
 'use client';
 
 import { AssessmentProvider } from '@/lib/assessment-context';
-import IdaHeader from '@/components/branding/IdaHeader';
+import CisaHeader from '@/components/branding/CisaHeader';
 import { useEffect } from 'react';
 import type { ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
@@ -14,27 +14,28 @@ function isDev(): boolean {
   );
 }
 
-/** Single client boundary: inlines shell to avoid RSC lazy "promise resolves to undefined" error. */
+/** Landing (/) has no chrome; IDA routes and /t/… use CisaHeader. Static /hotel-analysis/* is served from public/ (no React shell). */
 export function RootLayoutClientLoader({ children }: { children: ReactNode }) {
-  const pathname = usePathname();
-  /** Unified toolbox shell: no IDA header on landing or Host V3 product routes */
-  const isToolboxShell =
-    pathname === '/' || pathname === '' || pathname.startsWith('/host-v3');
+  const pathname = usePathname() ?? '';
+  const isLanding = pathname === '/' || pathname === '';
 
   useEffect(() => {
     if (typeof window === 'undefined' || !('serviceWorker' in navigator)) return;
     if (isDev()) return;
-    navigator.serviceWorker.register('/sw.js').catch(() => {});
+    if (window.location.protocol === 'file:') return;
+    const prefix = (process.env.NEXT_PUBLIC_FIELD_STATIC_BASE_PATH ?? '').replace(/\/$/, '');
+    const swPath = `${prefix}/sw.js`.replace(/\/+/g, '/');
+    navigator.serviceWorker.register(swPath.startsWith('/') ? swPath : `/${swPath}`).catch(() => {});
   }, []);
 
   return (
     <AssessmentProvider>
       <div className="ida-app">
-        {isToolboxShell ? (
+        {isLanding ? (
           <div className="container">{children}</div>
         ) : (
           <>
-            <IdaHeader variant="page" />
+            <CisaHeader variant="page" />
             <div className="container">{children}</div>
           </>
         )}

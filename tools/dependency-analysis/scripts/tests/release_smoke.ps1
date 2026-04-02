@@ -23,7 +23,7 @@ if (-not (Test-Path $ReporterExe)) {
 }
 
 $guid = [System.Guid]::NewGuid().ToString("n").Substring(0, 8)
-$WorkDir = Join-Path ([System.IO.Path]::GetTempPath()) "PSA-IDA-Smoke-$guid"
+$WorkDir = Join-Path ([System.IO.Path]::GetTempPath()) "CISA-ADA-Smoke-$guid"
 New-Item -ItemType Directory -Force $WorkDir | Out-Null
 $TemplatePath = Join-Path $RepoRoot "assets\templates\Asset Dependency Assessment Report_BLANK.docx"
 $MinimalJson = '{"meta":{"tool_version":"0.1.0","template_version":"v1","created_at_iso":"2025-01-01T00:00:00Z"},"asset":{"asset_name":"Smoke","visit_date_iso":"2025-01-01","location":"","assessor":""},"categories":{"ELECTRIC_POWER":{"requires_service":true,"time_to_impact_hours":24,"loss_fraction_no_backup":0.5,"has_backup":true,"backup_duration_hours":12,"loss_fraction_with_backup":0.2,"recovery_time_hours":48}}}'

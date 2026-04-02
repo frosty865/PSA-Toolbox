@@ -1,7 +1,7 @@
 'use client';
 
 import { AssessmentProvider } from '@/lib/assessment-context';
-import IdaHeader from '@/components/branding/IdaHeader';
+import CisaHeader from '@/components/branding/CisaHeader';
 import { useEffect } from 'react';
 import type { ReactNode } from 'react';
 
@@ -23,7 +23,7 @@ export function RootLayoutClient({ children }: { children: ReactNode }) {
 
   return (
     <AssessmentProvider>
-      <IdaHeader variant="page" />
+      <CisaHeader variant="page" />
       <div className="container">{children}</div>
     </AssessmentProvider>
   );

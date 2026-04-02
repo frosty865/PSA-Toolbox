@@ -128,7 +128,7 @@ async function main() {
     }
   }
 
-  const outPath = path.resolve(process.cwd(), '..', '..', 'docs', 'QUESTION_VOFC_COVERAGE.md');
+  const outPath = path.resolve(process.cwd(), '..', '..', 'data', 'QUESTION_VOFC_COVERAGE.md');
   await fs.writeFile(outPath, `${out.join('\n')}\n`, 'utf8');
   // eslint-disable-next-line no-console
   console.log(`Wrote ${outPath}`);

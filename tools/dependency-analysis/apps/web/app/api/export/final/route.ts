@@ -23,8 +23,25 @@ export const maxDuration = 300;
 
 const MAIN_PY_RELATIVE = path.join('apps', 'reporter', 'main.py');
 
+/** Repo root where apps/reporter/main.py exists; same logic as template/path.findRootWithReporter for export. */
+function findRootWithReporter(): string {
+  const root = getRepoRoot();
+  if (existsSync(path.join(root, MAIN_PY_RELATIVE))) return root;
+  const cwd = process.cwd();
+  const candidates = [
+    cwd,
+    path.join(cwd, '..'),
+    path.join(cwd, '..', '..'),
+    path.join(cwd, 'asset-dependency-tool'),
+  ];
+  for (const dir of candidates) {
+    if (existsSync(path.join(dir, MAIN_PY_RELATIVE))) return path.resolve(dir);
+  }
+  return root;
+}
+
 /**
- * Reporter for DOCX export. Prefer Python (main.py) over reporter.exe for PSA/field:
+ * Reporter for DOCX export. Prefer Python (main.py) over reporter.exe for CISA/field:
  * - No custom .exe avoids network security and software-approval issues.
  * - Use agency-approved Python + pip install -r apps/reporter/requirements.txt.
  * Set ADA_REPORTER_EXE to force the packaged exe when you have an approved build.
@@ -257,8 +274,37 @@ type ErrorPayload = {
   debug?: { err: string; stack_top: string[]; timings?: Record<string, number> };
 };
 
-function jsonError(payload: ErrorPayload, status: number): NextResponse {
-  return NextResponse.json(payload, { status });
+/** When set (comma-separated origins, or single FIELD_EXPORT_CORS_ORIGIN), allow browser POST from static field UI (hybrid DOCX). */
+function applyExportFinalCors(res: NextResponse, request?: NextRequest) {
+  if (!request) return;
+  const fromList = (process.env.FIELD_EXPORT_CORS_ORIGINS?.trim() ?? '')
+    .split(',')
+    .map((o) => o.trim())
+    .filter(Boolean);
+  const single = process.env.FIELD_EXPORT_CORS_ORIGIN?.trim();
+  const allow = single ? [...fromList, single] : fromList;
+  if (allow.length === 0) return;
+  const origin = request.headers.get('origin');
+  if (!origin || !allow.includes(origin)) return;
+  res.headers.set('Access-Control-Allow-Origin', origin);
+  res.headers.set('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.headers.set('Access-Control-Allow-Headers', 'Content-Type, X-Request-Id');
+  res.headers.set('Access-Control-Max-Age', '86400');
+}
+
+function jsonError(payload: ErrorPayload, status: number, request?: NextRequest): NextResponse {
+  const res = NextResponse.json(payload, { status });
+  applyExportFinalCors(res, request);
+  return res;
+}
+
+export async function OPTIONS(request: NextRequest) {
+  const res = new NextResponse(null, { status: 204 });
+  applyExportFinalCors(res, request);
+  if (!res.headers.get('Access-Control-Allow-Origin')) {
+    return new NextResponse(null, { status: 403 });
+  }
+  return res;
 }
 
 export async function POST(request: NextRequest) {
@@ -283,7 +329,8 @@ export async function POST(request: NextRequest) {
           message: 'Missing assessment. Send JSON body with an assessment object.',
           request_id: requestId,
         },
-        400
+        400,
+        request
       );
     }
 
@@ -308,7 +355,8 @@ export async function POST(request: NextRequest) {
             details: { issues },
             debug: isDev() ? { err: String(e), stack_top: safeStackTop(e.stack) } : undefined,
           },
-          400
+          400,
+          request
         );
       }
       throw e;
@@ -331,7 +379,7 @@ export async function POST(request: NextRequest) {
     }
     const dependency_sections = buildDependencySectionsFromRepo(depVofcRows);
 
-    repoRoot = getRepoRoot();
+    repoRoot = findRootWithReporter();
     let { command: reporterCommand, args: reporterArgs } = getReporterCommand(repoRoot);
     const reporterExePath = getReporterPath(repoRoot);
     let usingPython = reporterArgs.length > 0;
@@ -382,7 +430,7 @@ export async function POST(request: NextRequest) {
           useVercelRenderApi = true;
         } else {
           const message =
-            'Export reporter not found. Set ADT_APP_ROOT (or ADT_ROOT) to the asset-dependency-tool directory, or build reporter.exe (apps/reporter/build.ps1), or use Python (set ADA_USE_PYTHON_REPORTER=1 and ensure apps/reporter/main.py and .venv or .venv-reporter exist with pip install -r apps/reporter/requirements.txt).';
+            'Export reporter not found. Set IDT_APP_ROOT (or IDT_ROOT; legacy ADT_APP_ROOT/ADT_ROOT also supported) to the asset-dependency-tool directory, or build reporter.exe (apps/reporter/build.ps1), or use Python (set ADA_USE_PYTHON_REPORTER=1 and ensure apps/reporter/main.py and .venv or .venv-reporter exist with pip install -r requirements.txt).';
           return jsonError(
             {
               ok: false,
@@ -392,7 +440,8 @@ export async function POST(request: NextRequest) {
               failure_reason: 'Reporter executable missing',
               details: { expected_path: reporterExePath, main_py_checked: mainPy, repo_root_used: repoRoot },
             },
-            503
+            503,
+            request
           );
         }
       }
@@ -485,7 +534,8 @@ export async function POST(request: NextRequest) {
           failure_reason: 'Captured inputs not represented or suppressed',
           details: { unaccounted_count: unaccountedKeys.length, sample: entries },
         },
-        400
+        400,
+        request
       );
     }
 
@@ -626,7 +676,8 @@ export async function POST(request: NextRequest) {
             request_id: requestId,
             failure_reason: 'Template file missing',
           },
-          500
+          500,
+          request
         );
       }
       if (isDev()) console.log(`[export/final] ${requestId} template: ${templatePath}`);
@@ -643,7 +694,8 @@ export async function POST(request: NextRequest) {
             request_id: requestId,
             failure_reason: 'Template anchor validation failed',
           },
-          500
+          500,
+          request
         );
       }
     }
@@ -659,7 +711,8 @@ export async function POST(request: NextRequest) {
           request_id: requestId,
           failure_reason: 'Required metadata missing',
         },
-        400
+        400,
+        request
       );
     }
 
@@ -718,7 +771,8 @@ export async function POST(request: NextRequest) {
           request_id: requestId,
           failure_reason: 'Vulnerability blocks empty',
         },
-        400
+        400,
+        request
       );
     }
 
@@ -757,7 +811,8 @@ export async function POST(request: NextRequest) {
             request_id: requestId,
             failure_reason: 'No Python in serverless environment',
           },
-          503
+          503,
+          request
         );
       }
     } else {
@@ -800,14 +855,16 @@ export async function POST(request: NextRequest) {
     timings.persist_artifact = Date.now() - t0;
     if (isDev()) console.log(`[export/final] ${requestId} persist_artifact`);
 
-    return new NextResponse(new Uint8Array(docxBytes), {
+    const okRes = new NextResponse(new Uint8Array(docxBytes), {
       status: 200,
       headers: {
         'Content-Type': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-        'Content-Disposition': 'attachment; filename="Asset-Dependency-Assessment-Report.docx"',
+        'Content-Disposition': 'attachment; filename="Infrastructure-Dependency-Tool-Report.docx"',
         'X-Request-Id': requestId,
       },
     });
+    applyExportFinalCors(okRes, request);
+    return okRes;
   } catch (e) {
     const err = e instanceof Error ? e : new Error(String(e));
     const stderr = (e as Error & { reporterStderr?: string }).reporterStderr;
@@ -821,7 +878,7 @@ export async function POST(request: NextRequest) {
       if (process.env.VERCEL === '1') {
         message += ' DOCX export is not available on this deployment. Run the app locally (pnpm dev) to generate reports.';
       } else {
-        message += ' Install Python from python.org (add to PATH) or create .venv (python -m venv .venv && .venv\\Scripts\\pip install -r apps/reporter/requirements.txt) or build reporter.exe (apps/reporter/build.ps1).';
+        message += ' Install Python from python.org (add to PATH) or create .venv (python -m venv .venv && .venv\\Scripts\\pip install -r requirements.txt) or build reporter.exe (apps/reporter/build.ps1).';
       }
     }
     const isNarrativeTokens = (err.message?.includes('narrative tokens') ?? false) || (err.message?.includes('Narrative tokens') ?? false);
@@ -867,7 +924,7 @@ export async function POST(request: NextRequest) {
         ...(stderr ? { reporter_stderr: stderr } : {}),
       };
     }
-    return jsonError(payload, status);
+    return jsonError(payload, status, request);
   } finally {
     if (workDir) await rmSafe(workDir);
     try {

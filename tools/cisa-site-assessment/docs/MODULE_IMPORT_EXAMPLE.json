@@ -1,0 +1,65 @@
+{
+  "module_code": "MODULE_EXAMPLE",
+  "title": "Example Module",
+  "description": "Example module demonstrating the required structure for module imports",
+  "import_source": "example_module_import.json",
+  "mode": "REPLACE",
+  "module_questions": [
+    {
+      "id": "MODULEQ_EXAMPLE_001",
+      "text": "Is physical access to [specific asset] restricted to authorized personnel?",
+      "order": 1,
+      "discipline_id": "00000000-0000-0000-0000-000000000000",
+      "discipline_subtype_id": "00000000-0000-0000-0000-000000000000",
+      "asset_or_location": "Specific asset or location",
+      "event_trigger": "TAMPERING"
+    },
+    {
+      "id": "MODULEQ_EXAMPLE_002",
+      "text": "Is video coverage implemented for [specific location] to support incident detection?",
+      "order": 2,
+      "discipline_id": "00000000-0000-0000-0000-000000000000",
+      "discipline_subtype_id": "00000000-0000-0000-0000-000000000000",
+      "asset_or_location": "Specific location",
+      "event_trigger": "TAMPERING"
+    },
+    {
+      "id": "MODULEQ_EXAMPLE_003",
+      "text": "Is a user-accessible method provided to request assistance or report an emergency?",
+      "order": 3,
+      "discipline_id": "00000000-0000-0000-0000-000000000000",
+      "discipline_subtype_id": "00000000-0000-0000-0000-000000000000",
+      "asset_or_location": "Specific location",
+      "event_trigger": "OTHER"
+    }
+  ],
+  "module_ofcs": [
+    {
+      "ofc_id": "MOD_OFC_EXAMPLE_001",
+      "ofc_text": "Consider implementing [specific physical security measure] at [location] to [achieve outcome].",
+      "order_index": 1,
+      "sources": [
+        {
+          "url": "https://example.com/source.pdf",
+          "label": "Source Document Title (Author, Date)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_EXAMPLE_002",
+      "ofc_text": "An option for consideration is [specific measure] to [achieve outcome].",
+      "order_index": 2,
+      "sources": []
+    }
+  ],
+  "risk_drivers": [
+    {
+      "driver_type": "CYBER_DRIVER",
+      "driver_text": "Unauthorized access to [system] may enable physical tampering or unsafe conditions at [location]."
+    },
+    {
+      "driver_type": "FRAUD_DRIVER",
+      "driver_text": "Payment skimming or data theft at [location] may increase criminal targeting of [location] and associated users."
+    }
+  ]
+}

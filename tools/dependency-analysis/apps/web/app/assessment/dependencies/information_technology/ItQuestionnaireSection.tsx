@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import Link from 'next/link';
+import Link from '@/components/FieldLink';
 import {
   IT_QUESTIONS,
   IT_CURVE_QUESTIONS,
@@ -145,7 +145,7 @@ export function ItQuestionnaireSection({
   const heading = embedded ? (
     <h3 className="text-lg font-semibold mt-6 mb-2">Information Technology (Externally Hosted / Managed Digital Services) — IT-1–IT-7</h3>
   ) : (
-    <h2 className="ida-section-title">Information Technology (Externally Hosted / Managed Digital Services)</h2>
+    <h2 className="section-title">Information Technology (Externally Hosted / Managed Digital Services)</h2>
   );
 
   const scopeCallout = (
@@ -216,7 +216,7 @@ export function ItQuestionnaireSection({
       <p className="text-secondary mb-4">{IT_INTRO}</p>
       <div className="mb-4">
         {!embedded && (
-          <Link href="/assessment/categories/" className="ida-btn ida-btn-secondary" style={{ marginRight: '0.5rem' }}>
+          <Link href="/assessment/categories/" className="btn btn-secondary" style={{ marginRight: '0.5rem' }}>
             ← Categories
           </Link>
         )}
@@ -791,10 +791,10 @@ function ItServiceProvidersEditor({ providers, onChange }: { providers: ItServic
             <option value="secondary">Secondary</option>
             <option value="unknown">Unknown</option>
           </select>
-          <button type="button" onClick={() => remove(i)} className="ida-btn ida-btn-secondary text-sm">Remove</button>
+          <button type="button" onClick={() => remove(i)} className="btn btn-secondary text-sm">Remove</button>
         </div>
       ))}
-      <button type="button" onClick={add} className="ida-btn ida-btn-secondary text-sm">Add provider</button>
+      <button type="button" onClick={add} className="btn btn-secondary text-sm">Add provider</button>
     </div>
   );
 }
@@ -861,7 +861,7 @@ function ItUpstreamAssetsEditor({ assets, onChange }: { assets: ItUpstreamAssetE
               placeholder="Provider (optional)"
               style={{ width: 240, maxWidth: '100%' }}
             />
-            <button type="button" onClick={() => remove(i)} className="ida-btn ida-btn-secondary text-sm">
+            <button type="button" onClick={() => remove(i)} className="btn btn-secondary text-sm">
               Remove
             </button>
           </div>
@@ -891,7 +891,7 @@ function ItUpstreamAssetsEditor({ assets, onChange }: { assets: ItUpstreamAssetE
           </div>
         </div>
       ))}
-      <button type="button" onClick={add} className="ida-btn ida-btn-secondary text-sm">
+      <button type="button" onClick={add} className="btn btn-secondary text-sm">
         Add service
       </button>
     </div>
@@ -980,11 +980,11 @@ function ItConnectionEntriesEditor({ connections, onChange }: { connections: ItC
           </div>
 
           <div className="flex gap-2 items-center">
-            <button type="button" onClick={() => remove(i)} className="ida-btn ida-btn-secondary text-sm">Remove</button>
+            <button type="button" onClick={() => remove(i)} className="btn btn-secondary text-sm">Remove</button>
           </div>
         </div>
       ))}
-      <button type="button" onClick={add} className="ida-btn ida-btn-secondary text-sm">Add connection</button>
+      <button type="button" onClick={add} className="btn btn-secondary text-sm">Add connection</button>
     </div>
   );
 }
@@ -1004,10 +1004,10 @@ function ItProtectionsEditor({ protections, onChange }: { protections: ItCompone
           <input className="form-control" value={p.component_type} onChange={(e) => set(i, { component_type: e.target.value })} placeholder="Component type" aria-label="Component type" />
           <input className="form-control" value={p.location} onChange={(e) => set(i, { location: e.target.value })} placeholder="Location" aria-label="Location" />
           <input className="form-control" value={p.protection_type} onChange={(e) => set(i, { protection_type: e.target.value })} placeholder="Protection type" aria-label="Protection type" />
-          <button type="button" onClick={() => remove(i)} className="ida-btn ida-btn-secondary text-sm">Remove</button>
+          <button type="button" onClick={() => remove(i)} className="btn btn-secondary text-sm">Remove</button>
         </div>
       ))}
-      <button type="button" onClick={add} className="ida-btn ida-btn-secondary text-sm">Add protection</button>
+      <button type="button" onClick={add} className="btn btn-secondary text-sm">Add protection</button>
     </div>
   );
 }

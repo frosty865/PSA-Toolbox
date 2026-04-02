@@ -1,0 +1,417 @@
+discipline,subtype,legacy_question_id,legacy_dimension,mapped_gate,action,replacement_id,notes
+Access Control Systems,Biometric Access,BASE-000,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-000,Has BLOCKER violations: RULE-102
+Access Control Systems,Biometric Access,BASE-001,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Access Control Systems,Biometric Access,BASE-002,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-002,"Has BLOCKER violations: RULE-102, RULE-103"
+Access Control Systems,Biometric Access,BASE-003,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Access Control Systems,Credential / Badge Systems,BASE-004,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-004,Has BLOCKER violations: RULE-102
+Access Control Systems,Credential / Badge Systems,BASE-005,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Access Control Systems,Credential / Badge Systems,BASE-006,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-006,"Has BLOCKER violations: RULE-102, RULE-103"
+Access Control Systems,Credential / Badge Systems,BASE-007,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Access Control Systems,Door Monitoring,BASE-008,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-008,Has BLOCKER violations: RULE-102
+Access Control Systems,Door Monitoring,BASE-009,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Access Control Systems,Door Monitoring,BASE-010,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-010,"Has BLOCKER violations: RULE-102, RULE-103"
+Access Control Systems,Door Monitoring,BASE-011,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Access Control Systems,Door Readers,BASE-012,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-012,Has BLOCKER violations: RULE-102
+Access Control Systems,Door Readers,BASE-013,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Access Control Systems,Door Readers,BASE-014,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-014,"Has BLOCKER violations: RULE-102, RULE-103"
+Access Control Systems,Door Readers,BASE-015,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Access Control Systems,Electric Strikes / Mag Locks,BASE-016,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-016,Has BLOCKER violations: RULE-102
+Access Control Systems,Electric Strikes / Mag Locks,BASE-017,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Access Control Systems,Electric Strikes / Mag Locks,BASE-018,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-018,"Has BLOCKER violations: RULE-102, RULE-103"
+Access Control Systems,Electric Strikes / Mag Locks,BASE-019,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Access Control Systems,Electronic Access Control,BASE-020,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-020,Has BLOCKER violations: RULE-102
+Access Control Systems,Electronic Access Control,BASE-021,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Access Control Systems,Electronic Access Control,BASE-022,MAINTENANCE_ASSURANCE,CONTROL_RESILIENCE,REWRITE,BASE-022,"Has BLOCKER violations: RULE-102, RULE-103"
+Access Control Systems,Electronic Access Control,BASE-023,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Access Control Systems,Keypads / PIN Entry,BASE-024,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-024,Has BLOCKER violations: RULE-102
+Access Control Systems,Keypads / PIN Entry,BASE-025,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Access Control Systems,Keypads / PIN Entry,BASE-026,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-026,"Has BLOCKER violations: RULE-102, RULE-103"
+Access Control Systems,Keypads / PIN Entry,BASE-027,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Access Control Systems,Locking Hardware,BASE-028,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-028,Has BLOCKER violations: RULE-102
+Access Control Systems,Locking Hardware,BASE-029,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Access Control Systems,Locking Hardware,BASE-030,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-030,"Has BLOCKER violations: RULE-102, RULE-103"
+Access Control Systems,Locking Hardware,BASE-031,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Access Control Systems,Secured Vestibules,BASE-032,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-032,Has BLOCKER violations: RULE-102
+Access Control Systems,Secured Vestibules,BASE-033,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Access Control Systems,Secured Vestibules,BASE-034,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-034,"Has BLOCKER violations: RULE-102, RULE-103"
+Access Control Systems,Secured Vestibules,BASE-035,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Access Control Systems,Visitor Management Systems,BASE-036,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-036,Has BLOCKER violations: RULE-102
+Access Control Systems,Visitor Management Systems,BASE-037,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Access Control Systems,Visitor Management Systems,BASE-038,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-038,"Has BLOCKER violations: RULE-102, RULE-103"
+Access Control Systems,Visitor Management Systems,BASE-039,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+CPTED,Defensible Space,BASE-040,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-040,Has BLOCKER violations: RULE-102
+CPTED,Defensible Space,BASE-041,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+CPTED,Defensible Space,BASE-042,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-042,"Has BLOCKER violations: RULE-102, RULE-103"
+CPTED,Defensible Space,BASE-043,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+CPTED,Exterior Lighting,BASE-044,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-044,Has BLOCKER violations: RULE-102
+CPTED,Exterior Lighting,BASE-045,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+CPTED,Exterior Lighting,BASE-046,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-046,"Has BLOCKER violations: RULE-102, RULE-103"
+CPTED,Exterior Lighting,BASE-047,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+CPTED,Landscaping Control,BASE-048,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-048,Has BLOCKER violations: RULE-102
+CPTED,Landscaping Control,BASE-049,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+CPTED,Landscaping Control,BASE-050,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-050,"Has BLOCKER violations: RULE-102, RULE-103"
+CPTED,Landscaping Control,BASE-051,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+CPTED,Natural Surveillance,BASE-052,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-052,Has BLOCKER violations: RULE-102
+CPTED,Natural Surveillance,BASE-053,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+CPTED,Natural Surveillance,BASE-054,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-054,"Has BLOCKER violations: RULE-102, RULE-103"
+CPTED,Natural Surveillance,BASE-055,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+CPTED,Sightlines,BASE-056,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-056,Has BLOCKER violations: RULE-102
+CPTED,Sightlines,BASE-057,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+CPTED,Sightlines,BASE-058,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-058,"Has BLOCKER violations: RULE-102, RULE-103"
+CPTED,Sightlines,BASE-059,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+CPTED,Territorial Reinforcement,BASE-060,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-060,Has BLOCKER violations: RULE-102
+CPTED,Territorial Reinforcement,BASE-061,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+CPTED,Territorial Reinforcement,BASE-062,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-062,"Has BLOCKER violations: RULE-102, RULE-103"
+CPTED,Territorial Reinforcement,BASE-063,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+CPTED,Wayfinding,BASE-064,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-064,Has BLOCKER violations: RULE-102
+CPTED,Wayfinding,BASE-065,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+CPTED,Wayfinding,BASE-066,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-066,"Has BLOCKER violations: RULE-102, RULE-103"
+CPTED,Wayfinding,BASE-067,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Communications,Backup Communications,BASE-068,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-068,Has BLOCKER violations: RULE-102
+Communications,Backup Communications,BASE-069,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Communications,Backup Communications,BASE-070,MAINTENANCE_ASSURANCE,CONTROL_RESILIENCE,REWRITE,BASE-070,"Has BLOCKER violations: RULE-102, RULE-103"
+Communications,Backup Communications,BASE-071,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Communications,Communication Protocols,BASE-072,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-072,Has BLOCKER violations: RULE-102
+Communications,Communication Protocols,BASE-073,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Communications,Communication Protocols,BASE-074,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-074,"Has BLOCKER violations: RULE-102, RULE-103"
+Communications,Communication Protocols,BASE-075,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Communications,Interoperable Communications,BASE-076,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-076,Has BLOCKER violations: RULE-102
+Communications,Interoperable Communications,BASE-077,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Communications,Interoperable Communications,BASE-078,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-078,"Has BLOCKER violations: RULE-102, RULE-103"
+Communications,Interoperable Communications,BASE-079,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Communications,PA Systems,BASE-080,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-080,Has BLOCKER violations: RULE-102
+Communications,PA Systems,BASE-081,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Communications,PA Systems,BASE-082,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-082,"Has BLOCKER violations: RULE-102, RULE-103"
+Communications,PA Systems,BASE-083,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Communications,Paging Systems,BASE-084,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-084,Has BLOCKER violations: RULE-102
+Communications,Paging Systems,BASE-085,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Communications,Paging Systems,BASE-086,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-086,"Has BLOCKER violations: RULE-102, RULE-103"
+Communications,Paging Systems,BASE-087,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Communications,Radios / Two-Way,BASE-088,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-088,Has BLOCKER violations: RULE-102
+Communications,Radios / Two-Way,BASE-089,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Communications,Radios / Two-Way,BASE-090,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-090,"Has BLOCKER violations: RULE-102, RULE-103"
+Communications,Radios / Two-Way,BASE-091,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Emergency Action Planning,Emergency Drills,BASE-092,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-092,Has BLOCKER violations: RULE-102
+Emergency Action Planning,Emergency Drills,BASE-093,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Emergency Action Planning,Emergency Drills,BASE-094,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-094,"Has BLOCKER violations: RULE-102, RULE-103"
+Emergency Action Planning,Emergency Drills,BASE-095,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Emergency Action Planning,Emergency Guides / Flip Charts,BASE-096,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-096,Has BLOCKER violations: RULE-102
+Emergency Action Planning,Emergency Guides / Flip Charts,BASE-097,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Emergency Action Planning,Emergency Guides / Flip Charts,BASE-098,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-098,"Has BLOCKER violations: RULE-102, RULE-103"
+Emergency Action Planning,Emergency Guides / Flip Charts,BASE-099,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Emergency Action Planning,Evacuation Procedures,BASE-100,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-100,Has BLOCKER violations: RULE-102
+Emergency Action Planning,Evacuation Procedures,BASE-101,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Emergency Action Planning,Evacuation Procedures,BASE-102,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-102,"Has BLOCKER violations: RULE-102, RULE-103"
+Emergency Action Planning,Evacuation Procedures,BASE-103,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Emergency Action Planning,Lockdown / Lockout Procedures,BASE-104,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-104,Has BLOCKER violations: RULE-102
+Emergency Action Planning,Lockdown / Lockout Procedures,BASE-105,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Emergency Action Planning,Lockdown / Lockout Procedures,BASE-106,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-106,"Has BLOCKER violations: RULE-102, RULE-103"
+Emergency Action Planning,Lockdown / Lockout Procedures,BASE-107,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Emergency Action Planning,Muster Points / Rally Areas,BASE-108,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-108,Has BLOCKER violations: RULE-102
+Emergency Action Planning,Muster Points / Rally Areas,BASE-109,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Emergency Action Planning,Muster Points / Rally Areas,BASE-110,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-110,"Has BLOCKER violations: RULE-102, RULE-103"
+Emergency Action Planning,Muster Points / Rally Areas,BASE-111,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Emergency Action Planning,Reunification Procedures,BASE-112,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-112,Has BLOCKER violations: RULE-102
+Emergency Action Planning,Reunification Procedures,BASE-113,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Emergency Action Planning,Reunification Procedures,BASE-114,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-114,"Has BLOCKER violations: RULE-102, RULE-103"
+Emergency Action Planning,Reunification Procedures,BASE-115,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Emergency Action Planning,Shelter-in-Place,BASE-116,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-116,Has BLOCKER violations: RULE-102
+Emergency Action Planning,Shelter-in-Place,BASE-117,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Emergency Action Planning,Shelter-in-Place,BASE-118,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-118,"Has BLOCKER violations: RULE-102, RULE-103"
+Emergency Action Planning,Shelter-in-Place,BASE-119,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Emergency Action Planning,Staff Emergency Roles,BASE-120,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-120,Has BLOCKER violations: RULE-102
+Emergency Action Planning,Staff Emergency Roles,BASE-121,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Emergency Action Planning,Staff Emergency Roles,BASE-122,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-122,"Has BLOCKER violations: RULE-102, RULE-103"
+Emergency Action Planning,Staff Emergency Roles,BASE-123,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Emergency Management & Resilience,Business Continuity,BASE-124,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-124,Has BLOCKER violations: RULE-102
+Emergency Management & Resilience,Business Continuity,BASE-125,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Emergency Management & Resilience,Business Continuity,BASE-126,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-126,"Has BLOCKER violations: RULE-102, RULE-103"
+Emergency Management & Resilience,Business Continuity,BASE-127,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Emergency Management & Resilience,Crisis Management,BASE-128,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-128,Has BLOCKER violations: RULE-102
+Emergency Management & Resilience,Crisis Management,BASE-129,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Emergency Management & Resilience,Crisis Management,BASE-130,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-130,"Has BLOCKER violations: RULE-102, RULE-103"
+Emergency Management & Resilience,Crisis Management,BASE-131,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Emergency Management & Resilience,Emergency Communications,BASE-132,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-132,Has BLOCKER violations: RULE-102
+Emergency Management & Resilience,Emergency Communications,BASE-133,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Emergency Management & Resilience,Emergency Communications,BASE-134,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-134,"Has BLOCKER violations: RULE-102, RULE-103"
+Emergency Management & Resilience,Emergency Communications,BASE-135,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Emergency Management & Resilience,ICS/NIMS Integration,BASE-136,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-136,Has BLOCKER violations: RULE-102
+Emergency Management & Resilience,ICS/NIMS Integration,BASE-137,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Emergency Management & Resilience,ICS/NIMS Integration,BASE-138,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-138,"Has BLOCKER violations: RULE-102, RULE-103"
+Emergency Management & Resilience,ICS/NIMS Integration,BASE-139,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Emergency Management & Resilience,Mass Notification,BASE-140,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-140,Has BLOCKER violations: RULE-102
+Emergency Management & Resilience,Mass Notification,BASE-141,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Emergency Management & Resilience,Mass Notification,BASE-142,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-142,"Has BLOCKER violations: RULE-102, RULE-103"
+Emergency Management & Resilience,Mass Notification,BASE-143,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Emergency Management & Resilience,Redundancy / Backup Systems,BASE-144,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-144,Has BLOCKER violations: RULE-102
+Emergency Management & Resilience,Redundancy / Backup Systems,BASE-145,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Emergency Management & Resilience,Redundancy / Backup Systems,BASE-146,MAINTENANCE_ASSURANCE,CONTROL_RESILIENCE,REWRITE,BASE-146,"Has BLOCKER violations: RULE-102, RULE-103"
+Emergency Management & Resilience,Redundancy / Backup Systems,BASE-147,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Emergency Management & Resilience,Resilience Planning,BASE-148,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-148,Has BLOCKER violations: RULE-102
+Emergency Management & Resilience,Resilience Planning,BASE-149,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Emergency Management & Resilience,Resilience Planning,BASE-150,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-150,"Has BLOCKER violations: RULE-102, RULE-103"
+Emergency Management & Resilience,Resilience Planning,BASE-151,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Facility Hardening,Ballistic Barriers,BASE-152,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-152,Has BLOCKER violations: RULE-102
+Facility Hardening,Ballistic Barriers,BASE-153,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Facility Hardening,Ballistic Barriers,BASE-154,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-154,"Has BLOCKER violations: RULE-102, RULE-103"
+Facility Hardening,Ballistic Barriers,BASE-155,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Facility Hardening,Blast Mitigation,BASE-156,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-156,Has BLOCKER violations: RULE-102
+Facility Hardening,Blast Mitigation,BASE-157,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Facility Hardening,Blast Mitigation,BASE-158,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-158,"Has BLOCKER violations: RULE-102, RULE-103"
+Facility Hardening,Blast Mitigation,BASE-159,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Facility Hardening,Exterior Wall Reinforcement,BASE-160,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-160,Has BLOCKER violations: RULE-102
+Facility Hardening,Exterior Wall Reinforcement,BASE-161,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Facility Hardening,Exterior Wall Reinforcement,BASE-162,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-162,"Has BLOCKER violations: RULE-102, RULE-103"
+Facility Hardening,Exterior Wall Reinforcement,BASE-163,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Facility Hardening,Impact-Resistant Glazing,BASE-164,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-164,Has BLOCKER violations: RULE-102
+Facility Hardening,Impact-Resistant Glazing,BASE-165,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Facility Hardening,Impact-Resistant Glazing,BASE-166,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-166,"Has BLOCKER violations: RULE-102, RULE-103"
+Facility Hardening,Impact-Resistant Glazing,BASE-167,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Facility Hardening,Structural Hardening,BASE-168,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-168,Has BLOCKER violations: RULE-102
+Facility Hardening,Structural Hardening,BASE-169,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Facility Hardening,Structural Hardening,BASE-170,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-170,"Has BLOCKER violations: RULE-102, RULE-103"
+Facility Hardening,Structural Hardening,BASE-171,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Facility Hardening,Window Film,BASE-172,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-172,Has BLOCKER violations: RULE-102
+Facility Hardening,Window Film,BASE-173,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Facility Hardening,Window Film,BASE-174,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-174,"Has BLOCKER violations: RULE-102, RULE-103"
+Facility Hardening,Window Film,BASE-175,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Information Sharing & Coordination,Coordination Protocols,BASE-176,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-176,Has BLOCKER violations: RULE-102
+Information Sharing & Coordination,Coordination Protocols,BASE-177,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Information Sharing & Coordination,Coordination Protocols,BASE-178,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-178,"Has BLOCKER violations: RULE-102, RULE-103"
+Information Sharing & Coordination,Coordination Protocols,BASE-179,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Information Sharing & Coordination,External Reporting,BASE-180,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-180,Has BLOCKER violations: RULE-102
+Information Sharing & Coordination,External Reporting,BASE-181,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Information Sharing & Coordination,External Reporting,BASE-182,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-182,"Has BLOCKER violations: RULE-102, RULE-103"
+Information Sharing & Coordination,External Reporting,BASE-183,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Information Sharing & Coordination,Fusion Center Interface,BASE-184,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-184,Has BLOCKER violations: RULE-102
+Information Sharing & Coordination,Fusion Center Interface,BASE-185,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Information Sharing & Coordination,Fusion Center Interface,BASE-186,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-186,"Has BLOCKER violations: RULE-102, RULE-103"
+Information Sharing & Coordination,Fusion Center Interface,BASE-187,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Information Sharing & Coordination,ISAC / ISAOs,BASE-188,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-188,Has BLOCKER violations: RULE-102
+Information Sharing & Coordination,ISAC / ISAOs,BASE-189,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Information Sharing & Coordination,ISAC / ISAOs,BASE-190,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-190,"Has BLOCKER violations: RULE-102, RULE-103"
+Information Sharing & Coordination,ISAC / ISAOs,BASE-191,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Information Sharing & Coordination,JTTF Engagement,BASE-192,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-192,Has BLOCKER violations: RULE-102
+Information Sharing & Coordination,JTTF Engagement,BASE-193,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Information Sharing & Coordination,JTTF Engagement,BASE-194,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-194,"Has BLOCKER violations: RULE-102, RULE-103"
+Information Sharing & Coordination,JTTF Engagement,BASE-195,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Information Sharing & Coordination,Law Enforcement Liaison,BASE-196,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-196,Has BLOCKER violations: RULE-102
+Information Sharing & Coordination,Law Enforcement Liaison,BASE-197,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Information Sharing & Coordination,Law Enforcement Liaison,BASE-198,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-198,"Has BLOCKER violations: RULE-102, RULE-103"
+Information Sharing & Coordination,Law Enforcement Liaison,BASE-199,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Information Sharing & Coordination,Threat Information Sharing,BASE-200,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-200,Has BLOCKER violations: RULE-102
+Information Sharing & Coordination,Threat Information Sharing,BASE-201,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Information Sharing & Coordination,Threat Information Sharing,BASE-202,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-202,"Has BLOCKER violations: RULE-102, RULE-103"
+Information Sharing & Coordination,Threat Information Sharing,BASE-203,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Interior Security & Barriers,Access-Restricted Areas,BASE-204,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-204,Has BLOCKER violations: RULE-102
+Interior Security & Barriers,Access-Restricted Areas,BASE-205,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Interior Security & Barriers,Access-Restricted Areas,BASE-206,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-206,"Has BLOCKER violations: RULE-102, RULE-103"
+Interior Security & Barriers,Access-Restricted Areas,BASE-207,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Interior Security & Barriers,Hard-Interior Barriers,BASE-208,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-208,Has BLOCKER violations: RULE-102
+Interior Security & Barriers,Hard-Interior Barriers,BASE-209,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Interior Security & Barriers,Hard-Interior Barriers,BASE-210,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-210,"Has BLOCKER violations: RULE-102, RULE-103"
+Interior Security & Barriers,Hard-Interior Barriers,BASE-211,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Interior Security & Barriers,Interior Doors,BASE-212,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-212,Has BLOCKER violations: RULE-102
+Interior Security & Barriers,Interior Doors,BASE-213,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Interior Security & Barriers,Interior Doors,BASE-214,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-214,"Has BLOCKER violations: RULE-102, RULE-103"
+Interior Security & Barriers,Interior Doors,BASE-215,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Interior Security & Barriers,Interior Lighting,BASE-216,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-216,Has BLOCKER violations: RULE-102
+Interior Security & Barriers,Interior Lighting,BASE-217,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Interior Security & Barriers,Interior Lighting,BASE-218,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-218,"Has BLOCKER violations: RULE-102, RULE-103"
+Interior Security & Barriers,Interior Lighting,BASE-219,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Interior Security & Barriers,Safe Rooms,BASE-220,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-220,Has BLOCKER violations: RULE-102
+Interior Security & Barriers,Safe Rooms,BASE-221,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Interior Security & Barriers,Safe Rooms,BASE-222,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-222,"Has BLOCKER violations: RULE-102, RULE-103"
+Interior Security & Barriers,Safe Rooms,BASE-223,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Interior Security & Barriers,Secure Rooms,BASE-224,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-224,Has BLOCKER violations: RULE-102
+Interior Security & Barriers,Secure Rooms,BASE-225,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Interior Security & Barriers,Secure Rooms,BASE-226,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-226,"Has BLOCKER violations: RULE-102, RULE-103"
+Interior Security & Barriers,Secure Rooms,BASE-227,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Interior Security & Barriers,Sensitive Item Storage,BASE-228,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-228,Has BLOCKER violations: RULE-102
+Interior Security & Barriers,Sensitive Item Storage,BASE-229,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Interior Security & Barriers,Sensitive Item Storage,BASE-230,MAINTENANCE_ASSURANCE,CONTROL_RESILIENCE,REWRITE,BASE-230,"Has BLOCKER violations: RULE-102, RULE-103"
+Interior Security & Barriers,Sensitive Item Storage,BASE-231,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Intrusion Detection Systems,Alarm Monitoring,BASE-232,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-232,Has BLOCKER violations: RULE-102
+Intrusion Detection Systems,Alarm Monitoring,BASE-233,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Intrusion Detection Systems,Alarm Monitoring,BASE-234,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-234,"Has BLOCKER violations: RULE-102, RULE-103"
+Intrusion Detection Systems,Alarm Monitoring,BASE-235,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Intrusion Detection Systems,Alarm Panels,BASE-236,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-236,Has BLOCKER violations: RULE-102
+Intrusion Detection Systems,Alarm Panels,BASE-237,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Intrusion Detection Systems,Alarm Panels,BASE-238,MAINTENANCE_ASSURANCE,CONTROL_RESILIENCE,REWRITE,BASE-238,"Has BLOCKER violations: RULE-102, RULE-103"
+Intrusion Detection Systems,Alarm Panels,BASE-239,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Intrusion Detection Systems,Door Contacts,BASE-240,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-240,Has BLOCKER violations: RULE-102
+Intrusion Detection Systems,Door Contacts,BASE-241,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Intrusion Detection Systems,Door Contacts,BASE-242,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-242,"Has BLOCKER violations: RULE-102, RULE-103"
+Intrusion Detection Systems,Door Contacts,BASE-243,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Intrusion Detection Systems,Glass Break Sensors,BASE-244,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-244,Has BLOCKER violations: RULE-102
+Intrusion Detection Systems,Glass Break Sensors,BASE-245,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Intrusion Detection Systems,Glass Break Sensors,BASE-246,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-246,"Has BLOCKER violations: RULE-102, RULE-103"
+Intrusion Detection Systems,Glass Break Sensors,BASE-247,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Intrusion Detection Systems,Motion Detectors,BASE-248,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-248,Has BLOCKER violations: RULE-102
+Intrusion Detection Systems,Motion Detectors,BASE-249,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Intrusion Detection Systems,Motion Detectors,BASE-250,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-250,"Has BLOCKER violations: RULE-102, RULE-103"
+Intrusion Detection Systems,Motion Detectors,BASE-251,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Intrusion Detection Systems,Panic / Duress Buttons,BASE-252,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-252,Has BLOCKER violations: RULE-102
+Intrusion Detection Systems,Panic / Duress Buttons,BASE-253,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Intrusion Detection Systems,Panic / Duress Buttons,BASE-254,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-254,"Has BLOCKER violations: RULE-102, RULE-103"
+Intrusion Detection Systems,Panic / Duress Buttons,BASE-255,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Intrusion Detection Systems,Perimeter IDS,BASE-256,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-256,Has BLOCKER violations: RULE-102
+Intrusion Detection Systems,Perimeter IDS,BASE-257,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Intrusion Detection Systems,Perimeter IDS,BASE-258,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-258,"Has BLOCKER violations: RULE-102, RULE-103"
+Intrusion Detection Systems,Perimeter IDS,BASE-259,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Key Control,Key Cabinets,BASE-260,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-260,Has BLOCKER violations: RULE-102
+Key Control,Key Cabinets,BASE-261,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Key Control,Key Cabinets,BASE-262,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-262,"Has BLOCKER violations: RULE-102, RULE-103"
+Key Control,Key Cabinets,BASE-263,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Key Control,Key Logs / Accountability,BASE-264,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-264,Has BLOCKER violations: RULE-102
+Key Control,Key Logs / Accountability,BASE-265,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Key Control,Key Logs / Accountability,BASE-266,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-266,"Has BLOCKER violations: RULE-102, RULE-103"
+Key Control,Key Logs / Accountability,BASE-267,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Key Control,Master Key Management,BASE-268,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-268,Has BLOCKER violations: RULE-102
+Key Control,Master Key Management,BASE-269,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Key Control,Master Key Management,BASE-270,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-270,"Has BLOCKER violations: RULE-102, RULE-103"
+Key Control,Master Key Management,BASE-271,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Key Control,Rekeying Procedures,BASE-272,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-272,Has BLOCKER violations: RULE-102
+Key Control,Rekeying Procedures,BASE-273,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Key Control,Rekeying Procedures,BASE-274,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-274,"Has BLOCKER violations: RULE-102, RULE-103"
+Key Control,Rekeying Procedures,BASE-275,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Key Control,Restricted Keys,BASE-276,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-276,Has BLOCKER violations: RULE-102
+Key Control,Restricted Keys,BASE-277,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Key Control,Restricted Keys,BASE-278,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-278,"Has BLOCKER violations: RULE-102, RULE-103"
+Key Control,Restricted Keys,BASE-279,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Perimeter Security,Bollards / Barriers,BASE-280,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-280,Has BLOCKER violations: RULE-102
+Perimeter Security,Bollards / Barriers,BASE-281,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Perimeter Security,Bollards / Barriers,BASE-282,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-282,"Has BLOCKER violations: RULE-102, RULE-103"
+Perimeter Security,Bollards / Barriers,BASE-283,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Perimeter Security,Boundary Demarcation,BASE-284,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-284,Has BLOCKER violations: RULE-102
+Perimeter Security,Boundary Demarcation,BASE-285,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Perimeter Security,Boundary Demarcation,BASE-286,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-286,"Has BLOCKER violations: RULE-102, RULE-103"
+Perimeter Security,Boundary Demarcation,BASE-287,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Perimeter Security,Clear Zones,BASE-288,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-288,Has BLOCKER violations: RULE-102
+Perimeter Security,Clear Zones,BASE-289,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Perimeter Security,Clear Zones,BASE-290,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-290,"Has BLOCKER violations: RULE-102, RULE-103"
+Perimeter Security,Clear Zones,BASE-291,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Perimeter Security,Fencing,BASE-292,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-292,Has BLOCKER violations: RULE-102
+Perimeter Security,Fencing,BASE-293,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Perimeter Security,Fencing,BASE-294,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-294,"Has BLOCKER violations: RULE-102, RULE-103"
+Perimeter Security,Fencing,BASE-295,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Perimeter Security,Gates,BASE-296,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-296,Has BLOCKER violations: RULE-102
+Perimeter Security,Gates,BASE-297,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Perimeter Security,Gates,BASE-298,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-298,"Has BLOCKER violations: RULE-102, RULE-103"
+Perimeter Security,Gates,BASE-299,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Perimeter Security,Perimeter Lighting,BASE-300,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-300,Has BLOCKER violations: RULE-102
+Perimeter Security,Perimeter Lighting,BASE-301,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Perimeter Security,Perimeter Lighting,BASE-302,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-302,"Has BLOCKER violations: RULE-102, RULE-103"
+Perimeter Security,Perimeter Lighting,BASE-303,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Perimeter Security,Perimeter Signage,BASE-304,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-304,Has BLOCKER violations: RULE-102
+Perimeter Security,Perimeter Signage,BASE-305,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Perimeter Security,Perimeter Signage,BASE-306,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-306,"Has BLOCKER violations: RULE-102, RULE-103"
+Perimeter Security,Perimeter Signage,BASE-307,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Perimeter Security,Vehicle Access Control Points,BASE-308,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-308,Has BLOCKER violations: RULE-102
+Perimeter Security,Vehicle Access Control Points,BASE-309,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Perimeter Security,Vehicle Access Control Points,BASE-310,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-310,"Has BLOCKER violations: RULE-102, RULE-103"
+Perimeter Security,Vehicle Access Control Points,BASE-311,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Security Force / Operations,Guard Posts,BASE-312,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-312,Has BLOCKER violations: RULE-102
+Security Force / Operations,Guard Posts,BASE-313,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Security Force / Operations,Guard Posts,BASE-314,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-314,"Has BLOCKER violations: RULE-102, RULE-103"
+Security Force / Operations,Guard Posts,BASE-315,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Security Force / Operations,Incident Reporting,BASE-316,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-316,Has BLOCKER violations: RULE-102
+Security Force / Operations,Incident Reporting,BASE-317,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Security Force / Operations,Incident Reporting,BASE-318,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-318,"Has BLOCKER violations: RULE-102, RULE-103"
+Security Force / Operations,Incident Reporting,BASE-319,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Security Force / Operations,Patrol Routes,BASE-320,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-320,Has BLOCKER violations: RULE-102
+Security Force / Operations,Patrol Routes,BASE-321,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Security Force / Operations,Patrol Routes,BASE-322,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-322,"Has BLOCKER violations: RULE-102, RULE-103"
+Security Force / Operations,Patrol Routes,BASE-323,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Security Force / Operations,Radio Communications,BASE-324,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-324,Has BLOCKER violations: RULE-102
+Security Force / Operations,Radio Communications,BASE-325,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Security Force / Operations,Radio Communications,BASE-326,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-326,"Has BLOCKER violations: RULE-102, RULE-103"
+Security Force / Operations,Radio Communications,BASE-327,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Security Force / Operations,Response Procedures,BASE-328,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-328,Has BLOCKER violations: RULE-102
+Security Force / Operations,Response Procedures,BASE-329,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Security Force / Operations,Response Procedures,BASE-330,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-330,"Has BLOCKER violations: RULE-102, RULE-103"
+Security Force / Operations,Response Procedures,BASE-331,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Security Force / Operations,School Resource Officer (SRO),BASE-332,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-332,Has BLOCKER violations: RULE-102
+Security Force / Operations,School Resource Officer (SRO),BASE-333,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Security Force / Operations,School Resource Officer (SRO),BASE-334,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-334,"Has BLOCKER violations: RULE-102, RULE-103"
+Security Force / Operations,School Resource Officer (SRO),BASE-335,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Security Force / Operations,Security Officer Training,BASE-336,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-336,Has BLOCKER violations: RULE-102
+Security Force / Operations,Security Officer Training,BASE-337,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Security Force / Operations,Security Officer Training,BASE-338,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-338,"Has BLOCKER violations: RULE-102, RULE-103"
+Security Force / Operations,Security Officer Training,BASE-339,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Security Force / Operations,Security Operations Center (SOC),BASE-340,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-340,Has BLOCKER violations: RULE-102
+Security Force / Operations,Security Operations Center (SOC),BASE-341,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Security Force / Operations,Security Operations Center (SOC),BASE-342,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-342,"Has BLOCKER violations: RULE-102, RULE-103"
+Security Force / Operations,Security Operations Center (SOC),BASE-343,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Security Management & Governance,Governance & Oversight,BASE-344,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-344,Has BLOCKER violations: RULE-102
+Security Management & Governance,Governance & Oversight,BASE-345,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Security Management & Governance,Governance & Oversight,BASE-346,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-346,"Has BLOCKER violations: RULE-102, RULE-103"
+Security Management & Governance,Governance & Oversight,BASE-347,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Security Management & Governance,Policy Compliance Tracking,BASE-348,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-348,Has BLOCKER violations: RULE-102
+Security Management & Governance,Policy Compliance Tracking,BASE-349,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Security Management & Governance,Policy Compliance Tracking,BASE-350,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-350,"Has BLOCKER violations: RULE-102, RULE-103"
+Security Management & Governance,Policy Compliance Tracking,BASE-351,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Security Management & Governance,Risk Assessment / Risk Management,BASE-352,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-352,Has BLOCKER violations: RULE-102
+Security Management & Governance,Risk Assessment / Risk Management,BASE-353,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Security Management & Governance,Risk Assessment / Risk Management,BASE-354,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-354,"Has BLOCKER violations: RULE-102, RULE-103"
+Security Management & Governance,Risk Assessment / Risk Management,BASE-355,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Security Management & Governance,Security Documentation,BASE-356,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-356,Has BLOCKER violations: RULE-102
+Security Management & Governance,Security Documentation,BASE-357,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Security Management & Governance,Security Documentation,BASE-358,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-358,"Has BLOCKER violations: RULE-102, RULE-103"
+Security Management & Governance,Security Documentation,BASE-359,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Security Management & Governance,Security Policies,BASE-360,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-360,Has BLOCKER violations: RULE-102
+Security Management & Governance,Security Policies,BASE-361,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Security Management & Governance,Security Policies,BASE-362,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-362,"Has BLOCKER violations: RULE-102, RULE-103"
+Security Management & Governance,Security Policies,BASE-363,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Security Management & Governance,Security Procedures,BASE-364,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-364,Has BLOCKER violations: RULE-102
+Security Management & Governance,Security Procedures,BASE-365,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Security Management & Governance,Security Procedures,BASE-366,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-366,"Has BLOCKER violations: RULE-102, RULE-103"
+Security Management & Governance,Security Procedures,BASE-367,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Security Management & Governance,Security Training Programs,BASE-368,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-368,Has BLOCKER violations: RULE-102
+Security Management & Governance,Security Training Programs,BASE-369,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Security Management & Governance,Security Training Programs,BASE-370,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-370,"Has BLOCKER violations: RULE-102, RULE-103"
+Security Management & Governance,Security Training Programs,BASE-371,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Video Surveillance Systems,Analytics / Behavior Detection,BASE-372,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-372,Has BLOCKER violations: RULE-102
+Video Surveillance Systems,Analytics / Behavior Detection,BASE-373,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Video Surveillance Systems,Analytics / Behavior Detection,BASE-374,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-374,"Has BLOCKER violations: RULE-102, RULE-103"
+Video Surveillance Systems,Analytics / Behavior Detection,BASE-375,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Video Surveillance Systems,Camera Coverage / Line of Sight,BASE-376,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-376,Has BLOCKER violations: RULE-102
+Video Surveillance Systems,Camera Coverage / Line of Sight,BASE-377,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Video Surveillance Systems,Camera Coverage / Line of Sight,BASE-378,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-378,"Has BLOCKER violations: RULE-102, RULE-103"
+Video Surveillance Systems,Camera Coverage / Line of Sight,BASE-379,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Video Surveillance Systems,Exterior Cameras,BASE-380,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-380,Has BLOCKER violations: RULE-102
+Video Surveillance Systems,Exterior Cameras,BASE-381,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Video Surveillance Systems,Exterior Cameras,BASE-382,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-382,"Has BLOCKER violations: RULE-102, RULE-103"
+Video Surveillance Systems,Exterior Cameras,BASE-383,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Video Surveillance Systems,Fixed Cameras,BASE-384,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-384,Has BLOCKER violations: RULE-102
+Video Surveillance Systems,Fixed Cameras,BASE-385,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Video Surveillance Systems,Fixed Cameras,BASE-386,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-386,"Has BLOCKER violations: RULE-102, RULE-103"
+Video Surveillance Systems,Fixed Cameras,BASE-387,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Video Surveillance Systems,IP Cameras,BASE-388,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-388,Has BLOCKER violations: RULE-102
+Video Surveillance Systems,IP Cameras,BASE-389,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Video Surveillance Systems,IP Cameras,BASE-390,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-390,"Has BLOCKER violations: RULE-102, RULE-103"
+Video Surveillance Systems,IP Cameras,BASE-391,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Video Surveillance Systems,Interior Cameras,BASE-392,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-392,Has BLOCKER violations: RULE-102
+Video Surveillance Systems,Interior Cameras,BASE-393,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Video Surveillance Systems,Interior Cameras,BASE-394,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-394,"Has BLOCKER violations: RULE-102, RULE-103"
+Video Surveillance Systems,Interior Cameras,BASE-395,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Video Surveillance Systems,Monitoring / Workstations,BASE-396,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-396,Has BLOCKER violations: RULE-102
+Video Surveillance Systems,Monitoring / Workstations,BASE-397,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Video Surveillance Systems,Monitoring / Workstations,BASE-398,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-398,"Has BLOCKER violations: RULE-102, RULE-103"
+Video Surveillance Systems,Monitoring / Workstations,BASE-399,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Video Surveillance Systems,PTZ Cameras,BASE-400,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-400,Has BLOCKER violations: RULE-102
+Video Surveillance Systems,PTZ Cameras,BASE-401,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Video Surveillance Systems,PTZ Cameras,BASE-402,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-402,"Has BLOCKER violations: RULE-102, RULE-103"
+Video Surveillance Systems,PTZ Cameras,BASE-403,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Video Surveillance Systems,Recording / Storage (NVR/DVR),BASE-404,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-404,Has BLOCKER violations: RULE-102
+Video Surveillance Systems,Recording / Storage (NVR/DVR),BASE-405,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Video Surveillance Systems,Recording / Storage (NVR/DVR),BASE-406,MAINTENANCE_ASSURANCE,CONTROL_RESILIENCE,REWRITE,BASE-406,"Has BLOCKER violations: RULE-102, RULE-103"
+Video Surveillance Systems,Recording / Storage (NVR/DVR),BASE-407,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Video Surveillance Systems,System Architecture,BASE-408,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-408,Has BLOCKER violations: RULE-102
+Video Surveillance Systems,System Architecture,BASE-409,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Video Surveillance Systems,System Architecture,BASE-410,MAINTENANCE_ASSURANCE,CONTROL_RESILIENCE,REWRITE,BASE-410,"Has BLOCKER violations: RULE-102, RULE-103"
+Video Surveillance Systems,System Architecture,BASE-411,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)
+Video Surveillance Systems,Video Wall / Display Systems,BASE-412,SYSTEMS,CONTROL_EXISTS,REWRITE,BASE-412,Has BLOCKER violations: RULE-102
+Video Surveillance Systems,Video Wall / Display Systems,BASE-413,PLANS_PROCEDURES,,RETIRE,,Dimension PLANS_PROCEDURES is forbidden (non-observable)
+Video Surveillance Systems,Video Wall / Display Systems,BASE-414,MAINTENANCE_ASSURANCE,CONTROL_OPERABLE,REWRITE,BASE-414,"Has BLOCKER violations: RULE-102, RULE-103"
+Video Surveillance Systems,Video Wall / Display Systems,BASE-415,PERSONNEL_RESPONSIBILITY,,RETIRE,,Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)

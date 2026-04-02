@@ -473,7 +473,7 @@ export const AgreementsSchema = z
 export type Agreements = z.infer<typeof AgreementsSchema>;
 
 /**
- * Canonical dependency shape (UI_REFERENCE_ELECTRICITY.md).
+ * Canonical dependency shape (electric power UI).
  * All non-CP curve categories (ELECTRIC_POWER, COMMUNICATIONS, INFORMATION_TECHNOLOGY, WATER, WASTEWATER)
  * use this shape. has_backup is accepted for backward compatibility and treated as has_backup_any.
  */

@@ -61,7 +61,7 @@ type PerfRunMetrics = {
 };
 
 type PerfSuiteMetrics = {
-  tool: 'asset-dependency-tool';
+  tool: 'infrastructure-dependency-tool';
   generated_at_iso: string;
   profile: PerfProfile;
   runs: number;
@@ -164,7 +164,7 @@ async function main(): Promise<number> {
   }
 
   const suite: PerfSuiteMetrics = {
-    tool: 'asset-dependency-tool',
+    tool: 'infrastructure-dependency-tool',
     generated_at_iso: nowIso(),
     profile,
     runs,

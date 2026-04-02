@@ -1,0 +1,62 @@
+{
+  "_comment": "Mapping from IST workbook sheet names to discipline/subtype UUIDs. Update with actual UUIDs from your database.",
+  "_instructions": [
+    "Option 1: Run the SQL query in get_discipline_uuids.sql to get discipline UUIDs",
+    "Option 2: Run: python scripts/db/update_ist_mapping.py (auto-matches sheet names to disciplines)",
+    "Option 3: Query via API: GET /api/reference/disciplines?active=true",
+    "Then manually match sheet names to discipline names and update the UUIDs below"
+  ],
+  "_common_discipline_names": [
+    "Access Control Systems",
+    "Perimeter Security",
+    "Video Surveillance Systems",
+    "Intrusion Detection Systems",
+    "Security Management & Governance",
+    "Emergency Management & Resilience",
+    "Security Force / Operations"
+  ],
+  "Access Control": {
+    "discipline_id": "18d45ffa-6a44-4817-becb-828231b9e1e7",
+    "discipline_subtype_id": null
+  },
+  "Perimeter Security": {
+    "discipline_id": "69a28796-c8fe-42c1-88af-950a90d0a5e4",
+    "discipline_subtype_id": null
+  },
+  "Video Surveillance": {
+    "discipline_id": "83d34bf8-b228-49ca-abb9-66168d4a8681",
+    "discipline_subtype_id": null
+  },
+  "Intrusion Detection": {
+    "discipline_id": "b5516924-2356-4639-9109-01b6f19f104c",
+    "discipline_subtype_id": null
+  },
+  "Security Management": {
+    "discipline_id": "ecfc1d4f-873b-4645-93e5-a9812ed779c3",
+    "discipline_subtype_id": null
+  },
+  "Emergency Management": {
+    "discipline_id": "a295aed8-a841-41b0-b893-a8a018867b83",
+    "discipline_subtype_id": null
+  },
+  "Security Operations": {
+    "discipline_id": "9ee649b0-3a04-4eba-9933-730caccff8c1",
+    "discipline_subtype_id": null
+  },
+  "Resilience Management": {
+    "discipline_id": "a295aed8-a841-41b0-b893-a8a018867b83",
+    "discipline_subtype_id": null
+  },
+  "Security Activity History": {
+    "discipline_id": "9ee649b0-3a04-4eba-9933-730caccff8c1",
+    "discipline_subtype_id": null
+  },
+  "Security Force Profile": {
+    "discipline_id": "9ee649b0-3a04-4eba-9933-730caccff8c1",
+    "discipline_subtype_id": null
+  },
+  "Security Management Profile": {
+    "discipline_id": "ecfc1d4f-873b-4645-93e5-a9812ed779c3",
+    "discipline_subtype_id": null
+  }
+}

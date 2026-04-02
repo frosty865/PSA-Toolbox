@@ -1,0 +1,10 @@
+# Search queries for EV Charging Station physical security research
+# One query per line. Lines starting with # are ignored.
+# Used when --provider bing or --provider serpapi
+
+electric vehicle charging station physical security
+EV charger security vulnerabilities physical access
+electric vehicle charging infrastructure safety standards
+EV charging station perimeter security
+electric vehicle charging station access control
+EV charger tampering prevention physical security

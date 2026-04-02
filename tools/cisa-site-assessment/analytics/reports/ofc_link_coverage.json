@@ -1,0 +1,119 @@
+{
+  "link_method": "LEXICAL_HYBRID_V1",
+  "topn": 10,
+  "promote_threshold": 0.22,
+  "allow_reserve": false,
+  "require_subtype_match": false,
+  "questions_total": 130,
+  "questions_with_promoted": 129,
+  "promoted_links_total": 385,
+  "suggested_links_total": 915,
+  "top_promoted_ofcs": [
+    [
+      "c4c3b78d-1388-4511-b493-1dfcc228a72f",
+      63
+    ],
+    [
+      "1550009c-6a07-4565-95cd-481051c4a4b9",
+      40
+    ],
+    [
+      "03590290-ce98-4727-adbf-5d5974d0f096",
+      16
+    ],
+    [
+      "36a17af2-fbd0-46b3-b4b2-7cfe08845889",
+      6
+    ],
+    [
+      "4ec0347d-92ba-4dcf-b7a8-b83bda096b90",
+      6
+    ],
+    [
+      "ed5fd004-79e9-4956-af2a-96cc12b26808",
+      6
+    ],
+    [
+      "b6f11acb-754d-4569-af02-0be811ccee8c",
+      4
+    ],
+    [
+      "a40ed15a-06dc-4fea-8c3d-bfffb7291094",
+      4
+    ],
+    [
+      "2592ca81-b7f6-416a-aef4-f93097be7807",
+      4
+    ],
+    [
+      "a423dc30-a25d-4260-b646-952373918517",
+      4
+    ],
+    [
+      "be9230cf-8088-411a-89be-6060468e6816",
+      4
+    ],
+    [
+      "437bd6f6-8b9d-4cfa-a495-082ef779db01",
+      3
+    ],
+    [
+      "63df39a5-7794-487a-a159-994de0cfe69e",
+      3
+    ],
+    [
+      "894c6cf1-95ec-408f-87b9-ef0dc891416e",
+      3
+    ],
+    [
+      "8410b248-99d3-4458-b896-cf7ef316ae24",
+      3
+    ],
+    [
+      "356fe503-b760-4c5f-b97b-25342fcd95af",
+      3
+    ],
+    [
+      "d5924c92-1280-444f-b94d-f279ddef227b",
+      3
+    ],
+    [
+      "c5717e18-ca4e-487a-b9d1-410e2230fe5c",
+      2
+    ],
+    [
+      "1a9c02ce-77b0-4992-8f33-2d94806e7832",
+      2
+    ],
+    [
+      "46021ddb-1526-4c7f-9e5f-73319c5db4d5",
+      2
+    ],
+    [
+      "3f5ee723-9ec0-4a82-b898-86596df7df3a",
+      2
+    ],
+    [
+      "5930617c-d19f-40ca-a5e2-d10f5c4f8ea2",
+      2
+    ],
+    [
+      "f297545a-6db4-4b71-ad32-8e97f0630197",
+      2
+    ],
+    [
+      "864cb636-b595-418a-bc41-022cad63b5e7",
+      2
+    ],
+    [
+      "bf028860-4682-404c-972b-ac5064451ae9",
+      2
+    ]
+  ],
+  "tables": {
+    "questions": "public.baseline_spines_runtime",
+    "ofcs": "public.ofc_candidate_queue",
+    "citations": "public.ofc_candidate_queue",
+    "link_table": "public.ofc_question_links"
+  }
+}

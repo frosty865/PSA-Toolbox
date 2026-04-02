@@ -1,0 +1,336 @@
+{
+  "total": 56,
+  "successful": [
+    {
+      "file": "D:\\psa-workspace\\PDF's\\20251016_124454_USSS_Averting_Targeted_School_Violence.2021.03.pdf",
+      "document_id": "d750c8cc-43c2-4cef-a70c-0758b2b43bb1",
+      "chunks": 573,
+      "pages": 64
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\25_0715_ope-campus-safety-placemat.pdf",
+      "document_id": "c09aad54-3b23-4c09-9c74-535e6fd2cb72",
+      "chunks": 13,
+      "pages": 1
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\302026p.pdf",
+      "document_id": "af990d8b-1897-4d4d-aadb-5b722b48ea0a",
+      "chunks": 115,
+      "pages": 16
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\520008_vol3.pdf",
+      "document_id": "c4906796-813a-4d40-8175-1f0a9c14c4d8",
+      "chunks": 289,
+      "pages": 37
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\7210.960_Temporary_Flight_Restrictions_for_Unmanned_Aircraft_49_USC_Section_44812.pdf",
+      "document_id": "8d556066-df87-48cf-a298-93ab45ae8dae",
+      "chunks": 31,
+      "pages": 4
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\853979.pdf",
+      "document_id": "aa935ae2-8250-40bd-bc7e-9fbebd2f135b",
+      "chunks": 255,
+      "pages": 36
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\876565.pdf",
+      "document_id": "0866dabd-a256-4940-b4a6-84b774289651",
+      "chunks": 45,
+      "pages": 2
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\888328.pdf",
+      "document_id": "0c3d936e-7f9f-445c-b509-efc9ce045902",
+      "chunks": 28,
+      "pages": 4
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\892047.pdf",
+      "document_id": "e9392788-ef9a-4b99-983b-5654b09a44fa",
+      "chunks": 190,
+      "pages": 28
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\897519.pdf",
+      "document_id": "2e7ac54d-b48e-49a9-af96-dfc775799019",
+      "chunks": 33,
+      "pages": 3
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\897539.pdf",
+      "document_id": "d522886d-d6cc-4621-82cc-be029067b6c2",
+      "chunks": 34,
+      "pages": 2
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\897985.pdf",
+      "document_id": "6714ab70-a4b1-463a-b730-7c620a8cf738",
+      "chunks": 18,
+      "pages": 2
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\897986.pdf",
+      "document_id": "06b246ee-59f7-4af7-96b3-d25ee8bdb5c1",
+      "chunks": 19,
+      "pages": 2
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\898045.pdf",
+      "document_id": "8e116f54-8b39-4ee7-b9e6-6ead6ef7c126",
+      "chunks": 28,
+      "pages": 3
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\active-shooter-recovery-guide-08-08-2017-508.pdf",
+      "document_id": "0b0452fe-e511-4002-9af8-07aa6a639332",
+      "chunks": 62,
+      "pages": 9
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\ATFP_ANTITERRORISM_FP_CHECKLIST.pdf",
+      "document_id": "840ee4cc-7408-4327-a7b8-e28fa86367f8",
+      "chunks": 93,
+      "pages": 12
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\Behavioral Threat Assessment and Management Programs_ Practitione.pdf",
+      "document_id": "c2470e2d-4e9f-4a77-a2a6-268adb261875",
+      "chunks": 482,
+      "pages": 33
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\CISA-USSS K-12 Bystander Reporting Toolkit_508.pdf",
+      "document_id": "9a869906-d526-43e8-bbe9-44e50b8ca238",
+      "chunks": 318,
+      "pages": 37
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\CISA_AASB_Security_Planning_Workbook_508_Compliant_20230929.pdf",
+      "document_id": "f33f1c41-6235-4cb4-b0b8-c7aa2c171da5",
+      "chunks": 282,
+      "pages": 46
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\CISA_Pathway_to_Violence_Fact_Sheet_508_20250319.pdf",
+      "document_id": "1e09cd39-25e5-44b7-8578-6de9477757fb",
+      "chunks": 9,
+      "pages": 1
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\CISA_Protecting_HoW_Perimeter_Security_508_Compliant.pdf",
+      "document_id": "35230e86-06d5-4dac-a9bd-3e2898434651",
+      "chunks": 44,
+      "pages": 2
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\cops-w0891-pub.pdf",
+      "document_id": "b2811d25-1d96-401e-a07b-5a894299c1d8",
+      "chunks": 218,
+      "pages": 40
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\Cybersecurity_20and_20Physical_20Security_20Convergence_508_01.05.2021.pdf",
+      "document_id": "0c3d936e-7f9f-445c-b509-efc9ce045902",
+      "chunks": 28,
+      "pages": 4
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\DetectionTech_20251030_508.pdf",
+      "document_id": "c9ebf8e4-a113-4b43-9987-3d7f2ac1b405",
+      "chunks": 116,
+      "pages": 12
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\dhs-hotelprotection.pdf",
+      "document_id": "e2129a77-675d-499d-9220-b7b789a0963b",
+      "chunks": 649,
+      "pages": 84
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\Downloading the IST VOFC Viewer.pdf",
+      "document_id": "6466ca1a-78f9-41dd-bc1b-e872237c7e76",
+      "chunks": 2,
+      "pages": 3
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\Free-Physical-Security-Checklist.pdf",
+      "document_id": "125268f1-b216-4989-be83-72c575d9a2d7",
+      "chunks": 272,
+      "pages": 41
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\Insider Threat Mitigation Guide_Final_508.pdf",
+      "document_id": "6e2e596b-317b-4b30-9529-17e5f55ee55f",
+      "chunks": 1145,
+      "pages": 133
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\IRMPE Question Set and Guidance-v1_508.pdf",
+      "document_id": "a1de648d-0288-42a1-b2c3-a4d55d0805ef",
+      "chunks": 527,
+      "pages": 72
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\IRPF_3.17.2025.pdf",
+      "document_id": "3b2c93cb-7f09-404b-9df3-34f5780d7281",
+      "chunks": 455,
+      "pages": 57
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\isc-planning-managing-physical-security-resources-dec-2015-508.pdf",
+      "document_id": "0c8cbd0f-6d62-4a6c-bb92-1e907761a386",
+      "chunks": 319,
+      "pages": 43
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\K-12 School Security Practices Guide.pdf",
+      "document_id": "7196c567-a0a7-49fd-a605-358bee187851",
+      "chunks": 206,
+      "pages": 23
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\k12-school-security-guide-3rd-edition-022022-508.pdf",
+      "document_id": "1a608126-234a-4c4a-9bf0-21e61f97a01c",
+      "chunks": 386,
+      "pages": 40
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\K12-School-Security-Survey-508.pdf",
+      "document_id": "0b3798df-e9e6-4de8-877c-34a01e3f060a",
+      "chunks": 640,
+      "pages": 78
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\MassGatheringSecurityPlanningTool_BlankQuestionSet.pdf",
+      "document_id": "f562da02-0bd8-4022-b8a5-c1ead9815626",
+      "chunks": 230,
+      "pages": 31
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\mat-report_hurricane-harvey-texas.pdf",
+      "document_id": "95b2c42e-6270-4475-8f69-4b992099c098",
+      "chunks": 2122,
+      "pages": 366
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\Protecting-Patrons-at-Public-Gathering-Locations_508_20250805.pdf",
+      "document_id": "d523bcbe-60db-47bf-8487-80b533673d29",
+      "chunks": 21,
+      "pages": 2
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\Protecting-Places-of-Worship_20230509_508.pdf",
+      "document_id": "3f624045-bbc9-4095-8d12-b1ec10e69a66",
+      "chunks": 19,
+      "pages": 2
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\Public_20Venue_20Credentialing_20Guide_508.pdf",
+      "document_id": "fd701c52-76dc-41c7-8b14-aadebc8c2f63",
+      "chunks": 92,
+      "pages": 13
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\resources-for-onboarding-and-employment-screening-fact-sheet_07-25-2024_508 (1).pdf",
+      "document_id": "cfa31325-3ac8-4aa6-99bf-0fc98e8cf110",
+      "chunks": 22,
+      "pages": 2
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\resources-for-onboarding-and-employment-screening-fact-sheet_07-25-2024_508.pdf",
+      "document_id": "cfa31325-3ac8-4aa6-99bf-0fc98e8cf110",
+      "chunks": 22,
+      "pages": 2
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\SAFE VOFC Library.pdf",
+      "document_id": "70bbe86c-f353-43fc-86bc-a80b4e7533c6",
+      "chunks": 378,
+      "pages": 53
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\School_Guide_508C.pdf",
+      "document_id": "27a085bd-594c-48c4-a68b-ebc7485e91c5",
+      "chunks": 572,
+      "pages": 70
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\Sector Spotlight Electricity Substation Physical Security_508.pdf",
+      "document_id": "0866dabd-a256-4940-b4a6-84b774289651",
+      "chunks": 45,
+      "pages": 2
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\ssat-technical-appendix-022022-508.pdf",
+      "document_id": "fadab95e-12e9-443d-a788-90fa7d5302e6",
+      "chunks": 455,
+      "pages": 44
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\st-bips-06.pdf",
+      "document_id": "80e3ed6b-1f0b-45bd-b115-917df351f559",
+      "chunks": 4000,
+      "pages": 502
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\ufc_4_010_03_2011.pdf",
+      "document_id": "7ac8d3e6-6678-4239-8b62-d611de452805",
+      "chunks": 561,
+      "pages": 89
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\ufc_4_020_01_2008.pdf",
+      "document_id": "5fbcd240-ef10-4b2c-ad67-ff6b315e3ffc",
+      "chunks": 2463,
+      "pages": 320
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\Unauthorized Drone Activity Over Sporting Venues.pdf",
+      "document_id": "bc1db65e-751c-4a23-bb65-f5c9af7e4826",
+      "chunks": 26,
+      "pages": 2
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\USSS Averting Targeted School Violence.2021.03.pdf",
+      "document_id": "d750c8cc-43c2-4cef-a70c-0758b2b43bb1",
+      "chunks": 573,
+      "pages": 64
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\Vehicle Ramming - Security Awareness for ST-CP.pdf",
+      "document_id": "3f7bb25e-1515-4de1-bbab-d8696c30319e",
+      "chunks": 21,
+      "pages": 2
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\Vehicle_Incident_Prevention_and_Mitigation_Security_Guide_508_20240418.pdf",
+      "document_id": "ecbb99f4-7af8-4f0c-8eaa-ce7c8cb1624f",
+      "chunks": 502,
+      "pages": 63
+    }
+  ],
+  "failed": [
+    {
+      "file": "D:\\psa-workspace\\PDF's\\738190672-2-Std-SG-ORM1-2017-STD.pdf",
+      "error": "date/time field value out of range: \"7381-90-67\"\nLINE 4: ...38190672-2-Std-SG-ORM1-2017-STD', 'CISA', 'CISA', '7381-90-6...\n                                                             ^\nHINT:  Perhaps you need a different \"datestyle\" setting.\n"
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\Decision Matrix.pdf",
+      "error": "No text extracted from any page"
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\School Assessment Baseline.pdf",
+      "error": "No text extracted from any page"
+    },
+    {
+      "file": "D:\\psa-workspace\\PDF's\\Workbook.pdf",
+      "error": "No text extracted from any page"
+    }
+  ],
+  "skipped": []
+}

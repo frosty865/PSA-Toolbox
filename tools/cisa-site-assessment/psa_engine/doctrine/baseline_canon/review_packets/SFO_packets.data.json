@@ -1,0 +1,14 @@
+{
+  "source_file": "D:\\psa-workspace\\psa_rebuild\\analytics\\reports\\legacy_baseline_refactor_map.json",
+  "discipline": "SFO",
+  "counts": {
+    "total": 32,
+    "rewrite": 0,
+    "component_checklist": 32,
+    "drop": 0,
+    "fail_closed": 0,
+    "by_outcome": {
+      "MOVE_TO_COMPONENT_CHECKLIST": 32
+    }
+  }
+}

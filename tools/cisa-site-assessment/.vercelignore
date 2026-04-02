@@ -1,0 +1,28 @@
+# Vercel upload exclusions (keep deployment bundle small and avoid path-length failures)
+.git
+.next
+node_modules
+
+# Archives and generated artifacts
+archive
+/archive/**
+tools/_archive
+**/tools/_archive/**
+
+# Local runtime data and large offline assets (top-level only)
+/storage/**
+/data/**
+/downloads/**
+/ollama_models/**
+/llama.cpp/**
+
+# Local environments and caches
+/venv/**
+/.venv/**
+**/__pycache__/**
+
+# Local temp/debug outputs
+/build/**
+/debug/**
+/temp/**
+*.log

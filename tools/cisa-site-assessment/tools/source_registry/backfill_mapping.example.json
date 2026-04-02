@@ -1,0 +1,10 @@
+{
+  "document_table": "public.corpus_documents",
+  "match_field": "id",
+  "mappings": [
+    {
+      "match_value": "00000000-0000-0000-0000-000000000000",
+      "source_registry_id": "11111111-1111-1111-1111-111111111111"
+    }
+  ]
+}

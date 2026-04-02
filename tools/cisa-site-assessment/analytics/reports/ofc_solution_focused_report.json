@@ -1,0 +1,54 @@
+{
+  "mode": "APPLY",
+  "chunks_scanned": 614,
+  "candidates_seen_after_filters": 140,
+  "subtype_assigned": 4,
+  "candidates_persisted": 3,
+  "candidates_dropped_no_subtype": 136,
+  "candidates_dropped_no_question_match": 1,
+  "rejected_counts_by_reason": {
+    "no_option_language": 974,
+    "forbidden_impl_detail": 111,
+    "short_fragment": 143,
+    "observation_not_option": 53,
+    "vulnerability_finding": 63,
+    "empty_or_noise": 2,
+    "duplicate": 10,
+    "meta_preamble": 3,
+    "state_vulnerability_cognitive": 1
+  },
+  "top_subtypes_persisted": {
+    "ACS_DOOR_READERS": 1,
+    "ISC_LAW_ENFORCEMENT_LIAISON": 1,
+    "SFO_INCIDENT_REPORTING": 1,
+    "PER_VEHICLE_ACCESS_CONTROL_POINTS": 1
+  },
+  "sample_persisted": [
+    {
+      "candidate_text": "Recovery Considerations Accident reconstruction Law enforcement and recovery personnel performing accident reconstruction involving EVs should remain aware of the hazards typically faced with ICE vehi",
+      "subtype_code": "ISC_LAW_ENFORCEMENT_LIAISON",
+      "best_question_id": "BASE-ISC-ISC_LAW_ENFORCEMENT_LIAISON",
+      "score": 0.7910543588699368,
+      "chunk_id": "f4f39be7-d5bb-46d6-9c7f-99517af0dce1"
+    },
+    {
+      "candidate_text": "\u00a9 EMS units should pull past the incident scene.",
+      "subtype_code": "SFO_INCIDENT_REPORTING",
+      "best_question_id": "BASE-SFO-SFO_INCIDENT_REPORTING",
+      "score": 0.7516535557664491,
+      "chunk_id": "9006b576-7c4a-47e4-b365-c8a287c30391"
+    },
+    {
+      "candidate_text": "/ LIFTING POINTS WARNING: The vehicle should be lifted or manipulated only by personal that are properly trained and equipped.",
+      "subtype_code": "PER_VEHICLE_ACCESS_CONTROL_POINTS",
+      "best_question_id": "BASE-PER-001",
+      "score": 0.6839481192988336,
+      "chunk_id": "d908e8bf-a372-47dd-ae53-e539f22b569c"
+    }
+  ],
+  "min_link_score": 0.22,
+  "subtype_thresholds": {
+    "min_score": 0.35,
+    "margin": 1.35
+  }
+}

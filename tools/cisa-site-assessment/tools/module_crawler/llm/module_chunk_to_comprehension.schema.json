@@ -1,0 +1,57 @@
+{
+  "name": "module_chunk_to_comprehension",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "primary_domains": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 2,
+        "items": { "type": "string" }
+      },
+      "secondary_domains": {
+        "type": "array",
+        "minItems": 0,
+        "maxItems": 3,
+        "items": { "type": "string" }
+      },
+      "explicit_topics": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 6,
+        "items": { "type": "string" }
+      },
+      "implied_risks": {
+        "type": "array",
+        "minItems": 0,
+        "maxItems": 6,
+        "items": { "type": "string" }
+      },
+      "site_observable": { "type": "boolean" },
+      "supports_question_generation": { "type": "boolean" },
+      "generation_priority": {
+        "type": "string",
+        "enum": ["HIGH", "MEDIUM", "LOW"]
+      },
+      "life_safety_signal": { "type": "boolean" },
+      "ops_signal": { "type": "boolean" },
+      "cyber_awareness_signal": { "type": "boolean" },
+      "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+    },
+    "required": [
+      "primary_domains",
+      "secondary_domains",
+      "explicit_topics",
+      "implied_risks",
+      "site_observable",
+      "supports_question_generation",
+      "generation_priority",
+      "life_safety_signal",
+      "ops_signal",
+      "cyber_awareness_signal",
+      "confidence"
+    ]
+  }
+}

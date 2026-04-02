@@ -1,0 +1,19 @@
+primary_question_key,question_text,discipline_code,subtype_code,notes,mapping_confidence
+# ALT_SAFE Primary Questions → PSA Taxonomy Mapping
+# 
+# Rules:
+# - primary_question_key: Matches ALT_SAFE input name attribute
+# - question_text: Full question text from ALT_SAFE
+# - discipline_code: PSA discipline code (e.g., ACS, VSS, PPS)
+# - subtype_code: PSA subtype code (e.g., ACS_DOOR_READERS) - optional if no subtype match
+# - notes: Explanation of mapping rationale
+# - mapping_confidence: HIGH | MEDIUM | LOW | UNMAPPED
+#
+# Example mappings (to be populated from ALT_SAFE extraction):
+# video_surveillance_exists,VSS,VSS_SYSTEMS,"Primary question about video surveillance existence",HIGH
+# access_control_type,ACS,,"Technology selector for ACS type",HIGH
+# door_reader_operational,ACS,ACS_DOOR_READERS,"Operational status of door readers",HIGH
+#
+# Note: This file will be populated after running extract_alt_safe_model.py
+# and analyzing the extracted question structure against the PSA taxonomy.
+

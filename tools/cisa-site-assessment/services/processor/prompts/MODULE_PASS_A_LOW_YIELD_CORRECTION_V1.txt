@@ -1,0 +1,10 @@
+You previously produced fewer than 8 questions from the given chunks. Your task is to try again and produce AT LEAST 8 questions.
+
+- Re-read all chunks. Look for additional observable physical conditions, planning elements, or operations that can be turned into YES/NO assessment questions.
+- Include questions from different disciplines (PER, FAC, EAP, EMR, SFO, CPTED, etc.) if the source supports them.
+- Each question must still have at least one evidence excerpt and valid discipline_code + discipline_subtype_hint.
+- Output the same JSON structure as before: risk_drivers and questions (8–12 questions).
+
+If the source text truly does not support 8 distinct questions, produce the maximum number you can justify with evidence (minimum 8 if at all possible). Do not invent evidence.
+
+Respond with ONLY the JSON object. Start with {. No other text.

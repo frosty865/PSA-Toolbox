@@ -1,0 +1,12 @@
+{
+  "discipline_code": "VSS",
+  "version": "v1",
+  "constraints": [
+    {
+      "constraint_id": "BASE-VSS-CONSTRAINT-001",
+      "type": "EXCLUDE_SUBTYPE_PREFIX",
+      "value": "VSS_ANALYTICS",
+      "reason": "Video analytics are solution features and excluded from baseline canon."
+    }
+  ]
+}

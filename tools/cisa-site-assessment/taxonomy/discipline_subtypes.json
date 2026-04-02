@@ -1,0 +1,1822 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "total_subtypes": 105,
+    "generated_at": "2025-12-21T14:42:26.341117Z",
+    "authority": "psa_engine"
+  },
+  "subtypes": [
+    {
+      "id": "9ad62209-3efe-4339-b079-e17f9810f6b0",
+      "name": "Biometric Access",
+      "subtype_code": "ACS_BIOMETRIC_ACCESS",
+      "description": null,
+      "discipline_id": "18d45ffa-6a44-4817-becb-828231b9e1e7",
+      "discipline_code": "ACS",
+      "discipline_name": "Access Control Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Biometric access control systems use unique physical or behavioral characteristics (fingerprints, facial recognition, iris scans, voice patterns) to verify identity and make access decisions at controlled entry points. These systems provide a higher level of security than traditional credential-based systems by linking access directly to an individual's unique biological traits.",
+        "indicators_of_risk": [
+          "High false rejection rates causing legitimate users to be denied access",
+          "Lack of backup access methods when biometric systems fail",
+          "Insufficient enrollment procedures leading to poor template quality",
+          "Environmental factors (lighting, temperature, humidity) affecting sensor performance",
+          "Privacy concerns or resistance from users regarding biometric data collection"
+        ],
+        "common_failures": [
+          "Sensor degradation over time without proper maintenance and calibration",
+          "Inadequate enrollment procedures resulting in poor biometric template quality",
+          "Failure to maintain backup access methods for system outages or user disabilities",
+          "Lack of integration with other access control systems",
+          "Insufficient training for operators and users on proper system usage"
+        ],
+        "mitigation_guidance": [
+          "Implement multi-factor authentication combining biometrics with another factor (PIN, card)",
+          "Maintain backup access methods (PIN codes, physical keys) for system failures",
+          "Establish regular maintenance schedules for sensor cleaning and calibration",
+          "Develop comprehensive enrollment procedures with quality checks for biometric templates",
+          "Provide user training on proper biometric presentation techniques",
+          "Consider environmental factors during system design and sensor placement"
+        ],
+        "standards_references": [
+          "FIPS 201 - Personal Identity Verification (PIV) of Federal Employees and Contractors",
+          "NIST SP 800-63B - Digital Identity Guidelines: Authentication and Lifecycle Management",
+          "ISO/IEC 19794 - Biometric Data Interchange Formats"
+        ],
+        "psa_notes": "Biometric systems should be evaluated for their false acceptance rate (FAR) and false rejection rate (FRR) to ensure they meet security and usability requirements. Consider privacy implications and ensure compliance with applicable regulations regarding biometric data collection and storage."
+      }
+    },
+    {
+      "id": "ee0eaec7-ba5b-414d-9b69-83f8d3c46c2b",
+      "name": "Credential / Badge Systems",
+      "subtype_code": "ACS_CREDENTIAL_BADGE_SYSTEMS",
+      "description": null,
+      "discipline_id": "18d45ffa-6a44-4817-becb-828231b9e1e7",
+      "discipline_code": "ACS",
+      "discipline_name": "Access Control Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Credential systems govern issuance, design, and management of identification badges used for access control. Weak credential programs undermine all downstream security systems.",
+        "psa_notes": "PSAs should look for badges that all look alike. When visitors and contractors are indistinguishable from staff, risk increases dramatically."
+      }
+    },
+    {
+      "id": "244c4ee1-2f2e-4014-96cc-8a32877ef1d2",
+      "name": "Door Monitoring",
+      "subtype_code": "ACS_DOOR_MONITORING",
+      "description": null,
+      "discipline_id": "18d45ffa-6a44-4817-becb-828231b9e1e7",
+      "discipline_code": "ACS",
+      "discipline_name": "Access Control Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Door monitoring uses sensors to detect door open/door closed states, forced entry, propped doors, and unauthorized access patterns. It provides real-time situational awareness and is a critical component of electronic access control.",
+        "psa_notes": "Propped doors represent one of the highest-risk access control failures. Observe actual staff behavior — not just reported policy."
+      }
+    },
+    {
+      "id": "66384ade-010f-495c-ac4f-e0127f0f9507",
+      "name": "Door Readers",
+      "subtype_code": "ACS_DOOR_READERS",
+      "description": null,
+      "discipline_id": "18d45ffa-6a44-4817-becb-828231b9e1e7",
+      "discipline_code": "ACS",
+      "discipline_name": "Access Control Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Door readers verify access credentials such as proximity cards, smart cards, mobile credentials, or fobs to permit entry. They form the core of electronic access control systems and must be installed and configured to minimize tampering and unauthorized access.",
+        "psa_notes": "Look for outdated Prox card readers — they are trivial to clone with $50 devices. Upgrading card tech is a high-impact, low-disruption improvement."
+      }
+    },
+    {
+      "id": "b31e0ca6-7813-466c-92c3-2cd660aed5aa",
+      "name": "Electric Strikes / Mag Locks",
+      "subtype_code": "ACS_ELECTRIC_STRIKES_MAG_LOCKS",
+      "description": null,
+      "discipline_id": "18d45ffa-6a44-4817-becb-828231b9e1e7",
+      "discipline_code": "ACS",
+      "discipline_name": "Access Control Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Electric strikes and magnetic locks secure doors by controlling whether they can open under electric or magnetic force. Their reliability depends on proper installation, fail-safe vs. fail-secure configuration, and integration with fire/life-safety systems.",
+        "psa_notes": "Improper mag lock installation is one of the most common life-safety violations encountered. Perform functional testing during assessment."
+      }
+    },
+    {
+      "id": "3227ab36-7f31-4be4-a0c2-0f838518fa96",
+      "name": "Electronic Access Control",
+      "subtype_code": "ACS_ELECTRONIC_ACCESS_CONTROL",
+      "description": null,
+      "discipline_id": "18d45ffa-6a44-4817-becb-828231b9e1e7",
+      "discipline_code": "ACS",
+      "discipline_name": "Access Control Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Electronic Access Control (EAC) governs who can go where, when, and under what conditions. It is a primary control for keeping unauthorized people out of sensitive areas and providing an audit trail of access activity.",
+        "psa_notes": "When in the field, PSAs should physically walk the perimeter and key interior zones during normal operations. Watch how people actually move: tailgating, propped doors, and informal “workarounds” are reliable indicators that the access control design does not match operational reality."
+      }
+    },
+    {
+      "id": "197cb197-88de-4a84-93cf-d52bc7037109",
+      "name": "Keypads / PIN Entry",
+      "subtype_code": "ACS_KEYPADS_PIN_ENTRY",
+      "description": null,
+      "discipline_id": "18d45ffa-6a44-4817-becb-828231b9e1e7",
+      "discipline_code": "ACS",
+      "discipline_name": "Access Control Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Keypads and PIN entry systems authenticate individuals using numeric codes to control access to secured areas. They are common in low-to-medium risk environments and require strong management of codes, user discipline, and tamper controls.",
+        "psa_notes": "Check for worn buttons and observe whether personnel hide PIN entry. If everyone uses one code, accountability is nonexistent."
+      }
+    },
+    {
+      "id": "95f8b59e-2a85-4ef6-986a-dd702310d445",
+      "name": "Locking Hardware",
+      "subtype_code": "ACS_LOCKING_HARDWARE",
+      "description": null,
+      "discipline_id": "18d45ffa-6a44-4817-becb-828231b9e1e7",
+      "discipline_code": "ACS",
+      "discipline_name": "Access Control Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Locking hardware provides physical resistance to unauthorized entry and ensures secure closures for doors, gates, and controlled spaces.",
+        "psa_notes": "Poor locking hardware often represents systemic maintenance issues. Verify latching physically, not visually."
+      }
+    },
+    {
+      "id": "2a159f3f-6cef-40a2-bebb-ac6c1bb7001e",
+      "name": "Secured Vestibules",
+      "subtype_code": "ACS_SECURED_VESTIBULES",
+      "description": null,
+      "discipline_id": "18d45ffa-6a44-4817-becb-828231b9e1e7",
+      "discipline_code": "ACS",
+      "discipline_name": "Access Control Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Secured vestibules create a controlled point of entry where visitors can be screened before they are allowed deeper into the facility. They are especially important in schools, healthcare, and public-facing government facilities.",
+        "psa_notes": "PSAs should trace the visitor journey from parking lot to final destination. If a determined member of the public can get to high-value areas in seconds with little or no challenge, the vestibule concept is either missing or not effective in practice."
+      }
+    },
+    {
+      "id": "6abbccac-a6ba-4b8d-a451-1bc099e62b96",
+      "name": "Visitor Management Systems",
+      "subtype_code": "ACS_VISITOR_MANAGEMENT_SYSTEMS",
+      "description": null,
+      "discipline_id": "18d45ffa-6a44-4817-becb-828231b9e1e7",
+      "discipline_code": "ACS",
+      "discipline_name": "Access Control Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Visitor management covers how visitors, contractors, and other non-badged individuals are identified, authorized, recorded, and controlled while on site.",
+        "psa_notes": "Observe live reception operations. Most facilities claim to use VMS, but real enforcement is often inconsistent or bypassed.",
+        "indicators_of_risk": [
+          "Visitors enter without identity verification or authorization",
+          "No consistent method to account for visitors during incidents"
+        ],
+        "common_failures": [
+          "Visitor entry handled informally with no record of presence",
+          "Visitor credentials or escorts not defined for higher-risk areas"
+        ],
+        "mitigation_guidance": [
+          "Define how visitors are authorized and tracked while on site",
+          "Establish a method to account for visitors and contractors during protective actions"
+        ],
+        "standards_references": [
+          "ASIS: Getting Visitor Management Right in Access Control",
+          "ASIS Research Report: The Essentials of Access Control (Insights, Benchmarks, and Best Practices)"
+        ]
+      },
+      "guidance_required": true
+    },
+    {
+      "id": "9080f9f9-15ad-42fb-98ea-9f83824a92ed",
+      "name": "Backup Communications",
+      "subtype_code": "COM_BACKUP_COMMUNICATIONS",
+      "description": null,
+      "discipline_id": "49c0275c-f511-4ab1-970c-097d00969a6e",
+      "discipline_code": "COM",
+      "discipline_name": "Communications",
+      "is_active": true,
+      "guidance": {
+        "overview": "Backup communications ensure the facility can send and receive critical messages during power outages, system failures, network disruptions, or emergencies where primary communications are degraded.",
+        "psa_notes": "Backup communications are binary—they either work or they don’t. Live testing is the only truth."
+      }
+    },
+    {
+      "id": "3a8ecc24-f6d7-49e1-a214-96870cb822e0",
+      "name": "Communication Protocols",
+      "subtype_code": "COM_COMMUNICATION_PROTOCOLS",
+      "description": null,
+      "discipline_id": "49c0275c-f511-4ab1-970c-097d00969a6e",
+      "discipline_code": "COM",
+      "discipline_name": "Communications",
+      "is_active": true,
+      "guidance": {
+        "overview": "Communication protocols define how, when, and by whom information is transmitted during routine operations and emergencies. Clear protocols reduce confusion, duplication, and missed messages when time is critical.",
+        "psa_notes": "In interviews, ask three different people how they would communicate an unfolding threat. If the answers diverge, protocols are not institutionalized."
+      }
+    },
+    {
+      "id": "613fafc4-7579-417c-89d3-4500eac5fd49",
+      "name": "Interoperable Communications",
+      "subtype_code": "COM_INTEROPERABLE_COMMUNICATIONS",
+      "description": null,
+      "discipline_id": "49c0275c-f511-4ab1-970c-097d00969a6e",
+      "discipline_code": "COM",
+      "discipline_name": "Communications",
+      "is_active": true,
+      "guidance": {
+        "overview": "Interoperable communications address whether the facility can communicate with external responders and partners using agreed methods during incidents.",
+        "psa_notes": "Have them perform a live radio test with an external responder. Most organizations fail—they’ve never tested their assumptions.",
+        "indicators_of_risk": [
+          "External responders cannot reliably reach facility points of contact",
+          "Incident communications rely on ad-hoc personal devices or improvised methods"
+        ],
+        "common_failures": [
+          "No identified interoperability method with external partners",
+          "Roles and contact paths not defined for incident communications"
+        ],
+        "mitigation_guidance": [
+          "Identify how the facility communicates with external responders during incidents",
+          "Define primary and alternate methods used to coordinate during emergency operations"
+        ],
+        "standards_references": [
+          "ISC: Occupant Emergency Programs (2024 Edition)",
+          "FEMA: National Incident Management System (NIMS)"
+        ]
+      },
+      "guidance_required": true
+    },
+    {
+      "id": "4358ddbf-6974-4174-adea-ad16e8142bf3",
+      "name": "PA Systems",
+      "subtype_code": "COM_PA_SYSTEMS",
+      "description": null,
+      "discipline_id": "49c0275c-f511-4ab1-970c-097d00969a6e",
+      "discipline_code": "COM",
+      "discipline_name": "Communications",
+      "is_active": true,
+      "guidance": {
+        "overview": "Public Address (PA) systems broadcast real-time voice instructions for evacuation, lockdown, shelter-in-place, and routine communications. Their reliability, clarity, and reach determine how effectively occupants receive guidance.",
+        "psa_notes": "Walk the facility during a PA test—bathrooms, stairwells, loading docks, and mechanical spaces often have zero coverage."
+      }
+    },
+    {
+      "id": "d596c56e-df59-4311-90d2-7af8147b0770",
+      "name": "Paging Systems",
+      "subtype_code": "COM_PAGING_SYSTEMS",
+      "description": null,
+      "discipline_id": "49c0275c-f511-4ab1-970c-097d00969a6e",
+      "discipline_code": "COM",
+      "discipline_name": "Communications",
+      "is_active": true,
+      "guidance": {
+        "overview": "Paging systems provide targeted or facility-wide audio communication, often used in healthcare, retail, industrial, and education settings. Their emergency utility depends on clarity, zoning, and response integration.",
+        "psa_notes": "Paging is only useful if every part of the facility hears it. Test stairwells, restrooms, warehouses, and parking structures."
+      }
+    },
+    {
+      "id": "6a2654c9-0ee5-4a6a-8267-23d78aa2320e",
+      "name": "Radios / Two-Way",
+      "subtype_code": "COM_RADIOS_TWO_WAY",
+      "description": null,
+      "discipline_id": "49c0275c-f511-4ab1-970c-097d00969a6e",
+      "discipline_code": "COM",
+      "discipline_name": "Communications",
+      "is_active": true,
+      "guidance": {
+        "overview": "Two-way radios provide real-time communication among staff, security, and responders. Reliable radios significantly improve coordination during emergencies and routine operations.",
+        "psa_notes": "Ask staff to demonstrate a live radio call. If radios are dead, missing, or unused, real emergencies will suffer badly."
+      }
+    },
+    {
+      "id": "5838c9d6-9172-4ff0-983c-62b93ee0b830",
+      "name": "Defensible Space",
+      "subtype_code": "CPTED_DEFENSIBLE_SPACE",
+      "description": null,
+      "discipline_id": "b6e2ad14-2a0f-4009-9269-9a35d3599f55",
+      "discipline_code": "CPTED",
+      "discipline_name": "CPTED",
+      "is_active": true,
+      "guidance": {
+        "overview": "Defensible space uses physical design, territorial cues, and social norms to promote resident, staff, or tenant ownership of areas, discouraging crime and disorder through natural guardianship.",
+        "psa_notes": "Ask front-line staff and occupants which areas they avoid or feel unsafe in. Their answers usually map directly onto weak defensible space and low ownership."
+      }
+    },
+    {
+      "id": "950cb111-c938-4d36-b82f-1f39d8ea2084",
+      "name": "Exterior Lighting",
+      "subtype_code": "CPTED_EXTERIOR_LIGHTING",
+      "description": null,
+      "discipline_id": "b6e2ad14-2a0f-4009-9269-9a35d3599f55",
+      "discipline_code": "CPTED",
+      "discipline_name": "CPTED",
+      "is_active": true,
+      "guidance": {
+        "overview": "Exterior lighting supports deterrence, detection, and safe circulation around building façades, entries, and parking areas. It is a core enabler for both natural surveillance and video effectiveness after dark.",
+        "psa_notes": "Night visits are non-negotiable. Paper lighting plans and daytime inspections routinely miss the real problems that show up after dark."
+      }
+    },
+    {
+      "id": "184882ba-267a-4035-a77a-2fa4920782cb",
+      "name": "Landscaping Control",
+      "subtype_code": "CPTED_LANDSCAPING_CONTROL",
+      "description": null,
+      "discipline_id": "b6e2ad14-2a0f-4009-9269-9a35d3599f55",
+      "discipline_code": "CPTED",
+      "discipline_name": "CPTED",
+      "is_active": true,
+      "guidance": {
+        "overview": "Landscaping control manages vegetation, planters, berms, and site furnishings so they support security objectives instead of creating hiding places, climb aids, or vehicle concealment.",
+        "psa_notes": "If you can disappear into the bushes within a few steps of the door, so can an attacker. PSAs should challenge “privacy” plantings that undermine basic visibility and control."
+      }
+    },
+    {
+      "id": "fc3078fc-5bfe-470b-bd3e-e3270ae091c6",
+      "name": "Natural Surveillance",
+      "subtype_code": "CPTED_NATURAL_SURVEILLANCE",
+      "description": null,
+      "discipline_id": "b6e2ad14-2a0f-4009-9269-9a35d3599f55",
+      "discipline_code": "CPTED",
+      "discipline_name": "CPTED",
+      "is_active": true,
+      "guidance": {
+        "overview": "Natural surveillance uses design and layout to maximize visibility of people, entrances, and critical areas. It reduces hiding places and increases the likelihood that suspicious behavior will be noticed and challenged.",
+        "psa_notes": "PSAs should literally walk the site with “offender eyes”: where could someone approach unseen, wait unseen, or work unseen? That is your natural surveillance gap map."
+      }
+    },
+    {
+      "id": "5ce9cd73-f53c-4044-aacc-4e90ce4d8d50",
+      "name": "Sightlines",
+      "subtype_code": "CPTED_SIGHTLINES",
+      "description": null,
+      "discipline_id": "b6e2ad14-2a0f-4009-9269-9a35d3599f55",
+      "discipline_code": "CPTED",
+      "discipline_name": "CPTED",
+      "is_active": true,
+      "guidance": {
+        "overview": "Sightlines describe how well staff, security personnel, and cameras can see approaches, entries, corridors, and gathering spaces. Good sightlines support deterrence, early detection, and rapid assessment of suspicious behavior.",
+        "psa_notes": "PSAs should literally walk the site and building with “offender eyes”: note where a person could approach, wait, or work unseen. Those locations should drive sightline improvements or added surveillance."
+      }
+    },
+    {
+      "id": "8a77c088-6e84-4791-a60c-a611044f512f",
+      "name": "Territorial Reinforcement",
+      "subtype_code": "CPTED_TERRITORIAL_REINFORCEMENT",
+      "description": null,
+      "discipline_id": "b6e2ad14-2a0f-4009-9269-9a35d3599f55",
+      "discipline_code": "CPTED",
+      "discipline_name": "CPTED",
+      "is_active": true,
+      "guidance": {
+        "overview": "Territorial reinforcement uses physical features, signage, pavement changes, and landscaping to express ownership and guide behavior. Clear territorial cues discourage unauthorized use of space.",
+        "psa_notes": "Territorial cues influence behavior subconsciously. PSAs should assess whether spaces feel “owned” or “ambiguous” — ambiguity is a risk amplifier."
+      }
+    },
+    {
+      "id": "b738eda6-9bb8-4934-8c74-92f5ab46068c",
+      "name": "Wayfinding",
+      "subtype_code": "CPTED_WAYFINDING",
+      "description": null,
+      "discipline_id": "b6e2ad14-2a0f-4009-9269-9a35d3599f55",
+      "discipline_code": "CPTED",
+      "discipline_name": "CPTED",
+      "is_active": true,
+      "guidance": {
+        "overview": "Wayfinding systems use signage, maps, color cues, lighting, and architectural guidance to direct occupants through a facility. Effective wayfinding reduces confusion during emergencies, improves circulation, and supports rapid response by staff and responders.",
+        "psa_notes": "Walk the facility as if you have never been there. If you get lost or hesitate at intersections, occupants will too—especially during emergencies."
+      }
+    },
+    {
+      "id": "8c3e82d1-a7c9-40b2-8836-cfa3da36d40c",
+      "name": "Emergency Drills",
+      "subtype_code": "EAP_EMERGENCY_DRILLS",
+      "description": null,
+      "discipline_id": "4b640641-12cf-4b58-98f9-ae4ff644ee3e",
+      "discipline_code": "EAP",
+      "discipline_name": "Emergency Action Planning",
+      "is_active": true,
+      "guidance": {
+        "overview": "Emergency drills test the organization’s readiness to perform evacuations, lockdowns, shelter-in-place, and other protective actions. Effective drills validate plans, identify weaknesses, and build staff confidence.",
+        "psa_notes": "Ask for after-action reports. If there are none—or if the same findings repeat—drills aren’t improving readiness."
+      }
+    },
+    {
+      "id": "1dbe7509-76a7-4cfc-bd97-d73de4a85cb0",
+      "name": "Emergency Guides / Flip Charts",
+      "subtype_code": "EAP_EMERGENCY_GUIDES_FLIP_CHARTS",
+      "description": null,
+      "discipline_id": "4b640641-12cf-4b58-98f9-ae4ff644ee3e",
+      "discipline_code": "EAP",
+      "discipline_name": "Emergency Action Planning",
+      "is_active": true,
+      "guidance": {
+        "overview": "Emergency guides and flip charts provide quick-reference instructions for staff during emergencies, summarizing evacuation, lockdown, medical response, and communication procedures in concise, accessible formats.",
+        "psa_notes": "Flip charts are only useful if they’re visible, current, and understood. Outdated or ignored guides can create more confusion than clarity."
+      }
+    },
+    {
+      "id": "9a84b834-8fe5-4c25-a11b-750276b2f76e",
+      "name": "Evacuation Procedures",
+      "subtype_code": "EAP_EVACUATION_PROCEDURES",
+      "description": null,
+      "discipline_id": "4b640641-12cf-4b58-98f9-ae4ff644ee3e",
+      "discipline_code": "EAP",
+      "discipline_name": "Emergency Action Planning",
+      "is_active": true,
+      "guidance": {
+        "overview": "Evacuation procedures define how occupants move to safety, how routes/assembly areas are used, and how accountability is handled during emergencies.",
+        "psa_notes": "Ask random staff how they would evacuate and where they would go. Their answer is the real procedure; the written plan is just theory until it matches that behavior.",
+        "indicators_of_risk": [
+          "Evacuation actions differ by area or shift with no consistent procedure",
+          "No defined accountability method following evacuation"
+        ],
+        "common_failures": [
+          "Evacuation guidance exists only informally or varies by individual",
+          "Assembly locations or movement expectations are unclear"
+        ],
+        "mitigation_guidance": [
+          "Document evacuation actions and responsibilities for occupants and staff",
+          "Define how accountability is performed following evacuation"
+        ],
+        "standards_references": [
+          "CISA: Instructional Guide to the Emergency Action Plan (EAP) Template",
+          "ISC: Occupant Emergency Programs (2024 Edition)"
+        ]
+      },
+      "guidance_required": true
+    },
+    {
+      "id": "ded67053-d321-445c-95f9-d2326b72b6e6",
+      "name": "Lockdown / Lockout Procedures",
+      "subtype_code": "EAP_LOCKDOWN_LOCKOUT_PROCEDURES",
+      "description": null,
+      "discipline_id": "4b640641-12cf-4b58-98f9-ae4ff644ee3e",
+      "discipline_code": "EAP",
+      "discipline_name": "Emergency Action Planning",
+      "is_active": true,
+      "guidance": {
+        "overview": "Lockdown/lockout procedures define protective actions used to secure occupants and restrict movement when a threat condition requires it.",
+        "psa_notes": "Verify rooms truly secure from the inside. Walk through drill results and identify chokepoints or confusion points.",
+        "indicators_of_risk": [
+          "Unclear triggers for lockdown/lockout decisions",
+          "Inconsistent actions across areas during a threat condition"
+        ],
+        "common_failures": [
+          "Lockdown actions not defined for common scenarios (inside vs outside threat)",
+          "Roles and responsibilities for initiating and managing lockdown are unclear"
+        ],
+        "mitigation_guidance": [
+          "Document lockdown/lockout actions, triggers, and responsible roles",
+          "Define how protective actions are communicated and maintained during the event"
+        ],
+        "standards_references": [
+          "CISA: Instructional Guide to the Emergency Action Plan (EAP) Template",
+          "ISC: Occupant Emergency Programs (2024 Edition)"
+        ]
+      },
+      "guidance_required": true
+    },
+    {
+      "id": "09335ae3-724b-48c5-b4cc-c97905ebe768",
+      "name": "Muster Points / Rally Areas",
+      "subtype_code": "EAP_MUSTER_POINTS_RALLY_AREAS",
+      "description": null,
+      "discipline_id": "4b640641-12cf-4b58-98f9-ae4ff644ee3e",
+      "discipline_code": "EAP",
+      "discipline_name": "Emergency Action Planning",
+      "is_active": true,
+      "guidance": {
+        "overview": "Muster Points / Rally Areas ensure occupants have safe, clearly identified locations to assemble during evacuations or emergency movements. Proper placement, signage, access routes, and accountability procedures are essential for life safety.",
+        "psa_notes": "PSAs should physically walk evacuation paths and confirm muster locations are safe, accessible, and realistically usable under stress conditions."
+      }
+    },
+    {
+      "id": "eeb09a9c-b830-4118-ab27-535b48359303",
+      "name": "Reunification Procedures",
+      "subtype_code": "EAP_REUNIFICATION_PROCEDURES",
+      "description": null,
+      "discipline_id": "4b640641-12cf-4b58-98f9-ae4ff644ee3e",
+      "discipline_code": "EAP",
+      "discipline_name": "Emergency Action Planning",
+      "is_active": true,
+      "guidance": {
+        "overview": "Reunification procedures address how occupants are accounted for and reunited with responsible parties after evacuation, relocation, or prolonged protective actions.",
+        "psa_notes": "A reunification plan is only real if staff know their roles and families know what to expect. PSAs should look at communications, verification, and crowd management — not just paperwork.",
+        "indicators_of_risk": [
+          "No defined process for post-incident accountability and reunification",
+          "Confusion over where occupants go after protective actions end"
+        ],
+        "common_failures": [
+          "Reunification handled ad hoc without a defined location or process",
+          "Accountability expectations not defined for staff, occupants, and visitors"
+        ],
+        "mitigation_guidance": [
+          "Define how accountability and reunification are performed after incidents",
+          "Document roles, locations, and communication expectations for reunification"
+        ],
+        "standards_references": [
+          "CISA: Instructional Guide to the Emergency Action Plan (EAP) Template",
+          "ISC: Occupant Emergency Programs (2024 Edition)"
+        ]
+      },
+      "guidance_required": true
+    },
+    {
+      "id": "b7fefab1-cd13-4781-93d4-fedd133cdf67",
+      "name": "Shelter-in-Place",
+      "subtype_code": "EAP_SHELTER_IN_PLACE",
+      "description": null,
+      "discipline_id": "4b640641-12cf-4b58-98f9-ae4ff644ee3e",
+      "discipline_code": "EAP",
+      "discipline_name": "Emergency Action Planning",
+      "is_active": true,
+      "guidance": {
+        "overview": "Shelter-in-place procedures keep occupants indoors and protected from external hazards such as severe weather, airborne contaminants, or community violence when evacuation is unsafe or impractical.",
+        "psa_notes": "PSAs should physically inspect declared shelter spaces. If they are glass-heavy, cluttered, unmarked, or unknown to staff, the shelter plan exists only on paper."
+      }
+    },
+    {
+      "id": "57faa5fb-4c92-45cd-91d4-ae64181d9e09",
+      "name": "Staff Emergency Roles",
+      "subtype_code": "EAP_STAFF_EMERGENCY_ROLES",
+      "description": null,
+      "discipline_id": "4b640641-12cf-4b58-98f9-ae4ff644ee3e",
+      "discipline_code": "EAP",
+      "discipline_name": "Emergency Action Planning",
+      "is_active": true,
+      "guidance": {
+        "overview": "Staff emergency roles define who performs critical actions during incidents—evacuation coordinators, accountability leads, communication officers, medical responders, and floor wardens.",
+        "psa_notes": "Ask staff directly about their emergency role. Their confidence and clarity tell you whether the plan exists only on paper."
+      }
+    },
+    {
+      "id": "03012b3f-77db-4f5c-b98f-7e1ab218278a",
+      "name": "Business Continuity",
+      "subtype_code": "EMR_BUSINESS_CONTINUITY",
+      "description": null,
+      "discipline_id": "a295aed8-a841-41b0-b893-a8a018867b83",
+      "discipline_code": "EMR",
+      "discipline_name": "Emergency Management & Resilience",
+      "is_active": true,
+      "guidance": {
+        "overview": "Business continuity addresses whether essential functions can continue or be restored during disruptions that degrade normal operations.",
+        "psa_notes": "Ask when the continuity plan was last exercised. If the answer is “never,” the plan is untested and likely unworkable in a real disruption.",
+        "indicators_of_risk": [
+          "Essential functions depend on single points of failure",
+          "No defined approach to sustain operations during prolonged disruption"
+        ],
+        "common_failures": [
+          "Continuity assumptions exist but are not documented",
+          "Dependencies and priorities for essential functions are undefined"
+        ],
+        "mitigation_guidance": [
+          "Identify essential functions and operational priorities during disruption",
+          "Document continuity approaches for sustaining or restoring essential functions"
+        ],
+        "standards_references": [
+          "FEMA: Continuity Resources (Continuity Documents)",
+          "FEMA: Continuity Resource Toolkit"
+        ]
+      },
+      "guidance_required": true
+    },
+    {
+      "id": "9ae3d6d4-4ecd-4006-9d3f-3721227231be",
+      "name": "Crisis Management",
+      "subtype_code": "EMR_CRISIS_MANAGEMENT",
+      "description": null,
+      "discipline_id": "a295aed8-a841-41b0-b893-a8a018867b83",
+      "discipline_code": "EMR",
+      "discipline_name": "Emergency Management & Resilience",
+      "is_active": true,
+      "guidance": {
+        "overview": "Crisis management covers how leadership makes decisions, sets priorities, and coordinates during high-impact incidents affecting the facility.",
+        "psa_notes": "PSAs should assess whether staff can confidently explain who leads during a crisis and how decisions are made. A binder no one understands is not a crisis plan.",
+        "indicators_of_risk": [
+          "No defined crisis leadership roles or escalation paths",
+          "Major incident decisions made inconsistently or without coordination"
+        ],
+        "common_failures": [
+          "Strategic decisions confused with tactical response actions",
+          "No defined method to manage priorities, communications, and recovery direction"
+        ],
+        "mitigation_guidance": [
+          "Define crisis leadership roles, responsibilities, and escalation paths",
+          "Document how decisions and priorities are coordinated during major incidents"
+        ],
+        "standards_references": [
+          "ISC: Occupant Emergency Programs (2024 Edition)",
+          "FEMA: National Incident Management System (NIMS)"
+        ]
+      },
+      "guidance_required": true
+    },
+    {
+      "id": "03e40c3c-6b9d-4c23-8926-8fa0864ac8ab",
+      "name": "Emergency Communications",
+      "subtype_code": "EMR_EMERGENCY_COMMUNICATIONS",
+      "description": null,
+      "discipline_id": "a295aed8-a841-41b0-b893-a8a018867b83",
+      "discipline_code": "EMR",
+      "discipline_name": "Emergency Management & Resilience",
+      "is_active": true,
+      "guidance": {
+        "overview": "Emergency communications enable timely notification and coordination during incidents through systems such as mass notification, radios, PA systems, alerts, and secure internal messaging platforms.",
+        "psa_notes": "Ask multiple staff members how they would be notified in emergencies. If answers differ, communications will fail when needed most."
+      }
+    },
+    {
+      "id": "99cf5dee-e0ab-4fe1-be4d-506790a0a87a",
+      "name": "ICS/NIMS Integration",
+      "subtype_code": "EMR_ICS_NIMS_INTEGRATION",
+      "description": null,
+      "discipline_id": "a295aed8-a841-41b0-b893-a8a018867b83",
+      "discipline_code": "EMR",
+      "discipline_name": "Emergency Management & Resilience",
+      "is_active": true,
+      "guidance": {
+        "overview": "ICS/NIMS integration addresses whether incident management at the facility aligns to a common incident management structure for coordination with responders.",
+        "psa_notes": "Ask staff who the Incident Commander would be for a real event. If no one knows, ICS is only on paper.",
+        "indicators_of_risk": [
+          "Facility roles do not align to an incident management structure",
+          "External responder coordination is difficult due to unclear internal roles"
+        ],
+        "common_failures": [
+          "Incident roles not defined beyond normal job titles",
+          "No shared terminology or structure used during incident coordination"
+        ],
+        "mitigation_guidance": [
+          "Define incident roles and responsibilities consistent with an incident management structure",
+          "Document how the facility coordinates with responders during incident operations"
+        ],
+        "standards_references": [
+          "FEMA: National Incident Management System (NIMS)",
+          "FEMA: NIMS Components (including Incident Command System)"
+        ]
+      },
+      "guidance_required": true
+    },
+    {
+      "id": "2b6085c9-83c4-49b2-8952-22fcc70b7e8d",
+      "name": "Mass Notification",
+      "subtype_code": "EMR_MASS_NOTIFICATION",
+      "description": null,
+      "discipline_id": "a295aed8-a841-41b0-b893-a8a018867b83",
+      "discipline_code": "EMR",
+      "discipline_name": "Emergency Management & Resilience",
+      "is_active": true,
+      "guidance": {
+        "overview": "Mass notification systems provide rapid, facility-wide communication during emergencies. Their value depends on clarity, reach, redundancy, and how well staff understand when and how to activate them.",
+        "psa_notes": "PSAs should physically verify audibility/visibility of alerts in critical areas. In most facilities, gaps exist where staff simply cannot hear or see alerts."
+      }
+    },
+    {
+      "id": "9a15c737-7b60-4aee-b0a0-b3b13e854c9c",
+      "name": "Redundancy / Backup Systems",
+      "subtype_code": "EMR_REDUNDANCY_BACKUP_SYSTEMS",
+      "description": null,
+      "discipline_id": "a295aed8-a841-41b0-b893-a8a018867b83",
+      "discipline_code": "EMR",
+      "discipline_name": "Emergency Management & Resilience",
+      "is_active": true,
+      "guidance": {
+        "overview": "Redundancy and backup systems protect critical security functions from single points of failure, ensuring continued operation during outages, disasters, or technical failures.",
+        "psa_notes": "Ask to see UPSes, test logs, and network diagrams. Declared redundancy often fails under real stress unless regularly validated."
+      }
+    },
+    {
+      "id": "ae65413f-ef25-469c-bb60-867450f09d5e",
+      "name": "Resilience Planning",
+      "subtype_code": "EMR_RESILIENCE_PLANNING",
+      "description": null,
+      "discipline_id": "a295aed8-a841-41b0-b893-a8a018867b83",
+      "discipline_code": "EMR",
+      "discipline_name": "Emergency Management & Resilience",
+      "is_active": true,
+      "guidance": {
+        "overview": "Resilience planning addresses how the facility anticipates disruption, sustains critical functions, and restores operations after events that degrade normal capability.",
+        "psa_notes": "Resilience is proven by how an organization handles real disruptions. PSAs should review incident history and look for improvement over time.",
+        "indicators_of_risk": [
+          "Recovery actions are improvised during disruptions",
+          "No defined priorities for restoration of critical functions"
+        ],
+        "common_failures": [
+          "Resilience planning treated as the same as emergency response planning",
+          "No documented recovery priorities or restoration approach"
+        ],
+        "mitigation_guidance": [
+          "Identify critical functions and priorities for restoration after disruption",
+          "Document recovery objectives and restoration approaches for major disruption scenarios"
+        ],
+        "standards_references": [
+          "FEMA: Continuity Resource Toolkit",
+          "FEMA: Continuity Resources (Continuity Documents)"
+        ]
+      },
+      "guidance_required": true
+    },
+    {
+      "id": "05b22c7d-67f1-423e-bab1-8b6485345a8e",
+      "name": "Ballistic Barriers",
+      "subtype_code": "FAC_BALLISTIC_BARRIERS",
+      "description": null,
+      "discipline_id": "41d7fc06-a4e8-436b-bf70-4bdc6f68c0a7",
+      "discipline_code": "FAC",
+      "discipline_name": "Facility Hardening",
+      "is_active": true,
+      "guidance": {
+        "overview": "Ballistic barriers are engineered components—glazing, panels, walls, and protective furniture—rated to stop specific calibers or threat levels. They protect staff in reception, guard posts, and other exposed positions.",
+        "psa_notes": "Inspect joints and edges carefully—these are the most common failure points. A barrier is only as strong as its weakest seam."
+      }
+    },
+    {
+      "id": "4f42afe6-9c5e-40c0-900a-76513bd5fbab",
+      "name": "Blast Mitigation",
+      "subtype_code": "FAC_BLAST_MITIGATION",
+      "description": null,
+      "discipline_id": "41d7fc06-a4e8-436b-bf70-4bdc6f68c0a7",
+      "discipline_code": "FAC",
+      "discipline_name": "Facility Hardening",
+      "is_active": true,
+      "guidance": {
+        "overview": "Blast mitigation reduces the impact of explosive events on people and critical functions through standoff, structural detailing, protective glazing, and layout decisions that limit debris and progressive collapse.",
+        "psa_notes": "Start with standoff and vehicle control. Many sites cannot afford full engineered blast upgrades, but they can move cars and people further apart and protect the most exposed glazing and gathering areas."
+      }
+    },
+    {
+      "id": "a3cf4746-2ac9-48ea-91bb-1b0a9f6aa2ee",
+      "name": "Exterior Wall Reinforcement",
+      "subtype_code": "FAC_EXTERIOR_WALL_REINFORCEMENT",
+      "description": null,
+      "discipline_id": "41d7fc06-a4e8-436b-bf70-4bdc6f68c0a7",
+      "discipline_code": "FAC",
+      "discipline_name": "Facility Hardening",
+      "is_active": true,
+      "guidance": {
+        "overview": "Exterior wall reinforcement increases the ability of building envelopes to resist forced entry, small-arms fire, blast, and severe weather. It focuses on materials, connections, and continuity so walls perform as intended under attack or hazard.",
+        "psa_notes": "When doors and windows are strong but walls are weak, attackers will simply choose the path of least resistance. PSAs should look for those weak wall segments close to public approach."
+      }
+    },
+    {
+      "id": "0a642d0c-e14b-45c9-bb2f-7b210111cbda",
+      "name": "Impact-Resistant Glazing",
+      "subtype_code": "FAC_IMPACT_RESISTANT_GLAZING",
+      "description": null,
+      "discipline_id": "41d7fc06-a4e8-436b-bf70-4bdc6f68c0a7",
+      "discipline_code": "FAC",
+      "discipline_name": "Facility Hardening",
+      "is_active": true,
+      "guidance": {
+        "overview": "Impact-resistant glazing is engineered to withstand forced entry, windborne debris, and certain ballistic or blast events depending on rating. It provides true delay and hazard reduction compared to standard glass with film.",
+        "psa_notes": "Glazing is only as strong as the frame. Ask for both the glazing certificate AND the frame specifications."
+      }
+    },
+    {
+      "id": "df97267d-514d-4016-9e21-30b36fac4f27",
+      "name": "Structural Hardening",
+      "subtype_code": "FAC_STRUCTURAL_HARDENING",
+      "description": null,
+      "discipline_id": "41d7fc06-a4e8-436b-bf70-4bdc6f68c0a7",
+      "discipline_code": "FAC",
+      "discipline_name": "Facility Hardening",
+      "is_active": true,
+      "guidance": {
+        "overview": "Structural hardening enhances the building’s ability to resist forced entry, blast effects, seismic events, or deliberate protection failures by reinforcing walls, supports, doors, ceilings, and critical structural elements.",
+        "psa_notes": "Always check ceilings and adjacent rooms. Most “hardened” rooms can be bypassed in under a minute due to overlooked weak points."
+      }
+    },
+    {
+      "id": "c8ba9282-9aa1-48da-a5ac-2aab48eb08e4",
+      "name": "Window Film",
+      "subtype_code": "FAC_WINDOW_FILM",
+      "description": null,
+      "discipline_id": "41d7fc06-a4e8-436b-bf70-4bdc6f68c0a7",
+      "discipline_code": "FAC",
+      "discipline_name": "Facility Hardening",
+      "is_active": true,
+      "guidance": {
+        "overview": "Security window film reinforces existing glazing to reduce shattering and delay forced entry. While not a substitute for true impact-resistant glass, film improves fragmentation control and provides limited forced-entry resistance.",
+        "psa_notes": "Film without anchoring is cosmetic protection only. Ask specifically about anchoring and installation method."
+      }
+    },
+    {
+      "id": "4ee36ce6-4659-4590-901d-5a6cbc009782",
+      "name": "Alarm Monitoring",
+      "subtype_code": "IDS_ALARM_MONITORING",
+      "description": null,
+      "discipline_id": "b5516924-2356-4639-9109-01b6f19f104c",
+      "discipline_code": "IDS",
+      "discipline_name": "Intrusion Detection Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Alarm monitoring ensures intrusion, duress, environmental, and other critical alarms are received, interpreted, and acted upon in a timely manner—either on-site, through a central station, or both.",
+        "psa_notes": "Ask for the last time a live alarm test was run with the monitoring entity. If no one remembers, the “system” has never really been proven under real conditions."
+      }
+    },
+    {
+      "id": "fbd859ef-9c2e-40d4-8ab0-95efee01dd60",
+      "name": "Alarm Panels",
+      "subtype_code": "IDS_ALARM_PANELS",
+      "description": null,
+      "discipline_id": "b5516924-2356-4639-9109-01b6f19f104c",
+      "discipline_code": "IDS",
+      "discipline_name": "Intrusion Detection Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Alarm panels are the central controllers for intrusion detection devices such as door contacts, motion sensors, glass-break detectors, and panic buttons. They manage arming states, zones, communication paths, and event logging.",
+        "psa_notes": "A sophisticated sensor layout is meaningless if the panel is poorly located, mis-programmed, or communicating over a single fragile path. PSAs should ask to see the panel, not just the keypad."
+      }
+    },
+    {
+      "id": "63def126-578a-4ed9-81eb-2b854c7779c1",
+      "name": "Door Contacts",
+      "subtype_code": "IDS_DOOR_CONTACTS",
+      "description": null,
+      "discipline_id": "b5516924-2356-4639-9109-01b6f19f104c",
+      "discipline_code": "IDS",
+      "discipline_name": "Intrusion Detection Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Door contacts detect the opening of protected doors and are foundational to intrusion detection, especially for after-hours protection of perimeter and high-risk interior doors.",
+        "psa_notes": "Door contacts are often the most basic element of the system but also the most neglected. PSAs should check actual door behavior: if doors are routinely propped open or alarms frequently ignored, the control is effectively non-functional regardless of what the panel shows."
+      }
+    },
+    {
+      "id": "919a08df-9fbe-4470-aaa4-a69e49885d00",
+      "name": "Glass Break Sensors",
+      "subtype_code": "IDS_GLASS_BREAK_SENSORS",
+      "description": null,
+      "discipline_id": "b5516924-2356-4639-9109-01b6f19f104c",
+      "discipline_code": "IDS",
+      "discipline_name": "Intrusion Detection Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Glass break sensors detect forced entry through windows or glass doors. They are important for facilities with extensive glazing or vulnerable ground-level windows.",
+        "psa_notes": "Facilities with large glass storefronts or student-facing areas are often surprised by how quickly a window breach can occur. Sensors are a low-cost, high-impact layer."
+      }
+    },
+    {
+      "id": "5d3a8074-9ecb-49e0-a497-81377daa1521",
+      "name": "Motion Detectors",
+      "subtype_code": "IDS_MOTION_DETECTORS",
+      "description": null,
+      "discipline_id": "b5516924-2356-4639-9109-01b6f19f104c",
+      "discipline_code": "IDS",
+      "discipline_name": "Intrusion Detection Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Motion detectors provide interior intrusion detection coverage by sensing movement within secured spaces, typically using PIR, microwave, or dual-technology sensors.",
+        "psa_notes": "Walk interior areas and look for blind spots, environmental issues, and detector obstructions. Ask to see recent false-alarm logs."
+      }
+    },
+    {
+      "id": "bb6c21bc-8d44-45b6-bdb3-c962886579af",
+      "name": "Panic / Duress Buttons",
+      "subtype_code": "IDS_PANIC_DURESS_BUTTONS",
+      "description": null,
+      "discipline_id": "b5516924-2356-4639-9109-01b6f19f104c",
+      "discipline_code": "IDS",
+      "discipline_name": "Intrusion Detection Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Panic and duress buttons provide a discreet means for staff to summon help when threatened, assaulted, or witnessing a rapidly developing security incident. They are common at reception desks, cash handling points, clinics, and isolated work areas.",
+        "psa_notes": "Do not just ask if duress exists—have staff show you where the buttons are and explain what happens when they press them. Hesitation or conflicting answers are red flags."
+      }
+    },
+    {
+      "id": "75bdbc99-1b8d-44c4-8143-9df875be3e64",
+      "name": "Perimeter IDS",
+      "subtype_code": "IDS_PERIMETER_IDS",
+      "description": null,
+      "discipline_id": "b5516924-2356-4639-9109-01b6f19f104c",
+      "discipline_code": "IDS",
+      "discipline_name": "Intrusion Detection Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Perimeter Intrusion Detection Systems (PIDS) detect attempts to breach fences, walls, or defined boundaries using technologies such as fence vibration sensors, buried cable, microwave, or infrared beams. They provide early warning before an adversary reaches the building.",
+        "psa_notes": "Ask to see recent PIDS alarm history. A log full of unresolved nuisance alarms or long periods of silence on a busy perimeter both point to systemic issues."
+      }
+    },
+    {
+      "id": "223f2d98-d8b8-41c1-937b-b6f565f9fce3",
+      "name": "Access-Restricted Areas",
+      "subtype_code": "INT_ACCESS_RESTRICTED_AREAS",
+      "description": null,
+      "discipline_id": "89debd5b-9fa6-41ad-8512-10df7424935a",
+      "discipline_code": "INT",
+      "discipline_name": "Interior Security & Barriers",
+      "is_active": true,
+      "guidance": {
+        "overview": "Access-restricted areas contain sensitive assets, records, systems, or operations requiring controlled entry. They rely on defined authorization levels, access controls, monitoring, and operational discipline.",
+        "psa_notes": "Restricted areas often erode over time—ask for access list reviews and observe whether the door is actually secured in practice."
+      }
+    },
+    {
+      "id": "6e278b41-f84d-4b76-8886-2593dab37fd4",
+      "name": "Hard-Interior Barriers",
+      "subtype_code": "INT_HARD_INTERIOR_BARRIERS",
+      "description": null,
+      "discipline_id": "89debd5b-9fa6-41ad-8512-10df7424935a",
+      "discipline_code": "INT",
+      "discipline_name": "Interior Security & Barriers",
+      "is_active": true,
+      "guidance": {
+        "overview": "Hard interior barriers provide physical separation and delay between public or low-security zones and critical assets. They include walls, reinforced partitions, security glazing, and compartmentalization structures intended to slow adversary movement.",
+        "psa_notes": "Hard barriers are the difference between “access control” and “actual protection.” Verify wall construction physically—don’t assume."
+      }
+    },
+    {
+      "id": "d3a74561-34a4-4b38-94bd-fd50c363cda4",
+      "name": "Interior Doors",
+      "subtype_code": "INT_INTERIOR_DOORS",
+      "description": null,
+      "discipline_id": "89debd5b-9fa6-41ad-8512-10df7424935a",
+      "discipline_code": "INT",
+      "discipline_name": "Interior Security & Barriers",
+      "is_active": true,
+      "guidance": {
+        "overview": "Interior doors support compartmentalization, access control, and life-safety functions inside the facility. They define secure zones, restrict circulation, and slow adversary movement.",
+        "psa_notes": "Walk the building and gently pull every door—if any don’t latch, they’re useless from a security standpoint regardless of access control."
+      }
+    },
+    {
+      "id": "3d00be84-ca14-4054-b20b-a318414f4bbc",
+      "name": "Interior Lighting",
+      "subtype_code": "INT_INTERIOR_LIGHTING",
+      "description": null,
+      "discipline_id": "89debd5b-9fa6-41ad-8512-10df7424935a",
+      "discipline_code": "INT",
+      "discipline_name": "Interior Security & Barriers",
+      "is_active": true,
+      "guidance": {
+        "overview": "Interior lighting supports visibility, surveillance effectiveness, safety, and situational awareness within buildings. Proper lighting reduces concealment, supports camera quality, and contributes to a secure environment.",
+        "psa_notes": "Poor lighting inside is just as dangerous as poor lighting outside—check camera footage to assess real-world interior visibility."
+      }
+    },
+    {
+      "id": "f08e661e-09b0-4982-9045-4941a6db6d4f",
+      "name": "Safe Rooms",
+      "subtype_code": "INT_SAFE_ROOMS",
+      "description": null,
+      "discipline_id": "89debd5b-9fa6-41ad-8512-10df7424935a",
+      "discipline_code": "INT",
+      "discipline_name": "Interior Security & Barriers",
+      "is_active": true,
+      "guidance": {
+        "overview": "Safe rooms are specially designed spaces intended to protect occupants from severe weather, violence, or other extreme hazards. They feature enhanced structural, access, and life-safety characteristics.",
+        "psa_notes": "A sign on a door does not make a safe room. PSAs should verify the existence of actual structural and hardware features appropriate to the claimed hazard."
+      }
+    },
+    {
+      "id": "90eb86ac-406d-4aa7-8aa9-196328041434",
+      "name": "Secure Rooms",
+      "subtype_code": "INT_SECURE_ROOMS",
+      "description": null,
+      "discipline_id": "89debd5b-9fa6-41ad-8512-10df7424935a",
+      "discipline_code": "INT",
+      "discipline_name": "Interior Security & Barriers",
+      "is_active": true,
+      "guidance": {
+        "overview": "Secure rooms protect critical functions, sensitive information, or valuable assets through enhanced physical construction, access control, and monitoring.",
+        "psa_notes": "The term “secure” is often aspirational. PSAs should focus on real construction, hardware, and access governance, not labels on floor plans."
+      }
+    },
+    {
+      "id": "3d257d4a-a8f9-4d49-8342-40232231064e",
+      "name": "Sensitive Item Storage",
+      "subtype_code": "INT_SENSITIVE_ITEM_STORAGE",
+      "description": null,
+      "discipline_id": "89debd5b-9fa6-41ad-8512-10df7424935a",
+      "discipline_code": "INT",
+      "discipline_name": "Interior Security & Barriers",
+      "is_active": true,
+      "guidance": {
+        "overview": "Sensitive item storage focuses on secure control of items that could pose safety, security, or operational risk if lost, stolen, or misused—such as keys, access cards, radios, weapons, narcotics, records, or testing materials.",
+        "psa_notes": "Ask to see where keys, radios, master credentials, or special items are actually kept. The real sensitive-item program is whatever you observe there, not what the policy says."
+      }
+    },
+    {
+      "id": "43bea7d5-02b0-405a-b4a4-07f6369b8f74",
+      "name": "Coordination Protocols",
+      "subtype_code": "ISC_COORDINATION_PROTOCOLS",
+      "description": null,
+      "discipline_id": "7aa8d7a5-68a8-4290-be4c-4eb654e61a29",
+      "discipline_code": "ISC",
+      "discipline_name": "Information Sharing & Coordination",
+      "is_active": true,
+      "guidance": {
+        "overview": "Coordination protocols define how the facility coordinates with external partners for security support and emergency operations, including roles and contact paths.",
+        "psa_notes": "Ask when the last time facility leadership and responders sat at the same table to plan or review an incident. If it has been years—or never—coordination is a vulnerability.",
+        "indicators_of_risk": [
+          "External coordination is improvised during incidents",
+          "No defined points of contact or coordination expectations with partners"
+        ],
+        "common_failures": [
+          "Partner engagement relies on informal relationships rather than defined protocols",
+          "Roles for coordination not documented or assigned"
+        ],
+        "mitigation_guidance": [
+          "Define coordination roles and contact paths with external partners",
+          "Document how requests for assistance and information exchange are performed"
+        ],
+        "standards_references": [
+          "ISC: Occupant Emergency Programs (2024 Edition)",
+          "ISC: Facility Security Plan Guide"
+        ]
+      },
+      "guidance_required": true
+    },
+    {
+      "id": "e25cb583-3392-4eb8-9f32-92fa9f31f0cd",
+      "name": "External Reporting",
+      "subtype_code": "ISC_EXTERNAL_REPORTING",
+      "description": null,
+      "discipline_id": "7aa8d7a5-68a8-4290-be4c-4eb654e61a29",
+      "discipline_code": "ISC",
+      "discipline_name": "Information Sharing & Coordination",
+      "is_active": true
+    },
+    {
+      "id": "5a112ba9-dfea-4009-b618-7a2bb9273623",
+      "name": "Fusion Center Interface",
+      "subtype_code": "ISC_FUSION_CENTER_INTERFACE",
+      "description": null,
+      "discipline_id": "7aa8d7a5-68a8-4290-be4c-4eb654e61a29",
+      "discipline_code": "ISC",
+      "discipline_name": "Information Sharing & Coordination",
+      "is_active": true,
+      "guidance": {
+        "overview": "Fusion centers provide threat intelligence and situational awareness across jurisdictions. Facilities connected to their fusion center receive timely, relevant threat information that improves preparedness.",
+        "psa_notes": "PSAs should verify that facilities not only receive but act on intelligence. A folder full of unread PDFs is not an intelligence program."
+      }
+    },
+    {
+      "id": "c6f67323-5b53-4592-ab7e-ac2663404964",
+      "name": "ISAC / ISAOs",
+      "subtype_code": "ISC_ISAC_ISAOS",
+      "description": null,
+      "discipline_id": "7aa8d7a5-68a8-4290-be4c-4eb654e61a29",
+      "discipline_code": "ISC",
+      "discipline_name": "Information Sharing & Coordination",
+      "is_active": true,
+      "guidance": {
+        "overview": "Information Sharing and Analysis Centers (ISACs) and Information Sharing and Analysis Organizations (ISAOs) provide sector-focused threat intelligence, best practices, and alerts. Effective engagement helps facilities anticipate and prepare for emerging risks.",
+        "psa_notes": "Ask for concrete examples: “Show me one change you made last year based on an ISAC/ISAO product.” If they cannot, the relationship is passive, not operational."
+      }
+    },
+    {
+      "id": "382161e5-0f9c-47e1-978e-0475e41fe20b",
+      "name": "JTTF Engagement",
+      "subtype_code": "ISC_JTTF_ENGAGEMENT",
+      "description": null,
+      "discipline_id": "7aa8d7a5-68a8-4290-be4c-4eb654e61a29",
+      "discipline_code": "ISC",
+      "discipline_name": "Information Sharing & Coordination",
+      "is_active": true,
+      "guidance": {
+        "overview": "Joint Terrorism Task Force (JTTF) engagement connects facilities—especially high-risk or symbolic targets—to federal, state, and local partners focused on terrorism-related threats. Appropriate engagement improves awareness of plots, tactics, and indicators relevant to the site.",
+        "psa_notes": "Not every facility needs deep JTTF integration, but high-value or symbolic sites should at least know who to call and what to report. Probe for realistic self-assessment of risk and actual engagement, not just awareness of acronyms."
+      }
+    },
+    {
+      "id": "c63f91bf-05ab-43e8-8979-10d02c20ed2d",
+      "name": "Law Enforcement Liaison",
+      "subtype_code": "ISC_LAW_ENFORCEMENT_LIAISON",
+      "description": null,
+      "discipline_id": "7aa8d7a5-68a8-4290-be4c-4eb654e61a29",
+      "discipline_code": "ISC",
+      "discipline_name": "Information Sharing & Coordination",
+      "is_active": true,
+      "guidance": {
+        "overview": "Law enforcement liaison procedures define how a facility exchanges threat information, requests assistance, and cooperates during emergencies. Strong relationships reduce response time and improve situational awareness.",
+        "psa_notes": "Facilities with strong pre-existing relationships tend to handle crises faster and with fewer casualties. PSAs should probe specifically for personal rather than generic agency-to-facility connections."
+      }
+    },
+    {
+      "id": "e2f98c7a-f099-45c8-a002-8d3d97f9ed4b",
+      "name": "Threat Information Sharing",
+      "subtype_code": "ISC_THREAT_INFORMATION_SHARING",
+      "description": null,
+      "discipline_id": "7aa8d7a5-68a8-4290-be4c-4eb654e61a29",
+      "discipline_code": "ISC",
+      "discipline_name": "Information Sharing & Coordination",
+      "is_active": true,
+      "guidance": {
+        "overview": "Threat information sharing covers the timely exchange of relevant threat indicators, suspicious activity, and trend information between the facility, law enforcement, fusion centers, ISACs, and peer organizations.",
+        "psa_notes": "Look for evidence of both inbound and outbound sharing—bulletins alone do not equal a threat information sharing program."
+      }
+    },
+    {
+      "id": "0ae2bca3-ae66-4a8d-b6a8-baa98e2a488a",
+      "name": "Key Cabinets",
+      "subtype_code": "KEY_KEY_CABINETS",
+      "description": null,
+      "discipline_id": "e4ffd95e-4fba-43e8-be9c-20a56aecc5db",
+      "discipline_code": "KEY",
+      "discipline_name": "Key Control",
+      "is_active": true,
+      "guidance": {
+        "overview": "Key cabinets provide secure storage and accountability for mechanical keys, fobs, and other physical access devices. They are essential when electronic access control is mixed with traditional keyed systems.",
+        "psa_notes": "Ask to randomly pull the key log. If entries are blank or inconsistent, the key cabinet is functionally unsecured."
+      }
+    },
+    {
+      "id": "aa821b9d-248a-44ee-8e8a-28eaf2c6e9a9",
+      "name": "Key Logs / Accountability",
+      "subtype_code": "KEY_KEY_LOGS_ACCOUNTABILITY",
+      "description": null,
+      "discipline_id": "e4ffd95e-4fba-43e8-be9c-20a56aecc5db",
+      "discipline_code": "KEY",
+      "discipline_name": "Key Control",
+      "is_active": true,
+      "guidance": {
+        "overview": "Key logs and accountability systems ensure mechanical keys are issued, tracked, returned, and inventoried. They provide chain-of-custody and reduce the risk of unauthorized duplication or misuse.",
+        "psa_notes": "Request the last 90 days of logs. If signatures are missing or keys show as “still out,” accountability is broken."
+      }
+    },
+    {
+      "id": "d03d3677-1835-4ec7-9b48-51189a4138a8",
+      "name": "Master Key Management",
+      "subtype_code": "KEY_MASTER_KEY_MANAGEMENT",
+      "description": null,
+      "discipline_id": "e4ffd95e-4fba-43e8-be9c-20a56aecc5db",
+      "discipline_code": "KEY",
+      "discipline_name": "Key Control",
+      "is_active": true,
+      "guidance": {
+        "overview": "Master key management addresses how master keys are controlled to prevent unauthorized access and reduce facility-wide exposure from loss or misuse.",
+        "psa_notes": "Master key mismanagement can undermine every other physical security measure. Confirm logs and storage with physical inspection.",
+        "indicators_of_risk": [
+          "Master keys are not controlled or tracked consistently",
+          "Loss or misuse of a master key would create broad uncontrolled access"
+        ],
+        "common_failures": [
+          "Master keys issued broadly without defined authorization limits",
+          "No defined process for accountability when master keys are issued or returned"
+        ],
+        "mitigation_guidance": [
+          "Define authorization and accountability expectations for master key control",
+          "Document how master keys are issued, recovered, and managed over their lifecycle"
+        ],
+        "standards_references": [
+          "ASSA ABLOY: Master Key System Design Guide",
+          "Real Time Networks: Mastering Key Control (Key Management Best Practices)"
+        ]
+      },
+      "guidance_required": true
+    },
+    {
+      "id": "20d11544-f449-46f2-9aa8-39cfcf8a134b",
+      "name": "Rekeying Procedures",
+      "subtype_code": "KEY_REKEYING_PROCEDURES",
+      "description": null,
+      "discipline_id": "e4ffd95e-4fba-43e8-be9c-20a56aecc5db",
+      "discipline_code": "KEY",
+      "discipline_name": "Key Control",
+      "is_active": true,
+      "guidance": {
+        "overview": "Rekeying procedures address whether there is a defined method to change locks/keys when control of keys is lost or access requirements change.",
+        "psa_notes": "Master key loss is a major event. PSAs should ask to review recent rekeying history and ensure timelines align with security expectations.",
+        "indicators_of_risk": [
+          "Lost keys do not trigger a defined rekey decision process",
+          "Access changes occur without updating locking arrangements"
+        ],
+        "common_failures": [
+          "Rekey decisions made inconsistently without defined criteria",
+          "No defined process to restore control after suspected key compromise"
+        ],
+        "mitigation_guidance": [
+          "Define when rekeying is required and who authorizes the action",
+          "Document how rekey actions are tracked and communicated to responsible personnel"
+        ],
+        "standards_references": [
+          "ASSA ABLOY: Key Control Design Guide",
+          "ASSA ABLOY: Master Key System Design Guide"
+        ]
+      },
+      "guidance_required": true
+    },
+    {
+      "id": "927444d9-3cc2-4b89-8c7d-c9a1744b731b",
+      "name": "Restricted Keys",
+      "subtype_code": "KEY_RESTRICTED_KEYS",
+      "description": null,
+      "discipline_id": "e4ffd95e-4fba-43e8-be9c-20a56aecc5db",
+      "discipline_code": "KEY",
+      "discipline_name": "Key Control",
+      "is_active": true,
+      "guidance": {
+        "overview": "Restricted keys prevent unauthorized duplication and limit physical access to critical spaces. They rely on controlled issuance, secure storage, and strict tracking processes.",
+        "psa_notes": "Ask to see the key cabinet and issuance records. If they are disorganized, outdated, or nonexistent, key security is weak regardless of stated policies."
+      }
+    },
+    {
+      "id": "471076c9-5974-408d-88a7-40135e6637d4",
+      "name": "Bollards / Barriers",
+      "subtype_code": "PER_BOLLARDS_BARRIERS",
+      "description": null,
+      "discipline_id": "69a28796-c8fe-42c1-88af-950a90d0a5e4",
+      "discipline_code": "PER",
+      "discipline_name": "Perimeter Security",
+      "is_active": true,
+      "guidance": {
+        "overview": "Vehicle barriers and bollards prevent unauthorized vehicle approach, reduce ramming risk, and define controlled stand-off distances at building perimeters and entry points.",
+        "psa_notes": "If bollards move when pushed by hand, they are decorative, not protective."
+      }
+    },
+    {
+      "id": "0ee9db0c-5daa-4f7e-8070-48bd16ca9318",
+      "name": "Boundary Demarcation",
+      "subtype_code": "PER_BOUNDARY_DEMARCATION",
+      "description": null,
+      "discipline_id": "69a28796-c8fe-42c1-88af-950a90d0a5e4",
+      "discipline_code": "PER",
+      "discipline_name": "Perimeter Security",
+      "is_active": true,
+      "guidance": {
+        "overview": "Boundary demarcation establishes clear visual or physical cues defining where public space ends and controlled facility space begins. It serves as deterrence, aids in wayfinding, and enhances legal enforceability of restricted areas.",
+        "psa_notes": "If you have to ask “where does the property actually start?” the demarcation is insufficient. Clear boundaries are foundational to all other perimeter measures."
+      }
+    },
+    {
+      "id": "f903d94d-34e1-4aca-bfc5-cec8a6ce6df4",
+      "name": "Clear Zones",
+      "subtype_code": "PER_CLEAR_ZONES",
+      "description": null,
+      "discipline_id": "69a28796-c8fe-42c1-88af-950a90d0a5e4",
+      "discipline_code": "PER",
+      "discipline_name": "Perimeter Security",
+      "is_active": true,
+      "guidance": {
+        "overview": "Clear zones are buffer areas along perimeters kept free of vegetation, structures, and obstructions to improve visibility, enable detection, and reduce concealment or climbing opportunities.",
+        "psa_notes": "Walk both sides of the fence. The exterior side is often neglected and reveals the real vulnerability."
+      }
+    },
+    {
+      "id": "e69bf4fd-c476-489d-a73f-a5b8c9d90e33",
+      "name": "Fencing",
+      "subtype_code": "PER_FENCING",
+      "description": null,
+      "discipline_id": "69a28796-c8fe-42c1-88af-950a90d0a5e4",
+      "discipline_code": "PER",
+      "discipline_name": "Perimeter Security",
+      "is_active": true,
+      "guidance": {
+        "overview": "Fencing establishes a physical boundary and helps channel legitimate access through controlled points. It supports deterrence, delay, and clear demarcation between public and controlled space.",
+        "psa_notes": "PSAs should walk the fence line instead of just observing from the facility side. The ease with which they can step over, go around, or exploit nearby structures is usually a direct indicator of whether the fence is a real control or just a visual boundary."
+      }
+    },
+    {
+      "id": "fd57faba-7b13-4b39-8b75-fca0bba4f208",
+      "name": "Gates",
+      "subtype_code": "PER_GATES",
+      "description": null,
+      "discipline_id": "69a28796-c8fe-42c1-88af-950a90d0a5e4",
+      "discipline_code": "PER",
+      "discipline_name": "Perimeter Security",
+      "is_active": true,
+      "guidance": {
+        "overview": "Security gates regulate authorized vehicle and pedestrian entry at controlled perimeter points. Their effectiveness depends on structural integrity, locking mechanisms, monitoring, and integration with access control and guard procedures.",
+        "psa_notes": "Gates are often left open for convenience—observe real-world behavior, not stated policy."
+      }
+    },
+    {
+      "id": "4190644e-4847-49d1-8ccf-879b567d2b87",
+      "name": "Perimeter Lighting",
+      "subtype_code": "PER_PERIMETER_LIGHTING",
+      "description": null,
+      "discipline_id": "69a28796-c8fe-42c1-88af-950a90d0a5e4",
+      "discipline_code": "PER",
+      "discipline_name": "Perimeter Security",
+      "is_active": true,
+      "guidance": {
+        "overview": "Perimeter lighting supports deterrence, detection, and safe operation of facility boundaries. Lighting quality directly impacts the effectiveness of cameras and guard patrols.",
+        "psa_notes": "PSAs should always evaluate lighting conditions after sunset when possible. Daytime observations miss most real deficiencies."
+      }
+    },
+    {
+      "id": "cabf30b9-fba4-4712-94aa-71d5bb420942",
+      "name": "Perimeter Signage",
+      "subtype_code": "PER_PERIMETER_SIGNAGE",
+      "description": null,
+      "discipline_id": "69a28796-c8fe-42c1-88af-950a90d0a5e4",
+      "discipline_code": "PER",
+      "discipline_name": "Perimeter Security",
+      "is_active": true,
+      "guidance": {
+        "overview": "Perimeter signage communicates boundaries, restricted areas, hazards, and entry instructions. Effective signage supports deterrence, legal enforceability, and clarity for visitors and staff.",
+        "psa_notes": "Signage is often overlooked but critical. Without clear warnings and instructions, enforcement becomes difficult—even with good physical barriers."
+      }
+    },
+    {
+      "id": "18affcfc-955d-4e47-a471-f8846be8523c",
+      "name": "Vehicle Access Control Points",
+      "subtype_code": "PER_VEHICLE_ACCESS_CONTROL_POINTS",
+      "description": null,
+      "discipline_id": "69a28796-c8fe-42c1-88af-950a90d0a5e4",
+      "discipline_code": "PER",
+      "discipline_name": "Perimeter Security",
+      "is_active": true,
+      "guidance": {
+        "overview": "Vehicle Access Control Points (VACPs) control and screen vehicular entry into secured facilities. They rely on barriers, signage, procedures, guard verification, and sensor systems.",
+        "psa_notes": "Observe peak-time operations—shortcuts and deviations from SOPs reveal the true state of VACP discipline."
+      }
+    },
+    {
+      "id": "7ac2d54b-cd7c-4fa3-83e1-8ee669e94fd4",
+      "name": "Pedestrian Access Control Points",
+      "subtype_code": "PER_PEDESTRIAN_ACCESS_CONTROL_POINTS",
+      "description": null,
+      "discipline_id": "69a28796-c8fe-42c1-88af-950a90d0a5e4",
+      "discipline_code": "PER",
+      "discipline_name": "Perimeter Security",
+      "is_active": true
+    },
+    {
+      "id": "e7e2aa40-e832-48bc-a142-cad9986620db",
+      "name": "Guard Posts",
+      "subtype_code": "SFO_GUARD_POSTS",
+      "description": null,
+      "discipline_id": "9ee649b0-3a04-4eba-9933-730caccff8c1",
+      "discipline_code": "SFO",
+      "discipline_name": "Security Force / Operations",
+      "is_active": true,
+      "guidance": {
+        "overview": "Guard posts are fixed positions where security personnel monitor activity, control access, and coordinate response. Their location, design, staffing, and procedures determine how effectively they influence behavior and detect threats.",
+        "psa_notes": "Stand at the guard post and watch for a few minutes. If the guard is buried in paperwork, answering phones, or watching nothing important, the post is a sunk cost instead of a control."
+      }
+    },
+    {
+      "id": "3d371be7-9489-4563-af51-a2746d1b5e8b",
+      "name": "Incident Reporting",
+      "subtype_code": "SFO_INCIDENT_REPORTING",
+      "description": null,
+      "discipline_id": "9ee649b0-3a04-4eba-9933-730caccff8c1",
+      "discipline_code": "SFO",
+      "discipline_name": "Security Force / Operations",
+      "is_active": true,
+      "guidance": {
+        "overview": "Incident reporting is the process by which staff document security, safety, and behavioral concerns. A strong reporting program turns individual observations into actionable intelligence and trend data.",
+        "psa_notes": "Ask for the last 30–90 days of incident reports and what changed because of them. If the answer is “nothing,” the system is just record-keeping, not risk management."
+      }
+    },
+    {
+      "id": "188ae906-0a31-4f36-b923-75ec28a32dce",
+      "name": "Patrol Routes",
+      "subtype_code": "SFO_PATROL_ROUTES",
+      "description": null,
+      "discipline_id": "9ee649b0-3a04-4eba-9933-730caccff8c1",
+      "discipline_code": "SFO",
+      "discipline_name": "Security Force / Operations",
+      "is_active": true,
+      "guidance": {
+        "overview": "Patrol routes define how security personnel or staff move through the facility and grounds to deter misconduct, detect anomalies, and respond quickly. Effective patrols are purposeful, documented, and risk-driven—not random wandering.",
+        "psa_notes": "Ask guards to describe their routes and show you where they actually go. The difference between the post orders and the reality is where risk lives."
+      }
+    },
+    {
+      "id": "36815b71-0947-4707-9f97-bf041262304a",
+      "name": "Radio Communications",
+      "subtype_code": "SFO_RADIO_COMMUNICATIONS",
+      "description": null,
+      "discipline_id": "9ee649b0-3a04-4eba-9933-730caccff8c1",
+      "discipline_code": "SFO",
+      "discipline_name": "Security Force / Operations",
+      "is_active": true,
+      "guidance": {
+        "overview": "Radio communications ensure reliable, structured, and interoperable information flow during emergencies and high-tempo operations.",
+        "psa_notes": "During walkthroughs, test radios live. Communications failures multiply rapidly during real crises."
+      }
+    },
+    {
+      "id": "fa863670-6e40-4da8-9887-148d48b4f13c",
+      "name": "Response Procedures",
+      "subtype_code": "SFO_RESPONSE_PROCEDURES",
+      "description": null,
+      "discipline_id": "9ee649b0-3a04-4eba-9933-730caccff8c1",
+      "discipline_code": "SFO",
+      "discipline_name": "Security Force / Operations",
+      "is_active": true,
+      "guidance": {
+        "overview": "Response procedures define how security personnel or designated staff respond to incidents requiring protective intervention, including roles and escalation actions.",
+        "psa_notes": "Interviewing a random staff member reveals the true state of response readiness. If answers vary widely, procedures are not institutionalized.",
+        "indicators_of_risk": [
+          "Response actions vary by individual with no common procedure",
+          "Escalation and handoff to responders is unclear during incidents"
+        ],
+        "common_failures": [
+          "Incident response expectations not documented for common scenarios",
+          "Roles for response, coordination, and reporting are unclear"
+        ],
+        "mitigation_guidance": [
+          "Document response actions and responsibilities for protective intervention scenarios",
+          "Define escalation, coordination, and reporting expectations during incident response"
+        ],
+        "standards_references": [
+          "ISC: Occupant Emergency Programs (2024 Edition)",
+          "ISC: Facility Security Plan Guide"
+        ]
+      },
+      "guidance_required": true
+    },
+    {
+      "id": "854f3562-08a1-4548-9510-16ba43728014",
+      "name": "School Resource Officer (SRO)",
+      "subtype_code": "SFO_SCHOOL_RESOURCE_OFFICER_SRO",
+      "description": null,
+      "discipline_id": "9ee649b0-3a04-4eba-9933-730caccff8c1",
+      "discipline_code": "SFO",
+      "discipline_name": "Security Force / Operations",
+      "is_active": true,
+      "baseline_eligible": false,
+      "guidance": {
+        "overview": "School Resource Officers (SROs) are sworn law enforcement officers assigned to schools. Their role, when properly scoped, combines safety, relationship-building, and coordinated response.",
+        "psa_notes": "An SRO program is only as good as its structure and relationships. PSAs should focus on governance, integration, and culture—not just presence."
+      }
+    },
+    {
+      "id": "23d0fe7a-bd9f-4f66-8f3d-49d0e935a010",
+      "name": "Security Officer Training",
+      "subtype_code": "SFO_SECURITY_OFFICER_TRAINING",
+      "description": null,
+      "discipline_id": "9ee649b0-3a04-4eba-9933-730caccff8c1",
+      "discipline_code": "SFO",
+      "discipline_name": "Security Force / Operations",
+      "is_active": true,
+      "guidance": {
+        "overview": "Security officer training ensures guards understand site-specific risks, procedures, and systems. Contract or in-house officers are often the first to observe and respond to suspicious activity or incidents.",
+        "psa_notes": "Interview officers directly. Their understanding of the site and procedures often tells you more about real security posture than a stack of policies ever will."
+      }
+    },
+    {
+      "id": "ddc50132-2cb2-48e4-8022-d3c568dc4fc9",
+      "name": "Security Operations Center (SOC)",
+      "subtype_code": "SFO_SECURITY_OPERATIONS_CENTER_SOC",
+      "description": null,
+      "discipline_id": "9ee649b0-3a04-4eba-9933-730caccff8c1",
+      "discipline_code": "SFO",
+      "discipline_name": "Security Force / Operations",
+      "is_active": true,
+      "guidance": {
+        "overview": "A Security Operations Center (SOC) is the central hub for monitoring, communications, and decision-making for security events. SOC maturity is measured less by screens and more by procedures, staffing, and integration.",
+        "psa_notes": "A SOC is effective when operators can clearly describe how they detect, verify, communicate, and initiate response—PSAs should focus on those functions rather than the hardware alone."
+      }
+    },
+    {
+      "id": "25f2768b-77f0-4e3f-ad3d-71d68c2bbfea",
+      "name": "Governance & Oversight",
+      "subtype_code": "SMG_GOVERNANCE_OVERSIGHT",
+      "description": null,
+      "discipline_id": "ecfc1d4f-873b-4645-93e5-a9812ed779c3",
+      "discipline_code": "SMG",
+      "discipline_name": "Security Management & Governance",
+      "is_active": true,
+      "guidance": {
+        "overview": "Governance and oversight define who owns physical security decisions and how security activities are reviewed to maintain accountability and consistency.",
+        "psa_notes": "If you cannot quickly identify who owns security and what their authority is, governance is weak. PSAs should push for clarity in ownership, metrics, and follow-through.",
+        "indicators_of_risk": [
+          "Security ownership is unclear or fragmented across departments",
+          "Security decisions are inconsistent across areas or shifts"
+        ],
+        "common_failures": [
+          "No accountable authority for physical security governance",
+          "No defined oversight method for reviewing security posture and decisions"
+        ],
+        "mitigation_guidance": [
+          "Assign responsibility for physical security governance and decision ownership",
+          "Define oversight mechanisms for reviewing security decisions and posture"
+        ],
+        "standards_references": [
+          "ISC: Facility Security Plan Guide",
+          "ISC: Occupant Emergency Programs (2024 Edition)"
+        ]
+      },
+      "guidance_required": true
+    },
+    {
+      "id": "8a2c1efb-6326-4957-bc4c-dcc53ae79f2b",
+      "name": "Policy Compliance Tracking",
+      "subtype_code": "SMG_POLICY_COMPLIANCE_TRACKING",
+      "description": null,
+      "discipline_id": "ecfc1d4f-873b-4645-93e5-a9812ed779c3",
+      "discipline_code": "SMG",
+      "discipline_name": "Security Management & Governance",
+      "is_active": true,
+      "guidance": {
+        "overview": "Policy compliance tracking addresses whether the facility has a method to verify adherence to security policies and identify corrective actions when gaps are found.",
+        "psa_notes": "Policies mean nothing without enforcement. PSAs should ask to see real compliance logs, not templates.",
+        "indicators_of_risk": [
+          "Policies exist but compliance is assumed rather than verified",
+          "Recurring issues are identified only after incidents"
+        ],
+        "common_failures": [
+          "No mechanism to check whether policies are followed",
+          "Corrective actions not documented or not tracked to closure"
+        ],
+        "mitigation_guidance": [
+          "Define how policy compliance is reviewed or assessed",
+          "Document how findings and corrective actions are recorded and addressed"
+        ],
+        "standards_references": [
+          "ISC: Facility Security Plan Guide",
+          "ISC: Interagency Security Committee (ISC) Policy/Standards Guidance Portal"
+        ]
+      },
+      "guidance_required": true
+    },
+    {
+      "id": "888c377c-351f-46f0-8f9a-4ee0d563bd3d",
+      "name": "Risk Assessment / Risk Management",
+      "subtype_code": "SMG_RISK_ASSESSMENT_RISK_MANAGEMENT",
+      "description": null,
+      "discipline_id": "ecfc1d4f-873b-4645-93e5-a9812ed779c3",
+      "discipline_code": "SMG",
+      "discipline_name": "Security Management & Governance",
+      "is_active": true,
+      "guidance": {
+        "overview": "Risk assessment and management address whether threats, vulnerabilities, and consequences are evaluated and used to inform decisions about protective measures.",
+        "psa_notes": "If there is no clear line of sight from risk findings to concrete changes, the assessment is just a report. PSAs should look for that linkage explicitly.",
+        "indicators_of_risk": [
+          "Protective measures added without documented risk rationale",
+          "Risk decisions driven only by recent events or subjective judgment"
+        ],
+        "common_failures": [
+          "Risk assessments performed once and not maintained as conditions change",
+          "Risk outcomes not used to guide priorities for protective measures"
+        ],
+        "mitigation_guidance": [
+          "Document how risk is assessed for threats, vulnerabilities, and impacts",
+          "Use risk outcomes to inform decisions on protective measures and priorities"
+        ],
+        "standards_references": [
+          "ISC: Facility Security Plan Guide",
+          "ISC: Occupant Emergency Programs (2024 Edition)"
+        ]
+      },
+      "guidance_required": true
+    },
+    {
+      "id": "bedba7d7-6ba3-48da-8ea8-5e48d20f09f4",
+      "name": "Security Documentation",
+      "subtype_code": "SMG_SECURITY_DOCUMENTATION",
+      "description": null,
+      "discipline_id": "ecfc1d4f-873b-4645-93e5-a9812ed779c3",
+      "discipline_code": "SMG",
+      "discipline_name": "Security Management & Governance",
+      "is_active": true,
+      "guidance": {
+        "overview": "Security documentation covers whether security-relevant plans, procedures, and key decisions are recorded in a way that supports continuity, review, and accountability.",
+        "psa_notes": "Good documentation makes patterns and problems visible. PSAs should look for consistency, currency, and practical usability, not just volume of paperwork.",
+        "indicators_of_risk": [
+          "Security knowledge is held only by individuals rather than recorded",
+          "Plans and procedures are not available during audits or incidents"
+        ],
+        "common_failures": [
+          "Documentation is outdated, scattered, or not accessible to responsible staff",
+          "Key decisions are not recorded, reducing continuity and accountability"
+        ],
+        "mitigation_guidance": [
+          "Maintain centralized, accessible security documentation for key plans and procedures",
+          "Ensure documentation is kept current and aligns to assigned responsibilities"
+        ],
+        "standards_references": [
+          "ISC: Facility Security Plan Guide",
+          "ISC: Occupant Emergency Programs (2024 Edition)"
+        ]
+      },
+      "guidance_required": true
+    },
+    {
+      "id": "7eb102ab-7c09-4647-9b30-ef7a2f993b73",
+      "name": "Security Policies",
+      "subtype_code": "SMG_SECURITY_POLICIES",
+      "description": null,
+      "discipline_id": "ecfc1d4f-873b-4645-93e5-a9812ed779c3",
+      "discipline_code": "SMG",
+      "discipline_name": "Security Management & Governance",
+      "is_active": true,
+      "guidance": {
+        "overview": "Security policies define the organization’s expectations and requirements for protecting people, assets, and information. They set the framework for procedures, training, and enforcement.",
+        "psa_notes": "PSAs should check whether policies drive practice or merely exist for auditors. Real effectiveness shows up in culture and daily decisions, not just documents."
+      }
+    },
+    {
+      "id": "09c4723a-5665-4661-a699-18f0ef3803a1",
+      "name": "Security Procedures",
+      "subtype_code": "SMG_SECURITY_PROCEDURES",
+      "description": null,
+      "discipline_id": "ecfc1d4f-873b-4645-93e5-a9812ed779c3",
+      "discipline_code": "SMG",
+      "discipline_name": "Security Management & Governance",
+      "is_active": true,
+      "guidance": {
+        "overview": "Security procedures describe how security policies are carried out in day-to-day operations and during incidents, including roles and expected actions.",
+        "psa_notes": "Ask staff to describe, step by step, what they would do in a scenario. Their answer is the real procedure—policies and binders are only meaningful if they match that behavior.",
+        "indicators_of_risk": [
+          "Security tasks are performed inconsistently across staff or shifts",
+          "Personnel are unsure what actions are expected for routine security activities"
+        ],
+        "common_failures": [
+          "Procedures are informal and vary by individual",
+          "Procedures are not documented for common security activities"
+        ],
+        "mitigation_guidance": [
+          "Document procedures supporting security policies for routine and incident operations",
+          "Define roles and responsibilities for executing security procedures"
+        ],
+        "standards_references": [
+          "ISC: Facility Security Plan Guide",
+          "ISC: Occupant Emergency Programs (2024 Edition)"
+        ]
+      },
+      "guidance_required": true
+    },
+    {
+      "id": "8c44d0fa-ddbf-43ab-b6d1-78da89b36b32",
+      "name": "Security Training Programs",
+      "subtype_code": "SMG_SECURITY_TRAINING_PROGRAMS",
+      "description": null,
+      "discipline_id": "ecfc1d4f-873b-4645-93e5-a9812ed779c3",
+      "discipline_code": "SMG",
+      "discipline_name": "Security Management & Governance",
+      "is_active": true,
+      "guidance": {
+        "overview": "Security training programs provide structured learning for staff at all levels on threats, procedures, reporting, and use of security systems. They are the primary tool for turning written plans into real-world capability.",
+        "psa_notes": "A strong training program is reflected in how confidently staff describe what they would do. PSAs should rely more on staff interviews and observed competence than on training binders."
+      }
+    },
+    {
+      "id": "af15f081-26a4-41d5-abd4-2f1fcb73ed18",
+      "name": "Analytics / Behavior Detection",
+      "subtype_code": "VSS_ANALYTICS_BEHAVIOR_DETECTION",
+      "description": null,
+      "discipline_id": "83d34bf8-b228-49ca-abb9-66168d4a8681",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Video analytics and behavior detection systems use algorithms to identify unusual activity such as loitering, perimeter breaches, object abandonment, or crowd anomalies. Their effectiveness depends on proper configuration, calibration, and operator understanding.",
+        "psa_notes": "Ask operators whether they trust analytic alerts; this reveals real-world performance better than vendor demos."
+      }
+    },
+    {
+      "id": "218ae01b-45d0-4fd4-9fc9-09fc6e06ab61",
+      "name": "Camera Coverage / Line of Sight",
+      "subtype_code": "VSS_CAMERA_COVERAGE_LINE_OF_SIGHT",
+      "description": null,
+      "discipline_id": "83d34bf8-b228-49ca-abb9-66168d4a8681",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Camera coverage determines how effectively video surveillance can detect events and support investigations. Proper line-of-sight and overlapping coverage are essential.",
+        "psa_notes": "A single missing angle can undermine the entire system. PSAs should always assess approach routes and chokepoints."
+      }
+    },
+    {
+      "id": "8317b7c8-633e-46ca-8914-319e0cbab9cd",
+      "name": "Exterior Cameras",
+      "subtype_code": "VSS_EXTERIOR_CAMERAS",
+      "description": null,
+      "discipline_id": "83d34bf8-b228-49ca-abb9-66168d4a8681",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Exterior cameras provide video coverage for building perimeters, parking areas, entry routes, loading docks, and other outdoor zones. Their effectiveness depends on placement, environmental protection, and nighttime performance.",
+        "psa_notes": "Nighttime image quality is the real test. Review actual dark-hour footage rather than relying on daytime performance."
+      }
+    },
+    {
+      "id": "8e3816eb-d69d-4410-9bf6-54f6dc5d3326",
+      "name": "Fixed Cameras",
+      "subtype_code": "VSS_FIXED_CAMERAS",
+      "description": null,
+      "discipline_id": "83d34bf8-b228-49ca-abb9-66168d4a8681",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Fixed cameras provide continuous surveillance over specific zones with unchanging fields of view. They are essential for monitoring entrances, chokepoints, assets, and sensitive areas.",
+        "psa_notes": "Physically inspect camera angles — many are misaimed due to impacts, wind, or poor installation. Live verification is essential."
+      }
+    },
+    {
+      "id": "beec7bed-a482-4624-8bef-2b28c565fb36",
+      "name": "Interior Cameras",
+      "subtype_code": "VSS_INTERIOR_CAMERAS",
+      "description": null,
+      "discipline_id": "83d34bf8-b228-49ca-abb9-66168d4a8681",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Interior cameras provide video coverage of corridors, entries, lobbies, stairwells, and critical rooms inside the facility. They support deterrence, incident reconstruction, and verification of alarms and staff reports.",
+        "psa_notes": "Walk interior circulation routes and ask, “If an incident started here, could we see it well enough to act and later prove what happened?” Weak answers indicate a gap regardless of hardware brand."
+      }
+    },
+    {
+      "id": "d121ce36-7c01-4eb3-ad45-34c9add6c96d",
+      "name": "IP Cameras",
+      "subtype_code": "VSS_IP_CAMERAS",
+      "description": null,
+      "discipline_id": "83d34bf8-b228-49ca-abb9-66168d4a8681",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "IP cameras provide network-connected video coverage for interior and exterior areas. They support deterrence, detection, and post-incident investigation when properly placed, configured, and monitored.",
+        "psa_notes": "PSAs should avoid getting lost in pixel counts and model numbers. The key question is: “If something happens here, can anyone see it in time to respond, and can you prove what happened later?” Weak answers indicate a vulnerability regardless of hardware brand."
+      }
+    },
+    {
+      "id": "6b36053e-e5c0-4da8-a272-01330311f7fd",
+      "name": "Monitoring / Workstations",
+      "subtype_code": "VSS_MONITORING_WORKSTATIONS",
+      "description": null,
+      "discipline_id": "83d34bf8-b228-49ca-abb9-66168d4a8681",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Monitoring workstations support real-time surveillance, alarm monitoring, and security decision-making. Operator workload, layout, and system configuration directly affect response effectiveness.",
+        "psa_notes": "Evaluate visibility, workload, room layout, and alarm-handling procedures. Ask operators to demonstrate live alarm acknowledgment."
+      }
+    },
+    {
+      "id": "568712ed-322f-4062-b14c-ff7683151eb2",
+      "name": "PTZ Cameras",
+      "subtype_code": "VSS_PTZ_CAMERAS",
+      "description": null,
+      "discipline_id": "83d34bf8-b228-49ca-abb9-66168d4a8681",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Pan-Tilt-Zoom (PTZ) cameras allow operators to actively follow subjects, zoom for detail, or scan wide areas. They are most effective when paired with fixed cameras.",
+        "psa_notes": "A PTZ that never moves or never assists decisions is essentially decorative. PSAs should ask for live demos."
+      }
+    },
+    {
+      "id": "3c34ff6f-8aa3-4125-892a-fc772e97d50b",
+      "name": "Recording / Storage (NVR/DVR)",
+      "subtype_code": "VSS_RECORDING_STORAGE_NVR_DVR",
+      "description": null,
+      "discipline_id": "83d34bf8-b228-49ca-abb9-66168d4a8681",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Video recording and storage systems retain evidence-quality footage for investigations, deterrence, and compliance. Reliability, retention length, and access governance determine their effectiveness.",
+        "psa_notes": "PSAs should request a random playback from several days prior. If footage is missing, corrupted, or hard to extract, the system is not truly supporting security operations."
+      }
+    },
+    {
+      "id": "49dc0a38-bed6-40fa-b196-ed2c2e7073b2",
+      "name": "System Architecture",
+      "subtype_code": "VSS_SYSTEM_ARCHITECTURE",
+      "description": null,
+      "discipline_id": "83d34bf8-b228-49ca-abb9-66168d4a8681",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "System architecture addresses whether the video surveillance system is intentionally structured so capture, transport, recording, and monitoring functions operate as a coordinated system.",
+        "indicators_of_risk": [
+          "Cameras and recording components added ad hoc without an overall design",
+          "System dependencies and component relationships are not understood or documented"
+        ],
+        "common_failures": [
+          "Video surveillance treated as standalone devices rather than an integrated system",
+          "No documentation showing how cameras, recording, and monitoring are organized"
+        ],
+        "mitigation_guidance": [
+          "Document how cameras, recording/storage, and monitoring functions are organized as a system",
+          "Identify system boundaries and dependencies that affect surveillance capability"
+        ],
+        "standards_references": [
+          "ISC: Facility Security Plan Guide",
+          "ISC: Occupant Emergency Programs (2024 Edition)"
+        ]
+      },
+      "guidance_required": true
+    },
+    {
+      "id": "be90faef-f3b6-4c33-9313-5a3b977f2109",
+      "name": "Video Wall / Display Systems",
+      "subtype_code": "VSS_VIDEO_WALL_DISPLAY_SYSTEMS",
+      "description": null,
+      "discipline_id": "83d34bf8-b228-49ca-abb9-66168d4a8681",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "is_active": true,
+      "guidance": {
+        "overview": "Video wall and display systems present multiple camera feeds, alarms, and situational awareness tools for security operators. Their value depends on ergonomic layout, data prioritization, and integration with monitoring workflows.",
+        "psa_notes": "If operators rely more on spot monitors or ad-hoc screens than the video wall, the layout is likely misconfigured or overloaded."
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "canon_id": "BASE-SMG-001",
+    "discipline_code": "SMG",
+    "subtype_code": null,
+    "question_text": "Is responsibility for physical security decisions defined for the facility?",
+    "response_enum": ["YES","NO","N_A"]
+  },
+  {
+    "canon_id": "BASE-SMG-002",
+    "discipline_code": "SMG",
+    "subtype_code": null,
+    "question_text": "Are security policies or procedures defined to govern how protective measures are managed for the facility?",
+    "response_enum": ["YES","NO","N_A"]
+  },
+  {
+    "canon_id": "BASE-SMG-003",
+    "discipline_code": "SMG",
+    "subtype_code": null,
+    "question_text": "Is there a defined method to report and escalate security concerns or incidents for the facility?",
+    "response_enum": ["YES","NO","N_A"]
+  }
+]

@@ -1,0 +1,860 @@
+[
+  {
+    "required_element_code": "BASE-001",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-002",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-003",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-004",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-005",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-006",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-007",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-008",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-009",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-010",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-013",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-015",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-016",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-017",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-018",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-019",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-020",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-021",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-022",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-023",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-026",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-027",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-028",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-029",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-030",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-031",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-032",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-037",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-039",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-040",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-041",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-042",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-043",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-033",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-034",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-035",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-036",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-045",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-046",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-047",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-048",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-049",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-050",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-051",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-052",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-053",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-054",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-055",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-056",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-057",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-058",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-059",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-060",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-061",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-062",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-063",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-064",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-065",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-066",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-068",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-069",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-070",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-071",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-073",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-074",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-075",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-076",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-077",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-078",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-079",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-080",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-081",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-082",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-083",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-084",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-085",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-086",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-087",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-088",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-089",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-090",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-091",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-092",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-093",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-094",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-095",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-096",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-097",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-098",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-099",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-100",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-101",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-102",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-103",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-104",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-105",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-106",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-107",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-108",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-109",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-110",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-111",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-112",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-113",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-114",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-115",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-116",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-117",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-118",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-119",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "BASE-120",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SECTOR-001",
+    "layer": "sector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SECTOR-002",
+    "layer": "sector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SECTOR-003",
+    "layer": "sector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SECTOR-004",
+    "layer": "sector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SECTOR-005",
+    "layer": "sector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SECTOR-006",
+    "layer": "sector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SECTOR-007",
+    "layer": "sector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SECTOR-008",
+    "layer": "sector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SECTOR-009",
+    "layer": "sector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SECTOR-010",
+    "layer": "sector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SECTOR-011",
+    "layer": "sector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SECTOR-012",
+    "layer": "sector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SECTOR-013",
+    "layer": "sector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SECTOR-014",
+    "layer": "sector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SECTOR-015",
+    "layer": "sector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SECTOR-016",
+    "layer": "sector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SUB-001",
+    "layer": "subsector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SUB-002",
+    "layer": "subsector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SUB-003",
+    "layer": "subsector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SUB-004",
+    "layer": "subsector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SUB-005",
+    "layer": "subsector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SUB-006",
+    "layer": "subsector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SUB-007",
+    "layer": "subsector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SUB-008",
+    "layer": "subsector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SUB-009",
+    "layer": "subsector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SUB-010",
+    "layer": "subsector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SUB-011",
+    "layer": "subsector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SUB-012",
+    "layer": "subsector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SUB-013",
+    "layer": "subsector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SUB-014",
+    "layer": "subsector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SUB-015",
+    "layer": "subsector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  },
+  {
+    "required_element_code": "SUB-016",
+    "layer": "subsector",
+    "is_sector_depth": false,
+    "ofc_text": "Implement and maintain the capability described by the associated required element."
+  }
+]

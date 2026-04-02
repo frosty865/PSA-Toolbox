@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import Link from 'next/link';
+import Link from '@/components/FieldLink';
 import {
   CommsAnswersSchema,
   getDefaultCommsAnswers,
@@ -281,7 +281,7 @@ export function CommsQuestionnaireSection({
   const heading = embedded ? (
     <h3 className="text-lg font-semibold mt-6 mb-2">Communications (Voice / Command & Control)</h3>
   ) : (
-    <h2 className="ida-section-title">Communications (Voice / Command & Control)</h2>
+    <h2 className="section-title">Communications (Voice / Command & Control)</h2>
   );
 
   return (
@@ -289,7 +289,7 @@ export function CommsQuestionnaireSection({
       {heading}
       <div className="mb-4">
         {!embedded && (
-          <Link href="/assessment/categories/" className="ida-btn ida-btn-secondary" style={{ marginRight: '0.5rem' }}>
+          <Link href="/assessment/categories/" className="btn btn-secondary" style={{ marginRight: '0.5rem' }}>
             ← Categories
           </Link>
         )}
@@ -358,10 +358,10 @@ export function CommsQuestionnaireSection({
           </h3>
           <p className="text-sm mb-4">Continue here for voice, radios, dispatch, cellular voice, PTT. For internet/data circuits or SaaS, use the IT tab.</p>
           <div className="flex gap-3">
-            <button type="button" className="ida-btn ida-btn-primary" onClick={handleScopeContinue}>
+            <button type="button" className="btn btn-primary" onClick={handleScopeContinue}>
               Continue (Voice)
             </button>
-            <a href="/assessment/categories/#tab-INFORMATION_TECHNOLOGY" className="ida-btn ida-btn-secondary">
+            <a href="/assessment/categories/#tab-INFORMATION_TECHNOLOGY" className="btn btn-secondary">
               Go to IT
             </a>
           </div>

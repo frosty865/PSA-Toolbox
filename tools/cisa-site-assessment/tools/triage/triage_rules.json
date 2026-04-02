@@ -1,0 +1,14 @@
+{
+  "rules": [
+    {
+      "name": "Soft targets / crowded places -> mass gathering (sector/subsector)",
+      "match": "(soft targets|crowded places|mass gathering|public venue|large public event)",
+      "decision": { "kind": "SECTOR", "sector": "commercial_facilities", "subsector": "mass_gathering" }
+    },
+    {
+      "name": "Emergency action plan -> planning module",
+      "match": "(\\beap\\b|emergency action plan)",
+      "decision": { "kind": "MODULE", "moduleCode": "MODULE_EAP" }
+    }
+  ]
+}

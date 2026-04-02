@@ -1,0 +1,37 @@
+{
+  "generated_from": "D:/psa-workspace/psa_rebuild/analytics/reports/legacy_baseline_refactor_map.json",
+  "discipline": "KEY",
+  "note": "Fill 'template' with YES/NO-form boundary control assertions. Keys must match discipline_subtype_code exactly. Leave empty to keep non-spine (component depth).",
+  "templates": {
+    "KEY_KEY_CABINETS": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are key cabinets systems installed?"
+      ]
+    },
+    "KEY_KEY_LOGS_ACCOUNTABILITY": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are key logs accountability systems installed?"
+      ]
+    },
+    "KEY_MASTER_KEY_MANAGEMENT": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are master key systems installed?"
+      ]
+    },
+    "KEY_REKEYING_PROCEDURES": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are rekeying procedures systems installed?"
+      ]
+    },
+    "KEY_RESTRICTED_KEYS": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are restricted keys systems installed?"
+      ]
+    }
+  }
+}

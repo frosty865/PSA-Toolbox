@@ -1,0 +1,12 @@
+{
+  "discipline_code": "CPTED",
+  "version": "v1",
+  "constraints": [
+    {
+      "constraint_id": "BASE-CPTED-CONSTRAINT-001",
+      "type": "EXCLUDE_LEGACY_SUBTYPES_FROM_SPINES",
+      "value": ["CPTED_*"],
+      "reason": "CPTED legacy items are design/implementation depth and cannot form baseline spines."
+    }
+  ]
+}

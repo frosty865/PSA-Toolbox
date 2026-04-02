@@ -1,0 +1,4200 @@
+{
+  "metadata": {
+    "generated_at": "2025-12-28T20:15:59.013137",
+    "baseline_version": "Baseline_Questions_v1",
+    "total_questions": 416,
+    "refined_at": "2025-12-28T20:19:41.952869",
+    "refinement_version": "1.0"
+  },
+  "summary": {
+    "total_questions_processed": 416,
+    "kept": 0,
+    "rewritten": 208,
+    "collapsed": 0,
+    "retired": 208,
+    "by_gate": {
+      "CONTROL_EXISTS": 104,
+      "CONTROL_OPERABLE": 97,
+      "CONTROL_RESILIENCE": 7
+    },
+    "by_action": {
+      "REWRITE": 208,
+      "RETIRE": 208
+    },
+    "refinement_changes": {
+      "total_updated": 1,
+      "updated_questions": [
+        "BASE-022"
+      ],
+      "by_subtype": {
+        "Electronic Access Control": 1
+      }
+    }
+  },
+  "migration_table": [
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Biometric Access",
+      "legacy_question_id": "BASE-000",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-000",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Biometric Access",
+      "legacy_question_id": "BASE-001",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Biometric Access",
+      "legacy_question_id": "BASE-002",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-002",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Biometric Access",
+      "legacy_question_id": "BASE-003",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Credential / Badge Systems",
+      "legacy_question_id": "BASE-004",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-004",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Credential / Badge Systems",
+      "legacy_question_id": "BASE-005",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Credential / Badge Systems",
+      "legacy_question_id": "BASE-006",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-006",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Credential / Badge Systems",
+      "legacy_question_id": "BASE-007",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Door Monitoring",
+      "legacy_question_id": "BASE-008",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-008",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Door Monitoring",
+      "legacy_question_id": "BASE-009",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Door Monitoring",
+      "legacy_question_id": "BASE-010",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-010",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Door Monitoring",
+      "legacy_question_id": "BASE-011",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Door Readers",
+      "legacy_question_id": "BASE-012",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-012",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Door Readers",
+      "legacy_question_id": "BASE-013",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Door Readers",
+      "legacy_question_id": "BASE-014",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-014",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Door Readers",
+      "legacy_question_id": "BASE-015",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Electric Strikes / Mag Locks",
+      "legacy_question_id": "BASE-016",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-016",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Electric Strikes / Mag Locks",
+      "legacy_question_id": "BASE-017",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Electric Strikes / Mag Locks",
+      "legacy_question_id": "BASE-018",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-018",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Electric Strikes / Mag Locks",
+      "legacy_question_id": "BASE-019",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Electronic Access Control",
+      "legacy_question_id": "BASE-020",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-020",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Electronic Access Control",
+      "legacy_question_id": "BASE-021",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Electronic Access Control",
+      "legacy_question_id": "BASE-022",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_RESILIENCE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-022",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Electronic Access Control",
+      "legacy_question_id": "BASE-023",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Keypads / PIN Entry",
+      "legacy_question_id": "BASE-024",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-024",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Keypads / PIN Entry",
+      "legacy_question_id": "BASE-025",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Keypads / PIN Entry",
+      "legacy_question_id": "BASE-026",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-026",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Keypads / PIN Entry",
+      "legacy_question_id": "BASE-027",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Locking Hardware",
+      "legacy_question_id": "BASE-028",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-028",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Locking Hardware",
+      "legacy_question_id": "BASE-029",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Locking Hardware",
+      "legacy_question_id": "BASE-030",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-030",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Locking Hardware",
+      "legacy_question_id": "BASE-031",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Secured Vestibules",
+      "legacy_question_id": "BASE-032",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-032",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Secured Vestibules",
+      "legacy_question_id": "BASE-033",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Secured Vestibules",
+      "legacy_question_id": "BASE-034",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-034",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Secured Vestibules",
+      "legacy_question_id": "BASE-035",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Visitor Management Systems",
+      "legacy_question_id": "BASE-036",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-036",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Visitor Management Systems",
+      "legacy_question_id": "BASE-037",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Visitor Management Systems",
+      "legacy_question_id": "BASE-038",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-038",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Access Control Systems",
+      "subtype": "Visitor Management Systems",
+      "legacy_question_id": "BASE-039",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Defensible Space",
+      "legacy_question_id": "BASE-040",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-040",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Defensible Space",
+      "legacy_question_id": "BASE-041",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Defensible Space",
+      "legacy_question_id": "BASE-042",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-042",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Defensible Space",
+      "legacy_question_id": "BASE-043",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Exterior Lighting",
+      "legacy_question_id": "BASE-044",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-044",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Exterior Lighting",
+      "legacy_question_id": "BASE-045",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Exterior Lighting",
+      "legacy_question_id": "BASE-046",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-046",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Exterior Lighting",
+      "legacy_question_id": "BASE-047",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Landscaping Control",
+      "legacy_question_id": "BASE-048",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-048",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Landscaping Control",
+      "legacy_question_id": "BASE-049",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Landscaping Control",
+      "legacy_question_id": "BASE-050",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-050",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Landscaping Control",
+      "legacy_question_id": "BASE-051",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Natural Surveillance",
+      "legacy_question_id": "BASE-052",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-052",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Natural Surveillance",
+      "legacy_question_id": "BASE-053",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Natural Surveillance",
+      "legacy_question_id": "BASE-054",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-054",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Natural Surveillance",
+      "legacy_question_id": "BASE-055",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Sightlines",
+      "legacy_question_id": "BASE-056",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-056",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Sightlines",
+      "legacy_question_id": "BASE-057",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Sightlines",
+      "legacy_question_id": "BASE-058",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-058",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Sightlines",
+      "legacy_question_id": "BASE-059",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Territorial Reinforcement",
+      "legacy_question_id": "BASE-060",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-060",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Territorial Reinforcement",
+      "legacy_question_id": "BASE-061",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Territorial Reinforcement",
+      "legacy_question_id": "BASE-062",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-062",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Territorial Reinforcement",
+      "legacy_question_id": "BASE-063",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Wayfinding",
+      "legacy_question_id": "BASE-064",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-064",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Wayfinding",
+      "legacy_question_id": "BASE-065",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Wayfinding",
+      "legacy_question_id": "BASE-066",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-066",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "CPTED",
+      "subtype": "Wayfinding",
+      "legacy_question_id": "BASE-067",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "Backup Communications",
+      "legacy_question_id": "BASE-068",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-068",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "Backup Communications",
+      "legacy_question_id": "BASE-069",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "Backup Communications",
+      "legacy_question_id": "BASE-070",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_RESILIENCE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-070",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "Backup Communications",
+      "legacy_question_id": "BASE-071",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "Communication Protocols",
+      "legacy_question_id": "BASE-072",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-072",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "Communication Protocols",
+      "legacy_question_id": "BASE-073",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "Communication Protocols",
+      "legacy_question_id": "BASE-074",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-074",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "Communication Protocols",
+      "legacy_question_id": "BASE-075",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "Interoperable Communications",
+      "legacy_question_id": "BASE-076",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-076",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "Interoperable Communications",
+      "legacy_question_id": "BASE-077",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "Interoperable Communications",
+      "legacy_question_id": "BASE-078",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-078",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "Interoperable Communications",
+      "legacy_question_id": "BASE-079",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "PA Systems",
+      "legacy_question_id": "BASE-080",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-080",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "PA Systems",
+      "legacy_question_id": "BASE-081",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "PA Systems",
+      "legacy_question_id": "BASE-082",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-082",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "PA Systems",
+      "legacy_question_id": "BASE-083",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "Paging Systems",
+      "legacy_question_id": "BASE-084",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-084",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "Paging Systems",
+      "legacy_question_id": "BASE-085",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "Paging Systems",
+      "legacy_question_id": "BASE-086",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-086",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "Paging Systems",
+      "legacy_question_id": "BASE-087",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "Radios / Two-Way",
+      "legacy_question_id": "BASE-088",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-088",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "Radios / Two-Way",
+      "legacy_question_id": "BASE-089",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "Radios / Two-Way",
+      "legacy_question_id": "BASE-090",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-090",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Communications",
+      "subtype": "Radios / Two-Way",
+      "legacy_question_id": "BASE-091",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Emergency Drills",
+      "legacy_question_id": "BASE-092",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-092",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Emergency Drills",
+      "legacy_question_id": "BASE-093",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Emergency Drills",
+      "legacy_question_id": "BASE-094",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-094",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Emergency Drills",
+      "legacy_question_id": "BASE-095",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Emergency Guides / Flip Charts",
+      "legacy_question_id": "BASE-096",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-096",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Emergency Guides / Flip Charts",
+      "legacy_question_id": "BASE-097",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Emergency Guides / Flip Charts",
+      "legacy_question_id": "BASE-098",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-098",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Emergency Guides / Flip Charts",
+      "legacy_question_id": "BASE-099",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Evacuation Procedures",
+      "legacy_question_id": "BASE-100",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-100",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Evacuation Procedures",
+      "legacy_question_id": "BASE-101",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Evacuation Procedures",
+      "legacy_question_id": "BASE-102",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-102",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Evacuation Procedures",
+      "legacy_question_id": "BASE-103",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Lockdown / Lockout Procedures",
+      "legacy_question_id": "BASE-104",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-104",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Lockdown / Lockout Procedures",
+      "legacy_question_id": "BASE-105",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Lockdown / Lockout Procedures",
+      "legacy_question_id": "BASE-106",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-106",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Lockdown / Lockout Procedures",
+      "legacy_question_id": "BASE-107",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Muster Points / Rally Areas",
+      "legacy_question_id": "BASE-108",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-108",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Muster Points / Rally Areas",
+      "legacy_question_id": "BASE-109",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Muster Points / Rally Areas",
+      "legacy_question_id": "BASE-110",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-110",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Muster Points / Rally Areas",
+      "legacy_question_id": "BASE-111",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Reunification Procedures",
+      "legacy_question_id": "BASE-112",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-112",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Reunification Procedures",
+      "legacy_question_id": "BASE-113",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Reunification Procedures",
+      "legacy_question_id": "BASE-114",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-114",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Reunification Procedures",
+      "legacy_question_id": "BASE-115",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Shelter-in-Place",
+      "legacy_question_id": "BASE-116",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-116",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Shelter-in-Place",
+      "legacy_question_id": "BASE-117",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Shelter-in-Place",
+      "legacy_question_id": "BASE-118",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-118",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Shelter-in-Place",
+      "legacy_question_id": "BASE-119",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Staff Emergency Roles",
+      "legacy_question_id": "BASE-120",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-120",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Staff Emergency Roles",
+      "legacy_question_id": "BASE-121",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Staff Emergency Roles",
+      "legacy_question_id": "BASE-122",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-122",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Emergency Action Planning",
+      "subtype": "Staff Emergency Roles",
+      "legacy_question_id": "BASE-123",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Business Continuity",
+      "legacy_question_id": "BASE-124",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-124",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Business Continuity",
+      "legacy_question_id": "BASE-125",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Business Continuity",
+      "legacy_question_id": "BASE-126",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-126",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Business Continuity",
+      "legacy_question_id": "BASE-127",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Crisis Management",
+      "legacy_question_id": "BASE-128",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-128",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Crisis Management",
+      "legacy_question_id": "BASE-129",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Crisis Management",
+      "legacy_question_id": "BASE-130",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-130",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Crisis Management",
+      "legacy_question_id": "BASE-131",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Emergency Communications",
+      "legacy_question_id": "BASE-132",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-132",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Emergency Communications",
+      "legacy_question_id": "BASE-133",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Emergency Communications",
+      "legacy_question_id": "BASE-134",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-134",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Emergency Communications",
+      "legacy_question_id": "BASE-135",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "ICS/NIMS Integration",
+      "legacy_question_id": "BASE-136",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-136",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "ICS/NIMS Integration",
+      "legacy_question_id": "BASE-137",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "ICS/NIMS Integration",
+      "legacy_question_id": "BASE-138",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-138",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "ICS/NIMS Integration",
+      "legacy_question_id": "BASE-139",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Mass Notification",
+      "legacy_question_id": "BASE-140",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-140",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Mass Notification",
+      "legacy_question_id": "BASE-141",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Mass Notification",
+      "legacy_question_id": "BASE-142",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-142",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Mass Notification",
+      "legacy_question_id": "BASE-143",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Redundancy / Backup Systems",
+      "legacy_question_id": "BASE-144",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-144",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Redundancy / Backup Systems",
+      "legacy_question_id": "BASE-145",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Redundancy / Backup Systems",
+      "legacy_question_id": "BASE-146",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_RESILIENCE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-146",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Redundancy / Backup Systems",
+      "legacy_question_id": "BASE-147",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Resilience Planning",
+      "legacy_question_id": "BASE-148",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-148",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Resilience Planning",
+      "legacy_question_id": "BASE-149",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Resilience Planning",
+      "legacy_question_id": "BASE-150",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-150",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Emergency Management & Resilience",
+      "subtype": "Resilience Planning",
+      "legacy_question_id": "BASE-151",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Ballistic Barriers",
+      "legacy_question_id": "BASE-152",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-152",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Ballistic Barriers",
+      "legacy_question_id": "BASE-153",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Ballistic Barriers",
+      "legacy_question_id": "BASE-154",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-154",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Ballistic Barriers",
+      "legacy_question_id": "BASE-155",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Blast Mitigation",
+      "legacy_question_id": "BASE-156",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-156",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Blast Mitigation",
+      "legacy_question_id": "BASE-157",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Blast Mitigation",
+      "legacy_question_id": "BASE-158",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-158",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Blast Mitigation",
+      "legacy_question_id": "BASE-159",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Exterior Wall Reinforcement",
+      "legacy_question_id": "BASE-160",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-160",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Exterior Wall Reinforcement",
+      "legacy_question_id": "BASE-161",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Exterior Wall Reinforcement",
+      "legacy_question_id": "BASE-162",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-162",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Exterior Wall Reinforcement",
+      "legacy_question_id": "BASE-163",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Impact-Resistant Glazing",
+      "legacy_question_id": "BASE-164",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-164",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Impact-Resistant Glazing",
+      "legacy_question_id": "BASE-165",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Impact-Resistant Glazing",
+      "legacy_question_id": "BASE-166",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-166",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Impact-Resistant Glazing",
+      "legacy_question_id": "BASE-167",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Structural Hardening",
+      "legacy_question_id": "BASE-168",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-168",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Structural Hardening",
+      "legacy_question_id": "BASE-169",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Structural Hardening",
+      "legacy_question_id": "BASE-170",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-170",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Structural Hardening",
+      "legacy_question_id": "BASE-171",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Window Film",
+      "legacy_question_id": "BASE-172",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-172",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Window Film",
+      "legacy_question_id": "BASE-173",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Window Film",
+      "legacy_question_id": "BASE-174",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-174",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Facility Hardening",
+      "subtype": "Window Film",
+      "legacy_question_id": "BASE-175",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "Coordination Protocols",
+      "legacy_question_id": "BASE-176",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-176",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "Coordination Protocols",
+      "legacy_question_id": "BASE-177",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "Coordination Protocols",
+      "legacy_question_id": "BASE-178",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-178",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "Coordination Protocols",
+      "legacy_question_id": "BASE-179",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "External Reporting",
+      "legacy_question_id": "BASE-180",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-180",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "External Reporting",
+      "legacy_question_id": "BASE-181",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "External Reporting",
+      "legacy_question_id": "BASE-182",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-182",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "External Reporting",
+      "legacy_question_id": "BASE-183",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "Fusion Center Interface",
+      "legacy_question_id": "BASE-184",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-184",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "Fusion Center Interface",
+      "legacy_question_id": "BASE-185",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "Fusion Center Interface",
+      "legacy_question_id": "BASE-186",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-186",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "Fusion Center Interface",
+      "legacy_question_id": "BASE-187",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "ISAC / ISAOs",
+      "legacy_question_id": "BASE-188",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-188",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "ISAC / ISAOs",
+      "legacy_question_id": "BASE-189",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "ISAC / ISAOs",
+      "legacy_question_id": "BASE-190",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-190",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "ISAC / ISAOs",
+      "legacy_question_id": "BASE-191",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "JTTF Engagement",
+      "legacy_question_id": "BASE-192",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-192",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "JTTF Engagement",
+      "legacy_question_id": "BASE-193",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "JTTF Engagement",
+      "legacy_question_id": "BASE-194",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-194",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "JTTF Engagement",
+      "legacy_question_id": "BASE-195",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "Law Enforcement Liaison",
+      "legacy_question_id": "BASE-196",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-196",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "Law Enforcement Liaison",
+      "legacy_question_id": "BASE-197",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "Law Enforcement Liaison",
+      "legacy_question_id": "BASE-198",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-198",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "Law Enforcement Liaison",
+      "legacy_question_id": "BASE-199",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "Threat Information Sharing",
+      "legacy_question_id": "BASE-200",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-200",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "Threat Information Sharing",
+      "legacy_question_id": "BASE-201",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "Threat Information Sharing",
+      "legacy_question_id": "BASE-202",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-202",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Information Sharing & Coordination",
+      "subtype": "Threat Information Sharing",
+      "legacy_question_id": "BASE-203",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Access-Restricted Areas",
+      "legacy_question_id": "BASE-204",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-204",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Access-Restricted Areas",
+      "legacy_question_id": "BASE-205",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Access-Restricted Areas",
+      "legacy_question_id": "BASE-206",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-206",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Access-Restricted Areas",
+      "legacy_question_id": "BASE-207",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Hard-Interior Barriers",
+      "legacy_question_id": "BASE-208",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-208",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Hard-Interior Barriers",
+      "legacy_question_id": "BASE-209",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Hard-Interior Barriers",
+      "legacy_question_id": "BASE-210",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-210",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Hard-Interior Barriers",
+      "legacy_question_id": "BASE-211",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Interior Doors",
+      "legacy_question_id": "BASE-212",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-212",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Interior Doors",
+      "legacy_question_id": "BASE-213",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Interior Doors",
+      "legacy_question_id": "BASE-214",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-214",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Interior Doors",
+      "legacy_question_id": "BASE-215",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Interior Lighting",
+      "legacy_question_id": "BASE-216",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-216",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Interior Lighting",
+      "legacy_question_id": "BASE-217",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Interior Lighting",
+      "legacy_question_id": "BASE-218",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-218",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Interior Lighting",
+      "legacy_question_id": "BASE-219",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Safe Rooms",
+      "legacy_question_id": "BASE-220",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-220",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Safe Rooms",
+      "legacy_question_id": "BASE-221",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Safe Rooms",
+      "legacy_question_id": "BASE-222",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-222",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Safe Rooms",
+      "legacy_question_id": "BASE-223",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Secure Rooms",
+      "legacy_question_id": "BASE-224",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-224",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Secure Rooms",
+      "legacy_question_id": "BASE-225",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Secure Rooms",
+      "legacy_question_id": "BASE-226",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-226",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Secure Rooms",
+      "legacy_question_id": "BASE-227",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Sensitive Item Storage",
+      "legacy_question_id": "BASE-228",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-228",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Sensitive Item Storage",
+      "legacy_question_id": "BASE-229",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Sensitive Item Storage",
+      "legacy_question_id": "BASE-230",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_RESILIENCE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-230",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Interior Security & Barriers",
+      "subtype": "Sensitive Item Storage",
+      "legacy_question_id": "BASE-231",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Alarm Monitoring",
+      "legacy_question_id": "BASE-232",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-232",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Alarm Monitoring",
+      "legacy_question_id": "BASE-233",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Alarm Monitoring",
+      "legacy_question_id": "BASE-234",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-234",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Alarm Monitoring",
+      "legacy_question_id": "BASE-235",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Alarm Panels",
+      "legacy_question_id": "BASE-236",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-236",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Alarm Panels",
+      "legacy_question_id": "BASE-237",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Alarm Panels",
+      "legacy_question_id": "BASE-238",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_RESILIENCE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-238",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Alarm Panels",
+      "legacy_question_id": "BASE-239",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Door Contacts",
+      "legacy_question_id": "BASE-240",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-240",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Door Contacts",
+      "legacy_question_id": "BASE-241",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Door Contacts",
+      "legacy_question_id": "BASE-242",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-242",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Door Contacts",
+      "legacy_question_id": "BASE-243",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Glass Break Sensors",
+      "legacy_question_id": "BASE-244",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-244",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Glass Break Sensors",
+      "legacy_question_id": "BASE-245",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Glass Break Sensors",
+      "legacy_question_id": "BASE-246",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-246",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Glass Break Sensors",
+      "legacy_question_id": "BASE-247",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Motion Detectors",
+      "legacy_question_id": "BASE-248",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-248",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Motion Detectors",
+      "legacy_question_id": "BASE-249",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Motion Detectors",
+      "legacy_question_id": "BASE-250",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-250",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Motion Detectors",
+      "legacy_question_id": "BASE-251",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Panic / Duress Buttons",
+      "legacy_question_id": "BASE-252",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-252",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Panic / Duress Buttons",
+      "legacy_question_id": "BASE-253",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Panic / Duress Buttons",
+      "legacy_question_id": "BASE-254",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-254",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Panic / Duress Buttons",
+      "legacy_question_id": "BASE-255",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Perimeter IDS",
+      "legacy_question_id": "BASE-256",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-256",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Perimeter IDS",
+      "legacy_question_id": "BASE-257",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Perimeter IDS",
+      "legacy_question_id": "BASE-258",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-258",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Intrusion Detection Systems",
+      "subtype": "Perimeter IDS",
+      "legacy_question_id": "BASE-259",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Key Control",
+      "subtype": "Key Cabinets",
+      "legacy_question_id": "BASE-260",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-260",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Key Control",
+      "subtype": "Key Cabinets",
+      "legacy_question_id": "BASE-261",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Key Control",
+      "subtype": "Key Cabinets",
+      "legacy_question_id": "BASE-262",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-262",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Key Control",
+      "subtype": "Key Cabinets",
+      "legacy_question_id": "BASE-263",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Key Control",
+      "subtype": "Key Logs / Accountability",
+      "legacy_question_id": "BASE-264",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-264",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Key Control",
+      "subtype": "Key Logs / Accountability",
+      "legacy_question_id": "BASE-265",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Key Control",
+      "subtype": "Key Logs / Accountability",
+      "legacy_question_id": "BASE-266",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-266",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Key Control",
+      "subtype": "Key Logs / Accountability",
+      "legacy_question_id": "BASE-267",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Key Control",
+      "subtype": "Master Key Management",
+      "legacy_question_id": "BASE-268",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-268",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Key Control",
+      "subtype": "Master Key Management",
+      "legacy_question_id": "BASE-269",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Key Control",
+      "subtype": "Master Key Management",
+      "legacy_question_id": "BASE-270",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-270",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Key Control",
+      "subtype": "Master Key Management",
+      "legacy_question_id": "BASE-271",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Key Control",
+      "subtype": "Rekeying Procedures",
+      "legacy_question_id": "BASE-272",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-272",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Key Control",
+      "subtype": "Rekeying Procedures",
+      "legacy_question_id": "BASE-273",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Key Control",
+      "subtype": "Rekeying Procedures",
+      "legacy_question_id": "BASE-274",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-274",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Key Control",
+      "subtype": "Rekeying Procedures",
+      "legacy_question_id": "BASE-275",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Key Control",
+      "subtype": "Restricted Keys",
+      "legacy_question_id": "BASE-276",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-276",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Key Control",
+      "subtype": "Restricted Keys",
+      "legacy_question_id": "BASE-277",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Key Control",
+      "subtype": "Restricted Keys",
+      "legacy_question_id": "BASE-278",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-278",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Key Control",
+      "subtype": "Restricted Keys",
+      "legacy_question_id": "BASE-279",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Bollards / Barriers",
+      "legacy_question_id": "BASE-280",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-280",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Bollards / Barriers",
+      "legacy_question_id": "BASE-281",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Bollards / Barriers",
+      "legacy_question_id": "BASE-282",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-282",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Bollards / Barriers",
+      "legacy_question_id": "BASE-283",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Boundary Demarcation",
+      "legacy_question_id": "BASE-284",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-284",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Boundary Demarcation",
+      "legacy_question_id": "BASE-285",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Boundary Demarcation",
+      "legacy_question_id": "BASE-286",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-286",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Boundary Demarcation",
+      "legacy_question_id": "BASE-287",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Clear Zones",
+      "legacy_question_id": "BASE-288",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-288",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Clear Zones",
+      "legacy_question_id": "BASE-289",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Clear Zones",
+      "legacy_question_id": "BASE-290",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-290",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Clear Zones",
+      "legacy_question_id": "BASE-291",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Fencing",
+      "legacy_question_id": "BASE-292",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-292",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Fencing",
+      "legacy_question_id": "BASE-293",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Fencing",
+      "legacy_question_id": "BASE-294",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-294",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Fencing",
+      "legacy_question_id": "BASE-295",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Gates",
+      "legacy_question_id": "BASE-296",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-296",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Gates",
+      "legacy_question_id": "BASE-297",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Gates",
+      "legacy_question_id": "BASE-298",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-298",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Gates",
+      "legacy_question_id": "BASE-299",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Perimeter Lighting",
+      "legacy_question_id": "BASE-300",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-300",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Perimeter Lighting",
+      "legacy_question_id": "BASE-301",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Perimeter Lighting",
+      "legacy_question_id": "BASE-302",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-302",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Perimeter Lighting",
+      "legacy_question_id": "BASE-303",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Perimeter Signage",
+      "legacy_question_id": "BASE-304",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-304",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Perimeter Signage",
+      "legacy_question_id": "BASE-305",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Perimeter Signage",
+      "legacy_question_id": "BASE-306",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-306",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Perimeter Signage",
+      "legacy_question_id": "BASE-307",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Vehicle Access Control Points",
+      "legacy_question_id": "BASE-308",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-308",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Vehicle Access Control Points",
+      "legacy_question_id": "BASE-309",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Vehicle Access Control Points",
+      "legacy_question_id": "BASE-310",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-310",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Perimeter Security",
+      "subtype": "Vehicle Access Control Points",
+      "legacy_question_id": "BASE-311",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Guard Posts",
+      "legacy_question_id": "BASE-312",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-312",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Guard Posts",
+      "legacy_question_id": "BASE-313",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Guard Posts",
+      "legacy_question_id": "BASE-314",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-314",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Guard Posts",
+      "legacy_question_id": "BASE-315",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Incident Reporting",
+      "legacy_question_id": "BASE-316",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-316",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Incident Reporting",
+      "legacy_question_id": "BASE-317",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Incident Reporting",
+      "legacy_question_id": "BASE-318",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-318",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Incident Reporting",
+      "legacy_question_id": "BASE-319",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Patrol Routes",
+      "legacy_question_id": "BASE-320",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-320",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Patrol Routes",
+      "legacy_question_id": "BASE-321",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Patrol Routes",
+      "legacy_question_id": "BASE-322",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-322",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Patrol Routes",
+      "legacy_question_id": "BASE-323",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Radio Communications",
+      "legacy_question_id": "BASE-324",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-324",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Radio Communications",
+      "legacy_question_id": "BASE-325",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Radio Communications",
+      "legacy_question_id": "BASE-326",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-326",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Radio Communications",
+      "legacy_question_id": "BASE-327",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Response Procedures",
+      "legacy_question_id": "BASE-328",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-328",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Response Procedures",
+      "legacy_question_id": "BASE-329",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Response Procedures",
+      "legacy_question_id": "BASE-330",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-330",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Response Procedures",
+      "legacy_question_id": "BASE-331",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "School Resource Officer (SRO)",
+      "legacy_question_id": "BASE-332",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-332",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "School Resource Officer (SRO)",
+      "legacy_question_id": "BASE-333",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "School Resource Officer (SRO)",
+      "legacy_question_id": "BASE-334",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-334",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "School Resource Officer (SRO)",
+      "legacy_question_id": "BASE-335",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Security Officer Training",
+      "legacy_question_id": "BASE-336",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-336",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Security Officer Training",
+      "legacy_question_id": "BASE-337",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Security Officer Training",
+      "legacy_question_id": "BASE-338",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-338",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Security Officer Training",
+      "legacy_question_id": "BASE-339",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Security Operations Center (SOC)",
+      "legacy_question_id": "BASE-340",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-340",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Security Operations Center (SOC)",
+      "legacy_question_id": "BASE-341",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Security Operations Center (SOC)",
+      "legacy_question_id": "BASE-342",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-342",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Security Force / Operations",
+      "subtype": "Security Operations Center (SOC)",
+      "legacy_question_id": "BASE-343",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Governance & Oversight",
+      "legacy_question_id": "BASE-344",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-344",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Governance & Oversight",
+      "legacy_question_id": "BASE-345",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Governance & Oversight",
+      "legacy_question_id": "BASE-346",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-346",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Governance & Oversight",
+      "legacy_question_id": "BASE-347",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Policy Compliance Tracking",
+      "legacy_question_id": "BASE-348",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-348",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Policy Compliance Tracking",
+      "legacy_question_id": "BASE-349",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Policy Compliance Tracking",
+      "legacy_question_id": "BASE-350",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-350",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Policy Compliance Tracking",
+      "legacy_question_id": "BASE-351",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Risk Assessment / Risk Management",
+      "legacy_question_id": "BASE-352",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-352",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Risk Assessment / Risk Management",
+      "legacy_question_id": "BASE-353",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Risk Assessment / Risk Management",
+      "legacy_question_id": "BASE-354",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-354",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Risk Assessment / Risk Management",
+      "legacy_question_id": "BASE-355",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Security Documentation",
+      "legacy_question_id": "BASE-356",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-356",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Security Documentation",
+      "legacy_question_id": "BASE-357",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Security Documentation",
+      "legacy_question_id": "BASE-358",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-358",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Security Documentation",
+      "legacy_question_id": "BASE-359",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Security Policies",
+      "legacy_question_id": "BASE-360",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-360",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Security Policies",
+      "legacy_question_id": "BASE-361",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Security Policies",
+      "legacy_question_id": "BASE-362",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-362",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Security Policies",
+      "legacy_question_id": "BASE-363",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Security Procedures",
+      "legacy_question_id": "BASE-364",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-364",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Security Procedures",
+      "legacy_question_id": "BASE-365",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Security Procedures",
+      "legacy_question_id": "BASE-366",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-366",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Security Procedures",
+      "legacy_question_id": "BASE-367",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Security Training Programs",
+      "legacy_question_id": "BASE-368",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-368",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Security Training Programs",
+      "legacy_question_id": "BASE-369",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Security Training Programs",
+      "legacy_question_id": "BASE-370",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-370",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Security Management & Governance",
+      "subtype": "Security Training Programs",
+      "legacy_question_id": "BASE-371",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Analytics / Behavior Detection",
+      "legacy_question_id": "BASE-372",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-372",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Analytics / Behavior Detection",
+      "legacy_question_id": "BASE-373",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Analytics / Behavior Detection",
+      "legacy_question_id": "BASE-374",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-374",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Analytics / Behavior Detection",
+      "legacy_question_id": "BASE-375",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Camera Coverage / Line of Sight",
+      "legacy_question_id": "BASE-376",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-376",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Camera Coverage / Line of Sight",
+      "legacy_question_id": "BASE-377",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Camera Coverage / Line of Sight",
+      "legacy_question_id": "BASE-378",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-378",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Camera Coverage / Line of Sight",
+      "legacy_question_id": "BASE-379",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Exterior Cameras",
+      "legacy_question_id": "BASE-380",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-380",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Exterior Cameras",
+      "legacy_question_id": "BASE-381",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Exterior Cameras",
+      "legacy_question_id": "BASE-382",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-382",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Exterior Cameras",
+      "legacy_question_id": "BASE-383",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Fixed Cameras",
+      "legacy_question_id": "BASE-384",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-384",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Fixed Cameras",
+      "legacy_question_id": "BASE-385",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Fixed Cameras",
+      "legacy_question_id": "BASE-386",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-386",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Fixed Cameras",
+      "legacy_question_id": "BASE-387",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "IP Cameras",
+      "legacy_question_id": "BASE-388",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-388",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "IP Cameras",
+      "legacy_question_id": "BASE-389",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "IP Cameras",
+      "legacy_question_id": "BASE-390",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-390",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "IP Cameras",
+      "legacy_question_id": "BASE-391",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Interior Cameras",
+      "legacy_question_id": "BASE-392",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-392",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Interior Cameras",
+      "legacy_question_id": "BASE-393",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Interior Cameras",
+      "legacy_question_id": "BASE-394",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-394",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Interior Cameras",
+      "legacy_question_id": "BASE-395",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Monitoring / Workstations",
+      "legacy_question_id": "BASE-396",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-396",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Monitoring / Workstations",
+      "legacy_question_id": "BASE-397",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Monitoring / Workstations",
+      "legacy_question_id": "BASE-398",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-398",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Monitoring / Workstations",
+      "legacy_question_id": "BASE-399",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "PTZ Cameras",
+      "legacy_question_id": "BASE-400",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-400",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "PTZ Cameras",
+      "legacy_question_id": "BASE-401",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "PTZ Cameras",
+      "legacy_question_id": "BASE-402",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-402",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "PTZ Cameras",
+      "legacy_question_id": "BASE-403",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Recording / Storage (NVR/DVR)",
+      "legacy_question_id": "BASE-404",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-404",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Recording / Storage (NVR/DVR)",
+      "legacy_question_id": "BASE-405",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Recording / Storage (NVR/DVR)",
+      "legacy_question_id": "BASE-406",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_RESILIENCE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-406",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Recording / Storage (NVR/DVR)",
+      "legacy_question_id": "BASE-407",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "System Architecture",
+      "legacy_question_id": "BASE-408",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-408",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "System Architecture",
+      "legacy_question_id": "BASE-409",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "System Architecture",
+      "legacy_question_id": "BASE-410",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_RESILIENCE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-410",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "System Architecture",
+      "legacy_question_id": "BASE-411",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Video Wall / Display Systems",
+      "legacy_question_id": "BASE-412",
+      "legacy_dimension": "SYSTEMS",
+      "mapped_gate": "CONTROL_EXISTS",
+      "action": "REWRITE",
+      "replacement_id": "BASE-412",
+      "notes": "Has BLOCKER violations: RULE-102"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Video Wall / Display Systems",
+      "legacy_question_id": "BASE-413",
+      "legacy_dimension": "PLANS_PROCEDURES",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PLANS_PROCEDURES is forbidden (non-observable)"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Video Wall / Display Systems",
+      "legacy_question_id": "BASE-414",
+      "legacy_dimension": "MAINTENANCE_ASSURANCE",
+      "mapped_gate": "CONTROL_OPERABLE",
+      "action": "REWRITE",
+      "replacement_id": "BASE-414",
+      "notes": "Has BLOCKER violations: RULE-102, RULE-103"
+    },
+    {
+      "discipline": "Video Surveillance Systems",
+      "subtype": "Video Wall / Display Systems",
+      "legacy_question_id": "BASE-415",
+      "legacy_dimension": "PERSONNEL_RESPONSIBILITY",
+      "mapped_gate": null,
+      "action": "RETIRE",
+      "replacement_id": null,
+      "notes": "Dimension PERSONNEL_RESPONSIBILITY is forbidden (non-observable)"
+    }
+  ],
+  "verification": {
+    "is_valid": true,
+    "errors": []
+  }
+}

@@ -1,0 +1,931 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-01-18T01:21:30.378Z",
+  "total_disciplines": 14,
+  "disciplines": [
+    {
+      "discipline_code": "ACS",
+      "title": "Access Control Systems",
+      "capabilities": [
+        {
+          "capability_id": "CAP-ACS-ACS_BIOMETRIC_ACCESS",
+          "subtype_code": "ACS_BIOMETRIC_ACCESS",
+          "label": "Biometric Access",
+          "description": null,
+          "spine_canon_id": "BASE-ACS-ACS_BIOMETRIC_ACCESS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-ACS-ACS_CREDENTIAL_BADGE_SYSTEMS",
+          "subtype_code": "ACS_CREDENTIAL_BADGE_SYSTEMS",
+          "label": "Credential / Badge Systems",
+          "description": null,
+          "spine_canon_id": "BASE-ACS-ACS_CREDENTIAL_BADGE_SYSTEMS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-ACS-ACS_DOOR_MONITORING",
+          "subtype_code": "ACS_DOOR_MONITORING",
+          "label": "Door Monitoring",
+          "description": null,
+          "spine_canon_id": "BASE-ACS-ACS_DOOR_MONITORING",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-ACS-ACS_DOOR_READERS",
+          "subtype_code": "ACS_DOOR_READERS",
+          "label": "Door Readers",
+          "description": null,
+          "spine_canon_id": "BASE-ACS-ACS_DOOR_READERS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-ACS-ACS_ELECTRIC_STRIKES_MAG_LOCKS",
+          "subtype_code": "ACS_ELECTRIC_STRIKES_MAG_LOCKS",
+          "label": "Electric Strikes / Mag Locks",
+          "description": null,
+          "spine_canon_id": "BASE-ACS-ACS_ELECTRIC_STRIKES_MAG_LOCKS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-ACS-ACS_ELECTRONIC_ACCESS_CONTROL",
+          "subtype_code": "ACS_ELECTRONIC_ACCESS_CONTROL",
+          "label": "Electronic Access Control",
+          "description": null,
+          "spine_canon_id": "BASE-ACS-ACS_ELECTRONIC_ACCESS_CONTROL",
+          "conditional_evaluation": false
+        },
+        {
+          "capability_id": "CAP-ACS-ACS_KEYPADS_PIN_ENTRY",
+          "subtype_code": "ACS_KEYPADS_PIN_ENTRY",
+          "label": "Keypads / PIN Entry",
+          "description": null,
+          "spine_canon_id": "BASE-ACS-ACS_KEYPADS_PIN_ENTRY",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-ACS-ACS_LOCKING_HARDWARE",
+          "subtype_code": "ACS_LOCKING_HARDWARE",
+          "label": "Locking Hardware",
+          "description": null,
+          "spine_canon_id": "BASE-ACS-ACS_LOCKING_HARDWARE",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-ACS-ACS_SECURED_VESTIBULES",
+          "subtype_code": "ACS_SECURED_VESTIBULES",
+          "label": "Secured Vestibules",
+          "description": null,
+          "spine_canon_id": "BASE-ACS-ACS_SECURED_VESTIBULES",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-ACS-ACS_VISITOR_MANAGEMENT_SYSTEMS",
+          "subtype_code": "ACS_VISITOR_MANAGEMENT_SYSTEMS",
+          "label": "Visitor Management Systems",
+          "description": null,
+          "spine_canon_id": "BASE-ACS-ACS_VISITOR_MANAGEMENT_SYSTEMS",
+          "conditional_evaluation": true
+        }
+      ]
+    },
+    {
+      "discipline_code": "COM",
+      "title": "Communications",
+      "capabilities": [
+        {
+          "capability_id": "CAP-COM-COM_BACKUP_COMMUNICATIONS",
+          "subtype_code": "COM_BACKUP_COMMUNICATIONS",
+          "label": "Backup Communications",
+          "description": null,
+          "spine_canon_id": "BASE-COM-COM_BACKUP_COMMUNICATIONS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-COM-COM_COMMUNICATION_PROTOCOLS",
+          "subtype_code": "COM_COMMUNICATION_PROTOCOLS",
+          "label": "Communication Protocols",
+          "description": null,
+          "spine_canon_id": "BASE-COM-COM_COMMUNICATION_PROTOCOLS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-COM-COM_INTEROPERABLE_COMMUNICATIONS",
+          "subtype_code": "COM_INTEROPERABLE_COMMUNICATIONS",
+          "label": "Interoperable Communications",
+          "description": null,
+          "spine_canon_id": "BASE-COM-COM_INTEROPERABLE_COMMUNICATIONS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-COM-COM_PA_SYSTEMS",
+          "subtype_code": "COM_PA_SYSTEMS",
+          "label": "PA Systems",
+          "description": null,
+          "spine_canon_id": "BASE-COM-COM_PA_SYSTEMS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-COM-COM_PAGING_SYSTEMS",
+          "subtype_code": "COM_PAGING_SYSTEMS",
+          "label": "Paging Systems",
+          "description": null,
+          "spine_canon_id": "BASE-COM-COM_PAGING_SYSTEMS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-COM-COM_RADIOS_TWO_WAY",
+          "subtype_code": "COM_RADIOS_TWO_WAY",
+          "label": "Radios / Two-Way",
+          "description": null,
+          "spine_canon_id": "BASE-COM-COM_RADIOS_TWO_WAY",
+          "conditional_evaluation": true
+        }
+      ]
+    },
+    {
+      "discipline_code": "CPTED",
+      "title": "CPTED",
+      "capabilities": [
+        {
+          "capability_id": "CAP-CPTED-CPTED_DEFENSIBLE_SPACE",
+          "subtype_code": "CPTED_DEFENSIBLE_SPACE",
+          "label": "Defensible Space",
+          "description": null,
+          "spine_canon_id": "BASE-CPTED-CPTED_DEFENSIBLE_SPACE",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-CPTED-CPTED_EXTERIOR_LIGHTING",
+          "subtype_code": "CPTED_EXTERIOR_LIGHTING",
+          "label": "Exterior Lighting",
+          "description": null,
+          "spine_canon_id": "BASE-CPTED-CPTED_EXTERIOR_LIGHTING",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-CPTED-CPTED_LANDSCAPING_CONTROL",
+          "subtype_code": "CPTED_LANDSCAPING_CONTROL",
+          "label": "Landscaping Control",
+          "description": null,
+          "spine_canon_id": "BASE-CPTED-CPTED_LANDSCAPING_CONTROL",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-CPTED-CPTED_NATURAL_SURVEILLANCE",
+          "subtype_code": "CPTED_NATURAL_SURVEILLANCE",
+          "label": "Natural Surveillance",
+          "description": null,
+          "spine_canon_id": "BASE-CPTED-CPTED_NATURAL_SURVEILLANCE",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-CPTED-CPTED_SIGHTLINES",
+          "subtype_code": "CPTED_SIGHTLINES",
+          "label": "Sightlines",
+          "description": null,
+          "spine_canon_id": "BASE-CPTED-CPTED_SIGHTLINES",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-CPTED-CPTED_TERRITORIAL_REINFORCEMENT",
+          "subtype_code": "CPTED_TERRITORIAL_REINFORCEMENT",
+          "label": "Territorial Reinforcement",
+          "description": null,
+          "spine_canon_id": "BASE-CPTED-CPTED_TERRITORIAL_REINFORCEMENT",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-CPTED-CPTED_WAYFINDING",
+          "subtype_code": "CPTED_WAYFINDING",
+          "label": "Wayfinding",
+          "description": null,
+          "spine_canon_id": "BASE-CPTED-CPTED_WAYFINDING",
+          "conditional_evaluation": true
+        }
+      ]
+    },
+    {
+      "discipline_code": "EAP",
+      "title": "Emergency Action Planning",
+      "capabilities": [
+        {
+          "capability_id": "CAP-EAP-EAP_EMERGENCY_DRILLS",
+          "subtype_code": "EAP_EMERGENCY_DRILLS",
+          "label": "Emergency Drills",
+          "description": null,
+          "spine_canon_id": "BASE-EAP-EAP_EMERGENCY_DRILLS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-EAP-EAP_EMERGENCY_GUIDES_FLIP_CHARTS",
+          "subtype_code": "EAP_EMERGENCY_GUIDES_FLIP_CHARTS",
+          "label": "Emergency Guides / Flip Charts",
+          "description": null,
+          "spine_canon_id": "BASE-EAP-EAP_EMERGENCY_GUIDES_FLIP_CHARTS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-EAP-EAP_EVACUATION_PROCEDURES",
+          "subtype_code": "EAP_EVACUATION_PROCEDURES",
+          "label": "Evacuation Procedures",
+          "description": null,
+          "spine_canon_id": "BASE-EAP-EAP_EVACUATION_PROCEDURES",
+          "conditional_evaluation": false
+        },
+        {
+          "capability_id": "CAP-EAP-EAP_LOCKDOWN_LOCKOUT_PROCEDURES",
+          "subtype_code": "EAP_LOCKDOWN_LOCKOUT_PROCEDURES",
+          "label": "Lockdown / Lockout Procedures",
+          "description": null,
+          "spine_canon_id": "BASE-EAP-EAP_LOCKDOWN_LOCKOUT_PROCEDURES",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-EAP-EAP_MUSTER_POINTS_RALLY_AREAS",
+          "subtype_code": "EAP_MUSTER_POINTS_RALLY_AREAS",
+          "label": "Muster Points / Rally Areas",
+          "description": null,
+          "spine_canon_id": "BASE-EAP-EAP_MUSTER_POINTS_RALLY_AREAS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-EAP-EAP_REUNIFICATION_PROCEDURES",
+          "subtype_code": "EAP_REUNIFICATION_PROCEDURES",
+          "label": "Reunification Procedures",
+          "description": null,
+          "spine_canon_id": "BASE-EAP-EAP_REUNIFICATION_PROCEDURES",
+          "conditional_evaluation": false
+        },
+        {
+          "capability_id": "CAP-EAP-EAP_SHELTER_IN_PLACE",
+          "subtype_code": "EAP_SHELTER_IN_PLACE",
+          "label": "Shelter-in-Place",
+          "description": null,
+          "spine_canon_id": "BASE-EAP-EAP_SHELTER_IN_PLACE",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-EAP-EAP_STAFF_EMERGENCY_ROLES",
+          "subtype_code": "EAP_STAFF_EMERGENCY_ROLES",
+          "label": "Staff Emergency Roles",
+          "description": null,
+          "spine_canon_id": "BASE-EAP-EAP_STAFF_EMERGENCY_ROLES",
+          "conditional_evaluation": true
+        }
+      ]
+    },
+    {
+      "discipline_code": "EMR",
+      "title": "Emergency Management & Resilience",
+      "capabilities": [
+        {
+          "capability_id": "CAP-EMR-EMR_BUSINESS_CONTINUITY",
+          "subtype_code": "EMR_BUSINESS_CONTINUITY",
+          "label": "Business Continuity",
+          "description": null,
+          "spine_canon_id": "BASE-EMR-EMR_BUSINESS_CONTINUITY",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-EMR-EMR_CRISIS_MANAGEMENT",
+          "subtype_code": "EMR_CRISIS_MANAGEMENT",
+          "label": "Crisis Management",
+          "description": null,
+          "spine_canon_id": "BASE-EMR-EMR_CRISIS_MANAGEMENT",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-EMR-EMR_EMERGENCY_COMMUNICATIONS",
+          "subtype_code": "EMR_EMERGENCY_COMMUNICATIONS",
+          "label": "Emergency Communications",
+          "description": null,
+          "spine_canon_id": "BASE-EMR-EMR_EMERGENCY_COMMUNICATIONS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-EMR-EMR_ICS_NIMS_INTEGRATION",
+          "subtype_code": "EMR_ICS_NIMS_INTEGRATION",
+          "label": "ICS/NIMS Integration",
+          "description": null,
+          "spine_canon_id": "BASE-EMR-EMR_ICS_NIMS_INTEGRATION",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-EMR-EMR_MASS_NOTIFICATION",
+          "subtype_code": "EMR_MASS_NOTIFICATION",
+          "label": "Mass Notification",
+          "description": null,
+          "spine_canon_id": "BASE-EMR-EMR_MASS_NOTIFICATION",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-EMR-EMR_REDUNDANCY_BACKUP_SYSTEMS",
+          "subtype_code": "EMR_REDUNDANCY_BACKUP_SYSTEMS",
+          "label": "Redundancy / Backup Systems",
+          "description": null,
+          "spine_canon_id": "BASE-EMR-EMR_REDUNDANCY_BACKUP_SYSTEMS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-EMR-EMR_RESILIENCE_PLANNING",
+          "subtype_code": "EMR_RESILIENCE_PLANNING",
+          "label": "Resilience Planning",
+          "description": null,
+          "spine_canon_id": "BASE-EMR-EMR_RESILIENCE_PLANNING",
+          "conditional_evaluation": true
+        }
+      ]
+    },
+    {
+      "discipline_code": "FAC",
+      "title": "Facility Hardening",
+      "capabilities": [
+        {
+          "capability_id": "CAP-FAC-FAC_BALLISTIC_BARRIERS",
+          "subtype_code": "FAC_BALLISTIC_BARRIERS",
+          "label": "Ballistic Barriers",
+          "description": null,
+          "spine_canon_id": "BASE-FAC-FAC_BALLISTIC_BARRIERS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-FAC-FAC_BLAST_MITIGATION",
+          "subtype_code": "FAC_BLAST_MITIGATION",
+          "label": "Blast Mitigation",
+          "description": null,
+          "spine_canon_id": "BASE-FAC-FAC_BLAST_MITIGATION",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-FAC-FAC_EXTERIOR_WALL_REINFORCEMENT",
+          "subtype_code": "FAC_EXTERIOR_WALL_REINFORCEMENT",
+          "label": "Exterior Wall Reinforcement",
+          "description": null,
+          "spine_canon_id": "BASE-FAC-FAC_EXTERIOR_WALL_REINFORCEMENT",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-FAC-FAC_IMPACT_RESISTANT_GLAZING",
+          "subtype_code": "FAC_IMPACT_RESISTANT_GLAZING",
+          "label": "Impact-Resistant Glazing",
+          "description": null,
+          "spine_canon_id": "BASE-FAC-FAC_IMPACT_RESISTANT_GLAZING",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-FAC-FAC_STRUCTURAL_HARDENING",
+          "subtype_code": "FAC_STRUCTURAL_HARDENING",
+          "label": "Structural Hardening",
+          "description": null,
+          "spine_canon_id": "BASE-FAC-FAC_STRUCTURAL_HARDENING",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-FAC-FAC_WINDOW_FILM",
+          "subtype_code": "FAC_WINDOW_FILM",
+          "label": "Window Film",
+          "description": null,
+          "spine_canon_id": "BASE-FAC-FAC_WINDOW_FILM",
+          "conditional_evaluation": true
+        }
+      ]
+    },
+    {
+      "discipline_code": "IDS",
+      "title": "Intrusion Detection Systems",
+      "capabilities": [
+        {
+          "capability_id": "CAP-IDS-IDS_ALARM_MONITORING",
+          "subtype_code": "IDS_ALARM_MONITORING",
+          "label": "Alarm Monitoring",
+          "description": null,
+          "spine_canon_id": "BASE-IDS-IDS_ALARM_MONITORING",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-IDS-IDS_ALARM_PANELS",
+          "subtype_code": "IDS_ALARM_PANELS",
+          "label": "Alarm Panels",
+          "description": null,
+          "spine_canon_id": "BASE-IDS-IDS_ALARM_PANELS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-IDS-IDS_DOOR_CONTACTS",
+          "subtype_code": "IDS_DOOR_CONTACTS",
+          "label": "Door Contacts",
+          "description": null,
+          "spine_canon_id": "BASE-IDS-IDS_DOOR_CONTACTS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-IDS-IDS_GLASS_BREAK_SENSORS",
+          "subtype_code": "IDS_GLASS_BREAK_SENSORS",
+          "label": "Glass Break Sensors",
+          "description": null,
+          "spine_canon_id": "BASE-IDS-IDS_GLASS_BREAK_SENSORS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-IDS-IDS_MOTION_DETECTORS",
+          "subtype_code": "IDS_MOTION_DETECTORS",
+          "label": "Motion Detectors",
+          "description": null,
+          "spine_canon_id": "BASE-IDS-IDS_MOTION_DETECTORS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-IDS-IDS_PANIC_DURESS_BUTTONS",
+          "subtype_code": "IDS_PANIC_DURESS_BUTTONS",
+          "label": "Panic / Duress Buttons",
+          "description": null,
+          "spine_canon_id": "BASE-IDS-IDS_PANIC_DURESS_BUTTONS",
+          "conditional_evaluation": false
+        },
+        {
+          "capability_id": "CAP-IDS-IDS_PERIMETER_IDS",
+          "subtype_code": "IDS_PERIMETER_IDS",
+          "label": "Perimeter IDS",
+          "description": null,
+          "spine_canon_id": "BASE-IDS-IDS_PERIMETER_IDS",
+          "conditional_evaluation": true
+        }
+      ]
+    },
+    {
+      "discipline_code": "INT",
+      "title": "Interior Security & Barriers",
+      "capabilities": [
+        {
+          "capability_id": "CAP-INT-INT_ACCESS_RESTRICTED_AREAS",
+          "subtype_code": "INT_ACCESS_RESTRICTED_AREAS",
+          "label": "Access-Restricted Areas",
+          "description": null,
+          "spine_canon_id": "BASE-INT-INT_ACCESS_RESTRICTED_AREAS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-INT-INT_HARD_INTERIOR_BARRIERS",
+          "subtype_code": "INT_HARD_INTERIOR_BARRIERS",
+          "label": "Hard-Interior Barriers",
+          "description": null,
+          "spine_canon_id": "BASE-INT-INT_HARD_INTERIOR_BARRIERS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-INT-INT_INTERIOR_DOORS",
+          "subtype_code": "INT_INTERIOR_DOORS",
+          "label": "Interior Doors",
+          "description": null,
+          "spine_canon_id": "BASE-INT-INT_INTERIOR_DOORS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-INT-INT_INTERIOR_LIGHTING",
+          "subtype_code": "INT_INTERIOR_LIGHTING",
+          "label": "Interior Lighting",
+          "description": null,
+          "spine_canon_id": "BASE-INT-INT_INTERIOR_LIGHTING",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-INT-INT_SAFE_ROOMS",
+          "subtype_code": "INT_SAFE_ROOMS",
+          "label": "Safe Rooms",
+          "description": null,
+          "spine_canon_id": "BASE-INT-INT_SAFE_ROOMS",
+          "conditional_evaluation": false
+        },
+        {
+          "capability_id": "CAP-INT-INT_SECURE_ROOMS",
+          "subtype_code": "INT_SECURE_ROOMS",
+          "label": "Secure Rooms",
+          "description": null,
+          "spine_canon_id": "BASE-INT-INT_SECURE_ROOMS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-INT-INT_SENSITIVE_ITEM_STORAGE",
+          "subtype_code": "INT_SENSITIVE_ITEM_STORAGE",
+          "label": "Sensitive Item Storage",
+          "description": null,
+          "spine_canon_id": "BASE-INT-INT_SENSITIVE_ITEM_STORAGE",
+          "conditional_evaluation": true
+        }
+      ]
+    },
+    {
+      "discipline_code": "ISC",
+      "title": "Information Sharing & Coordination",
+      "capabilities": [
+        {
+          "capability_id": "CAP-ISC-ISC_COORDINATION_PROTOCOLS",
+          "subtype_code": "ISC_COORDINATION_PROTOCOLS",
+          "label": "Coordination Protocols",
+          "description": null,
+          "spine_canon_id": "BASE-ISC-ISC_COORDINATION_PROTOCOLS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-ISC-ISC_EXTERNAL_REPORTING",
+          "subtype_code": "ISC_EXTERNAL_REPORTING",
+          "label": "External Reporting",
+          "description": null,
+          "spine_canon_id": "BASE-ISC-ISC_EXTERNAL_REPORTING",
+          "conditional_evaluation": false
+        },
+        {
+          "capability_id": "CAP-ISC-ISC_FUSION_CENTER_INTERFACE",
+          "subtype_code": "ISC_FUSION_CENTER_INTERFACE",
+          "label": "Fusion Center Interface",
+          "description": null,
+          "spine_canon_id": "BASE-ISC-ISC_FUSION_CENTER_INTERFACE",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-ISC-ISC_ISAC_ISAOS",
+          "subtype_code": "ISC_ISAC_ISAOS",
+          "label": "ISAC / ISAOs",
+          "description": null,
+          "spine_canon_id": "BASE-ISC-ISC_ISAC_ISAOS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-ISC-ISC_JTTF_ENGAGEMENT",
+          "subtype_code": "ISC_JTTF_ENGAGEMENT",
+          "label": "JTTF Engagement",
+          "description": null,
+          "spine_canon_id": "BASE-ISC-ISC_JTTF_ENGAGEMENT",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-ISC-ISC_LAW_ENFORCEMENT_LIAISON",
+          "subtype_code": "ISC_LAW_ENFORCEMENT_LIAISON",
+          "label": "Law Enforcement Liaison",
+          "description": null,
+          "spine_canon_id": "BASE-ISC-ISC_LAW_ENFORCEMENT_LIAISON",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-ISC-ISC_THREAT_INFORMATION_SHARING",
+          "subtype_code": "ISC_THREAT_INFORMATION_SHARING",
+          "label": "Threat Information Sharing",
+          "description": null,
+          "spine_canon_id": "BASE-ISC-ISC_THREAT_INFORMATION_SHARING",
+          "conditional_evaluation": false
+        }
+      ]
+    },
+    {
+      "discipline_code": "KEY",
+      "title": "Key Control",
+      "capabilities": [
+        {
+          "capability_id": "CAP-KEY-KEY_KEY_CABINETS",
+          "subtype_code": "KEY_KEY_CABINETS",
+          "label": "Key Cabinets",
+          "description": null,
+          "spine_canon_id": "BASE-KEY-KEY_KEY_CABINETS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-KEY-KEY_KEY_LOGS_ACCOUNTABILITY",
+          "subtype_code": "KEY_KEY_LOGS_ACCOUNTABILITY",
+          "label": "Key Logs / Accountability",
+          "description": null,
+          "spine_canon_id": "BASE-KEY-KEY_KEY_LOGS_ACCOUNTABILITY",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-KEY-KEY_MASTER_KEY_MANAGEMENT",
+          "subtype_code": "KEY_MASTER_KEY_MANAGEMENT",
+          "label": "Master Key Management",
+          "description": null,
+          "spine_canon_id": "BASE-KEY-KEY_MASTER_KEY_MANAGEMENT",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-KEY-KEY_REKEYING_PROCEDURES",
+          "subtype_code": "KEY_REKEYING_PROCEDURES",
+          "label": "Rekeying Procedures",
+          "description": null,
+          "spine_canon_id": "BASE-KEY-KEY_REKEYING_PROCEDURES",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-KEY-KEY_RESTRICTED_KEYS",
+          "subtype_code": "KEY_RESTRICTED_KEYS",
+          "label": "Restricted Keys",
+          "description": null,
+          "spine_canon_id": "BASE-KEY-KEY_RESTRICTED_KEYS",
+          "conditional_evaluation": true
+        }
+      ]
+    },
+    {
+      "discipline_code": "PER",
+      "title": "Perimeter Security",
+      "capabilities": [
+        {
+          "capability_id": "CAP-PER-PER_BOLLARDS_BARRIERS",
+          "subtype_code": "PER_BOLLARDS_BARRIERS",
+          "label": "Bollards / Barriers",
+          "description": null,
+          "spine_canon_id": "BASE-PER-PER_BOLLARDS_BARRIERS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-PER-PER_BOUNDARY_DEMARCATION",
+          "subtype_code": "PER_BOUNDARY_DEMARCATION",
+          "label": "Boundary Demarcation",
+          "description": null,
+          "spine_canon_id": "BASE-PER-PER_BOUNDARY_DEMARCATION",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-PER-PER_CLEAR_ZONES",
+          "subtype_code": "PER_CLEAR_ZONES",
+          "label": "Clear Zones",
+          "description": null,
+          "spine_canon_id": "BASE-PER-PER_CLEAR_ZONES",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-PER-PER_FENCING",
+          "subtype_code": "PER_FENCING",
+          "label": "Fencing",
+          "description": null,
+          "spine_canon_id": "BASE-PER-PER_FENCING",
+          "conditional_evaluation": false
+        },
+        {
+          "capability_id": "CAP-PER-PER_GATES",
+          "subtype_code": "PER_GATES",
+          "label": "Gates",
+          "description": null,
+          "spine_canon_id": "BASE-PER-PER_GATES",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-PER-PER_PEDESTRIAN_ACCESS_CONTROL_POINTS",
+          "subtype_code": "PER_PEDESTRIAN_ACCESS_CONTROL_POINTS",
+          "label": "Pedestrian Access Control Points",
+          "description": null,
+          "spine_canon_id": "BASE-PER-PER_PEDESTRIAN_ACCESS_CONTROL_POINTS",
+          "conditional_evaluation": false
+        },
+        {
+          "capability_id": "CAP-PER-PER_PERIMETER_LIGHTING",
+          "subtype_code": "PER_PERIMETER_LIGHTING",
+          "label": "Perimeter Lighting",
+          "description": null,
+          "spine_canon_id": "BASE-PER-PER_PERIMETER_LIGHTING",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-PER-PER_PERIMETER_SIGNAGE",
+          "subtype_code": "PER_PERIMETER_SIGNAGE",
+          "label": "Perimeter Signage",
+          "description": null,
+          "spine_canon_id": "BASE-PER-PER_PERIMETER_SIGNAGE",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-PER-PER_VEHICLE_ACCESS_CONTROL_POINTS",
+          "subtype_code": "PER_VEHICLE_ACCESS_CONTROL_POINTS",
+          "label": "Vehicle Access Control Points",
+          "description": null,
+          "spine_canon_id": "BASE-PER-PER_VEHICLE_ACCESS_CONTROL_POINTS",
+          "conditional_evaluation": true
+        }
+      ]
+    },
+    {
+      "discipline_code": "SFO",
+      "title": "Security Force / Operations",
+      "capabilities": [
+        {
+          "capability_id": "CAP-SFO-SFO_GUARD_POSTS",
+          "subtype_code": "SFO_GUARD_POSTS",
+          "label": "Guard Posts",
+          "description": null,
+          "spine_canon_id": "BASE-SFO-SFO_GUARD_POSTS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-SFO-SFO_INCIDENT_REPORTING",
+          "subtype_code": "SFO_INCIDENT_REPORTING",
+          "label": "Incident Reporting",
+          "description": null,
+          "spine_canon_id": "BASE-SFO-SFO_INCIDENT_REPORTING",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-SFO-SFO_PATROL_ROUTES",
+          "subtype_code": "SFO_PATROL_ROUTES",
+          "label": "Patrol Routes",
+          "description": null,
+          "spine_canon_id": "BASE-SFO-SFO_PATROL_ROUTES",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-SFO-SFO_RADIO_COMMUNICATIONS",
+          "subtype_code": "SFO_RADIO_COMMUNICATIONS",
+          "label": "Radio Communications",
+          "description": null,
+          "spine_canon_id": "BASE-SFO-SFO_RADIO_COMMUNICATIONS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-SFO-SFO_RESPONSE_PROCEDURES",
+          "subtype_code": "SFO_RESPONSE_PROCEDURES",
+          "label": "Response Procedures",
+          "description": null,
+          "spine_canon_id": "BASE-SFO-SFO_RESPONSE_PROCEDURES",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-SFO-SFO_SCHOOL_RESOURCE_OFFICER_SRO",
+          "subtype_code": "SFO_SCHOOL_RESOURCE_OFFICER_SRO",
+          "label": "School Resource Officer (SRO)",
+          "description": null,
+          "spine_canon_id": "BASE-SFO-SFO_SCHOOL_RESOURCE_OFFICER_SRO",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-SFO-SFO_SECURITY_OFFICER_TRAINING",
+          "subtype_code": "SFO_SECURITY_OFFICER_TRAINING",
+          "label": "Security Officer Training",
+          "description": null,
+          "spine_canon_id": "BASE-SFO-SFO_SECURITY_OFFICER_TRAINING",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-SFO-SFO_SECURITY_OPERATIONS_CENTER_SOC",
+          "subtype_code": "SFO_SECURITY_OPERATIONS_CENTER_SOC",
+          "label": "Security Operations Center (SOC)",
+          "description": null,
+          "spine_canon_id": "BASE-SFO-SFO_SECURITY_OPERATIONS_CENTER_SOC",
+          "conditional_evaluation": false
+        }
+      ]
+    },
+    {
+      "discipline_code": "SMG",
+      "title": "Security Management & Governance",
+      "capabilities": [
+        {
+          "capability_id": "CAP-SMG-SMG_GOVERNANCE_OVERSIGHT",
+          "subtype_code": "SMG_GOVERNANCE_OVERSIGHT",
+          "label": "Governance & Oversight",
+          "description": null,
+          "spine_canon_id": "BASE-SMG-SMG_GOVERNANCE_OVERSIGHT",
+          "conditional_evaluation": false
+        },
+        {
+          "capability_id": "CAP-SMG-SMG_POLICY_COMPLIANCE_TRACKING",
+          "subtype_code": "SMG_POLICY_COMPLIANCE_TRACKING",
+          "label": "Policy Compliance Tracking",
+          "description": null,
+          "spine_canon_id": "BASE-SMG-SMG_POLICY_COMPLIANCE_TRACKING",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-SMG-SMG_RISK_ASSESSMENT_RISK_MANAGEMENT",
+          "subtype_code": "SMG_RISK_ASSESSMENT_RISK_MANAGEMENT",
+          "label": "Risk Assessment / Risk Management",
+          "description": null,
+          "spine_canon_id": "BASE-SMG-SMG_RISK_ASSESSMENT_RISK_MANAGEMENT",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-SMG-SMG_SECURITY_DOCUMENTATION",
+          "subtype_code": "SMG_SECURITY_DOCUMENTATION",
+          "label": "Security Documentation",
+          "description": null,
+          "spine_canon_id": "BASE-SMG-SMG_SECURITY_DOCUMENTATION",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-SMG-SMG_SECURITY_POLICIES",
+          "subtype_code": "SMG_SECURITY_POLICIES",
+          "label": "Security Policies",
+          "description": null,
+          "spine_canon_id": "BASE-SMG-SMG_SECURITY_POLICIES",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-SMG-SMG_SECURITY_PROCEDURES",
+          "subtype_code": "SMG_SECURITY_PROCEDURES",
+          "label": "Security Procedures",
+          "description": null,
+          "spine_canon_id": "BASE-SMG-SMG_SECURITY_PROCEDURES",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-SMG-SMG_SECURITY_TRAINING_PROGRAMS",
+          "subtype_code": "SMG_SECURITY_TRAINING_PROGRAMS",
+          "label": "Security Training Programs",
+          "description": null,
+          "spine_canon_id": "BASE-SMG-SMG_SECURITY_TRAINING_PROGRAMS",
+          "conditional_evaluation": true
+        }
+      ]
+    },
+    {
+      "discipline_code": "VSS",
+      "title": "Video Surveillance Systems",
+      "capabilities": [
+        {
+          "capability_id": "CAP-VSS-VSS_ANALYTICS_BEHAVIOR_DETECTION",
+          "subtype_code": "VSS_ANALYTICS_BEHAVIOR_DETECTION",
+          "label": "Analytics / Behavior Detection",
+          "description": null,
+          "spine_canon_id": "BASE-VSS-VSS_ANALYTICS_BEHAVIOR_DETECTION",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-VSS-VSS_CAMERA_COVERAGE_LINE_OF_SIGHT",
+          "subtype_code": "VSS_CAMERA_COVERAGE_LINE_OF_SIGHT",
+          "label": "Camera Coverage / Line of Sight",
+          "description": null,
+          "spine_canon_id": "BASE-VSS-VSS_CAMERA_COVERAGE_LINE_OF_SIGHT",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-VSS-VSS_EXTERIOR_CAMERAS",
+          "subtype_code": "VSS_EXTERIOR_CAMERAS",
+          "label": "Exterior Cameras",
+          "description": null,
+          "spine_canon_id": "BASE-VSS-VSS_EXTERIOR_CAMERAS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-VSS-VSS_FIXED_CAMERAS",
+          "subtype_code": "VSS_FIXED_CAMERAS",
+          "label": "Fixed Cameras",
+          "description": null,
+          "spine_canon_id": "BASE-VSS-VSS_FIXED_CAMERAS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-VSS-VSS_INTERIOR_CAMERAS",
+          "subtype_code": "VSS_INTERIOR_CAMERAS",
+          "label": "Interior Cameras",
+          "description": null,
+          "spine_canon_id": "BASE-VSS-VSS_INTERIOR_CAMERAS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-VSS-VSS_IP_CAMERAS",
+          "subtype_code": "VSS_IP_CAMERAS",
+          "label": "IP Cameras",
+          "description": null,
+          "spine_canon_id": "BASE-VSS-VSS_IP_CAMERAS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-VSS-VSS_MONITORING_WORKSTATIONS",
+          "subtype_code": "VSS_MONITORING_WORKSTATIONS",
+          "label": "Monitoring / Workstations",
+          "description": null,
+          "spine_canon_id": "BASE-VSS-VSS_MONITORING_WORKSTATIONS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-VSS-VSS_PTZ_CAMERAS",
+          "subtype_code": "VSS_PTZ_CAMERAS",
+          "label": "PTZ Cameras",
+          "description": null,
+          "spine_canon_id": "BASE-VSS-VSS_PTZ_CAMERAS",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-VSS-VSS_RECORDING_STORAGE_NVR_DVR",
+          "subtype_code": "VSS_RECORDING_STORAGE_NVR_DVR",
+          "label": "Recording / Storage (NVR/DVR)",
+          "description": null,
+          "spine_canon_id": "BASE-VSS-VSS_RECORDING_STORAGE_NVR_DVR",
+          "conditional_evaluation": true
+        },
+        {
+          "capability_id": "CAP-VSS-VSS_SYSTEM_ARCHITECTURE",
+          "subtype_code": "VSS_SYSTEM_ARCHITECTURE",
+          "label": "System Architecture",
+          "description": null,
+          "spine_canon_id": "BASE-VSS-VSS_SYSTEM_ARCHITECTURE",
+          "conditional_evaluation": false
+        },
+        {
+          "capability_id": "CAP-VSS-VSS_VIDEO_WALL_DISPLAY_SYSTEMS",
+          "subtype_code": "VSS_VIDEO_WALL_DISPLAY_SYSTEMS",
+          "label": "Video Wall / Display Systems",
+          "description": null,
+          "spine_canon_id": "BASE-VSS-VSS_VIDEO_WALL_DISPLAY_SYSTEMS",
+          "conditional_evaluation": true
+        }
+      ]
+    }
+  ]
+}

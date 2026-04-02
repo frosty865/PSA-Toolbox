@@ -1,0 +1,32 @@
+{
+  "baseline_version": "Baseline_Questions_v1",
+  "description": "Mapping between Baseline Questions v1 and physical security components. This mapping is descriptive and enables component-level analysis.",
+  "mappings": [
+    {
+      "question_code": "BASE-001",
+      "question_title": "Security Responsibility Designation",
+      "components": ["SEC_GOV_PERSONNEL"]
+    },
+    {
+      "question_code": "BASE-002",
+      "question_title": "Security Roles Defined",
+      "components": ["SEC_GOV_PERSONNEL"]
+    },
+    {
+      "question_code": "BASE-003",
+      "question_title": "Written Security Policy",
+      "components": ["SEC_POLICY_DOCUMENT"]
+    },
+    {
+      "question_code": "BASE-004",
+      "question_title": "Security Policy Review",
+      "components": ["SEC_POLICY_DOCUMENT"]
+    },
+    {
+      "question_code": "BASE-005",
+      "question_title": "Incident Reporting Process",
+      "components": ["SEC_INCIDENT_PROCESS"]
+    }
+  ]
+}
+

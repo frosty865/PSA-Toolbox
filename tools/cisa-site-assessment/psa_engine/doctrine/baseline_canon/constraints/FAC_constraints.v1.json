@@ -1,0 +1,12 @@
+{
+  "discipline_code": "FAC",
+  "version": "v1",
+  "constraints": [
+    {
+      "constraint_id": "BASE-FAC-CONSTRAINT-001",
+      "type": "EXCLUDE_LEGACY_SUBTYPES_FROM_SPINES",
+      "value": ["FAC_*"],
+      "reason": "FAC legacy items are solution-artifact depth and cannot form baseline spines."
+    }
+  ]
+}

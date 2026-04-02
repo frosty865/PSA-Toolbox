@@ -1,0 +1,63 @@
+{
+  "version": "v1",
+  "total_spines": 25,
+  "by_discipline": {
+    "PER": 2,
+    "ACS": 1,
+    "IDS": 1,
+    "VSS": 3,
+    "INT": 1,
+    "FAC": 1,
+    "KEY": 1,
+    "COM": 2,
+    "EAP": 2,
+    "EMR": 2,
+    "ISC": 2,
+    "SFO": 2,
+    "SMG": 3,
+    "CPTED": 2
+  },
+  "spine_files_included": [
+    "ACS_spines.v1.json",
+    "COM_spines.v1.json",
+    "CPTED_spines.v1.json",
+    "EAP_spines.v1.json",
+    "EMR_spines.v1.json",
+    "FAC_spines.v1.json",
+    "IDS_spines.v1.json",
+    "INT_spines.v1.json",
+    "ISC_spines.v1.json",
+    "KEY_spines.v1.json",
+    "PER_spines.v1.json",
+    "SFO_spines.v1.json",
+    "SMG_spines.v1.json",
+    "VSS_spines.v1.json"
+  ],
+  "components_files_present": [
+    "COM_components.v1.json",
+    "CPTED_components.v1.json",
+    "EAP_components.v1.json",
+    "EMR_components.v1.json",
+    "FAC_components.v1.json",
+    "INT_components.v1.json",
+    "ISC_components.v1.json",
+    "KEY_components.v1.json",
+    "SFO_components.v1.json",
+    "SMG_components.v1.json",
+    "VSS_components.v1.json"
+  ],
+  "constraints_files_present": [
+    "COM_constraints.v1.json",
+    "CPTED_constraints.v1.json",
+    "EAP_constraints.v1.json",
+    "EMR_constraints.v1.json",
+    "FAC_constraints.v1.json",
+    "INT_constraints.v1.json",
+    "ISC_constraints.v1.json",
+    "KEY_constraints.v1.json",
+    "SFO_constraints.v1.json",
+    "SMG_constraints.v1.json",
+    "VSS_constraints.v1.json"
+  ],
+  "output_file": "baseline_canon_runtime.v1.json"
+}

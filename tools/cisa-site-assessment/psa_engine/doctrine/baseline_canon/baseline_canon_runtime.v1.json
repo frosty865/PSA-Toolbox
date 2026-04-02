@@ -1,0 +1,323 @@
+{
+  "version": "v1",
+  "authoring_source": "baseline_spines.v1.json (and *_spines.v1.json files)",
+  "spines": [
+    {
+      "canon_id": "BASE-ACS-001",
+      "discipline_code": "ACS",
+      "subtype_code": null,
+      "question_text": "Is entry controlled at designated entry points for areas requiring access control?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-COM-001",
+      "discipline_code": "COM",
+      "subtype_code": null,
+      "question_text": "Is there a defined means for security or operations to communicate during incidents?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-COM-002",
+      "discipline_code": "COM",
+      "subtype_code": null,
+      "question_text": "Is there a defined means to notify occupants when protective actions are required?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-CPTED-001",
+      "discipline_code": "CPTED",
+      "subtype_code": null,
+      "question_text": "Are site layout and environmental design decisions used to influence access, visibility, and territorial control for areas of concern?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-CPTED-002",
+      "discipline_code": "CPTED",
+      "subtype_code": null,
+      "question_text": "Are areas of concern evaluated for visibility and natural surveillance considerations as part of security decision-making?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-EAP-001",
+      "discipline_code": "EAP",
+      "subtype_code": null,
+      "question_text": "Is there a documented emergency action plan for the facility?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-EAP-002",
+      "discipline_code": "EAP",
+      "subtype_code": null,
+      "question_text": "Are protective actions for emergencies defined and documented for the facility?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-EMR-001",
+      "discipline_code": "EMR",
+      "subtype_code": null,
+      "question_text": "Is there a defined emergency management capability for the facility?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-EMR-002",
+      "discipline_code": "EMR",
+      "subtype_code": null,
+      "question_text": "Is continuity of operations addressed for disruptions that could affect the facility?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-FAC-001",
+      "discipline_code": "FAC",
+      "subtype_code": null,
+      "question_text": "Are critical building openings or access points identified for physical hardening decisions where protection is required?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-IDS-001",
+      "discipline_code": "IDS",
+      "subtype_code": null,
+      "question_text": "Are intrusion events detected and signaled at the site?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "INT-001",
+      "discipline_code": "INT",
+      "subtype_code": "INT_ACCESS_RESTRICTED_AREAS",
+      "question_text": "Are restricted areas controlled at their entry points?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-ISC-001",
+      "discipline_code": "ISC",
+      "subtype_code": null,
+      "question_text": "Are external coordination points identified for security or emergency support?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-ISC-002",
+      "discipline_code": "ISC",
+      "subtype_code": null,
+      "question_text": "Is there a defined method to share security-relevant information with external partners when needed?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-KEY-001",
+      "discipline_code": "KEY",
+      "subtype_code": null,
+      "question_text": "Are keys and other access-enabling devices controlled throughout their lifecycle for restricted areas?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-PER-001",
+      "discipline_code": "PER",
+      "subtype_code": "PER_VEHICLE_ACCESS_CONTROL_POINTS",
+      "question_text": "Is vehicle access at the site perimeter controlled at designated entry points?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-PER-002",
+      "discipline_code": "PER",
+      "subtype_code": "PER_PEDESTRIAN_ACCESS_CONTROL_POINTS",
+      "question_text": "Is pedestrian access at the site perimeter controlled at designated entry points?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-SFO-001",
+      "discipline_code": "SFO",
+      "subtype_code": null,
+      "question_text": "Is a security force or designated security response capability defined for the facility?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-SFO-002",
+      "discipline_code": "SFO",
+      "subtype_code": null,
+      "question_text": "Are security response actions defined for incidents requiring protective intervention?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-SMG-001",
+      "discipline_code": "SMG",
+      "subtype_code": null,
+      "question_text": "Is responsibility for physical security decisions defined for the facility?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-SMG-002",
+      "discipline_code": "SMG",
+      "subtype_code": null,
+      "question_text": "Are security policies or procedures defined to govern how protective measures are managed for the facility?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-SMG-003",
+      "discipline_code": "SMG",
+      "subtype_code": null,
+      "question_text": "Is there a defined method to report and escalate security concerns or incidents for the facility?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-VSS-001",
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_EXTERIOR_CAMERAS",
+      "question_text": "Are exterior areas requiring observation covered by cameras?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-VSS-002",
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_INTERIOR_CAMERAS",
+      "question_text": "Are interior areas requiring observation covered by cameras?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    {
+      "canon_id": "BASE-VSS-003",
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_RECORDING_STORAGE_NVR_DVR",
+      "question_text": "Is video recorded for cameras covering areas requiring observation?",
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    }
+  ],
+  "components_manifests": [
+    "COM_components.v1.json",
+    "CPTED_components.v1.json",
+    "EAP_components.v1.json",
+    "EMR_components.v1.json",
+    "FAC_components.v1.json",
+    "INT_components.v1.json",
+    "ISC_components.v1.json",
+    "KEY_components.v1.json",
+    "SFO_components.v1.json",
+    "SMG_components.v1.json",
+    "VSS_components.v1.json"
+  ],
+  "constraints_manifests": [
+    "COM_constraints.v1.json",
+    "CPTED_constraints.v1.json",
+    "EAP_constraints.v1.json",
+    "EMR_constraints.v1.json",
+    "FAC_constraints.v1.json",
+    "INT_constraints.v1.json",
+    "ISC_constraints.v1.json",
+    "KEY_constraints.v1.json",
+    "SFO_constraints.v1.json",
+    "SMG_constraints.v1.json",
+    "VSS_constraints.v1.json"
+  ],
+  "required_disciplines_order": [
+    "PER",
+    "ACS",
+    "IDS",
+    "VSS",
+    "INT",
+    "FAC",
+    "KEY",
+    "COM",
+    "EAP",
+    "EMR",
+    "ISC",
+    "SFO",
+    "SMG",
+    "CPTED"
+  ]
+}

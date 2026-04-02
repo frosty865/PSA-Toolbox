@@ -1,0 +1,14 @@
+{
+  "source_file": "D:\\psa-workspace\\psa_rebuild\\analytics\\reports\\legacy_baseline_rewrite_candidates.json",
+  "discipline": "PER",
+  "counts": {
+    "total": 4,
+    "rewrite": 4,
+    "component_checklist": 0,
+    "drop": 0,
+    "fail_closed": 0,
+    "by_outcome": {
+      "REWRITE_TO_CONTROL_ASSERTION": 4
+    }
+  }
+}

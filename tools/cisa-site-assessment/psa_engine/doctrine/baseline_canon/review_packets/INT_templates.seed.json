@@ -1,0 +1,49 @@
+{
+  "generated_from": "D:\\psa-workspace\\psa_rebuild\\analytics\\reports\\legacy_baseline_refactor_map.json",
+  "discipline": "INT",
+  "note": "Fill 'template' with YES/NO-form boundary control assertions. Keys must match discipline_subtype_code exactly. Leave empty to keep non-spine.",
+  "templates": {
+    "INT_ACCESS_RESTRICTED_AREAS": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are access-restricted areas systems installed at entry points?"
+      ]
+    },
+    "INT_HARD_INTERIOR_BARRIERS": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are hard-interior barriers barriers installed?"
+      ]
+    },
+    "INT_INTERIOR_DOORS": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are interior doors systems installed?"
+      ]
+    },
+    "INT_INTERIOR_LIGHTING": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are interior lighting fixtures installed?"
+      ]
+    },
+    "INT_SAFE_ROOMS": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are safe rooms systems installed?"
+      ]
+    },
+    "INT_SECURE_ROOMS": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are secure rooms systems installed?"
+      ]
+    },
+    "INT_SENSITIVE_ITEM_STORAGE": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are sensitive item storage recorders installed?"
+      ]
+    }
+  }
+}

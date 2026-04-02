@@ -1,0 +1,202 @@
+{
+  "module_code": "MODULE_ACTIVE_SHOOTER",
+  "title": "Active Shooter Preparedness",
+  "summary": "Evaluates whether the facility has planned, coordinated, and maintained capabilities to prevent, respond to, and recover from active shooter incidents.",
+  "scope": {
+    "hazards": [
+      "active shooter incident",
+      "armed intruder event",
+      "workplace violence incident"
+    ],
+    "areas": [
+      "facility interior",
+      "public access areas",
+      "employee work areas",
+      "parking areas",
+      "perimeter"
+    ],
+    "exclusions": [
+      "general crime prevention",
+      "routine security patrols",
+      "cyber security controls"
+    ]
+  },
+  "question_families": [
+    {
+      "family_code": "AS_PLAN_INTEGRATION",
+      "title": "Emergency action plan integration",
+      "intent": "Facility emergency action plans explicitly address active shooter scenarios, roles, and response actions.",
+      "question_prompts": [
+        "Do facility emergency action plans and procedures explicitly address active shooter scenarios and response actions?",
+        "Are roles and responsibilities defined for facility staff actions during an active shooter incident?",
+        "Are evacuation routes and shelter-in-place locations documented for active shooter scenarios?"
+      ],
+      "anchors": {
+        "discipline_subtype_codes_allow": [
+          "EAP_GENERAL",
+          "EMR_CRISIS_MANAGEMENT"
+        ]
+      },
+      "evidence_signals": [
+        "active shooter",
+        "emergency action plan",
+        "response procedures",
+        "evacuation",
+        "shelter in place",
+        "run hide fight"
+      ]
+    },
+    {
+      "family_code": "AS_TRAINING_AWARENESS",
+      "title": "Training and awareness",
+      "intent": "Facility staff receive initial and recurring training on active shooter response procedures and recognition of potential threats.",
+      "question_prompts": [
+        "Do facility staff receive initial and recurring training on active shooter response procedures?",
+        "Is training provided on recognizing and reporting behaviors that may indicate a potential active shooter threat?",
+        "Are facility staff trained on evacuation procedures and shelter-in-place protocols for active shooter scenarios?"
+      ],
+      "anchors": {
+        "discipline_subtype_codes_allow": [
+          "SMG_TRAINING_AWARENESS",
+          "EAP_GENERAL"
+        ]
+      },
+      "evidence_signals": [
+        "active shooter training",
+        "response training",
+        "threat recognition",
+        "suspicious behavior",
+        "awareness program",
+        "annual training"
+      ]
+    },
+    {
+      "family_code": "AS_LE_COORDINATION",
+      "title": "Law enforcement coordination",
+      "intent": "Coordination with local law enforcement for active shooter response is established and maintained, including site access and floor plans.",
+      "question_prompts": [
+        "Has the facility coordinated with local law enforcement to establish active shooter response protocols and site access procedures?",
+        "Are facility floor plans and access information provided to local law enforcement to support active shooter response operations?",
+        "Are law enforcement contact information and response procedures documented and accessible to facility staff?"
+      ],
+      "anchors": {
+        "discipline_subtype_codes_allow": [
+          "ISC_LE_LIAISON",
+          "ISC_FIRST_RESPONDER_COORDINATION"
+        ]
+      },
+      "evidence_signals": [
+        "law enforcement",
+        "police coordination",
+        "first responder",
+        "floor plans",
+        "site access",
+        "preplan",
+        "response protocols"
+      ]
+    },
+    {
+      "family_code": "AS_COMMUNICATION_NOTIFICATION",
+      "title": "Communication and mass notification",
+      "intent": "Facility has established communication and mass notification capabilities to alert staff and visitors during an active shooter incident.",
+      "question_prompts": [
+        "Does the facility have a mass notification system capable of alerting staff and visitors during an active shooter incident?",
+        "Are communication procedures established for notifying law enforcement and coordinating response during an active shooter incident?",
+        "Are backup communication methods available if primary systems are compromised during an active shooter incident?"
+      ],
+      "anchors": {
+        "discipline_subtype_codes_allow": [
+          "COMM_MASS_NOTIFICATION",
+          "COMM_EMERGENCY_COMMUNICATIONS"
+        ]
+      },
+      "evidence_signals": [
+        "mass notification",
+        "emergency communication",
+        "alert system",
+        "notification procedures",
+        "communication plan"
+      ]
+    },
+    {
+      "family_code": "AS_ACCESS_CONTROL",
+      "title": "Access control and hardening",
+      "intent": "Facility access controls and physical security measures are designed to delay or prevent unauthorized access that could enable an active shooter incident.",
+      "question_prompts": [
+        "Do facility access controls and entry points provide sufficient delay or prevention of unauthorized access that could enable an active shooter incident?",
+        "Are visitor management procedures established to verify and monitor visitors who could pose an active shooter threat?",
+        "Are facility entry points and critical areas hardened to delay or prevent unauthorized access during an active shooter incident?"
+      ],
+      "anchors": {
+        "discipline_subtype_codes_allow": [
+          "ACC_ENTRY_CONTROL",
+          "ACC_VISITOR_MANAGEMENT",
+          "PER_STANDOFF_DISTANCE"
+        ]
+      },
+      "evidence_signals": [
+        "access control",
+        "entry control",
+        "visitor management",
+        "hardening",
+        "barriers",
+        "delayed entry"
+      ]
+    },
+    {
+      "family_code": "AS_EXERCISES_DRILLS",
+      "title": "Exercises and drills",
+      "intent": "Facility conducts regular exercises and drills to test and validate active shooter response procedures and coordination.",
+      "question_prompts": [
+        "Does the facility conduct regular exercises or drills to test active shooter response procedures?",
+        "Are active shooter exercises conducted in coordination with local law enforcement and first responders?",
+        "Are exercise results documented and used to update active shooter response procedures?"
+      ],
+      "anchors": {
+        "discipline_subtype_codes_allow": [
+          "SMG_TRAINING_AWARENESS",
+          "ISC_FIRST_RESPONDER_COORDINATION"
+        ]
+      },
+      "evidence_signals": [
+        "exercise",
+        "drill",
+        "tabletop",
+        "simulation",
+        "after action review",
+        "lessons learned"
+      ]
+    }
+  ],
+  "ofc_template_bank": [
+    {
+      "ofc_code": "AS_OFC_PLAN_UPDATE",
+      "text_template": "Ensure facility emergency action plans and procedures explicitly address active shooter scenarios, including roles, responsibilities, evacuation routes, and shelter-in-place locations."
+    },
+    {
+      "ofc_code": "AS_OFC_TRAINING_PROGRAM",
+      "text_template": "Establish and maintain an initial and recurring training program for facility staff on active shooter response procedures, threat recognition, and reporting procedures."
+    },
+    {
+      "ofc_code": "AS_OFC_LE_COORDINATION",
+      "text_template": "Coordinate with local law enforcement to establish active shooter response protocols, provide facility floor plans and access information, and document law enforcement contact procedures."
+    },
+    {
+      "ofc_code": "AS_OFC_MASS_NOTIFICATION",
+      "text_template": "Implement and maintain a mass notification system capable of alerting staff and visitors during an active shooter incident, with backup communication methods available."
+    },
+    {
+      "ofc_code": "AS_OFC_ACCESS_HARDENING",
+      "text_template": "Implement access controls and physical security measures designed to delay or prevent unauthorized access that could enable an active shooter incident, including visitor management procedures."
+    },
+    {
+      "ofc_code": "AS_OFC_EXERCISES",
+      "text_template": "Conduct regular exercises and drills to test active shooter response procedures in coordination with local law enforcement, and document results to update response procedures."
+    }
+  ],
+  "generation_rules": {
+    "min_questions_per_family": 1,
+    "min_ofc_candidates_per_family": 1,
+    "require_citation_locator": true
+  }
+}

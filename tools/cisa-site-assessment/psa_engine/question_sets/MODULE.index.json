@@ -1,0 +1,12 @@
+{
+  "layer": "MODULE",
+  "questions_by_module": {
+    "MODULE_PUBLIC_VENUE_CROWD_MANAGEMENT": ["CrowdManagement"],
+    "MODULE_PUBLIC_VENUE_CREDENTIALING": ["Credentialing"],
+    "MODULE_PUBLIC_INFORMATION": ["PublicInformation"],
+    "MODULE_MEDICAL_SUPPORT": ["Medical"],
+    "MODULE_INSIDER_THREAT": ["InsiderThreat", "SuspiciousActivity"]
+  }
+}
+
+

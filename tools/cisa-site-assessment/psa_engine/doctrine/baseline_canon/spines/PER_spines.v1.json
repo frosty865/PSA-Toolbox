@@ -1,0 +1,16 @@
+[
+  {
+    "canon_id": "BASE-PER-001",
+    "discipline_code": "PER",
+    "subtype_code": "PER_VEHICLE_ACCESS_CONTROL_POINTS",
+    "question_text": "Is vehicle access at the site perimeter controlled at designated entry points?",
+    "response_enum": ["YES","NO","N_A"]
+  },
+  {
+    "canon_id": "BASE-PER-002",
+    "discipline_code": "PER",
+    "subtype_code": "PER_PEDESTRIAN_ACCESS_CONTROL_POINTS",
+    "question_text": "Is pedestrian access at the site perimeter controlled at designated entry points?",
+    "response_enum": ["YES","NO","N_A"]
+  }
+]

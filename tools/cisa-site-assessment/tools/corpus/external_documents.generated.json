@@ -1,0 +1,587 @@
+{
+  "documents": [
+    {
+      "document_key": "EXTDOC_6F4D5E02",
+      "source_key": "DOMAIN_7B42E4AB",
+      "url": "http://csrc.nist.gov/publications/nistir/7316/NISTIR-7316.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_428BF0E8",
+      "source_key": "DOMAIN_7B42E4AB",
+      "url": "http://csrc.nist.gov/publications/nistpubs/800-153/sp800-153.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_B8349478",
+      "source_key": "DOMAIN_7B42E4AB",
+      "url": "http://csrc.nist.gov/publications/nistpubs/800-34-rev1/sp800-34-rev1_errata-Nov11-2010.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_B6AB2589",
+      "source_key": "DOMAIN_7B42E4AB",
+      "url": "http://csrc.nist.gov/publications/nistpubs/800-41-Rev1/sp800-41-rev1.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_548B6300",
+      "source_key": "DOMAIN_7B42E4AB",
+      "url": "http://csrc.nist.gov/publications/nistpubs/800-46-rev1/sp800-46r1.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_DF5B2643",
+      "source_key": "DOMAIN_7B42E4AB",
+      "url": "http://csrc.nist.gov/publications/nistpubs/800-84/SP800-84.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_3E72BFE7",
+      "source_key": "DOMAIN_68E0DFD4",
+      "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_5329A6E4",
+      "source_key": "DOMAIN_58214102",
+      "url": "http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-40r3.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_D6DFF915",
+      "source_key": "DOMAIN_58214102",
+      "url": "http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_B263C3B5",
+      "source_key": "DOMAIN_DDDCB15D",
+      "url": "http://texasforestservice.tamu.edu/uploadedFiles/FRP/Predictive_Services/Prepare%20Your%20Home%20for%20Wildfire%20-%20Southwest%20Edition.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_70925E58",
+      "source_key": "DOMAIN_9F3FC7B7",
+      "url": "http://transition.fcc.gov/pshs/docs/clearinghouse/case-studies/ECS-vulnerability-assessment-report.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_8A9E5550",
+      "source_key": "DOMAIN_65053FFF",
+      "url": "http://www.cdc.gov/healthywater/pdf/emergency/emergency-water-supply-planning-guide.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_1CE155AF",
+      "source_key": "DOMAIN_CE10DF15",
+      "url": "http://www.cumminspower.com/www/literature/technicalpapers/PT-7006-Standby-Katrina-en.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_A30E5983",
+      "source_key": "DOMAIN_24E52904",
+      "url": "http://www.dhs.gov/xlibrary/assets/active_shooter_booklet.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_A78FF3F0",
+      "source_key": "DOMAIN_24E52904",
+      "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips- 06.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_39BED3CE",
+      "source_key": "DOMAIN_24E52904",
+      "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_E2BBF3E9",
+      "source_key": "DOMAIN_DDA6BDC7",
+      "url": "http://www.fas.org/irp/doddir/army/attp3-39-32.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_B6BFD101",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/1392984631969-ac57339deb6ee839a52b16b01eeee53e/FEMA_Snow_Load_508.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_815C55ED",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/1395779347101-00feb0d0db4bfdddd331a8026c09cbe8/20140318_PYP_WF_WP_508.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_5DCEE3FE",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/20130726-1454-20490-8914/fema_p_320.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_913DE12E",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_32C70CC4",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/20130726-1508-20490-8283/fema_p_361.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_90DBE17E",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/20130726-1524-20490-7395/fema452_01_05.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_01BCA275",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/20130726-1557-20490-1542/fema543_complete.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_104B9746",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/20130726-1605-20490-6583/fema549_apndx_e_ra7.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_BB82A0C8",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/20130726-1621-20490-0014/earthquakesfactsheet_final.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_926EE3F3",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_E607EE7A",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/20130726-1627-20490-0271/how2012_brace_cripple_walls.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_818D9013",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/20130726-1627-20490-0643/how2022_generator_04_11_r1.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_AF0D3B74",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/20130726-1627-20490-3107/how2020_trees_missiles_4_11.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_0543379B",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/20130726-1627-20490-5339/how2013_sill_plates.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_D8503ACA",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/20130726-1627-20490-7131/how2014_flex_connections.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_18E0EA8A",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/20130726-1627-20490-8875/how2017_how2029_protect_windows_doors_4_11.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_EF33F0D3",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/20130726-1627-20490-9548/how2023_anchor_equip.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_462905C3",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/20130726-1652-20490-4085/fema_p_737.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_A2741364",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/20130726-1715-25045-2934/fema_p_754.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_C40B7B33",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/20130726-1904-25045-0186/fema_mitigation_ideas_final508.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_BBE96903",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/7d8c55d1c4f815edf3d7e7d1c120383f/FEMA957_Snowload_508.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_26424D37",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/media-library-data/9a50c534fc5895799321dcdd4b6083e7/P-936_8-20-13_508r.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_D3E54D17",
+      "source_key": "DOMAIN_2E6123C4",
+      "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_E7135B4B",
+      "source_key": "DOMAIN_80CA5806",
+      "url": "http://www.gao.gov/new.items/d09243.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_F57C0AFD",
+      "source_key": "DOMAIN_DDD24AB7",
+      "url": "http://www.ndsu.edu/fileadmin/emgt/ASIS_SPC.1-2009_Item_No._1842.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_09AE5ABC",
+      "source_key": "DOMAIN_282B1624",
+      "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_D97C1328",
+      "source_key": "DOMAIN_8EC07635",
+      "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_91B549A8",
+      "source_key": "DOMAIN_CD3DF57D",
+      "url": "http://www.nyc.gov/html/nypd/downloads/pdf/counterterrorism/nypd_engineeringsecurity_low_res.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_66E320D5",
+      "source_key": "DOMAIN_808B9E81",
+      "url": "http://www.protiviti.com/en-US/Documents/Resource-Guides/bcm_faq_booklet.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_C4405B4D",
+      "source_key": "DOMAIN_A724153C",
+      "url": "http://www.ready.gov/sites/default/files/documents/files/building_security_in_digital_economy.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_656C18C7",
+      "source_key": "DOMAIN_C2919644",
+      "url": "http://www.usfa.fema.gov/downloads/pdf/publications/fa_287.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_D76CEB04",
+      "source_key": "DOMAIN_53C74AEF",
+      "url": "http://www.wbdg.org/ccb/DOD/UFC/ufc_4_022_03.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_A4D8859E",
+      "source_key": "DOMAIN_1270C2BE",
+      "url": "http://www1.eere.energy.gov/manufacturing/distributedenergy/pdfs/chp_critical_facilities.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_2F422277",
+      "source_key": "DOMAIN_8EAE792B",
+      "url": "https://www.llis.dhs.gov/sites/default/files/DHS-BombThreatChart-6-5-09.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_739CD22C",
+      "source_key": "DOMAIN_53C74AEF",
+      "url": "https://www.wbdg.org/ccb/ARMYCOE/FIELDMAN/fm31930.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    },
+    {
+      "document_key": "EXTDOC_02CD2D99",
+      "source_key": "DOMAIN_808B9E81",
+      "url": "www.protiviti.com/en-US/Documents/Resource-Guides/bcm_faq_booklet.pdf",
+      "file_path": "REPLACE_ME_LOCAL_PATH_TO_DOWNLOADED_PDF",
+      "mime_type": "application/pdf",
+      "source_set": "BASELINE_DOCS",
+      "chunking": {
+        "mode": "pdf_pages"
+      }
+    }
+  ]
+}

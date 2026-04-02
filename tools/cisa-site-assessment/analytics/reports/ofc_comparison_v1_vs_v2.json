@@ -1,0 +1,99 @@
+{
+  "metadata": {
+    "generated_at": "2026-01-13T18:05:37.438028Z",
+    "baseline_v1_description": "All NO responses trigger OFCs (no gate ordering)",
+    "baseline_v2_description": "Gate-ordered evaluation (EXISTS \u2192 OPERABLE \u2192 RESILIENCE)",
+    "total_assessments": 10
+  },
+  "summary": {
+    "total_v1_ofcs": 4,
+    "total_v2_ofcs": 2,
+    "total_delta": -2,
+    "delta_percentage": -50.0
+  },
+  "by_assessment": [
+    {
+      "assessment_id": "test-instance-7b93e23c",
+      "v1_ofc_count": 0,
+      "v2_ofc_count": 0,
+      "delta": 0,
+      "delta_percentage": 0,
+      "by_gate": {}
+    },
+    {
+      "assessment_id": "4fe710a3-2339-4337-a18a-31551bac3c31",
+      "v1_ofc_count": 2,
+      "v2_ofc_count": 0,
+      "delta": -2,
+      "delta_percentage": -100.0,
+      "by_gate": {}
+    },
+    {
+      "assessment_id": "test-instance-aa18cbde",
+      "v1_ofc_count": 0,
+      "v2_ofc_count": 0,
+      "delta": 0,
+      "delta_percentage": 0,
+      "by_gate": {}
+    },
+    {
+      "assessment_id": "test-instance-91bedb9f",
+      "v1_ofc_count": 0,
+      "v2_ofc_count": 0,
+      "delta": 0,
+      "delta_percentage": 0,
+      "by_gate": {}
+    },
+    {
+      "assessment_id": "test-instance-001",
+      "v1_ofc_count": 0,
+      "v2_ofc_count": 0,
+      "delta": 0,
+      "delta_percentage": 0,
+      "by_gate": {}
+    },
+    {
+      "assessment_id": "test-instance-68a40b7c",
+      "v1_ofc_count": 0,
+      "v2_ofc_count": 0,
+      "delta": 0,
+      "delta_percentage": 0,
+      "by_gate": {}
+    },
+    {
+      "assessment_id": "test-instance-22ccf5b0",
+      "v1_ofc_count": 0,
+      "v2_ofc_count": 0,
+      "delta": 0,
+      "delta_percentage": 0,
+      "by_gate": {}
+    },
+    {
+      "assessment_id": "test-instance-f5df6a1e",
+      "v1_ofc_count": 0,
+      "v2_ofc_count": 0,
+      "delta": 0,
+      "delta_percentage": 0,
+      "by_gate": {}
+    },
+    {
+      "assessment_id": "test-instance-4c296c5a",
+      "v1_ofc_count": 0,
+      "v2_ofc_count": 0,
+      "delta": 0,
+      "delta_percentage": 0,
+      "by_gate": {}
+    },
+    {
+      "assessment_id": "cfbfca41-3f8c-4c69-99a8-5b2546910e88",
+      "v1_ofc_count": 2,
+      "v2_ofc_count": 2,
+      "delta": 0,
+      "delta_percentage": 0.0,
+      "by_gate": {
+        "CONTROL_OPERABLE": 1,
+        "CONTROL_EXISTS": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "canon_id": "BASE-ACS-001",
+    "discipline_code": "ACS",
+    "subtype_code": null,
+    "question_text": "Is entry controlled at designated entry points for areas requiring access control?",
+    "response_enum": ["YES","NO","N_A"]
+  }
+]

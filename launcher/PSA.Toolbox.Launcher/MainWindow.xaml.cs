@@ -9,14 +9,78 @@ namespace PSA.Toolbox.Launcher;
 
 public sealed partial class MainWindow : Window
 {
+    private readonly TextBlock _statusText;
+    private readonly ListView _toolsListView;
     private string? _repoRoot;
 
     public MainWindow()
     {
         InitializeComponent();
-        Title = "PSA Toolbox";
+
+        Title = "PSA Toolbox · DHS";
         ExtendsContentIntoTitleBar = false;
+
+        _statusText = new TextBlock
+        {
+            Text = string.Empty,
+            Opacity = 0.75,
+            TextWrapping = TextWrapping.WrapWholeWords,
+            Foreground = (Brush)Application.Current.Resources["DhsDarkGrayBrush"],
+        };
+
+        _toolsListView = new ListView
+        {
+            SelectionMode = ListViewSelectionMode.None,
+            IsItemClickEnabled = false,
+        };
+
+        Content = BuildContent();
         LoadTools();
+    }
+
+    private UIElement BuildContent()
+    {
+        var root = new Grid
+        {
+            Padding = new Thickness(24),
+            RowSpacing = 12,
+            Background = (Brush)Application.Current.Resources["DhsPageBackgroundBrush"],
+        };
+
+        root.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+        root.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+        root.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+
+        var header = new StackPanel { Spacing = 4 };
+        header.Children.Add(new TextBlock
+        {
+            Text = "PSA Toolbox",
+            Style = (Style)Application.Current.Resources["TitleTextBlockStyle"],
+            Foreground = (Brush)Application.Current.Resources["DhsBlueBrush"],
+        });
+        header.Children.Add(new TextBlock
+        {
+            Text = "U.S. Department of Homeland Security",
+            FontSize = 12,
+            FontWeight = Microsoft.UI.Text.FontWeights.SemiBold,
+            Foreground = (Brush)Application.Current.Resources["DhsDarkGrayBrush"],
+            Opacity = 0.95,
+        });
+        header.Children.Add(_statusText);
+        root.Children.Add(header);
+
+        var toolsLabel = new TextBlock
+        {
+            Text = "Tools",
+            Style = (Style)Application.Current.Resources["SubtitleTextBlockStyle"],
+            Foreground = (Brush)Application.Current.Resources["DhsLightBlueBrush"],
+        };
+        Grid.SetRow(toolsLabel, 1);
+        root.Children.Add(toolsLabel);
+
+        Grid.SetRow(_toolsListView, 2);
+        root.Children.Add(_toolsListView);
+        return root;
     }
 
     private void LoadTools()
@@ -24,12 +88,12 @@ public sealed partial class MainWindow : Window
         _repoRoot = ToolboxManifestLoader.FindRepositoryRoot();
         if (_repoRoot is null)
         {
-            StatusText.Text =
+            _statusText.Text =
                 "Could not find the repository root (tools-manifest.json and tools/ folder). Set environment variable PSA_TOOLBOX_ROOT to your clone root, or run from a build output under the cloned repo.";
             return;
         }
 
-        StatusText.Text = _repoRoot;
+        _statusText.Text = _repoRoot;
 
         ToolboxManifestDocument doc;
         try
@@ -38,17 +102,16 @@ public sealed partial class MainWindow : Window
         }
         catch (Exception ex)
         {
-            StatusText.Text = $"Failed to read manifest: {ex.Message}";
+            _statusText.Text = $"Failed to read manifest: {ex.Message}";
             return;
         }
 
         var items = ToolboxManifestLoader.ResolveTools(_repoRoot, doc);
-        ToolsListView.Items.Clear();
+        _toolsListView.Items.Clear();
 
         foreach (var item in items)
         {
-            var card = BuildToolCard(item);
-            ToolsListView.Items.Add(card);
+            _toolsListView.Items.Add(BuildToolCard(item));
         }
     }
 
@@ -88,6 +151,13 @@ public sealed partial class MainWindow : Window
             var start = new Button { Content = "Start (production server)" };
             start.Click += (_, _) => StartPowerShellScript(item.ToolRootFullPath, item.StartScriptFullPath);
             actions.Children.Add(start);
+        }
+
+        if (!string.IsNullOrEmpty(item.ExternalUrl) || !string.IsNullOrEmpty(item.EntryPath))
+        {
+            var openWeb = new Button { Content = "Open in browser" };
+            openWeb.Click += (_, _) => OpenWebUi(item.ExternalUrl, item.EntryPath);
+            actions.Children.Add(openWeb);
         }
 
         stack.Children.Add(actions);
@@ -146,6 +216,40 @@ public sealed partial class MainWindow : Window
                 FileName = "powershell.exe",
                 Arguments = $"-NoProfile -ExecutionPolicy Bypass -File \"{scriptPath}\"",
                 WorkingDirectory = workingDirectory,
+                UseShellExecute = true,
+            });
+        }
+        catch
+        {
+            /* ignore */
+        }
+    }
+
+    /// <summary>Opens a tool URL: <paramref name="externalUrl"/> if set, else <c>PSA_TOOLBOX_WEB_BASE</c> (default <c>http://localhost:3000</c>) + <paramref name="entryPath"/>.</summary>
+    private static void OpenWebUi(string? externalUrl, string? entryPath)
+    {
+        string url;
+        if (!string.IsNullOrWhiteSpace(externalUrl))
+        {
+            url = externalUrl.Trim();
+        }
+        else if (!string.IsNullOrWhiteSpace(entryPath))
+        {
+            var env = Environment.GetEnvironmentVariable("PSA_TOOLBOX_WEB_BASE")?.Trim();
+            var baseUrl = string.IsNullOrEmpty(env) ? "http://localhost:3000" : env.TrimEnd('/');
+            var path = entryPath.StartsWith('/') ? entryPath : "/" + entryPath;
+            url = $"{baseUrl}{path}";
+        }
+        else
+        {
+            return;
+        }
+
+        try
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = url,
                 UseShellExecute = true,
             });
         }

@@ -1,0 +1,9 @@
+[
+  {
+    "canon_id": "INT-001",
+    "discipline_code": "INT",
+    "subtype_code": "INT_ACCESS_RESTRICTED_AREAS",
+    "question_text": "Are restricted areas controlled at their entry points?",
+    "response_enum": ["YES", "NO", "N_A"]
+  }
+]

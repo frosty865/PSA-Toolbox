@@ -1,0 +1,31 @@
+{
+  "baseline": {
+    "disciplines": [
+      {
+        "discipline_name": "Security Management & Governance",
+        "total": 5,
+        "yes": 2,
+        "no": 1,
+        "na": 0,
+        "percent": 66.7,
+        "subtypes": []
+      }
+    ],
+    "summary": {
+      "total": 5,
+      "yes": 2,
+      "no": 1,
+      "na": 0,
+      "percent": 66.7
+    },
+    "findings": [
+      {
+        "element_code": "BASE-003",
+        "title": "Written Security Policy",
+        "discipline": "Security Management & Governance",
+        "subtype": null
+      }
+    ]
+  },
+  "sector": null
+}

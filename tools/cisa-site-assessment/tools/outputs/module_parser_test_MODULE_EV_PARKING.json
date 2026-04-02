@@ -1,0 +1,33 @@
+{
+  "module_code": "security_threat_analysis",
+  "module_title": "Security Threat Analysis for Electric Vehicle Charging Infrastructure",
+  "module_kind": "OBJECT",
+  "items": [
+    {
+      "question": "What are the security objectives for electric vehicle charging infrastructure?",
+      "finding": "The security objectives for electric vehicle charging infrastructure are derived from ISO/IEC 27002:2022 and IEC 62443 standards.",
+      "ofcs": [
+        "5.1 Organizational controls",
+        "5.3 Business continuity"
+      ],
+      "source_chunk_id": "e1e92bbe-f198-4d52-81f3-6e9c18d6ce00",
+      "source_file": "encs.eu  ev 111 security threat analysis for ev ci 2024v0 3 yswihgaajr",
+      "page_range": "27",
+      "id": "78",
+      "evidence_excerpt": "The objectives are derived from the controls in ISO/IEC 27002:2022 [3]. For the organizational and people controls, the controls themselves are used as objectives. The physical and technological controls are refined into more detailed objectives for the central system, charging station, and operational environment, as shown in Figure 3, as the aim of this document is in the end to define technical security requirements for EV charging infrastructures in [1].\","
+    },
+    {
+      "question": "What are the specific organizational controls implemented by the charge point operator?",
+      "finding": "The charge point operator should implement at least the following organizational objectives from ISO/IEC 27002:2022 in the operational environment to mitigate the threats:",
+      "ofcs": [
+        "5-SO1 Access control processes",
+        "5-SO3 Business continuity"
+      ],
+      "source_chunk_id": "f2bd1de1-9ffc-4526-88f0-ab07d0b68500",
+      "source_file": "encs.eu  ev 111 security threat analysis for ev ci 2024v0 3 yswihgaajr",
+      "page_range": "27",
+      "id": "80",
+      "evidence_excerpt": "The charge point operator should implement at least the following organizational objectives from ISO/IEC 27002:2022 in the operational environment to mitigate the threats:"
+    }
+  ]
+}

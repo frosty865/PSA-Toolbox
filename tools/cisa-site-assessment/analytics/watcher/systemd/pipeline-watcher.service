@@ -1,0 +1,30 @@
+[Unit]
+Description=PSA Pipeline Watcher - Deterministic Intake Controller
+After=network.target postgresql.service
+Wants=postgresql.service
+
+[Service]
+Type=simple
+User=psa
+Group=psa
+WorkingDirectory=/opt/psa/analytics/watcher
+Environment="PYTHONPATH=/opt/psa"
+Environment="PATH=/opt/psa/venv/bin:/usr/local/bin:/usr/bin:/bin"
+ExecStart=/opt/psa/venv/bin/python /opt/psa/analytics/watcher/pipeline_watcher.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=pipeline-watcher
+
+# Resource limits
+LimitNOFILE=65536
+MemoryMax=512M
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
+

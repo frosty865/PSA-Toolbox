@@ -1,0 +1,4 @@
+# Python deps for Vercel serverless api/render_docx.py (reporter)
+python-docx>=1.0.0
+matplotlib>=3.7.0
+Pillow>=9.0.0

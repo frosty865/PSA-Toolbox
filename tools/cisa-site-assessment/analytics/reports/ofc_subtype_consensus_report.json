@@ -1,0 +1,21 @@
+{
+  "mode": "APPLY",
+  "min_support": 3,
+  "consensus_threshold": 0.6,
+  "ofcs_scanned": 5856,
+  "ofcs_with_candidates": 303,
+  "enriched_count": 1,
+  "skipped_counts": {
+    "low_consensus": 45,
+    "insufficient_support": 257
+  },
+  "enriched_ofcs": [
+    {
+      "ofc_id": "a46a16ef-5576-49a4-8101-d8bc9e419a4d",
+      "subtype_id": "3c34ff6f-8aa3-4125-892a-fc772e97d50b",
+      "consensus_ratio": 0.6666666666666666,
+      "support_count": 2,
+      "total_votes": 3
+    }
+  ]
+}

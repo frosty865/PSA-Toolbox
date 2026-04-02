@@ -1,0 +1,642 @@
+[
+  {
+    "candidate_id": "580a72f5-89dc-4532-ba01-05d646acc733",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q001",
+    "question_text": "What are the aspects of a secure credentialing program?"
+  },
+  {
+    "candidate_id": "5079fb3b-6fcb-4f9e-8fae-0316245587df",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q002",
+    "question_text": "What types of credentials exist?"
+  },
+  {
+    "candidate_id": "fa7220e1-a828-4284-b95c-52d67b356a36",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q003",
+    "question_text": "unlocked? Should any locks be reassessed?"
+  },
+  {
+    "candidate_id": "72c2e53b-0c4b-43ae-af65-143144c068e4",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q004",
+    "question_text": "protocol differ during regular business hours?"
+  },
+  {
+    "candidate_id": "bdd47004-9c0a-44a4-88b8-d7b88b8ecf47",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q005",
+    "question_text": "What are your practices around visitor access?"
+  },
+  {
+    "candidate_id": "e1aa02de-557e-4db6-b042-c65f8d6c8ab5",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q006",
+    "question_text": "What are your hours of operation for your patrons and staff?"
+  },
+  {
+    "candidate_id": "d4dd4cd2-df30-40c0-a705-f7f0425da808",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q007",
+    "question_text": "Consider how to report incidents: Do people call an internal operations center or 9-1-1?"
+  },
+  {
+    "candidate_id": "4b7b4e18-9b58-408e-842d-6b1ba9e69dab",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q008",
+    "question_text": "organization’s policies last updated?"
+  },
+  {
+    "candidate_id": "b9e03309-72c0-45a4-8b51-dcfd84e4c06e",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q009",
+    "question_text": "threats to the organization and the surrounding community?"
+  },
+  {
+    "candidate_id": "7b12819a-e402-4b69-9c43-38e49d85557b",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q010",
+    "question_text": "(CCTV) technology in the event of an armed or hostage-taking incident?"
+  },
+  {
+    "candidate_id": "cf57ea7f-8859-4585-95c7-70d5aaea93eb",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q011",
+    "question_text": "insider threat information?"
+  },
+  {
+    "candidate_id": "0dff7e4b-2bf6-4227-9a04-c2946cb71724",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q012",
+    "question_text": "of concerning behavior and/or suspicious activity?"
+  },
+  {
+    "candidate_id": "000a803f-7f19-47e0-be9f-3647c5bcfaab",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q013",
+    "question_text": "What potential security threats have your employees expressed concern about?"
+  },
+  {
+    "candidate_id": "ab38b9bc-6fbf-49bb-be5b-bf433acdea97",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q014",
+    "question_text": "security vulnerabilities?"
+  },
+  {
+    "candidate_id": "18a947d5-2d99-43d8-98de-fc7fcdcb6fa0",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q015",
+    "question_text": "Do you have a public relations manager to control communication with media during an event?"
+  },
+  {
+    "candidate_id": "182dab47-a5a8-4b1a-9c9a-5984d22c5c07",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q016",
+    "question_text": "What man-made or external threats could hurt your organization, facility, staff, and/or customers?"
+  },
+  {
+    "candidate_id": "6f0e1bd0-224d-4196-b5e1-59a92c6ce8fd",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q017",
+    "question_text": "Have you conducted a vulnerability assessment in the past?"
+  },
+  {
+    "candidate_id": "0d4d651d-61c3-4b2d-9a78-c988401a6b2d",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q018",
+    "question_text": "people / processes / security systems to deter, detect, delay, or defend against a potential threat?"
+  },
+  {
+    "candidate_id": "a6618b8b-ac4f-44f4-8304-660de8185943",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q019",
+    "question_text": "What are the most likely threats to your organization?"
+  },
+  {
+    "candidate_id": "127352ce-05fa-42bb-aa6a-a8ac37a3501e",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q020",
+    "question_text": "Which vulnerabilities should be prioritized ahead of others?"
+  },
+  {
+    "candidate_id": "d3559002-4271-4819-9f91-6d755416621f",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q021",
+    "question_text": "What is the likelihood of any given threat to occur?"
+  },
+  {
+    "candidate_id": "03a69cfd-e30b-4e3c-9932-38763dd22ced",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q022",
+    "question_text": "greatest danger(s) to your organization?"
+  },
+  {
+    "candidate_id": "24c9ffb3-da05-4f62-a374-40c3c5905003",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q023",
+    "question_text": "What is your organization’s willingness to accept the associated consequences of each risk?"
+  },
+  {
+    "candidate_id": "a0a5a26e-731e-4875-b8c3-0f29fe816874",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q024",
+    "question_text": "What is your organization’s attitude toward security practices?"
+  },
+  {
+    "candidate_id": "6fb49e21-e354-430d-aaf7-67ee87795bbf",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q025",
+    "question_text": "What personnel resources do you have to direct, manage, and oversee security operations?"
+  },
+  {
+    "candidate_id": "82d6ee5b-dfc0-4e18-b9e1-5a3d817f78c7",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q026",
+    "question_text": "What is your budget to support security initiatives, both immediate and long-term?"
+  },
+  {
+    "candidate_id": "e5f9340b-e305-4c53-926a-77d31b57df69",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q027",
+    "question_text": "How will you maintain lines of communication during an emergency incident and recovery efforts?"
+  },
+  {
+    "candidate_id": "905fec6e-629d-4f77-83b2-dc203704d64c",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q028",
+    "question_text": "How will you sustain the most essential business functions?"
+  },
+  {
+    "candidate_id": "c3539b83-9b23-4a90-8d2a-546e00b59087",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q029",
+    "question_text": "How will you protect critical information, records, and IT systems?"
+  },
+  {
+    "candidate_id": "4056ec6c-a3c0-48ec-a275-5fda57db480f",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q030",
+    "question_text": "Kroman, David. “How often do cars crash into buildings in Seattle? Way more than you think.” Seattle Times. February 12, 2023."
+  },
+  {
+    "candidate_id": "b50464a6-34b7-47f0-99e1-b3e80f5de5f2",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q031",
+    "question_text": "Does the tool collect my information?"
+  },
+  {
+    "candidate_id": "612c3c62-f9c9-48af-8ac3-6a710b015a83",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q032",
+    "question_text": "separated from vehicular traffic?"
+  },
+  {
+    "candidate_id": "94c7814d-6b35-4963-bc69-06b327d1e7e8",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q033",
+    "question_text": "■ What angles of attack could a vehicle use to harm my infrastructure?"
+  },
+  {
+    "candidate_id": "c853025c-3e0d-4c9b-b17d-0d22a7381679",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q034",
+    "question_text": "■ Are there any natural vehicle barriers already in place?"
+  },
+  {
+    "candidate_id": "d243da7f-c8d7-4b66-b6a6-c5607e4cccd5",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q035",
+    "question_text": "■ Are there any delivery vehicle access points?"
+  },
+  {
+    "candidate_id": "60947acc-fd58-40fe-8280-540ca1f8e2f6",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q036",
+    "question_text": "■ Where are vehicle parking spots, lots, or garages?"
+  },
+  {
+    "candidate_id": "930c45f2-f716-411f-9fcc-52dcb6e6a08c",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q037",
+    "question_text": "■ Are there security guards at entry control points?"
+  },
+  {
+    "candidate_id": "73fc32da-15b6-4558-b5b9-84a3cd97989e",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q038",
+    "question_text": "■ Is there an entry control point for vehicles? If so, how far from infrastructure is it located?"
+  },
+  {
+    "candidate_id": "9435e5d0-7344-4810-86f5-f7d5a22b16b3",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q039",
+    "question_text": "■ What is the maximum speed a vehicle could attain going over the land?"
+  },
+  {
+    "candidate_id": "09941e48-3ae4-4f46-8385-93630b5eefd2",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q040",
+    "question_text": "■ What types of vehicles could traverse the land?"
+  },
+  {
+    "candidate_id": "7568d40f-7487-4a8f-8483-9b25bf3bc240",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q041",
+    "question_text": "■ Is my land, the adjacent land, or the surrounding land traversable by vehicles?"
+  },
+  {
+    "candidate_id": "1b47c648-211e-420e-9fa6-ea832a447ca5",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q042",
+    "question_text": "■ Are there any traffic-calming areas?"
+  },
+  {
+    "candidate_id": "d1efb56a-ba93-478e-b817-1d7ab159181b",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q043",
+    "question_text": "Figure 4. What is the Vehicle Ramming Self-Assessment Tool?"
+  },
+  {
+    "candidate_id": "e9230d14-f0c2-497c-ba68-0ca06801b4b8",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q044",
+    "question_text": "How can I access the tool?"
+  },
+  {
+    "candidate_id": "06d6b2e5-72b4-4737-a490-7ef74b381ea8",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q045",
+    "question_text": "Conduct a consequence analysis. What could happen? How bad could it be?"
+  },
+  {
+    "candidate_id": "e5dfc97c-9198-452d-a7d4-ebac6704421b",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q046",
+    "question_text": "Does the venue own or control the asset? If not, is the owner known?"
+  },
+  {
+    "candidate_id": "bfa6e811-e3aa-44e8-9814-0e38f8f94bc1",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q047",
+    "question_text": "Is this a place where people gather?"
+  },
+  {
+    "candidate_id": "b9c183fe-4519-4a63-ba26-fb3fd9b9b08d",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q048",
+    "question_text": "Are procedures in place to manage pedestrian traffic?"
+  },
+  {
+    "candidate_id": "ebe8fe94-6885-4ad1-ab55-dacf41fcdec3",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q049",
+    "question_text": "Are procedures in place to separate vehicle traffic from pedestrian traffic?"
+  },
+  {
+    "candidate_id": "21414547-aef6-43aa-9465-7d51f8b47840",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q050",
+    "question_text": "If an evacuation or shelter-in-place plan exists, does it cover this area?"
+  },
+  {
+    "candidate_id": "ec038e69-07b5-48f7-81e5-c99bcfc7254a",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q051",
+    "question_text": "controlled area) are in place for this area?"
+  },
+  {
+    "candidate_id": "220c0139-4c42-4934-bc93-4f10e600ed21",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q052",
+    "question_text": "How is command structure established?"
+  },
+  {
+    "candidate_id": "204b17cd-5a19-4159-ac89-1d6c7367b75a",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q053",
+    "question_text": "What type of command structure has been established?"
+  },
+  {
+    "candidate_id": "aa939204-1fa0-4a78-a409-0c776abf7a06",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q054",
+    "question_text": "Does the event or gathering have a written security or emergency operations plan(s)?"
+  },
+  {
+    "candidate_id": "c5b8beb5-5267-45ed-94e4-42012ba2cd3f",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q055",
+    "question_text": "What systems are in place to support mass notification at the event?"
+  },
+  {
+    "candidate_id": "ad2ea183-489e-47ca-93f4-3fd20778b700",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q056",
+    "question_text": "Will event planners conduct or receive a threat assessment prior to the event?"
+  },
+  {
+    "candidate_id": "59995cd4-57ee-481a-b46f-b292e43fa331",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q057",
+    "question_text": "Has the policy been coordinated with first responders?"
+  },
+  {
+    "candidate_id": "520f8b1d-4198-4d6d-9746-a5c3503473d8",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q058",
+    "question_text": "Does a protocol for assisting a lost child/lost person exist?"
+  },
+  {
+    "candidate_id": "d4c6a589-71e7-4903-a153-8040da3cca12",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q059",
+    "question_text": "If yes, does a policy for addressing violations exist?"
+  },
+  {
+    "candidate_id": "a7373a0a-360f-4895-84c3-a603349a5c95",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q060",
+    "question_text": "Does a policy regarding unmanned aerial systems exist?"
+  },
+  {
+    "candidate_id": "00c54f5b-9aaa-4230-9619-bbbe6accb1f2",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q061",
+    "question_text": "Is the shelter big enough for everyone and safe enough for the most likely hazards?"
+  },
+  {
+    "candidate_id": "e2f8d8f0-3c07-471a-82e2-3ea33a51da49",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q062",
+    "question_text": "Have event planners developed an evacuation and/or shelter-in-place plan?"
+  },
+  {
+    "candidate_id": "601da8f4-5947-4ccf-9d9f-ab9a1c77eb09",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q063",
+    "question_text": "Are the plans trained or exercised?"
+  },
+  {
+    "candidate_id": "241722ee-266a-4ab2-9de5-099abb933acf",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q064",
+    "question_text": "Who conducts security and safety inspections?"
+  },
+  {
+    "candidate_id": "37a70918-8753-490a-b84d-fc2ffbcba71c",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q065",
+    "question_text": "Does a process exist to inspect the venue for suspicious items prior to the event?"
+  },
+  {
+    "candidate_id": "ac4458e4-67ed-4495-979b-3ee9c83cbe62",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q066",
+    "question_text": "Is this a recurring event?"
+  },
+  {
+    "candidate_id": "4ce23e5f-537a-4425-8012-181c1e99f6b5",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q067",
+    "question_text": "Are employees, volunteers, vendors, spectators, and participants permitted to carry firearms?"
+  },
+  {
+    "candidate_id": "09aa37ef-9687-47da-b148-a31a73db518c",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q068",
+    "question_text": "Are off-duty officers permitted to retain firearms?"
+  },
+  {
+    "candidate_id": "e6064370-7102-4c71-90c7-f073e17a7cbd",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q069",
+    "question_text": "How is the perimeter of the event defined?"
+  },
+  {
+    "candidate_id": "8b143721-27a4-40e8-8e4b-4cc0c1887d88",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q070",
+    "question_text": "Do security planners use multiple layers of protection to enhance perimeter security at the event?"
+  },
+  {
+    "candidate_id": "d7c6db23-e9da-4d0a-886e-d6da7604f3ca",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q071",
+    "question_text": "Does the venue have a high-speed avenue of approach?"
+  },
+  {
+    "candidate_id": "48ce2c58-08ae-4007-8397-e306f5da5ebc",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q072",
+    "question_text": "Are layers of entry control established?"
+  },
+  {
+    "candidate_id": "582441af-e313-4a72-be6b-b37582767095",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q073",
+    "question_text": "slated to occur inside a building, has the building been designed to host this type of event safely?"
+  },
+  {
+    "candidate_id": "41d648d4-d29c-43f9-887f-b0676ac8956c",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q074",
+    "question_text": "located nearby? Will participants arrive early to tailgate or celebrate afterwards?"
+  },
+  {
+    "candidate_id": "e7f191d6-167c-47d0-918d-c9a4817017ca",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q075",
+    "question_text": "What is the expected crowd density?"
+  },
+  {
+    "candidate_id": "b691b54d-2417-4001-8bc5-3370f92695fe",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q076",
+    "question_text": "Who will be attending the event?"
+  },
+  {
+    "candidate_id": "948618c1-af91-42a4-a6e0-90174edf9735",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q077",
+    "question_text": "Will alcohol consumption be permitted?"
+  },
+  {
+    "candidate_id": "71d79281-0ffe-44fc-93b1-59f2be8989e8",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q078",
+    "question_text": "Can patrons bring alcohol into the event?"
+  },
+  {
+    "candidate_id": "af33c201-107a-425e-a5ce-325f4e1b1c0c",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q079",
+    "question_text": "Has the alcohol policy been coordinated with first responders?"
+  },
+  {
+    "candidate_id": "8399a4e3-1331-476f-93a5-f28f08feb0d0",
+    "expansion_version": "EXPANSION_QUESTIONS_V1",
+    "scope_type": "SUBSECTOR",
+    "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+    "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q080",
+    "question_text": "Can the event cease alcohol sales during the event?"
+  }
+]

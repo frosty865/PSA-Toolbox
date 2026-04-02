@@ -1,0 +1,496 @@
+{
+  "section": "Video Surveillance Systems (VSS)",
+  "category": "Security Systems",
+  "location": "ALT_SAFE_Assessment.html, lines ~3491-3817",
+  "description": "Complete extraction of the Video Surveillance Systems section including parent/child questions, all components, OFCs, visibility logic, and scoring rules",
+  
+  "question_groups_reference": {
+    "note": "Defined in JavaScript at lines 6706, 7203, 9432",
+    "code": "const questionGroups = [\n  { name: 'Security Systems', questions: ['VideoSystemType', 'VideoAnalytics', 'VideoCoverage', 'VideoMonitoring', 'VideoRecording', 'IntrusionDetection', 'AlarmMonitoring', 'SystemIntegration'] }\n];"
+  },
+
+  "questions": [
+    {
+      "id": "VideoSystemType",
+      "type": "parent_question",
+      "title": "1. Video Surveillance Systems (VSS)",
+      "question_text": "What type of video surveillance system do you have?",
+      "answer_options": [
+        {
+          "value": "digital",
+          "label": "Digital/IP-based system",
+          "field_id": "VideoSystemTypeDigital",
+          "onchange": "toggleVideoAnalytics('digital')"
+        },
+        {
+          "value": "analog",
+          "label": "Analog system",
+          "field_id": "VideoSystemTypeAnalog",
+          "onchange": "toggleVideoAnalytics('analog')"
+        },
+        {
+          "value": "hybrid",
+          "label": "Hybrid system (mix of digital and analog)",
+          "field_id": "VideoSystemTypeHybrid",
+          "onchange": "toggleVideoAnalytics('hybrid')"
+        },
+        {
+          "value": "none",
+          "label": "No video surveillance system",
+          "field_id": "VideoSystemTypeNone",
+          "onchange": "toggleVideoAnalytics('none')"
+        },
+        {
+          "value": "na",
+          "label": "N/A",
+          "field_id": "VideoSystemTypeNA",
+          "onchange": "toggleVideoAnalytics('na')"
+        }
+      ],
+      "components": [],
+      "options_for_consideration": [
+        {
+          "id": "VideoSurveillanceNoOFC1",
+          "text": "Explore the feasibility of installing a comprehensive video surveillance system onsite. Site-specific factors must be considered when selecting components that comprise a particular system."
+        },
+        {
+          "id": "VideoSurveillanceNoOFC2",
+          "text": "Consult Reference Manual to Mitigate Potential Terrorist Attacks Against Buildings (FEMA 426/BIPS 06), available at https://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf, for more information."
+        }
+      ],
+      "visibility_logic": {
+        "function": "toggleVideoAnalytics(systemType)",
+        "description": "Controls visibility of child question VideoAnalytics",
+        "rules": {
+          "digital": "Shows VideoAnalyticsSection (child question becomes visible)",
+          "hybrid": "Shows VideoAnalyticsSection (child question becomes visible)",
+          "analog": "Hides VideoAnalyticsSection (child question hidden)",
+          "none": "Hides VideoAnalyticsSection (child question hidden)",
+          "na": "Hides VideoAnalyticsSection (child question hidden)"
+        }
+      },
+      "scoring": {
+        "note": "VideoSystemType itself has no components, so it doesn't contribute to standards met/lost",
+        "impact": "Affects visibility of VideoAnalytics question, which does contribute to scoring"
+      }
+    },
+    {
+      "id": "VideoAnalytics",
+      "type": "child_question",
+      "parent": "VideoSystemType",
+      "title": "Video Analytics Capabilities",
+      "question_text": "Does your system include video analytics capabilities?",
+      "conditional_visibility": {
+        "depends_on": "VideoSystemType",
+        "visible_when": ["digital", "hybrid"],
+        "hidden_when": ["analog", "none", "na"]
+      },
+      "answer_options": [
+        {
+          "value": "yes",
+          "label": "Yes",
+          "field_id": "VideoAnalyticsYes",
+          "onchange": "toggleVideoAnalyticsDetails('yes')"
+        },
+        {
+          "value": "no",
+          "label": "No",
+          "field_id": "VideoAnalyticsNo",
+          "onchange": "toggleVideoAnalyticsDetails('no')"
+        },
+        {
+          "value": "na",
+          "label": "N/A",
+          "field_id": "VideoAnalyticsNA",
+          "onchange": "toggleVideoAnalyticsDetails('na')",
+          "note": "N/A option is hidden for digital/hybrid systems (logic error prevention)"
+        }
+      ],
+      "components": [
+        {
+          "id": "VideoAnalyticsComp1",
+          "number": 1,
+          "text": "Motion Detection – automated alerts for movement in designated areas"
+        },
+        {
+          "id": "VideoAnalyticsComp2",
+          "number": 2,
+          "text": "Intrusion Detection – monitoring restricted areas for unauthorized entry"
+        },
+        {
+          "id": "VideoAnalyticsComp3",
+          "number": 3,
+          "text": "Object Left Behind Detection – alerting when items are placed and left unattended"
+        },
+        {
+          "id": "VideoAnalyticsComp4",
+          "number": 4,
+          "text": "People Counting – tracking the number of individuals in defined zones"
+        },
+        {
+          "id": "VideoAnalyticsComp5",
+          "number": 5,
+          "text": "Line Crossing Detection – alerts when people cross defined virtual boundaries"
+        },
+        {
+          "id": "VideoAnalyticsComp6",
+          "number": 6,
+          "text": "Loitering Detection – identifying individuals lingering in sensitive areas"
+        },
+        {
+          "id": "VideoAnalyticsComp7",
+          "number": 7,
+          "text": "Tailgating Detection – alerting when multiple people enter on single authorization"
+        },
+        {
+          "id": "VideoAnalyticsComp8",
+          "number": 8,
+          "text": "License Plate Recognition (LPR) – automated reading of vehicle license plates"
+        },
+        {
+          "id": "VideoAnalyticsComp9",
+          "number": 9,
+          "text": "Vehicle Analytics – vehicle counting and parking monitoring"
+        },
+        {
+          "id": "VideoAnalyticsComp10",
+          "number": 10,
+          "text": "Fire & Smoke Detection – early warning through video-based recognition"
+        },
+        {
+          "id": "VideoAnalyticsComp11",
+          "number": 11,
+          "text": "Heat Mapping – visualizing movement patterns for facility optimization"
+        },
+        {
+          "id": "VideoAnalyticsComp12",
+          "number": 12,
+          "text": "Facial Recognition – identifying individuals against watchlists (if legally compliant)"
+        }
+      ],
+      "options_for_consideration": [
+        {
+          "id": "VideoAnalyticsNoOFC1",
+          "number": 1,
+          "text": "Consider upgrading to a digital/IP-based system to enable advanced video analytics capabilities"
+        },
+        {
+          "id": "VideoAnalyticsNoOFC2",
+          "number": 2,
+          "text": "Evaluate the cost-benefit of implementing video analytics for your specific security requirements"
+        },
+        {
+          "id": "VideoAnalyticsNoOFC3",
+          "number": 3,
+          "text": "Consult with security system integrators about available analytics solutions for your facility"
+        }
+      ],
+      "visibility_logic": {
+        "function": "toggleVideoAnalyticsDetails(answer)",
+        "description": "Controls visibility of components and OFCs based on VideoAnalytics answer",
+        "rules": {
+          "yes": "Shows VideoAnalyticsCapabilities (12 components), hides VideoAnalyticsNoDetails",
+          "no": "Hides VideoAnalyticsCapabilities, shows VideoAnalyticsNoDetails (3 OFCs)",
+          "na": "Hides both VideoAnalyticsCapabilities and VideoAnalyticsNoDetails"
+        }
+      },
+      "scoring": {
+        "standards_met": "Count of checked VideoAnalyticsComp1-12 when answer='yes'",
+        "standards_lost": "Count of all 12 components when answer='no'",
+        "total_standards": "12 (if answer is 'yes' or 'no')",
+        "enhancement_opportunities": "Count of unchecked components when answer='yes'"
+      }
+    },
+    {
+      "id": "VideoCoverage",
+      "type": "standard_question",
+      "title": "2. Video Surveillance Coverage",
+      "question_text": "Does your video surveillance system provide adequate coverage of critical areas?",
+      "answer_options": [
+        {
+          "value": "yes",
+          "label": "Yes",
+          "field_id": "VideoCoverageYes",
+          "onchange": "toggleQuestionDetails('VideoCoverage', 'yes')"
+        },
+        {
+          "value": "no",
+          "label": "No",
+          "field_id": "VideoCoverageNo",
+          "onchange": "toggleQuestionDetails('VideoCoverage', 'no')"
+        },
+        {
+          "value": "na",
+          "label": "N/A",
+          "field_id": "VideoCoverageNA",
+          "onchange": "toggleQuestionDetails('VideoCoverage', 'na')"
+        }
+      ],
+      "components": [
+        {
+          "id": "VideoCoverageComp1",
+          "number": 1,
+          "text": "Perimeter surveillance coverage"
+        },
+        {
+          "id": "VideoCoverageComp2",
+          "number": 2,
+          "text": "Entry and exit point monitoring"
+        },
+        {
+          "id": "VideoCoverageComp3",
+          "number": 3,
+          "text": "Parking area surveillance"
+        },
+        {
+          "id": "VideoCoverageComp4",
+          "number": 4,
+          "text": "Critical asset monitoring"
+        }
+      ],
+      "options_for_consideration": [
+        {
+          "id": "VideoCoverageNoOFC1",
+          "number": 1,
+          "text": "Evaluate video surveillance coverage of critical areas to determine if it meets the facility's security requirements. Explore options to increase coverage as necessary."
+        },
+        {
+          "id": "VideoCoverageNoOFC2",
+          "number": 2,
+          "text": "Install cameras in areas such as the main entrance, at all vehicle access control points, guard booths, cashier booths, and elevator lobbies on every floor."
+        }
+      ],
+      "visibility_logic": {
+        "function": "toggleQuestionDetails('VideoCoverage', answer)",
+        "rules": {
+          "yes": "Shows VideoCoverageDetails (4 components), hides VideoCoverageNoDetails",
+          "no": "Hides VideoCoverageDetails, shows VideoCoverageNoDetails (2 OFCs)",
+          "na": "Hides both sections"
+        }
+      },
+      "scoring": {
+        "standards_met": "Count of checked VideoCoverageComp1-4 when answer='yes'",
+        "standards_lost": "Count of all 4 components when answer='no'",
+        "total_standards": "4 (if answer is 'yes' or 'no')",
+        "enhancement_opportunities": "Count of unchecked components when answer='yes'"
+      }
+    },
+    {
+      "id": "VideoMonitoring",
+      "type": "standard_question",
+      "title": "3. Video Surveillance Monitoring",
+      "question_text": "Does your facility use real-time monitoring for the video surveillance system?",
+      "answer_options": [
+        {
+          "value": "yes",
+          "label": "Yes",
+          "field_id": "VideoMonitoringYes",
+          "onchange": "toggleQuestionDetails('VideoMonitoring', 'yes')"
+        },
+        {
+          "value": "no",
+          "label": "No",
+          "field_id": "VideoMonitoringNo",
+          "onchange": "toggleQuestionDetails('VideoMonitoring', 'no')"
+        },
+        {
+          "value": "na",
+          "label": "N/A",
+          "field_id": "VideoMonitoringNA",
+          "onchange": "toggleQuestionDetails('VideoMonitoring', 'na')"
+        }
+      ],
+      "components": [
+        {
+          "id": "VideoMonitoringComp1",
+          "number": 1,
+          "text": "Dedicated monitoring staff"
+        },
+        {
+          "id": "VideoMonitoringComp2",
+          "number": 2,
+          "text": "24/7 monitoring coverage"
+        },
+        {
+          "id": "VideoMonitoringComp3",
+          "number": 3,
+          "text": "Response procedures for suspicious activity"
+        }
+      ],
+      "options_for_consideration": [
+        {
+          "id": "VideoMonitoringNoOFC1",
+          "number": 1,
+          "text": "Implement real-time monitoring capabilities for video surveillance systems to enable immediate response to security incidents."
+        }
+      ],
+      "visibility_logic": {
+        "function": "toggleQuestionDetails('VideoMonitoring', answer)",
+        "rules": {
+          "yes": "Shows VideoMonitoringDetails (3 components), hides VideoMonitoringNoDetails",
+          "no": "Hides VideoMonitoringDetails, shows VideoMonitoringNoDetails (1 OFC)",
+          "na": "Hides both sections"
+        }
+      },
+      "scoring": {
+        "standards_met": "Count of checked VideoMonitoringComp1-3 when answer='yes'",
+        "standards_lost": "Count of all 3 components when answer='no'",
+        "total_standards": "3 (if answer is 'yes' or 'no')",
+        "enhancement_opportunities": "Count of unchecked components when answer='yes'"
+      }
+    },
+    {
+      "id": "VideoRecording",
+      "type": "standard_question",
+      "title": "4. Video Recording and Storage",
+      "question_text": "Does your video surveillance system record and store video footage?",
+      "answer_options": [
+        {
+          "value": "yes",
+          "label": "Yes",
+          "field_id": "VideoRecordingYes",
+          "onchange": "toggleQuestionDetails('VideoRecording', 'yes')"
+        },
+        {
+          "value": "no",
+          "label": "No",
+          "field_id": "VideoRecordingNo",
+          "onchange": "toggleQuestionDetails('VideoRecording', 'no')"
+        },
+        {
+          "value": "na",
+          "label": "N/A",
+          "field_id": "VideoRecordingNA",
+          "onchange": "toggleQuestionDetails('VideoRecording', 'na')"
+        }
+      ],
+      "components": [
+        {
+          "id": "VideoRecordingComp1",
+          "number": 1,
+          "text": "Adequate recording duration and quality"
+        },
+        {
+          "id": "VideoRecordingComp2",
+          "number": 2,
+          "text": "Secure storage and backup systems"
+        },
+        {
+          "id": "VideoRecordingComp3",
+          "number": 3,
+          "text": "Video retention policies and procedures"
+        }
+      ],
+      "options_for_consideration": [
+        {
+          "id": "VideoRecordingNoOFC1",
+          "number": 1,
+          "text": "Evaluate the need to record video surveillance footage, and select video recording and storage systems for the facility as appropriate."
+        }
+      ],
+      "visibility_logic": {
+        "function": "toggleQuestionDetails('VideoRecording', answer)",
+        "rules": {
+          "yes": "Shows VideoRecordingDetails (3 components), hides VideoRecordingNoDetails",
+          "no": "Hides VideoRecordingDetails, shows VideoRecordingNoDetails (1 OFC)",
+          "na": "Hides both sections"
+        }
+      },
+      "scoring": {
+        "standards_met": "Count of checked VideoRecordingComp1-3 when answer='yes'",
+        "standards_lost": "Count of all 3 components when answer='no'",
+        "total_standards": "3 (if answer is 'yes' or 'no')",
+        "enhancement_opportunities": "Count of unchecked components when answer='yes'"
+      }
+    }
+  ],
+
+  "javascript_functions": {
+    "toggleVideoAnalytics": {
+      "location": "Lines 5670-5728",
+      "function_signature": "window.toggleVideoAnalytics = function(systemType, skipReset = false)",
+      "description": "Controls visibility of VideoAnalytics child question based on VideoSystemType selection",
+      "code": "if (systemType === 'digital' || systemType === 'hybrid') {\n  // Show video analytics section\n  videoAnalyticsSection.style.display = 'block';\n  // Hide N/A option (not logical for digital/hybrid)\n  videoAnalyticsNA.style.display = 'none';\n} else {\n  // Hide video analytics section for analog/none/na\n  videoAnalyticsSection.style.display = 'none';\n  videoAnalyticsCapabilities.style.display = 'none';\n  videoAnalyticsNoDetails.style.display = 'none';\n}",
+      "logic": {
+        "digital": "Shows VideoAnalyticsSection, hides N/A option",
+        "hybrid": "Shows VideoAnalyticsSection, hides N/A option",
+        "analog": "Hides VideoAnalyticsSection completely",
+        "none": "Hides VideoAnalyticsSection completely",
+        "na": "Hides VideoAnalyticsSection completely"
+      }
+    },
+    "toggleVideoAnalyticsDetails": {
+      "location": "Lines 5730-5769",
+      "function_signature": "window.toggleVideoAnalyticsDetails = function(answer)",
+      "description": "Controls visibility of VideoAnalytics components and OFCs based on VideoAnalytics answer",
+      "code": "if (answer === 'yes') {\n  videoAnalyticsCapabilities.style.display = 'block';\n  videoAnalyticsNoDetails.style.display = 'none';\n} else if (answer === 'no') {\n  videoAnalyticsCapabilities.style.display = 'none';\n  videoAnalyticsNoDetails.style.display = 'block';\n} else if (answer === 'na') {\n  // Hide both sections\n  videoAnalyticsCapabilities.style.display = 'none';\n  videoAnalyticsNoDetails.style.display = 'none';\n}",
+      "error_prevention": "Includes logic to prevent N/A selection for digital/hybrid systems (lines 5744-5756)"
+    },
+    "toggleQuestionDetails": {
+      "location": "Lines 5636-5667",
+      "function_signature": "function toggleQuestionDetails(questionId, answer)",
+      "description": "Standard function for all other questions (VideoCoverage, VideoMonitoring, VideoRecording)",
+      "code": "if (answer === 'yes') {\n  detailsSection.style.display = 'block';\n  noDetailsSection.style.display = 'none';\n} else if (answer === 'no') {\n  detailsSection.style.display = 'none';\n  noDetailsSection.style.display = 'block';\n} else if (answer === 'na') {\n  detailsSection.style.display = 'none';\n  noDetailsSection.style.display = 'none';\n}",
+      "used_by": ["VideoCoverage", "VideoMonitoring", "VideoRecording"]
+    }
+  },
+
+  "scoring_logic": {
+    "location": "Lines 7307-7442 in generateReportData() function",
+    "overview": "Scoring for VSS questions follows the standard pattern",
+    "rules": {
+      "standards_met": {
+        "description": "Count checked components for questions answered 'yes'",
+        "code_location": "Lines 7308-7327",
+        "example": "If VideoCoverage='yes' and VideoCoverageComp1 and Comp3 are checked → 2 standards met"
+      },
+      "standards_lost": {
+        "description": "Count all components for questions answered 'no'",
+        "code_location": "Lines 7369-7392",
+        "example": "If VideoMonitoring='no' and has 3 components → 3 standards lost"
+      },
+      "total_standards": {
+        "description": "Sum of all components for questions answered 'yes' or 'no'",
+        "code_location": "Lines 7334-7367",
+        "note": "N/A responses don't contribute to total standards"
+      },
+      "enhancement_opportunities": {
+        "description": "Unchecked components for questions answered 'yes'",
+        "code_location": "Lines 7395-7442",
+        "example": "If VideoRecording='yes' and has 3 components but only 1 is checked → 2 enhancement opportunities"
+      }
+    },
+    "vss_section_totals": {
+      "VideoSystemType": "0 components (doesn't contribute to scoring)",
+      "VideoAnalytics": "12 components (only if VideoSystemType is digital/hybrid)",
+      "VideoCoverage": "4 components",
+      "VideoMonitoring": "3 components",
+      "VideoRecording": "3 components",
+      "maximum_possible_standards": "22 (12 + 4 + 3 + 3, assuming VideoAnalytics is visible)"
+    }
+  },
+
+  "html_structure": {
+    "note": "Questions are defined in HTML, not separate JS/JSON config files",
+    "location": "ALT_SAFE_Assessment.html",
+    "pattern": "<div class=\"question-item\">\n  <h4>{title}</h4>\n  <p>{question_text}</p>\n  <div class=\"radio-group\">\n    <input type=\"radio\" name=\"{questionId}\" value=\"{value}\" onchange=\"{function}\">\n  </div>\n  <div class=\"conditional-section\" id=\"{questionId}Details\">\n    <!-- Components -->\n  </div>\n  <div class=\"conditional-section\" id=\"{questionId}NoDetails\">\n    <!-- OFCs -->\n  </div>\n</div>"
+  },
+
+  "data_storage": {
+    "fields": {
+      "VideoSystemType": "Stored as string: 'digital', 'analog', 'hybrid', 'none', or 'na'",
+      "VideoAnalytics": "Stored as string: 'yes', 'no', or 'na' (only if VideoSystemType is digital/hybrid)",
+      "VideoAnalyticsComp1-12": "Stored as boolean: true/false",
+      "VideoAnalyticsNoOFC1-3": "Stored as boolean: true/false",
+      "VideoCoverage": "Stored as string: 'yes', 'no', or 'na'",
+      "VideoCoverageComp1-4": "Stored as boolean: true/false",
+      "VideoCoverageNoOFC1-2": "Stored as boolean: true/false",
+      "VideoMonitoring": "Stored as string: 'yes', 'no', or 'na'",
+      "VideoMonitoringComp1-3": "Stored as boolean: true/false",
+      "VideoMonitoringNoOFC1": "Stored as boolean: true/false",
+      "VideoRecording": "Stored as string: 'yes', 'no', or 'na'",
+      "VideoRecordingComp1-3": "Stored as boolean: true/false",
+      "VideoRecordingNoOFC1": "Stored as boolean: true/false"
+    }
+  }
+}

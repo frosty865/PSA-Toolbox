@@ -1,0 +1,36 @@
+{
+  "ingested": [
+    {
+      "url": "https://www.nfpa.org/news-blogs-and-articles/blogs/2022/11/28/evs-and-parking-structures",
+      "type": "html",
+      "document_id": "32df659c-71b8-4c5a-bc85-01587d38bede",
+      "chunks_count": 5
+    },
+    {
+      "url": "https://www.nfpa.org/news-blogs-and-articles/blogs/2024/07/12/parking-garages-and-evs",
+      "type": "html",
+      "document_id": "5635c0cc-5198-4b48-9790-92cea7ebd3ba",
+      "chunks_count": 7
+    },
+    {
+      "url": "https://www.usfa.fema.gov/downloads/pdf/publications/electric-vehicle-fire-rescue-response-operations.pdf",
+      "type": "pdf",
+      "document_id": "867e8661-8927-4252-b9fa-e21fff5b3112",
+      "chunks_count": 433
+    },
+    {
+      "url": "https://www.euralarm.org/static/f453879d-3d6a-46a7-b0db81db22f02225/Guidance-document-on-Fire-Safety-of-EV-Parking-Garages.pdf",
+      "type": "pdf",
+      "document_id": "98c85d31-7b26-490e-b90c-afbe0349b67d",
+      "chunks_count": 93
+    },
+    {
+      "url": "https://theicct.org/wp-content/uploads/2024/02/ID-103-%E2%80%93-BEV-fire-IZEVA-light-A4-65016-v7.pdf",
+      "type": "pdf",
+      "document_id": "04b795ef-813b-4d0d-b7bf-96b948f73264",
+      "chunks_count": 76
+    }
+  ],
+  "skipped": [],
+  "failed": []
+}

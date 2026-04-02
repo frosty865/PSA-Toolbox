@@ -1,0 +1,1477 @@
+{
+  "total": 158,
+  "byPrefix": {
+    "/api/admin/citations/integrity-audit": [
+      {
+        "path": "/api/admin/citations/integrity-audit",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/corpus/process-registered": [
+      {
+        "path": "/api/admin/corpus/process-registered",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/corpus/purge-untraceable": [
+      {
+        "path": "/api/admin/corpus/purge-untraceable",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/corpus/purge-zero-chunk": [
+      {
+        "path": "/api/admin/corpus/purge-zero-chunk",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/corpus/quarantine-untraceable": [
+      {
+        "path": "/api/admin/corpus/quarantine-untraceable",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/corpus/reprocess-zero-chunk": [
+      {
+        "path": "/api/admin/corpus/reprocess-zero-chunk",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/corpus/reprocess-zero-chunk-recursive": [
+      {
+        "path": "/api/admin/corpus/reprocess-zero-chunk-recursive",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/corpus/sync-chunk-counts": [
+      {
+        "path": "/api/admin/corpus/sync-chunk-counts",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/corpus/untraceable": [
+      {
+        "path": "/api/admin/corpus/untraceable",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/corpus/zero-chunk": [
+      {
+        "path": "/api/admin/corpus/zero-chunk",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/coverage/corpus": [
+      {
+        "path": "/api/admin/coverage/corpus",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/diagnostics/candidates": [
+      {
+        "path": "/api/admin/diagnostics/candidates/source-type-counts",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/diagnostics/corpus": [
+      {
+        "path": "/api/admin/diagnostics/corpus/candidate/[candidateId]",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/diagnostics/db-audit": [
+      {
+        "path": "/api/admin/diagnostics/db-audit",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/diagnostics/ownership": [
+      {
+        "path": "/api/admin/diagnostics/ownership",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/diagnostics/pool-identity": [
+      {
+        "path": "/api/admin/diagnostics/pool-identity",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/diagnostics/runtime": [
+      {
+        "path": "/api/admin/diagnostics/runtime/nominations/by-response/[responseId]",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/diagnostics/source-registry-location": [
+      {
+        "path": "/api/admin/diagnostics/source-registry-location",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/doctrine/selftest": [
+      {
+        "path": "/api/admin/doctrine/selftest",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/documents/[id]": [
+      {
+        "path": "/api/admin/documents/[id]/role",
+        "methods": "GET,PATCH"
+      },
+      {
+        "path": "/api/admin/documents/[id]/source",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/health/dbs": [
+      {
+        "path": "/api/admin/health/dbs",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/module-drafts": [
+      {
+        "path": "/api/admin/module-drafts",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/module-drafts/[draftId]": [
+      {
+        "path": "/api/admin/module-drafts/[draftId]",
+        "methods": "GET,PATCH"
+      },
+      {
+        "path": "/api/admin/module-drafts/[draftId]/generate",
+        "methods": "POST"
+      },
+      {
+        "path": "/api/admin/module-drafts/[draftId]/publish",
+        "methods": "POST"
+      },
+      {
+        "path": "/api/admin/module-drafts/[draftId]/questions/[draftQuestionId]",
+        "methods": "POST"
+      },
+      {
+        "path": "/api/admin/module-drafts/[draftId]/scenario-context",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/module-ofcs/create": [
+      {
+        "path": "/api/admin/module-ofcs/create",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/module-ofcs/list": [
+      {
+        "path": "/api/admin/module-ofcs/list",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/module-ofcs/update": [
+      {
+        "path": "/api/admin/module-ofcs/update/[id]",
+        "methods": "PATCH"
+      }
+    ],
+    "/api/admin/module-sources": [
+      {
+        "path": "/api/admin/module-sources",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/module-standards": [
+      {
+        "path": "/api/admin/module-standards",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/module-standards/[standardKey]": [
+      {
+        "path": "/api/admin/module-standards/[standardKey]",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/modules": [
+      {
+        "path": "/api/admin/modules",
+        "methods": "GET,POST"
+      }
+    ],
+    "/api/admin/modules/[moduleCode]": [
+      {
+        "path": "/api/admin/modules/[moduleCode]",
+        "methods": "GET,DELETE"
+      },
+      {
+        "path": "/api/admin/modules/[moduleCode]/corpus-links",
+        "methods": "GET,POST"
+      },
+      {
+        "path": "/api/admin/modules/[moduleCode]/export",
+        "methods": "GET"
+      },
+      {
+        "path": "/api/admin/modules/[moduleCode]/instance/criteria/[criterionId]",
+        "methods": "PATCH"
+      },
+      {
+        "path": "/api/admin/modules/[moduleCode]/instance/ofcs/[ofcId]",
+        "methods": "PATCH"
+      },
+      {
+        "path": "/api/admin/modules/[moduleCode]/ofcs",
+        "methods": "POST"
+      },
+      {
+        "path": "/api/admin/modules/[moduleCode]/ofcs/[moduleOfcId]/register",
+        "methods": "POST"
+      },
+      {
+        "path": "/api/admin/modules/[moduleCode]/ofcs/registrations",
+        "methods": "GET"
+      },
+      {
+        "path": "/api/admin/modules/[moduleCode]/process-incoming-pdfs",
+        "methods": "POST"
+      },
+      {
+        "path": "/api/admin/modules/[moduleCode]/questions",
+        "methods": "POST"
+      },
+      {
+        "path": "/api/admin/modules/[moduleCode]/sources",
+        "methods": "GET"
+      },
+      {
+        "path": "/api/admin/modules/[moduleCode]/sources/[moduleSourceId]",
+        "methods": "PATCH,DELETE"
+      },
+      {
+        "path": "/api/admin/modules/[moduleCode]/sources/[moduleSourceId]/file",
+        "methods": "GET"
+      },
+      {
+        "path": "/api/admin/modules/[moduleCode]/sources/[moduleSourceId]/promote-to-corpus",
+        "methods": "POST"
+      },
+      {
+        "path": "/api/admin/modules/[moduleCode]/sources/add-from-url",
+        "methods": "POST"
+      },
+      {
+        "path": "/api/admin/modules/[moduleCode]/sources/attach-corpus",
+        "methods": "POST"
+      },
+      {
+        "path": "/api/admin/modules/[moduleCode]/sources/report",
+        "methods": "GET"
+      },
+      {
+        "path": "/api/admin/modules/[moduleCode]/sources/upload",
+        "methods": "POST"
+      },
+      {
+        "path": "/api/admin/modules/[moduleCode]/standard/generate",
+        "methods": "POST"
+      },
+      {
+        "path": "/api/admin/modules/[moduleCode]/template",
+        "methods": "GET"
+      },
+      {
+        "path": "/api/admin/modules/[moduleCode]/vofcs",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/modules/breakdown": [
+      {
+        "path": "/api/admin/modules/breakdown",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/modules/create": [
+      {
+        "path": "/api/admin/modules/create",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/modules/import": [
+      {
+        "path": "/api/admin/modules/import",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/modules/library": [
+      {
+        "path": "/api/admin/modules/library",
+        "methods": "GET,DELETE"
+      }
+    ],
+    "/api/admin/modules/research": [
+      {
+        "path": "/api/admin/modules/research",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/modules/wizard": [
+      {
+        "path": "/api/admin/modules/wizard/create",
+        "methods": "POST"
+      },
+      {
+        "path": "/api/admin/modules/wizard/generate",
+        "methods": "POST"
+      },
+      {
+        "path": "/api/admin/modules/wizard/publish",
+        "methods": "POST"
+      },
+      {
+        "path": "/api/admin/modules/wizard/sources/add-existing",
+        "methods": "POST"
+      },
+      {
+        "path": "/api/admin/modules/wizard/sources/add-url",
+        "methods": "POST"
+      },
+      {
+        "path": "/api/admin/modules/wizard/sources/upload",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/ofc-library": [
+      {
+        "path": "/api/admin/ofc-library",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/ofcs/candidates": [
+      {
+        "path": "/api/admin/ofcs/candidates/[candidate_id]",
+        "methods": "GET,PATCH"
+      }
+    ],
+    "/api/admin/ofcs/review-queue": [
+      {
+        "path": "/api/admin/ofcs/review-queue",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/problem-candidates": [
+      {
+        "path": "/api/admin/problem-candidates",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/problem-candidates/[id]": [
+      {
+        "path": "/api/admin/problem-candidates/[id]",
+        "methods": "PATCH"
+      },
+      {
+        "path": "/api/admin/problem-candidates/[id]/promote",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/reports/subtype-coverage": [
+      {
+        "path": "/api/admin/reports/subtype-coverage",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/server-tools/run": [
+      {
+        "path": "/api/admin/server-tools/run",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/server-tools/status": [
+      {
+        "path": "/api/admin/server-tools/status",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/source-registry": [
+      {
+        "path": "/api/admin/source-registry",
+        "methods": "GET,POST"
+      }
+    ],
+    "/api/admin/source-registry/[sourceKey]": [
+      {
+        "path": "/api/admin/source-registry/[sourceKey]",
+        "methods": "GET,PUT,PATCH,DELETE"
+      },
+      {
+        "path": "/api/admin/source-registry/[sourceKey]/ingest",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/source-registry/active": [
+      {
+        "path": "/api/admin/source-registry/active",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/source-registry/download-to-incoming": [
+      {
+        "path": "/api/admin/source-registry/download-to-incoming",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/source-registry/extract-pdf-metadata": [
+      {
+        "path": "/api/admin/source-registry/extract-pdf-metadata",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/source-registry/fetch-metadata": [
+      {
+        "path": "/api/admin/source-registry/fetch-metadata",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/source-registry/purge-non-pdf": [
+      {
+        "path": "/api/admin/source-registry/purge-non-pdf",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/source-registry/report": [
+      {
+        "path": "/api/admin/source-registry/report",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/source-registry/rerun-scope-tags": [
+      {
+        "path": "/api/admin/source-registry/rerun-scope-tags",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/source-registry/scope-tag-options": [
+      {
+        "path": "/api/admin/source-registry/scope-tag-options",
+        "methods": "GET"
+      }
+    ],
+    "/api/admin/source-registry/upload": [
+      {
+        "path": "/api/admin/source-registry/upload",
+        "methods": "POST"
+      }
+    ],
+    "/api/admin/triage/run": [
+      {
+        "path": "/api/admin/triage/run",
+        "methods": "POST"
+      }
+    ],
+    "/api/assessment/scoring": [
+      {
+        "path": "/api/assessment/scoring",
+        "methods": "GET"
+      }
+    ],
+    "/api/baseline/spines": [
+      {
+        "path": "/api/baseline/spines",
+        "methods": "GET"
+      }
+    ],
+    "/api/gate-metadata": [
+      {
+        "path": "/api/gate-metadata",
+        "methods": "GET"
+      }
+    ],
+    "/api/ofc/canonical": [
+      {
+        "path": "/api/ofc/canonical",
+        "methods": "GET"
+      }
+    ],
+    "/api/ofc/canonical/[canonical_ofc_id]": [
+      {
+        "path": "/api/ofc/canonical/[canonical_ofc_id]",
+        "methods": "GET"
+      }
+    ],
+    "/api/ofc/nominations": [
+      {
+        "path": "/api/ofc/nominations",
+        "methods": "GET,POST"
+      }
+    ],
+    "/api/ofc/nominations/[nomination_id]": [
+      {
+        "path": "/api/ofc/nominations/[nomination_id]/decide",
+        "methods": "POST"
+      },
+      {
+        "path": "/api/ofc/nominations/[nomination_id]/status",
+        "methods": "POST"
+      }
+    ],
+    "/api/ofcs/for-question": [
+      {
+        "path": "/api/ofcs/for-question",
+        "methods": "GET"
+      }
+    ],
+    "/api/ofcs/link": [
+      {
+        "path": "/api/ofcs/link",
+        "methods": "POST"
+      }
+    ],
+    "/api/ofcs/list": [
+      {
+        "path": "/api/ofcs/list",
+        "methods": "GET"
+      }
+    ],
+    "/api/reference/baseline-questions": [
+      {
+        "path": "/api/reference/baseline-questions",
+        "methods": "GET"
+      }
+    ],
+    "/api/reference/discipline-subtypes": [
+      {
+        "path": "/api/reference/discipline-subtypes",
+        "methods": "GET"
+      }
+    ],
+    "/api/reference/discipline-subtypes/[subtypeId]": [
+      {
+        "path": "/api/reference/discipline-subtypes/[subtypeId]/reference-impl",
+        "methods": "GET"
+      }
+    ],
+    "/api/reference/disciplines": [
+      {
+        "path": "/api/reference/disciplines",
+        "methods": "GET"
+      }
+    ],
+    "/api/reference/question-focus": [
+      {
+        "path": "/api/reference/question-focus",
+        "methods": "GET"
+      }
+    ],
+    "/api/reference/question-focus/[discipline]": [
+      {
+        "path": "/api/reference/question-focus/[discipline]/[subtype]",
+        "methods": "GET"
+      }
+    ],
+    "/api/reference/reference-impl": [
+      {
+        "path": "/api/reference/reference-impl",
+        "methods": "GET"
+      }
+    ],
+    "/api/reference/sectors": [
+      {
+        "path": "/api/reference/sectors",
+        "methods": "GET"
+      }
+    ],
+    "/api/reference/subsectors": [
+      {
+        "path": "/api/reference/subsectors",
+        "methods": "GET"
+      }
+    ],
+    "/api/review/[chunk_id]": [
+      {
+        "path": "/api/review/[chunk_id]",
+        "methods": "POST"
+      }
+    ],
+    "/api/review/quarantined": [
+      {
+        "path": "/api/review/quarantined",
+        "methods": "GET"
+      }
+    ],
+    "/api/runtime/admin/expansion-profiles": [
+      {
+        "path": "/api/runtime/admin/expansion-profiles",
+        "methods": "POST"
+      }
+    ],
+    "/api/runtime/admin/purge-test-assessments": [
+      {
+        "path": "/api/runtime/admin/purge-test-assessments",
+        "methods": "POST"
+      }
+    ],
+    "/api/runtime/assessments": [
+      {
+        "path": "/api/runtime/assessments",
+        "methods": "GET,POST"
+      }
+    ],
+    "/api/runtime/assessments/[assessmentId]": [
+      {
+        "path": "/api/runtime/assessments/[assessmentId]",
+        "methods": "GET"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/component-capability/questions",
+        "methods": "GET"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/component-capability/responses",
+        "methods": "GET,POST"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/expansion-profiles",
+        "methods": "GET,POST"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/expansion-questions",
+        "methods": "GET"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/expansion-responses",
+        "methods": "GET,PUT"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/followups",
+        "methods": "GET,POST"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/intent-objects",
+        "methods": "GET"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/modules",
+        "methods": "GET,POST,DELETE"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/modules/[moduleCode]/attach",
+        "methods": "POST"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/modules/[moduleCode]/questions",
+        "methods": "GET"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/modules/[moduleCode]/questions/[moduleQuestionId]",
+        "methods": "PUT"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/modules/reconcile",
+        "methods": "POST"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/ofcs",
+        "methods": "GET"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/ofcs/promote",
+        "methods": "POST"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/question-universe",
+        "methods": "GET"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/questions",
+        "methods": "GET"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/reference-impl",
+        "methods": "GET"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/required_elements",
+        "methods": "GET"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/responses",
+        "methods": "GET,PUT"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/responses/[responseId]/ofc-candidates",
+        "methods": "GET"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/results",
+        "methods": "GET"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/status",
+        "methods": "GET,PUT"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/subsector",
+        "methods": "PUT"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/tech-overlay-questions",
+        "methods": "GET"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/tech-overlay-questions/responses",
+        "methods": "PUT"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/tech-profiles",
+        "methods": "GET,PUT,DELETE"
+      },
+      {
+        "path": "/api/runtime/assessments/[assessmentId]/technology-profiles",
+        "methods": "GET,PUT"
+      }
+    ],
+    "/api/runtime/depth2-question-tags": [
+      {
+        "path": "/api/runtime/depth2-question-tags",
+        "methods": "GET"
+      }
+    ],
+    "/api/runtime/expansion-profiles": [
+      {
+        "path": "/api/runtime/expansion-profiles",
+        "methods": "GET"
+      }
+    ],
+    "/api/runtime/health": [
+      {
+        "path": "/api/runtime/health",
+        "methods": "GET"
+      }
+    ],
+    "/api/runtime/intent-for-question": [
+      {
+        "path": "/api/runtime/intent-for-question",
+        "methods": "GET"
+      }
+    ],
+    "/api/runtime/intent-objects": [
+      {
+        "path": "/api/runtime/intent-objects",
+        "methods": "GET"
+      }
+    ],
+    "/api/runtime/metadata": [
+      {
+        "path": "/api/runtime/metadata",
+        "methods": "GET"
+      }
+    ],
+    "/api/runtime/ofc-candidates": [
+      {
+        "path": "/api/runtime/ofc-candidates",
+        "methods": "GET"
+      }
+    ],
+    "/api/runtime/ofc-library": [
+      {
+        "path": "/api/runtime/ofc-library",
+        "methods": "GET"
+      }
+    ],
+    "/api/runtime/ofc-library/[ofcId]": [
+      {
+        "path": "/api/runtime/ofc-library/[ofcId]/citations",
+        "methods": "GET"
+      }
+    ],
+    "/api/runtime/question-coverage": [
+      {
+        "path": "/api/runtime/question-coverage",
+        "methods": "GET"
+      }
+    ],
+    "/api/runtime/question-meaning/[canonId]": [
+      {
+        "path": "/api/runtime/question-meaning/[canonId]",
+        "methods": "GET"
+      }
+    ],
+    "/api/runtime/questions": [
+      {
+        "path": "/api/runtime/questions",
+        "methods": "GET"
+      }
+    ],
+    "/api/runtime/subtype-checklists": [
+      {
+        "path": "/api/runtime/subtype-checklists",
+        "methods": "GET"
+      }
+    ],
+    "/api/runtime/technology-types-catalog": [
+      {
+        "path": "/api/runtime/technology-types-catalog",
+        "methods": "GET"
+      }
+    ],
+    "/api/runtime/test-assessments": [
+      {
+        "path": "/api/runtime/test-assessments",
+        "methods": "POST"
+      }
+    ],
+    "/api/system/security-mode": [
+      {
+        "path": "/api/system/security-mode",
+        "methods": "GET,POST"
+      }
+    ],
+    "/api/vulnerabilities": [
+      {
+        "path": "/api/vulnerabilities",
+        "methods": "GET"
+      }
+    ]
+  },
+  "routes": [
+    {
+      "path": "/api/admin/citations/integrity-audit",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/corpus/process-registered",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/corpus/purge-untraceable",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/corpus/purge-zero-chunk",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/corpus/quarantine-untraceable",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/corpus/reprocess-zero-chunk",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/corpus/reprocess-zero-chunk-recursive",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/corpus/sync-chunk-counts",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/corpus/untraceable",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/corpus/zero-chunk",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/coverage/corpus",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/diagnostics/candidates/source-type-counts",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/diagnostics/corpus/candidate/[candidateId]",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/diagnostics/db-audit",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/diagnostics/ownership",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/diagnostics/pool-identity",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/diagnostics/runtime/nominations/by-response/[responseId]",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/diagnostics/source-registry-location",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/doctrine/selftest",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/documents/[id]/role",
+      "methods": "GET,PATCH"
+    },
+    {
+      "path": "/api/admin/documents/[id]/source",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/health/dbs",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/module-drafts",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/module-drafts/[draftId]",
+      "methods": "GET,PATCH"
+    },
+    {
+      "path": "/api/admin/module-drafts/[draftId]/generate",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/module-drafts/[draftId]/publish",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/module-drafts/[draftId]/questions/[draftQuestionId]",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/module-drafts/[draftId]/scenario-context",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/module-ofcs/create",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/module-ofcs/list",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/module-ofcs/update/[id]",
+      "methods": "PATCH"
+    },
+    {
+      "path": "/api/admin/module-sources",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/module-standards",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/module-standards/[standardKey]",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/modules",
+      "methods": "GET,POST"
+    },
+    {
+      "path": "/api/admin/modules/[moduleCode]",
+      "methods": "GET,DELETE"
+    },
+    {
+      "path": "/api/admin/modules/[moduleCode]/corpus-links",
+      "methods": "GET,POST"
+    },
+    {
+      "path": "/api/admin/modules/[moduleCode]/export",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/modules/[moduleCode]/instance/criteria/[criterionId]",
+      "methods": "PATCH"
+    },
+    {
+      "path": "/api/admin/modules/[moduleCode]/instance/ofcs/[ofcId]",
+      "methods": "PATCH"
+    },
+    {
+      "path": "/api/admin/modules/[moduleCode]/ofcs",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/modules/[moduleCode]/ofcs/[moduleOfcId]/register",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/modules/[moduleCode]/ofcs/registrations",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/modules/[moduleCode]/process-incoming-pdfs",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/modules/[moduleCode]/questions",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/modules/[moduleCode]/sources",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/modules/[moduleCode]/sources/[moduleSourceId]",
+      "methods": "PATCH,DELETE"
+    },
+    {
+      "path": "/api/admin/modules/[moduleCode]/sources/[moduleSourceId]/file",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/modules/[moduleCode]/sources/[moduleSourceId]/promote-to-corpus",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/modules/[moduleCode]/sources/add-from-url",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/modules/[moduleCode]/sources/attach-corpus",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/modules/[moduleCode]/sources/report",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/modules/[moduleCode]/sources/upload",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/modules/[moduleCode]/standard/generate",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/modules/[moduleCode]/template",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/modules/[moduleCode]/vofcs",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/modules/breakdown",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/modules/create",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/modules/import",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/modules/library",
+      "methods": "GET,DELETE"
+    },
+    {
+      "path": "/api/admin/modules/research",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/modules/wizard/create",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/modules/wizard/generate",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/modules/wizard/publish",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/modules/wizard/sources/add-existing",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/modules/wizard/sources/add-url",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/modules/wizard/sources/upload",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/ofc-library",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/ofcs/candidates/[candidate_id]",
+      "methods": "GET,PATCH"
+    },
+    {
+      "path": "/api/admin/ofcs/review-queue",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/problem-candidates",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/problem-candidates/[id]",
+      "methods": "PATCH"
+    },
+    {
+      "path": "/api/admin/problem-candidates/[id]/promote",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/reports/subtype-coverage",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/server-tools/run",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/server-tools/status",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/source-registry",
+      "methods": "GET,POST"
+    },
+    {
+      "path": "/api/admin/source-registry/[sourceKey]",
+      "methods": "GET,PUT,PATCH,DELETE"
+    },
+    {
+      "path": "/api/admin/source-registry/[sourceKey]/ingest",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/source-registry/active",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/source-registry/download-to-incoming",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/source-registry/extract-pdf-metadata",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/source-registry/fetch-metadata",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/source-registry/purge-non-pdf",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/source-registry/report",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/source-registry/rerun-scope-tags",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/source-registry/scope-tag-options",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/admin/source-registry/upload",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/admin/triage/run",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/assessment/scoring",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/baseline/spines",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/gate-metadata",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/ofc/canonical",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/ofc/canonical/[canonical_ofc_id]",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/ofc/nominations",
+      "methods": "GET,POST"
+    },
+    {
+      "path": "/api/ofc/nominations/[nomination_id]/decide",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/ofc/nominations/[nomination_id]/status",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/ofcs/for-question",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/ofcs/link",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/ofcs/list",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/reference/baseline-questions",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/reference/discipline-subtypes",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/reference/discipline-subtypes/[subtypeId]/reference-impl",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/reference/disciplines",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/reference/question-focus",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/reference/question-focus/[discipline]/[subtype]",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/reference/reference-impl",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/reference/sectors",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/reference/subsectors",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/review/[chunk_id]",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/review/quarantined",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/admin/expansion-profiles",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/runtime/admin/purge-test-assessments",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/runtime/assessments",
+      "methods": "GET,POST"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/component-capability/questions",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/component-capability/responses",
+      "methods": "GET,POST"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/expansion-profiles",
+      "methods": "GET,POST"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/expansion-questions",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/expansion-responses",
+      "methods": "GET,PUT"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/followups",
+      "methods": "GET,POST"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/intent-objects",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/modules",
+      "methods": "GET,POST,DELETE"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/modules/[moduleCode]/attach",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/modules/[moduleCode]/questions",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/modules/[moduleCode]/questions/[moduleQuestionId]",
+      "methods": "PUT"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/modules/reconcile",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/ofcs",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/ofcs/promote",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/question-universe",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/questions",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/reference-impl",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/required_elements",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/responses",
+      "methods": "GET,PUT"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/responses/[responseId]/ofc-candidates",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/results",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/status",
+      "methods": "GET,PUT"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/subsector",
+      "methods": "PUT"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/tech-overlay-questions",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/tech-overlay-questions/responses",
+      "methods": "PUT"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/tech-profiles",
+      "methods": "GET,PUT,DELETE"
+    },
+    {
+      "path": "/api/runtime/assessments/[assessmentId]/technology-profiles",
+      "methods": "GET,PUT"
+    },
+    {
+      "path": "/api/runtime/depth2-question-tags",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/expansion-profiles",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/health",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/intent-for-question",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/intent-objects",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/metadata",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/ofc-candidates",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/ofc-library",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/ofc-library/[ofcId]/citations",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/question-coverage",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/question-meaning/[canonId]",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/questions",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/subtype-checklists",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/technology-types-catalog",
+      "methods": "GET"
+    },
+    {
+      "path": "/api/runtime/test-assessments",
+      "methods": "POST"
+    },
+    {
+      "path": "/api/system/security-mode",
+      "methods": "GET,POST"
+    },
+    {
+      "path": "/api/vulnerabilities",
+      "methods": "GET"
+    }
+  ]
+}

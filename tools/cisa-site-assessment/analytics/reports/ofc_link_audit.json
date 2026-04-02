@@ -1,0 +1,93 @@
+{
+  "timestamp": "D:\\PSA_System\\psa_rebuild\\analytics\\reports\\ofc_link_audit.json",
+  "summary": {
+    "total_ofcs": 17,
+    "citationless_ofcs": 0,
+    "missing_mapping_ofcs": 0,
+    "subtypes_with_questions_no_ofcs": 100
+  },
+  "citationless_ofcs": [],
+  "missing_mapping_ofcs": [],
+  "missing_ofc_subtypes": [
+    {
+      "subtype_id": "03012b3f-77db-4f5c-b98f-7e1ab218278a",
+      "question_count": 1
+    },
+    {
+      "subtype_id": "03e40c3c-6b9d-4c23-8926-8fa0864ac8ab",
+      "question_count": 1
+    },
+    {
+      "subtype_id": "05b22c7d-67f1-423e-bab1-8b6485345a8e",
+      "question_count": 1
+    },
+    {
+      "subtype_id": "09335ae3-724b-48c5-b4cc-c97905ebe768",
+      "question_count": 1
+    },
+    {
+      "subtype_id": "09c4723a-5665-4661-a699-18f0ef3803a1",
+      "question_count": 1
+    },
+    {
+      "subtype_id": "0a642d0c-e14b-45c9-bb2f-7b210111cbda",
+      "question_count": 1
+    },
+    {
+      "subtype_id": "0ae2bca3-ae66-4a8d-b6a8-baa98e2a488a",
+      "question_count": 1
+    },
+    {
+      "subtype_id": "0ee9db0c-5daa-4f7e-8070-48bd16ca9318",
+      "question_count": 1
+    },
+    {
+      "subtype_id": "184882ba-267a-4035-a77a-2fa4920782cb",
+      "question_count": 1
+    },
+    {
+      "subtype_id": "188ae906-0a31-4f36-b923-75ec28a32dce",
+      "question_count": 1
+    },
+    {
+      "subtype_id": "18affcfc-955d-4e47-a471-f8846be8523c",
+      "question_count": 1
+    },
+    {
+      "subtype_id": "197cb197-88de-4a84-93cf-d52bc7037109",
+      "question_count": 1
+    },
+    {
+      "subtype_id": "1dbe7509-76a7-4cfc-bd97-d73de4a85cb0",
+      "question_count": 1
+    },
+    {
+      "subtype_id": "20d11544-f449-46f2-9aa8-39cfcf8a134b",
+      "question_count": 1
+    },
+    {
+      "subtype_id": "218ae01b-45d0-4fd4-9fc9-09fc6e06ab61",
+      "question_count": 1
+    },
+    {
+      "subtype_id": "223f2d98-d8b8-41c1-937b-b6f565f9fce3",
+      "question_count": 1
+    },
+    {
+      "subtype_id": "23d0fe7a-bd9f-4f66-8f3d-49d0e935a010",
+      "question_count": 1
+    },
+    {
+      "subtype_id": "25f2768b-77f0-4e3f-ad3d-71d68c2bbfea",
+      "question_count": 1
+    },
+    {
+      "subtype_id": "2a159f3f-6cef-40a2-bebb-ac6c1bb7001e",
+      "question_count": 1
+    },
+    {
+      "subtype_id": "2b6085c9-83c4-49b2-8952-22fcc70b7e8d",
+      "question_count": 1
+    }
+  ]
+}

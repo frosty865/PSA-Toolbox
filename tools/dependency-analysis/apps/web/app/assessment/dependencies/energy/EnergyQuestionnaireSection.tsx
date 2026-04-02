@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import Link from 'next/link';
+import Link from '@/components/FieldLink';
 import {
   EnergyAnswersSchema,
   getDefaultEnergyAnswers,
@@ -197,7 +197,7 @@ export function EnergyQuestionnaireSection({
   const heading = embedded ? (
     <h3 className="text-lg font-semibold mt-6 mb-2">Energy — Infrastructure (E-1–E-11)</h3>
   ) : (
-    <h2 className="ida-section-title">Energy — Infrastructure dependency</h2>
+    <h2 className="section-title">Energy — Infrastructure dependency</h2>
   );
 
   return (
@@ -208,7 +208,7 @@ export function EnergyQuestionnaireSection({
       <p className="text-secondary mb-4">{ENERGY_INTRO}</p>
       <div className="mb-4">
         {!embedded && (
-          <Link href="/assessment/categories/" className="ida-btn ida-btn-secondary" style={{ marginRight: '0.5rem' }}>
+          <Link href="/assessment/categories/" className="btn btn-secondary" style={{ marginRight: '0.5rem' }}>
             ← Categories
           </Link>
         )}
@@ -224,7 +224,7 @@ export function EnergyQuestionnaireSection({
           <span className="text-danger ml-3" role="alert">
             <button
               type="button"
-              className="ida-btn-link text-danger"
+              className="btn-link text-danger"
               style={{ background: 'none', border: 'none', padding: 0, textDecoration: 'underline', cursor: 'pointer', font: 'inherit' }}
               onClick={() => {
                 const qId = getQuestionIdFromPath(validationError.path);
@@ -716,7 +716,7 @@ function EnergyForm({
           <div className="mt-2">
             <button
               type="button"
-              className="ida-btn ida-btn-secondary"
+              className="btn btn-secondary"
               onClick={() =>
                 onUpdate({
                   'E-5_core_ops_capable': {
@@ -917,7 +917,7 @@ function EnergyForm({
                   </span>
                 </td>
                 <td style={{ verticalAlign: 'middle' }}>
-                  <button type="button" className="ida-btn ida-btn-secondary ida-btn-sm" onClick={() => onUpdate({ 'E-8_backup_assets': answers['E-8_backup_assets'].filter((_, j) => j !== i) })}>
+                  <button type="button" className="btn btn-secondary btn-sm" onClick={() => onUpdate({ 'E-8_backup_assets': answers['E-8_backup_assets'].filter((_, j) => j !== i) })}>
                     Remove
                   </button>
                 </td>
@@ -1275,7 +1275,7 @@ function RepeatableTable<T>({
       </table>
       <button
         type="button"
-        className="ida-btn ida-btn-secondary mt-2"
+        className="btn btn-secondary mt-2"
         onClick={() => onRowsChange([...rows, emptyRow()])}
       >
         Add entry

@@ -1,0 +1,9 @@
+[
+  {
+    "canon_id": "BASE-KEY-001",
+    "discipline_code": "KEY",
+    "subtype_code": null,
+    "question_text": "Are keys and other access-enabling devices controlled throughout their lifecycle for restricted areas?",
+    "response_enum": ["YES","NO","N_A"]
+  }
+]

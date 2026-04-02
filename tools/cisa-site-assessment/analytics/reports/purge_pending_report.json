@@ -1,0 +1,18 @@
+{
+  "mode": "APPLY",
+  "purge_mode": "pending_only",
+  "include_ist": false,
+  "candidates_deleted": 6002,
+  "citations_deleted": 6002,
+  "links_deleted": 381,
+  "citations_info": {
+    "table": "public.ofc_candidate_queue",
+    "ofc_id_col": "candidate_id",
+    "chunk_id_col": "document_chunk_id",
+    "use_direct_fk": true
+  },
+  "link_info": {
+    "table": "public.ofc_question_links",
+    "ofc_id_col": "ofc_id"
+  }
+}

@@ -1,0 +1,940 @@
+/* CISA Design System CSS
+ * Extracted from SAFE V3.0 Comprehensive Security Assessment
+ * Ready-to-use CSS framework for CISA-compliant applications
+ *
+ * Features:
+ * - Official CISA color palette
+ * - Typography system with Source Sans Pro
+ * - Spacing system following CISA standards
+ * - Component library (buttons, forms, alerts, etc.)
+ * - TLP color-coded banner system
+ * - Print-optimized styles
+ * - Responsive design
+ * - Accessibility features
+ */
+
+/* Animation for spinner (replaces Font Awesome fa-spin) */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+:root {
+    /* CISA Official Color Palette */
+    --cisa-blue: #112e51;
+    --cisa-blue-light: #205493;
+    --cisa-blue-lighter: #0071bc;
+    --cisa-blue-lightest: #e1f3fd;
+    --cisa-blue-dark: #0c2139;
+    --cisa-red: #d83933;
+    --cisa-red-dark: #a94442;
+    --cisa-red-light: #f8d7da;
+    --cisa-gray: #5b616b;
+    --cisa-gray-light: #d6d7d9;
+    --cisa-gray-lighter: #f1f1f2;
+    --cisa-gray-dark: #323a45;
+    --cisa-white: #ffffff;
+    --cisa-black: #1b1b1b;
+    --cisa-success: #28a745;
+    --cisa-warning: #ffc107;
+    --cisa-info: #17a2b8;
+    --shadow-xl: 0 14px 20px rgba(0,0,0,0.12);
+
+    /* Aliases for components that reference --border / --border-color */
+    --border: var(--cisa-gray-light);
+    --border-color: var(--cisa-gray-light);
+
+    /* Typography - CISA House Style */
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-size-base: 16px;
+    --font-size-sm: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 24px;
+    --font-size-xxl: 32px;
+    --font-size-xs: 12px;
+
+    /* Spacing System - CISA Standard */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-xxl: 3rem;
+
+    /* Border Radius */
+    --border-radius: 4px;
+    --border-radius-lg: 8px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+
+    /* TLP Colors for Banner System */
+    --tlp-white: var(--cisa-white);
+    --tlp-green: var(--cisa-success);
+    --tlp-amber: var(--cisa-warning);
+    --tlp-red: var(--cisa-red);
+    --tlp-black: var(--cisa-black);
+    --tlp-yellow: var(--cisa-warning);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--cisa-black);
+    background-color: var(--cisa-gray-lighter);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+}
+
+/* Header - CISA Style */
+.header {
+    background: linear-gradient(135deg, var(--cisa-blue) 0%, var(--cisa-blue-light) 100%);
+    color: var(--cisa-white);
+    padding: var(--spacing-lg) 0;
+    box-shadow: var(--shadow-md);
+    border-bottom: 3px solid var(--cisa-blue-lighter);
+    margin-bottom: var(--spacing-lg);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo { display: flex; align-items: center; gap: var(--spacing-md); }
+.logo-text h1 { margin: 0; font-size: var(--font-size-xl); font-weight: 700; }
+.logo-text p { margin: 0; font-size: var(--font-size-sm); opacity: 0.9; }
+.header h1 { font-size: var(--font-size-xxl); margin-bottom: var(--spacing-sm); font-weight: 700; }
+.header p { font-size: var(--font-size-lg); opacity: 0.9; }
+
+/* Navigation Tabs - CISA Style */
+.nav-tabs {
+    display: flex;
+    background: var(--cisa-white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--cisa-gray-light);
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.nav-tab {
+    background: none;
+    border: none;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--cisa-gray);
+    transition: all 0.3s ease;
+    font-family: var(--font-family);
+    font-size: var(--font-size-lg);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.nav-tab:hover {
+    background-color: var(--cisa-blue-lightest);
+    color: var(--cisa-blue);
+    border-color: var(--cisa-blue-lighter);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.nav-tab.active {
+    background-color: var(--cisa-blue);
+    color: var(--cisa-white);
+    border-color: var(--cisa-blue);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.nav-tab::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--cisa-black);
+    color: var(--cisa-white);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    margin-bottom: var(--spacing-sm);
+    box-shadow: var(--shadow-lg);
+}
+
+.nav-tab::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--cisa-black);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    margin-bottom: calc(var(--spacing-sm) - 6px);
+}
+
+.nav-tab:hover::before,
+.nav-tab:hover::after { opacity: 1; visibility: visible; }
+
+/* Section Styling - CISA Style */
+.section {
+    display: none;
+    background: var(--cisa-white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-xl);
+    overflow: hidden;
+}
+
+.section.active { display: block; }
+
+.section-header {
+    background: var(--cisa-gray-lighter);
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--cisa-gray-light);
+    margin: calc(-1 * var(--spacing-xl)) calc(-1 * var(--spacing-xl)) var(--spacing-lg) calc(-1 * var(--spacing-xl));
+}
+
+.section-title {
+    color: var(--cisa-blue);
+    font-size: var(--font-size-lg);
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Section Tabs: min-width to prevent flex overflow; overflow visible so tab content (e.g. PACE form) receives clicks */
+.section-tabs-shell {
+    min-width: 0;
+    overflow: visible;
+}
+
+.section-tabs-panel {
+    min-width: 0;
+    overflow-x: auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Chart cards: constrain to container so charts stay in viewable area */
+.chart-card {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Summary tab: charts stay within the tab panel viewable area (no viewport breakout) */
+.summary-tab-edge-to-edge {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Table cells: wrap long content instead of expanding */
+.table td {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Alert Styling - CISA Style */
+.alert {
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-lg);
+    border-left: 4px solid;
+    font-family: var(--font-family);
+}
+
+.alert-info {
+    background-color: var(--cisa-blue-lightest);
+    border-left-color: var(--cisa-blue-lighter);
+    color: var(--cisa-blue);
+}
+
+.alert-warning {
+    background-color: rgba(255, 193, 7, 0.1);
+    border-left-color: var(--cisa-warning);
+    color: #856404;
+}
+
+.alert-success {
+    background-color: rgba(40, 167, 69, 0.1);
+    border-left-color: var(--cisa-success);
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: var(--cisa-red-light);
+    border-left-color: var(--cisa-red);
+    color: var(--cisa-red-dark);
+}
+
+/* Form Elements - CISA Style */
+.form-group { margin-bottom: var(--spacing-lg); }
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--cisa-gray);
+    font-family: var(--font-family);
+}
+
+/* Standard text entry box: white bg, thin light grey border, rounded corners, grey italic placeholder */
+.form-input, .form-select, .form-textarea,
+.form-control, input.form-control, select.form-control, textarea.form-control,
+input[type="text"], input[type="search"], input[type="email"], input[type="url"], input[type="number"] {
+    width: 100%;
+    max-width: 400px;
+    min-height: 2.25rem;
+    box-sizing: border-box;
+    padding: 0.5rem 0.75rem;
+    background-color: var(--cisa-white);
+    border: 1px solid var(--cisa-gray-light);
+    border-radius: 6px;
+    font-size: var(--font-size-base);
+    font-family: var(--font-family);
+    transition: border-color 0.3s ease;
+}
+
+.form-input::placeholder, .form-control::placeholder,
+.form-textarea::placeholder,
+input::placeholder, textarea::placeholder {
+    color: #9ca3af;
+    font-style: italic;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus,
+.form-control:focus, input.form-control:focus, select.form-control:focus, textarea.form-control:focus,
+input[type="text"]:focus, input[type="search"]:focus, input[type="number"]:focus {
+    outline: none;
+    border-color: var(--cisa-blue-lighter);
+    box-shadow: 0 0 0 3px rgba(0, 113, 188, 0.1);
+}
+
+.form-input:focus-visible, .form-select:focus-visible, .form-textarea:focus-visible,
+.form-control:focus-visible, input.form-control:focus-visible, select.form-control:focus-visible, textarea.form-control:focus-visible {
+    outline: 2px solid var(--cisa-blue-lighter);
+    outline-offset: 2px;
+}
+
+/* Table inputs: fill cell width (override max-width for layout) */
+.table input, .table textarea, .table select {
+    max-width: none;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    align-items: end;
+}
+
+.form-row .form-group { margin-bottom: 0; }
+
+.form-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-control-sm, .form-select.form-control-sm {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-size-sm);
+}
+
+/* ComboBox (searchable dropdown) - matches form-control theme */
+.combo-root {
+    position: relative;
+    width: 100%;
+}
+.combo-trigger {
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    min-height: 2.25rem;
+    background-color: var(--cisa-white);
+    border: 1px solid var(--cisa-gray-light);
+    border-radius: 6px;
+    font-size: var(--font-size-base);
+    font-family: var(--font-family);
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+.combo-trigger:hover {
+    border-color: var(--cisa-blue-lighter);
+}
+.combo-trigger:focus,
+.combo-trigger:focus-visible {
+    outline: none;
+    border-color: var(--cisa-blue-lighter);
+    box-shadow: 0 0 0 3px rgba(0, 113, 188, 0.1);
+}
+.combo-trigger:disabled {
+    background-color: var(--cisa-gray-lighter);
+    cursor: not-allowed;
+}
+.combo-dropdown {
+    position: absolute;
+    z-index: 50;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    border: 1px solid var(--cisa-gray-light);
+    border-radius: var(--border-radius-lg);
+    background: var(--cisa-white);
+    box-shadow: var(--shadow-xl);
+    padding: var(--spacing-sm);
+    max-height: 280px;
+    overflow: auto;
+}
+.combo-search {
+    margin-bottom: var(--spacing-sm);
+    max-width: none;
+}
+.combo-empty {
+    padding: var(--spacing-sm);
+    color: var(--cisa-gray);
+}
+.combo-group {
+    margin-bottom: var(--spacing-sm);
+}
+.combo-group-label {
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--cisa-gray-dark);
+    padding: 6px 6px;
+}
+.combo-option {
+    width: 100%;
+    text-align: left;
+    padding: var(--spacing-sm);
+    border: none;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+}
+.combo-option:hover {
+    background-color: var(--cisa-blue-lightest);
+}
+.combo-option-selected {
+    background-color: var(--cisa-blue-lightest);
+}
+
+/* PRA/SLA on/off toggle slider - green when on, red when off */
+.pra-sla-toggle {
+    --toggle-on: var(--cisa-success);
+    --toggle-off: var(--cisa-red);
+    position: relative;
+    width: 52px;
+    height: 28px;
+    border: none;
+    border-radius: 14px;
+    padding: 0;
+    cursor: pointer;
+    background-color: var(--toggle-off);
+    transition: background-color 0.2s ease;
+}
+.pra-sla-toggle[aria-checked="true"] {
+    background-color: var(--toggle-on);
+}
+.pra-sla-toggle:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.pra-sla-toggle:focus-visible {
+    outline: 2px solid var(--cisa-blue-lighter);
+    outline-offset: 2px;
+}
+.pra-sla-toggle-thumb {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--cisa-white);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease;
+}
+
+/* Energy questionnaire (E-1–E-11): larger inputs for better UX */
+.energy-form input:not([type="radio"]):not([type="checkbox"]),
+.energy-form textarea,
+.energy-form select {
+    min-width: 220px;
+    min-height: 2.25rem;
+    padding: var(--spacing-sm) var(--spacing-md);
+    box-sizing: border-box;
+}
+.energy-form textarea {
+    min-height: 4.5rem;
+    resize: vertical;
+}
+.energy-form .table input,
+.energy-form .table textarea,
+.energy-form .table select {
+    min-width: 10rem;
+    width: 100%;
+}
+
+/* Critical questions that feed the impact curve chart */
+.energy-question-feeds-chart {
+    border-left: 4px solid var(--cisa-blue, #0071bc);
+    background: linear-gradient(to right, rgba(0, 113, 188, 0.06), transparent);
+}
+.energy-feeds-chart-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--cisa-blue, #0071bc);
+    background: rgba(0, 113, 188, 0.12);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+}
+/* Question card with validation error (linked from Save) */
+.energy-question-has-error {
+    border-left: 4px solid var(--cisa-red, #cd2026);
+    background: linear-gradient(to right, rgba(205, 32, 38, 0.06), transparent);
+}
+
+/* Radio and Checkbox Groups - CISA Style */
+.radio-group { margin-bottom: var(--spacing-md); }
+
+.radio-group label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: var(--spacing-lg);
+    cursor: pointer;
+    font-weight: 600;
+    font-family: var(--font-family);
+    color: var(--cisa-gray);
+}
+
+.radio-group input[type="radio"] { margin-right: var(--spacing-sm); }
+
+/* Vertical radio list (stacked options, CISA style) */
+.radio-group-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.radio-option-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0;
+    padding: var(--spacing-sm);
+    background-color: var(--cisa-gray-lighter);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--cisa-gray-light);
+}
+
+.radio-option-item input[type="radio"] { margin-right: var(--spacing-sm); margin-top: 2px; flex-shrink: 0; }
+
+.radio-option-item label,
+.radio-option-item > label {
+    flex: 1;
+    cursor: pointer;
+    line-height: 1.4;
+    font-family: var(--font-family);
+    color: var(--cisa-gray);
+    font-weight: 500;
+}
+
+.checkbox-group { margin-top: var(--spacing-md); }
+
+.checkbox-group h5 {
+    color: var(--cisa-blue);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background-color: var(--cisa-gray-lighter);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--cisa-gray-light);
+}
+
+.checkbox-item input[type="checkbox"] { margin-right: var(--spacing-sm); margin-top: 2px; }
+
+.checkbox-item label {
+    flex: 1;
+    cursor: pointer;
+    line-height: 1.4;
+    font-family: var(--font-family);
+    color: var(--cisa-gray);
+}
+
+.conditional-section {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: var(--cisa-blue-lightest);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--cisa-blue-lighter);
+}
+
+.question-item {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    border: 1px solid var(--cisa-gray-light);
+    border-radius: var(--border-radius-lg);
+    background-color: var(--cisa-white);
+    box-shadow: var(--shadow-sm);
+}
+
+.question-item h4 {
+    color: var(--cisa-blue);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-md);
+    font-weight: 600;
+}
+
+.question-item p {
+    margin-bottom: var(--spacing-md);
+    color: var(--cisa-gray);
+    font-weight: 500;
+    font-family: var(--font-family);
+}
+
+.top-action-bar {
+    background: var(--cisa-white);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--cisa-gray-light);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--cisa-blue);
+    color: var(--cisa-white);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.back-to-top:hover {
+    background: var(--cisa-blue-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Button Styling - CISA Style */
+.btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--cisa-blue-lighter);
+    outline-offset: 2px;
+}
+
+.btn-primary { background-color: var(--cisa-blue); color: var(--cisa-white); }
+.btn-primary:hover { background-color: var(--cisa-blue-light); }
+
+.btn-secondary { background-color: var(--cisa-gray); color: var(--cisa-white); }
+.btn-secondary:hover { background-color: var(--cisa-gray-light); }
+
+.btn-success { background-color: var(--cisa-success); color: var(--cisa-white); }
+.btn-success:hover { background-color: #218838; }
+
+.btn-warning { background-color: var(--cisa-warning); color: var(--cisa-black); }
+.btn-warning:hover { background-color: #e0a800; }
+
+.btn-info { background-color: var(--cisa-info); color: var(--cisa-white); }
+.btn-info:hover { background-color: #138496; }
+
+.btn-danger { background-color: var(--cisa-red); color: var(--cisa-white); }
+.btn-danger:hover { background-color: var(--cisa-red-dark); }
+
+.btn-sm { padding: var(--spacing-xs) var(--spacing-sm); font-size: var(--font-size-xs); }
+.btn-lg { padding: var(--spacing-md) var(--spacing-xl); font-size: var(--font-size-lg); }
+
+/* TLP Banner System */
+.banner-container {
+    position: fixed;
+    top: 20px;
+    right: -400px;
+    width: 380px;
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 9999;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: var(--font-family);
+}
+
+.banner-container.show { right: 20px; }
+
+.banner {
+    background: var(--cisa-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    margin-bottom: var(--spacing-md);
+    border: 3px solid;
+    overflow: hidden;
+    animation: slideInRight 0.4s ease-out;
+}
+
+.banner-header, .banner-content {
+    padding: var(--spacing-md) var(--spacing-lg);
+    color: var(--cisa-black);
+    background: var(--cisa-white);
+}
+
+.banner-header { display: flex; justify-content: space-between; align-items: center; font-weight: 600; }
+
+.banner-close {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: var(--font-size-lg);
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.banner-close:hover { background-color: rgba(0,0,0,0.05); }
+
+.banner-tlp-white { border-color: var(--tlp-white); }
+.banner-tlp-green { border-color: var(--tlp-green); }
+.banner-tlp-amber { border-color: var(--tlp-amber); }
+.banner-tlp-red { border-color: var(--tlp-red); }
+.banner-tlp-black { border-color: var(--tlp-black); }
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.banner.fade-out { animation: fadeOut 0.3s ease-in forwards; }
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(100%); }
+}
+
+/* Progress Bars */
+.progress-bar {
+    background: var(--cisa-gray-light);
+    border-radius: 10px;
+    height: 20px;
+    overflow: hidden;
+    margin: var(--spacing-md) 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--cisa-blue);
+    transition: width 0.5s ease;
+    border-radius: 10px;
+}
+
+.progress-fill.success { background: var(--cisa-success); }
+.progress-fill.warning { background: var(--cisa-warning); }
+.progress-fill.danger { background: var(--cisa-red); }
+
+/* Cards */
+.card {
+    background: var(--cisa-white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--cisa-gray-light);
+    margin-bottom: var(--spacing-lg);
+}
+
+.card-header {
+    border-bottom: 1px solid var(--cisa-gray-light);
+    padding-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.card-title {
+    color: var(--cisa-blue);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin: 0;
+}
+
+.card-body { color: var(--cisa-gray-dark); }
+
+/* Tables */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--spacing-lg);
+    background: var(--cisa-white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.table th, .table td {
+    padding: var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid var(--cisa-gray-light);
+}
+
+.table th {
+    background: var(--cisa-gray-lighter);
+    color: var(--cisa-blue);
+    font-weight: 600;
+}
+
+.table tbody tr:hover { background: var(--cisa-blue-lightest); }
+
+@media (max-width: 768px) {
+    .nav-tabs { flex-direction: column; }
+    .nav-tab { margin-right: 0; margin-bottom: var(--spacing-sm); }
+    .top-action-bar { flex-direction: column; padding: var(--spacing-sm); }
+    .banner-container { width: calc(100vw - 40px); right: -100vw; }
+    .banner-container.show { right: 20px; }
+}
+
+@media print {
+    .nav-tabs, .top-action-bar, .back-to-top { display: none !important; }
+    main { display: block !important; }
+    .section:not(.report-page) { display: block !important; box-shadow: none; border: 1px solid #ccc; margin-bottom: 20px; page-break-inside: avoid; }
+}
+
+@page { size: auto; margin: 0.5in; }
+
+@media print {
+    html, body { margin: 0; padding: 0; font-size: 12pt; line-height: 1.4; -webkit-print-color-adjust: exact; }
+    .container { width: 100%; max-width: 8.5in; margin: 0 auto; padding: 0.5in; box-sizing: border-box; }
+    table, input, textarea { max-width: 100%; word-wrap: break-word; overflow-wrap: break-word; }
+    h1, h2, h3 { page-break-before: avoid; page-break-after: avoid; }
+    .report-page, .report-content, .report-section { page-break-inside: avoid; }
+    .page-break { page-break-before: always; }
+    form, .form-section { page-break-inside: avoid; }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
+.mt-4 { margin-top: var(--spacing-lg); }
+.mt-5 { margin-top: var(--spacing-xl); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+.mb-5 { margin-bottom: var(--spacing-xl); }
+
+.p-0 { padding: 0; }
+.p-1 { padding: var(--spacing-xs); }
+.p-2 { padding: var(--spacing-sm); }
+.p-3 { padding: var(--spacing-md); }
+.p-4 { padding: var(--spacing-lg); }
+.p-5 { padding: var(--spacing-xl); }
+
+.d-none { display: none; }
+.d-block { display: block; }
+.d-flex { display: flex; }
+.d-grid { display: grid; }
+
+.w-100 { width: 100%; }
+.h-100 { height: 100%; }
+
+.text-primary { color: var(--cisa-blue); }
+.text-secondary { color: var(--cisa-gray); }
+.text-success { color: var(--cisa-success); }
+.text-warning { color: var(--cisa-warning); }
+.text-danger { color: var(--cisa-red); }
+.text-info { color: var(--cisa-info); }
+
+.bg-primary { background-color: var(--cisa-blue); }
+.bg-secondary { background-color: var(--cisa-gray); }
+.bg-success { background-color: var(--cisa-success); }
+.bg-warning { background-color: var(--cisa-warning); }
+.bg-danger { background-color: var(--cisa-red); }
+.bg-info { background-color: var(--cisa-info); }
+.bg-light { background-color: var(--cisa-gray-lighter); }
+.bg-white { background-color: var(--cisa-white); }

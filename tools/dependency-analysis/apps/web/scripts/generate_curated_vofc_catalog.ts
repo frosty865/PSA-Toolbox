@@ -158,7 +158,7 @@ async function main() {
     }
   }
 
-  const outPath = path.resolve(process.cwd(), '..', '..', 'docs', 'CURATED_TOP_LEVEL_VULNS_AND_OFCS.md');
+  const outPath = path.resolve(process.cwd(), '..', '..', 'data', 'CURATED_TOP_LEVEL_VULNS_AND_OFCS.md');
   await fs.writeFile(outPath, `${lines.join('\n')}\n`, 'utf8');
   // eslint-disable-next-line no-console
   console.log(`Wrote ${outPath}`);

@@ -1,0 +1,320 @@
+{
+  "baseline_version": "Baseline_Questions_v1",
+  "generated_at": "1766281245.8737996",
+  "description": "Component-level coverage analysis for Baseline Questions v1. This report is informational only.",
+  "summary": {
+    "total_components": 20,
+    "components_with_questions": 3,
+    "components_with_zero_questions": 17,
+    "total_questions_mapped": 5
+  },
+  "components_by_discipline": {
+    "Access Control Systems": {
+      "component_count": 3,
+      "components_with_questions": 0,
+      "components_with_zero_questions": 3,
+      "components": [
+        {
+          "component_code": "ACS_CONTROLLER",
+          "component_name": "Access Control Controller",
+          "question_count": 0,
+          "questions": []
+        },
+        {
+          "component_code": "ACS_LOCK",
+          "component_name": "Access Control Lock",
+          "question_count": 0,
+          "questions": []
+        },
+        {
+          "component_code": "ACS_READER",
+          "component_name": "Access Control Reader",
+          "question_count": 0,
+          "questions": []
+        }
+      ]
+    },
+    "Incident Management": {
+      "component_count": 1,
+      "components_with_questions": 1,
+      "components_with_zero_questions": 0,
+      "components": [
+        {
+          "component_code": "SEC_INCIDENT_PROCESS",
+          "component_name": "Incident Reporting Process",
+          "question_count": 1,
+          "questions": [
+            {
+              "question_code": "BASE-005",
+              "question_title": "Incident Reporting Process"
+            }
+          ]
+        }
+      ]
+    },
+    "Interior Security & Physical Barriers": {
+      "component_count": 1,
+      "components_with_questions": 0,
+      "components_with_zero_questions": 1,
+      "components": [
+        {
+          "component_code": "BARRIER_INTERIOR",
+          "component_name": "Interior Barrier",
+          "question_count": 0,
+          "questions": []
+        }
+      ]
+    },
+    "Intrusion Detection Systems": {
+      "component_count": 2,
+      "components_with_questions": 0,
+      "components_with_zero_questions": 2,
+      "components": [
+        {
+          "component_code": "IDS_CONTROL_PANEL",
+          "component_name": "IDS Control Panel",
+          "question_count": 0,
+          "questions": []
+        },
+        {
+          "component_code": "IDS_SENSOR",
+          "component_name": "Intrusion Sensor",
+          "question_count": 0,
+          "questions": []
+        }
+      ]
+    },
+    "Perimeter Security": {
+      "component_count": 3,
+      "components_with_questions": 0,
+      "components_with_zero_questions": 3,
+      "components": [
+        {
+          "component_code": "PERIM_BARRIER",
+          "component_name": "Perimeter Barrier",
+          "question_count": 0,
+          "questions": []
+        },
+        {
+          "component_code": "PERIM_FENCE",
+          "component_name": "Perimeter Fence",
+          "question_count": 0,
+          "questions": []
+        },
+        {
+          "component_code": "PERIM_GATE",
+          "component_name": "Perimeter Gate",
+          "question_count": 0,
+          "questions": []
+        }
+      ]
+    },
+    "Security Communications": {
+      "component_count": 2,
+      "components_with_questions": 0,
+      "components_with_zero_questions": 2,
+      "components": [
+        {
+          "component_code": "COMM_NOTIFICATION",
+          "component_name": "Notification System",
+          "question_count": 0,
+          "questions": []
+        },
+        {
+          "component_code": "COMM_RADIO",
+          "component_name": "Security Radio",
+          "question_count": 0,
+          "questions": []
+        }
+      ]
+    },
+    "Security Lighting": {
+      "component_count": 1,
+      "components_with_questions": 0,
+      "components_with_zero_questions": 1,
+      "components": [
+        {
+          "component_code": "LIGHTING_FIXTURE",
+          "component_name": "Security Lighting Fixture",
+          "question_count": 0,
+          "questions": []
+        }
+      ]
+    },
+    "Security Management & Governance": {
+      "component_count": 2,
+      "components_with_questions": 2,
+      "components_with_zero_questions": 0,
+      "components": [
+        {
+          "component_code": "SEC_GOV_PERSONNEL",
+          "component_name": "Security Governance Personnel",
+          "question_count": 2,
+          "questions": [
+            {
+              "question_code": "BASE-001",
+              "question_title": "Security Responsibility Designation"
+            },
+            {
+              "question_code": "BASE-002",
+              "question_title": "Security Roles Defined"
+            }
+          ]
+        },
+        {
+          "component_code": "SEC_POLICY_DOCUMENT",
+          "component_name": "Security Policy Document",
+          "question_count": 2,
+          "questions": [
+            {
+              "question_code": "BASE-003",
+              "question_title": "Written Security Policy"
+            },
+            {
+              "question_code": "BASE-004",
+              "question_title": "Security Policy Review"
+            }
+          ]
+        }
+      ]
+    },
+    "Security Operations": {
+      "component_count": 1,
+      "components_with_questions": 0,
+      "components_with_zero_questions": 1,
+      "components": [
+        {
+          "component_code": "OPS_MONITORING_CENTER",
+          "component_name": "Monitoring Center",
+          "question_count": 0,
+          "questions": []
+        }
+      ]
+    },
+    "Security Personnel": {
+      "component_count": 1,
+      "components_with_questions": 0,
+      "components_with_zero_questions": 1,
+      "components": [
+        {
+          "component_code": "PERSONNEL_GUARD",
+          "component_name": "Security Guard",
+          "question_count": 0,
+          "questions": []
+        }
+      ]
+    },
+    "Video Surveillance Systems": {
+      "component_count": 3,
+      "components_with_questions": 0,
+      "components_with_zero_questions": 3,
+      "components": [
+        {
+          "component_code": "VSS_CAMERA",
+          "component_name": "Video Camera",
+          "question_count": 0,
+          "questions": []
+        },
+        {
+          "component_code": "VSS_MONITORING_WORKSTATION",
+          "component_name": "Monitoring Workstation",
+          "question_count": 0,
+          "questions": []
+        },
+        {
+          "component_code": "VSS_RECORDING_DEVICE",
+          "component_name": "Video Recording Device",
+          "question_count": 0,
+          "questions": []
+        }
+      ]
+    }
+  },
+  "components_with_zero_questions": [
+    {
+      "component_code": "ACS_CONTROLLER",
+      "component_name": "Access Control Controller",
+      "discipline": "Access Control Systems"
+    },
+    {
+      "component_code": "ACS_LOCK",
+      "component_name": "Access Control Lock",
+      "discipline": "Access Control Systems"
+    },
+    {
+      "component_code": "ACS_READER",
+      "component_name": "Access Control Reader",
+      "discipline": "Access Control Systems"
+    },
+    {
+      "component_code": "BARRIER_INTERIOR",
+      "component_name": "Interior Barrier",
+      "discipline": "Interior Security & Physical Barriers"
+    },
+    {
+      "component_code": "IDS_CONTROL_PANEL",
+      "component_name": "IDS Control Panel",
+      "discipline": "Intrusion Detection Systems"
+    },
+    {
+      "component_code": "IDS_SENSOR",
+      "component_name": "Intrusion Sensor",
+      "discipline": "Intrusion Detection Systems"
+    },
+    {
+      "component_code": "PERIM_BARRIER",
+      "component_name": "Perimeter Barrier",
+      "discipline": "Perimeter Security"
+    },
+    {
+      "component_code": "PERIM_FENCE",
+      "component_name": "Perimeter Fence",
+      "discipline": "Perimeter Security"
+    },
+    {
+      "component_code": "PERIM_GATE",
+      "component_name": "Perimeter Gate",
+      "discipline": "Perimeter Security"
+    },
+    {
+      "component_code": "COMM_NOTIFICATION",
+      "component_name": "Notification System",
+      "discipline": "Security Communications"
+    },
+    {
+      "component_code": "COMM_RADIO",
+      "component_name": "Security Radio",
+      "discipline": "Security Communications"
+    },
+    {
+      "component_code": "LIGHTING_FIXTURE",
+      "component_name": "Security Lighting Fixture",
+      "discipline": "Security Lighting"
+    },
+    {
+      "component_code": "OPS_MONITORING_CENTER",
+      "component_name": "Monitoring Center",
+      "discipline": "Security Operations"
+    },
+    {
+      "component_code": "PERSONNEL_GUARD",
+      "component_name": "Security Guard",
+      "discipline": "Security Personnel"
+    },
+    {
+      "component_code": "VSS_CAMERA",
+      "component_name": "Video Camera",
+      "discipline": "Video Surveillance Systems"
+    },
+    {
+      "component_code": "VSS_MONITORING_WORKSTATION",
+      "component_name": "Monitoring Workstation",
+      "discipline": "Video Surveillance Systems"
+    },
+    {
+      "component_code": "VSS_RECORDING_DEVICE",
+      "component_name": "Video Recording Device",
+      "discipline": "Video Surveillance Systems"
+    }
+  ]
+}

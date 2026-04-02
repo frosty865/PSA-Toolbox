@@ -6,6 +6,7 @@ node_modules/
 dist/
 .next/
 out/
+apps/web/public/template-anchor-manifest.json
 .build-tmp/
 target/
 *.tsbuildinfo
@@ -36,7 +37,8 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
-.venv-reporter/
+!.venv-reporter/
+!.venv-reporter/**
 *.egg-info/
 .eggs/
 

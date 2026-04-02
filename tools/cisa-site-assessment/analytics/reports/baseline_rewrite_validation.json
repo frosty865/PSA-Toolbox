@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "validation_date": "2025-12-28T20:42:48.066793",
+    "total_processed": 416
+  },
+  "summary": {
+    "total_rewritten": 208,
+    "total_retired": 208,
+    "total_kept": 0,
+    "validation_errors_count": 0,
+    "validation_warnings_count": 2
+  },
+  "validation_errors": [],
+  "validation_warnings": [
+    {
+      "question_id": "BASE-348",
+      "violations": [
+        {
+          "rule_id": "RULE-105",
+          "rule_name": "Interpretation Required",
+          "severity": "REVIEW",
+          "description": "Question requires interpretation, intent, or trust in stated practice",
+          "matched_pattern": "compliance",
+          "matched_text": "compliance"
+        }
+      ]
+    },
+    {
+      "question_id": "BASE-350",
+      "violations": [
+        {
+          "rule_id": "RULE-105",
+          "rule_name": "Interpretation Required",
+          "severity": "REVIEW",
+          "description": "Question requires interpretation, intent, or trust in stated practice",
+          "matched_pattern": "compliance",
+          "matched_text": "compliance"
+        }
+      ]
+    }
+  ]
+}

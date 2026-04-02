@@ -1,0 +1,59 @@
+{
+  "bindings": [
+    {
+      "ofc_key": "OFC_3",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "OFC_6",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "OFC_31",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "OFC_32",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "OFC_33",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    }
+  ]
+}

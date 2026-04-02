@@ -1,0 +1,48 @@
+{
+  "version": "BASELINE_CORE_V1",
+  "layer": "BASELINE_CORE",
+  "groups": [
+    {
+      "group": "GOVERNANCE",
+      "order": 10,
+      "questions": ["Governance", "SecurityPersonnel"]
+    },
+    {
+      "group": "RISK_AND_PLANNING",
+      "order": 20,
+      "questions": ["RiskAssessment", "SecurityPlan", "PlanCoordination"]
+    },
+    {
+      "group": "TRAINING_AND_EXERCISES",
+      "order": 30,
+      "questions": ["Training", "Exercises"]
+    },
+    {
+      "group": "PHYSICAL_BOUNDARIES",
+      "order": 40,
+      "questions": ["PerimeterSecurity", "Lighting", "StandoffDistance", "ParkingDelivery"]
+    },
+    {
+      "group": "ENTRY_AND_VISITORS",
+      "order": 50,
+      "questions": ["EntryControl", "VisitorManagement", "AccessControl", "KeyControl"]
+    },
+    {
+      "group": "DETECTION_AND_MONITORING",
+      "order": 60,
+      "questions": ["VideoMonitoring", "CCTV", "VideoSystemType", "AlarmMonitoring"]
+    },
+    {
+      "group": "COMMUNICATIONS_AND_REPORTING",
+      "order": 70,
+      "questions": ["IncidentReporting", "LawEnforcement", "LawComm", "Communications", "MassNotification"]
+    },
+    {
+      "group": "RESPONSE_AND_RECOVERY",
+      "order": 80,
+      "questions": ["EmergencyProcedures", "EvacuationShelter", "Continuity", "Recovery", "Maintenance", "AuditReview"]
+    }
+  ]
+}
+
+

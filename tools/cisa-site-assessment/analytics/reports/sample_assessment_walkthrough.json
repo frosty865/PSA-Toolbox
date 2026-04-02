@@ -1,0 +1,30 @@
+{
+  "assessment_id": "cfbfca41-3f8c-4c69-99a8-5b2546910e88",
+  "total_ofcs": 2,
+  "ofcs": [
+    {
+      "nomination_id": "cfc0ee3f-78eb-4843-b5e8-0ed48d56ab4d",
+      "question_id": "BASE-002",
+      "gate": "CONTROL_OPERABLE",
+      "discipline": "Access Control Systems",
+      "subtype": "Biometric Access"
+    },
+    {
+      "nomination_id": "3e7d79a3-decb-436a-bfc0-00a9ac29881f",
+      "question_id": "BASE-004",
+      "gate": "CONTROL_EXISTS",
+      "discipline": "Access Control Systems",
+      "subtype": "Credential / Badge Systems"
+    }
+  ],
+  "gate_evaluation_example": {
+    "ofc": {
+      "nomination_id": "cfc0ee3f-78eb-4843-b5e8-0ed48d56ab4d",
+      "question_id": "BASE-002",
+      "gate": "CONTROL_OPERABLE",
+      "discipline": "Access Control Systems",
+      "subtype": "Biometric Access"
+    },
+    "description": "Shows baseline failure \u2192 OFC attachment flow"
+  }
+}

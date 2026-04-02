@@ -1,0 +1,16 @@
+[
+  {
+    "canon_id": "BASE-EAP-001",
+    "discipline_code": "EAP",
+    "subtype_code": null,
+    "question_text": "Is there a documented emergency action plan for the facility?",
+    "response_enum": ["YES","NO","N_A"]
+  },
+  {
+    "canon_id": "BASE-EAP-002",
+    "discipline_code": "EAP",
+    "subtype_code": null,
+    "question_text": "Are protective actions for emergencies defined and documented for the facility?",
+    "response_enum": ["YES","NO","N_A"]
+  }
+]

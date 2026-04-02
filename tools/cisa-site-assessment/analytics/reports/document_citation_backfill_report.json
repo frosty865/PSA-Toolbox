@@ -1,0 +1,47 @@
+{
+  "backfill_date": "2026-01-18T16:22:27.241043",
+  "totals": {
+    "total_documents_checked": 24,
+    "updated_count": 0,
+    "skipped_count": 5,
+    "error_count": 0
+  },
+  "remaining_low_confidence_count": 0,
+  "sample_entries": [
+    {
+      "document_id": "03f28349-3e93-4085-83bb-c6f531ef7b86",
+      "status": "skipped",
+      "reason": "confidence_not_improved",
+      "existing_confidence": 90,
+      "new_confidence": 90
+    },
+    {
+      "document_id": "1a1fea3b-3311-48a3-a232-1d5a1c19dbaf",
+      "status": "skipped",
+      "reason": "confidence_not_improved",
+      "existing_confidence": 50,
+      "new_confidence": 50
+    },
+    {
+      "document_id": "1dcd979c-e311-4069-b9d4-25d4c84c3ccd",
+      "status": "skipped",
+      "reason": "confidence_not_improved",
+      "existing_confidence": 50,
+      "new_confidence": 50
+    },
+    {
+      "document_id": "21632722-991d-4df7-bf3a-13d61ac3abf1",
+      "status": "skipped",
+      "reason": "confidence_not_improved",
+      "existing_confidence": 50,
+      "new_confidence": 50
+    },
+    {
+      "document_id": "258674df-dd92-4470-ad58-c8cc70fb3b78",
+      "status": "skipped",
+      "reason": "confidence_not_improved",
+      "existing_confidence": 90,
+      "new_confidence": 90
+    }
+  ]
+}

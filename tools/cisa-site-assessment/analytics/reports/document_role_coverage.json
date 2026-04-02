@@ -1,0 +1,28 @@
+{
+  "generated_at": "1769037856.8345914",
+  "total_documents": 66,
+  "total_chunks": 28362,
+  "total_ofc_candidates": 3190,
+  "documents_by_role": {
+    "OFC_SOURCE": 0,
+    "AUTHORITY_SOURCE": 66,
+    "NULL": 0
+  },
+  "chunks_by_role": {
+    "OFC_SOURCE": 0,
+    "AUTHORITY_SOURCE": 28362,
+    "LEGACY": 0,
+    "NULL": 0
+  },
+  "ofc_candidates_by_role": {
+    "OFC_SOURCE": 0,
+    "AUTHORITY_SOURCE": 2182,
+    "LEGACY": 0,
+    "NULL": 0
+  },
+  "interpretation": {
+    "note": "AUTHORITY_SOURCE documents showing 0 OFCs is expected and not a failure.",
+    "mining_eligibility": "Only OFC_SOURCE documents are eligible for OFC mining.",
+    "authority_purpose": "AUTHORITY_SOURCE documents are retained for citations and authority support, not OFC creation."
+  }
+}

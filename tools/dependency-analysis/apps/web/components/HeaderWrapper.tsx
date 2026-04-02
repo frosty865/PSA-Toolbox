@@ -1,7 +1,7 @@
 'use client';
 
-import IdaHeader from '@/components/branding/IdaHeader';
+import CisaHeader from '@/components/branding/CisaHeader';
 
 export function HeaderWrapper() {
-  return <IdaHeader variant="page" />;
+  return <CisaHeader variant="page" />;
 }

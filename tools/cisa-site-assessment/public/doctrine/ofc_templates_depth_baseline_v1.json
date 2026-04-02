@@ -1,0 +1,128 @@
+[
+  {
+    "required_element_code": "BASE-001",
+    "parent_required_element_code": "BASE-003",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": ""
+  },
+  {
+    "required_element_code": "BASE-001",
+    "parent_required_element_code": "BASE-003",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": ""
+  },
+  {
+    "required_element_code": "BASE-003",
+    "parent_required_element_code": "BASE-001",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": ""
+  },
+  {
+    "required_element_code": "BASE-003",
+    "parent_required_element_code": "BASE-001",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": ""
+  },
+  {
+    "required_element_code": "BASE-002",
+    "parent_required_element_code": "BASE-001",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": ""
+  },
+  {
+    "required_element_code": "BASE-002",
+    "parent_required_element_code": "BASE-001",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": ""
+  },
+  {
+    "required_element_code": "BASE-005",
+    "parent_required_element_code": "BASE-003",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": ""
+  },
+  {
+    "required_element_code": "BASE-005",
+    "parent_required_element_code": "BASE-003",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": ""
+  },
+  {
+    "required_element_code": "BASE-054",
+    "parent_required_element_code": "BASE-001",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": ""
+  },
+  {
+    "required_element_code": "BASE-054",
+    "parent_required_element_code": "BASE-001",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": ""
+  },
+  {
+    "required_element_code": "BASE-094",
+    "parent_required_element_code": "BASE-003",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": ""
+  },
+  {
+    "required_element_code": "BASE-094",
+    "parent_required_element_code": "BASE-003",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": ""
+  },
+  {
+    "required_element_code": "BASE-032",
+    "parent_required_element_code": "BASE-002",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": ""
+  },
+  {
+    "required_element_code": "BASE-032",
+    "parent_required_element_code": "BASE-002",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": ""
+  },
+  {
+    "required_element_code": "BASE-027",
+    "parent_required_element_code": "BASE-002",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": ""
+  },
+  {
+    "required_element_code": "BASE-027",
+    "parent_required_element_code": "BASE-002",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": ""
+  },
+  {
+    "required_element_code": "BASE-033",
+    "parent_required_element_code": "BASE-003",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": ""
+  },
+  {
+    "required_element_code": "BASE-033",
+    "parent_required_element_code": "BASE-003",
+    "layer": "baseline",
+    "is_sector_depth": false,
+    "ofc_text": ""
+  }
+]

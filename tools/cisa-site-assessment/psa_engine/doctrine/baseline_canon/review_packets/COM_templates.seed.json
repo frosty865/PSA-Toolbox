@@ -1,0 +1,43 @@
+{
+  "generated_from": "D:/psa-workspace/psa_rebuild/analytics/reports/legacy_baseline_refactor_map.json",
+  "discipline": "COM",
+  "note": "Fill 'template' with YES/NO-form boundary control assertions. Keys must match discipline_subtype_code exactly. Leave empty to keep non-spine (component depth).",
+  "templates": {
+    "COM_BACKUP_COMMUNICATIONS": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are backup communications systems installed?"
+      ]
+    },
+    "COM_COMMUNICATION_PROTOCOLS": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are communication protocols systems installed?"
+      ]
+    },
+    "COM_INTEROPERABLE_COMMUNICATIONS": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are interoperable communications systems installed?"
+      ]
+    },
+    "COM_PAGING_SYSTEMS": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are paging systems installed?"
+      ]
+    },
+    "COM_PA_SYSTEMS": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are pa systems installed?"
+      ]
+    },
+    "COM_RADIOS_TWO_WAY": {
+      "template": "",
+      "examples_from_legacy": [
+        "Are radios two-way systems installed?"
+      ]
+    }
+  }
+}

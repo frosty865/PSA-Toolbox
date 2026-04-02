@@ -66,6 +66,19 @@ const nextConfig = {
       // Legacy ADA-prefixed routes should map to current root routes.
       { source: '/ada', destination: '/', permanent: true },
       { source: '/ada/:path*', destination: '/:path*', permanent: true },
+      { source: '/host-v3', destination: '/hotel-analysis/', permanent: true },
+      { source: '/host-v3/', destination: '/hotel-analysis/', permanent: true },
+    ];
+  },
+  /**
+   * Public files live at /hotel-analysis/index.html, but Next does not automatically map /hotel-analysis/ to that file
+   * (directory index). Without this, /hotel-analysis/ returns 404 and the HOST tool never loads.
+   */
+  async rewrites() {
+    return [
+      { source: '/hotel-analysis', destination: '/hotel-analysis/index.html' },
+      { source: '/hotel-analysis/', destination: '/hotel-analysis/index.html' },
+      // CISA Site Assessment is proxied by app/cisa-site-assessment/[[...slug]]/route.ts; do not use external rewrites here.
     ];
   },
   async headers() {
@@ -84,6 +97,8 @@ const nextConfig = {
     resolveAlias: {
       engine: `${toolRootFromRepo}/packages/engine`,
       'engine/client': `${toolRootFromRepo}/packages/engine/dist/client.js`,
+      'engine/summary': `${toolRootFromRepo}/packages/engine/dist/summary.js`,
+      'engine/export/export_guard': `${toolRootFromRepo}/packages/engine/dist/export/export_guard.js`,
       schema: `${toolRootFromRepo}/packages/schema`,
       security: `${toolRootFromRepo}/packages/security`,
       ui: `${toolRootFromRepo}/packages/ui`,
@@ -94,8 +109,10 @@ const nextConfig = {
     const enginePkg = path.join(packagesDir, 'engine');
     config.resolve.alias = {
       ...config.resolve.alias,
-      // Subpath first so 'engine/client' matches before 'engine'
+      // Subpaths must resolve to dist/*.js (package exports); the bare `engine` alias is the package root.
       'engine/client': path.join(enginePkg, 'dist', 'client.js'),
+      'engine/summary': path.join(enginePkg, 'dist', 'summary.js'),
+      'engine/export/export_guard': path.join(enginePkg, 'dist', 'export', 'export_guard.js'),
       engine: enginePkg,
       schema: path.join(packagesDir, 'schema'),
       security: path.join(packagesDir, 'security'),

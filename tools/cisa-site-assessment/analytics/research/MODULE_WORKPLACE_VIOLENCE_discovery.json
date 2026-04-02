@@ -1,0 +1,26 @@
+{
+  "module_code": "MODULE_WORKPLACE_VIOLENCE",
+  "topic": "Workplace Violence",
+  "provider": "none",
+  "queries": [
+    "Workplace Violence"
+  ],
+  "seed_urls_count": 2,
+  "candidates": [
+    {
+      "url": "https://html.duckduckgo.com/html/?q=Workplace%20Violence",
+      "title": null,
+      "publisher": null,
+      "published_date": null,
+      "source": "seed"
+    },
+    {
+      "url": "https://www.google.com/search?q=Workplace%20Violence",
+      "title": null,
+      "publisher": null,
+      "published_date": null,
+      "source": "seed"
+    }
+  ],
+  "generated_at_utc": "2026-01-25T01:39:16.687930+00:00"
+}

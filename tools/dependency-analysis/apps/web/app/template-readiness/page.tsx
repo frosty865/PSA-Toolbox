@@ -1,10 +1,10 @@
 'use client';
 
 import React, { Suspense, useEffect, useState } from 'react';
-import Link from 'next/link';
+import Link from '@/components/FieldLink';
 import { useSearchParams } from 'next/navigation';
 import { REQUIRED_TEMPLATE_ANCHORS } from 'schema';
-import { getApiBase } from '@/lib/platform/apiBase';
+import { getTemplateCheck } from '@/lib/api';
 
 type CheckResult = {
   ok: boolean;
@@ -26,8 +26,7 @@ function TemplateReadinessContent() {
     if (!dev) return;
     setLoading(true);
     setError(null);
-    fetch(`${getApiBase()}/api/template/check`)
-      .then((res) => res.json())
+    getTemplateCheck()
       .then((data) => {
         setResult(data as CheckResult);
       })
@@ -41,13 +40,13 @@ function TemplateReadinessContent() {
 
   if (!dev) {
     return (
-      <main className="ida-section active">
-        <h2 className="ida-section-title">Template Readiness</h2>
+      <main className="section active">
+        <h2 className="section-title">Template Readiness</h2>
         <div className="alert alert-warning" role="alert">
           Add <code>?dev=1</code> to the URL to view this page.
         </div>
         <p className="mt-4">
-          <Link href="/" className="ida-btn ida-btn-secondary">← Back</Link>
+          <Link href="/" className="btn btn-secondary">← Back</Link>
         </p>
       </main>
     );
@@ -59,8 +58,8 @@ function TemplateReadinessContent() {
   const missingSet = new Set(result?.missing ?? []);
 
   return (
-    <main className="ida-section active">
-      <h2 className="ida-section-title">Template Readiness</h2>
+    <main className="section active">
+      <h2 className="section-title">Template Readiness</h2>
       <p className="text-secondary mb-4">
         Template path in use and status of required anchors.
       </p>
@@ -74,10 +73,10 @@ function TemplateReadinessContent() {
 
       {!loading && !error && result && (
         <>
-          <div className="mb-4 p-3 ida-readiness-path">
+          <div className="mb-4 p-3" style={{ background: 'var(--color-background-alt)', borderRadius: 4 }}>
             <strong>Template path:</strong>
             <br />
-            <code className="ida-readiness-path-code">{result.templatePath}</code>
+            <code style={{ fontSize: '0.875rem', wordBreak: 'break-all' }}>{result.templatePath}</code>
           </div>
 
           {result.ok ? (
@@ -120,16 +119,16 @@ function TemplateReadinessContent() {
             </tbody>
           </table>
 
-          <div className="mt-4 p-3 ida-readiness-instructions">
-            <h3 className="ida-readiness-heading">Instructions</h3>
-            <p className="ida-readiness-copy">{INSTRUCTION}</p>
+          <div className="mt-4 p-3" style={{ background: 'var(--cisa-gray-lighter)', borderRadius: 4 }}>
+            <h3 style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>Instructions</h3>
+            <p style={{ margin: 0 }}>{INSTRUCTION}</p>
           </div>
         </>
       )}
 
       <p className="mt-5">
-        <Link href="/assessment/new/" className="ida-btn ida-btn-secondary ida-link-gap">Export / Import</Link>
-        <Link href="/" className="ida-btn ida-btn-secondary">← Back</Link>
+        <Link href="/assessment/new/" className="btn btn-secondary" style={{ marginRight: '0.5rem' }}>Export / Import</Link>
+        <Link href="/" className="btn btn-secondary">← Back</Link>
       </p>
     </main>
   );
@@ -138,8 +137,8 @@ function TemplateReadinessContent() {
 export default function TemplateReadinessPage() {
   return (
     <Suspense fallback={
-      <main className="ida-section active">
-        <h2 className="ida-section-title">Template Readiness</h2>
+      <main className="section active">
+        <h2 className="section-title">Template Readiness</h2>
         <p className="text-secondary">Loading…</p>
       </main>
     }>

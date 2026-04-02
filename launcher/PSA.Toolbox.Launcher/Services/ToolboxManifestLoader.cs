@@ -57,9 +57,16 @@ public static class ToolboxManifestLoader
 
     public static IReadOnlyList<ToolDisplayItem> ResolveTools(string repoRoot, ToolboxManifestDocument doc)
     {
+        var seenIds = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         var list = new List<ToolDisplayItem>();
         foreach (var t in doc.Tools)
         {
+            if (string.IsNullOrWhiteSpace(t.Id))
+                continue;
+            if (seenIds.Contains(t.Id))
+                continue;
+            seenIds.Add(t.Id);
+
             var root = Path.GetFullPath(Path.Combine(repoRoot, t.RelativePath.TrimStart(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar)));
             string? readme = null;
             if (!string.IsNullOrEmpty(t.ReadmeRelativePath))
@@ -85,6 +92,8 @@ public static class ToolboxManifestLoader
                 ToolRootFullPath = root,
                 ReadmeFullPath = readme,
                 StartScriptFullPath = startScript,
+                EntryPath = string.IsNullOrWhiteSpace(t.EntryPath) ? null : t.EntryPath.Trim(),
+                ExternalUrl = string.IsNullOrWhiteSpace(t.ExternalUrl) ? null : t.ExternalUrl.Trim(),
             });
         }
 

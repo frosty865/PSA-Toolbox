@@ -1,0 +1,584 @@
+{
+  "sectors": [
+    {
+      "code": "chemical",
+      "name": "Chemical",
+      "subsectors": [
+        {
+          "code": "4",
+          "name": "Chemical Distribution"
+        },
+        {
+          "code": "1",
+          "name": "Chemical Manufacturing"
+        },
+        {
+          "code": "2",
+          "name": "Chemical Storage"
+        },
+        {
+          "code": "5",
+          "name": "Chemical Supply Chain"
+        },
+        {
+          "code": "3",
+          "name": "Chemical Transportation"
+        }
+      ]
+    },
+    {
+      "code": "commercial_facilities",
+      "name": "Commercial Facilities",
+      "subsectors": [
+        {
+          "code": "9",
+          "name": "Gaming and Entertainment"
+        },
+        {
+          "code": "6",
+          "name": "Lodging"
+        },
+        {
+          "code": "13",
+          "name": "Outdoor Events"
+        },
+        {
+          "code": "7",
+          "name": "Public Assembly"
+        },
+        {
+          "code": "12",
+          "name": "Real Estate"
+        },
+        {
+          "code": "10",
+          "name": "Religious Facilities"
+        },
+        {
+          "code": "8",
+          "name": "Retail"
+        },
+        {
+          "code": "11",
+          "name": "Sports Leagues"
+        }
+      ]
+    },
+    {
+      "code": "communications",
+      "name": "Communications",
+      "subsectors": [
+        {
+          "code": "18",
+          "name": "Broadcasting"
+        },
+        {
+          "code": "17",
+          "name": "Cable"
+        },
+        {
+          "code": "19",
+          "name": "Internet Service Providers"
+        },
+        {
+          "code": "16",
+          "name": "Satellite"
+        },
+        {
+          "code": "20",
+          "name": "Voice over Internet Protocol"
+        },
+        {
+          "code": "15",
+          "name": "Wireless"
+        },
+        {
+          "code": "14",
+          "name": "Wireline"
+        }
+      ]
+    },
+    {
+      "code": "critical_manufacturing",
+      "name": "Critical Manufacturing",
+      "subsectors": [
+        {
+          "code": "25",
+          "name": "Appliance Manufacturing"
+        },
+        {
+          "code": "26",
+          "name": "Component Manufacturing"
+        },
+        {
+          "code": "23",
+          "name": "Electrical Equipment Manufacturing"
+        },
+        {
+          "code": "22",
+          "name": "Machinery Manufacturing"
+        },
+        {
+          "code": "21",
+          "name": "Primary Metals Manufacturing"
+        },
+        {
+          "code": "24",
+          "name": "Transportation Equipment Manufacturing"
+        }
+      ]
+    },
+    {
+      "code": "dams",
+      "name": "Dams",
+      "subsectors": [
+        {
+          "code": "30",
+          "name": "Flood Control Systems"
+        },
+        {
+          "code": "27",
+          "name": "Hydroelectric Power Generation"
+        },
+        {
+          "code": "32",
+          "name": "Irrigation Systems"
+        },
+        {
+          "code": "29",
+          "name": "Levees"
+        },
+        {
+          "code": "28",
+          "name": "Navigation Locks"
+        },
+        {
+          "code": "31",
+          "name": "Water Storage"
+        }
+      ]
+    },
+    {
+      "code": "defense_industrial_base",
+      "name": "Defense Industrial Base",
+      "subsectors": [
+        {
+          "code": "33",
+          "name": "Aerospace"
+        },
+        {
+          "code": "35",
+          "name": "Ammunition and Explosives"
+        },
+        {
+          "code": "39",
+          "name": "Military Communications"
+        },
+        {
+          "code": "41",
+          "name": "Military Electronics"
+        },
+        {
+          "code": "42",
+          "name": "Military Optics"
+        },
+        {
+          "code": "44",
+          "name": "Military Research and Development"
+        },
+        {
+          "code": "43",
+          "name": "Military Software"
+        },
+        {
+          "code": "36",
+          "name": "Military Vehicles"
+        },
+        {
+          "code": "40",
+          "name": "Missiles and Space Systems"
+        },
+        {
+          "code": "38",
+          "name": "Radar and Navigation"
+        },
+        {
+          "code": "37",
+          "name": "Ships"
+        },
+        {
+          "code": "34",
+          "name": "Weapons"
+        }
+      ]
+    },
+    {
+      "code": "education_facilities",
+      "name": "Education Facilities",
+      "subsectors": [
+        {
+          "code": "b33cff9e-acc8-4ca9-9b8d-d97713691ac5",
+          "name": "Childcare / Early Learning"
+        },
+        {
+          "code": "b878430b-cafd-492c-bc23-af61911ce8b9",
+          "name": "Higher Education"
+        },
+        {
+          "code": "15cea357-c472-461f-b103-83d826d2c076",
+          "name": "K–12 Schools"
+        },
+        {
+          "code": "b5c85378-8a82-4587-b2a9-784a6f653087",
+          "name": "Private / Independent Schools"
+        },
+        {
+          "code": "5efc85fa-5aa8-4652-a134-a845237f9541",
+          "name": "Training Centers / Academies"
+        }
+      ]
+    },
+    {
+      "code": "emergency_services",
+      "name": "Emergency Services",
+      "subsectors": [
+        {
+          "code": "48",
+          "name": "Emergency Management"
+        },
+        {
+          "code": "47",
+          "name": "Emergency Medical Services"
+        },
+        {
+          "code": "46",
+          "name": "Fire and Emergency Services"
+        },
+        {
+          "code": "45",
+          "name": "Law Enforcement"
+        },
+        {
+          "code": "49",
+          "name": "Public Works"
+        },
+        {
+          "code": "50",
+          "name": "Search and Rescue"
+        }
+      ]
+    },
+    {
+      "code": "energy",
+      "name": "Energy",
+      "subsectors": [
+        {
+          "code": "56",
+          "name": "Coal"
+        },
+        {
+          "code": "51",
+          "name": "Electric Power"
+        },
+        {
+          "code": "57",
+          "name": "Energy Storage"
+        },
+        {
+          "code": "53",
+          "name": "Natural Gas"
+        },
+        {
+          "code": "54",
+          "name": "Nuclear"
+        },
+        {
+          "code": "52",
+          "name": "Petroleum"
+        },
+        {
+          "code": "55",
+          "name": "Renewable Energy"
+        }
+      ]
+    },
+    {
+      "code": "financial_services",
+      "name": "Financial Services",
+      "subsectors": [
+        {
+          "code": "58",
+          "name": "Banking"
+        },
+        {
+          "code": "61",
+          "name": "Credit Unions"
+        },
+        {
+          "code": "64",
+          "name": "Financial Market Utilities"
+        },
+        {
+          "code": "60",
+          "name": "Insurance"
+        },
+        {
+          "code": "63",
+          "name": "Non-Depository Credit Intermediation"
+        },
+        {
+          "code": "62",
+          "name": "Savings Associations"
+        },
+        {
+          "code": "59",
+          "name": "Securities and Investments"
+        }
+      ]
+    },
+    {
+      "code": "food_and_agriculture",
+      "name": "Food and Agriculture",
+      "subsectors": [
+        {
+          "code": "70",
+          "name": "Agricultural Distribution"
+        },
+        {
+          "code": "71",
+          "name": "Agricultural Inputs"
+        },
+        {
+          "code": "69",
+          "name": "Agricultural Processing"
+        },
+        {
+          "code": "68",
+          "name": "Agricultural Production"
+        },
+        {
+          "code": "67",
+          "name": "Food Distribution"
+        },
+        {
+          "code": "66",
+          "name": "Food Processing"
+        },
+        {
+          "code": "65",
+          "name": "Food Production"
+        }
+      ]
+    },
+    {
+      "code": "general",
+      "name": "General",
+      "subsectors": [
+        {
+          "code": "fbca479f-2651-4682-bec9-87dd510404ec",
+          "name": "General (All Sectors)"
+        }
+      ]
+    },
+    {
+      "code": "government_facilities",
+      "name": "Government Facilities",
+      "subsectors": [
+        {
+          "code": "78",
+          "name": "Correctional Facilities"
+        },
+        {
+          "code": "77",
+          "name": "Election Infrastructure"
+        },
+        {
+          "code": "72",
+          "name": "Federal Facilities"
+        },
+        {
+          "code": "74",
+          "name": "Local Facilities"
+        },
+        {
+          "code": "73",
+          "name": "State Facilities"
+        },
+        {
+          "code": "75",
+          "name": "Tribal Facilities"
+        }
+      ]
+    },
+    {
+      "code": "healthcare_and_public_health",
+      "name": "Healthcare and Public Health",
+      "subsectors": [
+        {
+          "code": "80",
+          "name": "Ambulatory Care"
+        },
+        {
+          "code": "85",
+          "name": "Blood"
+        },
+        {
+          "code": "81",
+          "name": "Home Healthcare"
+        },
+        {
+          "code": "79",
+          "name": "Hospitals"
+        },
+        {
+          "code": "86",
+          "name": "Laboratories"
+        },
+        {
+          "code": "82",
+          "name": "Long-term Care"
+        },
+        {
+          "code": "83",
+          "name": "Medical Devices"
+        },
+        {
+          "code": "87",
+          "name": "Medical Research"
+        },
+        {
+          "code": "84",
+          "name": "Pharmaceuticals"
+        }
+      ]
+    },
+    {
+      "code": "information_technology",
+      "name": "Information Technology",
+      "subsectors": [
+        {
+          "code": "91",
+          "name": "Cloud Computing"
+        },
+        {
+          "code": "92",
+          "name": "Data Centers"
+        },
+        {
+          "code": "88",
+          "name": "IT Hardware"
+        },
+        {
+          "code": "90",
+          "name": "IT Services"
+        },
+        {
+          "code": "89",
+          "name": "IT Software"
+        },
+        {
+          "code": "93",
+          "name": "IT Support Services"
+        },
+        {
+          "code": "94",
+          "name": "IT Training"
+        }
+      ]
+    },
+    {
+      "code": "nuclear_reactors,_materials,_and_waste",
+      "name": "Nuclear Reactors, Materials, and Waste",
+      "subsectors": [
+        {
+          "code": "99",
+          "name": "Nuclear Fuel Cycle"
+        },
+        {
+          "code": "97",
+          "name": "Nuclear Materials"
+        },
+        {
+          "code": "95",
+          "name": "Nuclear Power Plants"
+        },
+        {
+          "code": "100",
+          "name": "Nuclear Security"
+        },
+        {
+          "code": "98",
+          "name": "Nuclear Waste"
+        },
+        {
+          "code": "96",
+          "name": "Research Reactors"
+        }
+      ]
+    },
+    {
+      "code": "transportation_systems",
+      "name": "Transportation Systems",
+      "subsectors": [
+        {
+          "code": "101",
+          "name": "Aviation"
+        },
+        {
+          "code": "107",
+          "name": "Freight Rail"
+        },
+        {
+          "code": "102",
+          "name": "Highway Infrastructure"
+        },
+        {
+          "code": "103",
+          "name": "Maritime Transportation"
+        },
+        {
+          "code": "104",
+          "name": "Mass Transit"
+        },
+        {
+          "code": "105",
+          "name": "Pipeline Systems"
+        },
+        {
+          "code": "108",
+          "name": "Postal and Shipping"
+        },
+        {
+          "code": "106",
+          "name": "Rail Transportation"
+        }
+      ]
+    },
+    {
+      "code": "water_and_wastewater_systems",
+      "name": "Water and Wastewater Systems",
+      "subsectors": [
+        {
+          "code": "109",
+          "name": "Drinking Water"
+        },
+        {
+          "code": "114",
+          "name": "Stormwater Management"
+        },
+        {
+          "code": "110",
+          "name": "Wastewater Treatment"
+        },
+        {
+          "code": "112",
+          "name": "Water Distribution"
+        },
+        {
+          "code": "113",
+          "name": "Water Treatment"
+        }
+      ]
+    }
+  ]
+}

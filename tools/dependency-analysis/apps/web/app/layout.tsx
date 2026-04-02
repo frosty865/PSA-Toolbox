@@ -1,33 +1,14 @@
 import type { Metadata } from 'next';
-/* USWDS v3 — U.S. Web Design System stylesheet (npm package). Host V3 product code lives under tools/host-v3/, not here. */
-import '@uswds/uswds/css/uswds.min.css';
 import './globals.css';
-import './ida-design-system.css';
-/* PSA Toolbox branding: shared/cisa_styles.css (+ tokens in public/tsp-global.css; see repo shared/psa-tokens.css) */
-import '../../../../../shared/cisa_styles.css';
+import './CISA_Design_System.css';
+import '../styles/psa-toolbox-house.css';
 import { RootLayoutClientLoader } from '@/components/RootLayoutClientLoader';
 
 export const metadata: Metadata = {
-  title: 'Infrastructure Dependency Assessment | PSA Toolbox',
+  title: 'PSA Toolbox · Infrastructure Dependency Tool',
   description:
-    'PSA Infrastructure Dependency Assessment supports structured dependency review and portfolio reporting.',
-  applicationName: 'PSA IDA',
-  openGraph: {
-    title: 'Infrastructure Dependency Assessment | PSA Toolbox',
-    description:
-      'PSA Infrastructure Dependency Assessment supports structured dependency review and portfolio reporting.',
-    siteName: 'PSA Toolbox',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary',
-    title: 'Infrastructure Dependency Assessment | PSA Toolbox',
-    description:
-      'PSA Infrastructure Dependency Assessment supports structured dependency review and portfolio reporting.',
-  },
-  icons: {
-    icon: '/psa-logo.svg',
-  },
+    'U.S. Department of Homeland Security — dependency assessment and registered PSA tools.',
+  applicationName: 'PSA Toolbox',
 };
 
 export default function RootLayout({
@@ -38,11 +19,22 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr">
       <head>
-        {/* No remote fonts/CDNs for offline-first and compliance (see docs/SECURITY.md) */}
+        {/* Offline-first: fonts from public/fonts if present */}
         <link rel="stylesheet" href="/fonts/fonts.css" />
-        <link rel="stylesheet" href="/tsp-global.css" />
       </head>
       <body className="tsp-theme" data-brand="psa">
+        <noscript>
+          <div
+            style={{
+              padding: '24px',
+              fontFamily: 'system-ui, Segoe UI, sans-serif',
+              maxWidth: '42rem',
+              lineHeight: 1.5,
+            }}
+          >
+            <strong>This application requires JavaScript.</strong>
+          </div>
+        </noscript>
         <RootLayoutClientLoader>{children}</RootLayoutClientLoader>
       </body>
     </html>

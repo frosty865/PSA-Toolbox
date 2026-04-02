@@ -1,0 +1,102 @@
+[
+  {
+    "name": "psa_engine",
+    "path": "D:\\psa-workspace\\psaback\\psa_engine",
+    "belongs_in": "psa_engine",
+    "reason": "psa_engine is a separate repository - should not be nested in psaback",
+    "exists": true,
+    "is_directory": true,
+    "size": null,
+    "item_count": 12
+  },
+  {
+    "name": "psa-rebuild",
+    "path": "D:\\psa-workspace\\psaback\\psa-rebuild",
+    "belongs_in": "psa-rebuild",
+    "reason": "psa-rebuild is a separate repository - should not be nested in psaback",
+    "exists": true,
+    "is_directory": true,
+    "size": null,
+    "item_count": 0
+  },
+  {
+    "name": "psaback",
+    "path": "D:\\psa-workspace\\psaback\\psaback",
+    "belongs_in": "psaback (root)",
+    "reason": "Nested psaback folder - likely duplicate or misorganized",
+    "exists": true,
+    "is_directory": true,
+    "size": null,
+    "item_count": 0
+  },
+  {
+    "name": "model/doctrine_v2",
+    "path": "D:\\psa-workspace\\psaback\\model\\doctrine_v2",
+    "belongs_in": "psa_engine",
+    "reason": "Doctrine content belongs in psa_engine, not psaback",
+    "exists": true,
+    "is_directory": true,
+    "size": null,
+    "item_count": 1
+  },
+  {
+    "name": "required_element_sets",
+    "path": "D:\\psa-workspace\\psaback\\required_element_sets",
+    "belongs_in": "psa_engine",
+    "reason": "Required element sets are doctrine content, belong in psa_engine",
+    "exists": true,
+    "is_directory": true,
+    "size": null,
+    "item_count": 9
+  },
+  {
+    "name": "node_modules",
+    "path": "D:\\psa-workspace\\psaback\\node_modules",
+    "belongs_in": "psa-rebuild (if UI-related)",
+    "reason": "Node.js dependencies typically belong in psa-rebuild (UI) or should be removed if not needed",
+    "exists": true,
+    "is_directory": true,
+    "size": null,
+    "item_count": 8
+  },
+  {
+    "name": "package.json",
+    "path": "D:\\psa-workspace\\psaback\\package.json",
+    "belongs_in": "psa-rebuild (if UI-related)",
+    "reason": "package.json typically belongs in psa-rebuild (UI) unless psaback has its own Node.js components",
+    "exists": true,
+    "is_directory": false,
+    "size": 405,
+    "item_count": null
+  },
+  {
+    "name": "static",
+    "path": "D:\\psa-workspace\\psaback\\static",
+    "belongs_in": "psa-rebuild (if UI assets)",
+    "reason": "Static assets typically belong in psa-rebuild (UI) unless psaback serves them directly",
+    "exists": true,
+    "is_directory": true,
+    "size": null,
+    "item_count": 2
+  },
+  {
+    "name": "styles",
+    "path": "D:\\psa-workspace\\psaback\\styles",
+    "belongs_in": "psa-rebuild (if UI styles)",
+    "reason": "CSS/styles typically belong in psa-rebuild (UI)",
+    "exists": true,
+    "is_directory": true,
+    "size": null,
+    "item_count": 1
+  },
+  {
+    "name": "templates",
+    "path": "D:\\psa-workspace\\psaback\\templates",
+    "belongs_in": "psa-rebuild (if UI templates)",
+    "reason": "Templates typically belong in psa-rebuild (UI) unless psaback serves HTML directly",
+    "exists": true,
+    "is_directory": true,
+    "size": null,
+    "item_count": 3
+  }
+]

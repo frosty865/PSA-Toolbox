@@ -1,0 +1,387 @@
+{
+  "applied_at": "2026-01-16T17:35:43.250Z",
+  "patches_applied": 19,
+  "expected_patches": 19,
+  "results": [
+    {
+      "subtype_code": "ACS_VISITOR_MANAGEMENT_SYSTEMS",
+      "name": "Visitor Management Systems",
+      "discipline_code": "ACS",
+      "discipline_name": "Access Control Systems",
+      "before": {
+        "has_overview": true,
+        "has_indicators": false,
+        "has_failures": false,
+        "has_mitigation": false,
+        "has_references": false
+      },
+      "after": {
+        "has_overview": true,
+        "has_indicators": true,
+        "has_failures": true,
+        "has_mitigation": true,
+        "has_references": true
+      }
+    },
+    {
+      "subtype_code": "COM_INTEROPERABLE_COMMUNICATIONS",
+      "name": "Interoperable Communications",
+      "discipline_code": "COM",
+      "discipline_name": "Communications",
+      "before": {
+        "has_overview": true,
+        "has_indicators": false,
+        "has_failures": false,
+        "has_mitigation": false,
+        "has_references": false
+      },
+      "after": {
+        "has_overview": true,
+        "has_indicators": true,
+        "has_failures": true,
+        "has_mitigation": true,
+        "has_references": true
+      }
+    },
+    {
+      "subtype_code": "EAP_EVACUATION_PROCEDURES",
+      "name": "Evacuation Procedures",
+      "discipline_code": "EAP",
+      "discipline_name": "Emergency Action Planning",
+      "before": {
+        "has_overview": true,
+        "has_indicators": false,
+        "has_failures": false,
+        "has_mitigation": false,
+        "has_references": false
+      },
+      "after": {
+        "has_overview": true,
+        "has_indicators": true,
+        "has_failures": true,
+        "has_mitigation": true,
+        "has_references": true
+      }
+    },
+    {
+      "subtype_code": "EAP_LOCKDOWN_LOCKOUT_PROCEDURES",
+      "name": "Lockdown / Lockout Procedures",
+      "discipline_code": "EAP",
+      "discipline_name": "Emergency Action Planning",
+      "before": {
+        "has_overview": true,
+        "has_indicators": false,
+        "has_failures": false,
+        "has_mitigation": false,
+        "has_references": false
+      },
+      "after": {
+        "has_overview": true,
+        "has_indicators": true,
+        "has_failures": true,
+        "has_mitigation": true,
+        "has_references": true
+      }
+    },
+    {
+      "subtype_code": "EAP_REUNIFICATION_PROCEDURES",
+      "name": "Reunification Procedures",
+      "discipline_code": "EAP",
+      "discipline_name": "Emergency Action Planning",
+      "before": {
+        "has_overview": true,
+        "has_indicators": false,
+        "has_failures": false,
+        "has_mitigation": false,
+        "has_references": false
+      },
+      "after": {
+        "has_overview": true,
+        "has_indicators": true,
+        "has_failures": true,
+        "has_mitigation": true,
+        "has_references": true
+      }
+    },
+    {
+      "subtype_code": "EMR_BUSINESS_CONTINUITY",
+      "name": "Business Continuity",
+      "discipline_code": "EMR",
+      "discipline_name": "Emergency Management & Resilience",
+      "before": {
+        "has_overview": true,
+        "has_indicators": false,
+        "has_failures": false,
+        "has_mitigation": false,
+        "has_references": false
+      },
+      "after": {
+        "has_overview": true,
+        "has_indicators": true,
+        "has_failures": true,
+        "has_mitigation": true,
+        "has_references": true
+      }
+    },
+    {
+      "subtype_code": "EMR_CRISIS_MANAGEMENT",
+      "name": "Crisis Management",
+      "discipline_code": "EMR",
+      "discipline_name": "Emergency Management & Resilience",
+      "before": {
+        "has_overview": true,
+        "has_indicators": false,
+        "has_failures": false,
+        "has_mitigation": false,
+        "has_references": false
+      },
+      "after": {
+        "has_overview": true,
+        "has_indicators": true,
+        "has_failures": true,
+        "has_mitigation": true,
+        "has_references": true
+      }
+    },
+    {
+      "subtype_code": "EMR_ICS_NIMS_INTEGRATION",
+      "name": "ICS/NIMS Integration",
+      "discipline_code": "EMR",
+      "discipline_name": "Emergency Management & Resilience",
+      "before": {
+        "has_overview": true,
+        "has_indicators": false,
+        "has_failures": false,
+        "has_mitigation": false,
+        "has_references": false
+      },
+      "after": {
+        "has_overview": true,
+        "has_indicators": true,
+        "has_failures": true,
+        "has_mitigation": true,
+        "has_references": true
+      }
+    },
+    {
+      "subtype_code": "EMR_RESILIENCE_PLANNING",
+      "name": "Resilience Planning",
+      "discipline_code": "EMR",
+      "discipline_name": "Emergency Management & Resilience",
+      "before": {
+        "has_overview": true,
+        "has_indicators": false,
+        "has_failures": false,
+        "has_mitigation": false,
+        "has_references": false
+      },
+      "after": {
+        "has_overview": true,
+        "has_indicators": true,
+        "has_failures": true,
+        "has_mitigation": true,
+        "has_references": true
+      }
+    },
+    {
+      "subtype_code": "ISC_COORDINATION_PROTOCOLS",
+      "name": "Coordination Protocols",
+      "discipline_code": "ISC",
+      "discipline_name": "Information Sharing & Coordination",
+      "before": {
+        "has_overview": true,
+        "has_indicators": false,
+        "has_failures": false,
+        "has_mitigation": false,
+        "has_references": false
+      },
+      "after": {
+        "has_overview": true,
+        "has_indicators": true,
+        "has_failures": true,
+        "has_mitigation": true,
+        "has_references": true
+      }
+    },
+    {
+      "subtype_code": "KEY_MASTER_KEY_MANAGEMENT",
+      "name": "Master Key Management",
+      "discipline_code": "KEY",
+      "discipline_name": "Key Control",
+      "before": {
+        "has_overview": true,
+        "has_indicators": false,
+        "has_failures": false,
+        "has_mitigation": false,
+        "has_references": false
+      },
+      "after": {
+        "has_overview": true,
+        "has_indicators": true,
+        "has_failures": true,
+        "has_mitigation": true,
+        "has_references": true
+      }
+    },
+    {
+      "subtype_code": "KEY_REKEYING_PROCEDURES",
+      "name": "Rekeying Procedures",
+      "discipline_code": "KEY",
+      "discipline_name": "Key Control",
+      "before": {
+        "has_overview": true,
+        "has_indicators": false,
+        "has_failures": false,
+        "has_mitigation": false,
+        "has_references": false
+      },
+      "after": {
+        "has_overview": true,
+        "has_indicators": true,
+        "has_failures": true,
+        "has_mitigation": true,
+        "has_references": true
+      }
+    },
+    {
+      "subtype_code": "SFO_RESPONSE_PROCEDURES",
+      "name": "Response Procedures",
+      "discipline_code": "SFO",
+      "discipline_name": "Security Force / Operations",
+      "before": {
+        "has_overview": true,
+        "has_indicators": false,
+        "has_failures": false,
+        "has_mitigation": false,
+        "has_references": false
+      },
+      "after": {
+        "has_overview": true,
+        "has_indicators": true,
+        "has_failures": true,
+        "has_mitigation": true,
+        "has_references": true
+      }
+    },
+    {
+      "subtype_code": "SMG_GOVERNANCE_OVERSIGHT",
+      "name": "Governance & Oversight",
+      "discipline_code": "SMG",
+      "discipline_name": "Security Management & Governance",
+      "before": {
+        "has_overview": true,
+        "has_indicators": false,
+        "has_failures": false,
+        "has_mitigation": false,
+        "has_references": false
+      },
+      "after": {
+        "has_overview": true,
+        "has_indicators": true,
+        "has_failures": true,
+        "has_mitigation": true,
+        "has_references": true
+      }
+    },
+    {
+      "subtype_code": "SMG_POLICY_COMPLIANCE_TRACKING",
+      "name": "Policy Compliance Tracking",
+      "discipline_code": "SMG",
+      "discipline_name": "Security Management & Governance",
+      "before": {
+        "has_overview": true,
+        "has_indicators": false,
+        "has_failures": false,
+        "has_mitigation": false,
+        "has_references": false
+      },
+      "after": {
+        "has_overview": true,
+        "has_indicators": true,
+        "has_failures": true,
+        "has_mitigation": true,
+        "has_references": true
+      }
+    },
+    {
+      "subtype_code": "SMG_RISK_ASSESSMENT_RISK_MANAGEMENT",
+      "name": "Risk Assessment / Risk Management",
+      "discipline_code": "SMG",
+      "discipline_name": "Security Management & Governance",
+      "before": {
+        "has_overview": true,
+        "has_indicators": false,
+        "has_failures": false,
+        "has_mitigation": false,
+        "has_references": false
+      },
+      "after": {
+        "has_overview": true,
+        "has_indicators": true,
+        "has_failures": true,
+        "has_mitigation": true,
+        "has_references": true
+      }
+    },
+    {
+      "subtype_code": "SMG_SECURITY_DOCUMENTATION",
+      "name": "Security Documentation",
+      "discipline_code": "SMG",
+      "discipline_name": "Security Management & Governance",
+      "before": {
+        "has_overview": true,
+        "has_indicators": false,
+        "has_failures": false,
+        "has_mitigation": false,
+        "has_references": false
+      },
+      "after": {
+        "has_overview": true,
+        "has_indicators": true,
+        "has_failures": true,
+        "has_mitigation": true,
+        "has_references": true
+      }
+    },
+    {
+      "subtype_code": "SMG_SECURITY_PROCEDURES",
+      "name": "Security Procedures",
+      "discipline_code": "SMG",
+      "discipline_name": "Security Management & Governance",
+      "before": {
+        "has_overview": true,
+        "has_indicators": false,
+        "has_failures": false,
+        "has_mitigation": false,
+        "has_references": false
+      },
+      "after": {
+        "has_overview": true,
+        "has_indicators": true,
+        "has_failures": true,
+        "has_mitigation": true,
+        "has_references": true
+      }
+    },
+    {
+      "subtype_code": "VSS_SYSTEM_ARCHITECTURE",
+      "name": "System Architecture",
+      "discipline_code": "VSS",
+      "discipline_name": "Video Surveillance Systems",
+      "before": {
+        "has_overview": false,
+        "has_indicators": false,
+        "has_failures": false,
+        "has_mitigation": false,
+        "has_references": false
+      },
+      "after": {
+        "has_overview": true,
+        "has_indicators": true,
+        "has_failures": true,
+        "has_mitigation": true,
+        "has_references": true
+      }
+    }
+  ]
+}

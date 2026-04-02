@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "generated_at": "2026-01-13T18:05:37.437027Z",
+    "total_errors": 0,
+    "total_skipped": 1
+  },
+  "validation_errors": [],
+  "skipped_questions": [
+    {
+      "assessment_id": "4fe710a3-2339-4337-a18a-31551bac3c31",
+      "question_id": "BASE-000",
+      "gate": "CONTROL_EXISTS",
+      "reason": "no_ofc_template"
+    }
+  ]
+}

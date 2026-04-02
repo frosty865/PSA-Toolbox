@@ -1,0 +1,1367 @@
+[
+  {
+    "canon_id": "BASE-ACS-ACS_BIOMETRIC_ACCESS",
+    "discipline_code": "ACS",
+    "subtype_code": "ACS_BIOMETRIC_ACCESS",
+    "question_text": "Is a Biometric Access capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-ACS-ACS_CREDENTIAL_BADGE_SYSTEMS",
+    "discipline_code": "ACS",
+    "subtype_code": "ACS_CREDENTIAL_BADGE_SYSTEMS",
+    "question_text": "Is a Credential / Badge Systems capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-ACS-ACS_DOOR_MONITORING",
+    "discipline_code": "ACS",
+    "subtype_code": "ACS_DOOR_MONITORING",
+    "question_text": "Is a Door Monitoring capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-ACS-ACS_DOOR_READERS",
+    "discipline_code": "ACS",
+    "subtype_code": "ACS_DOOR_READERS",
+    "question_text": "Is a Door Readers capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-ACS-ACS_ELECTRIC_STRIKES_MAG_LOCKS",
+    "discipline_code": "ACS",
+    "subtype_code": "ACS_ELECTRIC_STRIKES_MAG_LOCKS",
+    "question_text": "Is an Electric Strikes / Mag Locks capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-ACS-ACS_ELECTRONIC_ACCESS_CONTROL",
+    "discipline_code": "ACS",
+    "subtype_code": "ACS_ELECTRONIC_ACCESS_CONTROL",
+    "question_text": "Is an Electronic Access Control capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-ACS-ACS_KEYPADS_PIN_ENTRY",
+    "discipline_code": "ACS",
+    "subtype_code": "ACS_KEYPADS_PIN_ENTRY",
+    "question_text": "Is a Keypads / PIN Entry capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-ACS-ACS_LOCKING_HARDWARE",
+    "discipline_code": "ACS",
+    "subtype_code": "ACS_LOCKING_HARDWARE",
+    "question_text": "Is a Locking Hardware capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-ACS-ACS_SECURED_VESTIBULES",
+    "discipline_code": "ACS",
+    "subtype_code": "ACS_SECURED_VESTIBULES",
+    "question_text": "Is a Secured Vestibules capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-ACS-ACS_VISITOR_MANAGEMENT_SYSTEMS",
+    "discipline_code": "ACS",
+    "subtype_code": "ACS_VISITOR_MANAGEMENT_SYSTEMS",
+    "question_text": "Is a Visitor Management Systems capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-COM-COM_BACKUP_COMMUNICATIONS",
+    "discipline_code": "COM",
+    "subtype_code": "COM_BACKUP_COMMUNICATIONS",
+    "question_text": "Is a Backup Communications capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-COM-COM_COMMUNICATION_PROTOCOLS",
+    "discipline_code": "COM",
+    "subtype_code": "COM_COMMUNICATION_PROTOCOLS",
+    "question_text": "Is a Communication Protocols capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-COM-COM_INTEROPERABLE_COMMUNICATIONS",
+    "discipline_code": "COM",
+    "subtype_code": "COM_INTEROPERABLE_COMMUNICATIONS",
+    "question_text": "Is an Interoperable Communications capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-COM-COM_PA_SYSTEMS",
+    "discipline_code": "COM",
+    "subtype_code": "COM_PA_SYSTEMS",
+    "question_text": "Is a PA Systems capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-COM-COM_PAGING_SYSTEMS",
+    "discipline_code": "COM",
+    "subtype_code": "COM_PAGING_SYSTEMS",
+    "question_text": "Is a Paging Systems capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-COM-COM_RADIOS_TWO_WAY",
+    "discipline_code": "COM",
+    "subtype_code": "COM_RADIOS_TWO_WAY",
+    "question_text": "Is a Radios / Two-Way capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-CPTED-CPTED_DEFENSIBLE_SPACE",
+    "discipline_code": "CPTED",
+    "subtype_code": "CPTED_DEFENSIBLE_SPACE",
+    "question_text": "Is a Defensible Space capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-CPTED-CPTED_EXTERIOR_LIGHTING",
+    "discipline_code": "CPTED",
+    "subtype_code": "CPTED_EXTERIOR_LIGHTING",
+    "question_text": "Is an Exterior Lighting capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-CPTED-CPTED_LANDSCAPING_CONTROL",
+    "discipline_code": "CPTED",
+    "subtype_code": "CPTED_LANDSCAPING_CONTROL",
+    "question_text": "Is a Landscaping Control capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-CPTED-CPTED_NATURAL_SURVEILLANCE",
+    "discipline_code": "CPTED",
+    "subtype_code": "CPTED_NATURAL_SURVEILLANCE",
+    "question_text": "Is a Natural Surveillance capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-CPTED-CPTED_SIGHTLINES",
+    "discipline_code": "CPTED",
+    "subtype_code": "CPTED_SIGHTLINES",
+    "question_text": "Is a Sightlines capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-CPTED-CPTED_TERRITORIAL_REINFORCEMENT",
+    "discipline_code": "CPTED",
+    "subtype_code": "CPTED_TERRITORIAL_REINFORCEMENT",
+    "question_text": "Is a Territorial Reinforcement capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-CPTED-CPTED_WAYFINDING",
+    "discipline_code": "CPTED",
+    "subtype_code": "CPTED_WAYFINDING",
+    "question_text": "Is a Wayfinding capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-EAP-EAP_EMERGENCY_DRILLS",
+    "discipline_code": "EAP",
+    "subtype_code": "EAP_EMERGENCY_DRILLS",
+    "question_text": "Is an Emergency Drills capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-EAP-EAP_EMERGENCY_GUIDES_FLIP_CHARTS",
+    "discipline_code": "EAP",
+    "subtype_code": "EAP_EMERGENCY_GUIDES_FLIP_CHARTS",
+    "question_text": "Is an Emergency Guides / Flip Charts capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-EAP-EAP_EVACUATION_PROCEDURES",
+    "discipline_code": "EAP",
+    "subtype_code": "EAP_EVACUATION_PROCEDURES",
+    "question_text": "Is an Evacuation Procedures capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-EAP-EAP_LOCKDOWN_LOCKOUT_PROCEDURES",
+    "discipline_code": "EAP",
+    "subtype_code": "EAP_LOCKDOWN_LOCKOUT_PROCEDURES",
+    "question_text": "Is a Lockdown / Lockout Procedures capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-EAP-EAP_MUSTER_POINTS_RALLY_AREAS",
+    "discipline_code": "EAP",
+    "subtype_code": "EAP_MUSTER_POINTS_RALLY_AREAS",
+    "question_text": "Is a Muster Points / Rally Areas capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-EAP-EAP_REUNIFICATION_PROCEDURES",
+    "discipline_code": "EAP",
+    "subtype_code": "EAP_REUNIFICATION_PROCEDURES",
+    "question_text": "Is a Reunification Procedures capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-EAP-EAP_SHELTER_IN_PLACE",
+    "discipline_code": "EAP",
+    "subtype_code": "EAP_SHELTER_IN_PLACE",
+    "question_text": "Is a Shelter-in-Place capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-EAP-EAP_STAFF_EMERGENCY_ROLES",
+    "discipline_code": "EAP",
+    "subtype_code": "EAP_STAFF_EMERGENCY_ROLES",
+    "question_text": "Is a Staff Emergency Roles capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-EMR-EMR_BUSINESS_CONTINUITY",
+    "discipline_code": "EMR",
+    "subtype_code": "EMR_BUSINESS_CONTINUITY",
+    "question_text": "Is a Business Continuity capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-EMR-EMR_CRISIS_MANAGEMENT",
+    "discipline_code": "EMR",
+    "subtype_code": "EMR_CRISIS_MANAGEMENT",
+    "question_text": "Is a Crisis Management capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-EMR-EMR_EMERGENCY_COMMUNICATIONS",
+    "discipline_code": "EMR",
+    "subtype_code": "EMR_EMERGENCY_COMMUNICATIONS",
+    "question_text": "Is an Emergency Communications capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-EMR-EMR_ICS_NIMS_INTEGRATION",
+    "discipline_code": "EMR",
+    "subtype_code": "EMR_ICS_NIMS_INTEGRATION",
+    "question_text": "Is an ICS/NIMS Integration capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-EMR-EMR_MASS_NOTIFICATION",
+    "discipline_code": "EMR",
+    "subtype_code": "EMR_MASS_NOTIFICATION",
+    "question_text": "Is a Mass Notification capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-EMR-EMR_REDUNDANCY_BACKUP_SYSTEMS",
+    "discipline_code": "EMR",
+    "subtype_code": "EMR_REDUNDANCY_BACKUP_SYSTEMS",
+    "question_text": "Is a Redundancy / Backup Systems capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-EMR-EMR_RESILIENCE_PLANNING",
+    "discipline_code": "EMR",
+    "subtype_code": "EMR_RESILIENCE_PLANNING",
+    "question_text": "Is a Resilience Planning capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-FAC-FAC_BALLISTIC_BARRIERS",
+    "discipline_code": "FAC",
+    "subtype_code": "FAC_BALLISTIC_BARRIERS",
+    "question_text": "Is a Ballistic Barriers capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-FAC-FAC_BLAST_MITIGATION",
+    "discipline_code": "FAC",
+    "subtype_code": "FAC_BLAST_MITIGATION",
+    "question_text": "Is a Blast Mitigation capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-FAC-FAC_EXTERIOR_WALL_REINFORCEMENT",
+    "discipline_code": "FAC",
+    "subtype_code": "FAC_EXTERIOR_WALL_REINFORCEMENT",
+    "question_text": "Is an Exterior Wall Reinforcement capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-FAC-FAC_IMPACT_RESISTANT_GLAZING",
+    "discipline_code": "FAC",
+    "subtype_code": "FAC_IMPACT_RESISTANT_GLAZING",
+    "question_text": "Is an Impact-Resistant Glazing capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-FAC-FAC_STRUCTURAL_HARDENING",
+    "discipline_code": "FAC",
+    "subtype_code": "FAC_STRUCTURAL_HARDENING",
+    "question_text": "Is a Structural Hardening capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-FAC-FAC_WINDOW_FILM",
+    "discipline_code": "FAC",
+    "subtype_code": "FAC_WINDOW_FILM",
+    "question_text": "Is a Window Film capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-IDS-IDS_ALARM_MONITORING",
+    "discipline_code": "IDS",
+    "subtype_code": "IDS_ALARM_MONITORING",
+    "question_text": "Is an Alarm Monitoring capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-IDS-IDS_ALARM_PANELS",
+    "discipline_code": "IDS",
+    "subtype_code": "IDS_ALARM_PANELS",
+    "question_text": "Is an Alarm Panels capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-IDS-IDS_DOOR_CONTACTS",
+    "discipline_code": "IDS",
+    "subtype_code": "IDS_DOOR_CONTACTS",
+    "question_text": "Is a Door Contacts capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-IDS-IDS_GLASS_BREAK_SENSORS",
+    "discipline_code": "IDS",
+    "subtype_code": "IDS_GLASS_BREAK_SENSORS",
+    "question_text": "Is a Glass Break Sensors capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-IDS-IDS_MOTION_DETECTORS",
+    "discipline_code": "IDS",
+    "subtype_code": "IDS_MOTION_DETECTORS",
+    "question_text": "Is a Motion Detectors capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-IDS-IDS_PANIC_DURESS_BUTTONS",
+    "discipline_code": "IDS",
+    "subtype_code": "IDS_PANIC_DURESS_BUTTONS",
+    "question_text": "Is a Panic / Duress Buttons capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-IDS-IDS_PERIMETER_IDS",
+    "discipline_code": "IDS",
+    "subtype_code": "IDS_PERIMETER_IDS",
+    "question_text": "Is a Perimeter IDS capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-INT-INT_ACCESS_RESTRICTED_AREAS",
+    "discipline_code": "INT",
+    "subtype_code": "INT_ACCESS_RESTRICTED_AREAS",
+    "question_text": "Is an Access-Restricted Areas capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-INT-INT_HARD_INTERIOR_BARRIERS",
+    "discipline_code": "INT",
+    "subtype_code": "INT_HARD_INTERIOR_BARRIERS",
+    "question_text": "Is a Hard-Interior Barriers capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-INT-INT_INTERIOR_DOORS",
+    "discipline_code": "INT",
+    "subtype_code": "INT_INTERIOR_DOORS",
+    "question_text": "Is an Interior Doors capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-INT-INT_INTERIOR_LIGHTING",
+    "discipline_code": "INT",
+    "subtype_code": "INT_INTERIOR_LIGHTING",
+    "question_text": "Is an Interior Lighting capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-INT-INT_SAFE_ROOMS",
+    "discipline_code": "INT",
+    "subtype_code": "INT_SAFE_ROOMS",
+    "question_text": "Is a Safe Rooms capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-INT-INT_SECURE_ROOMS",
+    "discipline_code": "INT",
+    "subtype_code": "INT_SECURE_ROOMS",
+    "question_text": "Is a Secure Rooms capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-INT-INT_SENSITIVE_ITEM_STORAGE",
+    "discipline_code": "INT",
+    "subtype_code": "INT_SENSITIVE_ITEM_STORAGE",
+    "question_text": "Is a Sensitive Item Storage capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-ISC-ISC_COORDINATION_PROTOCOLS",
+    "discipline_code": "ISC",
+    "subtype_code": "ISC_COORDINATION_PROTOCOLS",
+    "question_text": "Is a Coordination Protocols capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-ISC-ISC_EXTERNAL_REPORTING",
+    "discipline_code": "ISC",
+    "subtype_code": "ISC_EXTERNAL_REPORTING",
+    "question_text": "Is an External Reporting capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-ISC-ISC_FUSION_CENTER_INTERFACE",
+    "discipline_code": "ISC",
+    "subtype_code": "ISC_FUSION_CENTER_INTERFACE",
+    "question_text": "Is a Fusion Center Interface capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-ISC-ISC_ISAC_ISAOS",
+    "discipline_code": "ISC",
+    "subtype_code": "ISC_ISAC_ISAOS",
+    "question_text": "Is an ISAC / ISAOs capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-ISC-ISC_JTTF_ENGAGEMENT",
+    "discipline_code": "ISC",
+    "subtype_code": "ISC_JTTF_ENGAGEMENT",
+    "question_text": "Is a JTTF Engagement capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-ISC-ISC_LAW_ENFORCEMENT_LIAISON",
+    "discipline_code": "ISC",
+    "subtype_code": "ISC_LAW_ENFORCEMENT_LIAISON",
+    "question_text": "Is a Law Enforcement Liaison capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-ISC-ISC_THREAT_INFORMATION_SHARING",
+    "discipline_code": "ISC",
+    "subtype_code": "ISC_THREAT_INFORMATION_SHARING",
+    "question_text": "Is a Threat Information Sharing capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-KEY-KEY_KEY_CABINETS",
+    "discipline_code": "KEY",
+    "subtype_code": "KEY_KEY_CABINETS",
+    "question_text": "Is a Key Cabinets capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-KEY-KEY_KEY_LOGS_ACCOUNTABILITY",
+    "discipline_code": "KEY",
+    "subtype_code": "KEY_KEY_LOGS_ACCOUNTABILITY",
+    "question_text": "Is a Key Logs / Accountability capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-KEY-KEY_MASTER_KEY_MANAGEMENT",
+    "discipline_code": "KEY",
+    "subtype_code": "KEY_MASTER_KEY_MANAGEMENT",
+    "question_text": "Is a Master Key Management capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-KEY-KEY_REKEYING_PROCEDURES",
+    "discipline_code": "KEY",
+    "subtype_code": "KEY_REKEYING_PROCEDURES",
+    "question_text": "Is a Rekeying Procedures capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-KEY-KEY_RESTRICTED_KEYS",
+    "discipline_code": "KEY",
+    "subtype_code": "KEY_RESTRICTED_KEYS",
+    "question_text": "Is a Restricted Keys capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-PER-PER_BOLLARDS_BARRIERS",
+    "discipline_code": "PER",
+    "subtype_code": "PER_BOLLARDS_BARRIERS",
+    "question_text": "Is a Bollards / Barriers capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-PER-PER_BOUNDARY_DEMARCATION",
+    "discipline_code": "PER",
+    "subtype_code": "PER_BOUNDARY_DEMARCATION",
+    "question_text": "Is a Boundary Demarcation capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-PER-PER_CLEAR_ZONES",
+    "discipline_code": "PER",
+    "subtype_code": "PER_CLEAR_ZONES",
+    "question_text": "Is a Clear Zones capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-PER-PER_FENCING",
+    "discipline_code": "PER",
+    "subtype_code": "PER_FENCING",
+    "question_text": "Is a Fencing capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-PER-PER_GATES",
+    "discipline_code": "PER",
+    "subtype_code": "PER_GATES",
+    "question_text": "Is a Gates capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-PER-PER_PERIMETER_LIGHTING",
+    "discipline_code": "PER",
+    "subtype_code": "PER_PERIMETER_LIGHTING",
+    "question_text": "Is a Perimeter Lighting capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-PER-PER_PERIMETER_SIGNAGE",
+    "discipline_code": "PER",
+    "subtype_code": "PER_PERIMETER_SIGNAGE",
+    "question_text": "Is a Perimeter Signage capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-PER-PER_VEHICLE_ACCESS_CONTROL_POINTS",
+    "discipline_code": "PER",
+    "subtype_code": "PER_VEHICLE_ACCESS_CONTROL_POINTS",
+    "question_text": "Is a Vehicle Access Control Points capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-PER-PER_PEDESTRIAN_ACCESS_CONTROL_POINTS",
+    "discipline_code": "PER",
+    "subtype_code": "PER_PEDESTRIAN_ACCESS_CONTROL_POINTS",
+    "question_text": "Is a Pedestrian Access Control Points capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-SFO-SFO_GUARD_POSTS",
+    "discipline_code": "SFO",
+    "subtype_code": "SFO_GUARD_POSTS",
+    "question_text": "Is a Guard Posts capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-SFO-SFO_INCIDENT_REPORTING",
+    "discipline_code": "SFO",
+    "subtype_code": "SFO_INCIDENT_REPORTING",
+    "question_text": "Is an Incident Reporting capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-SFO-SFO_PATROL_ROUTES",
+    "discipline_code": "SFO",
+    "subtype_code": "SFO_PATROL_ROUTES",
+    "question_text": "Is a Patrol Routes capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-SFO-SFO_RADIO_COMMUNICATIONS",
+    "discipline_code": "SFO",
+    "subtype_code": "SFO_RADIO_COMMUNICATIONS",
+    "question_text": "Is a Radio Communications capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-SFO-SFO_RESPONSE_PROCEDURES",
+    "discipline_code": "SFO",
+    "subtype_code": "SFO_RESPONSE_PROCEDURES",
+    "question_text": "Is a Response Procedures capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-SFO-SFO_SCHOOL_RESOURCE_OFFICER_SRO",
+    "discipline_code": "SFO",
+    "subtype_code": "SFO_SCHOOL_RESOURCE_OFFICER_SRO",
+    "question_text": "Is a School Resource Officer (SRO) capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-SFO-SFO_SECURITY_OFFICER_TRAINING",
+    "discipline_code": "SFO",
+    "subtype_code": "SFO_SECURITY_OFFICER_TRAINING",
+    "question_text": "Is a Security Officer Training capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-SFO-SFO_SECURITY_OPERATIONS_CENTER_SOC",
+    "discipline_code": "SFO",
+    "subtype_code": "SFO_SECURITY_OPERATIONS_CENTER_SOC",
+    "question_text": "Is a Security Operations Center (SOC) capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-SMG-SMG_GOVERNANCE_OVERSIGHT",
+    "discipline_code": "SMG",
+    "subtype_code": "SMG_GOVERNANCE_OVERSIGHT",
+    "question_text": "Is a Governance & Oversight capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-SMG-SMG_POLICY_COMPLIANCE_TRACKING",
+    "discipline_code": "SMG",
+    "subtype_code": "SMG_POLICY_COMPLIANCE_TRACKING",
+    "question_text": "Is a Policy Compliance Tracking capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-SMG-SMG_RISK_ASSESSMENT_RISK_MANAGEMENT",
+    "discipline_code": "SMG",
+    "subtype_code": "SMG_RISK_ASSESSMENT_RISK_MANAGEMENT",
+    "question_text": "Is a Risk Assessment / Risk Management capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-SMG-SMG_SECURITY_DOCUMENTATION",
+    "discipline_code": "SMG",
+    "subtype_code": "SMG_SECURITY_DOCUMENTATION",
+    "question_text": "Is a Security Documentation capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-SMG-SMG_SECURITY_POLICIES",
+    "discipline_code": "SMG",
+    "subtype_code": "SMG_SECURITY_POLICIES",
+    "question_text": "Is a Security Policies capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-SMG-SMG_SECURITY_PROCEDURES",
+    "discipline_code": "SMG",
+    "subtype_code": "SMG_SECURITY_PROCEDURES",
+    "question_text": "Is a Security Procedures capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-SMG-SMG_SECURITY_TRAINING_PROGRAMS",
+    "discipline_code": "SMG",
+    "subtype_code": "SMG_SECURITY_TRAINING_PROGRAMS",
+    "question_text": "Is a Security Training Programs capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-VSS-VSS_ANALYTICS_BEHAVIOR_DETECTION",
+    "discipline_code": "VSS",
+    "subtype_code": "VSS_ANALYTICS_BEHAVIOR_DETECTION",
+    "question_text": "Is an Analytics / Behavior Detection capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-VSS-VSS_CAMERA_COVERAGE_LINE_OF_SIGHT",
+    "discipline_code": "VSS",
+    "subtype_code": "VSS_CAMERA_COVERAGE_LINE_OF_SIGHT",
+    "question_text": "Is a Camera Coverage / Line of Sight capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-VSS-VSS_EXTERIOR_CAMERAS",
+    "discipline_code": "VSS",
+    "subtype_code": "VSS_EXTERIOR_CAMERAS",
+    "question_text": "Is an Exterior Cameras capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-VSS-VSS_FIXED_CAMERAS",
+    "discipline_code": "VSS",
+    "subtype_code": "VSS_FIXED_CAMERAS",
+    "question_text": "Is a Fixed Cameras capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-VSS-VSS_INTERIOR_CAMERAS",
+    "discipline_code": "VSS",
+    "subtype_code": "VSS_INTERIOR_CAMERAS",
+    "question_text": "Is an Interior Cameras capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-VSS-VSS_IP_CAMERAS",
+    "discipline_code": "VSS",
+    "subtype_code": "VSS_IP_CAMERAS",
+    "question_text": "Is an IP Cameras capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-VSS-VSS_MONITORING_WORKSTATIONS",
+    "discipline_code": "VSS",
+    "subtype_code": "VSS_MONITORING_WORKSTATIONS",
+    "question_text": "Is a Monitoring / Workstations capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-VSS-VSS_PTZ_CAMERAS",
+    "discipline_code": "VSS",
+    "subtype_code": "VSS_PTZ_CAMERAS",
+    "question_text": "Is a PTZ Cameras capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-VSS-VSS_RECORDING_STORAGE_NVR_DVR",
+    "discipline_code": "VSS",
+    "subtype_code": "VSS_RECORDING_STORAGE_NVR_DVR",
+    "question_text": "Is a Recording / Storage (NVR/DVR) capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-VSS-VSS_SYSTEM_ARCHITECTURE",
+    "discipline_code": "VSS",
+    "subtype_code": "VSS_SYSTEM_ARCHITECTURE",
+    "question_text": "Is a System Architecture capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  },
+  {
+    "canon_id": "BASE-VSS-VSS_VIDEO_WALL_DISPLAY_SYSTEMS",
+    "discipline_code": "VSS",
+    "subtype_code": "VSS_VIDEO_WALL_DISPLAY_SYSTEMS",
+    "question_text": "Is a Video Wall / Display Systems capability implemented?",
+    "response_enum": [
+      "YES",
+      "NO",
+      "N_A"
+    ],
+    "canon_version": "v1",
+    "active": true
+  }
+]

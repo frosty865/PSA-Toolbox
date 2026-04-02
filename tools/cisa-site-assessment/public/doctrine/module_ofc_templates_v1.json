@@ -1,0 +1,17 @@
+[
+  {
+    "discipline_subtype_id": "e7e2aa40-e832-48bc-a142-cad9986620db",
+    "subtype_code": "SFO_GUARD_POSTS",
+    "ofc_text": "Implement and maintain defined guard post coverage for the asset or location, including posting orders, relief procedures, and escalation to the Security Operations Center or equivalent."
+  },
+  {
+    "discipline_subtype_id": "9a84b834-8fe5-4c25-a11b-750276b2f76e",
+    "subtype_code": "EAP_EVACUATION_PROCEDURES",
+    "ofc_text": "Implement and maintain evacuation procedures for the asset or location, including roles, routes, assembly areas, and accounting for occupants."
+  },
+  {
+    "discipline_subtype_id": "244c4ee1-2f2e-4014-96cc-8a32877ef1d2",
+    "subtype_code": "ACS_DOOR_MONITORING",
+    "ofc_text": "Implement and maintain door monitoring for the asset or location, including open/closed state, propped-door alerts, and integration with access control."
+  }
+]

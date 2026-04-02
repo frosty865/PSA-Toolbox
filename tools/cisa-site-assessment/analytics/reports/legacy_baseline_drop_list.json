@@ -1,0 +1,446 @@
+{
+  "items": [
+    {
+      "legacy_id": "BASE-008",
+      "legacy_code": "BASE-008",
+      "discipline_name": "Access Control Systems",
+      "discipline_subtype_code": "ACS_DOOR_MONITORING",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are door monitoring systems installed?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "SUBJECTIVE_JUDGMENT_REQUIRED"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "No rule or template applies",
+      "lint": {
+        "ok": false,
+        "severity": "FAIL",
+        "reason_codes": [
+          "EMPTY_TEXT"
+        ],
+        "notes": [
+          "Missing question text"
+        ],
+        "normalized": ""
+      }
+    },
+    {
+      "legacy_id": "BASE-012",
+      "legacy_code": "BASE-012",
+      "discipline_name": "Access Control Systems",
+      "discipline_subtype_code": "ACS_DOOR_READERS",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are door readers systems installed?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "SUBJECTIVE_JUDGMENT_REQUIRED"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "No rule or template applies",
+      "lint": {
+        "ok": false,
+        "severity": "FAIL",
+        "reason_codes": [
+          "EMPTY_TEXT"
+        ],
+        "notes": [
+          "Missing question text"
+        ],
+        "normalized": ""
+      }
+    },
+    {
+      "legacy_id": "BASE-016",
+      "legacy_code": "BASE-016",
+      "discipline_name": "Access Control Systems",
+      "discipline_subtype_code": "ACS_ELECTRIC_STRIKES_MAG_LOCKS",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are electric strikes mag locks systems installed?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "UNANCHORED_NO_BOUNDARY"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "No boundary and no rewrite template"
+    },
+    {
+      "legacy_id": "BASE-020",
+      "legacy_code": "BASE-020",
+      "discipline_name": "Access Control Systems",
+      "discipline_subtype_code": "ACS_ELECTRONIC_ACCESS_CONTROL",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are electronic access control systems installed at entry points?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "SUBJECTIVE_JUDGMENT_REQUIRED"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "No rule or template applies",
+      "lint": {
+        "ok": false,
+        "severity": "FAIL",
+        "reason_codes": [
+          "EMPTY_TEXT"
+        ],
+        "notes": [
+          "Missing question text"
+        ],
+        "normalized": ""
+      }
+    },
+    {
+      "legacy_id": "BASE-024",
+      "legacy_code": "BASE-024",
+      "discipline_name": "Access Control Systems",
+      "discipline_subtype_code": "ACS_KEYPADS_PIN_ENTRY",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are keypads pin entry systems installed?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "SUBJECTIVE_JUDGMENT_REQUIRED"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "No rule or template applies",
+      "lint": {
+        "ok": false,
+        "severity": "FAIL",
+        "reason_codes": [
+          "EMPTY_TEXT"
+        ],
+        "notes": [
+          "Missing question text"
+        ],
+        "normalized": ""
+      }
+    },
+    {
+      "legacy_id": "BASE-028",
+      "legacy_code": "BASE-028",
+      "discipline_name": "Access Control Systems",
+      "discipline_subtype_code": "ACS_LOCKING_HARDWARE",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are locking hardware systems installed?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "UNANCHORED_NO_BOUNDARY"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "No boundary and no rewrite template"
+    },
+    {
+      "legacy_id": "BASE-032",
+      "legacy_code": "BASE-032",
+      "discipline_name": "Access Control Systems",
+      "discipline_subtype_code": "ACS_SECURED_VESTIBULES",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are secured vestibules systems installed?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "UNANCHORED_NO_BOUNDARY"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "No boundary and no rewrite template"
+    },
+    {
+      "legacy_id": "BASE-036",
+      "legacy_code": "BASE-036",
+      "discipline_name": "Access Control Systems",
+      "discipline_subtype_code": "ACS_VISITOR_MANAGEMENT_SYSTEMS",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are visitor systems installed?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "UNANCHORED_NO_BOUNDARY"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "No boundary and no rewrite template"
+    },
+    {
+      "legacy_id": "BASE-236",
+      "legacy_code": "BASE-236",
+      "discipline_name": "Intrusion Detection Systems",
+      "discipline_subtype_code": "IDS_ALARM_PANELS",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are alarm panels panels installed?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "UNANCHORED_NO_BOUNDARY"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "No boundary and no rewrite template"
+    },
+    {
+      "legacy_id": "BASE-240",
+      "legacy_code": "BASE-240",
+      "discipline_name": "Intrusion Detection Systems",
+      "discipline_subtype_code": "IDS_DOOR_CONTACTS",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are door contacts systems installed?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "SUBJECTIVE_JUDGMENT_REQUIRED"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "No rule or template applies",
+      "lint": {
+        "ok": false,
+        "severity": "FAIL",
+        "reason_codes": [
+          "EMPTY_TEXT"
+        ],
+        "notes": [
+          "Missing question text"
+        ],
+        "normalized": ""
+      }
+    },
+    {
+      "legacy_id": "BASE-244",
+      "legacy_code": "BASE-244",
+      "discipline_name": "Intrusion Detection Systems",
+      "discipline_subtype_code": "IDS_GLASS_BREAK_SENSORS",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are glass break sensors systems installed?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "UNANCHORED_NO_BOUNDARY"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "No boundary and no rewrite template"
+    },
+    {
+      "legacy_id": "BASE-248",
+      "legacy_code": "BASE-248",
+      "discipline_name": "Intrusion Detection Systems",
+      "discipline_subtype_code": "IDS_MOTION_DETECTORS",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are motion detectors systems installed?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "UNANCHORED_NO_BOUNDARY"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "No boundary and no rewrite template"
+    },
+    {
+      "legacy_id": "BASE-252",
+      "legacy_code": "BASE-252",
+      "discipline_name": "Intrusion Detection Systems",
+      "discipline_subtype_code": "IDS_PANIC_DURESS_BUTTONS",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are panic duress buttons systems installed?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "UNANCHORED_NO_BOUNDARY"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "No boundary and no rewrite template"
+    },
+    {
+      "legacy_id": "BASE-256",
+      "legacy_code": "BASE-256",
+      "discipline_name": "Intrusion Detection Systems",
+      "discipline_subtype_code": "IDS_PERIMETER_IDS",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are perimeter ids systems installed?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "SUBJECTIVE_JUDGMENT_REQUIRED"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "No rule or template applies",
+      "lint": {
+        "ok": false,
+        "severity": "FAIL",
+        "reason_codes": [
+          "EMPTY_TEXT"
+        ],
+        "notes": [
+          "Missing question text"
+        ],
+        "normalized": ""
+      }
+    },
+    {
+      "legacy_id": "BASE-288",
+      "legacy_code": "BASE-288",
+      "discipline_name": "Perimeter Security",
+      "discipline_subtype_code": "PER_CLEAR_ZONES",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are clear zones systems installed?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "UNANCHORED_NO_BOUNDARY",
+        "LINT_FAIL_REWRITE_TO_DROP"
+      ],
+      "rewrite_template": "Are clear zones established and controlled along the site perimeter to support observation and deter unauthorized approach?",
+      "proposed_rewrite": "Are clear zones established and controlled along the site perimeter to support observation and deter unauthorized approach?",
+      "notes": "Unanchored question; rewritten with boundary anchor | Lint failed; rewrite dropped (fail-closed).",
+      "lint": {
+        "ok": false,
+        "severity": "FAIL",
+        "reason_codes": [
+          "COMPOUND_OR_AMBIGUOUS"
+        ],
+        "notes": [
+          "Contains compound markers; spine questions should be single-meaning."
+        ],
+        "normalized": "Are clear zones established and controlled along the site perimeter to support observation and deter unauthorized approach?"
+      }
+    },
+    {
+      "legacy_id": "BASE-292",
+      "legacy_code": "BASE-292",
+      "discipline_name": "Perimeter Security",
+      "discipline_subtype_code": "PER_FENCING",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are fencing systems installed?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "UNANCHORED_NO_BOUNDARY",
+        "LINT_FAIL_REWRITE_TO_DROP"
+      ],
+      "rewrite_template": "Is the site perimeter boundary controlled through defined barriers that limit or channel access?",
+      "proposed_rewrite": "Is the site perimeter boundary controlled through defined barriers that limit or channel access?",
+      "notes": "Unanchored question; rewritten with boundary anchor | Lint failed; rewrite dropped (fail-closed).",
+      "lint": {
+        "ok": false,
+        "severity": "FAIL",
+        "reason_codes": [
+          "COMPOUND_OR_AMBIGUOUS"
+        ],
+        "notes": [
+          "Contains compound markers; spine questions should be single-meaning."
+        ],
+        "normalized": "Is the site perimeter boundary controlled through defined barriers that limit or channel access?"
+      }
+    },
+    {
+      "legacy_id": "BASE-300",
+      "legacy_code": "BASE-300",
+      "discipline_name": "Perimeter Security",
+      "discipline_subtype_code": "PER_PERIMETER_LIGHTING",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are perimeter lighting fixtures installed?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "LINT_FAIL_REWRITE_TO_DROP"
+      ],
+      "rewrite_template": "Is exterior/perimeter lighting provided and controlled to support perimeter observation at night or during low-light conditions?",
+      "proposed_rewrite": "Is exterior/perimeter lighting provided and controlled to support perimeter observation at night or during low-light conditions?",
+      "notes": "Template available for rewrite | Lint failed; rewrite dropped (fail-closed).",
+      "lint": {
+        "ok": false,
+        "severity": "FAIL",
+        "reason_codes": [
+          "COMPOUND_OR_AMBIGUOUS"
+        ],
+        "notes": [
+          "Contains compound markers; spine questions should be single-meaning."
+        ],
+        "normalized": "Is exterior/perimeter lighting provided and controlled to support perimeter observation at night or during low-light conditions?"
+      }
+    },
+    {
+      "legacy_id": "BASE-304",
+      "legacy_code": "BASE-304",
+      "discipline_name": "Perimeter Security",
+      "discipline_subtype_code": "PER_PERIMETER_SIGNAGE",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are perimeter signage systems installed?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "LINT_FAIL_REWRITE_TO_DROP"
+      ],
+      "rewrite_template": "Is perimeter signage used to identify controlled boundaries and communicate access restrictions at the site perimeter?",
+      "proposed_rewrite": "Is perimeter signage used to identify controlled boundaries and communicate access restrictions at the site perimeter?",
+      "notes": "Template available for rewrite | Lint failed; rewrite dropped (fail-closed).",
+      "lint": {
+        "ok": false,
+        "severity": "FAIL",
+        "reason_codes": [
+          "COMPOUND_OR_AMBIGUOUS"
+        ],
+        "notes": [
+          "Contains compound markers; spine questions should be single-meaning."
+        ],
+        "normalized": "Is perimeter signage used to identify controlled boundaries and communicate access restrictions at the site perimeter?"
+      }
+    },
+    {
+      "legacy_id": "BASE-372",
+      "legacy_code": "BASE-372",
+      "discipline_name": "Video Surveillance Systems",
+      "discipline_subtype_code": "VSS_ANALYTICS_BEHAVIOR_DETECTION",
+      "capability_dimension": "SYSTEMS",
+      "question": "Are analytics behavior detection sensors installed?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "SOLUTION_ARTIFACT_IN_QUESTION"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "Video analytics are solution features and excluded from baseline canon"
+    },
+    {
+      "legacy_id": "BASE-373",
+      "legacy_code": "BASE-373",
+      "discipline_name": "Video Surveillance Systems",
+      "discipline_subtype_code": "VSS_ANALYTICS_BEHAVIOR_DETECTION",
+      "capability_dimension": "PLANS_PROCEDURES",
+      "question": "Are documented procedures in place for analytics / behavior detection?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "SOLUTION_ARTIFACT_IN_QUESTION"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "Video analytics are solution features and excluded from baseline canon"
+    },
+    {
+      "legacy_id": "BASE-374",
+      "legacy_code": "BASE-374",
+      "discipline_name": "Video Surveillance Systems",
+      "discipline_subtype_code": "VSS_ANALYTICS_BEHAVIOR_DETECTION",
+      "capability_dimension": "MAINTENANCE_ASSURANCE",
+      "question": "Do analytics behavior detection sensors trigger when activated?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "SOLUTION_ARTIFACT_IN_QUESTION"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "Video analytics are solution features and excluded from baseline canon"
+    },
+    {
+      "legacy_id": "BASE-375",
+      "legacy_code": "BASE-375",
+      "discipline_name": "Video Surveillance Systems",
+      "discipline_subtype_code": "VSS_ANALYTICS_BEHAVIOR_DETECTION",
+      "capability_dimension": "PERSONNEL_RESPONSIBILITY",
+      "question": "Are roles and responsibilities defined for analytics / behavior detection?",
+      "outcome": "DROP",
+      "reason_codes": [
+        "SOLUTION_ARTIFACT_IN_QUESTION"
+      ],
+      "rewrite_template": null,
+      "proposed_rewrite": null,
+      "notes": "Video analytics are solution features and excluded from baseline canon"
+    }
+  ]
+}

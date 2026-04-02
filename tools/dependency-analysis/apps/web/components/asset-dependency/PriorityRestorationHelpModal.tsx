@@ -48,7 +48,7 @@ export function PriorityRestorationHelpModal(props: PriorityRestorationHelpModal
         <div style={{ padding: '1rem 1.25rem', borderBottom: '1px solid var(--color-border, #eee)' }}>
           <button
             type="button"
-            className="ida-btn ida-btn-secondary"
+            className="btn btn-secondary"
             onClick={onClose}
             style={{ float: 'right' }}
           >

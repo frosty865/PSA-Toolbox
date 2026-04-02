@@ -1,0 +1,12 @@
+{
+  "discipline_code": "EAP",
+  "version": "v1",
+  "constraints": [
+    {
+      "constraint_id": "BASE-EAP-CONSTRAINT-001",
+      "type": "EXCLUDE_LEGACY_SUBTYPES_FROM_SPINES",
+      "value": ["EAP_*"],
+      "reason": "EAP legacy items are procedural depth and cannot form baseline spines."
+    }
+  ]
+}

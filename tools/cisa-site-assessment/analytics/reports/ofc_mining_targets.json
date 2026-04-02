@@ -1,0 +1,23 @@
+{
+  "destination": {
+    "table": "public.ofc_candidate_queue",
+    "id_col": "candidate_id",
+    "text_col": "snippet_text",
+    "document_chunk_id_col": "document_chunk_id"
+  },
+  "citations": {
+    "table": "public.ofc_candidate_queue",
+    "ofc_fk_col": "candidate_id",
+    "chunk_fk_col": "document_chunk_id",
+    "use_direct_fk": true
+  },
+  "document_chunks": {
+    "table": "public.document_chunks",
+    "chunk_id_col": "chunk_id",
+    "chunk_text_col": "chunk_text",
+    "document_id_col": "document_id",
+    "source_set_col": "source_set",
+    "locator_type_col": "locator_type",
+    "locator_col": "locator"
+  }
+}

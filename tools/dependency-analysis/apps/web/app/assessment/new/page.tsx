@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState, useCallback, useRef } from 'react';
-import Link from 'next/link';
+import Link from '@/components/FieldLink';
 import { useRouter } from 'next/navigation';
 import {
   purge,
@@ -11,13 +11,14 @@ import {
   getRevisionPackageMetadata,
   importRevisionPackage,
   downloadDraftZip,
-  downloadReportDocx,
+  downloadFinalExport,
   ApiError,
 } from '@/lib/api';
 import { collectAllSessionsFromLocalStorage } from '@/app/lib/io/collectSessions';
 import { writeSessionsToPerTabStorage } from '@/app/lib/io/writeSessionsToStorage';
 import { useAssessment } from '@/lib/assessment-context';
 import { getDefaultAssessment } from '@/lib/default-assessment';
+import { navigateFieldFile, shouldUseFieldFileNavigation } from '@/lib/field/fileProtocolNav';
 
 type ReportStage = 'idle' | 'starting' | 'loading_assessment' | 'validating' | 'assembling' | 'rendering' | 'done' | 'error';
 
@@ -87,10 +88,14 @@ export default function NewAssessmentPage() {
       setReportStage('rendering');
       const blob = await exportFinal(assessment, { timeoutMs: 120000 });
       setReportStage('done');
-      downloadReportDocx(blob);
+      downloadFinalExport(blob, assessment);
       await purge();
       setAssessment(getDefaultAssessment());
-      router.push('/');
+      if (shouldUseFieldFileNavigation()) {
+        navigateFieldFile('/');
+      } else {
+        router.push('/');
+      }
     } catch (e) {
       setReportStage('error');
       const msg = e instanceof Error ? e.message : 'Final export failed';
@@ -168,8 +173,8 @@ export default function NewAssessmentPage() {
   const exportDisabled = templateReady === false;
 
   return (
-    <main className="ida-section active">
-      <h2 className="ida-section-title">New Assessment</h2>
+    <main className="section active">
+      <h2 className="section-title">New Assessment</h2>
       <p className="text-secondary mb-4">
         Session is in-memory only. Use draft export to save a revision package.
       </p>
@@ -201,7 +206,7 @@ export default function NewAssessmentPage() {
         </div>
         <button
           type="button"
-          className="ida-btn ida-btn-primary"
+          className="btn btn-primary"
           onClick={handleExportDraft}
           disabled={!draftPassphraseValid || exportDisabled}
         >
@@ -233,7 +238,7 @@ export default function NewAssessmentPage() {
         </div>
         <button
           type="button"
-          className="ida-btn ida-btn-primary"
+          className="btn btn-primary"
           onClick={handleExportFinal}
           disabled={!finalExportAcknowledged || exportDisabled || (reportStage !== 'idle' && reportStage !== 'error')}
         >
@@ -243,7 +248,7 @@ export default function NewAssessmentPage() {
         </button>
         {reportStage === 'error' && (
           <div className="mt-3">
-            <button type="button" className="ida-btn ida-btn-secondary" onClick={handleReportRetry}>
+            <button type="button" className="btn btn-secondary" onClick={handleReportRetry}>
               Retry
             </button>
           </div>
@@ -254,7 +259,7 @@ export default function NewAssessmentPage() {
               <p className="mb-2"><strong>Request ID:</strong> <code>{reportRequestId}</code></p>
             )}
             {reportErrorDetail != null && (
-              <pre className="mb-0 text-left ida-error-detail">
+              <pre className="mb-0 text-left" style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word', maxHeight: 200, overflow: 'auto', fontSize: 'var(--font-size-sm)' }}>
                 {reportErrorDetail.slice(0, 2000)}
               </pre>
             )}
@@ -286,7 +291,7 @@ export default function NewAssessmentPage() {
         </div>
         <button
           type="button"
-          className="ida-btn ida-btn-secondary"
+          className="btn btn-secondary"
           onClick={handlePreviewImport}
           disabled={!canPreviewImport}
         >
@@ -294,11 +299,11 @@ export default function NewAssessmentPage() {
         </button>
 
         {importPreviewMeta != null && (
-          <div className="mt-4 p-3 ida-preview-panel">
-            <h4 className="text-primary ida-preview-heading">
+          <div className="mt-4 p-3" style={{ background: 'var(--cisa-gray-lighter)', borderRadius: 'var(--border-radius)' }}>
+            <h4 className="text-primary" style={{ marginBottom: 'var(--spacing-sm)', fontSize: 'var(--font-size-md)' }}>
               Revision package details
             </h4>
-            <ul className="ida-preview-list">
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               <li>Tool version: {importPreviewMeta.tool_version}</li>
               <li>Template version: {importPreviewMeta.template_version}</li>
               <li>Created: {importPreviewMeta.created_at_iso}</li>
@@ -310,7 +315,7 @@ export default function NewAssessmentPage() {
             )}
             <button
               type="button"
-              className="ida-btn ida-btn-primary mt-3"
+              className="btn btn-primary mt-3"
               onClick={handleConfirmRestore}
             >
               Confirm restore
@@ -323,9 +328,9 @@ export default function NewAssessmentPage() {
       {error && <div className="alert alert-danger mt-4" role="alert">{error}</div>}
 
       <p className="mt-5">
-        <Link href="/assessment/review/" className="ida-btn ida-btn-secondary ida-link-gap">Review VOFCs</Link>
-        <Link href="/assessment/categories/" className="ida-btn ida-btn-secondary ida-link-gap">Category data</Link>
-        <Link href="/" className="ida-btn ida-btn-secondary">← Back</Link>
+        <Link href="/assessment/review/" className="btn btn-secondary" style={{ marginRight: '0.5rem' }}>Review VOFCs</Link>
+        <Link href="/assessment/categories/" className="btn btn-secondary" style={{ marginRight: '0.5rem' }}>Category data</Link>
+        <Link href="/" className="btn btn-secondary">← Back</Link>
       </p>
     </main>
   );

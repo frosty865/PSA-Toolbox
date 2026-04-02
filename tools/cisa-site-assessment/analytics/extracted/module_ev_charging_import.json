@@ -1,0 +1,198 @@
+{
+  "module_code": "MODULE_EV_CHARGING",
+  "title": "EV Charging Stations",
+  "description": "Optional module to assess EV charging station physical security, safety interfaces, and operational integration.",
+  "import_source": "ev_charging_vuln.json",
+  "mode": "REPLACE",
+  "module_questions": [
+    {
+      "id": "MODULEQ_EV_CHARGING_001",
+      "text": "Is physical access to EV charging equipment components (e.g., enclosures, service panels, cabinets) restricted to authorized personnel?",
+      "order": 1,
+      "discipline_id": "18d45ffa-6a44-4817-becb-828231b9e1e7",
+      "discipline_subtype_id": "3227ab36-7f31-4be4-a0c2-0f838518fa96",
+      "asset_or_location": "EV charging equipment components",
+      "event_trigger": "TAMPERING"
+    },
+    {
+      "id": "MODULEQ_EV_CHARGING_002",
+      "text": "Is video coverage implemented for EV charging stations and their immediate approaches to support incident detection and post-incident review?",
+      "order": 2,
+      "discipline_id": "83d34bf8-b228-49ca-abb9-66168d4a8681",
+      "discipline_subtype_id": "8317b7c8-633e-46ca-8914-319e0cbab9cd",
+      "asset_or_location": "EV charging stations",
+      "event_trigger": "TAMPERING"
+    },
+    {
+      "id": "MODULEQ_EV_CHARGING_003",
+      "text": "Is adequate lighting implemented at EV charging station locations to support visibility during hours of darkness?",
+      "order": 3,
+      "discipline_id": "83d34bf8-b228-49ca-abb9-66168d4a8681",
+      "discipline_subtype_id": "8317b7c8-633e-46ca-8914-319e0cbab9cd",
+      "asset_or_location": "EV charging station locations",
+      "event_trigger": "TAMPERING"
+    },
+    {
+      "id": "MODULEQ_EV_CHARGING_004",
+      "text": "Is a user-accessible method provided to request assistance or report an emergency at EV charging station locations?",
+      "order": 4,
+      "discipline_id": "a295aed8-a841-41b0-b893-a8a018867b83",
+      "discipline_subtype_id": "03e40c3c-6b9d-4c23-8926-8fa0864ac8ab",
+      "asset_or_location": "EV charging station locations",
+      "event_trigger": "OTHER"
+    },
+    {
+      "id": "MODULEQ_EV_CHARGING_005",
+      "text": "Is there a documented process to inspect EV charging stations for damage, tampering indicators, and unsafe conditions?",
+      "order": 5,
+      "discipline_id": "ecfc1d4f-873b-4645-93e5-a9812ed779c3",
+      "discipline_subtype_id": "09c4723a-5665-4661-a699-18f0ef3803a1",
+      "asset_or_location": "EV charging stations",
+      "event_trigger": "TAMPERING"
+    },
+    {
+      "id": "MODULEQ_EV_CHARGING_006",
+      "text": "Are EV charging cables and connectors managed and maintained to reduce tampering opportunities and physical safety hazards?",
+      "order": 6,
+      "discipline_id": "ecfc1d4f-873b-4645-93e5-a9812ed779c3",
+      "discipline_subtype_id": "09c4723a-5665-4661-a699-18f0ef3803a1",
+      "asset_or_location": "EV charging cables and connectors",
+      "event_trigger": "TAMPERING"
+    },
+    {
+      "id": "MODULEQ_EV_CHARGING_007",
+      "text": "Are responsibilities defined for coordinating with site management or service providers to restore safe operation following damage or disruption at EV charging station locations?",
+      "order": 7,
+      "discipline_id": "a295aed8-a841-41b0-b893-a8a018867b83",
+      "discipline_subtype_id": "ae65413f-ef25-469c-bb60-867450f09d5e",
+      "asset_or_location": "EV charging station locations",
+      "event_trigger": "OUTAGE"
+    }
+  ],
+  "module_ofcs": [
+    {
+      "ofc_id": "MOD_OFC_EV_CHARGING_001",
+      "ofc_text": "Consider implementing adequate lighting at EV charging station locations to reduce opportunities for vandalism and theft and to support visibility during hours of darkness.",
+      "order_index": 1,
+      "source_system": "VULN_JSON",
+      "source_ofc_id": null,
+      "source_ofc_num": null,
+      "source_locator": {
+        "vulnerability_index": 1,
+        "option_index": 0,
+        "vulnerability": "Insufficient Lighting and Blind Spots"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "Improving Public EV Charger Locations — GreenTech (March 12, 2025)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_EV_CHARGING_002",
+      "ofc_text": "An option for consideration is positioning EV charging stations to maintain clear sightlines from routinely occupied areas or routine patrol routes to reduce concealment and deter criminal activity.",
+      "order_index": 2,
+      "source_system": "VULN_JSON",
+      "source_ofc_id": null,
+      "source_ofc_num": null,
+      "source_locator": {
+        "vulnerability_index": 1,
+        "option_index": 1,
+        "vulnerability": "Insufficient Lighting and Blind Spots"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "Public Space Design — Urban Planning Journal (July 18, 2023)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_EV_CHARGING_003",
+      "ofc_text": "Consider providing a user-accessible method to request assistance or report emergencies at EV charging station locations to support timely response.",
+      "order_index": 3,
+      "source_system": "VULN_JSON",
+      "source_ofc_id": null,
+      "source_ofc_num": null,
+      "source_locator": {
+        "vulnerability_index": 1,
+        "option_index": 2,
+        "vulnerability": "Insufficient Lighting and Blind Spots"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "Modern Security Solutions for EV Chargers — TechSecure (June 21, 2024)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_EV_CHARGING_004",
+      "ofc_text": "An option for consideration is incorporating physical tamper resistance for EV charging equipment components to deter unauthorized manipulation and reduce damage and safety hazards.",
+      "order_index": 4,
+      "source_system": "VULN_JSON",
+      "source_ofc_id": null,
+      "source_ofc_num": null,
+      "source_locator": {
+        "vulnerability_index": 2,
+        "option_index": 0,
+        "vulnerability": "Exposed Cables and Insecure Hardware"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "How to Address the Increasing Threat of Cyberattacks on EV Charging Stations — Virta (May 14, 2025)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_EV_CHARGING_005",
+      "ofc_text": "Consider establishing routine inspection and maintenance processes for EV charging stations to identify damage, tampering indicators, and unsafe conditions.",
+      "order_index": 5,
+      "source_system": "VULN_JSON",
+      "source_ofc_id": null,
+      "source_ofc_num": null,
+      "source_locator": {
+        "vulnerability_index": 2,
+        "option_index": 1,
+        "vulnerability": "Exposed Cables and Insecure Hardware"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "Charging Station Security Standards — Electric Vehicle Infrastructure Alliance (March 10, 2023)"
+        }
+      ]
+    },
+    {
+      "ofc_id": "MOD_OFC_EV_CHARGING_006",
+      "ofc_text": "An option for consideration is briefing relevant staff on recognizing and reporting EV charging station tampering, damage, or unsafe conditions to support timely intervention.",
+      "order_index": 6,
+      "source_system": "VULN_JSON",
+      "source_ofc_id": null,
+      "source_ofc_num": null,
+      "source_locator": {
+        "vulnerability_index": 2,
+        "option_index": 2,
+        "vulnerability": "Exposed Cables and Insecure Hardware"
+      },
+      "sources": [
+        {
+          "url": "",
+          "label": "The Importance of Staff Training in EV Charger Security — ChargeLab (October 2, 2024)"
+        }
+      ]
+    }
+  ],
+  "risk_drivers": [
+    {
+      "driver_type": "CYBER_DRIVER",
+      "driver_text": "Unauthorized access to EV charging systems may enable physical tampering or unsafe conditions at charging stations."
+    },
+    {
+      "driver_type": "FRAUD_DRIVER",
+      "driver_text": "Payment skimming or data theft at EV charging stations may increase criminal targeting of charging locations and associated users."
+    }
+  ]
+}

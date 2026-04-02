@@ -1,0 +1,427 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "base_question_count": 36,
+    "expansion_question_count": 0,
+    "total_questions": 36
+  },
+  "base_questions": [
+    {
+      "target_key": "Awareness",
+      "question_text": "1. Public Awareness Campaign",
+      "section_title": "1. Public Awareness Campaign",
+      "keywords": [
+        "1",
+        "awareness",
+        "campaign",
+        "public"
+      ]
+    },
+    {
+      "target_key": "LawEnforcement",
+      "question_text": "2. Law Enforcement Agency Visits",
+      "section_title": "2. Law Enforcement Agency Visits",
+      "keywords": [
+        "2",
+        "agency",
+        "enforcement",
+        "law",
+        "visits"
+      ]
+    },
+    {
+      "target_key": "LawComm",
+      "question_text": "3. Interoperable Communications with Law Enforcement",
+      "section_title": "3. Interoperable Communications with Law Enforcement",
+      "keywords": [
+        "3",
+        "communications",
+        "enforcement",
+        "interoperable",
+        "law",
+        "with"
+      ]
+    },
+    {
+      "target_key": "FireAgency",
+      "question_text": "4. Fire Response Agency Visits",
+      "section_title": "4. Fire Response Agency Visits",
+      "keywords": [
+        "4",
+        "agency",
+        "fire",
+        "response",
+        "visits"
+      ]
+    },
+    {
+      "target_key": "FireComm",
+      "question_text": "5. Interoperable Communications with Fire Response",
+      "section_title": "5. Interoperable Communications with Fire Response",
+      "keywords": [
+        "5",
+        "communications",
+        "fire",
+        "interoperable",
+        "response",
+        "with"
+      ]
+    },
+    {
+      "target_key": "MedicalAgency",
+      "question_text": "6. Emergency Medical Response Agency Visits",
+      "section_title": "6. Emergency Medical Response Agency Visits",
+      "keywords": [
+        "6",
+        "agency",
+        "emergency",
+        "medical",
+        "response",
+        "visits"
+      ]
+    },
+    {
+      "target_key": "MedicalComm",
+      "question_text": "7. Interoperable Communications with Emergency Medical Response",
+      "section_title": "7. Interoperable Communications with Emergency Medical Response",
+      "keywords": [
+        "7",
+        "communications",
+        "emergency",
+        "interoperable",
+        "medical",
+        "response",
+        "with"
+      ]
+    },
+    {
+      "target_key": "FBIInfo",
+      "question_text": "8. FBI Information Exchange",
+      "section_title": "8. FBI Information Exchange",
+      "keywords": [
+        "8",
+        "exchange",
+        "fbi",
+        "information"
+      ]
+    },
+    {
+      "target_key": "ISACInfo",
+      "question_text": "9. ISAC Information Exchange",
+      "section_title": "9. ISAC Information Exchange",
+      "keywords": [
+        "9",
+        "exchange",
+        "information",
+        "isac"
+      ]
+    },
+    {
+      "target_key": "HSINInfo",
+      "question_text": "10. HSIN Portal Information Exchange",
+      "section_title": "10. HSIN Portal Information Exchange",
+      "keywords": [
+        "10",
+        "exchange",
+        "hsin",
+        "information",
+        "portal"
+      ]
+    },
+    {
+      "target_key": "InfraGard",
+      "question_text": "11. InfraGard Information Exchange",
+      "section_title": "11. InfraGard Information Exchange",
+      "keywords": [
+        "11",
+        "exchange",
+        "information",
+        "infragard"
+      ]
+    },
+    {
+      "target_key": "FederalInfo",
+      "question_text": "12. Federal Agency Information Exchange",
+      "section_title": "12. Federal Agency Information Exchange",
+      "keywords": [
+        "12",
+        "agency",
+        "exchange",
+        "federal",
+        "information"
+      ]
+    },
+    {
+      "target_key": "StateLocalInfo",
+      "question_text": "13. State and Local Information Exchange",
+      "section_title": "13. State and Local Information Exchange",
+      "keywords": [
+        "13",
+        "and",
+        "exchange",
+        "information",
+        "local",
+        "state"
+      ]
+    },
+    {
+      "target_key": "NeighborInfo",
+      "question_text": "14. Neighboring Facility Information Exchange",
+      "section_title": "14. Neighboring Facility Information Exchange",
+      "keywords": [
+        "14",
+        "exchange",
+        "facility",
+        "information",
+        "neighboring"
+      ]
+    },
+    {
+      "target_key": "SecurityManager",
+      "question_text": "1. Security Manager",
+      "section_title": "1. Security Manager",
+      "keywords": [
+        "1",
+        "manager",
+        "security"
+      ]
+    },
+    {
+      "target_key": "SecurityPlan",
+      "question_text": "2. Comprehensive Security Plan",
+      "section_title": "2. Comprehensive Security Plan",
+      "keywords": [
+        "2",
+        "comprehensive",
+        "plan",
+        "security"
+      ]
+    },
+    {
+      "target_key": "PlanTraining",
+      "question_text": "3. Security Plan Training",
+      "section_title": "3. Security Plan Training",
+      "keywords": [
+        "3",
+        "plan",
+        "security",
+        "training"
+      ]
+    },
+    {
+      "target_key": "PlanCoordination",
+      "question_text": "4. Security Plan Coordination",
+      "section_title": "4. Security Plan Coordination",
+      "keywords": [
+        "4",
+        "coordination",
+        "plan",
+        "security"
+      ]
+    },
+    {
+      "target_key": "EmployeeTraining",
+      "question_text": "5. Employee Security Training",
+      "section_title": "5. Employee Security Training",
+      "keywords": [
+        "5",
+        "employee",
+        "security",
+        "training"
+      ]
+    },
+    {
+      "target_key": "PlanTesting",
+      "question_text": "6. Security Plan Testing",
+      "section_title": "6. Security Plan Testing",
+      "keywords": [
+        "6",
+        "plan",
+        "security",
+        "testing"
+      ]
+    },
+    {
+      "target_key": "RiskAssessment",
+      "question_text": "7. Security Risk Assessment",
+      "section_title": "7. Security Risk Assessment",
+      "keywords": [
+        "7",
+        "assessment",
+        "risk",
+        "security"
+      ]
+    },
+    {
+      "target_key": "SecurityPersonnel",
+      "question_text": "1. Security Personnel",
+      "section_title": "1. Security Personnel",
+      "keywords": [
+        "1",
+        "personnel",
+        "security"
+      ]
+    },
+    {
+      "target_key": "PerimeterFencing",
+      "question_text": "2. Perimeter Fencing and Barriers",
+      "section_title": "2. Perimeter Fencing and Barriers",
+      "keywords": [
+        "2",
+        "and",
+        "barriers",
+        "fencing",
+        "perimeter"
+      ]
+    },
+    {
+      "target_key": "AccessControl",
+      "question_text": "3. Access Control Systems",
+      "section_title": "3. Access Control Systems",
+      "keywords": [
+        "3",
+        "access",
+        "control",
+        "systems"
+      ]
+    },
+    {
+      "target_key": "SecurityLighting",
+      "question_text": "4. Security Lighting",
+      "section_title": "4. Security Lighting",
+      "keywords": [
+        "4",
+        "lighting",
+        "security"
+      ]
+    },
+    {
+      "target_key": "StandoffDistance",
+      "question_text": "5. Parking and Standoff Distance",
+      "section_title": "5. Parking and Standoff Distance",
+      "keywords": [
+        "5",
+        "and",
+        "distance",
+        "parking",
+        "standoff"
+      ]
+    },
+    {
+      "target_key": "BuildingEnvelope",
+      "question_text": "6. Building Envelope Security",
+      "section_title": "6. Building Envelope Security",
+      "keywords": [
+        "6",
+        "building",
+        "envelope",
+        "security"
+      ]
+    },
+    {
+      "target_key": "KeyControl",
+      "question_text": "7. Key Control Program",
+      "section_title": "7. Key Control Program",
+      "keywords": [
+        "7",
+        "control",
+        "key",
+        "program"
+      ]
+    },
+    {
+      "target_key": "VideoSystemType",
+      "question_text": "1. Video Surveillance Systems (VSS)",
+      "section_title": "1. Video Surveillance Systems (VSS)",
+      "keywords": [
+        "1",
+        "surveillance",
+        "systems",
+        "video",
+        "vss"
+      ]
+    },
+    {
+      "target_key": "VideoAnalytics",
+      "question_text": "1. Video Surveillance Systems (VSS)",
+      "section_title": "1. Video Surveillance Systems (VSS)",
+      "keywords": [
+        "1",
+        "surveillance",
+        "systems",
+        "video",
+        "vss"
+      ]
+    },
+    {
+      "target_key": "VideoCoverage",
+      "question_text": "2. Video Surveillance Coverage",
+      "section_title": "2. Video Surveillance Coverage",
+      "keywords": [
+        "2",
+        "coverage",
+        "surveillance",
+        "video"
+      ]
+    },
+    {
+      "target_key": "VideoMonitoring",
+      "question_text": "3. Video Surveillance Monitoring",
+      "section_title": "3. Video Surveillance Monitoring",
+      "keywords": [
+        "3",
+        "monitoring",
+        "surveillance",
+        "video"
+      ]
+    },
+    {
+      "target_key": "VideoRecording",
+      "question_text": "4. Video Recording and Storage",
+      "section_title": "4. Video Recording and Storage",
+      "keywords": [
+        "4",
+        "and",
+        "recording",
+        "storage",
+        "video"
+      ]
+    },
+    {
+      "target_key": "IntrusionDetection",
+      "question_text": "5. Intrusion Detection Systems (IDS)",
+      "section_title": "5. Intrusion Detection Systems (IDS)",
+      "keywords": [
+        "5",
+        "detection",
+        "ids",
+        "intrusion",
+        "systems"
+      ]
+    },
+    {
+      "target_key": "AlarmMonitoring",
+      "question_text": "6. Alarm System Monitoring",
+      "section_title": "6. Alarm System Monitoring",
+      "keywords": [
+        "6",
+        "alarm",
+        "monitoring",
+        "surveillance",
+        "system"
+      ]
+    },
+    {
+      "target_key": "SystemIntegration",
+      "question_text": "7. Security System Integration",
+      "section_title": "7. Security System Integration",
+      "keywords": [
+        "7",
+        "integration",
+        "security",
+        "system"
+      ]
+    }
+  ],
+  "expansion_questions": []
+}

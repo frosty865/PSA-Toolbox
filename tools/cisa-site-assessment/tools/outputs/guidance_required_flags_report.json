@@ -1,0 +1,106 @@
+{
+  "applied_at": "2026-01-16T19:48:51.959Z",
+  "taxonomy_total": 105,
+  "required_set_count": 19,
+  "newly_flagged_count": 19,
+  "already_flagged_count": 0,
+  "newly_flagged_subtypes": [
+    {
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_VISITOR_MANAGEMENT_SYSTEMS",
+      "name": "Visitor Management Systems"
+    },
+    {
+      "discipline_code": "COM",
+      "subtype_code": "COM_INTEROPERABLE_COMMUNICATIONS",
+      "name": "Interoperable Communications"
+    },
+    {
+      "discipline_code": "EAP",
+      "subtype_code": "EAP_EVACUATION_PROCEDURES",
+      "name": "Evacuation Procedures"
+    },
+    {
+      "discipline_code": "EAP",
+      "subtype_code": "EAP_LOCKDOWN_LOCKOUT_PROCEDURES",
+      "name": "Lockdown / Lockout Procedures"
+    },
+    {
+      "discipline_code": "EAP",
+      "subtype_code": "EAP_REUNIFICATION_PROCEDURES",
+      "name": "Reunification Procedures"
+    },
+    {
+      "discipline_code": "EMR",
+      "subtype_code": "EMR_BUSINESS_CONTINUITY",
+      "name": "Business Continuity"
+    },
+    {
+      "discipline_code": "EMR",
+      "subtype_code": "EMR_CRISIS_MANAGEMENT",
+      "name": "Crisis Management"
+    },
+    {
+      "discipline_code": "EMR",
+      "subtype_code": "EMR_ICS_NIMS_INTEGRATION",
+      "name": "ICS/NIMS Integration"
+    },
+    {
+      "discipline_code": "EMR",
+      "subtype_code": "EMR_RESILIENCE_PLANNING",
+      "name": "Resilience Planning"
+    },
+    {
+      "discipline_code": "ISC",
+      "subtype_code": "ISC_COORDINATION_PROTOCOLS",
+      "name": "Coordination Protocols"
+    },
+    {
+      "discipline_code": "KEY",
+      "subtype_code": "KEY_MASTER_KEY_MANAGEMENT",
+      "name": "Master Key Management"
+    },
+    {
+      "discipline_code": "KEY",
+      "subtype_code": "KEY_REKEYING_PROCEDURES",
+      "name": "Rekeying Procedures"
+    },
+    {
+      "discipline_code": "SFO",
+      "subtype_code": "SFO_RESPONSE_PROCEDURES",
+      "name": "Response Procedures"
+    },
+    {
+      "discipline_code": "SMG",
+      "subtype_code": "SMG_GOVERNANCE_OVERSIGHT",
+      "name": "Governance & Oversight"
+    },
+    {
+      "discipline_code": "SMG",
+      "subtype_code": "SMG_POLICY_COMPLIANCE_TRACKING",
+      "name": "Policy Compliance Tracking"
+    },
+    {
+      "discipline_code": "SMG",
+      "subtype_code": "SMG_RISK_ASSESSMENT_RISK_MANAGEMENT",
+      "name": "Risk Assessment / Risk Management"
+    },
+    {
+      "discipline_code": "SMG",
+      "subtype_code": "SMG_SECURITY_DOCUMENTATION",
+      "name": "Security Documentation"
+    },
+    {
+      "discipline_code": "SMG",
+      "subtype_code": "SMG_SECURITY_PROCEDURES",
+      "name": "Security Procedures"
+    },
+    {
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_SYSTEM_ARCHITECTURE",
+      "name": "System Architecture"
+    }
+  ],
+  "already_flagged_subtypes": [],
+  "duplicate_subtype_codes": []
+}

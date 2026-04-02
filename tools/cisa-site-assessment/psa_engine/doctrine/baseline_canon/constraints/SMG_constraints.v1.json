@@ -1,0 +1,18 @@
+{
+  "discipline_code": "SMG",
+  "version": "v1",
+  "constraints": [
+    {
+      "constraint_id": "BASE-SMG-CONSTRAINT-001",
+      "type": "EXCLUDE_LEGACY_SUBTYPES_FROM_SPINES",
+      "value": ["SMG_*"],
+      "reason": "SMG legacy subtypes are depth; SMG baseline spines are authored canonically."
+    },
+    {
+      "constraint_id": "BASE-SMG-CONSTRAINT-002",
+      "type": "CAPTURE_ROUTED_ITEMS_FOR_REVIEW",
+      "value": ["MOVE_TO_SMG"],
+      "reason": "Governance/procedural items routed in from other disciplines must be reviewed under SMG components."
+    }
+  ]
+}

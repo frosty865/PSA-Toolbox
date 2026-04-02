@@ -2,7 +2,7 @@ using Microsoft.UI.Xaml;
 
 namespace PSA.Toolbox.Launcher;
 
-public partial class App : Application
+public sealed partial class App : Application
 {
     private Window? _window;
 

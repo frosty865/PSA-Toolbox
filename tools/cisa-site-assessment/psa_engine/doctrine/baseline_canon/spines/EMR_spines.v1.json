@@ -1,0 +1,16 @@
+[
+  {
+    "canon_id": "BASE-EMR-001",
+    "discipline_code": "EMR",
+    "subtype_code": null,
+    "question_text": "Is there a defined emergency management capability for the facility?",
+    "response_enum": ["YES","NO","N_A"]
+  },
+  {
+    "canon_id": "BASE-EMR-002",
+    "discipline_code": "EMR",
+    "subtype_code": null,
+    "question_text": "Is continuity of operations addressed for disruptions that could affect the facility?",
+    "response_enum": ["YES","NO","N_A"]
+  }
+]

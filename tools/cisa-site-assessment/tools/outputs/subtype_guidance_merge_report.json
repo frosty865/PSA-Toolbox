@@ -1,0 +1,87 @@
+{
+  "taxonomy_total": 105,
+  "source_total": 104,
+  "updated_count": 101,
+  "already_had_guidance_count": 1,
+  "missing_in_source": [
+    "PER_PEDESTRIAN_ACCESS_CONTROL_POINTS"
+  ],
+  "orphan_source_not_in_taxonomy": [],
+  "examples": {
+    "updated": [
+      {
+        "subtype_code": "ACS_CREDENTIAL_BADGE_SYSTEMS",
+        "fields_written": [
+          "overview",
+          "psa_notes"
+        ]
+      },
+      {
+        "subtype_code": "ACS_DOOR_MONITORING",
+        "fields_written": [
+          "overview",
+          "psa_notes"
+        ]
+      },
+      {
+        "subtype_code": "ACS_DOOR_READERS",
+        "fields_written": [
+          "overview",
+          "psa_notes"
+        ]
+      },
+      {
+        "subtype_code": "ACS_ELECTRIC_STRIKES_MAG_LOCKS",
+        "fields_written": [
+          "overview",
+          "psa_notes"
+        ]
+      },
+      {
+        "subtype_code": "ACS_ELECTRONIC_ACCESS_CONTROL",
+        "fields_written": [
+          "overview",
+          "psa_notes"
+        ]
+      },
+      {
+        "subtype_code": "ACS_KEYPADS_PIN_ENTRY",
+        "fields_written": [
+          "overview",
+          "psa_notes"
+        ]
+      },
+      {
+        "subtype_code": "ACS_LOCKING_HARDWARE",
+        "fields_written": [
+          "overview",
+          "psa_notes"
+        ]
+      },
+      {
+        "subtype_code": "ACS_SECURED_VESTIBULES",
+        "fields_written": [
+          "overview",
+          "psa_notes"
+        ]
+      },
+      {
+        "subtype_code": "ACS_VISITOR_MANAGEMENT_SYSTEMS",
+        "fields_written": [
+          "overview",
+          "psa_notes"
+        ]
+      },
+      {
+        "subtype_code": "COM_BACKUP_COMMUNICATIONS",
+        "fields_written": [
+          "overview",
+          "psa_notes"
+        ]
+      }
+    ],
+    "skipped_existing": [
+      "ACS_BIOMETRIC_ACCESS"
+    ]
+  }
+}

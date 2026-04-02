@@ -1,0 +1,16 @@
+# PSA System - Consolidated Python Requirements
+# Generated for venv migration
+# Install with: pip install -r requirements.txt
+
+# Base dependencies (from Dependencies/python/requirements-base.txt)
+psycopg2-binary>=2.9.0
+pydantic>=2.0.0
+sqlalchemy>=2.0.0
+requests>=2.31.0
+
+# Add processor and engine dependencies as needed
+# See Dependencies/python/requirements-processor.txt
+# See Dependencies/python/requirements-engine.txt
+
+# Additional dependencies commonly used in tools:
+python-dotenv>=1.0.0

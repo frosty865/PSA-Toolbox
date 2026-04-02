@@ -1,0 +1,15 @@
+{
+  "b6c39a33_520008_vol3.pdf": {
+    "source_document_id": "b6c39a33_520008_vol3.pdf",
+    "filename": "520008_vol3.pdf",
+    "sha256": "b6c39a338d7eea93d6eaaf530d41a7cdada3780f5f962a8537d084f6b9cc5b1a",
+    "detected_at": "2025-12-20T21:08:53.262345",
+    "status": "processing",
+    "error": null,
+    "phase2_5_completed_at": null,
+    "archived_at": null,
+    "primary_component": null,
+    "secondary_components": null,
+    "library_path": null
+  }
+}

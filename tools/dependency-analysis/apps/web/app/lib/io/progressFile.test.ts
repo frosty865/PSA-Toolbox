@@ -38,7 +38,7 @@ describe('progressFile', () => {
     file.tool = 'other-tool';
     const result = parseProgressFile(JSON.stringify(file));
     expect(result.ok).toBe(false);
-    if (!result.ok) expect(result.error).toContain('Asset Dependency');
+    if (!result.ok) expect(result.error).toContain('Infrastructure Dependency Tool');
   });
 
   it('version mismatch handled cleanly', () => {
@@ -173,6 +173,19 @@ describe('progressFile', () => {
     expect(result.sessions.ELECTRIC_POWER?.answers['E-2_can_identify_substations']).toBe('yes');
     expect(typeof result.sessions.ELECTRIC_POWER?.saved_at_iso).toBe('string');
     expect((result.sessions.ELECTRIC_POWER?.saved_at_iso ?? '').length).toBeGreaterThan(0);
+  });
+
+  it('accepts legacy asset-dependency-tool progress files', () => {
+    const assessment = getDefaultAssessment();
+    const raw = JSON.stringify({
+      tool: 'asset-dependency-tool',
+      version: 2,
+      saved_at_iso: new Date().toISOString(),
+      assessment,
+    });
+
+    const result = parseProgressFile(raw);
+    expect(result.ok).toBe(true);
   });
 
   it('preserves imported category keys without destructive legacy stripping', () => {

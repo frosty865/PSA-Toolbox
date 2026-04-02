@@ -1,0 +1,18 @@
+# OCR Dependencies for PDF Text Extraction
+# Install these packages to enable OCR support for scanned/image-based PDFs
+# 
+# Installation:
+#   pip install pdf2image pytesseract
+#
+# System Requirements:
+#   - Tesseract OCR engine must be installed on the system
+#   - Windows: Download from https://github.com/UB-Mannheim/tesseract/wiki
+#   - Linux: sudo apt-get install tesseract-ocr
+#   - Mac: brew install tesseract
+#
+# Additional Windows dependencies:
+#   - poppler-utils (for pdf2image)
+#   - Windows: Download from https://github.com/oschwartz10612/poppler-windows/releases
+
+pdf2image>=1.16.0
+pytesseract>=0.3.10

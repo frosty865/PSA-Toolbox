@@ -1,0 +1,127 @@
+{
+  "version": "v1",
+  "description": "Canonical physical security components library. Components are abstract building blocks that describe WHAT exists, not HOW it is implemented.",
+  "components": [
+    {
+      "code": "SEC_GOV_PERSONNEL",
+      "name": "Security Governance Personnel",
+      "discipline": "Security Management & Governance",
+      "description": "Personnel with designated responsibility for security governance and oversight."
+    },
+    {
+      "code": "SEC_POLICY_DOCUMENT",
+      "name": "Security Policy Document",
+      "discipline": "Security Management & Governance",
+      "description": "Written security policy or equivalent statement that establishes security expectations."
+    },
+    {
+      "code": "SEC_INCIDENT_PROCESS",
+      "name": "Incident Reporting Process",
+      "discipline": "Incident Management",
+      "description": "Documented process for reporting security incidents."
+    },
+    {
+      "code": "VSS_CAMERA",
+      "name": "Video Camera",
+      "discipline": "Video Surveillance Systems",
+      "description": "Fixed or movable devices used to capture video imagery."
+    },
+    {
+      "code": "VSS_RECORDING_DEVICE",
+      "name": "Video Recording Device",
+      "discipline": "Video Surveillance Systems",
+      "description": "Devices used to store or manage recorded video footage."
+    },
+    {
+      "code": "VSS_MONITORING_WORKSTATION",
+      "name": "Monitoring Workstation",
+      "discipline": "Video Surveillance Systems",
+      "description": "Workstations used to view and monitor video feeds."
+    },
+    {
+      "code": "IDS_SENSOR",
+      "name": "Intrusion Sensor",
+      "discipline": "Intrusion Detection Systems",
+      "description": "Devices that detect unauthorized entry or intrusion."
+    },
+    {
+      "code": "IDS_CONTROL_PANEL",
+      "name": "IDS Control Panel",
+      "discipline": "Intrusion Detection Systems",
+      "description": "Central unit that receives, processes, and reports intrusion signals."
+    },
+    {
+      "code": "ACS_READER",
+      "name": "Access Control Reader",
+      "discipline": "Access Control Systems",
+      "description": "Devices that read credentials to grant or deny access."
+    },
+    {
+      "code": "ACS_CONTROLLER",
+      "name": "Access Control Controller",
+      "discipline": "Access Control Systems",
+      "description": "Central unit that processes access requests and controls access points."
+    },
+    {
+      "code": "ACS_LOCK",
+      "name": "Access Control Lock",
+      "discipline": "Access Control Systems",
+      "description": "Electronic or mechanical locks controlled by access control systems."
+    },
+    {
+      "code": "PERIM_FENCE",
+      "name": "Perimeter Fence",
+      "discipline": "Perimeter Security",
+      "description": "Barriers that define and protect facility perimeter boundaries."
+    },
+    {
+      "code": "PERIM_GATE",
+      "name": "Perimeter Gate",
+      "discipline": "Perimeter Security",
+      "description": "Controlled access points through perimeter barriers."
+    },
+    {
+      "code": "PERIM_BARRIER",
+      "name": "Perimeter Barrier",
+      "discipline": "Perimeter Security",
+      "description": "Physical barriers including bollards, barriers, and other perimeter protection measures."
+    },
+    {
+      "code": "LIGHTING_FIXTURE",
+      "name": "Security Lighting Fixture",
+      "discipline": "Security Lighting",
+      "description": "Lighting fixtures used for security illumination of facilities and perimeters."
+    },
+    {
+      "code": "BARRIER_INTERIOR",
+      "name": "Interior Barrier",
+      "discipline": "Interior Security & Physical Barriers",
+      "description": "Physical barriers used to protect assets and people inside facilities."
+    },
+    {
+      "code": "COMM_RADIO",
+      "name": "Security Radio",
+      "discipline": "Security Communications",
+      "description": "Radio communication devices used by security personnel."
+    },
+    {
+      "code": "COMM_NOTIFICATION",
+      "name": "Notification System",
+      "discipline": "Security Communications",
+      "description": "Systems used to notify personnel of security events or emergencies."
+    },
+    {
+      "code": "OPS_MONITORING_CENTER",
+      "name": "Monitoring Center",
+      "discipline": "Security Operations",
+      "description": "Central location for monitoring security systems and coordinating response."
+    },
+    {
+      "code": "PERSONNEL_GUARD",
+      "name": "Security Guard",
+      "discipline": "Security Personnel",
+      "description": "Personnel assigned to security duties including patrols, posts, and response."
+    }
+  ]
+}
+

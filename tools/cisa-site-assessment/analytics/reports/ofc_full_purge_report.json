@@ -1,0 +1,22 @@
+{
+  "mode": "APPLY",
+  "timestamp": "2026-01-23T12:59:09.307190Z",
+  "tables_purged": {
+    "ofc_candidate_queue": {
+      "exists": true,
+      "rows_before": 19,
+      "rows_deleted": 19
+    },
+    "ofc_question_links": {
+      "exists": true,
+      "rows_before": 0,
+      "rows_deleted": 0
+    },
+    "ofc_candidate_targets": {
+      "exists": true,
+      "rows_before": 0,
+      "rows_deleted": 0
+    }
+  },
+  "errors": []
+}

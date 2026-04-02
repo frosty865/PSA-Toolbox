@@ -1,0 +1,8 @@
+{
+  "layer": "component_capability",
+  "source": "phase_2_evidence",
+  "baseline_version": "Baseline_Questions_v1",
+  "generated_at": "1766281576.630316",
+  "description": "Component capability questions generated from Phase 2 evidence. These questions are optional, non-scoring, and evidence-gated.",
+  "questions": []
+}

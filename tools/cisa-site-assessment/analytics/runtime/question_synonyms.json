@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "Hand-curated synonyms for question matching. Keep small and focused.",
+    "last_updated": "2025-01-13"
+  },
+  "synonyms": {
+    "Awareness": [
+      "public awareness",
+      "awareness campaign",
+      "employee awareness",
+      "staff awareness",
+      "suspicious activity awareness"
+    ],
+    "Communication": [
+      "information sharing",
+      "communication protocols",
+      "inter-agency communication",
+      "stakeholder communication"
+    ],
+    "Access Control": [
+      "access management",
+      "entry control",
+      "access restriction",
+      "access monitoring"
+    ],
+    "Surveillance": [
+      "video surveillance",
+      "monitoring",
+      "observation",
+      "CCTV",
+      "camera system"
+    ],
+    "Emergency": [
+      "emergency response",
+      "emergency planning",
+      "crisis management",
+      "evacuation",
+      "shelter in place"
+    ],
+    "Perimeter": [
+      "perimeter security",
+      "boundary protection",
+      "fence",
+      "barrier",
+      "perimeter monitoring"
+    ],
+    "Lighting": [
+      "exterior lighting",
+      "security lighting",
+      "illumination",
+      "lighting system"
+    ],
+    "Lockdown": [
+      "lockdown procedures",
+      "lockout",
+      "secure in place",
+      "barricade"
+    ],
+    "Drills": [
+      "emergency drills",
+      "training exercises",
+      "practice drills",
+      "drill exercises"
+    ]
+  }
+}
+

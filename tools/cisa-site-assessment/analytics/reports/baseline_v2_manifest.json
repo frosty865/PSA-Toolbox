@@ -1,0 +1,31 @@
+{
+  "version": "Baseline_Questions_v2",
+  "freeze_date": "2025-12-28T20:46:01.157368Z",
+  "question_count": 208,
+  "gate_distribution": {
+    "CONTROL_EXISTS": 104,
+    "CONTROL_OPERABLE": 97,
+    "CONTROL_RESILIENCE": 7
+  },
+  "discipline_distribution": {
+    "Access Control Systems": 20,
+    "CPTED": 14,
+    "Communications": 12,
+    "Emergency Action Planning": 16,
+    "Emergency Management & Resilience": 14,
+    "Facility Hardening": 12,
+    "Information Sharing & Coordination": 14,
+    "Interior Security & Barriers": 14,
+    "Intrusion Detection Systems": 14,
+    "Key Control": 10,
+    "Perimeter Security": 16,
+    "Security Force / Operations": 16,
+    "Security Management & Governance": 14,
+    "Video Surveillance Systems": 22
+  },
+  "enforcement_rules": {
+    "rule_set_version": "1.0",
+    "reference": "docs/baseline/BASELINE_VALIDITY_RULES.md"
+  },
+  "migration_table_hash": "e654474dfe28d7463189a4ebc8016387e071642ad817e474ec9818486fe448b3"
+}

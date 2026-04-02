@@ -1,0 +1,14 @@
+{
+  "roots": {
+    "incoming": "D:\\PSA_System\\data\\incoming",
+    "library": "D:\\PSA_System\\data\\download"
+  },
+  "allowed_extensions": [".pdf"],
+  "ignore_folders": [],
+  "defaults": {
+    "sector": "general",
+    "subsector": null,
+    "module": null
+  },
+  "module_folder": "module"
+}

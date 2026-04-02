@@ -1,0 +1,63 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+ENV/
+.venv
+
+# Node
+node_modules/
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+*.backup
+
+# Environment
+.env.local
+.local.env
+.env*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+
+# Moved bad documents (no publisher / no title / zero chunks) — corpus:unfuck
+unfuck/
+
+# Server Tools runner PID files (watchers started from UI)
+storage/tool_pids/
+
+# Tier 1 crawler artifacts (no longer under source_registry; avoid committing)
+storage/source_registry/
+storage/crawler_artifacts/
+
+# Lint reports (optional; .lint/ directory committed)
+.lint/eslint.json
+.lint/eslint.txt
+.lint/summary.txt
+
+.vercel

@@ -1,0 +1,63 @@
+VALIDATOR: MODULE DOMAIN SEPARATION — EV CHARGING (V1)
+
+PURPOSE
+Enforce doctrine: EV Charging outputs must only reflect charger infrastructure / interface mitigation (tighter standards). No parking-only spatial management drift.
+
+INPUT
+A single module generation JSON output with:
+- module_domain
+- summary_findings[]
+- items[]
+
+PASS/FAIL RULES (DETERMINISTIC)
+
+1) Domain match
+- FAIL if module_domain != "EV_CHARGING"
+
+2) Forbidden blended phrasing
+- FAIL if ANY of these substrings appear anywhere in the output text:
+  - "parking/charging"
+  - "charging/parking"
+
+3) Parking-only management terms are forbidden unless explicitly tied to chargers
+For each item in items[]:
+- DROP the item if its concatenated text (vulnerability + question + finding + OFCs) contains ANY of these terms
+  AND does NOT contain at least one CHARGER SIGNAL term (Rule 4):
+  Parking-only terms:
+  - "stall spacing"
+  - "parking layout"
+  - "vehicle circulation"
+  - "wayfinding"
+  - "parking capacity"
+  - "general parking"
+
+4) Required charger/interface signal per item
+For each item in items[]:
+- PASS the item only if the concatenated text contains AT LEAST ONE of:
+  - "charging station"
+  - "charger"
+  - "charging equipment"
+  - "connector"
+  - "cable"
+  - "plug"
+  - "energized"
+  - "disconnect"
+  - "isolation"
+  - "shutoff"
+  - "emergency stop"
+  - "collision protection"
+  - "protective barrier"
+  - "interface"
+- Otherwise DROP the item.
+
+OUTPUT ACTIONS
+- Remove any item that violates Rule 3 or Rule 4.
+- If after removals items[] is empty, the module output is VALID but contains zero items.
+
+LOGGING (REQUIRED)
+For each dropped item, record:
+- item id
+- violated rule number(s)
+- triggering term(s)
+
+END

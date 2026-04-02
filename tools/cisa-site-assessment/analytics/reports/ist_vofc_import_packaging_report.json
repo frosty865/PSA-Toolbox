@@ -1,0 +1,115 @@
+{
+  "total_ofcs_input": 1069,
+  "ofcs_with_any_sources": 718,
+  "ofcs_with_pdf_citations": 361,
+  "ofcs_web_only": 357,
+  "unique_pdf_urls": 53,
+  "unique_web_urls": 84,
+  "top_domains": [
+    [
+      "poa.asisonline.org",
+      165
+    ],
+    [
+      "www.fema.gov",
+      153
+    ],
+    [
+      "www.dhs.gov",
+      86
+    ],
+    [
+      "shop.bsigroup.com",
+      74
+    ],
+    [
+      "www.ready.gov",
+      55
+    ],
+    [
+      "www.elsevier.com",
+      55
+    ],
+    [
+      "www.nist.gov",
+      52
+    ],
+    [
+      "www.asisonline.org",
+      42
+    ],
+    [
+      "www.nfpa.org",
+      31
+    ],
+    [
+      "www.iso.org",
+      29
+    ],
+    [
+      "fas.org",
+      29
+    ],
+    [
+      "#",
+      22
+    ],
+    [
+      "www.ndsu.edu",
+      20
+    ],
+    [
+      "csrc.nist.gov",
+      19
+    ],
+    [
+      "www.wbdg.org",
+      15
+    ],
+    [
+      "www.fas.org",
+      13
+    ],
+    [
+      "www.nyc.gov",
+      13
+    ],
+    [
+      "store.elsevier.com",
+      10
+    ],
+    [
+      "www.securitymanagement.com",
+      9
+    ],
+    [
+      "www.globalspec.com",
+      8
+    ],
+    [
+      "nvlpubs.nist.gov",
+      8
+    ],
+    [
+      "www.fbi.gov",
+      7
+    ],
+    [
+      "www.protiviti.com",
+      6
+    ],
+    [
+      "www.usfa.fema.gov",
+      5
+    ],
+    [
+      "www.cdc.gov",
+      3
+    ]
+  ],
+  "outputs": {
+    "sources": "tools/corpus/external_sources.generated.json",
+    "documents": "tools/corpus/external_documents.generated.json",
+    "pdf_bindings": "tools/corpus/ofc_citation_map.pdf_only.generated.json"
+  }
+}

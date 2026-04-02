@@ -1,0 +1,16 @@
+[
+  {
+    "canon_id": "BASE-CPTED-001",
+    "discipline_code": "CPTED",
+    "subtype_code": null,
+    "question_text": "Are site layout and environmental design decisions used to influence access, visibility, and territorial control for areas of concern?",
+    "response_enum": ["YES","NO","N_A"]
+  },
+  {
+    "canon_id": "BASE-CPTED-002",
+    "discipline_code": "CPTED",
+    "subtype_code": null,
+    "question_text": "Are areas of concern evaluated for visibility and natural surveillance considerations as part of security decision-making?",
+    "response_enum": ["YES","NO","N_A"]
+  }
+]

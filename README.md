@@ -1,12 +1,12 @@
 # PSA Toolbox
 
-Monorepo umbrella for PSA tools: **one unified web app** (Next.js in [`tools/dependency-analysis/`](tools/dependency-analysis/)) serves the toolbox landing, Host V3 (`/host-v3/`), and dependency analysis (`/assessment/…`) on **one port**. Each product still has a **standalone folder** under [`tools/`](tools/) for its own assets, docs, and repos. The WinUI launcher reads [`tools-manifest.json`](tools-manifest.json).
+Monorepo umbrella for PSA tools: **one unified web app** (Next.js in [`tools/dependency-analysis/`](tools/dependency-analysis/)) serves the toolbox landing (`/`), **Dependency analysis** (`/assessment/…`), and **Hotel Analysis** (`/hotel-analysis/`) on **one port**. Product folders live under [`tools/`](tools/). The WinUI launcher reads [`tools-manifest.json`](tools-manifest.json).
 
 | Tool | Web route | Product folder |
 |------|-----------|----------------|
 | Toolbox shell | `/` | *(layout in dependency-analysis app)* |
-| Host V3 | `/host-v3/` | [`tools/host-v3/`](tools/host-v3/) |
 | Dependency analysis | `/assessment/…` | [`tools/dependency-analysis/`](tools/dependency-analysis/) |
+| Hotel Analysis | `/hotel-analysis/` | [`tools/hotel-analysis/`](tools/hotel-analysis/) |
 
 **Dev:** one command — `pnpm dev` from `tools/dependency-analysis`.
 
@@ -43,4 +43,4 @@ dotnet run --project .\launcher\PSA.Toolbox.Launcher\PSA.Toolbox.Launcher.csproj
 ## Local cleanup (optional)
 
 - **Stale path:** If `tools/infrastructure-dependency-assessment/` still exists next to `tools/dependency-analysis/`, it is obsolete — stop dev servers/editors using it, then delete that folder.
-- **Stray root folders:** Do not create tools under a second `Host V3` or `PSA IDAT` at repo root; use **`tools/host-v3/`** and **`tools/dependency-analysis/`** only.
+- **Stray root folders:** Keep tools under **`tools/<tool-id>/`** only (e.g. `dependency-analysis`, `hotel-analysis`).

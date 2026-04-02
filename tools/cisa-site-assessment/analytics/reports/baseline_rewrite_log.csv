@@ -1,0 +1,209 @@
+question_id,mapped_gate,old_text,new_text
+BASE-000,CONTROL_EXISTS,Does the facility have biometric access capabilities?,Are biometric access systems installed at entry points?
+BASE-002,CONTROL_OPERABLE,Are processes in place to ensure biometric access capabilities are maintained?,Do biometric access systems respond to access attempts?
+BASE-004,CONTROL_EXISTS,Does the facility have credential / badge capabilities?,Are credential badge systems installed?
+BASE-006,CONTROL_OPERABLE,Are processes in place to ensure credential / badge capabilities are maintained?,Do credential badge systems perform their basic function?
+BASE-008,CONTROL_EXISTS,Does the facility have door monitoring capabilities?,Are door monitoring systems installed?
+BASE-010,CONTROL_OPERABLE,Are processes in place to ensure door monitoring capabilities are maintained?,Do door monitoring systems perform their basic function?
+BASE-012,CONTROL_EXISTS,Does the facility have door readers capabilities?,Are door readers systems installed?
+BASE-014,CONTROL_OPERABLE,Are processes in place to ensure door readers capabilities are maintained?,Do door readers systems perform their basic function?
+BASE-016,CONTROL_EXISTS,Does the facility have electric strikes / mag locks capabilities?,Are electric strikes mag locks systems installed?
+BASE-018,CONTROL_OPERABLE,Are processes in place to ensure electric strikes / mag locks capabilities are maintained?,Do electric strikes mag locks systems perform their basic function?
+BASE-020,CONTROL_EXISTS,Does the facility have electronic access control capabilities?,Are electronic access control systems installed at entry points?
+BASE-022,CONTROL_RESILIENCE,Are processes in place to ensure electronic access control capabilities are maintained?,Does failure of a single component disable the entire system?
+BASE-024,CONTROL_EXISTS,Does the facility have keypads / pin entry capabilities?,Are keypads pin entry systems installed?
+BASE-026,CONTROL_OPERABLE,Are processes in place to ensure keypads / pin entry capabilities are maintained?,Do keypads pin entry systems perform their basic function?
+BASE-028,CONTROL_EXISTS,Does the facility have locking hardware capabilities?,Are locking hardware systems installed?
+BASE-030,CONTROL_OPERABLE,Are processes in place to ensure locking hardware capabilities are maintained?,Do locking hardware systems perform their basic function?
+BASE-032,CONTROL_EXISTS,Does the facility have secured vestibules capabilities?,Are secured vestibules systems installed?
+BASE-034,CONTROL_OPERABLE,Are processes in place to ensure secured vestibules capabilities are maintained?,Do secured vestibules systems perform their basic function?
+BASE-036,CONTROL_EXISTS,Does the facility have visitor management capabilities?,Are visitor systems installed?
+BASE-038,CONTROL_OPERABLE,Are processes in place to ensure visitor management capabilities are maintained?,Do visitor systems perform their basic function?
+BASE-040,CONTROL_EXISTS,Does the facility have defensible space capabilities?,Are defensible space systems installed?
+BASE-042,CONTROL_OPERABLE,Are processes in place to ensure defensible space capabilities are maintained?,Do defensible space systems perform their basic function?
+BASE-044,CONTROL_EXISTS,Does the facility have exterior lighting capabilities?,Are exterior lighting fixtures installed?
+BASE-046,CONTROL_OPERABLE,Are processes in place to ensure exterior lighting capabilities are maintained?,Do exterior lighting fixtures illuminate when activated?
+BASE-048,CONTROL_EXISTS,Does the facility have landscaping control capabilities?,Are landscaping control systems installed at entry points?
+BASE-050,CONTROL_OPERABLE,Are processes in place to ensure landscaping control capabilities are maintained?,Do landscaping control systems respond to access attempts?
+BASE-052,CONTROL_EXISTS,Does the facility have natural surveillance capabilities?,Are natural surveillance cameras installed?
+BASE-054,CONTROL_OPERABLE,Are processes in place to ensure natural surveillance capabilities are maintained?,Are natural surveillance cameras recording?
+BASE-056,CONTROL_EXISTS,Does the facility have sightlines capabilities?,Are sightlines systems installed?
+BASE-058,CONTROL_OPERABLE,Are processes in place to ensure sightlines capabilities are maintained?,Do sightlines systems perform their basic function?
+BASE-060,CONTROL_EXISTS,Does the facility have territorial reinforcement capabilities?,Are territorial reinforcement systems installed?
+BASE-062,CONTROL_OPERABLE,Are processes in place to ensure territorial reinforcement capabilities are maintained?,Do territorial reinforcement systems perform their basic function?
+BASE-064,CONTROL_EXISTS,Does the facility have wayfinding capabilities?,Are wayfinding systems installed?
+BASE-066,CONTROL_OPERABLE,Are processes in place to ensure wayfinding capabilities are maintained?,Do wayfinding systems perform their basic function?
+BASE-068,CONTROL_EXISTS,Does the facility have backup communications capabilities?,Are backup communications systems installed?
+BASE-070,CONTROL_RESILIENCE,Are processes in place to ensure backup communications capabilities are maintained?,Are backup systems operational and available?
+BASE-072,CONTROL_EXISTS,Does the facility have communication protocols capabilities?,Are communication protocols systems installed?
+BASE-074,CONTROL_OPERABLE,Are processes in place to ensure communication protocols capabilities are maintained?,Do communication protocols systems transmit and receive?
+BASE-076,CONTROL_EXISTS,Does the facility have interoperable communications capabilities?,Are interoperable communications systems installed?
+BASE-078,CONTROL_OPERABLE,Are processes in place to ensure interoperable communications capabilities are maintained?,Do interoperable communications systems transmit and receive?
+BASE-080,CONTROL_EXISTS,Does the facility have pa systems capabilities?,Are pa systems installed?
+BASE-082,CONTROL_OPERABLE,Are processes in place to ensure pa systems capabilities are maintained?,Do pa systems perform their basic function?
+BASE-084,CONTROL_EXISTS,Does the facility have paging systems capabilities?,Are paging systems installed?
+BASE-086,CONTROL_OPERABLE,Are processes in place to ensure paging systems capabilities are maintained?,Do paging systems perform their basic function?
+BASE-088,CONTROL_EXISTS,Does the facility have radios / two-way capabilities?,Are radios two-way systems installed?
+BASE-090,CONTROL_OPERABLE,Are processes in place to ensure radios / two-way capabilities are maintained?,Do radios two-way systems perform their basic function?
+BASE-092,CONTROL_EXISTS,Does the facility have emergency drills capabilities?,Are emergency drills systems installed?
+BASE-094,CONTROL_OPERABLE,Are processes in place to ensure emergency drills capabilities are maintained?,Do emergency drills systems perform their basic function?
+BASE-096,CONTROL_EXISTS,Does the facility have emergency guides / flip charts capabilities?,Are emergency guides flip charts systems installed?
+BASE-098,CONTROL_OPERABLE,Are processes in place to ensure emergency guides / flip charts capabilities are maintained?,Do emergency guides flip charts systems perform their basic function?
+BASE-100,CONTROL_EXISTS,Does the facility have evacuation procedures capabilities?,Are evacuation procedures systems installed?
+BASE-102,CONTROL_OPERABLE,Are processes in place to ensure evacuation procedures capabilities are maintained?,Do evacuation procedures systems perform their basic function?
+BASE-104,CONTROL_EXISTS,Does the facility have lockdown / lockout procedures capabilities?,Are lockdown lockout procedures systems installed?
+BASE-106,CONTROL_OPERABLE,Are processes in place to ensure lockdown / lockout procedures capabilities are maintained?,Do lockdown lockout procedures systems perform their basic function?
+BASE-108,CONTROL_EXISTS,Does the facility have muster points / rally areas capabilities?,Are muster points rally areas systems installed?
+BASE-110,CONTROL_OPERABLE,Are processes in place to ensure muster points / rally areas capabilities are maintained?,Do muster points rally areas systems perform their basic function?
+BASE-112,CONTROL_EXISTS,Does the facility have reunification procedures capabilities?,Are reunification procedures systems installed?
+BASE-114,CONTROL_OPERABLE,Are processes in place to ensure reunification procedures capabilities are maintained?,Do reunification procedures systems perform their basic function?
+BASE-116,CONTROL_EXISTS,Does the facility have shelter-in-place capabilities?,Are shelter-in-place systems installed?
+BASE-118,CONTROL_OPERABLE,Are processes in place to ensure shelter-in-place capabilities are maintained?,Do shelter-in-place systems perform their basic function?
+BASE-120,CONTROL_EXISTS,Does the facility have staff emergency roles capabilities?,Are staff emergency roles systems installed?
+BASE-122,CONTROL_OPERABLE,Are processes in place to ensure staff emergency roles capabilities are maintained?,Do staff emergency roles systems perform their basic function?
+BASE-124,CONTROL_EXISTS,Does the facility have business continuity capabilities?,Are business continuity systems installed?
+BASE-126,CONTROL_OPERABLE,Are processes in place to ensure business continuity capabilities are maintained?,Do business continuity systems perform their basic function?
+BASE-128,CONTROL_EXISTS,Does the facility have crisis management capabilities?,Are crisis systems installed?
+BASE-130,CONTROL_OPERABLE,Are processes in place to ensure crisis management capabilities are maintained?,Do crisis systems perform their basic function?
+BASE-132,CONTROL_EXISTS,Does the facility have emergency communications capabilities?,Are emergency communications systems installed?
+BASE-134,CONTROL_OPERABLE,Are processes in place to ensure emergency communications capabilities are maintained?,Do emergency communications systems transmit and receive?
+BASE-136,CONTROL_EXISTS,Does the facility have ics/nims integration capabilities?,Are ics/nims integration systems installed?
+BASE-138,CONTROL_OPERABLE,Are processes in place to ensure ics/nims integration capabilities are maintained?,Do ics/nims integration systems perform their basic function?
+BASE-140,CONTROL_EXISTS,Does the facility have mass notification capabilities?,Are mass notification systems installed?
+BASE-142,CONTROL_OPERABLE,Are processes in place to ensure mass notification capabilities are maintained?,Do mass notification systems perform their basic function?
+BASE-144,CONTROL_EXISTS,Does the facility have redundancy / backup systems capabilities?,Are redundancy backup systems installed?
+BASE-146,CONTROL_RESILIENCE,Are processes in place to ensure redundancy / backup systems capabilities are maintained?,Are backup systems operational and available?
+BASE-148,CONTROL_EXISTS,Does the facility have resilience planning capabilities?,Are resilience planning systems installed?
+BASE-150,CONTROL_OPERABLE,Are processes in place to ensure resilience planning capabilities are maintained?,Do resilience planning systems perform their basic function?
+BASE-152,CONTROL_EXISTS,Does the facility have ballistic barriers capabilities?,Are ballistic barriers barriers installed?
+BASE-154,CONTROL_OPERABLE,Are processes in place to ensure ballistic barriers capabilities are maintained?,Do ballistic barriers barriers open and close?
+BASE-156,CONTROL_EXISTS,Does the facility have blast mitigation capabilities?,Are blast mitigation systems installed?
+BASE-158,CONTROL_OPERABLE,Are processes in place to ensure blast mitigation capabilities are maintained?,Do blast mitigation systems perform their basic function?
+BASE-160,CONTROL_EXISTS,Does the facility have exterior wall reinforcement capabilities?,Are exterior wall reinforcement systems installed?
+BASE-162,CONTROL_OPERABLE,Are processes in place to ensure exterior wall reinforcement capabilities are maintained?,Do exterior wall reinforcement systems perform their basic function?
+BASE-164,CONTROL_EXISTS,Does the facility have impact-resistant glazing capabilities?,Are impact-resistant glazing systems installed?
+BASE-166,CONTROL_OPERABLE,Are processes in place to ensure impact-resistant glazing capabilities are maintained?,Do impact-resistant glazing systems perform their basic function?
+BASE-168,CONTROL_EXISTS,Does the facility have structural hardening capabilities?,Are structural hardening systems installed?
+BASE-170,CONTROL_OPERABLE,Are processes in place to ensure structural hardening capabilities are maintained?,Do structural hardening systems perform their basic function?
+BASE-172,CONTROL_EXISTS,Does the facility have window film capabilities?,Are window film systems installed?
+BASE-174,CONTROL_OPERABLE,Are processes in place to ensure window film capabilities are maintained?,Do window film systems perform their basic function?
+BASE-176,CONTROL_EXISTS,Does the facility have coordination protocols capabilities?,Are coordination protocols systems installed?
+BASE-178,CONTROL_OPERABLE,Are processes in place to ensure coordination protocols capabilities are maintained?,Do coordination protocols systems perform their basic function?
+BASE-180,CONTROL_EXISTS,Does the facility have external reporting capabilities?,Are external reporting systems installed?
+BASE-182,CONTROL_OPERABLE,Are processes in place to ensure external reporting capabilities are maintained?,Do external reporting systems perform their basic function?
+BASE-184,CONTROL_EXISTS,Does the facility have fusion center interface capabilities?,Are fusion center interface systems installed?
+BASE-186,CONTROL_OPERABLE,Are processes in place to ensure fusion center interface capabilities are maintained?,Do fusion center interface systems perform their basic function?
+BASE-188,CONTROL_EXISTS,Does the facility have isac / isaos capabilities?,Are isac isaos systems installed?
+BASE-190,CONTROL_OPERABLE,Are processes in place to ensure isac / isaos capabilities are maintained?,Do isac isaos systems perform their basic function?
+BASE-192,CONTROL_EXISTS,Does the facility have jttf engagement capabilities?,Are jttf engagement systems installed?
+BASE-194,CONTROL_OPERABLE,Are processes in place to ensure jttf engagement capabilities are maintained?,Do jttf engagement systems perform their basic function?
+BASE-196,CONTROL_EXISTS,Does the facility have law enforcement liaison capabilities?,Are law enforcement liaison systems installed?
+BASE-198,CONTROL_OPERABLE,Are processes in place to ensure law enforcement liaison capabilities are maintained?,Do law enforcement liaison systems perform their basic function?
+BASE-200,CONTROL_EXISTS,Does the facility have threat information sharing capabilities?,Are threat information sharing systems installed?
+BASE-202,CONTROL_OPERABLE,Are processes in place to ensure threat information sharing capabilities are maintained?,Do threat information sharing systems perform their basic function?
+BASE-204,CONTROL_EXISTS,Does the facility have access-restricted areas capabilities?,Are access-restricted areas systems installed at entry points?
+BASE-206,CONTROL_OPERABLE,Are processes in place to ensure access-restricted areas capabilities are maintained?,Do access-restricted areas systems respond to access attempts?
+BASE-208,CONTROL_EXISTS,Does the facility have hard-interior barriers capabilities?,Are hard-interior barriers barriers installed?
+BASE-210,CONTROL_OPERABLE,Are processes in place to ensure hard-interior barriers capabilities are maintained?,Do hard-interior barriers barriers open and close?
+BASE-212,CONTROL_EXISTS,Does the facility have interior doors capabilities?,Are interior doors systems installed?
+BASE-214,CONTROL_OPERABLE,Are processes in place to ensure interior doors capabilities are maintained?,Do interior doors systems perform their basic function?
+BASE-216,CONTROL_EXISTS,Does the facility have interior lighting capabilities?,Are interior lighting fixtures installed?
+BASE-218,CONTROL_OPERABLE,Are processes in place to ensure interior lighting capabilities are maintained?,Do interior lighting fixtures illuminate when activated?
+BASE-220,CONTROL_EXISTS,Does the facility have safe rooms capabilities?,Are safe rooms systems installed?
+BASE-222,CONTROL_OPERABLE,Are processes in place to ensure safe rooms capabilities are maintained?,Do safe rooms systems perform their basic function?
+BASE-224,CONTROL_EXISTS,Does the facility have secure rooms capabilities?,Are secure rooms systems installed?
+BASE-226,CONTROL_OPERABLE,Are processes in place to ensure secure rooms capabilities are maintained?,Do secure rooms systems perform their basic function?
+BASE-228,CONTROL_EXISTS,Does the facility have sensitive item storage capabilities?,Are sensitive item storage recorders installed?
+BASE-230,CONTROL_RESILIENCE,Are processes in place to ensure sensitive item storage capabilities are maintained?,Does failure of a single recorder disable all recording?
+BASE-232,CONTROL_EXISTS,Does the facility have alarm monitoring capabilities?,Are alarm monitoring sensors installed?
+BASE-234,CONTROL_OPERABLE,Are processes in place to ensure alarm monitoring capabilities are maintained?,Do alarm monitoring sensors trigger when activated?
+BASE-236,CONTROL_EXISTS,Does the facility have alarm panels capabilities?,Are alarm panels panels installed?
+BASE-238,CONTROL_RESILIENCE,Are processes in place to ensure alarm panels capabilities are maintained?,Does failure of a single panel disable all connected devices?
+BASE-240,CONTROL_EXISTS,Does the facility have door contacts capabilities?,Are door contacts systems installed?
+BASE-242,CONTROL_OPERABLE,Are processes in place to ensure door contacts capabilities are maintained?,Do door contacts systems perform their basic function?
+BASE-244,CONTROL_EXISTS,Does the facility have glass break sensors capabilities?,Are glass break sensors systems installed?
+BASE-246,CONTROL_OPERABLE,Are processes in place to ensure glass break sensors capabilities are maintained?,Do glass break sensors systems perform their basic function?
+BASE-248,CONTROL_EXISTS,Does the facility have motion detectors capabilities?,Are motion detectors systems installed?
+BASE-250,CONTROL_OPERABLE,Are processes in place to ensure motion detectors capabilities are maintained?,Do motion detectors systems perform their basic function?
+BASE-252,CONTROL_EXISTS,Does the facility have panic / duress buttons capabilities?,Are panic duress buttons systems installed?
+BASE-254,CONTROL_OPERABLE,Are processes in place to ensure panic / duress buttons capabilities are maintained?,Do panic duress buttons systems perform their basic function?
+BASE-256,CONTROL_EXISTS,Does the facility have perimeter ids capabilities?,Are perimeter ids systems installed?
+BASE-258,CONTROL_OPERABLE,Are processes in place to ensure perimeter ids capabilities are maintained?,Do perimeter ids systems perform their basic function?
+BASE-260,CONTROL_EXISTS,Does the facility have key cabinets capabilities?,Are key cabinets systems installed?
+BASE-262,CONTROL_OPERABLE,Are processes in place to ensure key cabinets capabilities are maintained?,Do key cabinets systems perform their basic function?
+BASE-264,CONTROL_EXISTS,Does the facility have key logs / accountability capabilities?,Are key logs accountability systems installed?
+BASE-266,CONTROL_OPERABLE,Are processes in place to ensure key logs / accountability capabilities are maintained?,Do key logs accountability systems perform their basic function?
+BASE-268,CONTROL_EXISTS,Does the facility have master key management capabilities?,Are master key systems installed?
+BASE-270,CONTROL_OPERABLE,Are processes in place to ensure master key management capabilities are maintained?,Do master key systems perform their basic function?
+BASE-272,CONTROL_EXISTS,Does the facility have rekeying procedures capabilities?,Are rekeying procedures systems installed?
+BASE-274,CONTROL_OPERABLE,Are processes in place to ensure rekeying procedures capabilities are maintained?,Do rekeying procedures systems perform their basic function?
+BASE-276,CONTROL_EXISTS,Does the facility have restricted keys capabilities?,Are restricted keys systems installed?
+BASE-278,CONTROL_OPERABLE,Are processes in place to ensure restricted keys capabilities are maintained?,Do restricted keys systems perform their basic function?
+BASE-280,CONTROL_EXISTS,Does the facility have bollards / barriers capabilities?,Are bollards barriers barriers installed?
+BASE-282,CONTROL_OPERABLE,Are processes in place to ensure bollards / barriers capabilities are maintained?,Do bollards barriers barriers open and close?
+BASE-284,CONTROL_EXISTS,Does the facility have boundary demarcation capabilities?,Are boundary demarcation systems installed?
+BASE-286,CONTROL_OPERABLE,Are processes in place to ensure boundary demarcation capabilities are maintained?,Do boundary demarcation systems perform their basic function?
+BASE-288,CONTROL_EXISTS,Does the facility have clear zones capabilities?,Are clear zones systems installed?
+BASE-290,CONTROL_OPERABLE,Are processes in place to ensure clear zones capabilities are maintained?,Do clear zones systems perform their basic function?
+BASE-292,CONTROL_EXISTS,Does the facility have fencing capabilities?,Are fencing systems installed?
+BASE-294,CONTROL_OPERABLE,Are processes in place to ensure fencing capabilities are maintained?,Do fencing systems perform their basic function?
+BASE-296,CONTROL_EXISTS,Does the facility have gates capabilities?,Are gates systems installed?
+BASE-298,CONTROL_OPERABLE,Are processes in place to ensure gates capabilities are maintained?,Do gates systems perform their basic function?
+BASE-300,CONTROL_EXISTS,Does the facility have perimeter lighting capabilities?,Are perimeter lighting fixtures installed?
+BASE-302,CONTROL_OPERABLE,Are processes in place to ensure perimeter lighting capabilities are maintained?,Do perimeter lighting fixtures illuminate when activated?
+BASE-304,CONTROL_EXISTS,Does the facility have perimeter signage capabilities?,Are perimeter signage systems installed?
+BASE-306,CONTROL_OPERABLE,Are processes in place to ensure perimeter signage capabilities are maintained?,Do perimeter signage systems perform their basic function?
+BASE-308,CONTROL_EXISTS,Does the facility have vehicle access control points capabilities?,Are vehicle access control points systems installed at entry points?
+BASE-310,CONTROL_OPERABLE,Are processes in place to ensure vehicle access control points capabilities are maintained?,Do vehicle access control points systems respond to access attempts?
+BASE-312,CONTROL_EXISTS,Does the facility have guard posts capabilities?,Are guard posts systems installed?
+BASE-314,CONTROL_OPERABLE,Are processes in place to ensure guard posts capabilities are maintained?,Do guard posts systems perform their basic function?
+BASE-316,CONTROL_EXISTS,Does the facility have incident reporting capabilities?,Are incident reporting systems installed?
+BASE-318,CONTROL_OPERABLE,Are processes in place to ensure incident reporting capabilities are maintained?,Do incident reporting systems perform their basic function?
+BASE-320,CONTROL_EXISTS,Does the facility have patrol routes capabilities?,Are patrol routes systems installed?
+BASE-322,CONTROL_OPERABLE,Are processes in place to ensure patrol routes capabilities are maintained?,Do patrol routes systems perform their basic function?
+BASE-324,CONTROL_EXISTS,Does the facility have radio communications capabilities?,Are radio communications systems installed?
+BASE-326,CONTROL_OPERABLE,Are processes in place to ensure radio communications capabilities are maintained?,Do radio communications systems transmit and receive?
+BASE-328,CONTROL_EXISTS,Does the facility have response procedures capabilities?,Are response procedures systems installed?
+BASE-330,CONTROL_OPERABLE,Are processes in place to ensure response procedures capabilities are maintained?,Do response procedures systems perform their basic function?
+BASE-332,CONTROL_EXISTS,Does the facility have school resource officer (sro) capabilities?,Are school resource officer systems installed?
+BASE-334,CONTROL_OPERABLE,Are processes in place to ensure school resource officer (sro) capabilities are maintained?,Do school resource officer systems perform their basic function?
+BASE-336,CONTROL_EXISTS,Does the facility have security officer training capabilities?,Are security officer training systems installed?
+BASE-338,CONTROL_OPERABLE,Are processes in place to ensure security officer training capabilities are maintained?,Do security officer training systems perform their basic function?
+BASE-340,CONTROL_EXISTS,Does the facility have security operations center (soc) capabilities?,Are security operations center systems installed?
+BASE-342,CONTROL_OPERABLE,Are processes in place to ensure security operations center (soc) capabilities are maintained?,Do security operations center systems perform their basic function?
+BASE-344,CONTROL_EXISTS,Does the facility have governance and oversight capabilities?,Are & systems installed?
+BASE-346,CONTROL_OPERABLE,Are processes in place to ensure governance and oversight capabilities are maintained?,Do & systems perform their basic function?
+BASE-348,CONTROL_EXISTS,Does the facility have policy compliance tracking capabilities?,Are policy compliance tracking systems installed?
+BASE-350,CONTROL_OPERABLE,Are processes in place to ensure policy compliance tracking capabilities are maintained?,Do policy compliance tracking systems perform their basic function?
+BASE-352,CONTROL_EXISTS,Does the facility have risk assessment / risk management capabilities?,Are risk assessment risk systems installed?
+BASE-354,CONTROL_OPERABLE,Are processes in place to ensure risk assessment / risk management capabilities are maintained?,Do risk assessment risk systems perform their basic function?
+BASE-356,CONTROL_EXISTS,Does the facility have security documentation capabilities?,Are security documentation systems installed?
+BASE-358,CONTROL_OPERABLE,Are processes in place to ensure security documentation capabilities are maintained?,Do security documentation systems perform their basic function?
+BASE-360,CONTROL_EXISTS,Does the facility have security policies capabilities?,Are security policies systems installed?
+BASE-362,CONTROL_OPERABLE,Are processes in place to ensure security policies capabilities are maintained?,Do security policies systems perform their basic function?
+BASE-364,CONTROL_EXISTS,Does the facility have security procedures capabilities?,Are security procedures systems installed?
+BASE-366,CONTROL_OPERABLE,Are processes in place to ensure security procedures capabilities are maintained?,Do security procedures systems perform their basic function?
+BASE-368,CONTROL_EXISTS,Does the facility have security training programs capabilities?,Are security training programs systems installed?
+BASE-370,CONTROL_OPERABLE,Are processes in place to ensure security training programs capabilities are maintained?,Do security training programs systems perform their basic function?
+BASE-372,CONTROL_EXISTS,Does the facility have analytics / behavior detection capabilities?,Are analytics behavior detection sensors installed?
+BASE-374,CONTROL_OPERABLE,Are processes in place to ensure analytics / behavior detection capabilities are maintained?,Do analytics behavior detection sensors trigger when activated?
+BASE-376,CONTROL_EXISTS,Does the facility have camera coverage / line of sight capabilities?,Are camera coverage line of sight cameras installed?
+BASE-378,CONTROL_OPERABLE,Are processes in place to ensure camera coverage / line of sight capabilities are maintained?,Are camera coverage line of sight cameras recording?
+BASE-380,CONTROL_EXISTS,Does the facility have exterior cameras capabilities?,Are exterior cameras cameras installed?
+BASE-382,CONTROL_OPERABLE,Are processes in place to ensure exterior cameras capabilities are maintained?,Are exterior cameras cameras recording?
+BASE-384,CONTROL_EXISTS,Does the facility have fixed cameras capabilities?,Are fixed cameras cameras installed?
+BASE-386,CONTROL_OPERABLE,Are processes in place to ensure fixed cameras capabilities are maintained?,Are fixed cameras cameras recording?
+BASE-388,CONTROL_EXISTS,Does the facility have ip cameras capabilities?,Are ip cameras cameras installed?
+BASE-390,CONTROL_OPERABLE,Are processes in place to ensure ip cameras capabilities are maintained?,Are ip cameras cameras recording?
+BASE-392,CONTROL_EXISTS,Does the facility have interior cameras capabilities?,Are interior cameras cameras installed?
+BASE-394,CONTROL_OPERABLE,Are processes in place to ensure interior cameras capabilities are maintained?,Are interior cameras cameras recording?
+BASE-396,CONTROL_EXISTS,Does the facility have monitoring / workstations capabilities?,Are monitoring workstations systems installed?
+BASE-398,CONTROL_OPERABLE,Are processes in place to ensure monitoring / workstations capabilities are maintained?,Do monitoring workstations systems perform their basic function?
+BASE-400,CONTROL_EXISTS,Does the facility have ptz cameras capabilities?,Are ptz cameras cameras installed?
+BASE-402,CONTROL_OPERABLE,Are processes in place to ensure ptz cameras capabilities are maintained?,Are ptz cameras cameras recording?
+BASE-404,CONTROL_EXISTS,Does the facility have recording / storage (nvr/dvr) capabilities?,Are recording storage recorders installed?
+BASE-406,CONTROL_RESILIENCE,Are processes in place to ensure recording / storage (nvr/dvr) capabilities are maintained?,Does failure of a single recorder disable all recording?
+BASE-408,CONTROL_EXISTS,Does the facility have system architecture capabilities?,Are system architecture systems installed?
+BASE-410,CONTROL_RESILIENCE,Are processes in place to ensure system architecture capabilities are maintained?,Does failure of a single component disable the entire system?
+BASE-412,CONTROL_EXISTS,Does the facility have video wall / display capabilities?,Are video wall display systems installed?
+BASE-414,CONTROL_OPERABLE,Are processes in place to ensure video wall / display capabilities are maintained?,Do video wall display systems perform their basic function?

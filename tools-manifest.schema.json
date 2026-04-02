@@ -2,6 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/frosty865/PSA-Toolbox/tools-manifest.schema.json",
   "title": "PSA Toolbox tools manifest",
+  "$comment": "Modular registry: clone or drop a tool under tools/<id>/, add one object here (id, displayName, relativePath, description). Optional entryPath = primary web URL (/assessment/... for IDA, /t/<id>/ for README workspace, or externalUrl). Landing page and launcher read this file only.",
   "type": "object",
   "required": ["version", "tools"],
   "properties": {

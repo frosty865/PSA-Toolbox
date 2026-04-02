@@ -1,0 +1,885 @@
+{
+  "generated_at": "2026-01-14T18:51:40.056358",
+  "dry_run": false,
+  "canon_source": "D:\\psa-workspace\\psa_engine\\doctrine\\baseline_canon\\baseline_spines.v1.json",
+  "detected_table": "baseline_questions",
+  "mapping": {
+    "columns": {
+      "code": "question_code",
+      "discipline_code": null,
+      "response_enum": null,
+      "subtype_code": null,
+      "text": "question_text"
+    },
+    "fixed_values": {
+      "response_enum": [
+        "YES",
+        "NO",
+        "N_A"
+      ]
+    },
+    "pattern": "BASELINE_QUESTIONS",
+    "table": "baseline_questions"
+  },
+  "mapping_source": "lock",
+  "lock_path": "D:\\psa-workspace\\psa_rebuild\\app\\importers\\baseline_canon_mapping.lock.json",
+  "counts": {
+    "total": 96,
+    "inserts": 0,
+    "updates": 0,
+    "unchanged": 96,
+    "errors": 0
+  },
+  "sample_operations": [
+    {
+      "canon_id": "PER-1",
+      "action": "UNCHANGED",
+      "text": "Is the site boundary clearly defined using physical or visual demarcation?",
+      "discipline_code": "PER",
+      "subtype_code": "PER_BOUNDARY_DEMARCATION"
+    },
+    {
+      "canon_id": "PER-2",
+      "action": "UNCHANGED",
+      "text": "Are perimeter fencing elements present where boundary control is required?",
+      "discipline_code": "PER",
+      "subtype_code": "PER_FENCING"
+    },
+    {
+      "canon_id": "PER-3",
+      "action": "UNCHANGED",
+      "text": "Are perimeter gates or controlled openings present at designated access points?",
+      "discipline_code": "PER",
+      "subtype_code": "PER_GATES"
+    },
+    {
+      "canon_id": "PER-4",
+      "action": "UNCHANGED",
+      "text": "Are vehicle access points identified and controlled at the site perimeter?",
+      "discipline_code": "PER",
+      "subtype_code": "PER_VEHICLE_ACCESS_CONTROL_POINTS"
+    },
+    {
+      "canon_id": "PER-5",
+      "action": "UNCHANGED",
+      "text": "Are physical barriers present to restrict or channel vehicle movement at the perimeter?",
+      "discipline_code": "PER",
+      "subtype_code": "PER_BOLLARDS_BARRIERS"
+    },
+    {
+      "canon_id": "PER-6",
+      "action": "UNCHANGED",
+      "text": "Are clear zones maintained along the perimeter to support visibility and observation?",
+      "discipline_code": "PER",
+      "subtype_code": "PER_CLEAR_ZONES"
+    },
+    {
+      "canon_id": "PER-7",
+      "action": "UNCHANGED",
+      "text": "Is perimeter lighting present to support visibility during hours of darkness?",
+      "discipline_code": "PER",
+      "subtype_code": "PER_PERIMETER_LIGHTING"
+    },
+    {
+      "canon_id": "PER-8",
+      "action": "UNCHANGED",
+      "text": "Is perimeter signage present to communicate access restrictions or site boundaries?",
+      "discipline_code": "PER",
+      "subtype_code": "PER_PERIMETER_SIGNAGE"
+    },
+    {
+      "canon_id": "ACS-1",
+      "action": "UNCHANGED",
+      "text": "Are entry points secured using locking mechanisms appropriate to restrict unauthorized entry?",
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_LOCKING_HARDWARE"
+    },
+    {
+      "canon_id": "ACS-2",
+      "action": "UNCHANGED",
+      "text": "Are electronically controlled locking devices used at designated controlled doors?",
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_ELECTRIC_STRIKES_MAG_LOCKS"
+    },
+    {
+      "canon_id": "ACS-3",
+      "action": "UNCHANGED",
+      "text": "Are access readers present at controlled entry points to support credentialed access?",
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_DOOR_READERS"
+    },
+    {
+      "canon_id": "ACS-4",
+      "action": "UNCHANGED",
+      "text": "Is electronic access control used to permit or deny entry at controlled doors or areas?",
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_ELECTRONIC_ACCESS_CONTROL"
+    },
+    {
+      "canon_id": "ACS-5",
+      "action": "UNCHANGED",
+      "text": "Are credentials issued to identify authorized personnel for access purposes?",
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_CREDENTIAL_BADGE_SYSTEMS"
+    },
+    {
+      "canon_id": "ACS-6",
+      "action": "UNCHANGED",
+      "text": "Is there a defined process to identify and manage visitors prior to granting access beyond public areas?",
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_VISITOR_MANAGEMENT_SYSTEMS"
+    },
+    {
+      "canon_id": "ACS-7",
+      "action": "UNCHANGED",
+      "text": "Is door status monitored for designated controlled doors to detect forced entry or propped doors?",
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_DOOR_MONITORING"
+    },
+    {
+      "canon_id": "ACS-8",
+      "action": "UNCHANGED",
+      "text": "Is PIN or code-based entry used at any controlled entry points?",
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_KEYPADS_PIN_ENTRY"
+    },
+    {
+      "canon_id": "ACS-9",
+      "action": "UNCHANGED",
+      "text": "Is biometric-based entry used at any controlled entry points?",
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_BIOMETRIC_ACCESS"
+    },
+    {
+      "canon_id": "ACS-10",
+      "action": "UNCHANGED",
+      "text": "Are controlled vestibules or interlocks used at any primary entry points to manage entry flow?",
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_SECURED_VESTIBULES"
+    },
+    {
+      "canon_id": "IDS-1",
+      "action": "UNCHANGED",
+      "text": "Is there an intrusion alarm control unit or panel used to manage intrusion alarms for the site?",
+      "discipline_code": "IDS",
+      "subtype_code": "IDS_ALARM_PANELS"
+    },
+    {
+      "canon_id": "IDS-2",
+      "action": "UNCHANGED",
+      "text": "Are intrusion sensors used to detect unauthorized opening of designated doors or access points?",
+      "discipline_code": "IDS",
+      "subtype_code": "IDS_DOOR_CONTACTS"
+    },
+    {
+      "canon_id": "IDS-3",
+      "action": "UNCHANGED",
+      "text": "Are intrusion sensors used to detect motion within designated protected areas?",
+      "discipline_code": "IDS",
+      "subtype_code": "IDS_MOTION_DETECTORS"
+    },
+    {
+      "canon_id": "IDS-4",
+      "action": "UNCHANGED",
+      "text": "Are intrusion sensors used to detect forced entry through glass or glazing in designated areas?",
+      "discipline_code": "IDS",
+      "subtype_code": "IDS_GLASS_BREAK_SENSORS"
+    },
+    {
+      "canon_id": "IDS-5",
+      "action": "UNCHANGED",
+      "text": "Is intrusion detection used to monitor the perimeter or exterior boundary for unauthorized entry?",
+      "discipline_code": "IDS",
+      "subtype_code": "IDS_PERIMETER_IDS"
+    },
+    {
+      "canon_id": "IDS-6",
+      "action": "UNCHANGED",
+      "text": "Are duress or panic activation devices available for personnel to request assistance in designated areas?",
+      "discipline_code": "IDS",
+      "subtype_code": "IDS_PANIC_DURESS_BUTTONS"
+    },
+    {
+      "canon_id": "IDS-7",
+      "action": "UNCHANGED",
+      "text": "Are intrusion alarms monitored such that alarm events can be received and acted on when they occur?",
+      "discipline_code": "IDS",
+      "subtype_code": "IDS_ALARM_MONITORING"
+    }
+  ],
+  "all_operations": [
+    {
+      "canon_id": "PER-1",
+      "action": "UNCHANGED",
+      "text": "Is the site boundary clearly defined using physical or visual demarcation?",
+      "discipline_code": "PER",
+      "subtype_code": "PER_BOUNDARY_DEMARCATION"
+    },
+    {
+      "canon_id": "PER-2",
+      "action": "UNCHANGED",
+      "text": "Are perimeter fencing elements present where boundary control is required?",
+      "discipline_code": "PER",
+      "subtype_code": "PER_FENCING"
+    },
+    {
+      "canon_id": "PER-3",
+      "action": "UNCHANGED",
+      "text": "Are perimeter gates or controlled openings present at designated access points?",
+      "discipline_code": "PER",
+      "subtype_code": "PER_GATES"
+    },
+    {
+      "canon_id": "PER-4",
+      "action": "UNCHANGED",
+      "text": "Are vehicle access points identified and controlled at the site perimeter?",
+      "discipline_code": "PER",
+      "subtype_code": "PER_VEHICLE_ACCESS_CONTROL_POINTS"
+    },
+    {
+      "canon_id": "PER-5",
+      "action": "UNCHANGED",
+      "text": "Are physical barriers present to restrict or channel vehicle movement at the perimeter?",
+      "discipline_code": "PER",
+      "subtype_code": "PER_BOLLARDS_BARRIERS"
+    },
+    {
+      "canon_id": "PER-6",
+      "action": "UNCHANGED",
+      "text": "Are clear zones maintained along the perimeter to support visibility and observation?",
+      "discipline_code": "PER",
+      "subtype_code": "PER_CLEAR_ZONES"
+    },
+    {
+      "canon_id": "PER-7",
+      "action": "UNCHANGED",
+      "text": "Is perimeter lighting present to support visibility during hours of darkness?",
+      "discipline_code": "PER",
+      "subtype_code": "PER_PERIMETER_LIGHTING"
+    },
+    {
+      "canon_id": "PER-8",
+      "action": "UNCHANGED",
+      "text": "Is perimeter signage present to communicate access restrictions or site boundaries?",
+      "discipline_code": "PER",
+      "subtype_code": "PER_PERIMETER_SIGNAGE"
+    },
+    {
+      "canon_id": "ACS-1",
+      "action": "UNCHANGED",
+      "text": "Are entry points secured using locking mechanisms appropriate to restrict unauthorized entry?",
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_LOCKING_HARDWARE"
+    },
+    {
+      "canon_id": "ACS-2",
+      "action": "UNCHANGED",
+      "text": "Are electronically controlled locking devices used at designated controlled doors?",
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_ELECTRIC_STRIKES_MAG_LOCKS"
+    },
+    {
+      "canon_id": "ACS-3",
+      "action": "UNCHANGED",
+      "text": "Are access readers present at controlled entry points to support credentialed access?",
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_DOOR_READERS"
+    },
+    {
+      "canon_id": "ACS-4",
+      "action": "UNCHANGED",
+      "text": "Is electronic access control used to permit or deny entry at controlled doors or areas?",
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_ELECTRONIC_ACCESS_CONTROL"
+    },
+    {
+      "canon_id": "ACS-5",
+      "action": "UNCHANGED",
+      "text": "Are credentials issued to identify authorized personnel for access purposes?",
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_CREDENTIAL_BADGE_SYSTEMS"
+    },
+    {
+      "canon_id": "ACS-6",
+      "action": "UNCHANGED",
+      "text": "Is there a defined process to identify and manage visitors prior to granting access beyond public areas?",
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_VISITOR_MANAGEMENT_SYSTEMS"
+    },
+    {
+      "canon_id": "ACS-7",
+      "action": "UNCHANGED",
+      "text": "Is door status monitored for designated controlled doors to detect forced entry or propped doors?",
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_DOOR_MONITORING"
+    },
+    {
+      "canon_id": "ACS-8",
+      "action": "UNCHANGED",
+      "text": "Is PIN or code-based entry used at any controlled entry points?",
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_KEYPADS_PIN_ENTRY"
+    },
+    {
+      "canon_id": "ACS-9",
+      "action": "UNCHANGED",
+      "text": "Is biometric-based entry used at any controlled entry points?",
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_BIOMETRIC_ACCESS"
+    },
+    {
+      "canon_id": "ACS-10",
+      "action": "UNCHANGED",
+      "text": "Are controlled vestibules or interlocks used at any primary entry points to manage entry flow?",
+      "discipline_code": "ACS",
+      "subtype_code": "ACS_SECURED_VESTIBULES"
+    },
+    {
+      "canon_id": "IDS-1",
+      "action": "UNCHANGED",
+      "text": "Is there an intrusion alarm control unit or panel used to manage intrusion alarms for the site?",
+      "discipline_code": "IDS",
+      "subtype_code": "IDS_ALARM_PANELS"
+    },
+    {
+      "canon_id": "IDS-2",
+      "action": "UNCHANGED",
+      "text": "Are intrusion sensors used to detect unauthorized opening of designated doors or access points?",
+      "discipline_code": "IDS",
+      "subtype_code": "IDS_DOOR_CONTACTS"
+    },
+    {
+      "canon_id": "IDS-3",
+      "action": "UNCHANGED",
+      "text": "Are intrusion sensors used to detect motion within designated protected areas?",
+      "discipline_code": "IDS",
+      "subtype_code": "IDS_MOTION_DETECTORS"
+    },
+    {
+      "canon_id": "IDS-4",
+      "action": "UNCHANGED",
+      "text": "Are intrusion sensors used to detect forced entry through glass or glazing in designated areas?",
+      "discipline_code": "IDS",
+      "subtype_code": "IDS_GLASS_BREAK_SENSORS"
+    },
+    {
+      "canon_id": "IDS-5",
+      "action": "UNCHANGED",
+      "text": "Is intrusion detection used to monitor the perimeter or exterior boundary for unauthorized entry?",
+      "discipline_code": "IDS",
+      "subtype_code": "IDS_PERIMETER_IDS"
+    },
+    {
+      "canon_id": "IDS-6",
+      "action": "UNCHANGED",
+      "text": "Are duress or panic activation devices available for personnel to request assistance in designated areas?",
+      "discipline_code": "IDS",
+      "subtype_code": "IDS_PANIC_DURESS_BUTTONS"
+    },
+    {
+      "canon_id": "IDS-7",
+      "action": "UNCHANGED",
+      "text": "Are intrusion alarms monitored such that alarm events can be received and acted on when they occur?",
+      "discipline_code": "IDS",
+      "subtype_code": "IDS_ALARM_MONITORING"
+    },
+    {
+      "canon_id": "VSS-1",
+      "action": "UNCHANGED",
+      "text": "Are cameras positioned to provide coverage of designated exterior and interior areas of concern?",
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_CAMERA_COVERAGE_LINE_OF_SIGHT"
+    },
+    {
+      "canon_id": "VSS-2",
+      "action": "UNCHANGED",
+      "text": "Are exterior areas monitored by cameras where observation is needed?",
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_EXTERIOR_CAMERAS"
+    },
+    {
+      "canon_id": "VSS-3",
+      "action": "UNCHANGED",
+      "text": "Are interior areas monitored by cameras where observation is needed?",
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_INTERIOR_CAMERAS"
+    },
+    {
+      "canon_id": "VSS-4",
+      "action": "UNCHANGED",
+      "text": "Is video recorded for designated cameras?",
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_RECORDING_STORAGE_NVR_DVR"
+    },
+    {
+      "canon_id": "VSS-5",
+      "action": "UNCHANGED",
+      "text": "Is recorded video retained for a defined period of time?",
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_RECORDING_STORAGE_NVR_DVR"
+    },
+    {
+      "canon_id": "VSS-6",
+      "action": "UNCHANGED",
+      "text": "Are camera feeds monitored in real time when operational monitoring is required?",
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_MONITORING_WORKSTATIONS"
+    },
+    {
+      "canon_id": "VSS-7",
+      "action": "UNCHANGED",
+      "text": "Can recorded video be retrieved and reviewed when needed for incidents or investigations?",
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_MONITORING_WORKSTATIONS"
+    },
+    {
+      "canon_id": "VSS-8",
+      "action": "UNCHANGED",
+      "text": "Does the video system continue to provide monitoring or recording if a single component fails?",
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_SYSTEM_ARCHITECTURE"
+    },
+    {
+      "canon_id": "VSS-9",
+      "action": "UNCHANGED",
+      "text": "Is automated video-based alerting used for any monitored areas?",
+      "discipline_code": "VSS",
+      "subtype_code": "VSS_ANALYTICS_BEHAVIOR_DETECTION"
+    },
+    {
+      "canon_id": "INT-1",
+      "action": "UNCHANGED",
+      "text": "Are access-restricted areas designated within the facility to protect sensitive operations or assets?",
+      "discipline_code": "INT",
+      "subtype_code": "INT_ACCESS_RESTRICTED_AREAS"
+    },
+    {
+      "canon_id": "INT-2",
+      "action": "UNCHANGED",
+      "text": "Are interior doors used to separate public, staff, and restricted areas where separation is required?",
+      "discipline_code": "INT",
+      "subtype_code": "INT_INTERIOR_DOORS"
+    },
+    {
+      "canon_id": "INT-3",
+      "action": "UNCHANGED",
+      "text": "Are hard interior barriers present to delay or prevent unauthorized movement into designated restricted areas?",
+      "discipline_code": "INT",
+      "subtype_code": "INT_HARD_INTERIOR_BARRIERS"
+    },
+    {
+      "canon_id": "INT-4",
+      "action": "UNCHANGED",
+      "text": "Are secure rooms used to protect designated critical assets, systems, or records?",
+      "discipline_code": "INT",
+      "subtype_code": "INT_SECURE_ROOMS"
+    },
+    {
+      "canon_id": "INT-5",
+      "action": "UNCHANGED",
+      "text": "Are designated storage locations used to secure sensitive items or controlled assets when not in use?",
+      "discipline_code": "INT",
+      "subtype_code": "INT_SENSITIVE_ITEM_STORAGE"
+    },
+    {
+      "canon_id": "INT-6",
+      "action": "UNCHANGED",
+      "text": "Is there a designated area intended to provide temporary protection for occupants during an emergency?",
+      "discipline_code": "INT",
+      "subtype_code": "INT_SAFE_ROOMS"
+    },
+    {
+      "canon_id": "INT-7",
+      "action": "UNCHANGED",
+      "text": "Is interior lighting present to support visibility and observation in key circulation areas?",
+      "discipline_code": "INT",
+      "subtype_code": "INT_INTERIOR_LIGHTING"
+    },
+    {
+      "canon_id": "FAC-1",
+      "action": "UNCHANGED",
+      "text": "Are structural features present to increase resistance to forced entry at designated areas of the facility?",
+      "discipline_code": "FAC",
+      "subtype_code": "FAC_STRUCTURAL_HARDENING"
+    },
+    {
+      "canon_id": "FAC-2",
+      "action": "UNCHANGED",
+      "text": "Are exterior walls reinforced or constructed to resist unauthorized penetration where required?",
+      "discipline_code": "FAC",
+      "subtype_code": "FAC_EXTERIOR_WALL_REINFORCEMENT"
+    },
+    {
+      "canon_id": "FAC-3",
+      "action": "UNCHANGED",
+      "text": "Is impact-resistant glazing or equivalent protection present at designated exterior windows or openings?",
+      "discipline_code": "FAC",
+      "subtype_code": "FAC_IMPACT_RESISTANT_GLAZING"
+    },
+    {
+      "canon_id": "FAC-4",
+      "action": "UNCHANGED",
+      "text": "Is window film or other glazing treatment used to reduce fragmentation or delay entry at designated locations?",
+      "discipline_code": "FAC",
+      "subtype_code": "FAC_WINDOW_FILM"
+    },
+    {
+      "canon_id": "FAC-5",
+      "action": "UNCHANGED",
+      "text": "Are ballistic-resistant features present to protect occupants or critical functions in designated areas?",
+      "discipline_code": "FAC",
+      "subtype_code": "FAC_BALLISTIC_BARRIERS"
+    },
+    {
+      "canon_id": "FAC-6",
+      "action": "UNCHANGED",
+      "text": "Are design features present to reduce the effects of explosive forces on critical facility elements?",
+      "discipline_code": "FAC",
+      "subtype_code": "FAC_BLAST_MITIGATION"
+    },
+    {
+      "canon_id": "KEY-1",
+      "action": "UNCHANGED",
+      "text": "Is master key access controlled to limit who can unlock multiple areas of the facility?",
+      "discipline_code": "KEY",
+      "subtype_code": "KEY_MASTER_KEY_MANAGEMENT"
+    },
+    {
+      "canon_id": "KEY-2",
+      "action": "UNCHANGED",
+      "text": "Are restricted keys used for designated areas where key duplication or distribution must be controlled?",
+      "discipline_code": "KEY",
+      "subtype_code": "KEY_RESTRICTED_KEYS"
+    },
+    {
+      "canon_id": "KEY-3",
+      "action": "UNCHANGED",
+      "text": "Are keys stored in a secured manner to prevent unauthorized access when not in use?",
+      "discipline_code": "KEY",
+      "subtype_code": "KEY_KEY_CABINETS"
+    },
+    {
+      "canon_id": "KEY-4",
+      "action": "UNCHANGED",
+      "text": "Is key issuance and return tracked to support accountability for designated keys?",
+      "discipline_code": "KEY",
+      "subtype_code": "KEY_KEY_LOGS_ACCOUNTABILITY"
+    },
+    {
+      "canon_id": "KEY-5",
+      "action": "UNCHANGED",
+      "text": "Is rekeying performed when key control is compromised or when access should be removed?",
+      "discipline_code": "KEY",
+      "subtype_code": "KEY_REKEYING_PROCEDURES"
+    },
+    {
+      "canon_id": "COM-1",
+      "action": "UNCHANGED",
+      "text": "Is there a capability to broadcast messages to occupants within the facility when needed?",
+      "discipline_code": "COM",
+      "subtype_code": "COM_PA_SYSTEMS"
+    },
+    {
+      "canon_id": "COM-2",
+      "action": "UNCHANGED",
+      "text": "Is there a capability to notify specific individuals or groups within the facility when needed?",
+      "discipline_code": "COM",
+      "subtype_code": "COM_PAGING_SYSTEMS"
+    },
+    {
+      "canon_id": "COM-3",
+      "action": "UNCHANGED",
+      "text": "Is there a two-way communication capability for security or operations personnel when needed?",
+      "discipline_code": "COM",
+      "subtype_code": "COM_RADIOS_TWO_WAY"
+    },
+    {
+      "canon_id": "COM-4",
+      "action": "UNCHANGED",
+      "text": "Are communication procedures established for routine and emergency security communications?",
+      "discipline_code": "COM",
+      "subtype_code": "COM_COMMUNICATION_PROTOCOLS"
+    },
+    {
+      "canon_id": "COM-5",
+      "action": "UNCHANGED",
+      "text": "Is there a backup communication capability available if primary communications are unavailable?",
+      "discipline_code": "COM",
+      "subtype_code": "COM_BACKUP_COMMUNICATIONS"
+    },
+    {
+      "canon_id": "COM-6",
+      "action": "UNCHANGED",
+      "text": "Is there a capability to communicate with external response partners when coordination is required?",
+      "discipline_code": "COM",
+      "subtype_code": "COM_INTEROPERABLE_COMMUNICATIONS"
+    },
+    {
+      "canon_id": "EAP-1",
+      "action": "UNCHANGED",
+      "text": "Are evacuation procedures established to guide occupants during an emergency requiring relocation?",
+      "discipline_code": "EAP",
+      "subtype_code": "EAP_EVACUATION_PROCEDURES"
+    },
+    {
+      "canon_id": "EAP-2",
+      "action": "UNCHANGED",
+      "text": "Are procedures established to secure areas during an emergency requiring restricted movement?",
+      "discipline_code": "EAP",
+      "subtype_code": "EAP_LOCKDOWN_LOCKOUT_PROCEDURES"
+    },
+    {
+      "canon_id": "EAP-3",
+      "action": "UNCHANGED",
+      "text": "Are shelter-in-place procedures established for emergencies where occupants must remain inside?",
+      "discipline_code": "EAP",
+      "subtype_code": "EAP_SHELTER_IN_PLACE"
+    },
+    {
+      "canon_id": "EAP-4",
+      "action": "UNCHANGED",
+      "text": "Are designated muster points or rally areas identified for occupants following evacuation?",
+      "discipline_code": "EAP",
+      "subtype_code": "EAP_MUSTER_POINTS_RALLY_AREAS"
+    },
+    {
+      "canon_id": "EAP-5",
+      "action": "UNCHANGED",
+      "text": "Are reunification procedures established to account for occupants following an emergency?",
+      "discipline_code": "EAP",
+      "subtype_code": "EAP_REUNIFICATION_PROCEDURES"
+    },
+    {
+      "canon_id": "EAP-6",
+      "action": "UNCHANGED",
+      "text": "Are staff emergency roles defined to support execution of emergency actions?",
+      "discipline_code": "EAP",
+      "subtype_code": "EAP_STAFF_EMERGENCY_ROLES"
+    },
+    {
+      "canon_id": "EAP-7",
+      "action": "UNCHANGED",
+      "text": "Are emergency guides or quick-reference materials available to support emergency actions?",
+      "discipline_code": "EAP",
+      "subtype_code": "EAP_EMERGENCY_GUIDES_FLIP_CHARTS"
+    },
+    {
+      "canon_id": "EAP-8",
+      "action": "UNCHANGED",
+      "text": "Are emergency drills conducted to familiarize occupants or staff with emergency actions?",
+      "discipline_code": "EAP",
+      "subtype_code": "EAP_EMERGENCY_DRILLS"
+    },
+    {
+      "canon_id": "EMR-1",
+      "action": "UNCHANGED",
+      "text": "Is there a defined crisis management capability to coordinate decision-making during major incidents?",
+      "discipline_code": "EMR",
+      "subtype_code": "EMR_CRISIS_MANAGEMENT"
+    },
+    {
+      "canon_id": "EMR-2",
+      "action": "UNCHANGED",
+      "text": "Is there a capability to communicate emergency information to internal and external stakeholders during incidents?",
+      "discipline_code": "EMR",
+      "subtype_code": "EMR_EMERGENCY_COMMUNICATIONS"
+    },
+    {
+      "canon_id": "EMR-3",
+      "action": "UNCHANGED",
+      "text": "Are critical systems supported by redundancy or backup capabilities to maintain operations during disruptions?",
+      "discipline_code": "EMR",
+      "subtype_code": "EMR_REDUNDANCY_BACKUP_SYSTEMS"
+    },
+    {
+      "canon_id": "EMR-4",
+      "action": "UNCHANGED",
+      "text": "Is there a business continuity capability to sustain or restore essential functions following a disruption?",
+      "discipline_code": "EMR",
+      "subtype_code": "EMR_BUSINESS_CONTINUITY"
+    },
+    {
+      "canon_id": "EMR-5",
+      "action": "UNCHANGED",
+      "text": "Is resilience planning conducted to address long-term recovery and adaptation following incidents?",
+      "discipline_code": "EMR",
+      "subtype_code": "EMR_RESILIENCE_PLANNING"
+    },
+    {
+      "canon_id": "EMR-6",
+      "action": "UNCHANGED",
+      "text": "Is there a capability to align incident management activities with external response frameworks when required?",
+      "discipline_code": "EMR",
+      "subtype_code": "EMR_ICS_NIMS_INTEGRATION"
+    },
+    {
+      "canon_id": "ISC-1",
+      "action": "UNCHANGED",
+      "text": "Is there an established point of contact or liaison with local law enforcement for security coordination?",
+      "discipline_code": "ISC",
+      "subtype_code": "ISC_LAW_ENFORCEMENT_LIAISON"
+    },
+    {
+      "canon_id": "ISC-2",
+      "action": "UNCHANGED",
+      "text": "Is there a defined method to report security incidents or concerns to external authorities when required?",
+      "discipline_code": "ISC",
+      "subtype_code": "ISC_EXTERNAL_REPORTING"
+    },
+    {
+      "canon_id": "ISC-3",
+      "action": "UNCHANGED",
+      "text": "Is there a capability to receive and share relevant threat information with appropriate external partners?",
+      "discipline_code": "ISC",
+      "subtype_code": "ISC_THREAT_INFORMATION_SHARING"
+    },
+    {
+      "canon_id": "ISC-4",
+      "action": "UNCHANGED",
+      "text": "Does the organization participate in any information-sharing networks relevant to its operations?",
+      "discipline_code": "ISC",
+      "subtype_code": "ISC_ISAC_ISAOS"
+    },
+    {
+      "canon_id": "ISC-5",
+      "action": "UNCHANGED",
+      "text": "Is there a mechanism to receive information or notifications from a fusion center or similar entity?",
+      "discipline_code": "ISC",
+      "subtype_code": "ISC_FUSION_CENTER_INTERFACE"
+    },
+    {
+      "canon_id": "ISC-6",
+      "action": "UNCHANGED",
+      "text": "Is there a capability to coordinate with joint task force or federal partners when appropriate?",
+      "discipline_code": "ISC",
+      "subtype_code": "ISC_JTTF_ENGAGEMENT"
+    },
+    {
+      "canon_id": "SFO-1",
+      "action": "UNCHANGED",
+      "text": "Are security personnel assigned to fixed posts or locations where monitoring or access control is required?",
+      "discipline_code": "SFO",
+      "subtype_code": "SFO_GUARD_POSTS"
+    },
+    {
+      "canon_id": "SFO-2",
+      "action": "UNCHANGED",
+      "text": "Are security patrols conducted to monitor designated areas of the facility?",
+      "discipline_code": "SFO",
+      "subtype_code": "SFO_PATROL_ROUTES"
+    },
+    {
+      "canon_id": "SFO-3",
+      "action": "UNCHANGED",
+      "text": "Do security personnel have a means to communicate with each other or a central point while on duty?",
+      "discipline_code": "SFO",
+      "subtype_code": "SFO_RADIO_COMMUNICATIONS"
+    },
+    {
+      "canon_id": "SFO-4",
+      "action": "UNCHANGED",
+      "text": "Are response procedures established to guide security personnel actions during incidents?",
+      "discipline_code": "SFO",
+      "subtype_code": "SFO_RESPONSE_PROCEDURES"
+    },
+    {
+      "canon_id": "SFO-5",
+      "action": "UNCHANGED",
+      "text": "Is there a method for security personnel to document and report security incidents?",
+      "discipline_code": "SFO",
+      "subtype_code": "SFO_INCIDENT_REPORTING"
+    },
+    {
+      "canon_id": "SFO-6",
+      "action": "UNCHANGED",
+      "text": "Are security personnel provided training relevant to their assigned duties?",
+      "discipline_code": "SFO",
+      "subtype_code": "SFO_SECURITY_OFFICER_TRAINING"
+    },
+    {
+      "canon_id": "SMG-1",
+      "action": "UNCHANGED",
+      "text": "Is responsibility for security oversight assigned within the organization?",
+      "discipline_code": "SMG",
+      "subtype_code": "SMG_GOVERNANCE_OVERSIGHT"
+    },
+    {
+      "canon_id": "SMG-2",
+      "action": "UNCHANGED",
+      "text": "Are security policies established to define expected security practices?",
+      "discipline_code": "SMG",
+      "subtype_code": "SMG_SECURITY_POLICIES"
+    },
+    {
+      "canon_id": "SMG-3",
+      "action": "UNCHANGED",
+      "text": "Are security procedures established to guide routine security activities?",
+      "discipline_code": "SMG",
+      "subtype_code": "SMG_SECURITY_PROCEDURES"
+    },
+    {
+      "canon_id": "SMG-4",
+      "action": "UNCHANGED",
+      "text": "Is security-related documentation maintained to support security operations and continuity?",
+      "discipline_code": "SMG",
+      "subtype_code": "SMG_SECURITY_DOCUMENTATION"
+    },
+    {
+      "canon_id": "SMG-5",
+      "action": "UNCHANGED",
+      "text": "Is a process in place to identify and manage security risks to the facility?",
+      "discipline_code": "SMG",
+      "subtype_code": "SMG_RISK_ASSESSMENT_RISK_MANAGEMENT"
+    },
+    {
+      "canon_id": "SMG-6",
+      "action": "UNCHANGED",
+      "text": "Are security training programs established for relevant personnel?",
+      "discipline_code": "SMG",
+      "subtype_code": "SMG_SECURITY_TRAINING_PROGRAMS"
+    },
+    {
+      "canon_id": "CPTED-1",
+      "action": "UNCHANGED",
+      "text": "Are site features used to reinforce territorial control and distinguish public and private areas?",
+      "discipline_code": "CPTED",
+      "subtype_code": "CPTED_DEFENSIBLE_SPACE"
+    },
+    {
+      "canon_id": "CPTED-2",
+      "action": "UNCHANGED",
+      "text": "Is the site designed to support natural observation of key areas by occupants or staff?",
+      "discipline_code": "CPTED",
+      "subtype_code": "CPTED_NATURAL_SURVEILLANCE"
+    },
+    {
+      "canon_id": "CPTED-3",
+      "action": "UNCHANGED",
+      "text": "Are sightlines maintained to reduce concealment and support visibility in key areas?",
+      "discipline_code": "CPTED",
+      "subtype_code": "CPTED_SIGHTLINES"
+    },
+    {
+      "canon_id": "CPTED-4",
+      "action": "UNCHANGED",
+      "text": "Is landscaping managed to support visibility and access control around the facility?",
+      "discipline_code": "CPTED",
+      "subtype_code": "CPTED_LANDSCAPING_CONTROL"
+    },
+    {
+      "canon_id": "CPTED-5",
+      "action": "UNCHANGED",
+      "text": "Are environmental features used to reinforce ownership and appropriate use of space?",
+      "discipline_code": "CPTED",
+      "subtype_code": "CPTED_TERRITORIAL_REINFORCEMENT"
+    },
+    {
+      "canon_id": "CPTED-6",
+      "action": "UNCHANGED",
+      "text": "Is wayfinding used to guide visitors and reduce unauthorized movement into restricted areas?",
+      "discipline_code": "CPTED",
+      "subtype_code": "CPTED_WAYFINDING"
+    }
+  ],
+  "errors": []
+}

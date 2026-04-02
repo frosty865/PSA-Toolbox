@@ -1,0 +1,11 @@
+{
+  "discipline_code": "INT",
+  "version": "v1",
+  "source": "review_packets",
+  "source_files": [
+    "psa_engine/doctrine/baseline_canon/review_packets/INT_COMPONENT_CHECKLIST.md",
+    "psa_engine/doctrine/baseline_canon/review_packets/INT_DROP.md",
+    "psa_engine/doctrine/baseline_canon/review_packets/INT_packets.data.json"
+  ],
+  "notes": "Component depth is maintained from the reviewed packet outputs. Promote component prompts later into a structured component registry."
+}

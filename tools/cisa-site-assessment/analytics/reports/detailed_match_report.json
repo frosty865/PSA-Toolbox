@@ -1,0 +1,2234 @@
+{
+  "generated_at": "2026-01-13T21:17:15.573949Z",
+  "document_id": "70bbe86c-f353-43fc-86bc-a80b4e7533c6",
+  "document_title": "SAFE VOFC Library",
+  "summary": {
+    "total_candidates": 101,
+    "matched_count": 8,
+    "unmatched_count": 93,
+    "disciplines_represented": 8
+  },
+  "unmatched_candidates_by_discipline": {
+    "ACS": {
+      "count": 34,
+      "candidates": [
+        {
+          "candidate_id": "765bea01-b680-49d1-ab9d-aada4fa752f2",
+          "snippet_text": "43 FEMA, 2013, 'Homeland Security Exercise and Evaluation Program,' https://www.fema.gov/media-library/assets/documents/32326,\n          accessed April 3, 2018.                                                                            \n                                                                                                             \n          44 DHS, 2015, Planning and Response to an Active Shooter: An Interagency Security Committee Policy and Best Practices Guide,\n         ...",
+          "safe_reference": null,
+          "page_locator": "Page 45",
+          "top_3_questions": [
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.057
+            },
+            {
+              "target_key": "SecurityManager",
+              "question_text": "1. Security Manager",
+              "score": 0.029
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.029
+            }
+          ]
+        },
+        {
+          "candidate_id": "c3db6f28-9c87-4ed4-b2df-9a36754e2651",
+          "snippet_text": "26 DHS, 2012, 'Best Practices for Mail Screening and Handling Processes: A Guide for the Public and Private Sectors,'\n          https://www.dhs.gov/sites/default/files/publications/Mail_Handling_Document_NonFOUO%209-27-2012.pdf, accessed April 3, 2018",
+          "safe_reference": null,
+          "page_locator": "Page 44",
+          "top_3_questions": [
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.032
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.032
+            },
+            {
+              "target_key": "AccessControl",
+              "question_text": "3. Access Control Systems",
+              "score": 0.032
+            }
+          ]
+        },
+        {
+          "candidate_id": "2ee81b0a-f436-4f7f-9227-05831c54d702",
+          "snippet_text": "Ensure that AEDs, first aid kits, and Stop-the-Bleed kits are easily accessible",
+          "safe_reference": null,
+          "page_locator": "Page 20",
+          "top_3_questions": [
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            },
+            {
+              "target_key": "LawEnforcement",
+              "question_text": "2. Law Enforcement Agency Visits",
+              "score": 0.0
+            },
+            {
+              "target_key": "LawComm",
+              "question_text": "3. Interoperable Communications with Law Enforcement",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "a3e3c262-ea48-4c08-ac7b-5b09897b1ae2",
+          "snippet_text": " Identify sensitive/critical areas (e.g., control rooms, server rooms, mailrooms, fuel or chemical\n                                          storage areas, utility service areas) that need access controls. Implement access controls (e.g.,\n                      Although access controls are                                                           \n                                          locks) for these areas as necessary. 86                            \n                      enforced at the...",
+          "safe_reference": null,
+          "page_locator": "Page 31",
+          "top_3_questions": [
+            {
+              "target_key": "AccessControl",
+              "question_text": "3. Access Control Systems",
+              "score": 0.069
+            },
+            {
+              "target_key": "KeyControl",
+              "question_text": "7. Key Control Program",
+              "score": 0.033
+            },
+            {
+              "target_key": "VideoRecording",
+              "question_text": "4. Video Recording and Storage",
+              "score": 0.032
+            }
+          ]
+        },
+        {
+          "candidate_id": "356caa98-6224-41fb-aab8-2915638842ff",
+          "snippet_text": "properly. Additional resources are available through HSIN. Consult your local PSA to become a\n                                          member of the HSIN community. Information about HSIN is also available via the DHS website, at\n                                          https://www.dhs.gov/homeland-security-information-network. 80      \n                                           Issue photo ID badges to all employees. Implement a process for badge verification before\n                        .",
+          "safe_reference": null,
+          "page_locator": "Page 30",
+          "top_3_questions": [
+            {
+              "target_key": "HSINInfo",
+              "question_text": "10. HSIN Portal Information Exchange",
+              "score": 0.05
+            },
+            {
+              "target_key": "StateLocalInfo",
+              "question_text": "13. State and Local Information Exchange",
+              "score": 0.049
+            },
+            {
+              "target_key": "SecurityManager",
+              "question_text": "1. Security Manager",
+              "score": 0.026
+            }
+          ]
+        },
+        {
+          "candidate_id": "1a38ee82-6e08-4d88-a67c-64689ec14ad9",
+          "snippet_text": "90 DHS, 2015, 'Planning and Response to an Active Shooter: An Interagency Security Committee Policy and Best Practices Guide',\n          https://www.dhs.gov/sites/default/files/publications/isc-planning-response-active-shooter-guide-non-fouo-nov-2015-508.pdf, accessed\n          April 24, 2019                                                                                     \n                                                                                                             \n         ..",
+          "safe_reference": null,
+          "page_locator": "Page 49",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityManager",
+              "question_text": "1. Security Manager",
+              "score": 0.03
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.03
+            },
+            {
+              "target_key": "SecurityLighting",
+              "question_text": "4. Security Lighting",
+              "score": 0.03
+            }
+          ]
+        },
+        {
+          "candidate_id": "856f886e-2684-4031-abab-0bbe2fec01a0",
+          "snippet_text": "Implement controls (e.g.,\n                      throughout the site",
+          "safe_reference": null,
+          "page_locator": "Page 32",
+          "top_3_questions": [
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            },
+            {
+              "target_key": "LawEnforcement",
+              "question_text": "2. Law Enforcement Agency Visits",
+              "score": 0.0
+            },
+            {
+              "target_key": "LawComm",
+              "question_text": "3. Interoperable Communications with Law Enforcement",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "20ee42fb-f4b7-445f-9a36-5f5677683ffd",
+          "snippet_text": "Category      Vulnerability                      Options for Consideration                      \n                      Facility personnel have                                                                \n                      unrestricted access  Identify areas within the facility that need additional access controls. Implement controls (e.g.,\n                      throughout the site. Controls locks) for these areas as necessary. 88                  \n                      are not in place..",
+          "safe_reference": null,
+          "page_locator": "Page 32",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.034
+            },
+            {
+              "target_key": "AccessControl",
+              "question_text": "3. Access Control Systems",
+              "score": 0.033
+            },
+            {
+              "target_key": "NeighborInfo",
+              "question_text": "14. Neighboring Facility Information Exchange",
+              "score": 0.032
+            }
+          ]
+        },
+        {
+          "candidate_id": "46f6a4b3-f023-4a04-b0a3-a91b5e04bfaf",
+          "snippet_text": "d Best Practices Guide, November,\n          https://www.dhs.gov/sites/default/files/publications/isc-planning-response-active-shooter-guide-non-fouo-nov-2015-508.pdf, accessed\n          May 24, 2019",
+          "safe_reference": null,
+          "page_locator": "Page 44",
+          "top_3_questions": [
+            {
+              "target_key": "FireAgency",
+              "question_text": "4. Fire Response Agency Visits",
+              "score": 0.032
+            },
+            {
+              "target_key": "FireComm",
+              "question_text": "5. Interoperable Communications with Fire Response",
+              "score": 0.031
+            },
+            {
+              "target_key": "MedicalAgency",
+              "question_text": "6. Emergency Medical Response Agency Visits",
+              "score": 0.031
+            }
+          ]
+        },
+        {
+          "candidate_id": "17185ba5-5e38-4a8b-98b2-4b1439f88197",
+          "snippet_text": "vehicle access control  Execute random searches on vehicles entering the controlled parking area for the facility.\n            Controls                                                                                         \n                      policies/procedures. Evaluate the need to conduct searches on all vehicles at elevated threat levels. 96\n                                           Positively identify all vehicles and drivers that enter the facility. Deny access to suspicious\n      .",
+          "safe_reference": null,
+          "page_locator": "Page 33",
+          "top_3_questions": [
+            {
+              "target_key": "AccessControl",
+              "question_text": "3. Access Control Systems",
+              "score": 0.062
+            },
+            {
+              "target_key": "KeyControl",
+              "question_text": "7. Key Control Program",
+              "score": 0.03
+            },
+            {
+              "target_key": "NeighborInfo",
+              "question_text": "14. Neighboring Facility Information Exchange",
+              "score": 0.029
+            }
+          ]
+        },
+        {
+          "candidate_id": "55bc8eb9-d914-4c7e-bddb-04a2fea3d815",
+          "snippet_text": "44 DHS, 2015, Planning and Response to an Active Shooter: An Interagency Security Committee Policy and Best Practices Guide,\n          https://www.dhs.gov/sites/default/files/publications/isc-planning-response-active-shooter-guide-non-fouo-nov-2015-508.pdf, accessed\n          April 25, 2019,",
+          "safe_reference": null,
+          "page_locator": "Page 45",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityManager",
+              "question_text": "1. Security Manager",
+              "score": 0.03
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.03
+            },
+            {
+              "target_key": "SecurityLighting",
+              "question_text": "4. Security Lighting",
+              "score": 0.03
+            }
+          ]
+        },
+        {
+          "candidate_id": "04aefb9e-88f0-454d-801c-dc22e7794210",
+          "snippet_text": "to all employees. Implement a process for badge verification before\n                                          employees gain access to the facility. Collect employee badges from terminated personnel. 75\n            Entry     The facility does not have a                                                           \n                                           Issue unique badges (e.g., color-coded) to visitors, contractors, vendors, cleaning crews, and\n            Controls  badging system.          .",
+          "safe_reference": null,
+          "page_locator": "Page 30",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.029
+            },
+            {
+              "target_key": "EmployeeTraining",
+              "question_text": "5. Employee Security Training",
+              "score": 0.028
+            },
+            {
+              "target_key": "AccessControl",
+              "question_text": "3. Access Control Systems",
+              "score": 0.028
+            }
+          ]
+        },
+        {
+          "candidate_id": "7d1c0940-241a-43d9-ace2-d12b86ab9514",
+          "snippet_text": "27 DHS, 2012, 'Best Practices for Mail Screening and Handling Processes: A Guide for the Public and Private Sectors,'\n          https://www.dhs.gov/sites/default/files/publications/Mail_Handling_Document_NonFOUO%209-27-2012.pdf, accessed April 26, 2019.\n                                                                                                             \n          28 ISC, 2015, Planning and Response to an Active Shooter: An Interagency Security Committee Policy and Best Practices Guide,..",
+          "safe_reference": null,
+          "page_locator": "Page 44",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityManager",
+              "question_text": "1. Security Manager",
+              "score": 0.025
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.025
+            },
+            {
+              "target_key": "SecurityLighting",
+              "question_text": "4. Security Lighting",
+              "score": 0.025
+            }
+          ]
+        },
+        {
+          "candidate_id": "827ffd8e-559b-4261-b3a3-6ae93e73492b",
+          "snippet_text": "design concerns and protective measures for areas\n                      control procedures increases                                                           \n                                          surrounding buildings. Chapter 3 discusses the nature of explosive blasts, their effects on\n                      the vulnerability of the facility                                                      \n                                          buildings and occupants, and the concept of levels of.",
+          "safe_reference": null,
+          "page_locator": "Page 34",
+          "top_3_questions": [
+            {
+              "target_key": "AccessControl",
+              "question_text": "3. Access Control Systems",
+              "score": 0.08
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.038
+            },
+            {
+              "target_key": "KeyControl",
+              "question_text": "7. Key Control Program",
+              "score": 0.038
+            }
+          ]
+        },
+        {
+          "candidate_id": "8f126adb-e75a-4942-a3f3-d48780a71ee7",
+          "snippet_text": "Implement a process for badge verification before\n                                          employees gain access to the facility",
+          "safe_reference": null,
+          "page_locator": "Page 26",
+          "top_3_questions": [
+            {
+              "target_key": "AccessControl",
+              "question_text": "3. Access Control Systems",
+              "score": 0.083
+            },
+            {
+              "target_key": "NeighborInfo",
+              "question_text": "14. Neighboring Facility Information Exchange",
+              "score": 0.077
+            },
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "47dac660-8da3-4af2-b1b5-1f6425be7994",
+          "snippet_text": "on, Waltham, MA: Elsevier Inc., page 149    \n                                                                                                             \n          75 DHS, 2011, Industry Protective Measures Report – Access Control Systems, p. 22.                 \n                                                                                                             \n          76 DHS, 2015, 'Planning and Response to an Active Shooter: An Interagency Security Committee Policy and Best...",
+          "safe_reference": null,
+          "page_locator": "Page 48",
+          "top_3_questions": [
+            {
+              "target_key": "AccessControl",
+              "question_text": "3. Access Control Systems",
+              "score": 0.12
+            },
+            {
+              "target_key": "SecurityManager",
+              "question_text": "1. Security Manager",
+              "score": 0.032
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.032
+            }
+          ]
+        },
+        {
+          "candidate_id": "d578f3db-8055-44b5-9869-f4f06873db80",
+          "snippet_text": "90 DHS, 2015, 'Planning and Response to an Active Shooter: An Interagency Security Committee Policy and Best Practices Guide',\n          https://www.dhs.gov/sites/default/files/publications/isc-planning-response-active-shooter-guide-non-fouo-nov-2015-508.pdf, accessed\n          April 24, 2019                                                                                     \n                                                                                                             \n         ..",
+          "safe_reference": null,
+          "page_locator": "Page 49",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityManager",
+              "question_text": "1. Security Manager",
+              "score": 0.03
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.03
+            },
+            {
+              "target_key": "SecurityLighting",
+              "question_text": "4. Security Lighting",
+              "score": 0.03
+            }
+          ]
+        },
+        {
+          "candidate_id": "54d4942e-44e4-47d2-921a-b8a3792cd3d3",
+          "snippet_text": "Install cameras in areas such as the main entrance, at all vehicle access control points, guard\n                                          booths, cashier booths, and elevator lobbies on every floor. This will ensure more than adequate\n                                          security. 106                                                      \n                                           Position the cameras to view the parking ramps and driveways as well as the intercom stations.\n               .",
+          "safe_reference": null,
+          "page_locator": "Page 36",
+          "top_3_questions": [
+            {
+              "target_key": "AccessControl",
+              "question_text": "3. Access Control Systems",
+              "score": 0.056
+            },
+            {
+              "target_key": "SecurityManager",
+              "question_text": "1. Security Manager",
+              "score": 0.028
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.028
+            }
+          ]
+        },
+        {
+          "candidate_id": "a5e5a209-9e63-43e7-8511-14dd0f88e25e",
+          "snippet_text": "27 DHS, 2012, 'Best Practices for Mail Screening and Handling Processes: A Guide for the Public and Private Sectors,'\n          https://www.dhs.gov/sites/default/files/publications/Mail_Handling_Document_NonFOUO%209-27-2012.pdf, accessed April 26, 2019",
+          "safe_reference": null,
+          "page_locator": "Page 44",
+          "top_3_questions": [
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.033
+            },
+            {
+              "target_key": "LawEnforcement",
+              "question_text": "2. Law Enforcement Agency Visits",
+              "score": 0.0
+            },
+            {
+              "target_key": "LawComm",
+              "question_text": "3. Interoperable Communications with Law Enforcement",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "3fd45efe-c6f3-4af7-80e8-d878560e4473",
+          "snippet_text": "licy and Best Practices Guide',\n          https://www.dhs.gov/sites/default/files/publications/isc-planning-response-active-shooter-guide-non-fouo-nov-2015-508.pdf, accessed\n          April 24, 2019.                                                                                    \n                                                                                                             \n          77 DHS, undated, 'If you See Something, Say Something',...",
+          "safe_reference": null,
+          "page_locator": "Page 48",
+          "top_3_questions": [
+            {
+              "target_key": "FireAgency",
+              "question_text": "4. Fire Response Agency Visits",
+              "score": 0.026
+            },
+            {
+              "target_key": "FireComm",
+              "question_text": "5. Interoperable Communications with Fire Response",
+              "score": 0.026
+            },
+            {
+              "target_key": "MedicalAgency",
+              "question_text": "6. Emergency Medical Response Agency Visits",
+              "score": 0.026
+            }
+          ]
+        },
+        {
+          "candidate_id": "c397c2c2-a84c-429e-94b5-b6396a093815",
+          "snippet_text": "Implement a process for badge verification before\n                                          employees gain access to the facility",
+          "safe_reference": null,
+          "page_locator": "Page 30",
+          "top_3_questions": [
+            {
+              "target_key": "AccessControl",
+              "question_text": "3. Access Control Systems",
+              "score": 0.083
+            },
+            {
+              "target_key": "NeighborInfo",
+              "question_text": "14. Neighboring Facility Information Exchange",
+              "score": 0.077
+            },
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "fd631cd7-d5c3-46b1-9c43-a439a18e24db",
+          "snippet_text": "licy and Best Practices Guide',\n          https://www.dhs.gov/sites/default/files/publications/isc-planning-response-active-shooter-guide-non-fouo-nov-2015-508.pdf, accessed\n          April 24, 2019",
+          "safe_reference": null,
+          "page_locator": "Page 48",
+          "top_3_questions": [
+            {
+              "target_key": "FireAgency",
+              "question_text": "4. Fire Response Agency Visits",
+              "score": 0.032
+            },
+            {
+              "target_key": "FireComm",
+              "question_text": "5. Interoperable Communications with Fire Response",
+              "score": 0.031
+            },
+            {
+              "target_key": "MedicalAgency",
+              "question_text": "6. Emergency Medical Response Agency Visits",
+              "score": 0.031
+            }
+          ]
+        },
+        {
+          "candidate_id": "d7c5b697-f768-47a3-bb6c-7914957c377b",
+          "snippet_text": "85 Knoke, Michael E., 2015, Physical Security Principles (Alexandria, VA: ASIS International, p. 248).\n                                                                                                             \n          86 DHS, 2011, Industry Protective Measures Report – Access Control Systems, p. 21.                 \n                                                                                                             \n          87 Norman, T.L., 2010 Risk Analysis and Security...",
+          "safe_reference": null,
+          "page_locator": "Page 49",
+          "top_3_questions": [
+            {
+              "target_key": "AccessControl",
+              "question_text": "3. Access Control Systems",
+              "score": 0.109
+            },
+            {
+              "target_key": "RiskAssessment",
+              "question_text": "7. Security Risk Assessment",
+              "score": 0.059
+            },
+            {
+              "target_key": "SecurityManager",
+              "question_text": "1. Security Manager",
+              "score": 0.029
+            }
+          ]
+        },
+        {
+          "candidate_id": "e5e104f9-ae9f-4537-ae5c-3865a9550879",
+          "snippet_text": "25 DHS, undated, 'Explosions,' http://www.ready.gov/explosions, accessed April 3, 2018.            \n                                                                                                             \n          26 DHS, 2012, 'Best Practices for Mail Screening and Handling Processes: A Guide for the Public and Private Sectors,'\n          https://www.dhs.gov/sites/default/files/publications/Mail_Handling_Document_NonFOUO%209-27-2012.pdf, accessed April 3, 2018.\n                          .",
+          "safe_reference": null,
+          "page_locator": "Page 44",
+          "top_3_questions": [
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.028
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.028
+            },
+            {
+              "target_key": "AccessControl",
+              "question_text": "3. Access Control Systems",
+              "score": 0.028
+            }
+          ]
+        },
+        {
+          "candidate_id": "9d0acc65-b5a7-42f1-aaf1-9392c9cd01e0",
+          "snippet_text": "Implement access controls (e.g.,\n                      Although access controls are                                                           \n                                          locks) for these areas as necessary",
+          "safe_reference": null,
+          "page_locator": "Page 31",
+          "top_3_questions": [
+            {
+              "target_key": "AccessControl",
+              "question_text": "3. Access Control Systems",
+              "score": 0.071
+            },
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            },
+            {
+              "target_key": "LawEnforcement",
+              "question_text": "2. Law Enforcement Agency Visits",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "7158f776-3c75-4d2b-91b8-2ba66fafdcbd",
+          "snippet_text": "design concerns and protective measures for areas\n                      control procedures increases                                                           \n                                          surrounding buildings",
+          "safe_reference": null,
+          "page_locator": "Page 34",
+          "top_3_questions": [
+            {
+              "target_key": "AccessControl",
+              "question_text": "3. Access Control Systems",
+              "score": 0.077
+            },
+            {
+              "target_key": "KeyControl",
+              "question_text": "7. Key Control Program",
+              "score": 0.077
+            },
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "fda5a12f-9e29-4df1-bc8c-20c199d3fd0a",
+          "snippet_text": "p. 2-30, section 5.5, p. 5-8 to 5-15,\n          section 6.5, p. 6-22 to 6-23, December, https://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf, accessed\n          April 3, 2018.                                                                                     \n                                                                                                             \n          97 DHS, 2011, Industry Protective Measures Report – Access Control Systems, p. 23.",
+          "safe_reference": null,
+          "page_locator": "Page 49",
+          "top_3_questions": [
+            {
+              "target_key": "AccessControl",
+              "question_text": "3. Access Control Systems",
+              "score": 0.126
+            },
+            {
+              "target_key": "IntrusionDetection",
+              "question_text": "5. Intrusion Detection Systems (IDS)",
+              "score": 0.049
+            },
+            {
+              "target_key": "FBIInfo",
+              "question_text": "8. FBI Information Exchange",
+              "score": 0.024
+            }
+          ]
+        },
+        {
+          "candidate_id": "73d997ea-9e77-4972-8d3d-43528e8e3408",
+          "snippet_text": "Implement a process for badge verification before\n                                          employees gain access to the facility",
+          "safe_reference": null,
+          "page_locator": "Page 30",
+          "top_3_questions": [
+            {
+              "target_key": "AccessControl",
+              "question_text": "3. Access Control Systems",
+              "score": 0.083
+            },
+            {
+              "target_key": "NeighborInfo",
+              "question_text": "14. Neighboring Facility Information Exchange",
+              "score": 0.077
+            },
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "1187c37e-3e52-4f26-a63c-177917507575",
+          "snippet_text": "ermeasure Selection, Boca Raton FL, CRC Press, Chapter 16\n                                                                                                             \n          88 DHS, 2011, Industry Protective Measures Report – Access Control Systems, p",
+          "safe_reference": null,
+          "page_locator": "Page 49",
+          "top_3_questions": [
+            {
+              "target_key": "AccessControl",
+              "question_text": "3. Access Control Systems",
+              "score": 0.171
+            },
+            {
+              "target_key": "KeyControl",
+              "question_text": "7. Key Control Program",
+              "score": 0.043
+            },
+            {
+              "target_key": "VideoSystemType",
+              "question_text": "1. Video Surveillance Systems (VSS)",
+              "score": 0.042
+            }
+          ]
+        },
+        {
+          "candidate_id": "bdddbe11-a506-4f09-a6de-0ac2c8baf832",
+          "snippet_text": "er 15\n                                                                                                             \n          80 DHS, 2017, 'Commercial Facilities Sector,' https://www.dhs.gov/commercial-facilities-sector, accessed April 3, 2018.\n                                                                                                             \n          81 DHS, 2011, Industry Protective Measures Report – Access Control Systems, p. 22-23.              \n                                 .",
+          "safe_reference": null,
+          "page_locator": "Page 48",
+          "top_3_questions": [
+            {
+              "target_key": "AccessControl",
+              "question_text": "3. Access Control Systems",
+              "score": 0.178
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.033
+            },
+            {
+              "target_key": "KeyControl",
+              "question_text": "7. Key Control Program",
+              "score": 0.033
+            }
+          ]
+        },
+        {
+          "candidate_id": "ce8d42e8-6303-4e74-ac91-61c2b3fd9365",
+          "snippet_text": "28 ISC, 2015, Planning and Response to an Active Shooter: An Interagency Security Committee Policy and Best Practices Guide, November,\n          https://www.dhs.gov/sites/default/files/publications/isc-planning-response-active-shooter-guide-non-fouo-nov-2015-508.pdf, accessed\n          May 24, 2019.",
+          "safe_reference": null,
+          "page_locator": "Page 44",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityManager",
+              "question_text": "1. Security Manager",
+              "score": 0.03
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.03
+            },
+            {
+              "target_key": "SecurityLighting",
+              "question_text": "4. Security Lighting",
+              "score": 0.03
+            }
+          ]
+        },
+        {
+          "candidate_id": "2b9bf294-0e3b-4bb0-82e5-5cb585a27944",
+          "snippet_text": "The lack of                                                              \n            Delivery,                     https://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf, for more information, especially Chapters\n                      rigorous vehicle access                                                                \n            Standoff                      2 and 3: Chapter 2 discusses blast design concerns and protective measures for areas\n                      control procedures increases",
+          "safe_reference": null,
+          "page_locator": "Page 34",
+          "top_3_questions": [
+            {
+              "target_key": "AccessControl",
+              "question_text": "3. Access Control Systems",
+              "score": 0.106
+            },
+            {
+              "target_key": "FBIInfo",
+              "question_text": "8. FBI Information Exchange",
+              "score": 0.028
+            },
+            {
+              "target_key": "ISACInfo",
+              "question_text": "9. ISAC Information Exchange",
+              "score": 0.028
+            }
+          ]
+        },
+        {
+          "candidate_id": "6d9264dd-28aa-48fc-8ca2-41ca8ca4305e",
+          "snippet_text": "76 DHS, 2015, 'Planning and Response to an Active Shooter: An Interagency Security Committee Policy and Best Practices Guide',\n          https://www.dhs.gov/sites/default/files/publications/isc-planning-response-active-shooter-guide-non-fouo-nov-2015-508.pdf, accessed\n          April 24, 2019.",
+          "safe_reference": null,
+          "page_locator": "Page 48",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityManager",
+              "question_text": "1. Security Manager",
+              "score": 0.03
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.03
+            },
+            {
+              "target_key": "SecurityLighting",
+              "question_text": "4. Security Lighting",
+              "score": 0.03
+            }
+          ]
+        },
+        {
+          "candidate_id": "e3f8d6d0-9e2c-40e2-8410-684ee240066e",
+          "snippet_text": "Install cameras in areas such as the main entrance, at all vehicle access control points, guard\n                                          booths, cashier booths, and elevator lobbies on every floor",
+          "safe_reference": null,
+          "page_locator": "Page 36",
+          "top_3_questions": [
+            {
+              "target_key": "AccessControl",
+              "question_text": "3. Access Control Systems",
+              "score": 0.095
+            },
+            {
+              "target_key": "KeyControl",
+              "question_text": "7. Key Control Program",
+              "score": 0.045
+            },
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    "COMMS": {
+      "count": 8,
+      "candidates": [
+        {
+          "candidate_id": "772b87a8-76af-4359-bf7c-491033f48d22",
+          "snippet_text": "Test and exercise the notification system on a routine basis.",
+          "safe_reference": null,
+          "page_locator": "Page 15",
+          "top_3_questions": [
+            {
+              "target_key": "SystemIntegration",
+              "question_text": "7. Security System Integration",
+              "score": 0.111
+            },
+            {
+              "target_key": "AlarmMonitoring",
+              "question_text": "6. Alarm System Monitoring",
+              "score": 0.1
+            },
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "52064508-ceb6-452e-88a1-ea441a42d2a5",
+          "snippet_text": "Ensure each room can be locked from within\n                                          and has a telephone for communications with first responders",
+          "safe_reference": null,
+          "page_locator": "Page 13",
+          "top_3_questions": [
+            {
+              "target_key": "LawComm",
+              "question_text": "3. Interoperable Communications with Law Enforcement",
+              "score": 0.067
+            },
+            {
+              "target_key": "FireComm",
+              "question_text": "5. Interoperable Communications with Fire Response",
+              "score": 0.067
+            },
+            {
+              "target_key": "MedicalComm",
+              "question_text": "7. Interoperable Communications with Emergency Medical Response",
+              "score": 0.062
+            }
+          ]
+        },
+        {
+          "candidate_id": "536249b5-58fb-42ff-8964-1d12e21c9150",
+          "snippet_text": ". 16\n                      report a security concern.                                                             \n                      The facility does not  Join relevant security working groups. Establish liaisons and regular communications with\n            Security                                                                                         \n                      participate in any security federal, state, local, private sector, and/or industry working groups to enhance...",
+          "safe_reference": null,
+          "page_locator": "Page 15",
+          "top_3_questions": [
+            {
+              "target_key": "StateLocalInfo",
+              "question_text": "13. State and Local Information Exchange",
+              "score": 0.074
+            },
+            {
+              "target_key": "SecurityManager",
+              "question_text": "1. Security Manager",
+              "score": 0.04
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.04
+            }
+          ]
+        },
+        {
+          "candidate_id": "5dcd5185-fea9-4bab-84be-3d02d41b731b",
+          "snippet_text": " Provide initial and annual recurring active-shooter training for all personnel.\n                                           Review and exercise the active shooter plan annually with all personnel.\n                                           Designate “safe rooms” throughout the facility. Ensure each room can be locked from within\n                                          and has a telephone for communications with first responders.      \n                                           Provide...",
+          "safe_reference": null,
+          "page_locator": "Page 13",
+          "top_3_questions": [
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.067
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.033
+            },
+            {
+              "target_key": "SecurityPlan",
+              "question_text": "2. Comprehensive Security Plan",
+              "score": 0.032
+            }
+          ]
+        },
+        {
+          "candidate_id": "e168378d-4b66-43a2-a7a9-4e0b4e1dcf4c",
+          "snippet_text": "sound, illumination, and vibration so that it gets the attention of the widest range of\n                      communication or    people. Test and exercise the notification system on a routine basis. 28\n                      notification may lead to                                                               \n                      increased injuries or deaths.                                                          \n                      The facility has not tested,                          .",
+          "safe_reference": null,
+          "page_locator": "Page 15",
+          "top_3_questions": [
+            {
+              "target_key": "SystemIntegration",
+              "question_text": "7. Security System Integration",
+              "score": 0.034
+            },
+            {
+              "target_key": "NeighborInfo",
+              "question_text": "14. Neighboring Facility Information Exchange",
+              "score": 0.033
+            },
+            {
+              "target_key": "AlarmMonitoring",
+              "question_text": "6. Alarm System Monitoring",
+              "score": 0.033
+            }
+          ]
+        },
+        {
+          "candidate_id": "3b36eaa6-68ef-48b2-8bc4-16899c3ff1ef",
+          "snippet_text": "Establish liaisons and regular communications with\n            Security                                                                                         \n                      participate in any security federal, state, local, private sector, and/or industry working groups to enhance information\n            Management                                                                                       \n                      working groups",
+          "safe_reference": null,
+          "page_locator": "Page 15",
+          "top_3_questions": [
+            {
+              "target_key": "StateLocalInfo",
+              "question_text": "13. State and Local Information Exchange",
+              "score": 0.171
+            },
+            {
+              "target_key": "FederalInfo",
+              "question_text": "12. Federal Agency Information Exchange",
+              "score": 0.095
+            },
+            {
+              "target_key": "SecurityManager",
+              "question_text": "1. Security Manager",
+              "score": 0.05
+            }
+          ]
+        },
+        {
+          "candidate_id": "ab67a148-386e-439b-bb8f-dc987e640445",
+          "snippet_text": "Test and exercise the notification system on a routine basis",
+          "safe_reference": null,
+          "page_locator": "Page 15",
+          "top_3_questions": [
+            {
+              "target_key": "SystemIntegration",
+              "question_text": "7. Security System Integration",
+              "score": 0.111
+            },
+            {
+              "target_key": "AlarmMonitoring",
+              "question_text": "6. Alarm System Monitoring",
+              "score": 0.1
+            },
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "644917e6-d0f1-473e-95c8-e0539096794d",
+          "snippet_text": "Provide options (e.g., hotline, direct phone or radio communications\n                                          with security operations) for employees to report suspicious activity, potential threats, and",
+          "safe_reference": null,
+          "page_locator": "Page 36",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityManager",
+              "question_text": "1. Security Manager",
+              "score": 0.053
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.053
+            },
+            {
+              "target_key": "SecurityLighting",
+              "question_text": "4. Security Lighting",
+              "score": 0.053
+            }
+          ]
+        }
+      ]
+    },
+    "PDS": {
+      "count": 9,
+      "candidates": [
+        {
+          "candidate_id": "54cbf84f-d2ec-4e7f-9408-f64cda9330ff",
+          "snippet_text": "expected and the needs of pedestrians and the handicapped. 113     \n                                           Install planters with considerable reinforcing and below-grade depth for effectiveness. Maintain\n                      The facility does not use a maximum distance of 4 feet between planters and other permanent streetscape elements,\n                      barriers to mitigate high",
+          "safe_reference": null,
+          "page_locator": "Page 37",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityLighting",
+              "question_text": "4. Security Lighting",
+              "score": 0.032
+            },
+            {
+              "target_key": "PlanCoordination",
+              "question_text": "4. Security Plan Coordination",
+              "score": 0.031
+            },
+            {
+              "target_key": "FireAgency",
+              "question_text": "4. Fire Response Agency Visits",
+              "score": 0.03
+            }
+          ]
+        },
+        {
+          "candidate_id": "1e27a226-c4fc-4de5-b281-71d6ce14e08b",
+          "snippet_text": "https://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf, for more information, especially Chapters\n            Standoff  facility, on the street.                                                               \n                                          2 and 3: Chapter 2 discusses blast design concerns and protective measures for areas\n                                          surrounding buildings. Chapter 3 discusses the nature of explosive blasts, their effects on\n                               .",
+          "safe_reference": null,
+          "page_locator": "Page 35",
+          "top_3_questions": [
+            {
+              "target_key": "NeighborInfo",
+              "question_text": "14. Neighboring Facility Information Exchange",
+              "score": 0.054
+            },
+            {
+              "target_key": "FBIInfo",
+              "question_text": "8. FBI Information Exchange",
+              "score": 0.027
+            },
+            {
+              "target_key": "ISACInfo",
+              "question_text": "9. ISAC Information Exchange",
+              "score": 0.027
+            }
+          ]
+        },
+        {
+          "candidate_id": "58752568-2e38-4ae5-8f13-bd5f8805c5f1",
+          "snippet_text": "vy traffic flow                                                             \n                      during special events                                                                  \n                      Ground-floor windows do not                                                            \n                      have protective measures to  Consult Reference Manual to Mitigate Potential Terrorist Attacks Against Buildings (FEMA\n            Building                                         .",
+          "safe_reference": null,
+          "page_locator": "Page 38",
+          "top_3_questions": [
+            {
+              "target_key": "BuildingEnvelope",
+              "question_text": "6. Building Envelope Security",
+              "score": 0.038
+            },
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            },
+            {
+              "target_key": "LawEnforcement",
+              "question_text": "2. Law Enforcement Agency Visits",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "1cb60102-40f4-49f8-be29-048fc0ce3460",
+          "snippet_text": "Maintain\n                      The facility does not use a maximum distance of 4 feet between planters and other permanent streetscape elements,\n                      barriers to mitigate high- depending on the kind of traffic anticipated",
+          "safe_reference": null,
+          "page_locator": "Page 37",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityLighting",
+              "question_text": "4. Security Lighting",
+              "score": 0.043
+            },
+            {
+              "target_key": "PlanCoordination",
+              "question_text": "4. Security Plan Coordination",
+              "score": 0.042
+            },
+            {
+              "target_key": "FireAgency",
+              "question_text": "4. Fire Response Agency Visits",
+              "score": 0.04
+            }
+          ]
+        },
+        {
+          "candidate_id": "9a8e2285-45f5-4e89-92c4-2d1115f679bb",
+          "snippet_text": "evaluate                                                             \n            CCTV                                                                                             \n                      security incidents.                                                                    \n                      Fences, gates, and/or                                                                  \n                      parking areas are not                                                        .",
+          "safe_reference": null,
+          "page_locator": "Page 40",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityManager",
+              "question_text": "1. Security Manager",
+              "score": 0.091
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.091
+            },
+            {
+              "target_key": "SecurityLighting",
+              "question_text": "4. Security Lighting",
+              "score": 0.091
+            }
+          ]
+        },
+        {
+          "candidate_id": "8208e54b-d0c7-4f6e-aa21-3cdeef6cf5a2",
+          "snippet_text": "One or more unobstructed                                                               \n                      high-speed avenues of  Evaluate vehicle traffic patterns near the facility. Design and implement strategies to reduce\n            Barriers  approach lead to significant vehicle speeds, improve pedestrian safety and increase standoff by installing bollards near\n                      areas and critical assets of entrances and critical assets. 118                        \n                 .",
+          "safe_reference": null,
+          "page_locator": "Page 38",
+          "top_3_questions": [
+            {
+              "target_key": "NeighborInfo",
+              "question_text": "14. Neighboring Facility Information Exchange",
+              "score": 0.027
+            },
+            {
+              "target_key": "PerimeterFencing",
+              "question_text": "2. Perimeter Fencing and Barriers",
+              "score": 0.027
+            },
+            {
+              "target_key": "StandoffDistance",
+              "question_text": "5. Parking and Standoff Distance",
+              "score": 0.027
+            }
+          ]
+        },
+        {
+          "candidate_id": "68142a46-9225-4837-ad92-27e66e2c2d47",
+          "snippet_text": "vy traffic flow                                                             \n                      during special events                                                                  \n                      Ground-floor windows do not                                                            \n                      have protective measures to  Consult Reference Manual to Mitigate Potential Terrorist Attacks Against Buildings (FEMA\n            Building                                         .",
+          "safe_reference": null,
+          "page_locator": "Page 38",
+          "top_3_questions": [
+            {
+              "target_key": "BuildingEnvelope",
+              "question_text": "6. Building Envelope Security",
+              "score": 0.038
+            },
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            },
+            {
+              "target_key": "LawEnforcement",
+              "question_text": "2. Law Enforcement Agency Visits",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "4a257bae-57f2-4609-9c44-15fef1dbf806",
+          "snippet_text": " Evaluate vehicle traffic patterns near the facility. Design and implement strategies to reduce\n                                          vehicle speeds, improve pedestrian safety, and reduce the threat of vehicle approach velocities.\n                                          111                                                                \n                                           Install barriers to mitigate high-speed avenues of approach, deny vehicle entry, and provide\n                .",
+          "safe_reference": null,
+          "page_locator": "Page 37",
+          "top_3_questions": [
+            {
+              "target_key": "NeighborInfo",
+              "question_text": "14. Neighboring Facility Information Exchange",
+              "score": 0.032
+            },
+            {
+              "target_key": "PerimeterFencing",
+              "question_text": "2. Perimeter Fencing and Barriers",
+              "score": 0.032
+            },
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "49039f85-56b7-47ac-af88-0bfed493a041",
+          "snippet_text": "Design and implement strategies to reduce\n            Barriers  approach lead to significant vehicle speeds, improve pedestrian safety and increase standoff by installing bollards near\n                      areas and critical assets of entrances and critical assets",
+          "safe_reference": null,
+          "page_locator": "Page 38",
+          "top_3_questions": [
+            {
+              "target_key": "PerimeterFencing",
+              "question_text": "2. Perimeter Fencing and Barriers",
+              "score": 0.038
+            },
+            {
+              "target_key": "StandoffDistance",
+              "question_text": "5. Parking and Standoff Distance",
+              "score": 0.038
+            },
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    "RESPONSE": {
+      "count": 8,
+      "candidates": [
+        {
+          "candidate_id": "c845e16a-51f6-4742-a028-93d5ca53f2a8",
+          "snippet_text": "Emergency                   MOUs/MOAs as necessary. 39                                         \n                      plan with emergency                                                                    \n            Action Plan                                                                                      \n                      responders.",
+          "safe_reference": null,
+          "page_locator": "Page 19",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityPlan",
+              "question_text": "2. Comprehensive Security Plan",
+              "score": 0.083
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.083
+            },
+            {
+              "target_key": "PlanCoordination",
+              "question_text": "4. Security Plan Coordination",
+              "score": 0.083
+            }
+          ]
+        },
+        {
+          "candidate_id": "c4d7819b-c073-4674-9359-1a0e50fbad5f",
+          "snippet_text": "the emergency                                                              \n            Management                     Coordinate the emergency operation/emergency action plan with first responders. Establish\n                      operation/emergency action",
+          "safe_reference": null,
+          "page_locator": "Page 19",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityPlan",
+              "question_text": "2. Comprehensive Security Plan",
+              "score": 0.083
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.083
+            },
+            {
+              "target_key": "PlanCoordination",
+              "question_text": "4. Security Plan Coordination",
+              "score": 0.083
+            }
+          ]
+        },
+        {
+          "candidate_id": "0a5831eb-446b-44f2-a2bc-82aaeed3008c",
+          "snippet_text": "ctions to protect people (including those with special needs), property, operations, and the\n            Management written emergency  environment in an emergency, and to provide incident stabilization. Train personnel on the plan,",
+          "safe_reference": null,
+          "page_locator": "Page 19",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.048
+            },
+            {
+              "target_key": "SecurityPlan",
+              "question_text": "2. Comprehensive Security Plan",
+              "score": 0.045
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.045
+            }
+          ]
+        },
+        {
+          "candidate_id": "a505fd2e-9184-48b3-b1fa-8f6eecaf7d80",
+          "snippet_text": "Establish\n                      operation/emergency action                                                             \n            - Emergency                   MOUs/MOAs as necessary",
+          "safe_reference": null,
+          "page_locator": "Page 19",
+          "top_3_questions": [
+            {
+              "target_key": "MedicalAgency",
+              "question_text": "6. Emergency Medical Response Agency Visits",
+              "score": 0.077
+            },
+            {
+              "target_key": "MedicalComm",
+              "question_text": "7. Interoperable Communications with Emergency Medical Response",
+              "score": 0.071
+            },
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "8f4e3d74-33cc-4989-8f82-d19f1df76dd3",
+          "snippet_text": "Emergency congregation or organization Stop-the-Bleed. Ensure that AEDs, first aid kits, and Stop-the-Bleed kits are easily accessible. 41\n            Action Plan on emergency operation or                                                            \n                      emergency response.",
+          "safe_reference": null,
+          "page_locator": "Page 20",
+          "top_3_questions": [
+            {
+              "target_key": "MedicalAgency",
+              "question_text": "6. Emergency Medical Response Agency Visits",
+              "score": 0.091
+            },
+            {
+              "target_key": "MedicalComm",
+              "question_text": "7. Interoperable Communications with Emergency Medical Response",
+              "score": 0.087
+            },
+            {
+              "target_key": "SecurityPlan",
+              "question_text": "2. Comprehensive Security Plan",
+              "score": 0.048
+            }
+          ]
+        },
+        {
+          "candidate_id": "cfc94ddb-7dc7-43d3-9015-a263ec1ca3f8",
+          "snippet_text": "90 DHS, 2015, 'Planning and Response to an Active Shooter: An Interagency Security Committee Policy and Best Practices Guide',\n          https://www.dhs.gov/sites/default/files/publi",
+          "safe_reference": null,
+          "page_locator": "Page 49",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityManager",
+              "question_text": "1. Security Manager",
+              "score": 0.043
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.043
+            },
+            {
+              "target_key": "SecurityLighting",
+              "question_text": "4. Security Lighting",
+              "score": 0.043
+            }
+          ]
+        },
+        {
+          "candidate_id": "f06f1a2d-0d8b-4d58-9020-76cceba7afa4",
+          "snippet_text": "39                                         \n                      plan with emergency                                                                    \n            Action Plan                                                                                      \n                      responders.",
+          "safe_reference": null,
+          "page_locator": "Page 19",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityPlan",
+              "question_text": "2. Comprehensive Security Plan",
+              "score": 0.125
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.125
+            },
+            {
+              "target_key": "PlanCoordination",
+              "question_text": "4. Security Plan Coordination",
+              "score": 0.125
+            }
+          ]
+        },
+        {
+          "candidate_id": "cf2d7b09-4ede-4482-83c1-87838efdb884",
+          "snippet_text": "in predetermined timeframes; f) details of the facility's media response\n                                          following an incident; and g) a process for standing down once the incident is over. Train\n                                          personnel on the plan, and exercise the plan at least once a year. For more information, visit the\n                                          Ready.gov website at http://www.ready.gov/business/implementation/continuity. 33\n            Resilience       .",
+          "safe_reference": null,
+          "page_locator": "Page 18",
+          "top_3_questions": [
+            {
+              "target_key": "NeighborInfo",
+              "question_text": "14. Neighboring Facility Information Exchange",
+              "score": 0.053
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.027
+            },
+            {
+              "target_key": "FBIInfo",
+              "question_text": "8. FBI Information Exchange",
+              "score": 0.026
+            }
+          ]
+        }
+      ]
+    },
+    "SCREENING": {
+      "count": 6,
+      "candidates": [
+        {
+          "candidate_id": "4484edda-3c55-4459-9950-991d667694ba",
+          "snippet_text": "Consult the DHS guidance document, Best Practices for Mail\n                                          Screening and Handling Processes: A Guide for the Public and Private Sectors to inform the\n                                          development of policies, procedures, and training for recognizing and handling suspicious\n                                          packages",
+          "safe_reference": null,
+          "page_locator": "Page 14",
+          "top_3_questions": [
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.04
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.04
+            },
+            {
+              "target_key": "EmployeeTraining",
+              "question_text": "5. Employee Security Training",
+              "score": 0.04
+            }
+          ]
+        },
+        {
+          "candidate_id": "c03985ee-5c19-49fd-8c84-3c2b2427a6de",
+          "snippet_text": " Consult the DHS guidance document, Best Practices for Mail Screening and Handling\n                                          Processes: A Guide for the Public and Private Sectors, available at\n                                          https://www.dhs.gov/sites/default/files/publications/Mail_Handling_Document_NonFOUO%209-\n                                          27-2012.pdf, to inform the development of policies, procedures, and training for recognizing and\n                                   .",
+          "safe_reference": null,
+          "page_locator": "Page 14",
+          "top_3_questions": [
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.028
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.028
+            },
+            {
+              "target_key": "EmployeeTraining",
+              "question_text": "5. Employee Security Training",
+              "score": 0.028
+            }
+          ]
+        },
+        {
+          "candidate_id": "1290f3f1-c292-4e0a-ae62-9dcd334a9280",
+          "snippet_text": "26                                                       \n                                           Consult the DHS guidance document, Best Practices for Mail Screening and Handling",
+          "safe_reference": null,
+          "page_locator": "Page 14",
+          "top_3_questions": [
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            },
+            {
+              "target_key": "LawEnforcement",
+              "question_text": "2. Law Enforcement Agency Visits",
+              "score": 0.0
+            },
+            {
+              "target_key": "LawComm",
+              "question_text": "3. Interoperable Communications with Law Enforcement",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "9cea5014-0ab2-4b91-bee2-8bf788196507",
+          "snippet_text": "guidelines for a mail room so that if anything suspicious does occur, it will minimally impact the\n                                          overall operation of the site, if at all. Consult the DHS guidance document, Best Practices for Mail\n                                          Screening and Handling Processes: A Guide for the Public and Private Sectors to inform the\n                                          development of policies, procedures, and training for recognizing and handling...",
+          "safe_reference": null,
+          "page_locator": "Page 14",
+          "top_3_questions": [
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.026
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.026
+            },
+            {
+              "target_key": "EmployeeTraining",
+              "question_text": "5. Employee Security Training",
+              "score": 0.026
+            }
+          ]
+        },
+        {
+          "candidate_id": "796671f6-efcc-4bf0-b53b-3741b4cead12",
+          "snippet_text": " Consult the DHS guidance document, Best Practices for Mail Screening and Handling\n                                          Processes: A Guide for the Public and Private Sectors, available at\n                                          https://www.dhs.gov/sites/default/files/publications/Mail_Handling_Document_NonFOUO%209",
+          "safe_reference": null,
+          "page_locator": "Page 14",
+          "top_3_questions": [
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.037
+            },
+            {
+              "target_key": "LawEnforcement",
+              "question_text": "2. Law Enforcement Agency Visits",
+              "score": 0.0
+            },
+            {
+              "target_key": "LawComm",
+              "question_text": "3. Interoperable Communications with Law Enforcement",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "f0d5209d-d937-42c0-beae-91fec59c7761",
+          "snippet_text": "27 DHS, 2012, 'Best Practices for Mail Screening and Handling Processes: A Guide for the Public",
+          "safe_reference": null,
+          "page_locator": "Page 44",
+          "top_3_questions": [
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.071
+            },
+            {
+              "target_key": "LawEnforcement",
+              "question_text": "2. Law Enforcement Agency Visits",
+              "score": 0.0
+            },
+            {
+              "target_key": "LawComm",
+              "question_text": "3. Interoperable Communications with Law Enforcement",
+              "score": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    "TRAINING": {
+      "count": 16,
+      "candidates": [
+        {
+          "candidate_id": "260820a2-a871-4fe4-95a5-b26b9e3ec375",
+          "snippet_text": "Category      Vulnerability                      Options for Consideration                      \n                                           Evaluate the business continuity plan through annual exercises. Ensure exercises are designed\n                                          to accomplish the following: 1) Identify planning and procedural deficiencies; 2) Test or validate\n            Resilience                    recently changed procedures or plans; 3) Clarify roles and responsibilities; 4)...",
+          "safe_reference": null,
+          "page_locator": "Page 19",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityPlan",
+              "question_text": "2. Comprehensive Security Plan",
+              "score": 0.057
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.057
+            },
+            {
+              "target_key": "PlanCoordination",
+              "question_text": "4. Security Plan Coordination",
+              "score": 0.057
+            }
+          ]
+        },
+        {
+          "candidate_id": "5f960663-6c52-4a0f-a3e8-96115df13da7",
+          "snippet_text": "Category      Vulnerability                      Options for Consideration                      \n                                           Develop a comprehensive security plan specific to the facility. Train personnel on the plan, and\n                                          exercise the plan at least once a year. Consult Facility Security Plan: An Interagency Security\n                                          Committee Guide for more information. 10                           \n             .",
+          "safe_reference": null,
+          "page_locator": "Page 8",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityPlan",
+              "question_text": "2. Comprehensive Security Plan",
+              "score": 0.15
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.083
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.08
+            }
+          ]
+        },
+        {
+          "candidate_id": "0a359c0f-6d59-468a-8b05-6a9762ec57e8",
+          "snippet_text": "prepared for security incidents. Consult the Ready.gov website for more information on training,\n                                          at http://www.ready.gov/business/implementation/training. 14       \n                                          Develop a security awareness program that addresses the following topics:\n                                           Why the facility requires protection strategies 16               \n                                           What actions are...",
+          "safe_reference": null,
+          "page_locator": "Page 10",
+          "top_3_questions": [
+            {
+              "target_key": "NeighborInfo",
+              "question_text": "14. Neighboring Facility Information Exchange",
+              "score": 0.112
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.062
+            },
+            {
+              "target_key": "EmployeeTraining",
+              "question_text": "5. Employee Security Training",
+              "score": 0.062
+            }
+          ]
+        },
+        {
+          "candidate_id": "c422b9f6-13eb-4f44-8da7-23bc1273e606",
+          "snippet_text": "Train\n                                          personnel on the plan, and exercise the plan at least once a year",
+          "safe_reference": null,
+          "page_locator": "Page 7",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.111
+            },
+            {
+              "target_key": "SecurityPlan",
+              "question_text": "2. Comprehensive Security Plan",
+              "score": 0.1
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.1
+            }
+          ]
+        },
+        {
+          "candidate_id": "cbbe7f0a-6d54-486d-9447-dc67d20e2ce2",
+          "snippet_text": "Train personnel on the plan,\n            - Emergency operation/emergency action and exercise the plan at least once a year",
+          "safe_reference": null,
+          "page_locator": "Page 19",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.083
+            },
+            {
+              "target_key": "SecurityPlan",
+              "question_text": "2. Comprehensive Security Plan",
+              "score": 0.077
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.077
+            }
+          ]
+        },
+        {
+          "candidate_id": "b2d1cb26-24b1-4f94-85fc-64bb8e30d462",
+          "snippet_text": "inuity                                                                                       \n                                           Train all personnel on the business continuity plan annually. Document the completion of\n                                          training. 34                                                       \n            Resilience                                                                                       \n                      The facility trains some, but..",
+          "safe_reference": null,
+          "page_locator": "Page 18",
+          "top_3_questions": [
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.111
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.056
+            },
+            {
+              "target_key": "SecurityPlan",
+              "question_text": "2. Comprehensive Security Plan",
+              "score": 0.053
+            }
+          ]
+        },
+        {
+          "candidate_id": "2613f424-8f09-436e-a501-cbd8c1da7500",
+          "snippet_text": "Provide additional training for leaders including incident\n            - Business                                                                                       \n                      business continuity plan",
+          "safe_reference": null,
+          "page_locator": "Page 18",
+          "top_3_questions": [
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.182
+            },
+            {
+              "target_key": "SecurityPlan",
+              "question_text": "2. Comprehensive Security Plan",
+              "score": 0.083
+            },
+            {
+              "target_key": "PlanCoordination",
+              "question_text": "4. Security Plan Coordination",
+              "score": 0.083
+            }
+          ]
+        },
+        {
+          "candidate_id": "ad1ae45d-cd90-4dfd-bd3c-db7eab2b4591",
+          "snippet_text": "nt of possible security risks; a review of\n                                          threats to the facility and the facility's vulnerabilities; an up-to-date point of contact roster for key\n                                          personnel responsible for security and first responders; and identification of critical assets or\n                                          areas. Train personnel on the plan, and exercise the plan at least once a year. 8\n                                          ..",
+          "safe_reference": null,
+          "page_locator": "Page 7",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.065
+            },
+            {
+              "target_key": "SecurityPlan",
+              "question_text": "2. Comprehensive Security Plan",
+              "score": 0.062
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.062
+            }
+          ]
+        },
+        {
+          "candidate_id": "ac989940-7b07-4e61-8e5e-eb2912caf97d",
+          "snippet_text": "sessment of possible security risks; a review of\n                                          threats to the facility and the facility's vulnerabilities; an up-to-date point of contact roster for key\n                                          personnel responsible for security and first responders; and identification of critical assets or\n                                          areas. Train personnel on the plan, and exercise the plan at least once a year. 8\n                                      .",
+          "safe_reference": null,
+          "page_locator": "Page 8",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.065
+            },
+            {
+              "target_key": "SecurityPlan",
+              "question_text": "2. Comprehensive Security Plan",
+              "score": 0.062
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.062
+            }
+          ]
+        },
+        {
+          "candidate_id": "c4d6b133-8a00-4068-9e47-b7c64aa43717",
+          "snippet_text": "Category      Vulnerability                      Options for Consideration                      \n                                           Develop a comprehensive security plan specific to the facility. Train personnel on the plan, and\n                                          exercise the plan at least once a year. Consult Facility Security Plan: An Interagency Security\n                                          Committee Guide for more information. 45                           \n             .",
+          "safe_reference": null,
+          "page_locator": "Page 21",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityPlan",
+              "question_text": "2. Comprehensive Security Plan",
+              "score": 0.15
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.083
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.08
+            }
+          ]
+        },
+        {
+          "candidate_id": "4b2fb4e1-59fa-4dce-9502-cfa77c91a4d2",
+          "snippet_text": "Document the completion of\n                                          training",
+          "safe_reference": null,
+          "page_locator": "Page 18",
+          "top_3_questions": [
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.167
+            },
+            {
+              "target_key": "EmployeeTraining",
+              "question_text": "5. Employee Security Training",
+              "score": 0.167
+            },
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "7bd783a0-607b-4b12-a287-b7de9bdbb27a",
+          "snippet_text": "Train\n            Management                                                                                       \n                      programs, and/or    personnel on the plan, and exercise the plan at least once a year",
+          "safe_reference": null,
+          "page_locator": "Page 8",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.091
+            },
+            {
+              "target_key": "SecurityPlan",
+              "question_text": "2. Comprehensive Security Plan",
+              "score": 0.083
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.083
+            }
+          ]
+        },
+        {
+          "candidate_id": "1e82f72a-50a8-43a9-9ade-75ac52146817",
+          "snippet_text": "14       \n                                          Develop a security awareness program that addresses the following topics:\n                                           Why the facility requires protection strategies 16               \n                                           What actions are required to protect specific assets and areas 16\n                                           What employees’ security responsibilities are and how they can be fulfilled 16\n                      The...",
+          "safe_reference": null,
+          "page_locator": "Page 10",
+          "top_3_questions": [
+            {
+              "target_key": "NeighborInfo",
+              "question_text": "14. Neighboring Facility Information Exchange",
+              "score": 0.067
+            },
+            {
+              "target_key": "SecurityManager",
+              "question_text": "1. Security Manager",
+              "score": 0.034
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.034
+            }
+          ]
+        },
+        {
+          "candidate_id": "c75db45b-aa1a-4cfd-abaa-6dc6cf1c6e11",
+          "snippet_text": "Ensure exercises are designed\n                                          to accomplish the following: 1) Identify planning and procedural deficiencies; 2) Test or validate\n            Resilience                    recently changed procedures or plans; 3) Clarify roles and responsibilities; 4) Obtain participant\n                      The facility does not exercise                                                         \n            Management                    feedback and recommendations for...",
+          "safe_reference": null,
+          "page_locator": "Page 19",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityManager",
+              "question_text": "1. Security Manager",
+              "score": 0.03
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.03
+            },
+            {
+              "target_key": "SecurityLighting",
+              "question_text": "4. Security Lighting",
+              "score": 0.03
+            }
+          ]
+        },
+        {
+          "candidate_id": "9b1ea082-0641-4fa2-a382-379626bc8c11",
+          "snippet_text": "Test and\n                      method exists to alert all                                                             \n                                          exercise the process on a routine basis.",
+          "safe_reference": null,
+          "page_locator": "Page 15",
+          "top_3_questions": [
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            },
+            {
+              "target_key": "LawEnforcement",
+              "question_text": "2. Law Enforcement Agency Visits",
+              "score": 0.0
+            },
+            {
+              "target_key": "LawComm",
+              "question_text": "3. Interoperable Communications with Law Enforcement",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "9d8ac1e9-2686-4738-84ed-68e224befc25",
+          "snippet_text": "Train personnel on the plan, and exercise the plan at least once a year",
+          "safe_reference": null,
+          "page_locator": "Page 7",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.111
+            },
+            {
+              "target_key": "SecurityPlan",
+              "question_text": "2. Comprehensive Security Plan",
+              "score": 0.1
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.1
+            }
+          ]
+        }
+      ]
+    },
+    "UNKNOWN": {
+      "count": 11,
+      "candidates": [
+        {
+          "candidate_id": "ee19c9c6-7a90-46d0-ba30-d13980e9a891",
+          "snippet_text": "has not conducted an onsite                                                            \n            First     visit of the facility. Onsite  Invite the agency to visit the facility. Provide a tour to familiarize first responders with the site\n            Preventers",
+          "safe_reference": null,
+          "page_locator": "Page 3",
+          "top_3_questions": [
+            {
+              "target_key": "LawEnforcement",
+              "question_text": "2. Law Enforcement Agency Visits",
+              "score": 0.056
+            },
+            {
+              "target_key": "FireAgency",
+              "question_text": "4. Fire Response Agency Visits",
+              "score": 0.056
+            },
+            {
+              "target_key": "FederalInfo",
+              "question_text": "12. Federal Agency Information Exchange",
+              "score": 0.056
+            }
+          ]
+        },
+        {
+          "candidate_id": "9f1f9356-698b-470e-984b-d9096b24a71c",
+          "snippet_text": "70 Fennelly, L., 2013, Effective Physical Security, 4th Edition, Waltham, MA: Elsevier Inc., p. 264.\n                                                                                                             \n          71 DHS, 2011, Industry Protective Measures Report",
+          "safe_reference": null,
+          "page_locator": "Page 48",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityManager",
+              "question_text": "1. Security Manager",
+              "score": 0.042
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.042
+            },
+            {
+              "target_key": "SecurityLighting",
+              "question_text": "4. Security Lighting",
+              "score": 0.042
+            }
+          ]
+        },
+        {
+          "candidate_id": "0c48d4b3-5060-4e0a-893a-cf2ae5e83789",
+          "snippet_text": "Provide a tour to familiarize first responders with the site\n                      an onsite visit of the facility",
+          "safe_reference": null,
+          "page_locator": "Page 2",
+          "top_3_questions": [
+            {
+              "target_key": "NeighborInfo",
+              "question_text": "14. Neighboring Facility Information Exchange",
+              "score": 0.077
+            },
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            },
+            {
+              "target_key": "LawEnforcement",
+              "question_text": "2. Law Enforcement Agency Visits",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "3e5bdfd1-6bc7-4701-8af4-5e848c7bb21f",
+          "snippet_text": "Category      Vulnerability                      Options for Consideration                      \n                      The primary law enforcement                                                            \n                      agency has not conducted                                                               \n                                           Invite the agency to visit the facility. Provide a tour to familiarize first responders with the site\n                      an onsite...",
+          "safe_reference": null,
+          "page_locator": "Page 2",
+          "top_3_questions": [
+            {
+              "target_key": "LawEnforcement",
+              "question_text": "2. Law Enforcement Agency Visits",
+              "score": 0.164
+            },
+            {
+              "target_key": "LawComm",
+              "question_text": "3. Interoperable Communications with Law Enforcement",
+              "score": 0.083
+            },
+            {
+              "target_key": "FireAgency",
+              "question_text": "4. Fire Response Agency Visits",
+              "score": 0.042
+            }
+          ]
+        },
+        {
+          "candidate_id": "f42a91ff-8ad9-4df7-915c-cd7d35a9d0ad",
+          "snippet_text": "Design and implement strategies to reduce\n                                          vehicle speeds, improve pedestrian safety, and reduce the threat of vehicle approach velocities",
+          "safe_reference": null,
+          "page_locator": "Page 37",
+          "top_3_questions": [
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            },
+            {
+              "target_key": "LawEnforcement",
+              "question_text": "2. Law Enforcement Agency Visits",
+              "score": 0.0
+            },
+            {
+              "target_key": "LawComm",
+              "question_text": "3. Interoperable Communications with Law Enforcement",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "36a8b3e9-2a56-4803-a004-099c1be54250",
+          "snippet_text": "72 Fennelly, L., 2013, Effective Physical Security, 4th Edition, Waltham, MA: Elsevier Inc., p. 261.\n                                                                                                             \n          73 DHS, 2011, Industry Protective Measures Report",
+          "safe_reference": null,
+          "page_locator": "Page 48",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityManager",
+              "question_text": "1. Security Manager",
+              "score": 0.042
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.042
+            },
+            {
+              "target_key": "SecurityLighting",
+              "question_text": "4. Security Lighting",
+              "score": 0.042
+            }
+          ]
+        },
+        {
+          "candidate_id": "d5479557-a38e-486c-8eb4-6550d9f6c783",
+          "snippet_text": "Evaluate the need to conduct searches on all vehicles at elevated threat levels",
+          "safe_reference": null,
+          "page_locator": "Page 33",
+          "top_3_questions": [
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            },
+            {
+              "target_key": "LawEnforcement",
+              "question_text": "2. Law Enforcement Agency Visits",
+              "score": 0.0
+            },
+            {
+              "target_key": "LawComm",
+              "question_text": "3. Interoperable Communications with Law Enforcement",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "713d3978-b167-488c-94a6-3bc4ccb3c559",
+          "snippet_text": "Provide a tour to familiarize first responders with the site\n            Preventers- visits can familiarize first layout",
+          "safe_reference": null,
+          "page_locator": "Page 3",
+          "top_3_questions": [
+            {
+              "target_key": "LawEnforcement",
+              "question_text": "2. Law Enforcement Agency Visits",
+              "score": 0.077
+            },
+            {
+              "target_key": "FireAgency",
+              "question_text": "4. Fire Response Agency Visits",
+              "score": 0.077
+            },
+            {
+              "target_key": "MedicalAgency",
+              "question_text": "6. Emergency Medical Response Agency Visits",
+              "score": 0.071
+            }
+          ]
+        },
+        {
+          "candidate_id": "34b6b758-b229-4fa6-810a-24fbb25b5447",
+          "snippet_text": "an onsite visit of the facility.                                                       \n            First     Onsite visits can familiarize  Invite the agency to visit the facility. Provide a tour to familiarize first responders with the site\n            Preventers",
+          "safe_reference": null,
+          "page_locator": "Page 2",
+          "top_3_questions": [
+            {
+              "target_key": "LawEnforcement",
+              "question_text": "2. Law Enforcement Agency Visits",
+              "score": 0.125
+            },
+            {
+              "target_key": "FireAgency",
+              "question_text": "4. Fire Response Agency Visits",
+              "score": 0.125
+            },
+            {
+              "target_key": "MedicalAgency",
+              "question_text": "6. Emergency Medical Response Agency Visits",
+              "score": 0.118
+            }
+          ]
+        },
+        {
+          "candidate_id": "36dc696c-6089-4357-9607-bc8efa5187e8",
+          "snippet_text": "Provide a tour to familiarize first responders with the site\n            Preventers- first responders with the layout",
+          "safe_reference": null,
+          "page_locator": "Page 2",
+          "top_3_questions": [
+            {
+              "target_key": "Awareness",
+              "question_text": "1. Public Awareness Campaign",
+              "score": 0.0
+            },
+            {
+              "target_key": "LawEnforcement",
+              "question_text": "2. Law Enforcement Agency Visits",
+              "score": 0.0
+            },
+            {
+              "target_key": "LawComm",
+              "question_text": "3. Interoperable Communications with Law Enforcement",
+              "score": 0.0
+            }
+          ]
+        },
+        {
+          "candidate_id": "12d6f67b-8703-4c6d-a6c7-764f0f30fcac",
+          "snippet_text": "2 and 3: Chapter 2 discusses blast design concerns and protective measures for areas\n                                          surrounding buildings",
+          "safe_reference": null,
+          "page_locator": "Page 35",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityPlan",
+              "question_text": "2. Comprehensive Security Plan",
+              "score": 0.067
+            },
+            {
+              "target_key": "PlanTraining",
+              "question_text": "3. Security Plan Training",
+              "score": 0.067
+            },
+            {
+              "target_key": "AccessControl",
+              "question_text": "3. Access Control Systems",
+              "score": 0.067
+            }
+          ]
+        }
+      ]
+    },
+    "VSS": {
+      "count": 1,
+      "candidates": [
+        {
+          "candidate_id": "47f6a83a-8427-461f-8248-2bfdbaa3c5e7",
+          "snippet_text": "evaluate                                                             \n            CCTV                                                                                             \n                      security incidents",
+          "safe_reference": null,
+          "page_locator": "Page 40",
+          "top_3_questions": [
+            {
+              "target_key": "SecurityManager",
+              "question_text": "1. Security Manager",
+              "score": 0.167
+            },
+            {
+              "target_key": "SecurityPersonnel",
+              "question_text": "1. Security Personnel",
+              "score": 0.167
+            },
+            {
+              "target_key": "SecurityLighting",
+              "question_text": "4. Security Lighting",
+              "score": 0.167
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "matched_candidates_summary": [
+    {
+      "candidate_id": "89d308eb-7819-47be-bd38-01fc5b20096b",
+      "snippet_preview": "ermeasure Selection, Boca Raton FL, CRC Press, Chapter 16\n                                                                                                             \n          88 DHS, 2011, Industry",
+      "match_count": 1
+    },
+    {
+      "candidate_id": "8d369a3a-ccb0-4e1b-ac89-d27090eaf939",
+      "snippet_preview": "on, Waltham, MA: Elsevier Inc., page 149    \n                                                                                                             \n          75 DHS, 2011, Industry Protective M",
+      "match_count": 1
+    },
+    {
+      "candidate_id": "1029aa46-5518-4eef-b423-06636ddde181",
+      "snippet_preview": "81 DHS, 2011, Industry Protective Measures Report – Access Control Systems, p",
+      "match_count": 1
+    },
+    {
+      "candidate_id": "66a08b6e-c7f4-409d-993c-7aaa61959202",
+      "snippet_preview": "97 DHS, 2011, Industry Protective Measures Report – Access Control Systems, p",
+      "match_count": 1
+    },
+    {
+      "candidate_id": "88d7f5b4-581d-4d7c-8b3c-bfaf0d510ce5",
+      "snippet_preview": "71 DHS, 2011, Industry Protective Measures Report - Access Control Systems, p",
+      "match_count": 1
+    },
+    {
+      "candidate_id": "7f5f97f8-ac78-467b-abe9-716cc9937ce1",
+      "snippet_preview": "89 DHS, 2011, Industry Protective Measures Report – Access Control Systems",
+      "match_count": 1
+    },
+    {
+      "candidate_id": "87f12ddf-9ffb-4437-917c-832068f9c844",
+      "snippet_preview": "73 DHS, 2011, Industry Protective Measures Report - Access Control Systems, p",
+      "match_count": 1
+    },
+    {
+      "candidate_id": "118c2ccd-6ed1-42cd-84fa-61e56b1d9edc",
+      "snippet_preview": "86 DHS, 2011, Industry Protective Measures Report – Access Control Systems, p",
+      "match_count": 1
+    }
+  ]
+}

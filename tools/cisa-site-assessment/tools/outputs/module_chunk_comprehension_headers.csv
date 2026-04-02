@@ -1,0 +1,1 @@
+id,module_code,source_registry_id,doc_id,chunk_id,locator,primary_domains,secondary_domains,explicit_topics,implied_risks,site_observable,supports_question_generation,generation_priority,life_safety_signal,ops_signal,cyber_awareness_signal,llm_model,llm_run_id,llm_confidence,created_at,updated_at,comprehension_error

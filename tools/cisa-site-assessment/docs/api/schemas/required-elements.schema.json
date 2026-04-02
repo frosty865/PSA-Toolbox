@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://psa-tool.com/schemas/required-elements.json",
+  "title": "Required Elements",
+  "description": "Schema for GET /api/assessments/[assessmentId]/required_elements response",
+  "type": "object",
+  "required": ["required_elements"],
+  "properties": {
+    "required_elements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "element_id",
+          "element_code",
+          "layer",
+          "title",
+          "question_text",
+          "discipline_id",
+          "discipline_name",
+          "discipline_subtype_id",
+          "discipline_subtype_name",
+          "sector_id",
+          "subsector_id",
+          "order_index"
+        ],
+        "properties": {
+          "element_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "element_code": {
+            "type": "string",
+            "minLength": 1
+          },
+          "layer": {
+            "type": "string",
+            "enum": ["baseline", "sector", "subsector"]
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "question_text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "discipline_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "discipline_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "discipline_subtype_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "discipline_subtype_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sector_id": {
+            "type": ["string", "null"],
+            "format": "uuid"
+          },
+          "subsector_id": {
+            "type": ["string", "null"],
+            "format": "uuid"
+          },
+          "order_index": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

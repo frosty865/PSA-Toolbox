@@ -1,0 +1,12 @@
+# Seed URLs for EV Charging Station physical security research
+# One URL per line. Lines starting with # are ignored.
+# Used when --provider none (no API keys required)
+
+# Example URLs (replace with actual research sources):
+# https://www.fema.gov/sites/default/files/documents/fema_special-events-contingency-planning.pdf
+# https://www.dhs.gov/publication/special-events-security-planning-guide
+# https://www.nfpa.org/codes-and-standards/all-codes-and-standards/list-of-codes-and-standards/detail?code=101
+
+# Add your research source URLs here, one per line:
+# https://example.com/ev-charging-security-report.pdf
+# https://example.com/ev-infrastructure-safety-guidelines.html

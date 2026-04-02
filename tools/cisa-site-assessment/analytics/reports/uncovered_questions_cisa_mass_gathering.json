@@ -1,0 +1,263 @@
+{
+  "source_set": "CISA_MASS_GATHERING",
+  "scope_code": "SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES",
+  "expansion_version": "EXPANSION_QUESTIONS_V1",
+  "base": {
+    "total": 36,
+    "covered": 12,
+    "uncovered": 24,
+    "uncovered_list": [
+      {
+        "question_code": "Awareness",
+        "question_text": "1. Public Awareness Campaign"
+      },
+      {
+        "question_code": "FireAgency",
+        "question_text": "4. Fire Response Agency Visits"
+      },
+      {
+        "question_code": "FireComm",
+        "question_text": "5. Interoperable Communications with Fire Response"
+      },
+      {
+        "question_code": "MedicalAgency",
+        "question_text": "6. Emergency Medical Response Agency Visits"
+      },
+      {
+        "question_code": "MedicalComm",
+        "question_text": "7. Interoperable Communications with Emergency Medical Response"
+      },
+      {
+        "question_code": "FBIInfo",
+        "question_text": "8. FBI Information Exchange"
+      },
+      {
+        "question_code": "ISACInfo",
+        "question_text": "9. ISAC Information Exchange"
+      },
+      {
+        "question_code": "HSINInfo",
+        "question_text": "10. HSIN Portal Information Exchange"
+      },
+      {
+        "question_code": "InfraGard",
+        "question_text": "11. InfraGard Information Exchange"
+      },
+      {
+        "question_code": "FederalInfo",
+        "question_text": "12. Federal Agency Information Exchange"
+      },
+      {
+        "question_code": "StateLocalInfo",
+        "question_text": "13. State and Local Information Exchange"
+      },
+      {
+        "question_code": "NeighborInfo",
+        "question_text": "14. Neighboring Facility Information Exchange"
+      },
+      {
+        "question_code": "SecurityManager",
+        "question_text": "1. Security Manager"
+      },
+      {
+        "question_code": "EmployeeTraining",
+        "question_text": "5. Employee Security Training"
+      },
+      {
+        "question_code": "PlanTesting",
+        "question_text": "6. Security Plan Testing"
+      },
+      {
+        "question_code": "PerimeterFencing",
+        "question_text": "2. Perimeter Fencing and Barriers"
+      },
+      {
+        "question_code": "SecurityLighting",
+        "question_text": "4. Security Lighting"
+      },
+      {
+        "question_code": "BuildingEnvelope",
+        "question_text": "6. Building Envelope Security"
+      },
+      {
+        "question_code": "KeyControl",
+        "question_text": "7. Key Control Program"
+      },
+      {
+        "question_code": "VideoCoverage",
+        "question_text": "2. Video Surveillance Coverage"
+      },
+      {
+        "question_code": "VideoRecording",
+        "question_text": "4. Video Recording and Storage"
+      },
+      {
+        "question_code": "IntrusionDetection",
+        "question_text": "5. Intrusion Detection Systems (IDS)"
+      },
+      {
+        "question_code": "AlarmMonitoring",
+        "question_text": "6. Alarm System Monitoring"
+      },
+      {
+        "question_code": "SystemIntegration",
+        "question_text": "7. Security System Integration"
+      }
+    ]
+  },
+  "expansion": {
+    "total": 80,
+    "covered": 43,
+    "uncovered": 37,
+    "uncovered_list": [
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q001",
+        "question_text": "What are the aspects of a secure credentialing program?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q002",
+        "question_text": "What types of credentials exist?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q003",
+        "question_text": "unlocked? Should any locks be reassessed?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q007",
+        "question_text": "Consider how to report incidents: Do people call an internal operations center or 9-1-1?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q010",
+        "question_text": "(CCTV) technology in the event of an armed or hostage-taking incident?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q030",
+        "question_text": "Kroman, David. “How often do cars crash into buildings in Seattle? Way more than you think.” Seattle Times. February 12, 2023."
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q031",
+        "question_text": "Does the tool collect my information?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q033",
+        "question_text": "■ What angles of attack could a vehicle use to harm my infrastructure?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q034",
+        "question_text": "■ Are there any natural vehicle barriers already in place?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q035",
+        "question_text": "■ Are there any delivery vehicle access points?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q038",
+        "question_text": "■ Is there an entry control point for vehicles? If so, how far from infrastructure is it located?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q039",
+        "question_text": "■ What is the maximum speed a vehicle could attain going over the land?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q040",
+        "question_text": "■ What types of vehicles could traverse the land?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q041",
+        "question_text": "■ Is my land, the adjacent land, or the surrounding land traversable by vehicles?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q042",
+        "question_text": "■ Are there any traffic-calming areas?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q047",
+        "question_text": "Is this a place where people gather?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q052",
+        "question_text": "How is command structure established?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q053",
+        "question_text": "What type of command structure has been established?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q056",
+        "question_text": "Will event planners conduct or receive a threat assessment prior to the event?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q057",
+        "question_text": "Has the policy been coordinated with first responders?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q058",
+        "question_text": "Does a protocol for assisting a lost child/lost person exist?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q059",
+        "question_text": "If yes, does a policy for addressing violations exist?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q060",
+        "question_text": "Does a policy regarding unmanned aerial systems exist?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q063",
+        "question_text": "Are the plans trained or exercised?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q065",
+        "question_text": "Does a process exist to inspect the venue for suspicious items prior to the event?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q066",
+        "question_text": "Is this a recurring event?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q068",
+        "question_text": "Are off-duty officers permitted to retain firearms?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q069",
+        "question_text": "How is the perimeter of the event defined?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q070",
+        "question_text": "Do security planners use multiple layers of protection to enhance perimeter security at the event?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q072",
+        "question_text": "Are layers of entry control established?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q073",
+        "question_text": "slated to occur inside a building, has the building been designed to host this type of event safely?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q074",
+        "question_text": "located nearby? Will participants arrive early to tailgate or celebrate afterwards?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q075",
+        "question_text": "What is the expected crowd density?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q076",
+        "question_text": "Who will be attending the event?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q077",
+        "question_text": "Will alcohol consumption be permitted?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q078",
+        "question_text": "Can patrons bring alcohol into the event?"
+      },
+      {
+        "question_code": "EXP_SUBSECTOR_MASS_GATHERING_PUBLIC_VENUES_Q079",
+        "question_text": "Has the alcohol policy been coordinated with first responders?"
+      }
+    ]
+  }
+}

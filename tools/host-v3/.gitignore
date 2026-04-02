@@ -1,4 +1,0 @@
-# Product-specific build artifacts / local tooling
-dist/
-node_modules/
-*.local

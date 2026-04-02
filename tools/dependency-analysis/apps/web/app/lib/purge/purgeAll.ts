@@ -1,5 +1,5 @@
 /**
- * Hard "no retention" purge: data/temp only + OS temp entries with prefix PSA-IDA-.
+ * Hard "no retention" purge: data/temp only + OS temp entries with prefix CISA-ADA-.
  * Call on server start, after every export, and on import failure.
  */
 import path from 'path';
@@ -7,7 +7,7 @@ import fs from 'fs/promises';
 import os from 'os';
 import { getRepoRoot } from '@/app/lib/template/path';
 
-const PREFIX_OS_TEMP = 'PSA-IDA-';
+const PREFIX_OS_TEMP = 'CISA-ADA-';
 
 export { getRepoRoot };
 
@@ -31,7 +31,7 @@ async function purgeDataTemp(repoRoot: string): Promise<void> {
 }
 
 /**
- * Delete any file or directory under OS temp whose name starts with PSA-IDA-.
+ * Delete any file or directory under OS temp whose name starts with CISA-ADA-.
  */
 async function purgeOsTempPrefix(): Promise<void> {
   const tmpDir = os.tmpdir();
@@ -48,7 +48,7 @@ async function purgeOsTempPrefix(): Promise<void> {
 }
 
 /**
- * Run full purge: data/temp + OS temp PSA-IDA-*.
+ * Run full purge: data/temp + OS temp CISA-ADA-*.
  * Pass repoRoot when available; otherwise uses getRepoRoot().
  * On Vercel, skip repo data/temp (read-only filesystem).
  */

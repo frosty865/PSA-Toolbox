@@ -1,0 +1,4861 @@
+{
+  "bindings": [
+    {
+      "ofc_key": "IST_OFC_000006",
+      "citations": [
+        {
+          "document_key": "EXTDOC_70925E58",
+          "url": "http://transition.fcc.gov/pshs/docs/clearinghouse/case-studies/ECS-vulnerability-assessment-report.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000001",
+      "citations": [
+        {
+          "document_key": "EXTDOC_18E0EA8A",
+          "url": "http://www.fema.gov/media-library-data/20130726-1627-20490-8875/how2017_how2029_protect_windows_doors_4_11.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000003",
+      "citations": [
+        {
+          "document_key": "EXTDOC_01BCA275",
+          "url": "http://www.fema.gov/media-library-data/20130726-1557-20490-1542/fema543_complete.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000004",
+      "citations": [
+        {
+          "document_key": "EXTDOC_26424D37",
+          "url": "http://www.fema.gov/media-library-data/9a50c534fc5895799321dcdd4b6083e7/P-936_8-20-13_508r.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000005",
+      "citations": [
+        {
+          "document_key": "EXTDOC_26424D37",
+          "url": "http://www.fema.gov/media-library-data/9a50c534fc5895799321dcdd4b6083e7/P-936_8-20-13_508r.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000006",
+      "citations": [
+        {
+          "document_key": "EXTDOC_01BCA275",
+          "url": "http://www.fema.gov/media-library-data/20130726-1557-20490-1542/fema543_complete.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000007",
+      "citations": [
+        {
+          "document_key": "EXTDOC_818D9013",
+          "url": "http://www.fema.gov/media-library-data/20130726-1627-20490-0643/how2022_generator_04_11_r1.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000008",
+      "citations": [
+        {
+          "document_key": "EXTDOC_818D9013",
+          "url": "http://www.fema.gov/media-library-data/20130726-1627-20490-0643/how2022_generator_04_11_r1.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000010",
+      "citations": [
+        {
+          "document_key": "EXTDOC_1CE155AF",
+          "url": "http://www.cumminspower.com/www/literature/technicalpapers/PT-7006-Standby-Katrina-en.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_A4D8859E",
+          "url": "http://www1.eere.energy.gov/manufacturing/distributedenergy/pdfs/chp_critical_facilities.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000016",
+      "citations": [
+        {
+          "document_key": "EXTDOC_AF0D3B74",
+          "url": "http://www.fema.gov/media-library-data/20130726-1627-20490-3107/how2020_trees_missiles_4_11.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000019",
+      "citations": [
+        {
+          "document_key": "EXTDOC_18E0EA8A",
+          "url": "http://www.fema.gov/media-library-data/20130726-1627-20490-8875/how2017_how2029_protect_windows_doors_4_11.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000020",
+      "citations": [
+        {
+          "document_key": "EXTDOC_26424D37",
+          "url": "http://www.fema.gov/media-library-data/9a50c534fc5895799321dcdd4b6083e7/P-936_8-20-13_508r.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000021",
+      "citations": [
+        {
+          "document_key": "EXTDOC_26424D37",
+          "url": "http://www.fema.gov/media-library-data/9a50c534fc5895799321dcdd4b6083e7/P-936_8-20-13_508r.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000022",
+      "citations": [
+        {
+          "document_key": "EXTDOC_818D9013",
+          "url": "http://www.fema.gov/media-library-data/20130726-1627-20490-0643/how2022_generator_04_11_r1.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000027",
+      "citations": [
+        {
+          "document_key": "EXTDOC_E607EE7A",
+          "url": "http://www.fema.gov/media-library-data/20130726-1627-20490-0271/how2012_brace_cripple_walls.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000028",
+      "citations": [
+        {
+          "document_key": "EXTDOC_0543379B",
+          "url": "http://www.fema.gov/media-library-data/20130726-1627-20490-5339/how2013_sill_plates.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000029",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D8503ACA",
+          "url": "http://www.fema.gov/media-library-data/20130726-1627-20490-7131/how2014_flex_connections.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000030",
+      "citations": [
+        {
+          "document_key": "EXTDOC_EF33F0D3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1627-20490-9548/how2023_anchor_equip.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000036",
+      "citations": [
+        {
+          "document_key": "EXTDOC_BB82A0C8",
+          "url": "http://www.fema.gov/media-library-data/20130726-1621-20490-0014/earthquakesfactsheet_final.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000037",
+      "citations": [
+        {
+          "document_key": "EXTDOC_5DCEE3FE",
+          "url": "http://www.fema.gov/media-library-data/20130726-1454-20490-8914/fema_p_320.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_32C70CC4",
+          "url": "http://www.fema.gov/media-library-data/20130726-1508-20490-8283/fema_p_361.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000038",
+      "citations": [
+        {
+          "document_key": "EXTDOC_818D9013",
+          "url": "http://www.fema.gov/media-library-data/20130726-1627-20490-0643/how2022_generator_04_11_r1.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000044",
+      "citations": [
+        {
+          "document_key": "EXTDOC_462905C3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1652-20490-4085/fema_p_737.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000046",
+      "citations": [
+        {
+          "document_key": "EXTDOC_A2741364",
+          "url": "http://www.fema.gov/media-library-data/20130726-1715-25045-2934/fema_p_754.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000047",
+      "citations": [
+        {
+          "document_key": "EXTDOC_A2741364",
+          "url": "http://www.fema.gov/media-library-data/20130726-1715-25045-2934/fema_p_754.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000048",
+      "citations": [
+        {
+          "document_key": "EXTDOC_B263C3B5",
+          "url": "http://texasforestservice.tamu.edu/uploadedFiles/FRP/Predictive_Services/Prepare%20Your%20Home%20for%20Wildfire%20-%20Southwest%20Edition.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000050",
+      "citations": [
+        {
+          "document_key": "EXTDOC_B263C3B5",
+          "url": "http://texasforestservice.tamu.edu/uploadedFiles/FRP/Predictive_Services/Prepare%20Your%20Home%20for%20Wildfire%20-%20Southwest%20Edition.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000053",
+      "citations": [
+        {
+          "document_key": "EXTDOC_815C55ED",
+          "url": "http://www.fema.gov/media-library-data/1395779347101-00feb0d0db4bfdddd331a8026c09cbe8/20140318_PYP_WF_WP_508.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_815C55ED",
+          "url": "http://www.fema.gov/media-library-data/1395779347101-00feb0d0db4bfdddd331a8026c09cbe8/20140318_PYP_WF_WP_508.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000054",
+      "citations": [
+        {
+          "document_key": "EXTDOC_656C18C7",
+          "url": "http://www.usfa.fema.gov/downloads/pdf/publications/fa_287.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000059",
+      "citations": [
+        {
+          "document_key": "EXTDOC_656C18C7",
+          "url": "http://www.usfa.fema.gov/downloads/pdf/publications/fa_287.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000061",
+      "citations": [
+        {
+          "document_key": "EXTDOC_656C18C7",
+          "url": "http://www.usfa.fema.gov/downloads/pdf/publications/fa_287.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000062",
+      "citations": [
+        {
+          "document_key": "EXTDOC_656C18C7",
+          "url": "http://www.usfa.fema.gov/downloads/pdf/publications/fa_287.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000063",
+      "citations": [
+        {
+          "document_key": "EXTDOC_656C18C7",
+          "url": "http://www.usfa.fema.gov/downloads/pdf/publications/fa_287.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000075",
+      "citations": [
+        {
+          "document_key": "EXTDOC_B6BFD101",
+          "url": "http://www.fema.gov/media-library-data/1392984631969-ac57339deb6ee839a52b16b01eeee53e/FEMA_Snow_Load_508.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000076",
+      "citations": [
+        {
+          "document_key": "EXTDOC_BBE96903",
+          "url": "http://www.fema.gov/media-library-data/7d8c55d1c4f815edf3d7e7d1c120383f/FEMA957_Snowload_508.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000077",
+      "citations": [
+        {
+          "document_key": "EXTDOC_BBE96903",
+          "url": "http://www.fema.gov/media-library-data/7d8c55d1c4f815edf3d7e7d1c120383f/FEMA957_Snowload_508.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000078",
+      "citations": [
+        {
+          "document_key": "EXTDOC_C40B7B33",
+          "url": "http://www.fema.gov/media-library-data/20130726-1904-25045-0186/fema_mitigation_ideas_final508.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000079",
+      "citations": [
+        {
+          "document_key": "EXTDOC_104B9746",
+          "url": "http://www.fema.gov/media-library-data/20130726-1605-20490-6583/fema549_apndx_e_ra7.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000080",
+      "citations": [
+        {
+          "document_key": "EXTDOC_C40B7B33",
+          "url": "http://www.fema.gov/media-library-data/20130726-1904-25045-0186/fema_mitigation_ideas_final508.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000046",
+      "citations": [
+        {
+          "document_key": "EXTDOC_F57C0AFD",
+          "url": "http://www.ndsu.edu/fileadmin/emgt/ASIS_SPC.1-2009_Item_No._1842.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000001",
+      "citations": [
+        {
+          "document_key": "EXTDOC_E2BBF3E9",
+          "url": "http://www.fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000010",
+      "citations": [
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000013",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000146",
+      "citations": [
+        {
+          "document_key": "EXTDOC_C4405B4D",
+          "url": "http://www.ready.gov/sites/default/files/documents/files/building_security_in_digital_economy.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000153",
+      "citations": [
+        {
+          "document_key": "EXTDOC_C4405B4D",
+          "url": "http://www.ready.gov/sites/default/files/documents/files/building_security_in_digital_economy.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000156",
+      "citations": [
+        {
+          "document_key": "EXTDOC_C4405B4D",
+          "url": "http://www.ready.gov/sites/default/files/documents/files/building_security_in_digital_economy.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000005",
+      "citations": [
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000011",
+      "citations": [
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000020",
+      "citations": [
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000027",
+      "citations": [
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000028",
+      "citations": [
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000033",
+      "citations": [
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000034",
+      "citations": [
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000035",
+      "citations": [
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000040",
+      "citations": [
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000055",
+      "citations": [
+        {
+          "document_key": "EXTDOC_F57C0AFD",
+          "url": "http://www.ndsu.edu/fileadmin/emgt/ASIS_SPC.1-2009_Item_No._1842.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000059",
+      "citations": [
+        {
+          "document_key": "EXTDOC_F57C0AFD",
+          "url": "http://www.ndsu.edu/fileadmin/emgt/ASIS_SPC.1-2009_Item_No._1842.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000065",
+      "citations": [
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000082",
+      "citations": [
+        {
+          "document_key": "EXTDOC_F57C0AFD",
+          "url": "http://www.ndsu.edu/fileadmin/emgt/ASIS_SPC.1-2009_Item_No._1842.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000083",
+      "citations": [
+        {
+          "document_key": "EXTDOC_F57C0AFD",
+          "url": "http://www.ndsu.edu/fileadmin/emgt/ASIS_SPC.1-2009_Item_No._1842.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000084",
+      "citations": [
+        {
+          "document_key": "EXTDOC_F57C0AFD",
+          "url": "http://www.ndsu.edu/fileadmin/emgt/ASIS_SPC.1-2009_Item_No._1842.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000085",
+      "citations": [
+        {
+          "document_key": "EXTDOC_F57C0AFD",
+          "url": "http://www.ndsu.edu/fileadmin/emgt/ASIS_SPC.1-2009_Item_No._1842.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000089",
+      "citations": [
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000090",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000091",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000092",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000093",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000096",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000101",
+      "citations": [
+        {
+          "document_key": "EXTDOC_F57C0AFD",
+          "url": "http://www.ndsu.edu/fileadmin/emgt/ASIS_SPC.1-2009_Item_No._1842.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000107",
+      "citations": [
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000108",
+      "citations": [
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000109",
+      "citations": [
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000110",
+      "citations": [
+        {
+          "document_key": "EXTDOC_F57C0AFD",
+          "url": "http://www.ndsu.edu/fileadmin/emgt/ASIS_SPC.1-2009_Item_No._1842.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000162",
+      "citations": [
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000168",
+      "citations": [
+        {
+          "document_key": "EXTDOC_F57C0AFD",
+          "url": "http://www.ndsu.edu/fileadmin/emgt/ASIS_SPC.1-2009_Item_No._1842.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000169",
+      "citations": [
+        {
+          "document_key": "EXTDOC_F57C0AFD",
+          "url": "http://www.ndsu.edu/fileadmin/emgt/ASIS_SPC.1-2009_Item_No._1842.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000170",
+      "citations": [
+        {
+          "document_key": "EXTDOC_F57C0AFD",
+          "url": "http://www.ndsu.edu/fileadmin/emgt/ASIS_SPC.1-2009_Item_No._1842.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000172",
+      "citations": [
+        {
+          "document_key": "EXTDOC_F57C0AFD",
+          "url": "http://www.ndsu.edu/fileadmin/emgt/ASIS_SPC.1-2009_Item_No._1842.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000173",
+      "citations": [
+        {
+          "document_key": "EXTDOC_F57C0AFD",
+          "url": "http://www.ndsu.edu/fileadmin/emgt/ASIS_SPC.1-2009_Item_No._1842.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000177",
+      "citations": [
+        {
+          "document_key": "EXTDOC_F57C0AFD",
+          "url": "http://www.ndsu.edu/fileadmin/emgt/ASIS_SPC.1-2009_Item_No._1842.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000179",
+      "citations": [
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000180",
+      "citations": [
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000182",
+      "citations": [
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000183",
+      "citations": [
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000185",
+      "citations": [
+        {
+          "document_key": "EXTDOC_F57C0AFD",
+          "url": "http://www.ndsu.edu/fileadmin/emgt/ASIS_SPC.1-2009_Item_No._1842.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000186",
+      "citations": [
+        {
+          "document_key": "EXTDOC_F57C0AFD",
+          "url": "http://www.ndsu.edu/fileadmin/emgt/ASIS_SPC.1-2009_Item_No._1842.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000187",
+      "citations": [
+        {
+          "document_key": "EXTDOC_F57C0AFD",
+          "url": "http://www.ndsu.edu/fileadmin/emgt/ASIS_SPC.1-2009_Item_No._1842.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000188",
+      "citations": [
+        {
+          "document_key": "EXTDOC_F57C0AFD",
+          "url": "http://www.ndsu.edu/fileadmin/emgt/ASIS_SPC.1-2009_Item_No._1842.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000189",
+      "citations": [
+        {
+          "document_key": "EXTDOC_F57C0AFD",
+          "url": "http://www.ndsu.edu/fileadmin/emgt/ASIS_SPC.1-2009_Item_No._1842.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_09AE5ABC",
+          "url": "http://www.nfpa.org/assets/files/AboutTheCodes/1600/1600-13-PDF.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000001",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000002",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000004",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000005",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000008",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000010",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000011",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000012",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000013",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000014",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000015",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000016",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000017",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000018",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000020",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000023",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000024",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000025",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000040",
+      "citations": [
+        {
+          "document_key": "EXTDOC_A30E5983",
+          "url": "http://www.dhs.gov/xlibrary/assets/active_shooter_booklet.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000041",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000045",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000046",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000047",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000005",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D76CEB04",
+          "url": "http://www.wbdg.org/ccb/DOD/UFC/ufc_4_022_03.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000006",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D76CEB04",
+          "url": "http://www.wbdg.org/ccb/DOD/UFC/ufc_4_022_03.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000007",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000008",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D76CEB04",
+          "url": "http://www.wbdg.org/ccb/DOD/UFC/ufc_4_022_03.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000009",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000011",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000011",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000008",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000020",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D76CEB04",
+          "url": "http://www.wbdg.org/ccb/DOD/UFC/ufc_4_022_03.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000021",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D76CEB04",
+          "url": "http://www.wbdg.org/ccb/DOD/UFC/ufc_4_022_03.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000022",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D76CEB04",
+          "url": "http://www.wbdg.org/ccb/DOD/UFC/ufc_4_022_03.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000023",
+      "citations": [
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000024",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D76CEB04",
+          "url": "http://www.wbdg.org/ccb/DOD/UFC/ufc_4_022_03.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000025",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D76CEB04",
+          "url": "http://www.wbdg.org/ccb/DOD/UFC/ufc_4_022_03.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000026",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D76CEB04",
+          "url": "http://www.wbdg.org/ccb/DOD/UFC/ufc_4_022_03.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000031",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D76CEB04",
+          "url": "http://www.wbdg.org/ccb/DOD/UFC/ufc_4_022_03.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000032",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D76CEB04",
+          "url": "http://www.wbdg.org/ccb/DOD/UFC/ufc_4_022_03.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000033",
+      "citations": [
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000034",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D76CEB04",
+          "url": "http://www.wbdg.org/ccb/DOD/UFC/ufc_4_022_03.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000035",
+      "citations": [
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000038",
+      "citations": [
+        {
+          "document_key": "EXTDOC_E2BBF3E9",
+          "url": "http://www.fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000040",
+      "citations": [
+        {
+          "document_key": "EXTDOC_E2BBF3E9",
+          "url": "http://www.fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000041",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000042",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000050",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D76CEB04",
+          "url": "http://www.wbdg.org/ccb/DOD/UFC/ufc_4_022_03.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000051",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000054",
+      "citations": [
+        {
+          "document_key": "EXTDOC_E7135B4B",
+          "url": "http://www.gao.gov/new.items/d09243.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000056",
+      "citations": [
+        {
+          "document_key": "EXTDOC_E7135B4B",
+          "url": "http://www.gao.gov/new.items/d09243.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000044",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000045",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000001",
+      "citations": [
+        {
+          "document_key": "EXTDOC_91B549A8",
+          "url": "http://www.nyc.gov/html/nypd/downloads/pdf/counterterrorism/nypd_engineeringsecurity_low_res.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000002",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000003",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000004",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000005",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000006",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_2F422277",
+          "url": "https://www.llis.dhs.gov/sites/default/files/DHS-BombThreatChart-6-5-09.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000007",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000008",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000009",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000010",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000011",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000012",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000013",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000014",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000015",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000016",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000017",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000018",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000019",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000020",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000021",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000022",
+      "citations": [
+        {
+          "document_key": "EXTDOC_E2BBF3E9",
+          "url": "http://www.fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000025",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000027",
+      "citations": [
+        {
+          "document_key": "EXTDOC_E2BBF3E9",
+          "url": "http://www.fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000028",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000029",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000030",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000031",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000032",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000033",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000034",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000035",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000001",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000002",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000003",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000004",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000005",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000006",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000007",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000008",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000009",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000010",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000011",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000012",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_A78FF3F0",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips- 06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000013",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000014",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000015",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000016",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000017",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000018",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000019",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000020",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000021",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000012",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_A78FF3F0",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips- 06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000012",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_A78FF3F0",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips- 06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_A78FF3F0",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips- 06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000001",
+      "citations": [
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000002",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000003",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000004",
+      "citations": [
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000001",
+      "citations": [
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000002",
+      "citations": [
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000007",
+      "citations": [
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000010",
+      "citations": [
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000011",
+      "citations": [
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000012",
+      "citations": [
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000013",
+      "citations": [
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000014",
+      "citations": [
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000016",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000016",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000016",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000017",
+      "citations": [
+        {
+          "document_key": "EXTDOC_91B549A8",
+          "url": "http://www.nyc.gov/html/nypd/downloads/pdf/counterterrorism/nypd_engineeringsecurity_low_res.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_91B549A8",
+          "url": "http://www.nyc.gov/html/nypd/downloads/pdf/counterterrorism/nypd_engineeringsecurity_low_res.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000018",
+      "citations": [
+        {
+          "document_key": "EXTDOC_91B549A8",
+          "url": "http://www.nyc.gov/html/nypd/downloads/pdf/counterterrorism/nypd_engineeringsecurity_low_res.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_91B549A8",
+          "url": "http://www.nyc.gov/html/nypd/downloads/pdf/counterterrorism/nypd_engineeringsecurity_low_res.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000019",
+      "citations": [
+        {
+          "document_key": "EXTDOC_91B549A8",
+          "url": "http://www.nyc.gov/html/nypd/downloads/pdf/counterterrorism/nypd_engineeringsecurity_low_res.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_91B549A8",
+          "url": "http://www.nyc.gov/html/nypd/downloads/pdf/counterterrorism/nypd_engineeringsecurity_low_res.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000020",
+      "citations": [
+        {
+          "document_key": "EXTDOC_91B549A8",
+          "url": "http://www.nyc.gov/html/nypd/downloads/pdf/counterterrorism/nypd_engineeringsecurity_low_res.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_91B549A8",
+          "url": "http://www.nyc.gov/html/nypd/downloads/pdf/counterterrorism/nypd_engineeringsecurity_low_res.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000021",
+      "citations": [
+        {
+          "document_key": "EXTDOC_91B549A8",
+          "url": "http://www.nyc.gov/html/nypd/downloads/pdf/counterterrorism/nypd_engineeringsecurity_low_res.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_91B549A8",
+          "url": "http://www.nyc.gov/html/nypd/downloads/pdf/counterterrorism/nypd_engineeringsecurity_low_res.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000022",
+      "citations": [
+        {
+          "document_key": "EXTDOC_91B549A8",
+          "url": "http://www.nyc.gov/html/nypd/downloads/pdf/counterterrorism/nypd_engineeringsecurity_low_res.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000023",
+      "citations": [
+        {
+          "document_key": "EXTDOC_91B549A8",
+          "url": "http://www.nyc.gov/html/nypd/downloads/pdf/counterterrorism/nypd_engineeringsecurity_low_res.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000024",
+      "citations": [
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000025",
+      "citations": [
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000029",
+      "citations": [
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000001",
+      "citations": [
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000004",
+      "citations": [
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000014",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000017",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000018",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000019",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000020",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000021",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000024",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000001",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000003",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_739CD22C",
+          "url": "https://www.wbdg.org/ccb/ARMYCOE/FIELDMAN/fm31930.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000004",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000005",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000006",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000007",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000008",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000009",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000010",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000011",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000012",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_E2BBF3E9",
+          "url": "http://www.fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000013",
+      "citations": [
+        {
+          "document_key": "EXTDOC_E2BBF3E9",
+          "url": "http://www.fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000014",
+      "citations": [
+        {
+          "document_key": "EXTDOC_E2BBF3E9",
+          "url": "http://www.fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000015",
+      "citations": [
+        {
+          "document_key": "EXTDOC_E2BBF3E9",
+          "url": "http://www.fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000016",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000019",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000001",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000020",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000021",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_739CD22C",
+          "url": "https://www.wbdg.org/ccb/ARMYCOE/FIELDMAN/fm31930.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000022",
+      "citations": [
+        {
+          "document_key": "EXTDOC_3E72BFE7",
+          "url": "http://fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_E2BBF3E9",
+          "url": "http://www.fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000023",
+      "citations": [
+        {
+          "document_key": "EXTDOC_E2BBF3E9",
+          "url": "http://www.fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000024",
+      "citations": [
+        {
+          "document_key": "EXTDOC_E2BBF3E9",
+          "url": "http://www.fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000025",
+      "citations": [
+        {
+          "document_key": "EXTDOC_E2BBF3E9",
+          "url": "http://www.fas.org/irp/doddir/army/attp3-39-32.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000001",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000002",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000005",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000006",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000007",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000010",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000011",
+      "citations": [
+        {
+          "document_key": "EXTDOC_913DE12E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1455-20490-6222/fema426.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000015",
+      "citations": [
+        {
+          "document_key": "EXTDOC_90DBE17E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1524-20490-7395/fema452_01_05.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000016",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000017",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000018",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000020",
+      "citations": [
+        {
+          "document_key": "EXTDOC_818D9013",
+          "url": "http://www.fema.gov/media-library-data/20130726-1627-20490-0643/how2022_generator_04_11_r1.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000022",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000023",
+      "citations": [
+        {
+          "document_key": "EXTDOC_818D9013",
+          "url": "http://www.fema.gov/media-library-data/20130726-1627-20490-0643/how2022_generator_04_11_r1.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000024",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000003",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000005",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000008",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000013",
+      "citations": [
+        {
+          "document_key": "EXTDOC_90DBE17E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1524-20490-7395/fema452_01_05.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000012",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000013",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000014",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000001",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000002",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000004",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000012",
+      "citations": [
+        {
+          "document_key": "EXTDOC_90DBE17E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1524-20490-7395/fema452_01_05.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000013",
+      "citations": [
+        {
+          "document_key": "EXTDOC_90DBE17E",
+          "url": "http://www.fema.gov/media-library-data/20130726-1524-20490-7395/fema452_01_05.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000014",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000015",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000016",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000017",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000018",
+      "citations": [
+        {
+          "document_key": "EXTDOC_8A9E5550",
+          "url": "http://www.cdc.gov/healthywater/pdf/emergency/emergency-water-supply-planning-guide.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000003",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000004",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000005",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000008",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000009",
+      "citations": [
+        {
+          "document_key": "EXTDOC_926EE3F3",
+          "url": "http://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000011",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000012",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000013",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000001",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000002",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000003",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000004",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000006",
+      "citations": [
+        {
+          "document_key": "EXTDOC_39BED3CE",
+          "url": "http://www.dhs.gov/xlibrary/assets/st/st-bips-06.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000008",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000009",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D3E54D17",
+          "url": "http://www.fema.gov/pdf/about/divisions/npd/CPG_101_V2.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000001",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000002",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000003",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000005",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000006",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000007",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000008",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000010",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_B8349478",
+          "url": "http://csrc.nist.gov/publications/nistpubs/800-34-rev1/sp800-34-rev1_errata-Nov11-2010.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000011",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_B8349478",
+          "url": "http://csrc.nist.gov/publications/nistpubs/800-34-rev1/sp800-34-rev1_errata-Nov11-2010.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000012",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_B8349478",
+          "url": "http://csrc.nist.gov/publications/nistpubs/800-34-rev1/sp800-34-rev1_errata-Nov11-2010.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000013",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000014",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_B8349478",
+          "url": "http://csrc.nist.gov/publications/nistpubs/800-34-rev1/sp800-34-rev1_errata-Nov11-2010.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000015",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_B8349478",
+          "url": "http://csrc.nist.gov/publications/nistpubs/800-34-rev1/sp800-34-rev1_errata-Nov11-2010.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000016",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000017",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000018",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000019",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000021",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000022",
+      "citations": [
+        {
+          "document_key": "EXTDOC_6F4D5E02",
+          "url": "http://csrc.nist.gov/publications/nistir/7316/NISTIR-7316.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000023",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000024",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D6DFF915",
+          "url": "http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000025",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D6DFF915",
+          "url": "http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000026",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D6DFF915",
+          "url": "http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_D6DFF915",
+          "url": "http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000027",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000028",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000029",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000030",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000031",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000027",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000032",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000033",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000034",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000035",
+      "citations": [
+        {
+          "document_key": "EXTDOC_B6AB2589",
+          "url": "http://csrc.nist.gov/publications/nistpubs/800-41-Rev1/sp800-41-rev1.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000036",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000037",
+      "citations": [
+        {
+          "document_key": "EXTDOC_548B6300",
+          "url": "http://csrc.nist.gov/publications/nistpubs/800-46-rev1/sp800-46r1.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_548B6300",
+          "url": "http://csrc.nist.gov/publications/nistpubs/800-46-rev1/sp800-46r1.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000038",
+      "citations": [
+        {
+          "document_key": "EXTDOC_428BF0E8",
+          "url": "http://csrc.nist.gov/publications/nistpubs/800-153/sp800-153.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_428BF0E8",
+          "url": "http://csrc.nist.gov/publications/nistpubs/800-153/sp800-153.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000039",
+      "citations": [
+        {
+          "document_key": "EXTDOC_5329A6E4",
+          "url": "http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-40r3.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000040",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000041",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000042",
+      "citations": [
+        {
+          "document_key": "EXTDOC_DF5B2643",
+          "url": "http://csrc.nist.gov/publications/nistpubs/800-84/SP800-84.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000043",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_B8349478",
+          "url": "http://csrc.nist.gov/publications/nistpubs/800-34-rev1/sp800-34-rev1_errata-Nov11-2010.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000044",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000042",
+      "citations": [
+        {
+          "document_key": "EXTDOC_DF5B2643",
+          "url": "http://csrc.nist.gov/publications/nistpubs/800-84/SP800-84.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000045",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000047",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000048",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_D6DFF915",
+          "url": "http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000049",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D6DFF915",
+          "url": "http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000050",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_D6DFF915",
+          "url": "http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_B8349478",
+          "url": "http://csrc.nist.gov/publications/nistpubs/800-34-rev1/sp800-34-rev1_errata-Nov11-2010.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000051",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000052",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000053",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000054",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000055",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000056",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000057",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000058",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000059",
+      "citations": [
+        {
+          "document_key": "EXTDOC_D97C1328",
+          "url": "http://www.nist.gov/cyberframework/upload/cybersecurity-framework-021214.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000003",
+      "citations": [
+        {
+          "document_key": "EXTDOC_66E320D5",
+          "url": "http://www.protiviti.com/en-US/Documents/Resource-Guides/bcm_faq_booklet.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000004",
+      "citations": [
+        {
+          "document_key": "EXTDOC_66E320D5",
+          "url": "http://www.protiviti.com/en-US/Documents/Resource-Guides/bcm_faq_booklet.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000003",
+      "citations": [
+        {
+          "document_key": "EXTDOC_66E320D5",
+          "url": "http://www.protiviti.com/en-US/Documents/Resource-Guides/bcm_faq_booklet.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_02CD2D99",
+          "url": "www.protiviti.com/en-US/Documents/Resource-Guides/bcm_faq_booklet.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "ofc_key": "IST_OFC_000018",
+      "citations": [
+        {
+          "document_key": "EXTDOC_66E320D5",
+          "url": "http://www.protiviti.com/en-US/Documents/Resource-Guides/bcm_faq_booklet.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        },
+        {
+          "document_key": "EXTDOC_02CD2D99",
+          "url": "www.protiviti.com/en-US/Documents/Resource-Guides/bcm_faq_booklet.pdf",
+          "locator_type": "PDF",
+          "locator": "REPLACE_ME_Page_N",
+          "quote": null
+        }
+      ]
+    }
+  ]
+}
