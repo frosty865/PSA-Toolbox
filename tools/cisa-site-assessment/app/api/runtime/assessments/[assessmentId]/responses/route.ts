@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getRuntimePool } from "@/app/lib/db/runtime_client";
+import { columnExists, tableExists } from "@/app/lib/db/table_exists";
 
 export const runtime = "nodejs";
 export const dynamic = 'force-dynamic';
@@ -12,41 +13,77 @@ export async function GET(
     const { assessmentId } = await params;
     const pool = getRuntimePool();
 
-    // Hard requirement: assessment_responses table must exist (no legacy fallback)
-    // First try to get assessment_instance_id(s) for this assessment
-    const instanceResult = await pool.query(
-      `SELECT assessment_instance_id FROM public.assessments WHERE id::text = $1`,
-      [assessmentId]
-    );
-    
-    const instanceIds = instanceResult.rows.length > 0 && instanceResult.rows[0].assessment_instance_id
-      ? [instanceResult.rows[0].assessment_instance_id]
-      : [assessmentId]; // Fallback to assessmentId if no instance_id
-    
-    const idStrings = instanceIds.map(id => String(id));
-    
-    let rows;
+    const idStrings = [String(assessmentId)];
+
+    let rows: Record<string, unknown>[] = [];
     try {
-      const result = await pool.query(
-        `SELECT 
-            id,
-            question_canon_id,
-            question_template_id,
-            response as response_enum,
-            answer
-         FROM public.assessment_responses
-         WHERE assessment_instance_id::text = ANY($1::text[])`,
-        [idStrings]
-      );
-      rows = result.rows.map((r: Record<string, unknown>) => ({
-        id: r.id,
-        response_id: r.id, // Also include as response_id for compatibility
-        question_code: r.question_canon_id || r.question_template_id,
-        question_canon_id: r.question_canon_id,
-        question_template_id: r.question_template_id,
-        response: r.answer || r.response_enum,
-        response_enum: r.answer || r.response_enum,
-      }));
+      const questionResponsesExists = await tableExists(pool, 'public', 'assessment_question_responses');
+      if (questionResponsesExists) {
+        const hasResponseEnum = await columnExists(pool, 'public', 'assessment_question_responses', 'response_enum');
+        const hasResponse = await columnExists(pool, 'public', 'assessment_question_responses', 'response');
+        const responseValueColumn = hasResponseEnum ? 'response_enum' : (hasResponse ? 'response' : null);
+
+        if (!responseValueColumn) {
+          rows = [];
+        } else {
+          const result = await pool.query(
+            `SELECT
+                id,
+                question_code,
+                ${responseValueColumn}
+             FROM public.assessment_question_responses
+             WHERE assessment_id::text = ANY($1::text[])`,
+            [idStrings]
+          );
+          rows = result.rows.map((r: Record<string, unknown>) => ({
+            id: r.id,
+            response_id: r.id,
+            question_code: r.question_code,
+            question_canon_id: r.question_code,
+            question_template_id: r.question_code,
+            response: r.response_enum || r.response,
+            response_enum: r.response_enum || r.response,
+          }));
+        }
+      } else {
+        const hasQuestionCanonId = await columnExists(pool, 'public', 'assessment_responses', 'question_canon_id');
+        const hasQuestionTemplateId = await columnExists(pool, 'public', 'assessment_responses', 'question_template_id');
+        const hasQuestionCode = await columnExists(pool, 'public', 'assessment_responses', 'question_code');
+        const hasResponse = await columnExists(pool, 'public', 'assessment_responses', 'response');
+        const hasAnswer = await columnExists(pool, 'public', 'assessment_responses', 'answer');
+        const hasAssessmentId = await columnExists(pool, 'public', 'assessment_responses', 'assessment_id');
+        const hasAssessmentInstanceId = await columnExists(pool, 'public', 'assessment_responses', 'assessment_instance_id');
+        const assessmentFilterColumn = hasAssessmentId ? 'assessment_id' : (hasAssessmentInstanceId ? 'assessment_instance_id' : null);
+        const responseKeyColumns = [
+          hasQuestionCanonId ? 'question_canon_id' : null,
+          hasQuestionTemplateId ? 'question_template_id' : null,
+          hasQuestionCode ? 'question_code' : null,
+        ].filter((col): col is string => Boolean(col));
+        const responseValueColumn = hasResponse ? 'response' : (hasAnswer ? 'answer' : null);
+
+        if (!responseValueColumn || responseKeyColumns.length === 0 || !assessmentFilterColumn) {
+          rows = [];
+        } else {
+          const result = await pool.query(
+            `SELECT 
+                id,
+                ${responseKeyColumns.join(', ')},
+                ${responseValueColumn} as response_enum
+             FROM public.assessment_responses
+             WHERE ${assessmentFilterColumn}::text = ANY($1::text[])`,
+            [idStrings]
+          );
+          rows = result.rows.map((r: Record<string, unknown>) => ({
+            id: r.id,
+            response_id: r.id,
+            question_code: r.question_canon_id || r.question_template_id || r.question_code,
+            question_canon_id: r.question_canon_id || r.question_code,
+            question_template_id: r.question_template_id || r.question_code,
+            response: r.response_enum,
+            response_enum: r.response_enum,
+          }));
+        }
+      }
     } catch (err: unknown) {
       const e = err && typeof err === "object" && "code" in err ? (err as { code?: string }).code : undefined;
       if (e === "42P01") {
@@ -83,7 +120,7 @@ export async function PUT(
     const pool = getRuntimePool();
 
     const body = await req.json();
-    const items: Array<{ question_code: string; response_enum: "YES" | "NO" | "N_A"; detail?: unknown }> = body?.items ?? [];
+    const items: Array<{ question_code: string; response_enum: string; detail?: unknown }> = body?.items ?? [];
 
     if (!Array.isArray(items) || items.length === 0) {
       return NextResponse.json({ error: "No items provided" }, { status: 400 });

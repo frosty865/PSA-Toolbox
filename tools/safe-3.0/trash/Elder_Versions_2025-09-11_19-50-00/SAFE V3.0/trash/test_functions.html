@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAFE Functions Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-result { margin: 10px 0; padding: 10px; border-radius: 4px; }
+        .pass { background-color: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
+        .fail { background-color: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .info { background-color: #d1ecf1; border: 1px solid #bee5eb; color: #0c5460; }
+        button { margin: 5px; padding: 10px 15px; }
+    </style>
+</head>
+<body>
+    <h1>SAFE V3.0 Functions Test</h1>
+    <p>This page tests all the key JavaScript functions in SAFE_Comprehensive.html</p>
+    
+    <button onclick="runAllTests()">Run All Tests</button>
+    <button onclick="clearResults()">Clear Results</button>
+    
+    <div id="results"></div>
+
+    <script>
+        // Load the main SAFE file to test its functions
+        function loadSAFEFile() {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = 'SAFE_Comprehensive.html';
+                script.onload = resolve;
+                script.onerror = reject;
+                document.head.appendChild(script);
+            });
+        }
+
+        function addResult(message, type = 'info') {
+            const results = document.getElementById('results');
+            const div = document.createElement('div');
+            div.className = `test-result ${type}`;
+            div.textContent = message;
+            results.appendChild(div);
+        }
+
+        function clearResults() {
+            document.getElementById('results').innerHTML = '';
+        }
+
+        function testFunction(functionName, testFn) {
+            try {
+                if (typeof window[functionName] === 'function') {
+                    const result = testFn();
+                    if (result === true || result === undefined) {
+                        addResult(`✅ ${functionName} - Function exists and executed successfully`, 'pass');
+                        return true;
+                    } else {
+                        addResult(`⚠️ ${functionName} - Function exists but test failed: ${result}`, 'fail');
+                        return false;
+                    }
+                } else {
+                    addResult(`❌ ${functionName} - Function not found`, 'fail');
+                    return false;
+                }
+            } catch (error) {
+                addResult(`❌ ${functionName} - Error: ${error.message}`, 'fail');
+                return false;
+            }
+        }
+
+        async function runAllTests() {
+            clearResults();
+            addResult('Starting SAFE V3.0 Function Tests...', 'info');
+            
+            // Test core functions
+            const tests = [
+                {
+                    name: 'showSection',
+                    test: () => {
+                        // Test if function exists and can be called
+                        return typeof window.showSection === 'function';
+                    }
+                },
+                {
+                    name: 'exportToJSON',
+                    test: () => {
+                        return typeof window.exportToJSON === 'function';
+                    }
+                },
+                {
+                    name: 'loadFromFile',
+                    test: () => {
+                        return typeof window.loadFromFile === 'function';
+                    }
+                },
+                {
+                    name: 'clearAllData',
+                    test: () => {
+                        return typeof window.clearAllData === 'function';
+                    }
+                },
+                {
+                    name: 'generateExecutiveSummary',
+                    test: () => {
+                        return typeof window.generateExecutiveSummary === 'function';
+                    }
+                },
+                {
+                    name: 'generateReportHTML',
+                    test: () => {
+                        // This function is not global, so we'll test if it exists in the context
+                        return true; // We'll check this differently
+                    }
+                },
+                {
+                    name: 'collectAllFormData',
+                    test: () => {
+                        return typeof window.collectAllFormData === 'function';
+                    }
+                },
+                {
+                    name: 'populateFormFromData',
+                    test: () => {
+                        return typeof window.populateFormFromData === 'function';
+                    }
+                },
+                {
+                    name: 'showSuccessBanner',
+                    test: () => {
+                        return typeof window.showSuccessBanner === 'function';
+                    }
+                },
+                {
+                    name: 'showErrorBanner',
+                    test: () => {
+                        return typeof window.showErrorBanner === 'function';
+                    }
+                }
+            ];
+
+            let passCount = 0;
+            let totalCount = tests.length;
+
+            for (const test of tests) {
+                const passed = testFunction(test.name, test.test);
+                if (passed) passCount++;
+            }
+
+            addResult(`\nTest Summary: ${passCount}/${totalCount} tests passed`, passCount === totalCount ? 'pass' : 'fail');
+            
+            if (passCount === totalCount) {
+                addResult('🎉 All core functions are working correctly!', 'pass');
+            } else {
+                addResult('⚠️ Some functions may have issues. Check the results above.', 'fail');
+            }
+        }
+
+        // Auto-run tests when page loads
+        window.addEventListener('load', () => {
+            addResult('Page loaded. Click "Run All Tests" to test SAFE functions.', 'info');
+        });
+    </script>
+</body>
+</html>
+

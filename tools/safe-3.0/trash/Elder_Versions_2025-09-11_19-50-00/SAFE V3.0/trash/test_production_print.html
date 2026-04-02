@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAFE Production Print System Test</title>
+    
+    <!-- Production Print System -->
+    <link rel="stylesheet" href="SAFE_A4_Production_Print.css">
+    <script src="SAFE_Production_Print_System.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+        
+        .test-section h2 {
+            color: #112e51;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #0071bc;
+            padding-bottom: 8px;
+        }
+        
+        .btn {
+            background: #0071bc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 14px;
+        }
+        
+        .btn:hover {
+            background: #005a9c;
+        }
+        
+        .btn-success { background: #28a745; }
+        .btn-warning { background: #ffc107; color: #000; }
+        .btn-danger { background: #dc3545; }
+        
+        .test-content {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🖨️ SAFE Production Print System Test</h1>
+        
+        <div class="test-section">
+            <h2>📋 Test Content</h2>
+            <p>This is a test of the SAFE Production Print System. The system should:</p>
+            <ul>
+                <li>Generate A4-formatted reports with proper margins (20mm)</li>
+                <li>Apply intelligent page breaks</li>
+                <li>Preserve CISA color scheme</li>
+                <li>Include professional headers and footers</li>
+            </ul>
+        </div>
+        
+        <div class="test-section">
+            <h2>🎯 Executive Summary Test</h2>
+            <div class="test-content">
+                <h3>Overall Security Score: 85%</h3>
+                <p>This facility demonstrates a good security posture with several areas for enhancement.</p>
+                <div style="background: #e8f5e8; padding: 15px; border-radius: 6px; border-left: 4px solid #28a745;">
+                    <strong>Key Finding:</strong> The facility has implemented 85% of recommended security standards.
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>📊 Key Findings Grid Test</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <div style="background: #e8f5e8; padding: 15px; border-radius: 6px; text-align: center; border-left: 4px solid #28a745;">
+                    <h4>Total Standards</h4>
+                    <div style="font-size: 24pt; font-weight: bold; color: #28a745;">135</div>
+                </div>
+                <div style="background: #fff8e1; padding: 15px; border-radius: 6px; text-align: center; border-left: 4px solid #ffc107;">
+                    <h4>Enhancements</h4>
+                    <div style="font-size: 24pt; font-weight: bold; color: #ffc107;">12</div>
+                </div>
+                <div style="background: #e1f3fd; padding: 15px; border-radius: 6px; text-align: center; border-left: 4px solid #0071bc;">
+                    <h4>Standards Met</h4>
+                    <div style="font-size: 24pt; font-weight: bold; color: #0071bc;">123</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>📈 Progress Bar Test</h2>
+            <div style="margin: 10px 0;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <span>Physical Security</span>
+                    <span>85%</span>
+                </div>
+                <div style="background: #e5e7eb; height: 12px; border-radius: 6px; overflow: hidden;">
+                    <div style="background: #28a745; height: 100%; width: 85%; border-radius: 6px;"></div>
+                </div>
+            </div>
+            <div style="margin: 10px 0;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <span>Access Control</span>
+                    <span>72%</span>
+                </div>
+                <div style="background: #e5e7eb; height: 12px; border-radius: 6px; overflow: hidden;">
+                    <div style="background: #ffc107; height: 100%; width: 72%; border-radius: 6px;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>📋 Production Export Buttons</h2>
+            <p>Test the production print system with these buttons:</p>
+            
+            <h3>Final Report Tests</h3>
+            <button class="btn" onclick="testProductionPDF()">📄 Test A4 PDF Export</button>
+            <button class="btn btn-success" onclick="testProductionHTML()">🌐 Test HTML Export</button>
+            
+            <h3>Executive Summary Tests</h3>
+            <button class="btn" onclick="testExecutiveSummaryPDF()">📄 Test Executive Summary PDF</button>
+            <button class="btn btn-success" onclick="testExecutiveSummaryHTML()">🌐 Test Executive Summary HTML</button>
+            
+            <h3>Legacy Tests</h3>
+            <button class="btn btn-danger" onclick="testLegacyPrint()">🖨️ Test Legacy Print</button>
+        </div>
+        
+        <div class="test-section">
+            <h2>ℹ️ System Status</h2>
+            <div id="systemStatus" class="test-content">
+                <p>Checking system status...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden final-report section for production print system -->
+    <div id="final-report" style="display: none;">
+        <div class="test-container">
+            <h1>🖨️ SAFE Production Print System Test</h1>
+            
+            <div class="test-section">
+                <h2>📋 Test Content</h2>
+                <p>This is a test of the SAFE Production Print System. The system should:</p>
+                <ul>
+                    <li>Generate A4-formatted reports with proper margins (20mm)</li>
+                    <li>Apply intelligent page breaks</li>
+                    <li>Preserve CISA color scheme</li>
+                    <li>Include professional headers and footers</li>
+                </ul>
+            </div>
+            
+            <div class="test-section">
+                <h2>🎯 Executive Summary Test</h2>
+                <div class="test-content">
+                    <h3>Overall Security Score: 85%</h3>
+                    <p>This facility demonstrates a good security posture with several areas for enhancement.</p>
+                    <div style="background: #e8f5e8; padding: 15px; border-radius: 6px; border-left: 4px solid #28a745;">
+                        <strong>Key Finding:</strong> The facility has implemented 85% of recommended security standards.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="test-section">
+                <h2>📊 Key Findings Grid Test</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                    <div style="background: #e8f5e8; padding: 15px; border-radius: 6px; text-align: center; border-left: 4px solid #28a745;">
+                        <h4>Total Standards</h4>
+                        <div style="font-size: 24pt; font-weight: bold; color: #28a745;">135</div>
+                    </div>
+                    <div style="background: #fff8e1; padding: 15px; border-radius: 6px; text-align: center; border-left: 4px solid #ffc107;">
+                        <h4>Enhancements</h4>
+                        <div style="font-size: 24pt; font-weight: bold; color: #ffc107;">12</div>
+                    </div>
+                    <div style="background: #e1f3fd; padding: 15px; border-radius: 6px; text-align: center; border-left: 4px solid #0071bc;">
+                        <h4>Standards Met</h4>
+                        <div style="font-size: 24pt; font-weight: bold; color: #0071bc;">123</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="test-section">
+                <h2>📈 Progress Bar Test</h2>
+                <div style="margin: 10px 0;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                        <span>Physical Security</span>
+                        <span>85%</span>
+                    </div>
+                    <div style="background: #e5e7eb; height: 12px; border-radius: 6px; overflow: hidden;">
+                        <div style="background: #28a745; height: 100%; width: 85%; border-radius: 6px;"></div>
+                    </div>
+                </div>
+                <div style="margin: 10px 0;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                        <span>Access Control</span>
+                        <span>72%</span>
+                    </div>
+                    <div style="background: #e5e7eb; height: 12px; border-radius: 6px; overflow: hidden;">
+                        <div style="background: #ffc107; height: 100%; width: 72%; border-radius: 6px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Test functions
+        function testProductionPDF() {
+            if (typeof window.SAFEProductionPrint !== 'undefined') {
+                const facilityInfo = {
+                    facilityName: 'Test Facility',
+                    facilityAddress: '123 Test Street, Test City, TC 12345'
+                };
+                const finalReportSection = document.getElementById('final-report');
+                window.SAFEProductionPrint.exportToPDF(finalReportSection, facilityInfo);
+                alert('A4 PDF export initiated! Check your browser for the print dialog.');
+            } else {
+                alert('Production Print System not loaded!');
+            }
+        }
+        
+        function testProductionHTML() {
+            if (typeof window.SAFEProductionPrint !== 'undefined') {
+                const facilityInfo = {
+                    facilityName: 'Test Facility',
+                    facilityAddress: '123 Test Street, Test City, TC 12345'
+                };
+                const finalReportSection = document.getElementById('final-report');
+                window.SAFEProductionPrint.exportToHTML(finalReportSection, facilityInfo);
+                alert('A4 HTML export completed! File downloaded to your Downloads folder.');
+            } else {
+                alert('Production Print System not loaded!');
+            }
+        }
+        
+        function testExecutiveSummaryPDF() {
+            if (typeof window.SAFEProductionPrint !== 'undefined') {
+                const facilityInfo = {
+                    facilityName: 'Test Facility',
+                    facilityAddress: '123 Test Street, Test City, TC 12345'
+                };
+                
+                // Create a temporary container with executive summary content
+                const tempContainer = document.createElement('div');
+                tempContainer.innerHTML = `
+                    <div class="executive-summary">
+                        <h2>Executive Summary</h2>
+                        <div class="test-content">
+                            <h3>Overall Security Score: 85%</h3>
+                            <p>This facility demonstrates a good security posture with several areas for enhancement.</p>
+                            <div style="background: #e8f5e8; padding: 15px; border-radius: 6px; border-left: 4px solid #28a745;">
+                                <strong>Key Finding:</strong> The facility has implemented 85% of recommended security standards.
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                window.SAFEProductionPrint.exportToPDF(tempContainer, facilityInfo);
+                alert('Executive Summary A4 PDF export initiated! Check your browser for the print dialog.');
+            } else {
+                alert('Production Print System not loaded!');
+            }
+        }
+        
+        function testExecutiveSummaryHTML() {
+            if (typeof window.SAFEProductionPrint !== 'undefined') {
+                const facilityInfo = {
+                    facilityName: 'Test Facility',
+                    facilityAddress: '123 Test Street, Test City, TC 12345'
+                };
+                
+                // Create a temporary container with executive summary content
+                const tempContainer = document.createElement('div');
+                tempContainer.innerHTML = `
+                    <div class="executive-summary">
+                        <h2>Executive Summary</h2>
+                        <div class="test-content">
+                            <h3>Overall Security Score: 85%</h3>
+                            <p>This facility demonstrates a good security posture with several areas for enhancement.</p>
+                            <div style="background: #e8f5e8; padding: 15px; border-radius: 6px; border-left: 4px solid #28a745;">
+                                <strong>Key Finding:</strong> The facility has implemented 85% of recommended security standards.
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                window.SAFEProductionPrint.exportToHTML(tempContainer, facilityInfo);
+                alert('Executive Summary A4 HTML export completed! File downloaded to your Downloads folder.');
+            } else {
+                alert('Production Print System not loaded!');
+            }
+        }
+        
+        
+        function testLegacyPrint() {
+            window.print();
+        }
+        
+        // Check system status
+        function checkSystemStatus() {
+            const statusDiv = document.getElementById('systemStatus');
+            let status = '<h4>System Status Check:</h4><ul>';
+            
+            // Check if production print system is loaded
+            if (typeof window.SAFEProductionPrint !== 'undefined') {
+                status += '<li>✅ Production Print System: Loaded</li>';
+                status += '<li>✅ A4 Formatting: Available</li>';
+                status += '<li>✅ Intelligent Page Breaks: Available</li>';
+                status += '<li>✅ CISA Color Scheme: Available</li>';
+            } else {
+                status += '<li>❌ Production Print System: Not Loaded</li>';
+            }
+            
+            
+            // Check if CSS is loaded
+            const testElement = document.createElement('div');
+            testElement.className = 'page-break';
+            document.body.appendChild(testElement);
+            const computedStyle = window.getComputedStyle(testElement);
+            if (computedStyle.pageBreakBefore === 'always') {
+                status += '<li>✅ A4 Print CSS: Loaded</li>';
+            } else {
+                status += '<li>❌ A4 Print CSS: Not Loaded</li>';
+            }
+            document.body.removeChild(testElement);
+            
+            status += '</ul>';
+            statusDiv.innerHTML = status;
+        }
+        
+        // Run status check when page loads
+        window.onload = function() {
+            checkSystemStatus();
+        };
+    </script>
+</body>
+</html>
+

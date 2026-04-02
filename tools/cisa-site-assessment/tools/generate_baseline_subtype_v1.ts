@@ -172,6 +172,96 @@ function generateFallbackQuestion(subtypeName: string): string {
   return `Is ${article} ${cleanName} capability implemented?`;
 }
 
+const QUESTION_TEXT_OVERRIDES: Record<string, string> = {
+  ACS_BIOMETRIC_ACCESS: 'Is biometric authentication used to grant entry at controlled points?',
+  ACS_CREDENTIAL_BADGE_SYSTEMS: 'Are credentials or badges used to grant entry at controlled points?',
+  ACS_DOOR_MONITORING: 'Are doors monitored for forced or unauthorized opening at controlled entry points?',
+  ACS_DOOR_READERS: 'Are door readers installed at controlled entry points?',
+  ACS_ELECTRIC_STRIKES_MAG_LOCKS: 'Are electric strikes or mag locks installed on controlled doors?',
+  ACS_ELECTRONIC_ACCESS_CONTROL: 'Is an electronic access control system in use at controlled entry points?',
+  ACS_KEYPADS_PIN_ENTRY: 'Are keypads or PIN entry devices used at controlled entry points?',
+  ACS_LOCKING_HARDWARE: 'Is mechanical locking hardware installed on controlled doors?',
+  ACS_SECURED_VESTIBULES: 'Are secured vestibules used to separate public and controlled space?',
+  ACS_VISITOR_MANAGEMENT_SYSTEMS: 'Are visitor management systems used to manage facility entry?',
+  COM_BACKUP_COMMUNICATIONS: 'Is there a backup communication method available during outages or incidents?',
+  COM_COMMUNICATION_PROTOCOLS: 'Are communication protocols defined for incident coordination?',
+  COM_INTEROPERABLE_COMMUNICATIONS: 'Can communications interoperate with external responders or partner systems?',
+  COM_PA_SYSTEMS: 'Are public address systems available to broadcast announcements?',
+  COM_PAGING_SYSTEMS: 'Are paging systems available to broadcast alerts?',
+  COM_RADIOS_TWO_WAY: 'Are two-way radios available for staff coordination?',
+  EAP_EMERGENCY_DRILLS: 'Are emergency drills planned or conducted for the facility?',
+  EAP_EMERGENCY_GUIDES_FLIP_CHARTS: 'Are emergency guides or flip charts available for staff use?',
+  EAP_EVACUATION_PROCEDURES: 'Are evacuation routes and assembly steps documented for the facility?',
+  EAP_LOCKDOWN_LOCKOUT_PROCEDURES: 'Are lockdown or lockout steps documented for threats requiring restricted access?',
+  EAP_MUSTER_POINTS_RALLY_AREAS: 'Are muster points or rally areas designated for evacuees after departure?',
+  EAP_REUNIFICATION_PROCEDURES: 'Are reunification steps documented for reuniting occupants after an incident?',
+  EAP_SHELTER_IN_PLACE: 'Are shelter-in-place steps documented for threats that require occupants to stay inside?',
+  EAP_STAFF_EMERGENCY_ROLES: 'Are staff responsibilities assigned for emergency response?',
+  EMR_BUSINESS_CONTINUITY: 'Is continuity of operations planned for facility disruptions?',
+  EMR_CRISIS_MANAGEMENT: 'Is crisis management defined for major incidents affecting the facility?',
+  EMR_EMERGENCY_COMMUNICATIONS: 'Is there a defined method to notify occupants during emergencies?',
+  EMR_ICS_NIMS_INTEGRATION: 'Is incident command or NIMS integration defined for the facility?',
+  EMR_MASS_NOTIFICATION: 'Is mass notification available for urgent protective actions?',
+  EMR_REDUNDANCY_BACKUP_SYSTEMS: 'Are backup systems defined for critical operations?',
+  EMR_RESILIENCE_PLANNING: 'Is resilience planning defined for the facility?',
+  IDS_ALARM_MONITORING: 'Are alarms monitored by staff or a central service?',
+  IDS_ALARM_PANELS: 'Are alarm panels installed to receive detection signals?',
+  IDS_DOOR_CONTACTS: 'Are door contacts installed to detect opening events?',
+  IDS_GLASS_BREAK_SENSORS: 'Are glass break sensors installed to detect forced entry?',
+  IDS_MOTION_DETECTORS: 'Are motion detectors installed to detect movement in protected areas?',
+  IDS_PANIC_DURESS_BUTTONS: 'Are panic or duress buttons installed for silent alerting?',
+  IDS_PERIMETER_IDS: 'Is intrusion detection deployed along the perimeter?',
+  INT_HARD_INTERIOR_BARRIERS: 'Are hard interior barriers used to separate protected spaces?',
+  INT_ACCESS_RESTRICTED_AREAS: 'Are restricted areas controlled at their entry points?',
+  INT_INTERIOR_DOORS: 'Are interior doors used to control movement between spaces?',
+  INT_INTERIOR_LIGHTING: 'Is interior lighting used to support protected spaces or visibility?',
+  INT_SAFE_ROOMS: 'Are safe rooms designated for temporary protective shelter?',
+  INT_SECURE_ROOMS: 'Are secure rooms designated for protected occupancy?',
+  INT_SENSITIVE_ITEM_STORAGE: 'Is protected storage provided for sensitive items?',
+  KEY_KEY_CABINETS: 'Are key cabinets used to secure stored keys?',
+  KEY_KEY_LOGS_ACCOUNTABILITY: 'Are key issuance and return logs maintained?',
+  KEY_MASTER_KEY_MANAGEMENT: 'Are master keys controlled separately from standard keys?',
+  KEY_REKEYING_PROCEDURES: 'Are rekeying procedures documented after key loss or turnover?',
+  KEY_RESTRICTED_KEYS: 'Are restricted keys issued only to authorized personnel?',
+  PER_BOLLARDS_BARRIERS: 'Are bollards or vehicle barriers installed to deter vehicle access?',
+  PER_BOUNDARY_DEMARCATION: 'Is the site boundary clearly marked or demarcated?',
+  PER_CLEAR_ZONES: 'Are clear zones maintained along the perimeter?',
+  PER_FENCING: 'Is fencing present along the site boundary?',
+  PER_GATES: 'Are gates installed at perimeter entry points?',
+  PER_PEDESTRIAN_ACCESS_CONTROL_POINTS: 'Are pedestrian entry points controlled with staff, turnstiles, or checkpoints?',
+  PER_VEHICLE_ACCESS_CONTROL_POINTS: 'Are vehicle entry points controlled with gates, barriers, or checkpoints?',
+  PER_PERIMETER_LIGHTING: 'Is perimeter lighting installed to illuminate the site boundary?',
+  PER_PERIMETER_SIGNAGE: 'Is perimeter signage posted to mark restricted areas?',
+  SMG_SECURITY_DOCUMENTATION: 'Is security documentation maintained as the governing record set for the facility?',
+  SMG_SECURITY_POLICIES: 'Are security policies documented to govern facility security decisions?',
+  SMG_SECURITY_PROCEDURES: 'Are step-by-step security procedures documented for operations and incidents?',
+  SMG_SECURITY_TRAINING_PROGRAMS: 'Are security training programs provided to staff and contractors?',
+  SFO_SECURITY_OFFICER_TRAINING: 'Are security officers trained for assigned duties and response roles?',
+  SFO_RESPONSE_PROCEDURES: 'Are security response playbooks documented for incidents?',
+  SFO_SECURITY_OPERATIONS_CENTER_SOC: 'Is a security operations center available for live monitoring and coordination?',
+  SFO_GUARD_POSTS: 'Are guard posts assigned to protect key areas of the facility?',
+  SFO_PATROL_ROUTES: 'Are patrol routes defined for security rounds and inspections?',
+  SFO_RADIO_COMMUNICATIONS: 'Are radios available for security team communications?',
+  SFO_INCIDENT_REPORTING: 'Are incident logging and escalation steps defined for security staff?',
+  ISC_COORDINATION_PROTOCOLS: 'Are coordination protocols defined for partner response and escalation?',
+  ISC_EXTERNAL_REPORTING: 'Is external reporting defined for incidents or threats?',
+  ISC_FUSION_CENTER_INTERFACE: 'Is there an interface for sharing information with a fusion center?',
+  ISC_ISAC_ISAOS: 'Is there participation in ISAC or ISAO information sharing?',
+  ISC_JTTF_ENGAGEMENT: 'Is JTTF engagement defined for relevant incidents?',
+  ISC_LAW_ENFORCEMENT_LIAISON: 'Is law enforcement liaison defined for the facility?',
+  ISC_THREAT_INFORMATION_SHARING: 'Is threat information shared with outside partners?',
+  VSS_ANALYTICS_BEHAVIOR_DETECTION: 'Are analytics used to detect unusual behavior on camera feeds?',
+  VSS_CAMERA_COVERAGE_LINE_OF_SIGHT: 'Are camera views unobstructed across required areas?',
+  VSS_EXTERIOR_CAMERAS: 'Are cameras deployed to observe exterior and perimeter areas?',
+  VSS_FIXED_CAMERAS: 'Are fixed cameras used where a constant field of view is needed?',
+  VSS_IP_CAMERAS: 'Are networked IP cameras used in the video system?',
+  VSS_INTERIOR_CAMERAS: 'Are cameras deployed to observe interior public or restricted spaces?',
+  VSS_MONITORING_WORKSTATIONS: 'Are operator workstations available to view live camera feeds?',
+  VSS_PTZ_CAMERAS: 'Are pan-tilt-zoom cameras deployed where adjustable coverage is needed?',
+  VSS_SYSTEM_ARCHITECTURE: 'Is the video system architecture documented for the facility?',
+  VSS_VIDEO_WALL_DISPLAY_SYSTEMS: 'Are display systems used to show live camera feeds?',
+};
+
 /**
  * Normalize question to existence-only format if needed
  */
@@ -421,10 +511,13 @@ async function main() {
     processedSubtypeCodes.add(subtypeCode);
     
     // Sanitize question
-    let questionText = sanitizeQuestion(candidate.proposed_question_text, candidate.subtype_name);
+    let questionText = QUESTION_TEXT_OVERRIDES[subtypeCode] ?? sanitizeQuestion(candidate.proposed_question_text, candidate.subtype_name);
     
     // Normalize to existence-only if needed
     questionText = normalizeToExistenceOnly(questionText, candidate.subtype_name);
+    if (QUESTION_TEXT_OVERRIDES[subtypeCode]) {
+      questionText = QUESTION_TEXT_OVERRIDES[subtypeCode];
+    }
     
     // Generate canon_id
     const canonId = generateCanonId(candidate.discipline_code, subtypeCode);

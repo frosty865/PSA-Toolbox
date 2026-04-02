@@ -1,0 +1,767 @@
+{
+  "metadata": {
+    "version": "SAFE_V3.0",
+    "created": "2024-12-19",
+    "lastModified": "2024-12-19",
+    "description": "SAFE V3.0 Comprehensive Security Assessment Data Structure"
+  },
+  
+  "facilityInformation": {
+    "facilityName": "Fort Lauderdale Financial Services Group",
+    "facilityAddress": "100 SE 3rd Avenue",
+    "facilityCity": "Fort Lauderdale",
+    "facilityState": "FL",
+    "facilityZip": "33394",
+    "facilityPhone": "(954) 555-0123",
+    "facilityEmail": "info@ftlfinservices.com",
+    "facilityLatitude": "26.1195",
+    "facilityLongitude": "-80.1378",
+    "assessmentDate": "2024-12-19",
+    "sector": "Financial Services",
+    "facilityType": "Office Building",
+    "employeeCount": "85",
+    "facilitySize": "25000",
+    "operatingHours": "Business Hours",
+    "publicAccess": "Limited Public Access",
+    "assessmentNotes": "Medium-sized financial services firm providing investment advisory, wealth management, and financial planning services. Located in a modern office building in downtown Fort Lauderdale. Client-facing business with advanced security requirements including comprehensive video analytics and AI-powered threat detection systems. Facility demonstrates innovative approach to security technology implementation. Company manages approximately $2.5 billion in client assets and serves high-net-worth individuals and institutional clients."
+  },
+
+  "informationSharing": {
+    "Awareness": {
+      "response": "yes",
+      "details": "Comprehensive public awareness campaign implemented",
+      "standards": {
+        "AwarenessComp1": true,
+        "AwarenessComp2": true,
+        "AwarenessComp3": true
+      },
+      "optionsForConsideration": {
+        "AwarenessNoOFC1": false,
+        "AwarenessNoOFC2": false,
+        "AwarenessNoOFC3": false
+      }
+    },
+    
+    "LawEnforcement": {
+      "response": "yes",
+      "details": "Regular visits from local law enforcement agencies",
+      "standards": {
+        "LawEnforcementComp1": true,
+        "LawEnforcementComp2": true,
+        "LawEnforcementComp3": true
+      },
+      "optionsForConsideration": {
+        "LawEnforcementNoOFC1": false,
+        "LawEnforcementNoOFC2": false,
+        "LawEnforcementNoOFC3": false
+      }
+    },
+    
+    "LawComm": {
+      "response": "yes",
+      "details": "Interoperable communications established with law enforcement",
+      "standards": {
+        "LawCommComp1": true,
+        "LawCommComp2": true,
+        "LawCommComp3": true
+      },
+      "optionsForConsideration": {
+        "LawCommNoOFC1": false,
+        "LawCommNoOFC2": false,
+        "LawCommNoOFC3": false
+      }
+    },
+    
+    "FireAgency": {
+      "response": "yes",
+      "details": "Regular coordination with fire response agencies",
+      "standards": {
+        "FireAgencyComp1": true,
+        "FireAgencyComp2": true,
+        "FireAgencyComp3": true
+      },
+      "optionsForConsideration": {
+        "FireAgencyNoOFC1": false,
+        "FireAgencyNoOFC2": false,
+        "FireAgencyNoOFC3": false
+      }
+    },
+    
+    "FireComm": {
+      "response": "yes",
+      "details": "Interoperable communications with fire response established",
+      "standards": {
+        "FireCommComp1": true,
+        "FireCommComp2": true,
+        "FireCommComp3": true
+      },
+      "optionsForConsideration": {
+        "FireCommNoOFC1": false,
+        "FireCommNoOFC2": false,
+        "FireCommNoOFC3": false
+      }
+    },
+    
+    "MedicalAgency": {
+      "response": "no",
+      "details": "Limited coordination with emergency medical response",
+      "standards": {
+        "MedicalAgencyComp1": false,
+        "MedicalAgencyComp2": false,
+        "MedicalAgencyComp3": false
+      },
+      "optionsForConsideration": {
+        "MedicalAgencyNoOFC1": true,
+        "MedicalAgencyNoOFC2": true,
+        "MedicalAgencyNoOFC3": true
+      }
+    },
+    
+    "MedicalComm": {
+      "response": "na",
+      "details": "Not applicable for this facility type",
+      "standards": {
+        "MedicalCommComp1": false,
+        "MedicalCommComp2": false,
+        "MedicalCommComp3": false
+      },
+      "optionsForConsideration": {
+        "MedicalCommNoOFC1": true,
+        "MedicalCommNoOFC2": true,
+        "MedicalCommNoOFC3": true
+      }
+    },
+    
+    "FBIInfo": {
+      "response": "no",
+      "details": "No active information sharing with FBI",
+      "standards": {
+        "FBIInfoComp1": false,
+        "FBIInfoComp2": false,
+        "FBIInfoComp3": false
+      },
+      "optionsForConsideration": {
+        "FBIInfoNoOFC1": true,
+        "FBIInfoNoOFC2": true,
+        "FBIInfoNoOFC3": true
+      }
+    },
+    
+    "ISACInfo": {
+      "response": "yes",
+      "details": "Active participation in Information Sharing and Analysis Center",
+      "standards": {
+        "ISACInfoComp1": true,
+        "ISACInfoComp2": true,
+        "ISACInfoComp3": true
+      },
+      "optionsForConsideration": {
+        "ISACInfoNoOFC1": false,
+        "ISACInfoNoOFC2": false,
+        "ISACInfoNoOFC3": false
+      }
+    },
+    
+    "HSINInfo": {
+      "response": "no",
+      "details": "Limited use of Homeland Security Information Network",
+      "standards": {
+        "HSINInfoComp1": false,
+        "HSINInfoComp2": false,
+        "HSINInfoComp3": false
+      },
+      "optionsForConsideration": {
+        "HSINInfoNoOFC1": true,
+        "HSINInfoNoOFC2": true,
+        "HSINInfoNoOFC3": true
+      }
+    },
+    
+    "InfraGard": {
+      "response": "no",
+      "details": "No InfraGard membership or participation",
+      "standards": {
+        "InfraGardComp1": false,
+        "InfraGardComp2": false,
+        "InfraGardComp3": false
+      },
+      "optionsForConsideration": {
+        "InfraGardNoOFC1": true,
+        "InfraGardNoOFC2": true,
+        "InfraGardNoOFC3": true
+      }
+    },
+    
+    "FederalInfo": {
+      "response": "yes",
+      "details": "Regular information exchange with federal agencies",
+      "standards": {
+        "FederalInfoComp1": true,
+        "FederalInfoComp2": true,
+        "FederalInfoComp3": false
+      },
+      "optionsForConsideration": {
+        "FederalInfoNoOFC1": false,
+        "FederalInfoNoOFC2": false,
+        "FederalInfoNoOFC3": false
+      }
+    },
+    
+    "StateLocalInfo": {
+      "response": "yes",
+      "details": "Active coordination with state and local agencies",
+      "standards": {
+        "StateLocalInfoComp1": true,
+        "StateLocalInfoComp2": true,
+        "StateLocalInfoComp3": false
+      },
+      "optionsForConsideration": {
+        "StateLocalInfoNoOFC1": false,
+        "StateLocalInfoNoOFC2": false,
+        "StateLocalInfoNoOFC3": false
+      }
+    },
+    
+    "NeighborInfo": {
+      "response": "no",
+      "details": "Limited coordination with neighboring facilities",
+      "standards": {
+        "NeighborInfoComp1": false,
+        "NeighborInfoComp2": false,
+        "NeighborInfoComp3": false
+      },
+      "optionsForConsideration": {
+        "NeighborInfoNoOFC1": true,
+        "NeighborInfoNoOFC2": true,
+        "NeighborInfoNoOFC3": true
+      }
+    }
+  },
+
+  "securityPlans": {
+    "SecurityManager": {
+      "response": "yes",
+      "details": "Dedicated security manager on staff",
+      "standards": {
+        "SecurityManagerComp1": true,
+        "SecurityManagerComp2": true,
+        "SecurityManagerComp3": true
+      },
+      "optionsForConsideration": {
+        "SecurityManagerNoOFC1": false,
+        "SecurityManagerNoOFC2": false,
+        "SecurityManagerNoOFC3": false
+      }
+    },
+    
+    "SecurityPlan": {
+      "response": "yes",
+      "details": "Comprehensive security plan in place",
+      "standards": {
+        "SecurityPlanComp1": true,
+        "SecurityPlanComp2": true,
+        "SecurityPlanComp3": true,
+        "SecurityPlanComp4": false
+      },
+      "optionsForConsideration": {
+        "SecurityPlanNoOFC1": false,
+        "SecurityPlanNoOFC2": false,
+        "SecurityPlanNoOFC3": false
+      }
+    },
+    
+    "PlanTraining": {
+      "response": "yes",
+      "details": "Regular security plan training conducted",
+      "standards": {
+        "PlanTrainingComp1": true,
+        "PlanTrainingComp2": true,
+        "PlanTrainingComp3": true,
+        "PlanTrainingComp4": false
+      },
+      "optionsForConsideration": {
+        "PlanTrainingNoOFC1": false,
+        "PlanTrainingNoOFC2": false,
+        "PlanTrainingNoOFC3": false,
+        "PlanTrainingNoOFC4": false
+      }
+    },
+    
+    "PlanCoordination": {
+      "response": "yes",
+      "details": "Security plan coordination with stakeholders",
+      "standards": {
+        "PlanCoordinationComp1": true,
+        "PlanCoordinationComp2": true,
+        "PlanCoordinationComp3": false,
+        "PlanCoordinationComp4": false
+      },
+      "optionsForConsideration": {
+        "PlanCoordinationNoOFC1": false,
+        "PlanCoordinationNoOFC2": false,
+        "PlanCoordinationNoOFC3": false,
+        "PlanCoordinationNoOFC4": false,
+        "PlanCoordinationNoOFC5": false,
+        "PlanCoordinationNoOFC6": false
+      }
+    },
+    
+    "EmployeeTraining": {
+      "response": "yes",
+      "details": "Comprehensive employee security training program",
+      "standards": {
+        "EmployeeTrainingComp1": true,
+        "EmployeeTrainingComp2": true,
+        "EmployeeTrainingComp3": false,
+        "EmployeeTrainingComp4": false
+      },
+      "optionsForConsideration": {
+        "EmployeeTrainingNoOFC1": false,
+        "EmployeeTrainingNoOFC2": false,
+        "EmployeeTrainingNoOFC3": false,
+        "EmployeeTrainingNoOFC4": false
+      }
+    },
+    
+    "PlanTesting": {
+      "response": "yes",
+      "details": "Regular security plan testing and exercises",
+      "standards": {
+        "PlanTestingComp1": true,
+        "PlanTestingComp2": true,
+        "PlanTestingComp3": false,
+        "PlanTestingComp4": false
+      },
+      "optionsForConsideration": {
+        "PlanTestingNoOFC1": false,
+        "PlanTestingNoOFC2": false,
+        "PlanTestingNoOFC3": false,
+        "PlanTestingNoOFC4": false
+      }
+    },
+    
+    "RiskAssessment": {
+      "response": "yes",
+      "details": "Comprehensive security risk assessment conducted",
+      "standards": {
+        "RiskAssessmentComp1": true,
+        "RiskAssessmentComp2": true,
+        "RiskAssessmentComp3": true,
+        "RiskAssessmentComp4": false
+      },
+      "optionsForConsideration": {
+        "RiskAssessmentNoOFC1": false,
+        "RiskAssessmentNoOFC2": false,
+        "RiskAssessmentNoOFC3": false,
+        "RiskAssessmentNoOFC4": false
+      }
+    }
+  },
+
+  "physicalSecurity": {
+    "SecurityPersonnel": {
+      "response": "yes",
+      "details": "Dedicated security personnel on site",
+      "standards": {
+        "SecurityPersonnelComp1": true,
+        "SecurityPersonnelComp2": true,
+        "SecurityPersonnelComp3": true,
+        "SecurityPersonnelComp4": false
+      },
+      "optionsForConsideration": {
+        "SecurityPersonnelNoOFC1": false,
+        "SecurityPersonnelNoOFC2": false,
+        "SecurityPersonnelNoOFC3": false,
+        "SecurityPersonnelNoOFC4": false
+      }
+    },
+    
+    "PerimeterFencing": {
+      "response": "na",
+      "details": "Not applicable for this facility type",
+      "standards": {
+        "PerimeterFencingComp1": false,
+        "PerimeterFencingComp2": false,
+        "PerimeterFencingComp3": false,
+        "PerimeterFencingComp4": false
+      },
+      "optionsForConsideration": {
+        "PerimeterFencingNoOFC1": true,
+        "PerimeterFencingNoOFC2": true,
+        "PerimeterFencingNoOFC3": true,
+        "PerimeterFencingNoOFC4": false
+      }
+    },
+    
+    "AccessControl": {
+      "response": "yes",
+      "details": "Advanced access control systems implemented",
+      "standards": {
+        "AccessControlComp1": true,
+        "AccessControlComp2": true,
+        "AccessControlComp3": true,
+        "AccessControlComp4": true
+      },
+      "optionsForConsideration": {
+        "AccessControlNoOFC1": false,
+        "AccessControlNoOFC2": false,
+        "AccessControlNoOFC3": false,
+        "AccessControlNoOFC4": false
+      }
+    },
+    
+    "SecurityLighting": {
+      "response": "yes",
+      "details": "Comprehensive security lighting system",
+      "standards": {
+        "SecurityLightingComp1": true,
+        "SecurityLightingComp2": true,
+        "SecurityLightingComp3": false,
+        "SecurityLightingComp4": false
+      },
+      "optionsForConsideration": {
+        "SecurityLightingNoOFC1": false,
+        "SecurityLightingNoOFC2": false,
+        "SecurityLightingNoOFC3": false,
+        "SecurityLightingNoOFC4": false
+      }
+    },
+    
+    "StandoffDistance": {
+      "response": "no",
+      "details": "Limited parking and standoff distance",
+      "standards": {
+        "StandoffDistanceComp1": false,
+        "StandoffDistanceComp2": false,
+        "StandoffDistanceComp3": false,
+        "StandoffDistanceComp4": false
+      },
+      "optionsForConsideration": {
+        "StandoffDistanceNoOFC1": true,
+        "StandoffDistanceNoOFC2": true,
+        "StandoffDistanceNoOFC3": true,
+        "StandoffDistanceNoOFC4": false
+      }
+    },
+    
+    "BuildingEnvelope": {
+      "response": "yes",
+      "details": "Building envelope security measures in place",
+      "standards": {
+        "BuildingEnvelopeComp1": true,
+        "BuildingEnvelopeComp2": true,
+        "BuildingEnvelopeComp3": true,
+        "BuildingEnvelopeComp4": false
+      },
+      "optionsForConsideration": {
+        "BuildingEnvelopeNoOFC1": false,
+        "BuildingEnvelopeNoOFC2": false,
+        "BuildingEnvelopeNoOFC3": false,
+        "BuildingEnvelopeNoOFC4": false
+      }
+    },
+    
+    "KeyControl": {
+      "response": "yes",
+      "details": "Comprehensive key control program implemented",
+      "standards": {
+        "KeyControlComp1": true,
+        "KeyControlComp2": true,
+        "KeyControlComp3": false,
+        "KeyControlComp4": false
+      },
+      "optionsForConsideration": {
+        "KeyControlNoOFC1": false,
+        "KeyControlNoOFC2": false,
+        "KeyControlNoOFC3": false,
+        "KeyControlNoOFC4": false
+      }
+    }
+  },
+
+  "securitySystems": {
+    "VideoSurveillance": {
+      "response": "yes",
+      "details": "Advanced video surveillance system with AI analytics",
+      "standards": {
+        "VideoSurveillanceComp1": true,
+        "VideoSurveillanceComp2": true,
+        "VideoSurveillanceComp3": true,
+        "VideoSurveillanceComp4": true,
+        "VideoSurveillanceComp5": true,
+        "VideoSurveillanceComp6": true,
+        "VideoSurveillanceComp7": true,
+        "VideoSurveillanceComp8": true,
+        "VideoSurveillanceComp9": true,
+        "VideoSurveillanceComp10": true
+      },
+      "optionsForConsideration": {
+        "VideoSurveillanceNoOFC1": false,
+        "VideoSurveillanceNoOFC2": false,
+        "VideoSurveillanceNoOFC3": false,
+        "VideoSurveillanceNoOFC4": false,
+        "VideoSurveillanceNoOFC5": false,
+        "VideoSurveillanceNoOFC6": false,
+        "VideoSurveillanceNoOFC7": false,
+        "VideoSurveillanceNoOFC8": false,
+        "VideoSurveillanceNoOFC9": false,
+        "VideoSurveillanceNoOFC10": false
+      }
+    },
+    
+    "VideoCoverage": {
+      "response": "yes",
+      "details": "Comprehensive camera coverage of critical areas",
+      "standards": {
+        "VideoCoverageComp1": true,
+        "VideoCoverageComp2": true,
+        "VideoCoverageComp3": true,
+        "VideoCoverageComp4": true,
+        "VideoCoverageComp5": true,
+        "VideoCoverageComp6": true,
+        "VideoCoverageComp7": true,
+        "VideoCoverageComp8": true,
+        "VideoCoverageComp9": true,
+        "VideoCoverageComp10": true
+      },
+      "optionsForConsideration": {
+        "VideoCoverageNoOFC1": false,
+        "VideoCoverageNoOFC2": false,
+        "VideoCoverageNoOFC3": false,
+        "VideoCoverageNoOFC4": false,
+        "VideoCoverageNoOFC5": false,
+        "VideoCoverageNoOFC6": false,
+        "VideoCoverageNoOFC7": false,
+        "VideoCoverageNoOFC8": false,
+        "VideoCoverageNoOFC9": false,
+        "VideoCoverageNoOFC10": false
+      }
+    },
+    
+    "VideoMonitoring": {
+      "response": "yes",
+      "details": "24/7 real-time video monitoring capabilities",
+      "standards": {
+        "VideoMonitoringComp1": true,
+        "VideoMonitoringComp2": true,
+        "VideoMonitoringComp3": true,
+        "VideoMonitoringComp4": true,
+        "VideoMonitoringComp5": true,
+        "VideoMonitoringComp6": true,
+        "VideoMonitoringComp7": true,
+        "VideoMonitoringComp8": true,
+        "VideoMonitoringComp9": true,
+        "VideoMonitoringComp10": true
+      },
+      "optionsForConsideration": {
+        "VideoMonitoringNoOFC1": false,
+        "VideoMonitoringNoOFC2": false,
+        "VideoMonitoringNoOFC3": false,
+        "VideoMonitoringNoOFC4": false,
+        "VideoMonitoringNoOFC5": false,
+        "VideoMonitoringNoOFC6": false,
+        "VideoMonitoringNoOFC7": false,
+        "VideoMonitoringNoOFC8": false,
+        "VideoMonitoringNoOFC9": false,
+        "VideoMonitoringNoOFC10": false
+      }
+    },
+    
+    "VideoRecording": {
+      "response": "yes",
+      "details": "Advanced video recording and storage system",
+      "standards": {
+        "VideoRecordingComp1": true,
+        "VideoRecordingComp2": true,
+        "VideoRecordingComp3": true,
+        "VideoRecordingComp4": true,
+        "VideoRecordingComp5": true,
+        "VideoRecordingComp6": true,
+        "VideoRecordingComp7": true,
+        "VideoRecordingComp8": true,
+        "VideoRecordingComp9": true,
+        "VideoRecordingComp10": true
+      },
+      "optionsForConsideration": {
+        "VideoRecordingNoOFC1": false,
+        "VideoRecordingNoOFC2": false,
+        "VideoRecordingNoOFC3": false,
+        "VideoRecordingNoOFC4": false,
+        "VideoRecordingNoOFC5": false,
+        "VideoRecordingNoOFC6": false,
+        "VideoRecordingNoOFC7": false,
+        "VideoRecordingNoOFC8": false,
+        "VideoRecordingNoOFC9": false,
+        "VideoRecordingNoOFC10": false
+      }
+    },
+    
+    "VideoAnalytics": {
+      "response": "yes",
+      "details": "AI-powered video analytics for threat detection",
+      "standards": {
+        "VideoAnalyticsComp1": true,
+        "VideoAnalyticsComp2": true,
+        "VideoAnalyticsComp3": true,
+        "VideoAnalyticsComp4": true,
+        "VideoAnalyticsComp5": true,
+        "VideoAnalyticsComp6": true,
+        "VideoAnalyticsComp7": true,
+        "VideoAnalyticsComp8": true,
+        "VideoAnalyticsComp9": true,
+        "VideoAnalyticsComp10": true
+      },
+      "optionsForConsideration": {
+        "VideoAnalyticsNoOFC1": false,
+        "VideoAnalyticsNoOFC2": false,
+        "VideoAnalyticsNoOFC3": false,
+        "VideoAnalyticsNoOFC4": false,
+        "VideoAnalyticsNoOFC5": false,
+        "VideoAnalyticsNoOFC6": false,
+        "VideoAnalyticsNoOFC7": false
+      }
+    },
+    
+    "VideoAnalyticsPerformance": {
+      "response": "yes",
+      "details": "High-performance video analytics system",
+      "standards": {
+        "VideoAnalyticsPerformanceComp1": true,
+        "VideoAnalyticsPerformanceComp2": true,
+        "VideoAnalyticsPerformanceComp3": true,
+        "VideoAnalyticsPerformanceComp4": true,
+        "VideoAnalyticsPerformanceComp5": true,
+        "VideoAnalyticsPerformanceComp6": true
+      },
+      "optionsForConsideration": {
+        "VideoAnalyticsPerformanceNoOFC1": false,
+        "VideoAnalyticsPerformanceNoOFC2": false,
+        "VideoAnalyticsPerformanceNoOFC3": false,
+        "VideoAnalyticsPerformanceNoOFC4": false,
+        "VideoAnalyticsPerformanceNoOFC5": false
+      }
+    },
+    
+    "IntrusionDetection": {
+      "response": "yes",
+      "details": "Comprehensive intrusion detection systems",
+      "standards": {
+        "IntrusionDetectionComp1": true,
+        "IntrusionDetectionComp2": true,
+        "IntrusionDetectionComp3": true,
+        "IntrusionDetectionComp4": true
+      },
+      "optionsForConsideration": {
+        "IntrusionDetectionNoOFC1": false,
+        "IntrusionDetectionNoOFC2": false,
+        "IntrusionDetectionNoOFC3": false
+      }
+    },
+    
+    "AlarmMonitoring": {
+      "response": "yes",
+      "details": "Central station alarm monitoring",
+      "standards": {
+        "AlarmMonitoringComp1": true,
+        "AlarmMonitoringComp2": true,
+        "AlarmMonitoringComp3": true
+      },
+      "optionsForConsideration": {
+        "AlarmMonitoringNoOFC1": false,
+        "AlarmMonitoringNoOFC2": false,
+        "AlarmMonitoringNoOFC3": false
+      }
+    },
+    
+    "SystemIntegration": {
+      "response": "no",
+      "details": "Limited integration between security systems",
+      "standards": {
+        "SystemIntegrationComp1": false,
+        "SystemIntegrationComp2": false,
+        "SystemIntegrationComp3": false
+      },
+      "optionsForConsideration": {
+        "SystemIntegrationNoOFC1": true,
+        "SystemIntegrationNoOFC2": true,
+        "SystemIntegrationNoOFC3": false
+      }
+    }
+  },
+
+  "customVOFCs": [
+    {
+      "id": 1,
+      "category": "Security Systems",
+      "vulnerability": "Limited integration between video analytics and access control",
+      "optionsForConsideration": "Implement unified security management platform to coordinate video analytics alerts with access control responses"
+    },
+    {
+      "id": 2,
+      "category": "Physical Security",
+      "vulnerability": "Perimeter lighting could be enhanced during low-visibility conditions",
+      "optionsForConsideration": "Upgrade to motion-activated LED lighting with backup power systems"
+    },
+    {
+      "id": 3,
+      "category": "Information Sharing",
+      "vulnerability": "Limited coordination with neighboring financial institutions",
+      "optionsForConsideration": "Establish financial sector security information sharing group"
+    }
+  ],
+
+  "commendablePractices": [
+    {
+      "id": 1,
+      "category": "Security Technology",
+      "action": "Implementation of AI-powered video analytics for threat detection",
+      "impact": "Significantly improved detection accuracy and reduced false alarms by 85%"
+    },
+    {
+      "id": 2,
+      "category": "Employee Training",
+      "action": "Monthly security awareness training with real-world scenario testing",
+      "impact": "Enhanced employee security consciousness and improved incident response times"
+    },
+    {
+      "id": 3,
+      "category": "System Integration",
+      "action": "Unified security management platform integrating all security systems",
+      "impact": "Streamlined security operations and improved incident response coordination"
+    }
+  ],
+
+  "pointsOfContact": {
+    "securityManager": {
+      "name": "Michael Chen",
+      "title": "Director of Security",
+      "phone": "(954) 555-0123",
+      "email": "michael.chen@ftlfinservices.com"
+    },
+    "facilityManager": {
+      "name": "Sarah Johnson",
+      "title": "Facility Manager",
+      "phone": "(954) 555-0125",
+      "email": "sjohnson@ftlfinservices.com"
+    },
+    "emergencyContact": {
+      "name": "Mike Davis",
+      "title": "Emergency Coordinator",
+      "phone": "(954) 555-0126",
+      "email": "mdavis@ftlfinservices.com"
+    }
+  },
+
+  "assessmentSummary": {
+    "overallScore": 78,
+    "totalStandards": 156,
+    "standardsMet": 122,
+    "vulnerabilitiesIdentified": 34,
+    "recommendationsCount": 28,
+    "commendablePractices": 3,
+    "assessmentDate": "2024-12-19",
+    "assessor": "PSA Team",
+    "nextReviewDate": "2025-06-19"
+  }
+}
+

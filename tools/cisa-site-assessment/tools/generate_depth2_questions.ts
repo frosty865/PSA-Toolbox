@@ -12,7 +12,8 @@
  * - NO regulatory, cyber, or compliance language
  * - NO technologies, vendors, costs, or implementation steps
  * - Questions describe WHAT condition exists, not HOW it is done
- * - response_enum MUST be ["YES","NO","N_A"]
+ * - response_enum defaults to ["YES","NO","N_A"]
+ * - response_type may be ENUM when the source question is explicitly non-binary
  * 
  * VALIDATION:
  * - Every Depth-2 question must have a parent baseline spine
@@ -103,6 +104,8 @@ interface Depth2Question {
   subtype_code: string;
   question_text: string;
   response_enum: ["YES", "NO", "N_A"];
+  response_type?: "YES_NO_NA" | "ENUM";
+  response_options?: Array<{ value: string; label: string }> | null;
   layer: string;
   depth: number;
   order_index: number;
@@ -260,6 +263,24 @@ function normalizeQuestionTextForDedup(text: string): string {
     .replace(/[^\w\s]/g, ' ') // Remove punctuation
     .replace(/\s+/g, ' ') // Normalize whitespace
     .replace(/^(is|are|does|do)\s+/i, ''); // Remove leading question words
+}
+
+function inferDepth2ResponseSpec(questionText: string): {
+  response_type: "YES_NO_NA" | "ENUM";
+  response_options?: Array<{ value: string; label: string }> | null;
+} {
+  const normalized = questionText.toLowerCase();
+  if (normalized.includes('on-site') && normalized.includes('off-site') && normalized.includes('both')) {
+    return {
+      response_type: 'ENUM',
+      response_options: [
+        { value: 'ON_SITE', label: 'On-site' },
+        { value: 'OFF_SITE', label: 'Off-site' },
+        { value: 'BOTH', label: 'Both' },
+      ],
+    };
+  }
+  return { response_type: 'YES_NO_NA', response_options: null };
 }
 
 /**
@@ -491,6 +512,7 @@ async function main(): Promise<void> {
         subtype_code: subtype.subtype_code,
         question_text: rewritten,
         response_enum: ["YES", "NO", "N_A"],
+        ...inferDepth2ResponseSpec(rewritten),
         layer: "baseline",
         depth: 2,
         order_index: orderIndex,

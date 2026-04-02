@@ -1,0 +1,11 @@
+{
+  "name": "safe-print-export-kit",
+  "version": "1.0.0",
+  "description": "Headless Chrome converter for SAFE report",
+  "scripts": {
+    "convert": "node convert_puppeteer.js ../SAFE_Comprehensive.html ../SAFE_Comprehensive_puppeteer.pdf"
+  },
+  "dependencies": {
+    "puppeteer": "^22.15.0"
+  }
+}

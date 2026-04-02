@@ -17,7 +17,7 @@ type Candidate = {
 interface OfcCandidatesPanelProps {
   assessmentId: string;
   responseId: string;
-  answer: "YES" | "NO" | "N_A" | "N/A";
+  answer: "YES" | "NO" | "N_A" | "N/A" | string;
   onPromoted?: () => void;
 }
 

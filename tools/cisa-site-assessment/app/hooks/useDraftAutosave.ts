@@ -18,40 +18,32 @@ export function useDraftAutosave(params: {
 
   const hydratedRef = useRef(false);
 
-  // 1) Hydrate from local draft ONCE, then merge server if provided
+  // 1) Hydrate from local draft or server state ONCE.
   useEffect(() => {
     if (hydratedRef.current) return;
 
     const local = loadDraft(assessmentId)?.responses ?? null;
+    const hasLocalResponses = Boolean(local && Object.keys(local).length > 0);
 
-    if (local) {
-      if (serverResponses) {
-        setResponses(mergeResponses(serverResponses, local));
-      } else {
-        setResponses(local);
-      }
+    if (hasLocalResponses && serverResponses) {
+      setResponses(mergeResponses(serverResponses, local as DraftResponses));
+    } else if (hasLocalResponses) {
+      setResponses(local as DraftResponses);
     } else if (serverResponses) {
       setResponses(serverResponses);
+    } else {
+      // Wait until either server state or a non-empty local draft is available.
+      return;
     }
 
     hydratedRef.current = true;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [assessmentId]);
+  }, [assessmentId, serverResponses]);
 
-  // 2) Debounced autosave on changes
-  const debounceMs = 350;
-  const timerRef = useRef<number | null>(null);
-
+  // 2) Persist every change immediately after hydration so refreshes keep answers.
   useEffect(() => {
     if (!hydratedRef.current) return;
 
-    if (timerRef.current) window.clearTimeout(timerRef.current);
-    timerRef.current = window.setTimeout(() => {
-      saveDraft(assessmentId, responses);
-    }, debounceMs);
-
-    return () => {
-      if (timerRef.current) window.clearTimeout(timerRef.current);
-    };
+    saveDraft(assessmentId, responses);
   }, [assessmentId, responses]);
 }

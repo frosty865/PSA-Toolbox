@@ -4,9 +4,10 @@ import './styles/mobile.css';
 import CisaApiBasePathShim from './components/CisaApiBasePathShim';
 
 export const metadata = {
-  title: 'CISA Site Assessment',
-  description: 'Protective Security Assessment workflow for CISA site assessments',
-  icons: { icon: '/favicon.ico' }
+  title: 'Modular Site Assessment',
+  description:
+    'Modular assessment for Protective Security Advisors—flexible assessments by sector and subsector.',
+  icons: { icon: '/favicon.ico' },
 };
 
 export default function RootLayout({

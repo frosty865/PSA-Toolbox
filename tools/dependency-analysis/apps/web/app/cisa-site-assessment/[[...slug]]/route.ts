@@ -34,6 +34,11 @@ async function forward(request: NextRequest): Promise<NextResponse> {
   try {
     const upstream = await fetch(target, init);
     const outHeaders = new Headers(upstream.headers);
+    // Next/fetch may transparently decompress the upstream body while preserving
+    // the original Content-Encoding header. If we forward that header, browsers
+    // will try to decompress plain bytes and raise ERR_CONTENT_DECODING_FAILED.
+    outHeaders.delete('content-encoding');
+    outHeaders.delete('content-length');
 
     // Upstream may send Location: http://127.0.0.1:3001/cisa-site-assessment/... — follow on :3000 instead
     // (avoids leaving the unified dev server and prevents slash/host mismatch loops).
@@ -61,7 +66,7 @@ async function forward(request: NextRequest): Promise<NextResponse> {
     console.error('[cisa-site-assessment proxy]', err);
     return new NextResponse(
       [
-        'CISA Site Assessment is not reachable.',
+        'Modular Site Assessment is not reachable.',
         '',
         'Start: pnpm dev from tools/dependency-analysis (PSA on port 3001).',
         '',

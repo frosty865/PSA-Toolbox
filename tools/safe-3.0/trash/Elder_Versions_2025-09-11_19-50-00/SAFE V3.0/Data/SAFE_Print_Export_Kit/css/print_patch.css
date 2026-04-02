@@ -1,0 +1,42 @@
+/* --- Reliable page sizing --- */
+@page { size: Letter; margin: 0.5in; }   /* change to A4 as needed */
+
+/* --- Kill layout gremlins during print --- */
+@media print {
+  * { animation: none !important; transition: none !important; }
+  .banner-container, .top-action-bar, .nav-tabs, .back-to-top { display: none !important; }
+
+  /* Let long sections break */
+  .section { 
+    box-shadow: none !important;
+    border: 1px solid #ccc;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+  }
+
+  /* Keep headings with content */
+  h1, h2, h3, .section-header { 
+    page-break-after: avoid !important; 
+    break-after: avoid-page !important; 
+  }
+
+  /* Tables: avoid row splits across pages */
+  table { page-break-inside: auto; break-inside: auto; }
+  thead { display: table-header-group; }
+  tfoot { display: table-footer-group; }
+  tr, td, th { page-break-inside: avoid; break-inside: avoid; }
+
+  /* Utility classes */
+  .hard-break { 
+    page-break-before: always !important; 
+    break-before: page !important; 
+  }
+  .avoid-break { page-break-inside: avoid !important; break-inside: avoid !important; }
+  .keep-with-next { page-break-after: avoid !important; break-after: avoid-page !important; }
+
+  /* html2pdf break helper */
+  .html2pdf__page-break { 
+    page-break-before: always !important; 
+    break-before: page !important; 
+  }
+}

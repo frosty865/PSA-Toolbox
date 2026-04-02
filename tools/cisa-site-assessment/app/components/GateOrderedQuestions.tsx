@@ -28,8 +28,8 @@ interface RequiredElement extends BaselineSpineUI {
 
 interface GateOrderedQuestionsProps {
   elements: RequiredElement[];
-  responses: Map<string, "YES" | "NO" | "N/A" | "N_A">;
-  onResponseChange: (canonId: string, response: "YES" | "NO" | "N/A" | "N_A") => void;
+  responses: Map<string, string>;
+  onResponseChange: (canonId: string, response: "YES" | "NO" | "N/A" | "N_A" | string) => void;
   saving: Record<string, boolean>;
   isReadOnly: boolean;
   assessmentId?: string; // For technology profile selector
@@ -301,12 +301,11 @@ export default function GateOrderedQuestions({
       : (spineResponseRaw === 'YES' || spineResponseRaw === 'NO' ? spineResponseRaw : null) as "YES" | "NO" | "N_A" | null;
 
     // Build depth-2 responses map (normalize N/A -> N_A)
-    const depth2Responses = new Map<string, "YES" | "NO" | "N_A">();
+    const depth2Responses = new Map<string, string>();
     for (const d2q of depth2Questions) {
       const resp = responses.get(d2q.canon_id) || d2q.current_response || null;
-      if (resp === 'YES' || resp === 'NO' || resp === 'N/A' || resp === 'N_A') {
-        const normalized = resp === 'N/A' || resp === 'N_A' ? 'N_A' : resp;
-        depth2Responses.set(d2q.canon_id, normalized as "YES" | "NO" | "N_A");
+      if (typeof resp === 'string' && resp.trim().length > 0) {
+        depth2Responses.set(d2q.canon_id, resp === 'N/A' ? 'N_A' : resp);
       }
     }
 
@@ -320,15 +319,13 @@ export default function GateOrderedQuestions({
         depth2Responses={depth2Responses}
         onSpineAnswer={onResponseChange}
         onDepth2Answer={(canonId: string, response: string | null) => {
-          // Convert depth-2 responses to the format expected by onResponseChange
-          // Map PAPER/DIGITAL/HYBRID/null to N_A, or use the response as-is if it's YES/NO/N_A/N/A
+          // Convert depth-2 responses to the format expected by onResponseChange.
           if (!response || response === 'PAPER' || response === 'DIGITAL' || response === 'HYBRID') {
             onResponseChange(canonId, 'N_A');
           } else if (response === 'N/A') {
             onResponseChange(canonId, 'N/A');
           } else {
-            // Type assertion is safe here because we've handled all special cases
-            onResponseChange(canonId, response as "YES" | "NO" | "N_A");
+            onResponseChange(canonId, response);
           }
         }}
         saving={saving}

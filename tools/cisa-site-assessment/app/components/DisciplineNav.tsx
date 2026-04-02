@@ -11,11 +11,12 @@ interface Discipline {
 interface DisciplineNavProps {
   disciplines: Discipline[];
   className?: string;
+  defaultExpanded?: boolean;
 }
 
-export default function DisciplineNav({ disciplines, className = "" }: DisciplineNavProps) {
+export default function DisciplineNav({ disciplines, className = "", defaultExpanded = false }: DisciplineNavProps) {
   const [activeSection, setActiveSection] = useState<string | null>(null);
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(defaultExpanded);
 
   // Track which section is currently in view
   useEffect(() => {

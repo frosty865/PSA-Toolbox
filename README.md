@@ -1,12 +1,13 @@
 # PSA Toolbox
 
-Monorepo umbrella for PSA tools: **one unified web app** (Next.js in [`tools/dependency-analysis/`](tools/dependency-analysis/)) serves the toolbox landing (`/`), **Dependency analysis** (`/assessment/…`), and **Hotel Analysis** (`/hotel-analysis/`) on **one port**. Product folders live under [`tools/`](tools/). The WinUI launcher reads [`tools-manifest.json`](tools-manifest.json).
+Monorepo umbrella for PSA tools: **one unified web app** (Next.js in [`tools/dependency-analysis/`](tools/dependency-analysis/)) serves the toolbox landing (`/`), **Dependency analysis** (`/assessment/…`), **Hotel Analysis** (`/hotel-analysis/`), **SAFE 3.0** (`/safe-3-0/`), and proxied **Modular Site Assessment** (`/cisa-site-assessment/`) on **one port** (where configured). Product folders live under [`tools/`](tools/). The WinUI launcher reads [`tools-manifest.json`](tools-manifest.json).
 
 | Tool | Web route | Product folder |
 |------|-----------|----------------|
 | Toolbox shell | `/` | *(layout in dependency-analysis app)* |
 | Dependency analysis | `/assessment/…` | [`tools/dependency-analysis/`](tools/dependency-analysis/) |
 | Hotel Analysis | `/hotel-analysis/` | [`tools/hotel-analysis/`](tools/hotel-analysis/) |
+| SAFE 3.0 | `/safe-3-0/` | [`tools/safe-3.0/`](tools/safe-3.0/) |
 
 **Dev:** one command — `pnpm dev` from `tools/dependency-analysis`.
 

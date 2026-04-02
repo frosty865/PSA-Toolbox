@@ -16,10 +16,10 @@ interface Question {
   subtype_guidance?: unknown | null; // SubtypeGuidance for fallback display
   depth?: number;
   response_enum?: ("YES" | "NO" | "N_A" | "PAPER" | "DIGITAL" | "HYBRID")[];
-  response_type?: "YES_NO_NA" | "CHECKLIST";
+  response_type?: "YES_NO_NA" | "CHECKLIST" | "ENUM";
   allows_multiple?: boolean;
   response_options?: Array<{ value: string; label: string }>;
-  current_response?: "YES" | "NO" | "N/A" | "N_A" | "PAPER" | "DIGITAL" | "HYBRID" | string[] | null; // Accept both UI and API formats
+  current_response?: "YES" | "NO" | "N/A" | "N_A" | "PAPER" | "DIGITAL" | "HYBRID" | string | string[] | null; // Accept both UI and API formats
   checklist?: SubtypeChecklist | null;
   depth2_tags?: string[];
   parent_spine_canon_id?: string;
@@ -29,13 +29,14 @@ interface SubtypeQuestionBlockProps {
   spineQuestion: Question; // Depth-1 question
   spineResponse: "YES" | "NO" | "N/A" | "N_A" | null;
   depth2Questions: Question[]; // All depth-2 questions for this subtype
-  depth2Responses: Map<string, "YES" | "NO" | "N/A" | "N_A" | "PAPER" | "DIGITAL" | "HYBRID" | string>;
+  depth2Responses: Map<string, string>;
   onSpineAnswer: (canonId: string, response: "YES" | "NO" | "N/A" | "N_A") => void;
   onDepth2Answer: (canonId: string, response: "YES" | "NO" | "N/A" | "N_A" | "PAPER" | "DIGITAL" | "HYBRID" | string | null) => void;
   saving?: Record<string, boolean>;
   isReadOnly?: boolean;
   assessmentId?: string; // For localStorage key
   parentResponseId?: string | null; // Response ID for follow-up questions
+  subtypeLabel?: string | null; // Human-readable subtype title shown above the question prompt
 }
 
 /**
@@ -57,6 +58,7 @@ export default function SubtypeQuestionBlock({
   isReadOnly = false,
   assessmentId,
   parentResponseId,
+  subtypeLabel = null,
 }: SubtypeQuestionBlockProps) {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   type RefImplBranchingQuestion = {
@@ -225,6 +227,22 @@ export default function SubtypeQuestionBlock({
   const _showChecklist = normalizedSpineResponse === 'YES' && checklist && checklist.items.length > 0;
   void _showChecklist;
   const checklistItemsCount = checklist?.items?.length || 0;
+  const normalizedQuestionText = spineQuestion.question_text.trim().toLowerCase().replace(/\s+/g, ' ');
+  const normalizedSubtypeLabel = (subtypeLabel || '').trim().toLowerCase().replace(/\s+/g, ' ');
+  const showSubtypeLabel =
+    Boolean(normalizedSubtypeLabel) &&
+    normalizedSubtypeLabel !== normalizedQuestionText &&
+    !normalizedQuestionText.includes(normalizedSubtypeLabel);
+  const visuallyHiddenStyle = {
+    position: 'absolute' as const,
+    width: '1px',
+    height: '1px',
+    padding: 0,
+    margin: '-1px',
+    overflow: 'hidden',
+    clip: 'rect(0, 0, 0, 0)',
+    border: 0,
+  };
 
   return (
     <div
@@ -258,6 +276,20 @@ export default function SubtypeQuestionBlock({
       )}
       {/* Depth-1 Spine Question */}
       <div style={{ marginBottom: 'var(--spacing-md)' }}>
+        {showSubtypeLabel && (
+          <div
+            style={{
+              marginBottom: '0.35rem',
+              fontSize: 'var(--font-size-xs)',
+              fontWeight: 700,
+              letterSpacing: '0.02em',
+              textTransform: 'uppercase',
+              color: 'var(--cisa-gray)',
+            }}
+          >
+            {subtypeLabel}
+          </div>
+        )}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '0.5rem', gap: '1rem' }}>
           <div style={{ flex: 1 }}>
             <h5 style={{ margin: 0, fontSize: '0.95rem', fontWeight: '600', color: '#1b1b1b', lineHeight: '1.4' }}>
@@ -289,7 +321,7 @@ export default function SubtypeQuestionBlock({
 
         {/* Response Options */}
         <fieldset className="usa-fieldset" disabled={isReadOnly || saving[spineQuestion.canon_id]} style={{ marginTop: '0.75rem', padding: 0, border: 'none' }}>
-          <legend className="usa-sr-only">{spineQuestion.question_text}</legend>
+          <legend style={visuallyHiddenStyle}>{spineQuestion.question_text}</legend>
           <div className="usa-radio" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             {(spineQuestion.response_enum || ['YES', 'NO', 'N_A']).map((option) => {
               const optionValue = option === 'N_A' ? 'N/A' : option;
@@ -456,7 +488,7 @@ export default function SubtypeQuestionBlock({
 
                 {/* Response Options */}
                 <fieldset className="usa-fieldset" disabled={isReadOnly || isSaving} style={{ marginTop: '0.5rem', padding: 0, border: 'none' }}>
-                  <legend className="usa-sr-only">{question.question_text}</legend>
+                  <legend style={visuallyHiddenStyle}>{question.question_text}</legend>
                   {question.response_type === 'CHECKLIST' && question.response_options ? (
                     // CHECKLIST: Single-select checkbox group
                     <div className="usa-checkbox" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -508,6 +540,50 @@ export default function SubtypeQuestionBlock({
                             <label
                               className="usa-checkbox__label"
                               htmlFor={`${question.canon_id}-${option.value}`}
+                              style={{
+                                padding: '0.75rem 1rem',
+                                border: isSelected ? '2px solid #005ea2' : '2px solid #dfe1e2',
+                                borderRadius: '0.25rem',
+                                backgroundColor: isSelected ? '#e7f3f8' : 'white',
+                                cursor: isReadOnly || isSaving ? 'not-allowed' : 'pointer',
+                                opacity: isReadOnly || isSaving ? 0.6 : 1,
+                                display: 'inline-block',
+                                whiteSpace: 'nowrap',
+                                margin: 0,
+                              }}
+                            >
+                              {option.label}
+                              {isSaving && <span style={{ marginLeft: '0.5rem', fontSize: '0.875rem' }}>(saving...)</span>}
+                            </label>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  ) : question.response_type === 'ENUM' && question.response_options ? (
+                    // ENUM: Single-select radio group for non-binary questions
+                    <div className="usa-radio" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                      {question.response_options.map((option) => {
+                        const optionValue = option.value;
+                        const isSelected = currentResponse === optionValue;
+                        return (
+                          <div key={optionValue} className="usa-radio__input usa-radio__input--tile" style={{ margin: 0 }}>
+                            <input
+                              className="usa-radio__input"
+                              id={`${question.canon_id}-${optionValue}`}
+                              type="radio"
+                              name={`response-${question.canon_id}`}
+                              value={optionValue}
+                              checked={isSelected}
+                              onChange={() => {
+                                if (!isReadOnly && !isSaving) {
+                                  onDepth2Answer(question.canon_id, optionValue);
+                                }
+                              }}
+                              disabled={isReadOnly || isSaving}
+                            />
+                            <label
+                              className="usa-radio__label"
+                              htmlFor={`${question.canon_id}-${optionValue}`}
                               style={{
                                 padding: '0.75rem 1rem',
                                 border: isSelected ? '2px solid #005ea2' : '2px solid #dfe1e2',

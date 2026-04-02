@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getRuntimePool } from '@/app/lib/db/runtime_client';
+import { loadBaseline } from '@/app/lib/baselineLoader';
 import { OFC_DOCTRINE } from '@/app/lib/doctrine/ofc_doctrine';
+import { columnExists } from '@/app/lib/db/table_exists';
 
 export const runtime = "nodejs";
 export const dynamic = 'force-dynamic';
@@ -33,6 +35,7 @@ export async function GET(
       'SELECT id FROM public.assessments WHERE id::text = $1',
       [assessmentId]
     );
+    const maxPerVuln = OFC_DOCTRINE.MAX_OFCS_PER_VULN;
 
     if (assessmentCheck.rows.length === 0) {
       return NextResponse.json(
@@ -41,26 +44,57 @@ export async function GET(
       );
     }
 
-    // Get all questions with NO responses and their discipline_subtype_id
-    const questionsResult = await runtimePool.query(
+    // Load baseline questions from the canonical loader, then filter by NO responses.
+    const baselineQuestions = await loadBaseline(true);
+
+    const hasQuestionCanonId = await columnExists(runtimePool, 'public', 'assessment_responses', 'question_canon_id');
+    const hasQuestionTemplateId = await columnExists(runtimePool, 'public', 'assessment_responses', 'question_template_id');
+    const hasQuestionCode = await columnExists(runtimePool, 'public', 'assessment_responses', 'question_code');
+    const hasResponse = await columnExists(runtimePool, 'public', 'assessment_responses', 'response');
+    const hasAnswer = await columnExists(runtimePool, 'public', 'assessment_responses', 'answer');
+    const responseKeyColumns = [
+      hasQuestionCanonId ? 'question_canon_id' : null,
+      hasQuestionTemplateId ? 'question_template_id' : null,
+      hasQuestionCode ? 'question_code' : null,
+    ].filter((col): col is string => Boolean(col));
+    const responseValueColumn = hasResponse ? 'response' : (hasAnswer ? 'answer' : null);
+
+    if (!responseValueColumn || responseKeyColumns.length === 0) {
+      return NextResponse.json({
+        assessment_id: assessmentId,
+        ofcs: [],
+        max_per_vuln: maxPerVuln,
+      });
+    }
+
+    const responseRows = await runtimePool.query(
       `
-      SELECT DISTINCT
-        q.canon_id,
-        q.discipline_subtype_id,
-        q.discipline_id
-      FROM public.baseline_spines_runtime q
-      INNER JOIN public.assessment_responses r
-        ON q.canon_id = r.canon_id
-      WHERE r.assessment_id::text = $1
-        AND r.response = 'NO'
-        AND q.active = true
+      SELECT
+        ${responseKeyColumns.join(', ')},
+        ${responseValueColumn}
+      FROM public.assessment_responses
+      WHERE assessment_id::text = $1
+        AND ${responseValueColumn} = 'NO'
       `,
       [assessmentId]
     );
 
-    const questions = questionsResult.rows;
+    const noResponseQuestionIds = new Set<string>();
+    for (const row of responseRows.rows as Array<Record<string, string | null | undefined>>) {
+      const key = row.question_canon_id || row.question_template_id || row.question_code;
+      if (key) {
+        noResponseQuestionIds.add(String(key));
+      }
+    }
+
+    const questions = baselineQuestions
+      .filter((q) => noResponseQuestionIds.has(q.canon_id))
+      .map((q) => ({
+        canon_id: q.canon_id,
+        discipline_subtype_id: q.discipline_subtype_id ?? null,
+        discipline_id: q.discipline_code,
+      }));
     const allOfcs: Record<string, unknown>[] = [];
-    const maxPerVuln = OFC_DOCTRINE.MAX_OFCS_PER_VULN;
 
     // Check if ofc_library has discipline_subtype_id (migration may not be applied)
     let hasSubtypeColumn = false;

@@ -6,7 +6,7 @@
       "id": "dependency-analysis",
       "displayName": "Infrastructure Dependency Assessment",
       "relativePath": "tools/dependency-analysis",
-      "description": "Map dependencies and continuity impacts, work category-by-category, and produce review-ready exports for infrastructure programs.",
+      "description": "Infrastructure Dependency Assessment is for documenting how critical assets rely on power, communications, suppliers, and related systems, and for capturing continuity and consequence in a structured assessment you can carry through review.",
       "readmeRelativePath": "README.md",
       "entryPath": "/assessment/categories/",
       "start": {
@@ -17,17 +17,25 @@
     },
     {
       "id": "hotel-analysis",
-      "displayName": "Hotel Analysis",
+      "displayName": "Hotel Analysis (HOST)",
       "relativePath": "tools/hotel-analysis",
-      "description": "Purpose-built for hotels and hospitality: structured HOST assessments, guided workflows, and operational security outputs you can stand behind.",
+      "description": "Hotel Analysis is the Hotel Operational Security Toolkit (HOST): a guided assessment for lodging and hospitality properties—facility profile, parking, guest services, surveillance, access control, perimeter, and related operational security so you can cover the property end to end.",
       "readmeRelativePath": "README.md",
       "entryPath": "/hotel-analysis/"
     },
     {
+      "id": "safe-3-0",
+      "displayName": "SAFE 3.0",
+      "relativePath": "tools/safe-3.0",
+      "description": "SAFE 3.0 (ALT SAFE) is a comprehensive security assessment for facilities and environments—structured sections, scoring, and reporting in one self-contained web application.",
+      "readmeRelativePath": "README.md",
+      "entryPath": "/safe-3-0/"
+    },
+    {
       "id": "cisa-site-assessment",
-      "displayName": "CISA Site Assessment",
+      "displayName": "Modular Site Assessment",
       "relativePath": "tools/cisa-site-assessment",
-      "description": "Full Protective Security Assessment lifecycle: intake through analysis, with reporting aligned to how CISA teams review sites.",
+      "description": "Modular Site Assessment is a modular assessment designed so Protective Security Advisors have a flexible tool to conduct assessments based on sector and subsector.",
       "readmeRelativePath": "README-TOOLBOX.md",
       "entryPath": "/cisa-site-assessment/",
       "externalUrl": "http://127.0.0.1:3001/cisa-site-assessment/assessments/",

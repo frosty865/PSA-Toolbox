@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON File Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .file-input {
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            text-align: center;
+        }
+        input[type="file"] {
+            margin: 10px 0;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+        .success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        .info {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+        }
+        .file-list {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        .file-item {
+            margin: 5px 0;
+            padding: 5px;
+            background: white;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 JSON File Converter</h1>
+        <p>This tool converts structured JSON files (with facilityInfo, contactInfo, assessmentData) to flat form data format for proper import.</p>
+        
+        <div class="file-input">
+            <h3>Select JSON Files to Convert</h3>
+            <input type="file" id="fileInput" multiple accept=".json">
+            <br>
+            <button onclick="processFiles()" id="convertBtn" disabled>Convert Files</button>
+            <button onclick="clearResults()">Clear Results</button>
+        </div>
+        
+        <div id="fileList" class="file-list" style="display: none;">
+            <h4>Selected Files:</h4>
+            <div id="fileItems"></div>
+        </div>
+        
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        let selectedFiles = [];
+        
+        document.getElementById('fileInput').addEventListener('change', function(e) {
+            selectedFiles = Array.from(e.target.files);
+            updateFileList();
+            document.getElementById('convertBtn').disabled = selectedFiles.length === 0;
+        });
+        
+        function updateFileList() {
+            const fileList = document.getElementById('fileList');
+            const fileItems = document.getElementById('fileItems');
+            
+            if (selectedFiles.length === 0) {
+                fileList.style.display = 'none';
+                return;
+            }
+            
+            fileList.style.display = 'block';
+            fileItems.innerHTML = selectedFiles.map(file => 
+                `<div class="file-item">${file.name} (${(file.size / 1024).toFixed(1)} KB)</div>`
+            ).join('');
+        }
+        
+        function convertStructuredToFlat(data) {
+            let formData = {};
+            
+            // If this is the structured export format, extract the form data
+            if (data.facilityInfo || data.contactInfo || data.assessmentData) {
+                // Add facility info fields
+                if (data.facilityInfo) {
+                    Object.keys(data.facilityInfo).forEach(key => {
+                        formData[key] = data.facilityInfo[key];
+                    });
+                }
+                
+                // Add contact info fields  
+                if (data.contactInfo) {
+                    Object.keys(data.contactInfo).forEach(key => {
+                        formData[key] = data.contactInfo[key];
+                    });
+                }
+                
+                // Add any other top-level fields that might be form data
+                Object.keys(data).forEach(key => {
+                    if (key !== 'facilityInfo' && key !== 'contactInfo' && key !== 'assessmentData' && key !== 'exportDate' && key !== 'version') {
+                        formData[key] = data[key];
+                    }
+                });
+                
+                // Add metadata
+                formData.exportDate = data.exportDate || new Date().toISOString();
+                formData.version = data.version || '3.0';
+                
+                return formData;
+            }
+            
+            // If it's already flat, return as-is
+            return data;
+        }
+        
+        function processFiles() {
+            if (selectedFiles.length === 0) {
+                showResult('No files selected', 'error');
+                return;
+            }
+            
+            let successCount = 0;
+            let errorCount = 0;
+            let results = [];
+            
+            selectedFiles.forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        const data = JSON.parse(e.target.result);
+                        const flatData = convertStructuredToFlat(data);
+                        
+                        // Create download link for converted file
+                        const blob = new Blob([JSON.stringify(flatData, null, 2)], {type: 'application/json'});
+                        const url = URL.createObjectURL(blob);
+                        const link = document.createElement('a');
+                        link.href = url;
+                        link.download = file.name.replace('.json', '_converted.json');
+                        
+                        // Trigger download
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        URL.revokeObjectURL(url);
+                        
+                        results.push(`✅ ${file.name} - Converted successfully`);
+                        successCount++;
+                        
+                        // Check if all files are processed
+                        if (successCount + errorCount === selectedFiles.length) {
+                            showFinalResults(successCount, errorCount, results);
+                        }
+                    } catch (error) {
+                        results.push(`❌ ${file.name} - Error: ${error.message}`);
+                        errorCount++;
+                        
+                        // Check if all files are processed
+                        if (successCount + errorCount === selectedFiles.length) {
+                            showFinalResults(successCount, errorCount, results);
+                        }
+                    }
+                };
+                reader.readAsText(file);
+            });
+        }
+        
+        function showFinalResults(successCount, errorCount, results) {
+            let message = `Conversion Complete!\n\n`;
+            message += `Successfully converted: ${successCount} files\n`;
+            message += `Errors: ${errorCount} files\n\n`;
+            message += `Details:\n${results.join('\n')}`;
+            
+            showResult(message, successCount > 0 ? 'success' : 'error');
+        }
+        
+        function showResult(message, type) {
+            const result = document.getElementById('result');
+            result.textContent = message;
+            result.className = `result ${type}`;
+            result.style.display = 'block';
+        }
+        
+        function clearResults() {
+            document.getElementById('result').style.display = 'none';
+            document.getElementById('fileInput').value = '';
+            selectedFiles = [];
+            updateFileList();
+            document.getElementById('convertBtn').disabled = true;
+        }
+    </script>
+</body>
+</html>
+

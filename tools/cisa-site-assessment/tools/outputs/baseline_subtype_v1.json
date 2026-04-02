@@ -3,7 +3,7 @@
     "canon_id": "BASE-ACS-ACS_BIOMETRIC_ACCESS",
     "discipline_code": "ACS",
     "subtype_code": "ACS_BIOMETRIC_ACCESS",
-    "question_text": "Is a Biometric Access capability implemented?",
+    "question_text": "Is biometric authentication used to grant entry at controlled points?",
     "response_enum": [
       "YES",
       "NO",
@@ -16,7 +16,7 @@
     "canon_id": "BASE-ACS-ACS_CREDENTIAL_BADGE_SYSTEMS",
     "discipline_code": "ACS",
     "subtype_code": "ACS_CREDENTIAL_BADGE_SYSTEMS",
-    "question_text": "Is a Credential / Badge Systems capability implemented?",
+    "question_text": "Are credentials or badges used to grant entry at controlled points?",
     "response_enum": [
       "YES",
       "NO",
@@ -29,7 +29,7 @@
     "canon_id": "BASE-ACS-ACS_DOOR_MONITORING",
     "discipline_code": "ACS",
     "subtype_code": "ACS_DOOR_MONITORING",
-    "question_text": "Is a Door Monitoring capability implemented?",
+    "question_text": "Are doors monitored for forced or unauthorized opening at controlled entry points?",
     "response_enum": [
       "YES",
       "NO",
@@ -42,7 +42,7 @@
     "canon_id": "BASE-ACS-ACS_DOOR_READERS",
     "discipline_code": "ACS",
     "subtype_code": "ACS_DOOR_READERS",
-    "question_text": "Is a Door Readers capability implemented?",
+    "question_text": "Are door readers installed at controlled entry points?",
     "response_enum": [
       "YES",
       "NO",
@@ -55,7 +55,7 @@
     "canon_id": "BASE-ACS-ACS_ELECTRIC_STRIKES_MAG_LOCKS",
     "discipline_code": "ACS",
     "subtype_code": "ACS_ELECTRIC_STRIKES_MAG_LOCKS",
-    "question_text": "Is an Electric Strikes / Mag Locks capability implemented?",
+    "question_text": "Are electric strikes or mag locks installed on controlled doors?",
     "response_enum": [
       "YES",
       "NO",
@@ -68,7 +68,7 @@
     "canon_id": "BASE-ACS-ACS_ELECTRONIC_ACCESS_CONTROL",
     "discipline_code": "ACS",
     "subtype_code": "ACS_ELECTRONIC_ACCESS_CONTROL",
-    "question_text": "Is an Electronic Access Control capability implemented?",
+    "question_text": "Is an electronic access control system in use at controlled entry points?",
     "response_enum": [
       "YES",
       "NO",
@@ -81,7 +81,7 @@
     "canon_id": "BASE-ACS-ACS_KEYPADS_PIN_ENTRY",
     "discipline_code": "ACS",
     "subtype_code": "ACS_KEYPADS_PIN_ENTRY",
-    "question_text": "Is a Keypads / PIN Entry capability implemented?",
+    "question_text": "Are keypads or PIN entry devices used at controlled entry points?",
     "response_enum": [
       "YES",
       "NO",
@@ -94,7 +94,7 @@
     "canon_id": "BASE-ACS-ACS_LOCKING_HARDWARE",
     "discipline_code": "ACS",
     "subtype_code": "ACS_LOCKING_HARDWARE",
-    "question_text": "Is a Locking Hardware capability implemented?",
+    "question_text": "Is mechanical locking hardware installed on controlled doors?",
     "response_enum": [
       "YES",
       "NO",
@@ -107,7 +107,7 @@
     "canon_id": "BASE-ACS-ACS_SECURED_VESTIBULES",
     "discipline_code": "ACS",
     "subtype_code": "ACS_SECURED_VESTIBULES",
-    "question_text": "Is a Secured Vestibules capability implemented?",
+    "question_text": "Are secured vestibules used to separate public and controlled space?",
     "response_enum": [
       "YES",
       "NO",
@@ -120,7 +120,7 @@
     "canon_id": "BASE-ACS-ACS_VISITOR_MANAGEMENT_SYSTEMS",
     "discipline_code": "ACS",
     "subtype_code": "ACS_VISITOR_MANAGEMENT_SYSTEMS",
-    "question_text": "Is a Visitor Management Systems capability implemented?",
+    "question_text": "Are visitor management systems used to manage facility entry?",
     "response_enum": [
       "YES",
       "NO",
@@ -133,7 +133,7 @@
     "canon_id": "BASE-COM-COM_BACKUP_COMMUNICATIONS",
     "discipline_code": "COM",
     "subtype_code": "COM_BACKUP_COMMUNICATIONS",
-    "question_text": "Is a Backup Communications capability implemented?",
+    "question_text": "Is there a backup communication method available during outages or incidents?",
     "response_enum": [
       "YES",
       "NO",
@@ -146,7 +146,7 @@
     "canon_id": "BASE-COM-COM_COMMUNICATION_PROTOCOLS",
     "discipline_code": "COM",
     "subtype_code": "COM_COMMUNICATION_PROTOCOLS",
-    "question_text": "Is a Communication Protocols capability implemented?",
+    "question_text": "Are communication protocols defined for incident coordination?",
     "response_enum": [
       "YES",
       "NO",
@@ -159,7 +159,7 @@
     "canon_id": "BASE-COM-COM_INTEROPERABLE_COMMUNICATIONS",
     "discipline_code": "COM",
     "subtype_code": "COM_INTEROPERABLE_COMMUNICATIONS",
-    "question_text": "Is an Interoperable Communications capability implemented?",
+    "question_text": "Can communications interoperate with external responders or partner systems?",
     "response_enum": [
       "YES",
       "NO",
@@ -172,7 +172,7 @@
     "canon_id": "BASE-COM-COM_PA_SYSTEMS",
     "discipline_code": "COM",
     "subtype_code": "COM_PA_SYSTEMS",
-    "question_text": "Is a PA Systems capability implemented?",
+    "question_text": "Are public address systems available to broadcast announcements?",
     "response_enum": [
       "YES",
       "NO",
@@ -185,7 +185,7 @@
     "canon_id": "BASE-COM-COM_PAGING_SYSTEMS",
     "discipline_code": "COM",
     "subtype_code": "COM_PAGING_SYSTEMS",
-    "question_text": "Is a Paging Systems capability implemented?",
+    "question_text": "Are paging systems available to broadcast alerts?",
     "response_enum": [
       "YES",
       "NO",
@@ -198,7 +198,7 @@
     "canon_id": "BASE-COM-COM_RADIOS_TWO_WAY",
     "discipline_code": "COM",
     "subtype_code": "COM_RADIOS_TWO_WAY",
-    "question_text": "Is a Radios / Two-Way capability implemented?",
+    "question_text": "Are two-way radios available for staff coordination?",
     "response_enum": [
       "YES",
       "NO",
@@ -302,7 +302,7 @@
     "canon_id": "BASE-EAP-EAP_EMERGENCY_DRILLS",
     "discipline_code": "EAP",
     "subtype_code": "EAP_EMERGENCY_DRILLS",
-    "question_text": "Is an Emergency Drills capability implemented?",
+    "question_text": "Are emergency drills planned or conducted for the facility?",
     "response_enum": [
       "YES",
       "NO",
@@ -315,7 +315,7 @@
     "canon_id": "BASE-EAP-EAP_EMERGENCY_GUIDES_FLIP_CHARTS",
     "discipline_code": "EAP",
     "subtype_code": "EAP_EMERGENCY_GUIDES_FLIP_CHARTS",
-    "question_text": "Is an Emergency Guides / Flip Charts capability implemented?",
+    "question_text": "Are emergency guides or flip charts available for staff use?",
     "response_enum": [
       "YES",
       "NO",
@@ -328,7 +328,7 @@
     "canon_id": "BASE-EAP-EAP_EVACUATION_PROCEDURES",
     "discipline_code": "EAP",
     "subtype_code": "EAP_EVACUATION_PROCEDURES",
-    "question_text": "Is an Evacuation Procedures capability implemented?",
+    "question_text": "Are evacuation routes and assembly steps documented for the facility?",
     "response_enum": [
       "YES",
       "NO",
@@ -341,7 +341,7 @@
     "canon_id": "BASE-EAP-EAP_LOCKDOWN_LOCKOUT_PROCEDURES",
     "discipline_code": "EAP",
     "subtype_code": "EAP_LOCKDOWN_LOCKOUT_PROCEDURES",
-    "question_text": "Is a Lockdown / Lockout Procedures capability implemented?",
+    "question_text": "Are lockdown or lockout steps documented for threats requiring restricted access?",
     "response_enum": [
       "YES",
       "NO",
@@ -354,7 +354,7 @@
     "canon_id": "BASE-EAP-EAP_MUSTER_POINTS_RALLY_AREAS",
     "discipline_code": "EAP",
     "subtype_code": "EAP_MUSTER_POINTS_RALLY_AREAS",
-    "question_text": "Is a Muster Points / Rally Areas capability implemented?",
+    "question_text": "Are muster points or rally areas designated for evacuees after departure?",
     "response_enum": [
       "YES",
       "NO",
@@ -367,7 +367,7 @@
     "canon_id": "BASE-EAP-EAP_REUNIFICATION_PROCEDURES",
     "discipline_code": "EAP",
     "subtype_code": "EAP_REUNIFICATION_PROCEDURES",
-    "question_text": "Is a Reunification Procedures capability implemented?",
+    "question_text": "Are reunification steps documented for reuniting occupants after an incident?",
     "response_enum": [
       "YES",
       "NO",
@@ -380,7 +380,7 @@
     "canon_id": "BASE-EAP-EAP_SHELTER_IN_PLACE",
     "discipline_code": "EAP",
     "subtype_code": "EAP_SHELTER_IN_PLACE",
-    "question_text": "Is a Shelter-in-Place capability implemented?",
+    "question_text": "Are shelter-in-place steps documented for threats that require occupants to stay inside?",
     "response_enum": [
       "YES",
       "NO",
@@ -393,7 +393,7 @@
     "canon_id": "BASE-EAP-EAP_STAFF_EMERGENCY_ROLES",
     "discipline_code": "EAP",
     "subtype_code": "EAP_STAFF_EMERGENCY_ROLES",
-    "question_text": "Is a Staff Emergency Roles capability implemented?",
+    "question_text": "Are staff responsibilities assigned for emergency response?",
     "response_enum": [
       "YES",
       "NO",
@@ -406,7 +406,7 @@
     "canon_id": "BASE-EMR-EMR_BUSINESS_CONTINUITY",
     "discipline_code": "EMR",
     "subtype_code": "EMR_BUSINESS_CONTINUITY",
-    "question_text": "Is a Business Continuity capability implemented?",
+    "question_text": "Is continuity of operations planned for facility disruptions?",
     "response_enum": [
       "YES",
       "NO",
@@ -419,7 +419,7 @@
     "canon_id": "BASE-EMR-EMR_CRISIS_MANAGEMENT",
     "discipline_code": "EMR",
     "subtype_code": "EMR_CRISIS_MANAGEMENT",
-    "question_text": "Is a Crisis Management capability implemented?",
+    "question_text": "Is crisis management defined for major incidents affecting the facility?",
     "response_enum": [
       "YES",
       "NO",
@@ -432,7 +432,7 @@
     "canon_id": "BASE-EMR-EMR_EMERGENCY_COMMUNICATIONS",
     "discipline_code": "EMR",
     "subtype_code": "EMR_EMERGENCY_COMMUNICATIONS",
-    "question_text": "Is an Emergency Communications capability implemented?",
+    "question_text": "Is there a defined method to notify occupants during emergencies?",
     "response_enum": [
       "YES",
       "NO",
@@ -445,7 +445,7 @@
     "canon_id": "BASE-EMR-EMR_ICS_NIMS_INTEGRATION",
     "discipline_code": "EMR",
     "subtype_code": "EMR_ICS_NIMS_INTEGRATION",
-    "question_text": "Is an ICS/NIMS Integration capability implemented?",
+    "question_text": "Is incident command or NIMS integration defined for the facility?",
     "response_enum": [
       "YES",
       "NO",
@@ -458,7 +458,7 @@
     "canon_id": "BASE-EMR-EMR_MASS_NOTIFICATION",
     "discipline_code": "EMR",
     "subtype_code": "EMR_MASS_NOTIFICATION",
-    "question_text": "Is a Mass Notification capability implemented?",
+    "question_text": "Is mass notification available for urgent protective actions?",
     "response_enum": [
       "YES",
       "NO",
@@ -471,7 +471,7 @@
     "canon_id": "BASE-EMR-EMR_REDUNDANCY_BACKUP_SYSTEMS",
     "discipline_code": "EMR",
     "subtype_code": "EMR_REDUNDANCY_BACKUP_SYSTEMS",
-    "question_text": "Is a Redundancy / Backup Systems capability implemented?",
+    "question_text": "Are backup systems defined for critical operations?",
     "response_enum": [
       "YES",
       "NO",
@@ -484,7 +484,7 @@
     "canon_id": "BASE-EMR-EMR_RESILIENCE_PLANNING",
     "discipline_code": "EMR",
     "subtype_code": "EMR_RESILIENCE_PLANNING",
-    "question_text": "Is a Resilience Planning capability implemented?",
+    "question_text": "Is resilience planning defined for the facility?",
     "response_enum": [
       "YES",
       "NO",
@@ -575,7 +575,7 @@
     "canon_id": "BASE-IDS-IDS_ALARM_MONITORING",
     "discipline_code": "IDS",
     "subtype_code": "IDS_ALARM_MONITORING",
-    "question_text": "Is an Alarm Monitoring capability implemented?",
+    "question_text": "Are alarms monitored by staff or a central service?",
     "response_enum": [
       "YES",
       "NO",
@@ -588,7 +588,7 @@
     "canon_id": "BASE-IDS-IDS_ALARM_PANELS",
     "discipline_code": "IDS",
     "subtype_code": "IDS_ALARM_PANELS",
-    "question_text": "Is an Alarm Panels capability implemented?",
+    "question_text": "Are alarm panels installed to receive detection signals?",
     "response_enum": [
       "YES",
       "NO",
@@ -601,7 +601,7 @@
     "canon_id": "BASE-IDS-IDS_DOOR_CONTACTS",
     "discipline_code": "IDS",
     "subtype_code": "IDS_DOOR_CONTACTS",
-    "question_text": "Is a Door Contacts capability implemented?",
+    "question_text": "Are door contacts installed to detect opening events?",
     "response_enum": [
       "YES",
       "NO",
@@ -614,7 +614,7 @@
     "canon_id": "BASE-IDS-IDS_GLASS_BREAK_SENSORS",
     "discipline_code": "IDS",
     "subtype_code": "IDS_GLASS_BREAK_SENSORS",
-    "question_text": "Is a Glass Break Sensors capability implemented?",
+    "question_text": "Are glass break sensors installed to detect forced entry?",
     "response_enum": [
       "YES",
       "NO",
@@ -627,7 +627,7 @@
     "canon_id": "BASE-IDS-IDS_MOTION_DETECTORS",
     "discipline_code": "IDS",
     "subtype_code": "IDS_MOTION_DETECTORS",
-    "question_text": "Is a Motion Detectors capability implemented?",
+    "question_text": "Are motion detectors installed to detect movement in protected areas?",
     "response_enum": [
       "YES",
       "NO",
@@ -640,7 +640,7 @@
     "canon_id": "BASE-IDS-IDS_PANIC_DURESS_BUTTONS",
     "discipline_code": "IDS",
     "subtype_code": "IDS_PANIC_DURESS_BUTTONS",
-    "question_text": "Is a Panic / Duress Buttons capability implemented?",
+    "question_text": "Are panic or duress buttons installed for silent alerting?",
     "response_enum": [
       "YES",
       "NO",
@@ -653,7 +653,7 @@
     "canon_id": "BASE-IDS-IDS_PERIMETER_IDS",
     "discipline_code": "IDS",
     "subtype_code": "IDS_PERIMETER_IDS",
-    "question_text": "Is a Perimeter IDS capability implemented?",
+    "question_text": "Is intrusion detection deployed along the perimeter?",
     "response_enum": [
       "YES",
       "NO",
@@ -666,7 +666,7 @@
     "canon_id": "BASE-INT-INT_ACCESS_RESTRICTED_AREAS",
     "discipline_code": "INT",
     "subtype_code": "INT_ACCESS_RESTRICTED_AREAS",
-    "question_text": "Is an Access-Restricted Areas capability implemented?",
+    "question_text": "Are restricted areas controlled at their entry points?",
     "response_enum": [
       "YES",
       "NO",
@@ -679,7 +679,7 @@
     "canon_id": "BASE-INT-INT_HARD_INTERIOR_BARRIERS",
     "discipline_code": "INT",
     "subtype_code": "INT_HARD_INTERIOR_BARRIERS",
-    "question_text": "Is a Hard-Interior Barriers capability implemented?",
+    "question_text": "Are hard interior barriers used to separate protected spaces?",
     "response_enum": [
       "YES",
       "NO",
@@ -692,7 +692,7 @@
     "canon_id": "BASE-INT-INT_INTERIOR_DOORS",
     "discipline_code": "INT",
     "subtype_code": "INT_INTERIOR_DOORS",
-    "question_text": "Is an Interior Doors capability implemented?",
+    "question_text": "Are interior doors used to control movement between spaces?",
     "response_enum": [
       "YES",
       "NO",
@@ -705,7 +705,7 @@
     "canon_id": "BASE-INT-INT_INTERIOR_LIGHTING",
     "discipline_code": "INT",
     "subtype_code": "INT_INTERIOR_LIGHTING",
-    "question_text": "Is an Interior Lighting capability implemented?",
+    "question_text": "Is interior lighting used to support protected spaces or visibility?",
     "response_enum": [
       "YES",
       "NO",
@@ -718,7 +718,7 @@
     "canon_id": "BASE-INT-INT_SAFE_ROOMS",
     "discipline_code": "INT",
     "subtype_code": "INT_SAFE_ROOMS",
-    "question_text": "Is a Safe Rooms capability implemented?",
+    "question_text": "Are safe rooms designated for temporary protective shelter?",
     "response_enum": [
       "YES",
       "NO",
@@ -731,7 +731,7 @@
     "canon_id": "BASE-INT-INT_SECURE_ROOMS",
     "discipline_code": "INT",
     "subtype_code": "INT_SECURE_ROOMS",
-    "question_text": "Is a Secure Rooms capability implemented?",
+    "question_text": "Are secure rooms designated for protected occupancy?",
     "response_enum": [
       "YES",
       "NO",
@@ -744,7 +744,7 @@
     "canon_id": "BASE-INT-INT_SENSITIVE_ITEM_STORAGE",
     "discipline_code": "INT",
     "subtype_code": "INT_SENSITIVE_ITEM_STORAGE",
-    "question_text": "Is a Sensitive Item Storage capability implemented?",
+    "question_text": "Is protected storage provided for sensitive items?",
     "response_enum": [
       "YES",
       "NO",
@@ -757,7 +757,7 @@
     "canon_id": "BASE-ISC-ISC_COORDINATION_PROTOCOLS",
     "discipline_code": "ISC",
     "subtype_code": "ISC_COORDINATION_PROTOCOLS",
-    "question_text": "Is a Coordination Protocols capability implemented?",
+    "question_text": "Are coordination protocols defined for partner response and escalation?",
     "response_enum": [
       "YES",
       "NO",
@@ -770,7 +770,7 @@
     "canon_id": "BASE-ISC-ISC_EXTERNAL_REPORTING",
     "discipline_code": "ISC",
     "subtype_code": "ISC_EXTERNAL_REPORTING",
-    "question_text": "Is an External Reporting capability implemented?",
+    "question_text": "Is external reporting defined for incidents or threats?",
     "response_enum": [
       "YES",
       "NO",
@@ -783,7 +783,7 @@
     "canon_id": "BASE-ISC-ISC_FUSION_CENTER_INTERFACE",
     "discipline_code": "ISC",
     "subtype_code": "ISC_FUSION_CENTER_INTERFACE",
-    "question_text": "Is a Fusion Center Interface capability implemented?",
+    "question_text": "Is there an interface for sharing information with a fusion center?",
     "response_enum": [
       "YES",
       "NO",
@@ -796,7 +796,7 @@
     "canon_id": "BASE-ISC-ISC_ISAC_ISAOS",
     "discipline_code": "ISC",
     "subtype_code": "ISC_ISAC_ISAOS",
-    "question_text": "Is an ISAC / ISAOs capability implemented?",
+    "question_text": "Is there participation in ISAC or ISAO information sharing?",
     "response_enum": [
       "YES",
       "NO",
@@ -809,7 +809,7 @@
     "canon_id": "BASE-ISC-ISC_JTTF_ENGAGEMENT",
     "discipline_code": "ISC",
     "subtype_code": "ISC_JTTF_ENGAGEMENT",
-    "question_text": "Is a JTTF Engagement capability implemented?",
+    "question_text": "Is JTTF engagement defined for relevant incidents?",
     "response_enum": [
       "YES",
       "NO",
@@ -822,7 +822,7 @@
     "canon_id": "BASE-ISC-ISC_LAW_ENFORCEMENT_LIAISON",
     "discipline_code": "ISC",
     "subtype_code": "ISC_LAW_ENFORCEMENT_LIAISON",
-    "question_text": "Is a Law Enforcement Liaison capability implemented?",
+    "question_text": "Is law enforcement liaison defined for the facility?",
     "response_enum": [
       "YES",
       "NO",
@@ -835,7 +835,7 @@
     "canon_id": "BASE-ISC-ISC_THREAT_INFORMATION_SHARING",
     "discipline_code": "ISC",
     "subtype_code": "ISC_THREAT_INFORMATION_SHARING",
-    "question_text": "Is a Threat Information Sharing capability implemented?",
+    "question_text": "Is threat information shared with outside partners?",
     "response_enum": [
       "YES",
       "NO",
@@ -848,7 +848,7 @@
     "canon_id": "BASE-KEY-KEY_KEY_CABINETS",
     "discipline_code": "KEY",
     "subtype_code": "KEY_KEY_CABINETS",
-    "question_text": "Is a Key Cabinets capability implemented?",
+    "question_text": "Are key cabinets used to secure stored keys?",
     "response_enum": [
       "YES",
       "NO",
@@ -861,7 +861,7 @@
     "canon_id": "BASE-KEY-KEY_KEY_LOGS_ACCOUNTABILITY",
     "discipline_code": "KEY",
     "subtype_code": "KEY_KEY_LOGS_ACCOUNTABILITY",
-    "question_text": "Is a Key Logs / Accountability capability implemented?",
+    "question_text": "Are key issuance and return logs maintained?",
     "response_enum": [
       "YES",
       "NO",
@@ -874,7 +874,7 @@
     "canon_id": "BASE-KEY-KEY_MASTER_KEY_MANAGEMENT",
     "discipline_code": "KEY",
     "subtype_code": "KEY_MASTER_KEY_MANAGEMENT",
-    "question_text": "Is a Master Key Management capability implemented?",
+    "question_text": "Are master keys controlled separately from standard keys?",
     "response_enum": [
       "YES",
       "NO",
@@ -887,7 +887,7 @@
     "canon_id": "BASE-KEY-KEY_REKEYING_PROCEDURES",
     "discipline_code": "KEY",
     "subtype_code": "KEY_REKEYING_PROCEDURES",
-    "question_text": "Is a Rekeying Procedures capability implemented?",
+    "question_text": "Are rekeying procedures documented after key loss or turnover?",
     "response_enum": [
       "YES",
       "NO",
@@ -900,7 +900,7 @@
     "canon_id": "BASE-KEY-KEY_RESTRICTED_KEYS",
     "discipline_code": "KEY",
     "subtype_code": "KEY_RESTRICTED_KEYS",
-    "question_text": "Is a Restricted Keys capability implemented?",
+    "question_text": "Are restricted keys issued only to authorized personnel?",
     "response_enum": [
       "YES",
       "NO",
@@ -913,7 +913,7 @@
     "canon_id": "BASE-PER-PER_BOLLARDS_BARRIERS",
     "discipline_code": "PER",
     "subtype_code": "PER_BOLLARDS_BARRIERS",
-    "question_text": "Is a Bollards / Barriers capability implemented?",
+    "question_text": "Are bollards or vehicle barriers installed to deter vehicle access?",
     "response_enum": [
       "YES",
       "NO",
@@ -926,7 +926,7 @@
     "canon_id": "BASE-PER-PER_BOUNDARY_DEMARCATION",
     "discipline_code": "PER",
     "subtype_code": "PER_BOUNDARY_DEMARCATION",
-    "question_text": "Is a Boundary Demarcation capability implemented?",
+    "question_text": "Is the site boundary clearly marked or demarcated?",
     "response_enum": [
       "YES",
       "NO",
@@ -939,7 +939,7 @@
     "canon_id": "BASE-PER-PER_CLEAR_ZONES",
     "discipline_code": "PER",
     "subtype_code": "PER_CLEAR_ZONES",
-    "question_text": "Is a Clear Zones capability implemented?",
+    "question_text": "Are clear zones maintained along the perimeter?",
     "response_enum": [
       "YES",
       "NO",
@@ -952,7 +952,7 @@
     "canon_id": "BASE-PER-PER_FENCING",
     "discipline_code": "PER",
     "subtype_code": "PER_FENCING",
-    "question_text": "Is a Fencing capability implemented?",
+    "question_text": "Is fencing present along the site boundary?",
     "response_enum": [
       "YES",
       "NO",
@@ -965,7 +965,7 @@
     "canon_id": "BASE-PER-PER_GATES",
     "discipline_code": "PER",
     "subtype_code": "PER_GATES",
-    "question_text": "Is a Gates capability implemented?",
+    "question_text": "Are gates installed at perimeter entry points?",
     "response_enum": [
       "YES",
       "NO",
@@ -978,7 +978,7 @@
     "canon_id": "BASE-PER-PER_PERIMETER_LIGHTING",
     "discipline_code": "PER",
     "subtype_code": "PER_PERIMETER_LIGHTING",
-    "question_text": "Is a Perimeter Lighting capability implemented?",
+    "question_text": "Is perimeter lighting installed to illuminate the site boundary?",
     "response_enum": [
       "YES",
       "NO",
@@ -991,7 +991,7 @@
     "canon_id": "BASE-PER-PER_PERIMETER_SIGNAGE",
     "discipline_code": "PER",
     "subtype_code": "PER_PERIMETER_SIGNAGE",
-    "question_text": "Is a Perimeter Signage capability implemented?",
+    "question_text": "Is perimeter signage posted to mark restricted areas?",
     "response_enum": [
       "YES",
       "NO",
@@ -1004,7 +1004,7 @@
     "canon_id": "BASE-PER-PER_VEHICLE_ACCESS_CONTROL_POINTS",
     "discipline_code": "PER",
     "subtype_code": "PER_VEHICLE_ACCESS_CONTROL_POINTS",
-    "question_text": "Is a Vehicle Access Control Points capability implemented?",
+    "question_text": "Are vehicle entry points controlled with gates, barriers, or checkpoints?",
     "response_enum": [
       "YES",
       "NO",
@@ -1017,7 +1017,7 @@
     "canon_id": "BASE-PER-PER_PEDESTRIAN_ACCESS_CONTROL_POINTS",
     "discipline_code": "PER",
     "subtype_code": "PER_PEDESTRIAN_ACCESS_CONTROL_POINTS",
-    "question_text": "Is a Pedestrian Access Control Points capability implemented?",
+    "question_text": "Are pedestrian entry points controlled with staff, turnstiles, or checkpoints?",
     "response_enum": [
       "YES",
       "NO",
@@ -1030,7 +1030,7 @@
     "canon_id": "BASE-SFO-SFO_GUARD_POSTS",
     "discipline_code": "SFO",
     "subtype_code": "SFO_GUARD_POSTS",
-    "question_text": "Is a Guard Posts capability implemented?",
+    "question_text": "Are guard posts assigned to protect key areas of the facility?",
     "response_enum": [
       "YES",
       "NO",
@@ -1043,7 +1043,7 @@
     "canon_id": "BASE-SFO-SFO_INCIDENT_REPORTING",
     "discipline_code": "SFO",
     "subtype_code": "SFO_INCIDENT_REPORTING",
-    "question_text": "Is an Incident Reporting capability implemented?",
+    "question_text": "Are incident logging and escalation steps defined for security staff?",
     "response_enum": [
       "YES",
       "NO",
@@ -1056,7 +1056,7 @@
     "canon_id": "BASE-SFO-SFO_PATROL_ROUTES",
     "discipline_code": "SFO",
     "subtype_code": "SFO_PATROL_ROUTES",
-    "question_text": "Is a Patrol Routes capability implemented?",
+    "question_text": "Are patrol routes defined for security rounds and inspections?",
     "response_enum": [
       "YES",
       "NO",
@@ -1069,7 +1069,7 @@
     "canon_id": "BASE-SFO-SFO_RADIO_COMMUNICATIONS",
     "discipline_code": "SFO",
     "subtype_code": "SFO_RADIO_COMMUNICATIONS",
-    "question_text": "Is a Radio Communications capability implemented?",
+    "question_text": "Are radios available for security team communications?",
     "response_enum": [
       "YES",
       "NO",
@@ -1082,20 +1082,7 @@
     "canon_id": "BASE-SFO-SFO_RESPONSE_PROCEDURES",
     "discipline_code": "SFO",
     "subtype_code": "SFO_RESPONSE_PROCEDURES",
-    "question_text": "Is a Response Procedures capability implemented?",
-    "response_enum": [
-      "YES",
-      "NO",
-      "N_A"
-    ],
-    "canon_version": "v1",
-    "active": true
-  },
-  {
-    "canon_id": "BASE-SFO-SFO_SCHOOL_RESOURCE_OFFICER_SRO",
-    "discipline_code": "SFO",
-    "subtype_code": "SFO_SCHOOL_RESOURCE_OFFICER_SRO",
-    "question_text": "Is a School Resource Officer (SRO) capability implemented?",
+    "question_text": "Are security response playbooks documented for incidents?",
     "response_enum": [
       "YES",
       "NO",
@@ -1108,7 +1095,7 @@
     "canon_id": "BASE-SFO-SFO_SECURITY_OFFICER_TRAINING",
     "discipline_code": "SFO",
     "subtype_code": "SFO_SECURITY_OFFICER_TRAINING",
-    "question_text": "Is a Security Officer Training capability implemented?",
+    "question_text": "Are security officers trained for assigned duties and response roles?",
     "response_enum": [
       "YES",
       "NO",
@@ -1121,7 +1108,7 @@
     "canon_id": "BASE-SFO-SFO_SECURITY_OPERATIONS_CENTER_SOC",
     "discipline_code": "SFO",
     "subtype_code": "SFO_SECURITY_OPERATIONS_CENTER_SOC",
-    "question_text": "Is a Security Operations Center (SOC) capability implemented?",
+    "question_text": "Is a security operations center available for live monitoring and coordination?",
     "response_enum": [
       "YES",
       "NO",
@@ -1173,7 +1160,7 @@
     "canon_id": "BASE-SMG-SMG_SECURITY_DOCUMENTATION",
     "discipline_code": "SMG",
     "subtype_code": "SMG_SECURITY_DOCUMENTATION",
-    "question_text": "Is a Security Documentation capability implemented?",
+    "question_text": "Is security documentation maintained as the governing record set for the facility?",
     "response_enum": [
       "YES",
       "NO",
@@ -1186,7 +1173,7 @@
     "canon_id": "BASE-SMG-SMG_SECURITY_POLICIES",
     "discipline_code": "SMG",
     "subtype_code": "SMG_SECURITY_POLICIES",
-    "question_text": "Is a Security Policies capability implemented?",
+    "question_text": "Are security policies documented to govern facility security decisions?",
     "response_enum": [
       "YES",
       "NO",
@@ -1199,7 +1186,7 @@
     "canon_id": "BASE-SMG-SMG_SECURITY_PROCEDURES",
     "discipline_code": "SMG",
     "subtype_code": "SMG_SECURITY_PROCEDURES",
-    "question_text": "Is a Security Procedures capability implemented?",
+    "question_text": "Are step-by-step security procedures documented for operations and incidents?",
     "response_enum": [
       "YES",
       "NO",
@@ -1212,7 +1199,7 @@
     "canon_id": "BASE-SMG-SMG_SECURITY_TRAINING_PROGRAMS",
     "discipline_code": "SMG",
     "subtype_code": "SMG_SECURITY_TRAINING_PROGRAMS",
-    "question_text": "Is a Security Training Programs capability implemented?",
+    "question_text": "Are security training programs provided to staff and contractors?",
     "response_enum": [
       "YES",
       "NO",
@@ -1225,7 +1212,7 @@
     "canon_id": "BASE-VSS-VSS_ANALYTICS_BEHAVIOR_DETECTION",
     "discipline_code": "VSS",
     "subtype_code": "VSS_ANALYTICS_BEHAVIOR_DETECTION",
-    "question_text": "Is an Analytics / Behavior Detection capability implemented?",
+    "question_text": "Are analytics used to detect unusual behavior on camera feeds?",
     "response_enum": [
       "YES",
       "NO",
@@ -1238,7 +1225,7 @@
     "canon_id": "BASE-VSS-VSS_CAMERA_COVERAGE_LINE_OF_SIGHT",
     "discipline_code": "VSS",
     "subtype_code": "VSS_CAMERA_COVERAGE_LINE_OF_SIGHT",
-    "question_text": "Is a Camera Coverage / Line of Sight capability implemented?",
+    "question_text": "Are camera views unobstructed across required areas?",
     "response_enum": [
       "YES",
       "NO",
@@ -1251,7 +1238,7 @@
     "canon_id": "BASE-VSS-VSS_EXTERIOR_CAMERAS",
     "discipline_code": "VSS",
     "subtype_code": "VSS_EXTERIOR_CAMERAS",
-    "question_text": "Is an Exterior Cameras capability implemented?",
+    "question_text": "Are cameras deployed to observe exterior and perimeter areas?",
     "response_enum": [
       "YES",
       "NO",
@@ -1264,7 +1251,7 @@
     "canon_id": "BASE-VSS-VSS_FIXED_CAMERAS",
     "discipline_code": "VSS",
     "subtype_code": "VSS_FIXED_CAMERAS",
-    "question_text": "Is a Fixed Cameras capability implemented?",
+    "question_text": "Are fixed cameras used where a constant field of view is needed?",
     "response_enum": [
       "YES",
       "NO",
@@ -1277,7 +1264,7 @@
     "canon_id": "BASE-VSS-VSS_INTERIOR_CAMERAS",
     "discipline_code": "VSS",
     "subtype_code": "VSS_INTERIOR_CAMERAS",
-    "question_text": "Is an Interior Cameras capability implemented?",
+    "question_text": "Are cameras deployed to observe interior public or restricted spaces?",
     "response_enum": [
       "YES",
       "NO",
@@ -1290,7 +1277,7 @@
     "canon_id": "BASE-VSS-VSS_IP_CAMERAS",
     "discipline_code": "VSS",
     "subtype_code": "VSS_IP_CAMERAS",
-    "question_text": "Is an IP Cameras capability implemented?",
+    "question_text": "Are networked IP cameras used in the video system?",
     "response_enum": [
       "YES",
       "NO",
@@ -1303,7 +1290,7 @@
     "canon_id": "BASE-VSS-VSS_MONITORING_WORKSTATIONS",
     "discipline_code": "VSS",
     "subtype_code": "VSS_MONITORING_WORKSTATIONS",
-    "question_text": "Is a Monitoring / Workstations capability implemented?",
+    "question_text": "Are operator workstations available to view live camera feeds?",
     "response_enum": [
       "YES",
       "NO",
@@ -1316,7 +1303,7 @@
     "canon_id": "BASE-VSS-VSS_PTZ_CAMERAS",
     "discipline_code": "VSS",
     "subtype_code": "VSS_PTZ_CAMERAS",
-    "question_text": "Is a PTZ Cameras capability implemented?",
+    "question_text": "Are pan-tilt-zoom cameras deployed where adjustable coverage is needed?",
     "response_enum": [
       "YES",
       "NO",
@@ -1342,7 +1329,7 @@
     "canon_id": "BASE-VSS-VSS_SYSTEM_ARCHITECTURE",
     "discipline_code": "VSS",
     "subtype_code": "VSS_SYSTEM_ARCHITECTURE",
-    "question_text": "Is a System Architecture capability implemented?",
+    "question_text": "Is the video system architecture documented for the facility?",
     "response_enum": [
       "YES",
       "NO",
@@ -1355,7 +1342,7 @@
     "canon_id": "BASE-VSS-VSS_VIDEO_WALL_DISPLAY_SYSTEMS",
     "discipline_code": "VSS",
     "subtype_code": "VSS_VIDEO_WALL_DISPLAY_SYSTEMS",
-    "question_text": "Is a Video Wall / Display Systems capability implemented?",
+    "question_text": "Are display systems used to show live camera feeds?",
     "response_enum": [
       "YES",
       "NO",

@@ -68,9 +68,9 @@ type ApiQuestion = {
   expansion_version?: string;
   canon_version?: string;
   canon_hash?: string;
-  response_type?: 'YES_NO_NA' | 'CHECKLIST';
+  response_type?: 'YES_NO_NA' | 'CHECKLIST' | 'ENUM';
   allows_multiple?: boolean;
-  response_options?: unknown;
+  response_options?: Array<{ value: string; label: string }> | null;
   depth?: number;
   parent_spine_canon_id?: string | null;
   depth2_tags?: unknown;
@@ -91,6 +91,61 @@ function toStringArray(value: unknown): string[] | null {
   if (!Array.isArray(value)) return null;
   const out = value.filter((item): item is string => typeof item === 'string');
   return out.length > 0 ? out : null;
+}
+
+function toResponseOptions(value: unknown): Array<{ value: string; label: string }> | null {
+  if (!Array.isArray(value)) return null;
+  const options = value
+    .map((item): { value: string; label: string } | null => {
+      if (typeof item === 'string' && item.trim().length > 0) {
+        return { value: item, label: item };
+      }
+      if (item && typeof item === 'object') {
+        const obj = item as LooseObject;
+        const optionValue = toStringOrNull(obj.value) ?? toStringOrNull(obj.label);
+        const optionLabel = toStringOrNull(obj.label) ?? optionValue;
+        if (optionValue && optionLabel) {
+          return { value: optionValue, label: optionLabel };
+        }
+      }
+      return null;
+    })
+    .filter((option): option is { value: string; label: string } => Boolean(option));
+  return options.length > 0 ? options : null;
+}
+
+function inferDepth2EnumOptions(questionText: string): Array<{ value: string; label: string }> | null {
+  const normalized = questionText.toLowerCase();
+  if (normalized.includes('on-site') && normalized.includes('off-site') && normalized.includes('both')) {
+    return [
+      { value: 'ON_SITE', label: 'On-site' },
+      { value: 'OFF_SITE', label: 'Off-site' },
+      { value: 'BOTH', label: 'Both' },
+    ];
+  }
+  return null;
+}
+
+function inferDepth2ResponseType(
+  questionText: string,
+  explicitType: string | null,
+  explicitOptions: Array<{ value: string; label: string }> | null
+): { response_type: 'YES_NO_NA' | 'CHECKLIST' | 'ENUM'; response_options?: Array<{ value: string; label: string }> } {
+  const normalizedType = explicitType?.toUpperCase();
+  if (normalizedType === 'CHECKLIST') {
+    return { response_type: 'CHECKLIST', response_options: explicitOptions || undefined };
+  }
+  if (normalizedType === 'ENUM') {
+    return { response_type: 'ENUM', response_options: explicitOptions || inferDepth2EnumOptions(questionText) || undefined };
+  }
+  if (explicitOptions && explicitOptions.length > 0) {
+    return { response_type: 'ENUM', response_options: explicitOptions };
+  }
+  const inferredOptions = inferDepth2EnumOptions(questionText);
+  if (inferredOptions) {
+    return { response_type: 'ENUM', response_options: inferredOptions };
+  }
+  return { response_type: 'YES_NO_NA' };
 }
 
 /**
@@ -173,8 +228,14 @@ export async function GET(
     const baselineSpines: BaselineSpine[] = await loadBaseline(true);
 
     // 2b. Load overlay spines (if sector/subsector assigned)
-    const overlaySpines = await loadOverlays(sectorId, subsectorId, true);
-    console.log(`[API] Loaded ${overlaySpines.length} overlay spines (sector: ${sectorId}, subsector: ${subsectorId})`);
+    let overlaySpines: OverlaySpine[] = [];
+    try {
+      overlaySpines = await loadOverlays(sectorId, subsectorId, true);
+      console.log(`[API] Loaded ${overlaySpines.length} overlay spines (sector: ${sectorId}, subsector: ${subsectorId})`);
+    } catch (error) {
+      console.warn('[API] Failed to load overlay spines; continuing without overlays:', error instanceof Error ? error.message : String(error));
+      overlaySpines = [];
+    }
 
     // 3. Load applicable expansion questions from CORPUS database
     const corpusPool = getCorpusPool();
@@ -207,31 +268,37 @@ export async function GET(
 
     expansionQuery += `) ORDER BY scope_type, scope_code, question_code`;
 
-    const expansionResult = await corpusPool.query(expansionQuery, expansionParams);
     type ExpansionRow = { question_code: string; question_text: string; scope_type: string; scope_code: string; expansion_version: string; response_enum: unknown };
-    const expansionQuestions: ExpansionQuestion[] = (expansionResult.rows as ExpansionRow[]).map((row) => {
-      // response_enum is stored as jsonb; pg returns it as array or string
-      let responseEnum = row.response_enum;
-      if (typeof responseEnum === 'string') {
-        try {
-          responseEnum = JSON.parse(responseEnum);
-        } catch {
+    let expansionQuestions: ExpansionQuestion[] = [];
+    try {
+      const expansionResult = await corpusPool.query(expansionQuery, expansionParams);
+      expansionQuestions = (expansionResult.rows as ExpansionRow[]).map((row) => {
+        // response_enum is stored as jsonb; pg returns it as array or string
+        let responseEnum = row.response_enum;
+        if (typeof responseEnum === 'string') {
+          try {
+            responseEnum = JSON.parse(responseEnum);
+          } catch {
+            responseEnum = ["YES", "NO", "N_A"];
+          }
+        }
+        if (!Array.isArray(responseEnum) || responseEnum.length !== 3) {
           responseEnum = ["YES", "NO", "N_A"];
         }
-      }
-      if (!Array.isArray(responseEnum) || responseEnum.length !== 3) {
-        responseEnum = ["YES", "NO", "N_A"];
-      }
 
-      return {
-        question_code: row.question_code,
-        question_text: row.question_text,
-        scope_type: row.scope_type,
-        scope_code: row.scope_code,
-        expansion_version: row.expansion_version,
-        response_enum: responseEnum as ["YES", "NO", "N_A"]
-      };
-    });
+        return {
+          question_code: row.question_code,
+          question_text: row.question_text,
+          scope_type: row.scope_type,
+          scope_code: row.scope_code,
+          expansion_version: row.expansion_version,
+          response_enum: responseEnum as ["YES", "NO", "N_A"]
+        };
+      });
+    } catch (error) {
+      console.warn('[API] Failed to load expansion questions; continuing without them:', error instanceof Error ? error.message : String(error));
+      expansionQuestions = [];
+    }
 
     // 4. Get assessment instance IDs for response lookup
     // assessment_instances.facility_id references assessments.id
@@ -407,7 +474,12 @@ export async function GET(
           const disciplineName = getDisciplineName(disciplineCode);
 
           const responseEnum = toStringArray(row.response_enum);
-          const responseOptions = row.response_options ?? null;
+          const responseOptions = toResponseOptions(row.response_options);
+          const responseSpec = inferDepth2ResponseType(
+            toStringOrNull(row.question_text) ?? '',
+            toStringOrNull(row.response_type),
+            responseOptions
+          );
           const question: Depth2Question = {
             canon_id: canonId,
             question_code: canonId,
@@ -416,9 +488,9 @@ export async function GET(
             discipline_name: disciplineName || null,
             subtype_code: toStringOrNull(row.subtype_code),
             response_enum: (responseEnum && responseEnum.length === 3 ? responseEnum : ["YES", "NO", "N_A"]) as ["YES", "NO", "N_A"],
-            response_type: (toStringOrNull(row.response_type) === 'CHECKLIST' ? 'CHECKLIST' : 'YES_NO_NA'),
+            response_type: responseSpec.response_type,
             allows_multiple: row.allows_multiple === true,
-            response_options: responseOptions,
+            response_options: responseSpec.response_options || null,
             current_response: responseMap.get(canonId) || null,
             question_type: 'BASELINE' as const,
             authority_scope: 'BASELINE' as AuthorityScope,

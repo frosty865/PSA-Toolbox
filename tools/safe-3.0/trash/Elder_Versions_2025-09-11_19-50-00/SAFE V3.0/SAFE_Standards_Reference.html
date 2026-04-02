@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAFE Assessment Standards Reference - All 110 Standards</title>
+    <style>
+        :root {
+            /* CISA Official Colors */
+            --cisa-primary: #002868;      /* CISA Blue */
+            --cisa-secondary: #1e3a8a;    /* Darker Blue */
+            --cisa-accent: #3b82f6;       /* Accent Blue */
+            --cisa-success: #059669;       /* Success Green */
+            --cisa-warning: #d97706;       /* Warning Orange */
+            --cisa-danger: #dc2626;        /* Danger Red */
+            --cisa-gray-dark: #374151;     /* Dark Gray */
+            --cisa-gray: #6b7280;          /* Medium Gray */
+            --cisa-gray-light: #9ca3af;    /* Light Gray */
+            --cisa-gray-lighter: #f3f4f6; /* Very Light Gray */
+            --cisa-white: #ffffff;         /* White */
+            
+            /* Typography */
+            --font-family-primary: 'Source Sans Pro', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-family-heading: 'Source Sans Pro', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
+            /* Spacing */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+            
+            /* Border Radius */
+            --border-radius-sm: 0.25rem;
+            --border-radius: 0.375rem;
+            --border-radius-lg: 0.5rem;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family-primary);
+            line-height: 1.6;
+            color: var(--cisa-gray-dark);
+            background-color: var(--cisa-gray-lighter);
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-lg);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--cisa-primary) 0%, var(--cisa-secondary) 100%);
+            color: var(--cisa-white);
+            padding: var(--spacing-2xl);
+            border-radius: var(--border-radius-lg);
+            margin-bottom: var(--spacing-xl);
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .header h1 {
+            font-family: var(--font-family-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+            letter-spacing: -0.025em;
+        }
+
+        .header p {
+            font-size: 1.125rem;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .cisa-logo {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing-md);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .stat-item {
+            background: var(--cisa-white);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--cisa-gray-light);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--cisa-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .stat-label {
+            color: var(--cisa-gray);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.875rem;
+        }
+
+        .description {
+            background: var(--cisa-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--cisa-accent);
+        }
+
+        .description p {
+            margin-bottom: var(--spacing-sm);
+            color: var(--cisa-gray-dark);
+            line-height: 1.7;
+        }
+
+        .description strong {
+            color: var(--cisa-primary);
+        }
+
+        .toc {
+            background: var(--cisa-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow);
+        }
+
+        .toc h2 {
+            color: var(--cisa-primary);
+            margin-bottom: var(--spacing-lg);
+            border-bottom: 3px solid var(--cisa-accent);
+            padding-bottom: var(--spacing-md);
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .toc a {
+            color: var(--cisa-gray-dark);
+            text-decoration: none;
+            padding: var(--spacing-sm) var(--spacing-md);
+            display: block;
+            border-radius: var(--border-radius);
+            transition: all 0.2s ease;
+        }
+
+        .toc a:hover {
+            background: var(--cisa-gray-lighter);
+            color: var(--cisa-primary);
+            transform: translateX(4px);
+        }
+
+        .category-section {
+            background: var(--cisa-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow);
+        }
+
+        .category-header {
+            background: linear-gradient(90deg, var(--cisa-primary) 0%, var(--cisa-secondary) 100%);
+            color: var(--cisa-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius);
+            margin: calc(-1 * var(--spacing-xl)) calc(-1 * var(--spacing-xl)) var(--spacing-lg) calc(-1 * var(--spacing-xl));
+            border-bottom: 3px solid var(--cisa-accent);
+        }
+
+        .category-header h2 {
+            margin: 0;
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+
+        .category-header .count {
+            background: rgba(255, 255, 255, 0.2);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--border-radius);
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: var(--spacing-sm);
+        }
+
+        .standards-grid {
+            display: grid;
+            gap: var(--spacing-lg);
+        }
+
+        .standard-item {
+            background: var(--cisa-gray-lighter);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--cisa-accent);
+            transition: all 0.2s ease;
+        }
+
+        .standard-item:hover {
+            background: var(--cisa-white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .standard-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .standard-number {
+            color: var(--cisa-primary);
+            font-weight: 700;
+            font-size: 1.125rem;
+            margin-bottom: var(--spacing-sm);
+            font-family: 'Courier New', monospace;
+        }
+
+        .standard-text {
+            color: var(--cisa-gray-dark);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background: var(--cisa-primary);
+            color: var(--cisa-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius);
+            margin-top: var(--spacing-xl);
+            text-align: center;
+        }
+
+        .footer p {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer a {
+            color: var(--cisa-accent);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--cisa-primary);
+            color: var(--cisa-white);
+            padding: var(--spacing-sm);
+            border-radius: 50%;
+            text-decoration: none;
+            width: 3.5rem;
+            height: 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            font-size: 1.25rem;
+            font-weight: 700;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--cisa-secondary);
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        @media print {
+            .back-to-top {
+                display: none;
+            }
+            
+            .container {
+                max-width: none;
+                padding: 0;
+            }
+            
+            .category-section {
+                break-inside: avoid;
+                margin-bottom: var(--spacing-lg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with CISA Branding -->
+        <header class="header">
+            <div class="cisa-logo">CISA Official Document</div>
+            <h1>🔒 SAFE Assessment Standards Reference</h1>
+            <p>Comprehensive listing of all 110 security assessment standards organized by category</p>
+            <p style="font-size: 0.875rem; opacity: 0.8; margin-top: var(--spacing-md);">
+                <strong>Note:</strong> This document provides a comprehensive reference for all security assessment standards used in the SAFE (Security Assessment for Facilities and Events) evaluation process. Standards are organized by functional category to facilitate systematic security planning and implementation.
+            </p>
+        </header>
+
+        <!-- Statistics Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">110</div>
+                <div class="stat-label">Total Standards</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">7</div>
+                <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">35</div>
+                <div class="stat-label">Main Questions</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">75</div>
+                <div class="stat-label">Sub-Standards</div>
+            </div>
+        </div>
+
+        <!-- Description -->
+        <div class="description">
+            <p><strong>Purpose:</strong> This document serves as a comprehensive reference for all security assessment standards used in the SAFE evaluation process. Each standard represents a specific security requirement or best practice that facilities should consider implementing.</p>
+            <p><strong>Organization:</strong> Standards are organized into seven functional categories, with each category containing multiple main questions. Each question may have several sub-standards represented by individual checkboxes in the assessment form.</p>
+            <p><strong>Usage:</strong> Use this reference to understand the complete scope of security requirements, identify gaps in current practices, and prioritize security improvements based on your facility's specific needs and risk profile.</p>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h2>📋 Table of Contents</h2>
+            <ul>
+                <li><a href="#information-sharing">🔗 Information Sharing Standards (35)</a></li>
+                <li><a href="#security-plans">📋 Security Plans Standards (21)</a></li>
+                <li><a href="#physical-security">🏗️ Physical Security Standards (14)</a></li>
+                <li><a href="#security-systems">📹 Security Systems Standards (14)</a></li>
+                <li><a href="#training-awareness">🎓 Training & Awareness Standards (14)</a></li>
+                <li><a href="#innovation">💡 Innovation Standards (7)</a></li>
+                <li><a href="#other">🔧 Other Standards (5)</a></li>
+            </ul>
+        </div>
+
+        <!-- Information Sharing Standards -->
+        <div class="category-section" id="information-sharing">
+            <div class="category-header">
+                <h2>🔗 Information Sharing Standards</h2>
+                <span class="count">35 Standards</span>
+            </div>
+            <div class="standards-grid">
+                <div class="standard-item">
+                    <div class="standard-number">IS-001</div>
+                    <div class="standard-text">Facility personnel are not aware of the nationwide "If You See Something, Say Something" public awareness campaign.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-002</div>
+                    <div class="standard-text">Regular employee training on suspicious activity recognition is not provided.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-003</div>
+                    <div class="standard-text">Visible signage promoting the campaign is not displayed.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-004</div>
+                    <div class="standard-text">Clear reporting procedures for suspicious activity are not established.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-005</div>
+                    <div class="standard-text">The primary law enforcement agency has not conducted an onsite visit of the facility.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-006</div>
+                    <div class="standard-text">Annual or regular onsite visits are not conducted.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-007</div>
+                    <div class="standard-text">Facility tour is not provided to law enforcement.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-008</div>
+                    <div class="standard-text">Emergency response booklet is not shared with law enforcement.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-009</div>
+                    <div class="standard-text">The facility does not have interoperable communications with the primary law enforcement agency.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-010</div>
+                    <div class="standard-text">The primary fire response agency has not conducted an onsite visit of the facility.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-011</div>
+                    <div class="standard-text">The facility does not have interoperable communications with the primary fire response agency.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-012</div>
+                    <div class="standard-text">The primary emergency medical response agency has not conducted an onsite visit of the facility.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-013</div>
+                    <div class="standard-text">The facility does not have interoperable communications with the primary emergency medical response agency.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-014</div>
+                    <div class="standard-text">The facility does not exchange information with the FBI.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-015</div>
+                    <div class="standard-text">The facility does not exchange information with the ISAC for its sector.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-016</div>
+                    <div class="standard-text">The facility does not exchange information through the HSIN portal.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-017</div>
+                    <div class="standard-text">The facility does not exchange information through InfraGard.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-018</div>
+                    <div class="standard-text">The facility does not exchange information with federal agencies.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-019</div>
+                    <div class="standard-text">The facility does not exchange information with state and local agencies.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-020</div>
+                    <div class="standard-text">The facility does not exchange information with neighboring facilities.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-021</div>
+                    <div class="standard-text">Interoperable communications systems are not tested regularly.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-022</div>
+                    <div class="standard-text">Communication protocols are not documented and shared with response partners.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-023</div>
+                    <div class="standard-text">Backup communication systems are not available.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-024</div>
+                    <div class="standard-text">Communication contact lists are not maintained and updated regularly.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-025</div>
+                    <div class="standard-text">Joint training exercises with response partners are not conducted.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-026</div>
+                    <div class="standard-text">Information sharing agreements are not established with partner agencies.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-027</div>
+                    <div class="standard-text">Threat intelligence is not shared with relevant stakeholders.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-028</div>
+                    <div class="standard-text">Incident reports are not shared with appropriate agencies.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-029</div>
+                    <div class="standard-text">Security best practices are not shared with industry partners.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-030</div>
+                    <div class="standard-text">Regular security briefings are not provided to staff and stakeholders.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-031</div>
+                    <div class="standard-text">Security awareness materials are not distributed to employees.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-032</div>
+                    <div class="standard-text">Security incident reporting procedures are not communicated to all personnel.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-033</div>
+                    <div class="standard-text">Emergency contact procedures are not posted and accessible to all staff.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-034</div>
+                    <div class="standard-text">Security updates are not regularly communicated to facility occupants.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IS-035</div>
+                    <div class="standard-text">Cross-training opportunities with partner agencies are not pursued.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security Plans Standards -->
+        <div class="category-section" id="security-plans">
+            <div class="category-header">
+                <h2>📋 Security Plans Standards</h2>
+                <span class="count">21 Standards</span>
+            </div>
+            <div class="standards-grid">
+                <div class="standard-item">
+                    <div class="standard-number">SP-001</div>
+                    <div class="standard-text">The facility does not have a designated security manager or security management position.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SP-002</div>
+                    <div class="standard-text">The facility does not have a comprehensive security plan.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SP-003</div>
+                    <div class="standard-text">Personnel are not trained on the security plan.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SP-004</div>
+                    <div class="standard-text">The security plan is not coordinated with local law enforcement.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SP-005</div>
+                    <div class="standard-text">Employees are not trained on their security responsibilities.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SP-006</div>
+                    <div class="standard-text">The security plan is not tested regularly with drills and exercises.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SP-007</div>
+                    <div class="standard-text">The facility does not conduct regular security risk assessments.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SP-008</div>
+                    <div class="standard-text">Security policies and procedures are not documented.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SP-009</div>
+                    <div class="standard-text">Security roles and responsibilities are not clearly defined.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SP-010</div>
+                    <div class="standard-text">Incident response procedures are not established.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SP-011</div>
+                    <div class="standard-text">Business continuity plans do not address security incidents.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SP-012</div>
+                    <div class="standard-text">Security performance metrics are not tracked and reviewed.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SP-013</div>
+                    <div class="standard-text">Security plan reviews are not conducted annually.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SP-014</div>
+                    <div class="standard-text">Security budget allocation is not documented and justified.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SP-015</div>
+                    <div class="standard-text">Vendor security requirements are not specified in contracts.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SP-016</div>
+                    <div class="standard-text">Security awareness training is not included in onboarding.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SP-017</div>
+                    <div class="standard-text">Security incident reporting procedures are not clearly defined.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SP-018</div>
+                    <div class="standard-text">Security plan updates are not communicated to all stakeholders.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SP-019</div>
+                    <div class="standard-text">Security plan compliance is not monitored and enforced.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SP-020</div>
+                    <div class="standard-text">Security plan effectiveness is not evaluated through after-action reviews.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SP-021</div>
+                    <div class="standard-text">Security plan integration with other facility plans is not established.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Physical Security Standards -->
+        <div class="category-section" id="physical-security">
+            <div class="category-header">
+                <h2>🏗️ Physical Security Standards</h2>
+                <span class="count">14 Standards</span>
+            </div>
+            <div class="standards-grid">
+                <div class="standard-item">
+                    <div class="standard-number">PS-001</div>
+                    <div class="standard-text">The facility does not have dedicated security personnel or contract security services.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">PS-002</div>
+                    <div class="standard-text">The facility does not have perimeter fencing or barrier systems.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">PS-003</div>
+                    <div class="standard-text">The facility does not have electronic access control systems.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">PS-004</div>
+                    <div class="standard-text">The facility does not have adequate security lighting.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">PS-005</div>
+                    <div class="standard-text">The facility does not have adequate standoff distance between parking areas and buildings.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">PS-006</div>
+                    <div class="standard-text">The facility does not have vehicle screening procedures.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">PS-007</div>
+                    <div class="standard-text">The facility does not have visitor management procedures.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">PS-008</div>
+                    <div class="standard-text">The facility does not have package and mail screening procedures.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">PS-009</div>
+                    <div class="standard-text">The facility does not have blast-resistant construction or retrofitting.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">PS-010</div>
+                    <div class="standard-text">The facility does not have secure areas for critical infrastructure.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">PS-011</div>
+                    <div class="standard-text">The facility does not have emergency egress routes clearly marked.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">PS-012</div>
+                    <div class="standard-text">The facility does not have secure storage for hazardous materials.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">PS-013</div>
+                    <div class="standard-text">The facility does not have vehicle barriers at critical access points.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">PS-014</div>
+                    <div class="standard-text">The facility does not have secure areas for sensitive operations.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security Systems Standards -->
+        <div class="category-section" id="security-systems">
+            <div class="category-header">
+                <h2>📹 Security Systems Standards</h2>
+                <span class="count">14 Standards</span>
+            </div>
+            <div class="standards-grid">
+                <div class="standard-item">
+                    <div class="standard-number">SS-001</div>
+                    <div class="standard-text">The facility does not have video surveillance systems.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SS-002</div>
+                    <div class="standard-text">The facility does not have intrusion detection systems.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SS-003</div>
+                    <div class="standard-text">The facility does not have fire detection and suppression systems.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SS-004</div>
+                    <div class="standard-text">The facility does not have emergency notification systems.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SS-005</div>
+                    <div class="standard-text">The facility does not have backup power systems for security equipment.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SS-006</div>
+                    <div class="standard-text">The facility does not have integrated security management systems.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SS-007</div>
+                    <div class="standard-text">The facility does not have remote monitoring capabilities.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SS-008</div>
+                    <div class="standard-text">The facility does not have alarm verification procedures.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SS-009</div>
+                    <div class="standard-text">The facility does not have system maintenance schedules.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SS-010</div>
+                    <div class="standard-text">The facility does not have system testing procedures.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SS-011</div>
+                    <div class="standard-text">The facility does not have system redundancy for critical functions.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SS-012</div>
+                    <div class="standard-text">The facility does not have secure data transmission for security systems.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SS-013</div>
+                    <div class="standard-text">The facility does not have system access controls for security personnel.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">SS-014</div>
+                    <div class="standard-text">The facility does not have system audit logging capabilities.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Training & Awareness Standards -->
+        <div class="category-section" id="training-awareness">
+            <div class="category-header">
+                <h2>🎓 Training & Awareness Standards</h2>
+                <span class="count">14 Standards</span>
+            </div>
+            <div class="standards-grid">
+                <div class="standard-item">
+                    <div class="standard-number">TA-001</div>
+                    <div class="standard-text">Security awareness training is not provided to all employees.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">TA-002</div>
+                    <div class="standard-text">Security training is not included in employee onboarding.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">TA-003</div>
+                    <div class="standard-text">Security training does not cover threat recognition.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">TA-004</div>
+                    <div class="standard-text">Security training does not cover incident reporting procedures.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">TA-005</div>
+                    <div class="standard-text">Security training does not cover emergency response procedures.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">TA-006</div>
+                    <div class="standard-text">Security training does not cover access control procedures.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">TA-007</div>
+                    <div class="standard-text">Security training does not cover visitor management procedures.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">TA-008</div>
+                    <div class="standard-text">Security training does not cover package screening procedures.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">TA-009</div>
+                    <div class="standard-text">Security training does not cover suspicious activity recognition.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">TA-010</div>
+                    <div class="standard-text">Security training does not cover cybersecurity awareness.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">TA-011</div>
+                    <div class="standard-text">Security training does not cover social engineering awareness.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">TA-012</div>
+                    <div class="standard-text">Security training does not cover physical security awareness.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">TA-013</div>
+                    <div class="standard-text">Security training does not cover emergency evacuation procedures.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">TA-014</div>
+                    <div class="standard-text">Security training does not cover emergency evacuation procedures.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Innovation Standards -->
+        <div class="category-section" id="innovation">
+            <div class="category-header">
+                <h2>💡 Innovation Standards</h2>
+                <span class="count">7 Standards</span>
+            </div>
+            <div class="standards-grid">
+                <div class="standard-item">
+                    <div class="standard-number">IN-001</div>
+                    <div class="standard-text">The facility does not implement innovative security technologies.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IN-002</div>
+                    <div class="standard-text">The facility does not participate in security research and development.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IN-003</div>
+                    <div class="standard-text">The facility does not collaborate with security technology vendors.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IN-004</div>
+                    <div class="standard-text">The facility does not pilot new security solutions.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IN-005</div>
+                    <div class="standard-text">The facility does not share innovative security practices with industry partners.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IN-006</div>
+                    <div class="standard-text">The facility does not participate in security innovation forums.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">IN-007</div>
+                    <div class="standard-text">The facility does not invest in emerging security technologies.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Other Standards -->
+        <div class="category-section" id="other">
+            <div class="category-header">
+                <h2>🔧 Other Standards</h2>
+                <span class="count">5 Standards</span>
+            </div>
+            <div class="standards-grid">
+                <div class="standard-item">
+                    <div class="standard-number">OT-001</div>
+                    <div class="standard-text">The facility does not have a security budget allocation process.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">OT-002</div>
+                    <div class="standard-text">The facility does not have security performance metrics.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">OT-003</div>
+                    <div class="standard-text">The facility does not have security audit procedures.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">OT-004</div>
+                    <div class="standard-text">The facility does not have security compliance monitoring.</div>
+                </div>
+                <div class="standard-item">
+                    <div class="standard-number">OT-005</div>
+                    <div class="standard-text">The facility does not have security improvement processes.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p><strong>Cybersecurity and Infrastructure Security Agency (CISA)</strong></p>
+            <p>This document provides a comprehensive reference for all security assessment standards used in the SAFE evaluation process.</p>
+            <p>For questions about SAFE V3.0, contact: <a href="mailto:safe@cisa.dhs.gov">safe@cisa.dhs.gov</a></p>
+        </footer>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to Top">↑</a>
+
+    <script>
+        // Back to Top Button Functionality
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        // Show button when scrolling down
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        // Smooth scroll to top
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

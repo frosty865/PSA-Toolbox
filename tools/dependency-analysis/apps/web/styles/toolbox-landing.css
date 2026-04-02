@@ -1,0 +1,56 @@
+/**
+ * PSA Toolbox home — tool grid only (hero uses cisa-command-hero.css).
+ * Do not wrap the hero in `.cisa-doc`: shared typography forces dark text on all `h2`/`p`.
+ */
+
+.psa-toolbox-landing {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 1rem 1rem;
+}
+
+.psa-toolbox-landing__tools {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 3rem;
+}
+
+.psa-toolbox-section-title {
+  margin: 2.25rem 0 1rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--dhs-blue, #005288);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.psa-toolbox-landing .psa-tool-card {
+  position: relative;
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid rgba(0, 82, 136, 0.14);
+  box-shadow: 0 8px 24px rgba(12, 17, 24, 0.06);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.psa-toolbox-landing .psa-tool-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 40, 70, 0.1);
+  border-color: rgba(0, 82, 136, 0.25);
+}
+
+.psa-toolbox-landing .psa-tool-card:focus-visible {
+  outline: 3px solid rgba(0, 120, 174, 0.45);
+  outline-offset: 2px;
+}
+
+.psa-tool-card__lede {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--color-text, #1a1d21);
+  max-width: none;
+  white-space: pre-line;
+}

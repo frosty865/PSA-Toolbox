@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOST - Your Project Title</title>
+    
+    <!-- Include the HOST Visual Styling -->
+    <link rel="stylesheet" href="HOST_Visual_Styling.css">
+    
+    <!-- Your existing JavaScript files (don't change these) -->
+    <!-- <script src="your-existing-js-files.js"></script> -->
+</head>
+<body>
+    <!-- TLP Banner System (optional) -->
+    <div id="tlpBanner" class="tlp-banner white">
+        <span>TLP:WHITE - This information may be shared freely</span>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <!-- Replace with your logo -->
+                <div class="logo-text">
+                    <h1>HOST</h1>
+                    <p>Your Project Subtitle</p>
+                </div>
+            </div>
+            <div>
+                <h1>Your Main Title</h1>
+                <p>Your project description or tagline</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Action Bar -->
+    <div class="top-action-bar">
+        <button class="btn btn-primary" onclick="yourFunction1()">
+            📤 Action 1
+        </button>
+        <button class="btn btn-success" onclick="yourFunction2()">
+            📥 Action 2
+        </button>
+        <button class="btn btn-warning" onclick="yourFunction3()">
+            🗑️ Action 3
+        </button>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+        <button class="nav-tab active" data-tooltip="Home - Main dashboard" onclick="showSection('home')">
+            🏠
+        </button>
+        <button class="nav-tab" data-tooltip="Settings - Configuration options" onclick="showSection('settings')">
+            ⚙️
+        </button>
+        <button class="nav-tab" data-tooltip="Reports - View and export reports" onclick="showSection('reports')">
+            📊
+        </button>
+        <button class="nav-tab" data-tooltip="Help - Documentation and support" onclick="showSection('help')">
+            ❓
+        </button>
+    </div>
+
+    <!-- Report Action Bar (optional - for report sections) -->
+    <div id="reportActionBar" class="report-action-bar" style="display: none;">
+        <div class="report-action-content">
+            <div class="report-buttons">
+                <button class="btn btn-primary" onclick="generateReport()">
+                    📄 Generate Report
+                </button>
+                <div class="production-buttons">
+                    <button class="btn btn-info" onclick="exportPDF()">
+                        📄 PDF Export
+                    </button>
+                    <button class="btn btn-warning" onclick="exportHTML()">
+                        🌐 HTML Export
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="section-header">
+                <h2 class="section-title">Dashboard</h2>
+            </div>
+            
+            <!-- Alert Example -->
+            <div class="alert alert-info">
+                <strong>Welcome!</strong> This is an info alert using the CISA styling system.
+            </div>
+            
+            <!-- Grid Layout Example -->
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Card 1</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>This is a card component with CISA styling.</p>
+                        <button class="btn btn-primary">Action</button>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Card 2</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Another card with consistent styling.</p>
+                        <button class="btn btn-success">Success</button>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Card 3</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Third card to demonstrate the grid system.</p>
+                        <button class="btn btn-warning">Warning</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Progress Bar Example -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Progress Example</h3>
+                </div>
+                <div class="card-body">
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 75%">75%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section id="settings" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Settings</h2>
+            </div>
+            
+            <!-- Form Example -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Configuration</h3>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label class="form-label" for="projectName">Project Name</label>
+                            <input type="text" class="form-input" id="projectName" placeholder="Enter project name">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="version">Version</label>
+                                <input type="text" class="form-input" id="version" placeholder="1.0.0">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="environment">Environment</label>
+                                <select class="form-select" id="environment">
+                                    <option>Development</option>
+                                    <option>Staging</option>
+                                    <option>Production</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="description">Description</label>
+                            <textarea class="form-textarea" id="description" placeholder="Enter project description"></textarea>
+                        </div>
+                        
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="mode" value="basic" checked>
+                                Basic Mode
+                            </label>
+                            <label>
+                                <input type="radio" name="mode" value="advanced">
+                                Advanced Mode
+                            </label>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <h5>Features</h5>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="feature1" checked>
+                                <label for="feature1">Enable Feature 1</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="feature2">
+                                <label for="feature2">Enable Feature 2</label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Save Settings</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reports Section -->
+        <section id="reports" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Reports</h2>
+            </div>
+            
+            <!-- Table Example -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Report History</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Report Type</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2024-01-15</td>
+                                <td>Monthly Report</td>
+                                <td><span class="alert alert-success">Completed</span></td>
+                                <td>
+                                    <button class="btn btn-info btn-sm">View</button>
+                                    <button class="btn btn-warning btn-sm">Download</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2024-01-10</td>
+                                <td>Weekly Report</td>
+                                <td><span class="alert alert-warning">In Progress</span></td>
+                                <td>
+                                    <button class="btn btn-info btn-sm">View</button>
+                                    <button class="btn btn-secondary btn-sm" disabled>Download</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help Section -->
+        <section id="help" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Help & Documentation</h2>
+            </div>
+            
+            <div class="alert alert-info">
+                <strong>Need Help?</strong> This section contains documentation and support information.
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Getting Started</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Learn how to use HOST effectively.</p>
+                        <button class="btn btn-primary">Read Guide</button>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Support</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Get help from our support team.</p>
+                        <button class="btn btn-success">Contact Support</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()" style="display: none;">
+        ↑
+    </button>
+
+    <!-- Your existing JavaScript (don't change the functions) -->
+    <script>
+        // Keep all your existing JavaScript functions here
+        // Only add these navigation functions if you don't have them
+        
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all nav tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Show/hide back to top button based on scroll position
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'flex';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+        
+        // TLP Banner functionality (optional)
+        function showTLPBanner(type, message) {
+            const banner = document.getElementById('tlpBanner');
+            banner.className = `tlp-banner ${type}`;
+            banner.innerHTML = `<span>${message}</span>`;
+            banner.classList.add('show');
+            
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                banner.classList.remove('show');
+            }, 5000);
+        }
+        
+        // Example: Show a success banner
+        // showTLPBanner('green', 'TLP:GREEN - Operation completed successfully');
+        
+        // Your existing functions go here (don't modify them)
+        function yourFunction1() {
+            console.log('Function 1 called');
+        }
+        
+        function yourFunction2() {
+            console.log('Function 2 called');
+        }
+        
+        function yourFunction3() {
+            console.log('Function 3 called');
+        }
+        
+        function generateReport() {
+            console.log('Generate report called');
+        }
+        
+        function exportPDF() {
+            console.log('Export PDF called');
+        }
+        
+        function exportHTML() {
+            console.log('Export HTML called');
+        }
+    </script>
+</body>
+</html>

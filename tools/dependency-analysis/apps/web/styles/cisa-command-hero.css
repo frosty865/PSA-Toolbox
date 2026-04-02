@@ -3,6 +3,34 @@
  * Used by PSA Toolbox, IDA, and other Next surfaces; HOST static app keeps its own styles.css rules.
  */
 
+/* Toolbox home: slightly larger story type + tighter title (executive landing). */
+.landing-hero--psa-marketing .landing-subtitle {
+  font-size: 1.0625rem;
+  line-height: 1.62;
+  max-width: 38rem;
+}
+
+.landing-hero--psa-marketing .landing-title {
+  letter-spacing: -0.025em;
+}
+
+/**
+ * `shared/cisa_styles` under `.cisa-doc` sets dark ink on all `h2` and `p`.
+ * When the hero was wrapped in `.cisa-doc`, body copy rendered as dark-on-dark blue.
+ */
+.cisa-doc .landing-hero--cisa .landing-title {
+  color: #f8fafc !important;
+}
+
+.cisa-doc .landing-hero--cisa .landing-subtitle,
+.cisa-doc .landing-hero--cisa .landing-eyebrow {
+  color: rgba(248, 250, 252, 0.96) !important;
+}
+
+.cisa-doc .landing-hero--cisa .landing-status-pill {
+  color: #f8fafc !important;
+}
+
 .landing-hero--cisa {
   --dhs-blue: #005288;
   --dhs-blue-deep: #003d5c;

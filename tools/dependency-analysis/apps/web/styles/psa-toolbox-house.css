@@ -1,6 +1,7 @@
 /**
  * Single entry for PSA Toolbox canonical CISA house style.
- * From apps/web/styles/ → five `..` segments to repo root, then shared/.
+ * Tokens + house styles: copied from repo `shared/` into `repo-shared/` for Vercel
+ * (deploy uploads only `tools/dependency-analysis`). Keep copies aligned with `shared/`.
  */
-@import url('../../../../../shared/psa-tokens.css');
-@import url('../../../../../shared/cisa_styles.css');
+@import url('./repo-shared/psa-tokens.css');
+@import url('./repo-shared/cisa_styles.css');

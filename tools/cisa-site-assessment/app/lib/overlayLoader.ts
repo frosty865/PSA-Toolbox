@@ -6,6 +6,7 @@
  */
 
 import { ensureRuntimePoolConnected } from './db/runtime_client';
+import { columnExists, tableExists } from './db/table_exists';
 import { getSubtypeInfo, getDisciplineName } from './taxonomy/subtype_guidance';
 
 export type OverlaySpine = {
@@ -39,6 +40,14 @@ export async function loadOverlays(
   activeOnly: boolean = true
 ): Promise<OverlaySpine[]> {
   const pool = await ensureRuntimePoolConnected();
+
+  const overlayTableExists = await tableExists(pool, 'public', 'overlay_spines_runtime');
+  if (!overlayTableExists) {
+    console.warn('[Overlay Loader] overlay_spines_runtime table does not exist; returning no overlays');
+    return [];
+  }
+
+  const hasDisciplineSubtypeId = await columnExists(pool, 'public', 'overlay_spines_runtime', 'discipline_subtype_id');
   
   const conditions: string[] = [];
   const params: unknown[] = [];
@@ -69,25 +78,37 @@ export async function loadOverlays(
 
   const whereClause = conditions.length > 0 ? `WHERE ${conditions.join(' OR ')}` : '';
   
+  const selectColumns = [
+    'canon_id',
+    'layer',
+    'sector_id',
+    'subsector_id',
+    'discipline_code',
+    'subtype_code',
+    'question_text',
+    'response_enum',
+    'order_index',
+  ];
+  if (hasDisciplineSubtypeId) {
+    selectColumns.splice(6, 0, 'discipline_subtype_id');
+  }
+
   const query = `
     SELECT 
-      canon_id,
-      layer,
-      sector_id,
-      subsector_id,
-      discipline_code,
-      subtype_code,
-      discipline_subtype_id,
-      question_text,
-      response_enum,
-      order_index
+      ${selectColumns.join(',\n      ')}
     FROM public.overlay_spines_runtime
     ${whereClause}
     ORDER BY discipline_code, layer, order_index, canon_id
   `;
 
-  const result = await pool.query(query, params);
-  
+  let result;
+  try {
+    result = await pool.query(query, params);
+  } catch (error) {
+    console.warn('[Overlay Loader] Failed to load overlay spines:', error instanceof Error ? error.message : String(error));
+    return [];
+  }
+
   // Map rows to OverlaySpine objects with runtime guidance
   const spines: OverlaySpine[] = result.rows.map((row: Record<string, unknown>) => {
     // Parse response_enum (stored as jsonb)

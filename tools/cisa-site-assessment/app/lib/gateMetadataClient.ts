@@ -58,7 +58,7 @@ export async function getGateForQuestion(canonId: string): Promise<GateType | nu
  */
 export function evaluateGatesForSubtype(
   subtypeElements: Record<string, unknown>[],
-  responses: Map<string, 'YES' | 'NO' | 'N_A' | 'N/A'>
+  responses: Map<string, string>
 ): Record<GateType, 'YES' | 'NO' | 'N_A' | null> {
   const gateResults: Record<GateType, 'YES' | 'NO' | 'N_A' | null> = {
     CONTROL_EXISTS: null,

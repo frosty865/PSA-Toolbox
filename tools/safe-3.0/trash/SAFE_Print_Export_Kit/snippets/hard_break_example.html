@@ -1,0 +1,26 @@
+<!-- Insert these where you want hard page breaks -->
+<div class="hard-break"></div>
+
+<!-- Example section structure -->
+<section id="info" class="section">
+  <h2 class="section-header">Facility Information</h2>
+  <p>...</p>
+</section>
+
+<div class="html2pdf__page-break"></div>
+
+<section id="plans" class="section">
+  <h2 class="section-header">Plans & Procedures</h2>
+  <table>
+    <thead><tr><th>Plan</th><th>Written Plan Exists</th><th>Last Review Date</th><th>Exercise Has Been Conducted</th></tr></thead>
+    <tbody>
+      <tr><td>Guest Evacuation</td><td>Yes</td><td>2025-08-01</td><td>Yes</td></tr>
+      <tr><td>Guest Relocation</td><td>No</td><td>—</td><td>No</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Add a non-printing button somewhere in your UI -->
+<div class="top-action-bar">
+  <button onclick="exportPDF()">Export PDF</button>
+</div>

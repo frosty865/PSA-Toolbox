@@ -1,0 +1,778 @@
+/* SAFE A4 Production Print Styles
+ * Optimized for professional A4 report generation
+ * Includes intelligent page breaks and proper margins
+ */
+
+/* A4 Page Setup */
+@page {
+    size: A4;
+    margin: 20mm; /* 20mm margins on all sides */
+    
+    /* Header and Footer */
+    @top-center {
+        content: "SAFE Security Assessment Report";
+        font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 10pt;
+        color: #112e51;
+        font-weight: 500;
+    }
+    
+    @bottom-center {
+        content: "Page " counter(page) " of " counter(pages);
+        font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 9pt;
+        color: #5b616b;
+    }
+    
+    @top-left {
+        content: "CISA";
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 9pt;
+        color: #5b616b;
+        font-weight: 600;
+    }
+    
+    @bottom-left {
+        content: "Confidential - For Official Use Only";
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 8pt;
+        color: #5b616b;
+    }
+}
+
+/* Base Styles - Only apply during print */
+@media print {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+        font-size: 11pt;
+        line-height: 1.4;
+        color: #1b1b1b;
+        background: white;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Ensure content containers respect A4 width without breaking layout */
+    .container {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Only constrain main content areas, not individual cards/sections */
+    .main-content,
+    .report-content {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Preserve all content formatting */
+    * {
+        box-sizing: border-box !important;
+    }
+    
+    /* Ensure proper spacing and alignment */
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    .col,
+    .col-1, .col-2, .col-3, .col-4, .col-5, .col-6,
+    .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+}
+
+/* Print-specific overrides */
+@media print {
+    body {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+    
+    /* Hide non-printable elements */
+    .nav-tabs,
+    .top-action-bar,
+    .back-to-top,
+    .banner-container,
+    .report-action-bar {
+        display: none !important;
+    }
+    
+    /* Hide specific buttons but preserve content */
+    .btn:not(.print-preserve),
+    button:not(.print-preserve):not(.print-only) {
+        display: none !important;
+    }
+    
+    /* Page break controls */
+    .page-break {
+        page-break-before: always !important;
+        break-before: page !important;
+    }
+    
+    .avoid-break {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+    
+    .keep-together {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+    
+    .force-break {
+        page-break-before: always !important;
+        break-before: page !important;
+    }
+    
+    /* Typography controls - moved to better page break control section */
+    
+    /* Table controls */
+    table {
+        page-break-inside: auto !important;
+        break-inside: auto !important;
+    }
+    
+    thead {
+        display: table-header-group !important;
+    }
+    
+    tfoot {
+        display: table-footer-group !important;
+    }
+    
+    tbody tr {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+    
+    /* List controls */
+    ul, ol {
+        page-break-inside: auto !important;
+        break-inside: auto !important;
+    }
+    
+    li {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+    
+    /* Section controls - preserve original styling */
+    .section {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        /* Preserve original borders and styling */
+        border: inherit !important;
+        box-shadow: inherit !important;
+        margin-bottom: inherit !important;
+        padding: inherit !important;
+        background: inherit !important;
+    }
+    
+    .report-section {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        /* Preserve original styling */
+        border: inherit !important;
+        box-shadow: inherit !important;
+        margin-bottom: inherit !important;
+        padding: inherit !important;
+        background: inherit !important;
+    }
+    
+    /* Preserve all borders and visual separators */
+    .category-performance,
+    .key-findings-grid,
+    .posture-overview,
+    .discipline-progress {
+        border: inherit !important;
+        box-shadow: inherit !important;
+        background: inherit !important;
+        padding: inherit !important;
+        margin: inherit !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+    
+    /* Preserve card styling */
+    .key-finding-card,
+    .posture-card,
+    .discipline-card {
+        border: inherit !important;
+        box-shadow: inherit !important;
+        background: inherit !important;
+        padding: inherit !important;
+        margin: inherit !important;
+        border-radius: inherit !important;
+    }
+    
+    /* Preserve important formatting elements */
+    .alert,
+    .alert-info,
+    .alert-warning,
+    .alert-success,
+    .alert-danger {
+        display: block !important;
+        background: inherit !important;
+        border: inherit !important;
+        padding: inherit !important;
+        margin: inherit !important;
+        border-radius: inherit !important;
+    }
+    
+    /* Preserve grid layouts and alignment */
+    .key-findings-grid,
+    .posture-overview,
+    .category-performance,
+    .discipline-progress {
+        display: inherit !important;
+        grid-template-columns: inherit !important;
+        gap: inherit !important;
+        align-items: inherit !important;
+        justify-content: inherit !important;
+    }
+    
+    /* Preserve flexbox layouts */
+    .flex-container,
+    .flex-row,
+    .flex-column {
+        display: inherit !important;
+        flex-direction: inherit !important;
+        align-items: inherit !important;
+        justify-content: inherit !important;
+        gap: inherit !important;
+    }
+    
+    /* Preserve text alignment */
+    .text-center,
+    .text-left,
+    .text-right {
+        text-align: inherit !important;
+    }
+    
+    /* Preserve progress bars and visual elements */
+    .progress-bar-container,
+    .progress-bar-fill,
+    .posture-chart,
+    .key-finding-card {
+        display: inherit !important;
+        background: inherit !important;
+        border: inherit !important;
+    }
+    
+    /* Report Header */
+    .report-header {
+        text-align: center;
+        margin-bottom: 25mm;
+        padding-bottom: 15mm;
+        border-bottom: 3px solid #112e51;
+        page-break-after: avoid;
+    }
+
+    .report-header h1 {
+        color: #112e51;
+        font-size: 24pt;
+        font-weight: 700;
+        margin-bottom: 8mm;
+        letter-spacing: -0.5px;
+    }
+
+    .report-header .subtitle {
+        color: #5b616b;
+        font-size: 14pt;
+        margin-bottom: 4mm;
+        font-weight: 500;
+    }
+
+    .report-header .facility-info {
+        color: #5b616b;
+        font-size: 11pt;
+        margin: 2mm 0;
+    }
+
+    .report-header .generated-date {
+        color: #5b616b;
+        font-size: 10pt;
+        font-style: italic;
+        margin-top: 4mm;
+    }
+
+    /* Executive Summary */
+    .executive-summary {
+        background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+        border: 3px solid #28a745;
+        border-radius: 8px;
+        padding: 15mm;
+        margin-bottom: 20mm;
+        page-break-inside: avoid;
+    }
+
+    .executive-summary h2 {
+        color: #28a745;
+        border-bottom: 2px solid #28a745;
+        font-size: 18pt;
+        margin-bottom: 10mm;
+    }
+
+    .overall-score {
+        font-size: 36pt;
+        font-weight: 800;
+        color: #28a745;
+        text-align: center;
+        margin: 8mm 0;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .score-description {
+        font-size: 14pt;
+        font-weight: 500;
+        color: #1b1b1b;
+        text-align: center;
+        margin-top: 4mm;
+    }
+
+    /* Section Styling */
+    .report-section {
+        margin-bottom: 20mm;
+        page-break-inside: avoid;
+    }
+
+    .report-section h2 {
+        color: #112e51;
+        font-size: 16pt;
+        font-weight: 600;
+        margin-bottom: 8mm;
+        padding-bottom: 4mm;
+        border-bottom: 2px solid #0071bc;
+        page-break-after: avoid;
+    }
+
+    .report-section h3 {
+        color: #112e51;
+        font-size: 13pt;
+        font-weight: 600;
+        margin: 8mm 0 4mm 0;
+        page-break-after: avoid;
+    }
+
+    .report-section h4 {
+        color: #112e51;
+        font-size: 11pt;
+        font-weight: 600;
+        margin: 6mm 0 3mm 0;
+        page-break-after: avoid;
+    }
+
+    .report-section p {
+        margin-bottom: 4mm;
+        line-height: 1.5;
+        text-align: justify;
+    }
+
+    /* Key Findings Grid */
+    .key-findings-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(60mm, 1fr));
+        gap: 8mm;
+        margin-bottom: 15mm;
+    }
+
+    .key-finding-card {
+        padding: 8mm;
+        border-radius: 6px;
+        border-left: 4px solid;
+        background: #f8f9fa;
+        page-break-inside: avoid;
+    }
+
+    .key-finding-card.enhancement {
+        border-left-color: #ffc107;
+        background: #fff8e1;
+    }
+
+    .key-finding-card.standards {
+        border-left-color: #0071bc;
+        background: #e1f3fd;
+    }
+
+    .key-finding-card.total {
+        border-left-color: #28a745;
+        background: #e8f5e8;
+    }
+
+    .key-finding-card h4 {
+        color: inherit;
+        margin: 0 0 4mm 0;
+        font-size: 12pt;
+        font-weight: 600;
+    }
+
+    .key-finding-card .number {
+        font-size: 24pt;
+        font-weight: 700;
+        color: inherit;
+        margin: 2mm 0;
+    }
+
+    /* Progress Bars */
+    .progress-bar-container {
+        background: #e5e7eb;
+        height: 12px;
+        border-radius: 6px;
+        overflow: hidden;
+        margin: 4mm 0;
+    }
+
+    .progress-bar-fill {
+        height: 100%;
+        border-radius: 6px;
+        transition: width 0.3s ease;
+    }
+
+    .progress-bar-fill.success {
+        background: #28a745;
+    }
+
+    .progress-bar-fill.warning {
+        background: #ffc107;
+    }
+
+    .progress-bar-fill.danger {
+        background: #dc3545;
+    }
+
+    /* Discipline Progress */
+    .discipline-progress {
+        margin-bottom: 8mm;
+        padding: 6mm;
+        background: #f8f9fa;
+        border-radius: 6px;
+        border: 1px solid #e5e7eb;
+        page-break-inside: avoid;
+    }
+
+    .discipline-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 4mm;
+    }
+
+    .discipline-title {
+        color: #112e51;
+        font-weight: 600;
+        font-size: 11pt;
+    }
+
+    .discipline-percentage {
+        font-size: 10pt;
+        color: #5b616b;
+        font-weight: 600;
+    }
+
+    .discipline-progress-bar {
+        background: #e5e7eb;
+        height: 16px;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 4mm;
+    }
+
+    .discipline-progress-fill {
+        height: 100%;
+        border-radius: 8px;
+        transition: width 0.5s ease;
+    }
+
+    /* Tables */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 8mm 0;
+        font-size: 10pt;
+        page-break-inside: auto;
+    }
+
+    th, td {
+        padding: 6mm 4mm;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        vertical-align: top;
+    }
+
+    th {
+        background: #f8f9fa;
+        font-weight: 600;
+        color: #112e51;
+        font-size: 10pt;
+    }
+
+    tbody tr:hover {
+        background: #f8f9fa;
+    }
+
+    /* Lists */
+    ul, ol {
+        margin-left: 8mm;
+        margin-bottom: 6mm;
+    }
+
+    li {
+        margin-bottom: 2mm;
+        line-height: 1.4;
+    }
+
+    /* Vulnerability and Enhancement Items */
+    .vofc-item, .enhancement-item, .commendable-item {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 6px;
+        padding: 8mm;
+        margin-bottom: 6mm;
+        page-break-inside: avoid;
+    }
+
+    .vofc-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 4mm;
+    }
+
+    .vofc-type {
+        background: #dc3545;
+        color: white;
+        padding: 2mm 4mm;
+        border-radius: 4px;
+        font-size: 9pt;
+        font-weight: 600;
+    }
+
+    .vofc-question {
+        color: #112e51;
+        font-weight: 600;
+        font-size: 11pt;
+    }
+
+    .vofc-content, .enhancement-content, .commendable-action {
+        color: #1b1b1b;
+        margin-bottom: 4mm;
+        line-height: 1.5;
+    }
+
+    .vofc-ofc {
+        background: #e1f3fd;
+        border-left: 3px solid #0071bc;
+        padding: 4mm;
+        margin-top: 4mm;
+        border-radius: 4px;
+        color: #112e51;
+        font-size: 10pt;
+    }
+
+    .enhancement-question {
+        color: #112e51;
+        font-weight: 600;
+        margin-bottom: 4mm;
+        font-size: 11pt;
+    }
+
+    .commendable-impact {
+        background: #e8f5e8;
+        border-left: 3px solid #28a745;
+        padding: 4mm;
+        border-radius: 4px;
+        color: #1b5e20;
+        font-size: 10pt;
+        margin-top: 4mm;
+    }
+
+    /* Utility Classes */
+    .text-center { text-align: center; }
+    .text-right { text-align: right; }
+    .text-justify { text-align: justify; }
+    .font-bold { font-weight: 600; }
+    .font-semibold { font-weight: 500; }
+    .text-sm { font-size: 10pt; }
+    .text-lg { font-size: 14pt; }
+    .text-xl { font-size: 16pt; }
+    .mb-0 { margin-bottom: 0; }
+    .mb-1 { margin-bottom: 2mm; }
+    .mb-2 { margin-bottom: 4mm; }
+    .mb-3 { margin-bottom: 8mm; }
+    .mb-4 { margin-bottom: 12mm; }
+    .mb-5 { margin-bottom: 16mm; }
+
+    /* Color Classes */
+    .text-primary { color: #112e51; }
+    .text-secondary { color: #5b616b; }
+    .text-success { color: #28a745; }
+    .text-warning { color: #ffc107; }
+    .text-danger { color: #dc3545; }
+    .text-info { color: #17a2b8; }
+
+    .bg-primary { background-color: #112e51; }
+    .bg-secondary { background-color: #5b616b; }
+    .bg-success { background-color: #28a745; }
+    .bg-warning { background-color: #ffc107; }
+    .bg-danger { background-color: #dc3545; }
+    .bg-info { background-color: #17a2b8; }
+    .bg-light { background-color: #f8f9fa; }
+
+    /* Page Break Helpers */
+    .page-break {
+        page-break-before: always;
+        break-before: page;
+    }
+
+    .avoid-break {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    .keep-together {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    .force-break {
+        page-break-before: always;
+        break-before: page;
+    }
+
+    /* Print-only elements */
+    .print-only {
+        display: block !important;
+    }
+    
+    /* Better page break control for specific content types */
+    .executive-summary,
+    .key-findings,
+    .security-posture,
+    .recommendations,
+    .findings-detail,
+    .assessment-results {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+    
+    /* Allow breaking for very long content sections only */
+    .long-content {
+        page-break-inside: auto !important;
+        break-inside: auto !important;
+    }
+    
+    /* Ensure headings stay with their content */
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        orphans: 3;
+        widows: 3;
+    }
+    
+    /* Keep headings with at least 2 lines of following content */
+    h1 + *, h2 + *, h3 + *, h4 + *, h5 + *, h6 + * {
+        page-break-before: avoid !important;
+        break-before: avoid !important;
+    }
+    
+    /* Prevent graphics and images from being cut off */
+    img, svg, canvas, figure, .chart, .graphic, .image {
+        max-width: 100% !important;
+        height: auto !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        display: block !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Ensure tables don't overflow */
+    table {
+        width: 100% !important;
+        max-width: 100% !important;
+        table-layout: auto !important;
+        word-wrap: break-word !important;
+    }
+    
+    /* Fix grid layouts for print */
+    .key-findings-grid,
+    .posture-overview,
+    .category-performance {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+        gap: 10px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Ensure cards don't overflow */
+    .key-finding-card,
+    .posture-card,
+    .discipline-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: visible !important;
+        word-wrap: break-word !important;
+    }
+    
+    /* Fix any overflow issues */
+    * {
+        overflow: visible !important;
+        max-width: 100% !important;
+    }
+    
+    /* Ensure proper text wrapping */
+    p, div, span, td, th {
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        hyphens: auto !important;
+    }
+
+    /* Responsive adjustments for different paper sizes */
+    @media print and (max-width: 210mm) {
+        body {
+            width: 100% !important;
+            font-size: 10pt;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .key-findings-grid,
+        .posture-overview,
+        .category-performance {
+            grid-template-columns: 1fr !important;
+            gap: 8px !important;
+        }
+        
+        /* Ensure everything fits within page boundaries */
+        * {
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+        }
+    }
+
+    /* High DPI print optimization */
+    @media print and (-webkit-min-device-pixel-ratio: 2) {
+        body {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+    }
+}

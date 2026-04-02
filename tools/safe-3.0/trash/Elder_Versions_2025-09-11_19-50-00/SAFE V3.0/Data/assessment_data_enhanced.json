@@ -1,0 +1,566 @@
+{
+  "metadata": {
+    "version": "3.0",
+    "created": "2024-12-19T14:30:00Z",
+    "lastModified": "2024-12-19T14:30:00Z",
+    "assessmentType": "SAFE Comprehensive"
+  },
+  "facilityInformation": {
+    "facilityName": "Fort Lauderdale Financial Services",
+    "assessmentDate": "2024-12-19",
+    "facilityAddress": "123 Financial District Blvd",
+    "facilityCity": "Fort Lauderdale",
+    "facilityState": "FL",
+    "facilityZip": "33301",
+    "facilityPhone": "(954) 555-0123",
+    "facilityEmail": "security@flfs.com",
+    "facilityLatitude": "26.1224",
+    "facilityLongitude": "-80.1373",
+    "sector": "Financial Services",
+    "facilityType": "Office Building",
+    "employeeCount": 150,
+    "facilitySize": 25000,
+    "operatingHours": "24/7",
+    "publicAccess": "Restricted",
+    "assessmentNotes": "Annual security assessment for financial services facility"
+  },
+  "informationSharing": {
+    "Awareness": {
+      "response": "yes",
+      "standards": {
+        "AwarenessComp1": true,
+        "AwarenessComp2": true,
+        "AwarenessComp3": false
+      },
+      "optionsForConsideration": {
+        "AwarenessNoOFC1": false,
+        "AwarenessNoOFC2": false,
+        "AwarenessNoOFC3": false
+      }
+    },
+    "LawEnforcement": {
+      "response": "yes",
+      "standards": {
+        "LawEnforcementComp1": true,
+        "LawEnforcementComp2": true,
+        "LawEnforcementComp3": true
+      },
+      "optionsForConsideration": {
+        "LawEnforcementNoOFC1": false,
+        "LawEnforcementNoOFC2": false,
+        "LawEnforcementNoOFC3": false
+      }
+    },
+    "LawComm": {
+      "response": "yes",
+      "standards": {
+        "LawCommComp1": true,
+        "LawCommComp2": false,
+        "LawCommComp3": false
+      },
+      "optionsForConsideration": {
+        "LawCommNoOFC1": false,
+        "LawCommNoOFC2": false,
+        "LawCommNoOFC3": false
+      }
+    },
+    "FireAgency": {
+      "response": "yes",
+      "standards": {
+        "FireAgencyComp1": true,
+        "FireAgencyComp2": true,
+        "FireAgencyComp3": true
+      },
+      "optionsForConsideration": {
+        "FireAgencyNoOFC1": false,
+        "FireAgencyNoOFC2": false,
+        "FireAgencyNoOFC3": false
+      }
+    },
+    "FireComm": {
+      "response": "yes",
+      "standards": {
+        "FireCommComp1": true,
+        "FireCommComp2": true,
+        "FireCommComp3": false
+      },
+      "optionsForConsideration": {
+        "FireCommNoOFC1": false,
+        "FireCommNoOFC2": false,
+        "FireCommNoOFC3": false
+      }
+    },
+    "MedicalAgency": {
+      "response": "no",
+      "standards": {
+        "MedicalAgencyComp1": false,
+        "MedicalAgencyComp2": false,
+        "MedicalAgencyComp3": false
+      },
+      "optionsForConsideration": {
+        "MedicalAgencyNoOFC1": true,
+        "MedicalAgencyNoOFC2": true,
+        "MedicalAgencyNoOFC3": false
+      }
+    },
+    "MedicalComm": {
+      "response": "na",
+      "standards": {
+        "MedicalCommComp1": false,
+        "MedicalCommComp2": false,
+        "MedicalCommComp3": false
+      },
+      "optionsForConsideration": {
+        "MedicalCommNoOFC1": false,
+        "MedicalCommNoOFC2": false,
+        "MedicalCommNoOFC3": false
+      }
+    },
+    "FBIInfo": {
+      "response": "yes",
+      "standards": {
+        "FBIInfoComp1": true,
+        "FBIInfoComp2": true,
+        "FBIInfoComp3": true
+      },
+      "optionsForConsideration": {
+        "FBIInfoNoOFC1": false,
+        "FBIInfoNoOFC2": false,
+        "FBIInfoNoOFC3": false
+      }
+    },
+    "ISACInfo": {
+      "response": "yes",
+      "standards": {
+        "ISACInfoComp1": true,
+        "ISACInfoComp2": false,
+        "ISACInfoComp3": false
+      },
+      "optionsForConsideration": {
+        "ISACInfoNoOFC1": false,
+        "ISACInfoNoOFC2": false,
+        "ISACInfoNoOFC3": false
+      }
+    },
+    "HSINInfo": {
+      "response": "no",
+      "standards": {
+        "HSINInfoComp1": false,
+        "HSINInfoComp2": false,
+        "HSINInfoComp3": false
+      },
+      "optionsForConsideration": {
+        "HSINInfoNoOFC1": true,
+        "HSINInfoNoOFC2": false,
+        "HSINInfoNoOFC3": false
+      }
+    },
+    "InfraGard": {
+      "response": "yes",
+      "standards": {
+        "InfraGardComp1": true,
+        "InfraGardComp2": true,
+        "InfraGardComp3": true
+      },
+      "optionsForConsideration": {
+        "InfraGardNoOFC1": false,
+        "InfraGardNoOFC2": false,
+        "InfraGardNoOFC3": false
+      }
+    },
+    "FederalInfo": {
+      "response": "yes",
+      "standards": {
+        "FederalInfoComp1": true,
+        "FederalInfoComp2": true,
+        "FederalInfoComp3": false
+      },
+      "optionsForConsideration": {
+        "FederalInfoNoOFC1": false,
+        "FederalInfoNoOFC2": false,
+        "FederalInfoNoOFC3": false
+      }
+    },
+    "StateLocalInfo": {
+      "response": "yes",
+      "standards": {
+        "StateLocalInfoComp1": true,
+        "StateLocalInfoComp2": true,
+        "StateLocalInfoComp3": true
+      },
+      "optionsForConsideration": {
+        "StateLocalInfoNoOFC1": false,
+        "StateLocalInfoNoOFC2": false,
+        "StateLocalInfoNoOFC3": false
+      }
+    },
+    "NeighborInfo": {
+      "response": "no",
+      "standards": {
+        "NeighborInfoComp1": false,
+        "NeighborInfoComp2": false,
+        "NeighborInfoComp3": false
+      },
+      "optionsForConsideration": {
+        "NeighborInfoNoOFC1": true,
+        "NeighborInfoNoOFC2": true,
+        "NeighborInfoNoOFC3": true
+      }
+    }
+  },
+  "securityPlans": {
+    "SecurityManager": {
+      "response": "yes",
+      "standards": {
+        "SecurityManagerComp1": true,
+        "SecurityManagerComp2": true,
+        "SecurityManagerComp3": true
+      },
+      "optionsForConsideration": {
+        "SecurityManagerNoOFC1": false,
+        "SecurityManagerNoOFC2": false,
+        "SecurityManagerNoOFC3": false
+      }
+    },
+    "SecurityPlan": {
+      "response": "yes",
+      "standards": {
+        "SecurityPlanComp1": true,
+        "SecurityPlanComp2": true,
+        "SecurityPlanComp3": true,
+        "SecurityPlanComp4": true
+      },
+      "optionsForConsideration": {
+        "SecurityPlanNoOFC1": false,
+        "SecurityPlanNoOFC2": false,
+        "SecurityPlanNoOFC3": false
+      }
+    },
+    "PlanTraining": {
+      "response": "yes",
+      "standards": {
+        "PlanTrainingComp1": true,
+        "PlanTrainingComp2": true,
+        "PlanTrainingComp3": false,
+        "PlanTrainingComp4": false
+      },
+      "optionsForConsideration": {
+        "PlanTrainingNoOFC1": false,
+        "PlanTrainingNoOFC2": false,
+        "PlanTrainingNoOFC3": false,
+        "PlanTrainingNoOFC4": false
+      }
+    },
+    "PlanCoordination": {
+      "response": "no",
+      "standards": {
+        "PlanCoordinationComp1": false,
+        "PlanCoordinationComp2": false,
+        "PlanCoordinationComp3": false,
+        "PlanCoordinationComp4": false
+      },
+      "optionsForConsideration": {
+        "PlanCoordinationNoOFC1": true,
+        "PlanCoordinationNoOFC2": true,
+        "PlanCoordinationNoOFC3": true,
+        "PlanCoordinationNoOFC4": false
+      }
+    },
+    "EmployeeTraining": {
+      "response": "yes",
+      "standards": {
+        "EmployeeTrainingComp1": true,
+        "EmployeeTrainingComp2": true,
+        "EmployeeTrainingComp3": true,
+        "EmployeeTrainingComp4": true
+      },
+      "optionsForConsideration": {
+        "EmployeeTrainingNoOFC1": false,
+        "EmployeeTrainingNoOFC2": false,
+        "EmployeeTrainingNoOFC3": false,
+        "EmployeeTrainingNoOFC4": false
+      }
+    },
+    "PlanTesting": {
+      "response": "no",
+      "standards": {
+        "PlanTestingComp1": false,
+        "PlanTestingComp2": false,
+        "PlanTestingComp3": false,
+        "PlanTestingComp4": false
+      },
+      "optionsForConsideration": {
+        "PlanTestingNoOFC1": true,
+        "PlanTestingNoOFC2": true,
+        "PlanTestingNoOFC3": false,
+        "PlanTestingNoOFC4": false
+      }
+    },
+    "RiskAssessment": {
+      "response": "yes",
+      "standards": {
+        "RiskAssessmentComp1": true,
+        "RiskAssessmentComp2": true,
+        "RiskAssessmentComp3": true,
+        "RiskAssessmentComp4": false
+      },
+      "optionsForConsideration": {
+        "RiskAssessmentNoOFC1": false,
+        "RiskAssessmentNoOFC2": false,
+        "RiskAssessmentNoOFC3": false,
+        "RiskAssessmentNoOFC4": false
+      }
+    }
+  },
+  "physicalSecurity": {
+    "SecurityPersonnel": {
+      "response": "yes",
+      "standards": {
+        "SecurityPersonnelComp1": true,
+        "SecurityPersonnelComp2": true,
+        "SecurityPersonnelComp3": true
+      },
+      "optionsForConsideration": {
+        "SecurityPersonnelNoOFC1": false,
+        "SecurityPersonnelNoOFC2": false,
+        "SecurityPersonnelNoOFC3": false
+      }
+    },
+    "PerimeterFencing": {
+      "response": "yes",
+      "standards": {
+        "PerimeterFencingComp1": true,
+        "PerimeterFencingComp2": true,
+        "PerimeterFencingComp3": false
+      },
+      "optionsForConsideration": {
+        "PerimeterFencingNoOFC1": false,
+        "PerimeterFencingNoOFC2": false,
+        "PerimeterFencingNoOFC3": false
+      }
+    },
+    "AccessControl": {
+      "response": "yes",
+      "standards": {
+        "AccessControlComp1": true,
+        "AccessControlComp2": true,
+        "AccessControlComp3": true
+      },
+      "optionsForConsideration": {
+        "AccessControlNoOFC1": false,
+        "AccessControlNoOFC2": false,
+        "AccessControlNoOFC3": false
+      }
+    },
+    "SecurityLighting": {
+      "response": "yes",
+      "standards": {
+        "SecurityLightingComp1": true,
+        "SecurityLightingComp2": true,
+        "SecurityLightingComp3": true
+      },
+      "optionsForConsideration": {
+        "SecurityLightingNoOFC1": false,
+        "SecurityLightingNoOFC2": false,
+        "SecurityLightingNoOFC3": false
+      }
+    },
+    "StandoffDistance": {
+      "response": "no",
+      "standards": {
+        "StandoffDistanceComp1": false,
+        "StandoffDistanceComp2": false,
+        "StandoffDistanceComp3": false
+      },
+      "optionsForConsideration": {
+        "StandoffDistanceNoOFC1": true,
+        "StandoffDistanceNoOFC2": true,
+        "StandoffDistanceNoOFC3": false
+      }
+    },
+    "BuildingEnvelope": {
+      "response": "yes",
+      "standards": {
+        "BuildingEnvelopeComp1": true,
+        "BuildingEnvelopeComp2": true,
+        "BuildingEnvelopeComp3": false
+      },
+      "optionsForConsideration": {
+        "BuildingEnvelopeNoOFC1": false,
+        "BuildingEnvelopeNoOFC2": false,
+        "BuildingEnvelopeNoOFC3": false
+      }
+    },
+    "KeyControl": {
+      "response": "yes",
+      "standards": {
+        "KeyControlComp1": true,
+        "KeyControlComp2": true,
+        "KeyControlComp3": true
+      },
+      "optionsForConsideration": {
+        "KeyControlNoOFC1": false,
+        "KeyControlNoOFC2": false,
+        "KeyControlNoOFC3": false
+      }
+    }
+  },
+  "securitySystems": {
+    "VideoSurveillance": {
+      "response": "yes",
+      "standards": {
+        "VideoSurveillanceComp1": true,
+        "VideoSurveillanceComp2": true,
+        "VideoSurveillanceComp3": true
+      },
+      "optionsForConsideration": {
+        "VideoSurveillanceNoOFC1": false,
+        "VideoSurveillanceNoOFC2": false,
+        "VideoSurveillanceNoOFC3": false
+      }
+    },
+    "VideoCoverage": {
+      "response": "yes",
+      "standards": {
+        "VideoCoverageComp1": true,
+        "VideoCoverageComp2": true,
+        "VideoCoverageComp3": false
+      },
+      "optionsForConsideration": {
+        "VideoCoverageNoOFC1": false,
+        "VideoCoverageNoOFC2": false,
+        "VideoCoverageNoOFC3": false
+      }
+    },
+    "VideoMonitoring": {
+      "response": "no",
+      "standards": {
+        "VideoMonitoringComp1": false,
+        "VideoMonitoringComp2": false,
+        "VideoMonitoringComp3": false
+      },
+      "optionsForConsideration": {
+        "VideoMonitoringNoOFC1": true,
+        "VideoMonitoringNoOFC2": true,
+        "VideoMonitoringNoOFC3": false
+      }
+    },
+    "VideoRecording": {
+      "response": "yes",
+      "standards": {
+        "VideoRecordingComp1": true,
+        "VideoRecordingComp2": true,
+        "VideoRecordingComp3": true
+      },
+      "optionsForConsideration": {
+        "VideoRecordingNoOFC1": false,
+        "VideoRecordingNoOFC2": false,
+        "VideoRecordingNoOFC3": false
+      }
+    },
+    "IntrusionDetection": {
+      "response": "yes",
+      "standards": {
+        "IntrusionDetectionComp1": true,
+        "IntrusionDetectionComp2": true,
+        "IntrusionDetectionComp3": false
+      },
+      "optionsForConsideration": {
+        "IntrusionDetectionNoOFC1": false,
+        "IntrusionDetectionNoOFC2": false,
+        "IntrusionDetectionNoOFC3": false
+      }
+    },
+    "AlarmMonitoring": {
+      "response": "yes",
+      "standards": {
+        "AlarmMonitoringComp1": true,
+        "AlarmMonitoringComp2": true,
+        "AlarmMonitoringComp3": true
+      },
+      "optionsForConsideration": {
+        "AlarmMonitoringNoOFC1": false,
+        "AlarmMonitoringNoOFC2": false,
+        "AlarmMonitoringNoOFC3": false
+      }
+    },
+    "SystemIntegration": {
+      "response": "no",
+      "standards": {
+        "SystemIntegrationComp1": false,
+        "SystemIntegrationComp2": false,
+        "SystemIntegrationComp3": false
+      },
+      "optionsForConsideration": {
+        "SystemIntegrationNoOFC1": true,
+        "SystemIntegrationNoOFC2": true,
+        "SystemIntegrationNoOFC3": true
+      }
+    }
+  },
+  "customVOFCs": [
+    {
+      "category": "Physical Security",
+      "vulnerability": "Limited vehicle barrier options at main entrance",
+      "optionsForConsideration": "Install retractable bollards or crash-rated barriers",
+      "isCommendable": false
+    },
+    {
+      "category": "Information Sharing",
+      "vulnerability": "No formal process for sharing threat intelligence with neighboring businesses",
+      "optionsForConsideration": "Establish business security network and regular information sharing protocols",
+      "isCommendable": false
+    },
+    {
+      "category": "Security Systems",
+      "vulnerability": "Video analytics not integrated with access control system",
+      "optionsForConsideration": "Implement integrated video analytics and access control correlation",
+      "isCommendable": false
+    }
+  ],
+  "commendablePractices": [
+    {
+      "category": "Security Management",
+      "action": "Regular security awareness training for all employees",
+      "impact": "Maintains high security consciousness and reduces human error risks"
+    },
+    {
+      "category": "Physical Security",
+      "action": "Multi-layered access control with biometric verification",
+      "impact": "Provides robust security while maintaining efficient operations"
+    },
+    {
+      "category": "Emergency Planning",
+      "action": "Comprehensive emergency response coordination with local agencies",
+      "impact": "Ensures rapid and coordinated response to security incidents"
+    }
+  ],
+  "pointsOfContact": {
+    "primary": {
+      "name": "John Smith",
+      "title": "Security Manager",
+      "phone": "(954) 555-0124",
+      "email": "john.smith@flfs.com"
+    },
+    "secondary": {
+      "name": "Sarah Johnson",
+      "title": "Assistant Security Manager",
+      "phone": "(954) 555-0125",
+      "email": "sarah.johnson@flfs.com"
+    }
+  },
+  "assessmentSummary": {
+    "totalQuestions": 35,
+    "questionsAnswered": 35,
+    "standardsMet": 28,
+    "vulnerabilitiesIdentified": 7,
+    "commendablePractices": 3,
+    "overallScore": 80,
+    "riskLevel": "Medium",
+    "nextAssessmentDate": "2025-12-19"
+  }
+}
+
+
+
+

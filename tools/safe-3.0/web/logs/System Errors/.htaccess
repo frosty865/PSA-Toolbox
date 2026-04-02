@@ -1,0 +1,3 @@
+# Deny access to system error logs
+Order Deny,Allow
+Deny from all

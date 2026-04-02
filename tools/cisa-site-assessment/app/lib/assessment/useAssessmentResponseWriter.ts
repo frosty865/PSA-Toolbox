@@ -10,12 +10,12 @@
  * 
  * @param assessmentId - Assessment ID
  * @param canonId - Question canon ID
- * @param value - Response value ("YES", "NO", or "N_A")
+ * @param value - Response value ("YES", "NO", "N_A", or any enum/string response supported by the assessment UI)
  */
 export async function writeResponse(
   assessmentId: string,
   canonId: string,
-  value: "YES" | "NO" | "N_A"
+  value: string
 ): Promise<void> {
   const response = await fetch(`/api/runtime/assessments/${assessmentId}/responses`, {
     method: 'PUT',

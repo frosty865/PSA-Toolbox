@@ -7,6 +7,7 @@ import { Toaster, toast } from "react-hot-toast";
 import ProgressBar from "@/app/components/ProgressBar";
 import Breadcrumbs from "@/app/components/Breadcrumbs";
 import StickyNav from "@/app/components/StickyNav";
+import DisciplineNav from "@/app/components/DisciplineNav";
 import QuestionSearch from "@/app/components/QuestionSearch";
 import AutoSaveIndicator from "@/app/components/AutoSaveIndicator";
 import DisciplineSkeleton from "@/app/components/DisciplineSkeleton";
@@ -200,7 +201,7 @@ interface RequiredElement {
   element_code?: string; // deprecated - use canon_id
   layer?: "baseline" | "sector" | "subsector";
   order_index?: number;
-  current_response?: "YES" | "NO" | "N/A" | "N_A" | null; // UI accepts both "N/A" and "N_A"
+  current_response?: "YES" | "NO" | "N/A" | "N_A" | string | null; // UI accepts both "N/A" and "N_A" plus non-binary enum answers
   mapped_gate?: "CONTROL_EXISTS" | "CONTROL_OPERABLE" | "CONTROL_RESILIENCE" | null;
   discipline_name?: string;
   discipline_subtype_name?: string;
@@ -262,7 +263,7 @@ export default function AssessmentExecutionPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState<Record<string, boolean>>({});
-  const [responsesMap, setResponsesMap] = useState<Map<string, "YES" | "NO" | "N/A">>(new Map());
+  const [responsesMap, setResponsesMap] = useState<Map<string, string>>(new Map());
   const [responseIdMap, setResponseIdMap] = useState<Map<string, string>>(new Map()); // canon_id -> response_id
   const [_submitting, setSubmitting] = useState(false);
   void _submitting;
@@ -284,10 +285,10 @@ export default function AssessmentExecutionPage() {
   }, [responsesMap]);
 
   const setDraftResponses = (next: DraftResponses) => {
-    const newMap = new Map<string, "YES" | "NO" | "N/A">();
+    const newMap = new Map<string, string>();
     Object.entries(next).forEach(([key, value]) => {
-      if (typeof value === 'string' && (value === 'YES' || value === 'NO' || value === 'N/A')) {
-        newMap.set(key, value as "YES" | "NO" | "N/A");
+      if (typeof value === 'string') {
+        newMap.set(key, value);
       }
     });
     setResponsesMap(newMap);
@@ -387,13 +388,14 @@ export default function AssessmentExecutionPage() {
 
         // Build responses map for GateOrderedQuestions component (keyed by canon_id)
         // Normalize responses: API returns "N_A" but UI uses "N/A" for display
-        const responsesMapForGate = new Map<string, "YES" | "NO" | "N/A">();
+        const responsesMapForGate = new Map<string, string>();
         const responseIdMapForGate = new Map<string, string>(); // canon_id -> response_id
         for (const r of responsesData) {
           const key = r.canon_id || r.element_id;
-          if (key && r.response) {
+          if (key && typeof r.response === 'string') {
             // Normalize "N_A" from API to "N/A" for UI consistency
-            const normalizedResponse = r.response === 'N_A' ? 'N/A' : r.response as "YES" | "NO" | "N/A";
+            // Preserve any other response strings, including non-binary depth-2 answers.
+            const normalizedResponse = r.response === 'N_A' ? 'N/A' : r.response;
             responsesMapForGate.set(key, normalizedResponse);
             // Store response ID if available
             if (r.response_id) {
@@ -526,7 +528,7 @@ export default function AssessmentExecutionPage() {
   };
 
   // Debounced save queue for batching rapid changes
-  const pendingSavesRef = useRef<Map<string, "YES" | "NO" | "N/A">>(new Map());
+  const pendingSavesRef = useRef<Map<string, string>>(new Map());
   const saveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const flushPendingSaves = async () => {
@@ -535,7 +537,7 @@ export default function AssessmentExecutionPage() {
     const items = Array.from(pendingSavesRef.current.entries()).map(([canonId, response]) => ({
       question_canon_id: canonId, // Use canon_id (new format)
       question_template_id: canonId, // Also set legacy field for backward compatibility
-      response_enum: response === 'N/A' ? 'N_A' : response as 'YES' | 'NO' | 'N_A'
+      response_enum: response === 'N/A' ? 'N_A' : response
     }));
 
     // Mark all as saving
@@ -570,7 +572,7 @@ export default function AssessmentExecutionPage() {
           const response = item.response_enum === 'N_A' ? 'N/A' : item.response_enum;
           const canonId = item.question_canon_id || item.question_template_id;
           if (canonId) {
-            updated.set(canonId, response as "YES" | "NO" | "N/A");
+            updated.set(canonId, response);
           }
         });
         return updated;
@@ -625,7 +627,7 @@ export default function AssessmentExecutionPage() {
   // Save response handler with debouncing
   const handleResponseChange = async (
     canonId: string,
-    response: "YES" | "NO" | "N/A" | "N_A"
+    response: "YES" | "NO" | "N/A" | "N_A" | string
   ) => {
     if (!elements) return;
     
@@ -636,7 +638,7 @@ export default function AssessmentExecutionPage() {
     }
 
     // Normalize response: convert "N_A" (API format) to "N/A" (UI format) for state storage
-    const uiResponse: "YES" | "NO" | "N/A" = response === "N_A" ? "N/A" : response as "YES" | "NO" | "N/A";
+    const uiResponse = response === "N_A" ? "N/A" : response;
 
     // Get previous response for history
     const previousResponse = responsesMap.get(canonId);
@@ -1010,12 +1012,12 @@ export default function AssessmentExecutionPage() {
                         // Load responses into state
                         setDraftResponses(env.responses);
                         // Also update responsesMap for immediate UI update
-                        const newMap = new Map<string, "YES" | "NO" | "N/A">();
-                        Object.entries(env.responses).forEach(([key, value]) => {
-                          if (typeof value === 'string' && (value === 'YES' || value === 'NO' || value === 'N/A')) {
-                            newMap.set(key, value as "YES" | "NO" | "N/A");
-                          }
-                        });
+        const newMap = new Map<string, string>();
+        Object.entries(env.responses).forEach(([key, value]) => {
+          if (typeof value === 'string') {
+            newMap.set(key, value);
+          }
+        });
                         setResponsesMap(newMap);
                         // Update elements with loaded responses
                         setElements((prev) =>
@@ -1238,86 +1240,95 @@ export default function AssessmentExecutionPage() {
         // Sort disciplines alphabetically
         const sortedDisciplines = Array.from(questionsByDiscipline.entries())
           .sort((a, b) => a[1].disciplineName.localeCompare(b[1].disciplineName));
+        const disciplineNavItems = sortedDisciplines.map(([disciplineCode, group]) => ({
+          id: `discipline-${disciplineCode.toLowerCase()}`,
+          name: group.disciplineName,
+          questionCount: group.depth1.length + group.depth2.length,
+        }));
 
         return (
-          <div className="card" style={{ marginBottom: "2rem" }}>
-            <h3 style={{ marginBottom: "1.5rem", borderBottom: "2px solid #005ea2", paddingBottom: "0.5rem" }}>
-              Baseline Questions
-            </h3>
-            {sortedDisciplines.map(([disciplineCode, group]) => {
-              // Build checklist lookup from questions (checklist is already attached to depth1 questions)
-              const checklistMap = new Map<string, SubtypeChecklist>();
-              for (const q of group.depth1) {
-                if (q.subtype_code && isSubtypeChecklist(q.checklist)) {
-                  checklistMap.set(q.subtype_code, q.checklist);
+          <>
+            <DisciplineNav disciplines={disciplineNavItems} defaultExpanded={true} />
+            <div className="card" style={{ marginBottom: "2rem" }}>
+              <h3 style={{ marginBottom: "1.5rem", borderBottom: "2px solid #005ea2", paddingBottom: "0.5rem" }}>
+                Baseline Questions
+              </h3>
+              {sortedDisciplines.map(([disciplineCode, group]) => {
+                // Build checklist lookup from questions (checklist is already attached to depth1 questions)
+                const checklistMap = new Map<string, SubtypeChecklist>();
+                for (const q of group.depth1) {
+                  if (q.subtype_code && isSubtypeChecklist(q.checklist)) {
+                    checklistMap.set(q.subtype_code, q.checklist);
+                  }
                 }
-              }
 
-              // Build depth2 tags lookup from questions (tags are already attached)
-              const depth2TagsMap = new Map<string, string[]>();
-              for (const q of group.depth2) {
-                if (q.depth2_tags && q.depth2_tags.length > 0) {
-                  depth2TagsMap.set(q.canon_id, q.depth2_tags);
+                // Build depth2 tags lookup from questions (tags are already attached)
+                const depth2TagsMap = new Map<string, string[]>();
+                for (const q of group.depth2) {
+                  if (q.depth2_tags && q.depth2_tags.length > 0) {
+                    depth2TagsMap.set(q.canon_id, q.depth2_tags);
+                  }
                 }
-              }
 
-              return (
-                <DisciplineSectionBlock
-                  key={disciplineCode}
-                  disciplineCode={disciplineCode}
-                  disciplineName={group.disciplineName}
-                  questionsDepth1={group.depth1}
-                  questionsDepth2={group.depth2}
-                  responsesByCanonId={responsesMap}
-                  checklistIndexBySubtype={(subtypeCode) => checklistMap.get(subtypeCode) || null}
-                  depth2TagsIndexByCanonId={(canonId) => depth2TagsMap.get(canonId) || []}
-                  onWriteResponse={async (canonId, value) => {
-                    if (assessmentId) {
-                      await writeResponse(assessmentId, canonId, value);
-                    }
-                  }}
-                  onResponseChange={handleResponseChange}
-                  saving={saving}
-                  isReadOnly={isReadOnly}
-                  assessmentId={assessmentId}
-                />
-              );
-            })}
-            {/* Display OFCs for NO responses */}
-            {groupedElements.baseline
-              .filter((el) => {
-                const canonId = el.canon_id || el.element_code || el.element_id;
-                return canonId && el.current_response === "NO";
-              })
-              .map((element) => {
-                const canonId = element.canon_id || element.element_code || element.element_id;
-                if (!canonId) return null;
-                const responseId = responseIdMap.get(canonId);
                 return (
-                  <div key={canonId} style={{ marginTop: "1rem" }}>
-                    {/* Show candidates panel for NO responses */}
-                    {responseId && (
-                      <OfcCandidatesPanel
-                        assessmentId={assessmentId}
-                        responseId={responseId}
-                        answer={element.current_response || "N/A"}
-                        onPromoted={async () => {
-                          // Refresh OFCs after promotion
-                          const updatedOfcs = await getOfcs(assessmentId);
-                          setOfcs(updatedOfcs || []);
-                        }}
-                      />
-                    )}
-                    {/* Show promoted OFCs */}
-                    {ofcMap.has(canonId) && (
-                      <div style={{ marginTop: "1rem" }}>
-                        <OfcDisplay ofcs={(ofcMap.get(canonId) ?? []).slice(0, 4)} />
-                      </div>
-                    )}
-                  </div>
+                  <DisciplineSectionBlock
+                    key={disciplineCode}
+                    sectionId={`discipline-${disciplineCode.toLowerCase()}`}
+                    disciplineCode={disciplineCode}
+                    disciplineName={group.disciplineName}
+                    questionsDepth1={group.depth1}
+                    questionsDepth2={group.depth2}
+                    responsesByCanonId={responsesMap}
+                    checklistIndexBySubtype={(subtypeCode) => checklistMap.get(subtypeCode) || null}
+                    depth2TagsIndexByCanonId={(canonId) => depth2TagsMap.get(canonId) || []}
+                    onWriteResponse={async (canonId, value) => {
+                      if (assessmentId) {
+                        await writeResponse(assessmentId, canonId, value);
+                      }
+                    }}
+                    onResponseChange={handleResponseChange}
+                    saving={saving}
+                    isReadOnly={isReadOnly}
+                    assessmentId={assessmentId}
+                  />
                 );
               })}
-          </div>
+              {/* Display OFCs for NO responses */}
+              {groupedElements.baseline
+                .filter((el) => {
+                  const canonId = el.canon_id || el.element_code || el.element_id;
+                  return canonId && el.current_response === "NO";
+                })
+                .map((element) => {
+                  const canonId = element.canon_id || element.element_code || element.element_id;
+                  if (!canonId) return null;
+                  const responseId = responseIdMap.get(canonId);
+                  return (
+                    <div key={canonId} style={{ marginTop: "1rem" }}>
+                      {/* Show candidates panel for NO responses */}
+                      {responseId && (
+                        <OfcCandidatesPanel
+                          assessmentId={assessmentId}
+                          responseId={responseId}
+                          answer={element.current_response || "N/A"}
+                          onPromoted={async () => {
+                            // Refresh OFCs after promotion
+                            const updatedOfcs = await getOfcs(assessmentId);
+                            setOfcs(updatedOfcs || []);
+                          }}
+                        />
+                      )}
+                      {/* Show promoted OFCs */}
+                      {ofcMap.has(canonId) && (
+                        <div style={{ marginTop: "1rem" }}>
+                          <OfcDisplay ofcs={(ofcMap.get(canonId) ?? []).slice(0, 4)} />
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+            </div>
+          </>
         );
       })()}
 

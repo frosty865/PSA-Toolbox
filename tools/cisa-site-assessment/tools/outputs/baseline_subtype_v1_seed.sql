@@ -1,11 +1,11 @@
 -- Baseline Subtype v1 Seed Script
--- Generated: 2026-01-16T15:19:33.201Z
--- Seed Mode: OVERWRITE_EXISTING
--- Total spines: 105
+-- Generated: 2026-04-02T02:47:25.070Z
+-- Seed Mode: PRESERVE_EXISTING
+-- Total spines: 104
 
--- OVERWRITE_EXISTING mode: All taxonomy subtypes will be seeded.
--- This script uses INSERT ... ON CONFLICT DO UPDATE to overwrite question_text.
--- Existing subtype spines will be updated with new question_text.
+-- PRESERVE_EXISTING mode: Existing subtype spines are preserved.
+-- This script uses INSERT ... ON CONFLICT DO UPDATE but preserves question_text.
+-- Only new subtype spines will be inserted; existing question_text is not updated.
 
 BEGIN;
 
@@ -22,7 +22,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-ACS-ACS_BIOMETRIC_ACCESS',
   'ACS',
   'ACS_BIOMETRIC_ACCESS',
-  'Is a Biometric Access capability implemented?',
+  'Is biometric authentication used to grant entry at controlled points?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-ACS-ACS_BIOMETRIC_ACCESS'),
@@ -31,7 +31,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -50,7 +50,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-ACS-ACS_CREDENTIAL_BADGE_SYSTEMS',
   'ACS',
   'ACS_CREDENTIAL_BADGE_SYSTEMS',
-  'Is a Credential / Badge Systems capability implemented?',
+  'Are credentials or badges used to grant entry at controlled points?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-ACS-ACS_CREDENTIAL_BADGE_SYSTEMS'),
@@ -59,7 +59,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -78,7 +78,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-ACS-ACS_DOOR_MONITORING',
   'ACS',
   'ACS_DOOR_MONITORING',
-  'Is a Door Monitoring capability implemented?',
+  'Are doors monitored for forced or unauthorized opening at controlled entry points?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-ACS-ACS_DOOR_MONITORING'),
@@ -87,7 +87,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -106,7 +106,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-ACS-ACS_DOOR_READERS',
   'ACS',
   'ACS_DOOR_READERS',
-  'Is a Door Readers capability implemented?',
+  'Are door readers installed at controlled entry points?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-ACS-ACS_DOOR_READERS'),
@@ -115,7 +115,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -134,7 +134,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-ACS-ACS_ELECTRIC_STRIKES_MAG_LOCKS',
   'ACS',
   'ACS_ELECTRIC_STRIKES_MAG_LOCKS',
-  'Is an Electric Strikes / Mag Locks capability implemented?',
+  'Are electric strikes or mag locks installed on controlled doors?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-ACS-ACS_ELECTRIC_STRIKES_MAG_LOCKS'),
@@ -143,7 +143,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -162,7 +162,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-ACS-ACS_ELECTRONIC_ACCESS_CONTROL',
   'ACS',
   'ACS_ELECTRONIC_ACCESS_CONTROL',
-  'Is an Electronic Access Control capability implemented?',
+  'Is an electronic access control system in use at controlled entry points?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-ACS-ACS_ELECTRONIC_ACCESS_CONTROL'),
@@ -171,7 +171,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -190,7 +190,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-ACS-ACS_KEYPADS_PIN_ENTRY',
   'ACS',
   'ACS_KEYPADS_PIN_ENTRY',
-  'Is a Keypads / PIN Entry capability implemented?',
+  'Are keypads or PIN entry devices used at controlled entry points?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-ACS-ACS_KEYPADS_PIN_ENTRY'),
@@ -199,7 +199,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -218,7 +218,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-ACS-ACS_LOCKING_HARDWARE',
   'ACS',
   'ACS_LOCKING_HARDWARE',
-  'Is a Locking Hardware capability implemented?',
+  'Is mechanical locking hardware installed on controlled doors?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-ACS-ACS_LOCKING_HARDWARE'),
@@ -227,7 +227,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -246,7 +246,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-ACS-ACS_SECURED_VESTIBULES',
   'ACS',
   'ACS_SECURED_VESTIBULES',
-  'Is a Secured Vestibules capability implemented?',
+  'Are secured vestibules used to separate public and controlled space?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-ACS-ACS_SECURED_VESTIBULES'),
@@ -255,7 +255,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -274,7 +274,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-ACS-ACS_VISITOR_MANAGEMENT_SYSTEMS',
   'ACS',
   'ACS_VISITOR_MANAGEMENT_SYSTEMS',
-  'Is a Visitor Management Systems capability implemented?',
+  'Are visitor management systems used to manage facility entry?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-ACS-ACS_VISITOR_MANAGEMENT_SYSTEMS'),
@@ -283,7 +283,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -302,7 +302,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-COM-COM_BACKUP_COMMUNICATIONS',
   'COM',
   'COM_BACKUP_COMMUNICATIONS',
-  'Is a Backup Communications capability implemented?',
+  'Is there a backup communication method available during outages or incidents?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-COM-COM_BACKUP_COMMUNICATIONS'),
@@ -311,7 +311,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -330,7 +330,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-COM-COM_COMMUNICATION_PROTOCOLS',
   'COM',
   'COM_COMMUNICATION_PROTOCOLS',
-  'Is a Communication Protocols capability implemented?',
+  'Are communication protocols defined for incident coordination?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-COM-COM_COMMUNICATION_PROTOCOLS'),
@@ -339,7 +339,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -358,7 +358,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-COM-COM_INTEROPERABLE_COMMUNICATIONS',
   'COM',
   'COM_INTEROPERABLE_COMMUNICATIONS',
-  'Is an Interoperable Communications capability implemented?',
+  'Can communications interoperate with external responders or partner systems?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-COM-COM_INTEROPERABLE_COMMUNICATIONS'),
@@ -367,7 +367,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -386,7 +386,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-COM-COM_PA_SYSTEMS',
   'COM',
   'COM_PA_SYSTEMS',
-  'Is a PA Systems capability implemented?',
+  'Are public address systems available to broadcast announcements?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-COM-COM_PA_SYSTEMS'),
@@ -395,7 +395,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -414,7 +414,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-COM-COM_PAGING_SYSTEMS',
   'COM',
   'COM_PAGING_SYSTEMS',
-  'Is a Paging Systems capability implemented?',
+  'Are paging systems available to broadcast alerts?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-COM-COM_PAGING_SYSTEMS'),
@@ -423,7 +423,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -442,7 +442,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-COM-COM_RADIOS_TWO_WAY',
   'COM',
   'COM_RADIOS_TWO_WAY',
-  'Is a Radios / Two-Way capability implemented?',
+  'Are two-way radios available for staff coordination?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-COM-COM_RADIOS_TWO_WAY'),
@@ -451,7 +451,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -479,7 +479,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -507,7 +507,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -535,7 +535,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -563,7 +563,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -591,7 +591,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -619,7 +619,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -647,7 +647,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -666,7 +666,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-EAP-EAP_EMERGENCY_DRILLS',
   'EAP',
   'EAP_EMERGENCY_DRILLS',
-  'Is an Emergency Drills capability implemented?',
+  'Are emergency drills planned or conducted for the facility?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-EAP-EAP_EMERGENCY_DRILLS'),
@@ -675,7 +675,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -694,7 +694,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-EAP-EAP_EMERGENCY_GUIDES_FLIP_CHARTS',
   'EAP',
   'EAP_EMERGENCY_GUIDES_FLIP_CHARTS',
-  'Is an Emergency Guides / Flip Charts capability implemented?',
+  'Are emergency guides or flip charts available for staff use?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-EAP-EAP_EMERGENCY_GUIDES_FLIP_CHARTS'),
@@ -703,7 +703,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -722,7 +722,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-EAP-EAP_EVACUATION_PROCEDURES',
   'EAP',
   'EAP_EVACUATION_PROCEDURES',
-  'Is an Evacuation Procedures capability implemented?',
+  'Are evacuation routes and assembly steps documented for the facility?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-EAP-EAP_EVACUATION_PROCEDURES'),
@@ -731,7 +731,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -750,7 +750,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-EAP-EAP_LOCKDOWN_LOCKOUT_PROCEDURES',
   'EAP',
   'EAP_LOCKDOWN_LOCKOUT_PROCEDURES',
-  'Is a Lockdown / Lockout Procedures capability implemented?',
+  'Are lockdown or lockout steps documented for threats requiring restricted access?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-EAP-EAP_LOCKDOWN_LOCKOUT_PROCEDURES'),
@@ -759,7 +759,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -778,7 +778,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-EAP-EAP_MUSTER_POINTS_RALLY_AREAS',
   'EAP',
   'EAP_MUSTER_POINTS_RALLY_AREAS',
-  'Is a Muster Points / Rally Areas capability implemented?',
+  'Are muster points or rally areas designated for evacuees after departure?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-EAP-EAP_MUSTER_POINTS_RALLY_AREAS'),
@@ -787,7 +787,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -806,7 +806,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-EAP-EAP_REUNIFICATION_PROCEDURES',
   'EAP',
   'EAP_REUNIFICATION_PROCEDURES',
-  'Is a Reunification Procedures capability implemented?',
+  'Are reunification steps documented for reuniting occupants after an incident?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-EAP-EAP_REUNIFICATION_PROCEDURES'),
@@ -815,7 +815,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -834,7 +834,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-EAP-EAP_SHELTER_IN_PLACE',
   'EAP',
   'EAP_SHELTER_IN_PLACE',
-  'Is a Shelter-in-Place capability implemented?',
+  'Are shelter-in-place steps documented for threats that require occupants to stay inside?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-EAP-EAP_SHELTER_IN_PLACE'),
@@ -843,7 +843,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -862,7 +862,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-EAP-EAP_STAFF_EMERGENCY_ROLES',
   'EAP',
   'EAP_STAFF_EMERGENCY_ROLES',
-  'Is a Staff Emergency Roles capability implemented?',
+  'Are staff responsibilities assigned for emergency response?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-EAP-EAP_STAFF_EMERGENCY_ROLES'),
@@ -871,7 +871,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -890,7 +890,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-EMR-EMR_BUSINESS_CONTINUITY',
   'EMR',
   'EMR_BUSINESS_CONTINUITY',
-  'Is a Business Continuity capability implemented?',
+  'Is continuity of operations planned for facility disruptions?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-EMR-EMR_BUSINESS_CONTINUITY'),
@@ -899,7 +899,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -918,7 +918,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-EMR-EMR_CRISIS_MANAGEMENT',
   'EMR',
   'EMR_CRISIS_MANAGEMENT',
-  'Is a Crisis Management capability implemented?',
+  'Is crisis management defined for major incidents affecting the facility?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-EMR-EMR_CRISIS_MANAGEMENT'),
@@ -927,7 +927,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -946,7 +946,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-EMR-EMR_EMERGENCY_COMMUNICATIONS',
   'EMR',
   'EMR_EMERGENCY_COMMUNICATIONS',
-  'Is an Emergency Communications capability implemented?',
+  'Is there a defined method to notify occupants during emergencies?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-EMR-EMR_EMERGENCY_COMMUNICATIONS'),
@@ -955,7 +955,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -974,7 +974,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-EMR-EMR_ICS_NIMS_INTEGRATION',
   'EMR',
   'EMR_ICS_NIMS_INTEGRATION',
-  'Is an ICS/NIMS Integration capability implemented?',
+  'Is incident command or NIMS integration defined for the facility?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-EMR-EMR_ICS_NIMS_INTEGRATION'),
@@ -983,7 +983,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1002,7 +1002,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-EMR-EMR_MASS_NOTIFICATION',
   'EMR',
   'EMR_MASS_NOTIFICATION',
-  'Is a Mass Notification capability implemented?',
+  'Is mass notification available for urgent protective actions?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-EMR-EMR_MASS_NOTIFICATION'),
@@ -1011,7 +1011,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1030,7 +1030,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-EMR-EMR_REDUNDANCY_BACKUP_SYSTEMS',
   'EMR',
   'EMR_REDUNDANCY_BACKUP_SYSTEMS',
-  'Is a Redundancy / Backup Systems capability implemented?',
+  'Are backup systems defined for critical operations?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-EMR-EMR_REDUNDANCY_BACKUP_SYSTEMS'),
@@ -1039,7 +1039,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1058,7 +1058,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-EMR-EMR_RESILIENCE_PLANNING',
   'EMR',
   'EMR_RESILIENCE_PLANNING',
-  'Is a Resilience Planning capability implemented?',
+  'Is resilience planning defined for the facility?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-EMR-EMR_RESILIENCE_PLANNING'),
@@ -1067,7 +1067,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1095,7 +1095,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1123,7 +1123,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1151,7 +1151,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1179,7 +1179,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1207,7 +1207,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1235,7 +1235,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1254,7 +1254,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-IDS-IDS_ALARM_MONITORING',
   'IDS',
   'IDS_ALARM_MONITORING',
-  'Is an Alarm Monitoring capability implemented?',
+  'Are alarms monitored by staff or a central service?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-IDS-IDS_ALARM_MONITORING'),
@@ -1263,7 +1263,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1282,7 +1282,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-IDS-IDS_ALARM_PANELS',
   'IDS',
   'IDS_ALARM_PANELS',
-  'Is an Alarm Panels capability implemented?',
+  'Are alarm panels installed to receive detection signals?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-IDS-IDS_ALARM_PANELS'),
@@ -1291,7 +1291,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1310,7 +1310,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-IDS-IDS_DOOR_CONTACTS',
   'IDS',
   'IDS_DOOR_CONTACTS',
-  'Is a Door Contacts capability implemented?',
+  'Are door contacts installed to detect opening events?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-IDS-IDS_DOOR_CONTACTS'),
@@ -1319,7 +1319,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1338,7 +1338,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-IDS-IDS_GLASS_BREAK_SENSORS',
   'IDS',
   'IDS_GLASS_BREAK_SENSORS',
-  'Is a Glass Break Sensors capability implemented?',
+  'Are glass break sensors installed to detect forced entry?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-IDS-IDS_GLASS_BREAK_SENSORS'),
@@ -1347,7 +1347,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1366,7 +1366,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-IDS-IDS_MOTION_DETECTORS',
   'IDS',
   'IDS_MOTION_DETECTORS',
-  'Is a Motion Detectors capability implemented?',
+  'Are motion detectors installed to detect movement in protected areas?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-IDS-IDS_MOTION_DETECTORS'),
@@ -1375,7 +1375,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1394,7 +1394,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-IDS-IDS_PANIC_DURESS_BUTTONS',
   'IDS',
   'IDS_PANIC_DURESS_BUTTONS',
-  'Is a Panic / Duress Buttons capability implemented?',
+  'Are panic or duress buttons installed for silent alerting?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-IDS-IDS_PANIC_DURESS_BUTTONS'),
@@ -1403,7 +1403,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1422,7 +1422,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-IDS-IDS_PERIMETER_IDS',
   'IDS',
   'IDS_PERIMETER_IDS',
-  'Is a Perimeter IDS capability implemented?',
+  'Is intrusion detection deployed along the perimeter?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-IDS-IDS_PERIMETER_IDS'),
@@ -1431,7 +1431,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1450,7 +1450,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-INT-INT_ACCESS_RESTRICTED_AREAS',
   'INT',
   'INT_ACCESS_RESTRICTED_AREAS',
-  'Is an Access-Restricted Areas capability implemented?',
+  'Are restricted areas controlled at their entry points?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-INT-INT_ACCESS_RESTRICTED_AREAS'),
@@ -1459,7 +1459,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1478,7 +1478,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-INT-INT_HARD_INTERIOR_BARRIERS',
   'INT',
   'INT_HARD_INTERIOR_BARRIERS',
-  'Is a Hard-Interior Barriers capability implemented?',
+  'Are hard interior barriers used to separate protected spaces?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-INT-INT_HARD_INTERIOR_BARRIERS'),
@@ -1487,7 +1487,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1506,7 +1506,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-INT-INT_INTERIOR_DOORS',
   'INT',
   'INT_INTERIOR_DOORS',
-  'Is an Interior Doors capability implemented?',
+  'Are interior doors used to control movement between spaces?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-INT-INT_INTERIOR_DOORS'),
@@ -1515,7 +1515,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1534,7 +1534,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-INT-INT_INTERIOR_LIGHTING',
   'INT',
   'INT_INTERIOR_LIGHTING',
-  'Is an Interior Lighting capability implemented?',
+  'Is interior lighting used to support protected spaces or visibility?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-INT-INT_INTERIOR_LIGHTING'),
@@ -1543,7 +1543,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1562,7 +1562,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-INT-INT_SAFE_ROOMS',
   'INT',
   'INT_SAFE_ROOMS',
-  'Is a Safe Rooms capability implemented?',
+  'Are safe rooms designated for temporary protective shelter?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-INT-INT_SAFE_ROOMS'),
@@ -1571,7 +1571,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1590,7 +1590,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-INT-INT_SECURE_ROOMS',
   'INT',
   'INT_SECURE_ROOMS',
-  'Is a Secure Rooms capability implemented?',
+  'Are secure rooms designated for protected occupancy?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-INT-INT_SECURE_ROOMS'),
@@ -1599,7 +1599,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1618,7 +1618,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-INT-INT_SENSITIVE_ITEM_STORAGE',
   'INT',
   'INT_SENSITIVE_ITEM_STORAGE',
-  'Is a Sensitive Item Storage capability implemented?',
+  'Is protected storage provided for sensitive items?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-INT-INT_SENSITIVE_ITEM_STORAGE'),
@@ -1627,7 +1627,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1646,7 +1646,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-ISC-ISC_COORDINATION_PROTOCOLS',
   'ISC',
   'ISC_COORDINATION_PROTOCOLS',
-  'Is a Coordination Protocols capability implemented?',
+  'Are coordination protocols defined for partner response and escalation?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-ISC-ISC_COORDINATION_PROTOCOLS'),
@@ -1655,7 +1655,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1674,7 +1674,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-ISC-ISC_EXTERNAL_REPORTING',
   'ISC',
   'ISC_EXTERNAL_REPORTING',
-  'Is an External Reporting capability implemented?',
+  'Is external reporting defined for incidents or threats?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-ISC-ISC_EXTERNAL_REPORTING'),
@@ -1683,7 +1683,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1702,7 +1702,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-ISC-ISC_FUSION_CENTER_INTERFACE',
   'ISC',
   'ISC_FUSION_CENTER_INTERFACE',
-  'Is a Fusion Center Interface capability implemented?',
+  'Is there an interface for sharing information with a fusion center?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-ISC-ISC_FUSION_CENTER_INTERFACE'),
@@ -1711,7 +1711,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1730,7 +1730,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-ISC-ISC_ISAC_ISAOS',
   'ISC',
   'ISC_ISAC_ISAOS',
-  'Is an ISAC / ISAOs capability implemented?',
+  'Is there participation in ISAC or ISAO information sharing?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-ISC-ISC_ISAC_ISAOS'),
@@ -1739,7 +1739,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1758,7 +1758,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-ISC-ISC_JTTF_ENGAGEMENT',
   'ISC',
   'ISC_JTTF_ENGAGEMENT',
-  'Is a JTTF Engagement capability implemented?',
+  'Is JTTF engagement defined for relevant incidents?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-ISC-ISC_JTTF_ENGAGEMENT'),
@@ -1767,7 +1767,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1786,7 +1786,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-ISC-ISC_LAW_ENFORCEMENT_LIAISON',
   'ISC',
   'ISC_LAW_ENFORCEMENT_LIAISON',
-  'Is a Law Enforcement Liaison capability implemented?',
+  'Is law enforcement liaison defined for the facility?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-ISC-ISC_LAW_ENFORCEMENT_LIAISON'),
@@ -1795,7 +1795,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1814,7 +1814,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-ISC-ISC_THREAT_INFORMATION_SHARING',
   'ISC',
   'ISC_THREAT_INFORMATION_SHARING',
-  'Is a Threat Information Sharing capability implemented?',
+  'Is threat information shared with outside partners?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-ISC-ISC_THREAT_INFORMATION_SHARING'),
@@ -1823,7 +1823,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1842,7 +1842,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-KEY-KEY_KEY_CABINETS',
   'KEY',
   'KEY_KEY_CABINETS',
-  'Is a Key Cabinets capability implemented?',
+  'Are key cabinets used to secure stored keys?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-KEY-KEY_KEY_CABINETS'),
@@ -1851,7 +1851,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1870,7 +1870,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-KEY-KEY_KEY_LOGS_ACCOUNTABILITY',
   'KEY',
   'KEY_KEY_LOGS_ACCOUNTABILITY',
-  'Is a Key Logs / Accountability capability implemented?',
+  'Are key issuance and return logs maintained?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-KEY-KEY_KEY_LOGS_ACCOUNTABILITY'),
@@ -1879,7 +1879,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1898,7 +1898,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-KEY-KEY_MASTER_KEY_MANAGEMENT',
   'KEY',
   'KEY_MASTER_KEY_MANAGEMENT',
-  'Is a Master Key Management capability implemented?',
+  'Are master keys controlled separately from standard keys?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-KEY-KEY_MASTER_KEY_MANAGEMENT'),
@@ -1907,7 +1907,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1926,7 +1926,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-KEY-KEY_REKEYING_PROCEDURES',
   'KEY',
   'KEY_REKEYING_PROCEDURES',
-  'Is a Rekeying Procedures capability implemented?',
+  'Are rekeying procedures documented after key loss or turnover?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-KEY-KEY_REKEYING_PROCEDURES'),
@@ -1935,7 +1935,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1954,7 +1954,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-KEY-KEY_RESTRICTED_KEYS',
   'KEY',
   'KEY_RESTRICTED_KEYS',
-  'Is a Restricted Keys capability implemented?',
+  'Are restricted keys issued only to authorized personnel?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-KEY-KEY_RESTRICTED_KEYS'),
@@ -1963,7 +1963,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -1982,7 +1982,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-PER-PER_BOLLARDS_BARRIERS',
   'PER',
   'PER_BOLLARDS_BARRIERS',
-  'Is a Bollards / Barriers capability implemented?',
+  'Are bollards or vehicle barriers installed to deter vehicle access?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-PER-PER_BOLLARDS_BARRIERS'),
@@ -1991,7 +1991,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2010,7 +2010,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-PER-PER_BOUNDARY_DEMARCATION',
   'PER',
   'PER_BOUNDARY_DEMARCATION',
-  'Is a Boundary Demarcation capability implemented?',
+  'Is the site boundary clearly marked or demarcated?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-PER-PER_BOUNDARY_DEMARCATION'),
@@ -2019,7 +2019,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2038,7 +2038,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-PER-PER_CLEAR_ZONES',
   'PER',
   'PER_CLEAR_ZONES',
-  'Is a Clear Zones capability implemented?',
+  'Are clear zones maintained along the perimeter?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-PER-PER_CLEAR_ZONES'),
@@ -2047,7 +2047,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2066,7 +2066,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-PER-PER_FENCING',
   'PER',
   'PER_FENCING',
-  'Is a Fencing capability implemented?',
+  'Is fencing present along the site boundary?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-PER-PER_FENCING'),
@@ -2075,7 +2075,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2094,7 +2094,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-PER-PER_GATES',
   'PER',
   'PER_GATES',
-  'Is a Gates capability implemented?',
+  'Are gates installed at perimeter entry points?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-PER-PER_GATES'),
@@ -2103,7 +2103,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2122,7 +2122,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-PER-PER_PERIMETER_LIGHTING',
   'PER',
   'PER_PERIMETER_LIGHTING',
-  'Is a Perimeter Lighting capability implemented?',
+  'Is perimeter lighting installed to illuminate the site boundary?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-PER-PER_PERIMETER_LIGHTING'),
@@ -2131,7 +2131,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2150,7 +2150,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-PER-PER_PERIMETER_SIGNAGE',
   'PER',
   'PER_PERIMETER_SIGNAGE',
-  'Is a Perimeter Signage capability implemented?',
+  'Is perimeter signage posted to mark restricted areas?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-PER-PER_PERIMETER_SIGNAGE'),
@@ -2159,7 +2159,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2178,7 +2178,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-PER-PER_VEHICLE_ACCESS_CONTROL_POINTS',
   'PER',
   'PER_VEHICLE_ACCESS_CONTROL_POINTS',
-  'Is a Vehicle Access Control Points capability implemented?',
+  'Are vehicle entry points controlled with gates, barriers, or checkpoints?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-PER-PER_VEHICLE_ACCESS_CONTROL_POINTS'),
@@ -2187,7 +2187,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2206,7 +2206,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-PER-PER_PEDESTRIAN_ACCESS_CONTROL_POINTS',
   'PER',
   'PER_PEDESTRIAN_ACCESS_CONTROL_POINTS',
-  'Is a Pedestrian Access Control Points capability implemented?',
+  'Are pedestrian entry points controlled with staff, turnstiles, or checkpoints?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-PER-PER_PEDESTRIAN_ACCESS_CONTROL_POINTS'),
@@ -2215,7 +2215,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2234,7 +2234,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-SFO-SFO_GUARD_POSTS',
   'SFO',
   'SFO_GUARD_POSTS',
-  'Is a Guard Posts capability implemented?',
+  'Are guard posts assigned to protect key areas of the facility?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-SFO-SFO_GUARD_POSTS'),
@@ -2243,7 +2243,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2262,7 +2262,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-SFO-SFO_INCIDENT_REPORTING',
   'SFO',
   'SFO_INCIDENT_REPORTING',
-  'Is an Incident Reporting capability implemented?',
+  'Are incident logging and escalation steps defined for security staff?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-SFO-SFO_INCIDENT_REPORTING'),
@@ -2271,7 +2271,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2290,7 +2290,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-SFO-SFO_PATROL_ROUTES',
   'SFO',
   'SFO_PATROL_ROUTES',
-  'Is a Patrol Routes capability implemented?',
+  'Are patrol routes defined for security rounds and inspections?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-SFO-SFO_PATROL_ROUTES'),
@@ -2299,7 +2299,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2318,7 +2318,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-SFO-SFO_RADIO_COMMUNICATIONS',
   'SFO',
   'SFO_RADIO_COMMUNICATIONS',
-  'Is a Radio Communications capability implemented?',
+  'Are radios available for security team communications?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-SFO-SFO_RADIO_COMMUNICATIONS'),
@@ -2327,7 +2327,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2346,7 +2346,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-SFO-SFO_RESPONSE_PROCEDURES',
   'SFO',
   'SFO_RESPONSE_PROCEDURES',
-  'Is a Response Procedures capability implemented?',
+  'Are security response playbooks documented for incidents?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-SFO-SFO_RESPONSE_PROCEDURES'),
@@ -2355,35 +2355,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
-  response_enum = EXCLUDED.response_enum,
-  canon_version = EXCLUDED.canon_version,
-  canon_hash = EXCLUDED.canon_hash,
-  active = EXCLUDED.active;
-
-INSERT INTO public.baseline_spines_runtime (
-  canon_id,
-  discipline_code,
-  subtype_code,
-  question_text,
-  response_enum,
-  canon_version,
-  canon_hash,
-  active
-) VALUES (
-  'BASE-SFO-SFO_SCHOOL_RESOURCE_OFFICER_SRO',
-  'SFO',
-  'SFO_SCHOOL_RESOURCE_OFFICER_SRO',
-  'Is a School Resource Officer (SRO) capability implemented?',
-  '["YES","NO","N_A"]'::jsonb,
-  'v1',
-  MD5('BASE-SFO-SFO_SCHOOL_RESOURCE_OFFICER_SRO'),
-  true
-)
-ON CONFLICT (canon_id) DO UPDATE SET
-  discipline_code = EXCLUDED.discipline_code,
-  subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2402,7 +2374,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-SFO-SFO_SECURITY_OFFICER_TRAINING',
   'SFO',
   'SFO_SECURITY_OFFICER_TRAINING',
-  'Is a Security Officer Training capability implemented?',
+  'Are security officers trained for assigned duties and response roles?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-SFO-SFO_SECURITY_OFFICER_TRAINING'),
@@ -2411,7 +2383,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2430,7 +2402,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-SFO-SFO_SECURITY_OPERATIONS_CENTER_SOC',
   'SFO',
   'SFO_SECURITY_OPERATIONS_CENTER_SOC',
-  'Is a Security Operations Center (SOC) capability implemented?',
+  'Is a security operations center available for live monitoring and coordination?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-SFO-SFO_SECURITY_OPERATIONS_CENTER_SOC'),
@@ -2439,7 +2411,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2467,7 +2439,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2495,7 +2467,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2523,7 +2495,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2542,7 +2514,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-SMG-SMG_SECURITY_DOCUMENTATION',
   'SMG',
   'SMG_SECURITY_DOCUMENTATION',
-  'Is a Security Documentation capability implemented?',
+  'Is security documentation maintained as the governing record set for the facility?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-SMG-SMG_SECURITY_DOCUMENTATION'),
@@ -2551,7 +2523,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2570,7 +2542,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-SMG-SMG_SECURITY_POLICIES',
   'SMG',
   'SMG_SECURITY_POLICIES',
-  'Is a Security Policies capability implemented?',
+  'Are security policies documented to govern facility security decisions?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-SMG-SMG_SECURITY_POLICIES'),
@@ -2579,7 +2551,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2598,7 +2570,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-SMG-SMG_SECURITY_PROCEDURES',
   'SMG',
   'SMG_SECURITY_PROCEDURES',
-  'Is a Security Procedures capability implemented?',
+  'Are step-by-step security procedures documented for operations and incidents?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-SMG-SMG_SECURITY_PROCEDURES'),
@@ -2607,7 +2579,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2626,7 +2598,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-SMG-SMG_SECURITY_TRAINING_PROGRAMS',
   'SMG',
   'SMG_SECURITY_TRAINING_PROGRAMS',
-  'Is a Security Training Programs capability implemented?',
+  'Are security training programs provided to staff and contractors?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-SMG-SMG_SECURITY_TRAINING_PROGRAMS'),
@@ -2635,7 +2607,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2654,7 +2626,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-VSS-VSS_ANALYTICS_BEHAVIOR_DETECTION',
   'VSS',
   'VSS_ANALYTICS_BEHAVIOR_DETECTION',
-  'Is an Analytics / Behavior Detection capability implemented?',
+  'Are analytics used to detect unusual behavior on camera feeds?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-VSS-VSS_ANALYTICS_BEHAVIOR_DETECTION'),
@@ -2663,7 +2635,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2682,7 +2654,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-VSS-VSS_CAMERA_COVERAGE_LINE_OF_SIGHT',
   'VSS',
   'VSS_CAMERA_COVERAGE_LINE_OF_SIGHT',
-  'Is a Camera Coverage / Line of Sight capability implemented?',
+  'Are camera views unobstructed across required areas?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-VSS-VSS_CAMERA_COVERAGE_LINE_OF_SIGHT'),
@@ -2691,7 +2663,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2710,7 +2682,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-VSS-VSS_EXTERIOR_CAMERAS',
   'VSS',
   'VSS_EXTERIOR_CAMERAS',
-  'Is an Exterior Cameras capability implemented?',
+  'Are cameras deployed to observe exterior and perimeter areas?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-VSS-VSS_EXTERIOR_CAMERAS'),
@@ -2719,7 +2691,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2738,7 +2710,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-VSS-VSS_FIXED_CAMERAS',
   'VSS',
   'VSS_FIXED_CAMERAS',
-  'Is a Fixed Cameras capability implemented?',
+  'Are fixed cameras used where a constant field of view is needed?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-VSS-VSS_FIXED_CAMERAS'),
@@ -2747,7 +2719,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2766,7 +2738,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-VSS-VSS_INTERIOR_CAMERAS',
   'VSS',
   'VSS_INTERIOR_CAMERAS',
-  'Is an Interior Cameras capability implemented?',
+  'Are cameras deployed to observe interior public or restricted spaces?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-VSS-VSS_INTERIOR_CAMERAS'),
@@ -2775,7 +2747,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2794,7 +2766,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-VSS-VSS_IP_CAMERAS',
   'VSS',
   'VSS_IP_CAMERAS',
-  'Is an IP Cameras capability implemented?',
+  'Are networked IP cameras used in the video system?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-VSS-VSS_IP_CAMERAS'),
@@ -2803,7 +2775,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2822,7 +2794,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-VSS-VSS_MONITORING_WORKSTATIONS',
   'VSS',
   'VSS_MONITORING_WORKSTATIONS',
-  'Is a Monitoring / Workstations capability implemented?',
+  'Are operator workstations available to view live camera feeds?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-VSS-VSS_MONITORING_WORKSTATIONS'),
@@ -2831,7 +2803,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2850,7 +2822,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-VSS-VSS_PTZ_CAMERAS',
   'VSS',
   'VSS_PTZ_CAMERAS',
-  'Is a PTZ Cameras capability implemented?',
+  'Are pan-tilt-zoom cameras deployed where adjustable coverage is needed?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-VSS-VSS_PTZ_CAMERAS'),
@@ -2859,7 +2831,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2887,7 +2859,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2906,7 +2878,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-VSS-VSS_SYSTEM_ARCHITECTURE',
   'VSS',
   'VSS_SYSTEM_ARCHITECTURE',
-  'Is a System Architecture capability implemented?',
+  'Is the video system architecture documented for the facility?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-VSS-VSS_SYSTEM_ARCHITECTURE'),
@@ -2915,7 +2887,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,
@@ -2934,7 +2906,7 @@ INSERT INTO public.baseline_spines_runtime (
   'BASE-VSS-VSS_VIDEO_WALL_DISPLAY_SYSTEMS',
   'VSS',
   'VSS_VIDEO_WALL_DISPLAY_SYSTEMS',
-  'Is a Video Wall / Display Systems capability implemented?',
+  'Are display systems used to show live camera feeds?',
   '["YES","NO","N_A"]'::jsonb,
   'v1',
   MD5('BASE-VSS-VSS_VIDEO_WALL_DISPLAY_SYSTEMS'),
@@ -2943,7 +2915,7 @@ INSERT INTO public.baseline_spines_runtime (
 ON CONFLICT (canon_id) DO UPDATE SET
   discipline_code = EXCLUDED.discipline_code,
   subtype_code = EXCLUDED.subtype_code,
-  question_text = EXCLUDED.question_text,
+  -- question_text preserved (not updated in PRESERVE_EXISTING mode)
   response_enum = EXCLUDED.response_enum,
   canon_version = EXCLUDED.canon_version,
   canon_hash = EXCLUDED.canon_hash,

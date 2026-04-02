@@ -1,14 +1,14 @@
 const path = require('path');
 
-const repoRoot = path.resolve(__dirname, '../../../..');
 const toolRoot = path.resolve(__dirname, '../..');
 const packagesDir = path.join(toolRoot, 'packages');
-const toolRootFromRepo = 'tools/dependency-analysis';
+/** Turbopack + file tracing use the tool root; on Vercel only this subtree is deployed (monorepo root would resolve to `/`). */
+const tracingRoot = toolRoot;
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  outputFileTracingRoot: repoRoot,
+  outputFileTracingRoot: tracingRoot,
   outputFileTracingExcludes: {
     '/api/export/final': [
       '../../.venv-reporter/**',
@@ -78,6 +78,8 @@ const nextConfig = {
     return [
       { source: '/hotel-analysis', destination: '/hotel-analysis/index.html' },
       { source: '/hotel-analysis/', destination: '/hotel-analysis/index.html' },
+      { source: '/safe-3-0', destination: '/safe-3-0/index.html' },
+      { source: '/safe-3-0/', destination: '/safe-3-0/index.html' },
       // CISA Site Assessment is proxied by app/cisa-site-assessment/[[...slug]]/route.ts; do not use external rewrites here.
     ];
   },
@@ -93,15 +95,15 @@ const nextConfig = {
   // Turbopack (Next 16 default) needs explicit root + resolveAlias for workspace packages.
   // Use root-relative paths with forward slashes (Turbopack does not support Windows absolute paths in aliases).
   turbopack: {
-    root: repoRoot,
+    root: tracingRoot,
     resolveAlias: {
-      engine: `${toolRootFromRepo}/packages/engine`,
-      'engine/client': `${toolRootFromRepo}/packages/engine/dist/client.js`,
-      'engine/summary': `${toolRootFromRepo}/packages/engine/dist/summary.js`,
-      'engine/export/export_guard': `${toolRootFromRepo}/packages/engine/dist/export/export_guard.js`,
-      schema: `${toolRootFromRepo}/packages/schema`,
-      security: `${toolRootFromRepo}/packages/security`,
-      ui: `${toolRootFromRepo}/packages/ui`,
+      engine: 'packages/engine',
+      'engine/client': 'packages/engine/dist/client.js',
+      'engine/summary': 'packages/engine/dist/summary.js',
+      'engine/export/export_guard': 'packages/engine/dist/export/export_guard.js',
+      schema: 'packages/schema',
+      security: 'packages/security',
+      ui: 'packages/ui',
     },
   },
   // Resolve workspace packages so client and server bundles can find them (pnpm may not link into apps/web/node_modules)

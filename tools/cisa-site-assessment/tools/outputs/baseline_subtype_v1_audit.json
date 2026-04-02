@@ -1,10 +1,10 @@
 {
-  "seed_mode": "OVERWRITE_EXISTING",
-  "taxonomy_count": 105,
+  "seed_mode": "PRESERVE_EXISTING",
+  "taxonomy_count": 104,
   "existing_covered_count": 0,
   "existing_non_taxonomy_subtypes": [],
-  "generated_count": 105,
-  "final_union_count": 105,
+  "generated_count": 104,
+  "final_union_count": 104,
   "extra_not_in_taxonomy": [],
   "missing_from_final": [],
   "would_overwrite_count": 0,
@@ -13,7 +13,7 @@
   "skip_breakdown": {
     "skipped_due_to_existing_subtype_coverage": 0,
     "skipped_due_to_duplicate_within_generated": 0,
-    "skipped_due_to_non_taxonomy_subtype": 0
+    "skipped_due_to_non_taxonomy_subtype": 1
   },
   "existing_covered_subtypes": [],
   "generated_subtypes": [
@@ -101,7 +101,6 @@
     "SFO_PATROL_ROUTES",
     "SFO_RADIO_COMMUNICATIONS",
     "SFO_RESPONSE_PROCEDURES",
-    "SFO_SCHOOL_RESOURCE_OFFICER_SRO",
     "SFO_SECURITY_OFFICER_TRAINING",
     "SFO_SECURITY_OPERATIONS_CENTER_SOC",
     "SMG_GOVERNANCE_OVERSIGHT",
@@ -208,7 +207,6 @@
     "SFO_PATROL_ROUTES",
     "SFO_RADIO_COMMUNICATIONS",
     "SFO_RESPONSE_PROCEDURES",
-    "SFO_SCHOOL_RESOURCE_OFFICER_SRO",
     "SFO_SECURITY_OFFICER_TRAINING",
     "SFO_SECURITY_OPERATIONS_CENTER_SOC",
     "SMG_GOVERNANCE_OVERSIGHT",

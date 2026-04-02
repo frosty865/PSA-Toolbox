@@ -4,7 +4,7 @@ import { useState, useCallback, useRef } from "react";
 
 interface ResponseHistoryEntry {
   questionId: string;
-  response: "YES" | "NO" | "N/A";
+  response: "YES" | "NO" | "N/A" | string;
   timestamp: Date;
 }
 
@@ -20,7 +20,7 @@ export function useResponseHistory(options: UseResponseHistoryOptions = {}) {
   const [history, setHistory] = useState<ResponseHistoryEntry[]>([]);
   const historyRef = useRef<ResponseHistoryEntry[]>([]);
 
-  const addToHistory = useCallback((questionId: string, response: "YES" | "NO" | "N/A") => {
+  const addToHistory = useCallback((questionId: string, response: "YES" | "NO" | "N/A" | string) => {
     const entry: ResponseHistoryEntry = {
       questionId,
       response,
@@ -49,7 +49,7 @@ export function useResponseHistory(options: UseResponseHistoryOptions = {}) {
     return lastEntry;
   }, [history]);
 
-  const getLastResponse = useCallback((questionId: string): "YES" | "NO" | "N/A" | null => {
+  const getLastResponse = useCallback((questionId: string): "YES" | "NO" | "N/A" | string | null => {
     const entry = history.find((e) => e.questionId === questionId);
     return entry ? entry.response : null;
   }, [history]);

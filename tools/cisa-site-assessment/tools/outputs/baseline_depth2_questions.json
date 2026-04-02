@@ -17,6 +17,21 @@
         "NO",
         "N_A"
       ],
+      "response_type": "ENUM",
+      "response_options": [
+        {
+          "value": "ON_SITE",
+          "label": "On-site"
+        },
+        {
+          "value": "OFF_SITE",
+          "label": "Off-site"
+        },
+        {
+          "value": "BOTH",
+          "label": "Both"
+        }
+      ],
       "layer": "baseline",
       "depth": 2,
       "order_index": 1,
@@ -3627,6 +3642,21 @@
               "YES",
               "NO",
               "N_A"
+            ],
+            "response_type": "ENUM",
+            "response_options": [
+              {
+                "value": "ON_SITE",
+                "label": "On-site"
+              },
+              {
+                "value": "OFF_SITE",
+                "label": "Off-site"
+              },
+              {
+                "value": "BOTH",
+                "label": "Both"
+              }
             ],
             "layer": "baseline",
             "depth": 2,

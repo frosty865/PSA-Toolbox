@@ -1,0 +1,103 @@
+Short version: you get good A4 printing by (1) declaring A4 with @page,
+(2) using a print-only stylesheet that controls breaks
+(break-before/after/inside), (3) repeating table headers, and (4)
+optionally adding a tiny script to “keep-with-next” so headings don’t
+get orphaned. If you need rock-solid pagination (TOC, footnotes, running
+headers), use a paged-media engine like Paged.js or a renderer like
+Prince/Vivliostyle/WeasyPrint.
+
+------------------------------------------------------------------------
+
+The usual way (browser-only)
+
+1) Mark up the content with sensible blocks
+
+    <main id="report">
+      <h1>Hotel Assessment – August 2025</h1>
+
+      <section class="block">
+        <h2 data-keep-with-next>Executive Summary</h2>
+        <p>…</p>
+      </section>
+
+      <section class="block">
+        <h2 data-keep-with-next>Life Safety</h2>
+        <table class="grid">
+          <thead>
+            <tr><th>Agency</th><th>Trauma Level</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Police Department</td><td>N/A</td><td>…</td></tr>
+            <!-- … -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Force a manual page break when you know it’s needed -->
+      <div class="page-break"></div>
+
+      <section class="block">
+        <h2 data-keep-with-next>Dependencies</h2>
+        <ul class="avoid-split">
+          <li>Power – FPL</li>
+          <!-- … -->
+        </ul>
+      </section>
+    </main>
+    <button onclick="window.print()">Print</button>
+
+2) Print stylesheet that targets A4 and controls fragmentation
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 15mm;
+      }
+      button, nav, .no-print { display: none !important; }
+      .block { break-inside: avoid; }
+      h1, h2, h3 { break-after: avoid; }
+      table { width: 100%; border-collapse: collapse; }
+      thead { display: table-header-group; }
+      tfoot { display: table-footer-group; }
+      tr, img, figure, .avoid-split { break-inside: avoid; }
+      .page-break { break-before: page; }
+      a:link, a:visited { color: black; text-decoration: underline; }
+      body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    }
+
+3) Tiny “intelligent break” helper
+
+    <script>
+    (function () {
+      function tagKeepWithNext() {
+        document.querySelectorAll('[data-keep-with-next]').forEach(h => {
+          const next = h.nextElementSibling;
+          if (next) next.classList.add('avoid-split');
+        });
+      }
+      tagKeepWithNext();
+      window.addEventListener('beforeprint', tagKeepWithNext);
+    })();
+    </script>
+
+------------------------------------------------------------------------
+
+When you need industrial-strength pagination
+
+-   Running headers/footers with page numbers
+-   Table of contents, cross-refs, footnotes, endnotes
+-   Strict “keep with next” across complex layouts
+-   Deterministic identical output across machines
+
+Tools: Paged.js, Vivliostyle, Prince, WeasyPrint.
+
+------------------------------------------------------------------------
+
+Practical tips
+
+-   Use mm/cm/in units for print.
+-   Give images explicit max sizes and break-inside: avoid;.
+-   Prefer multiple smaller tables; repeat headers with thead.
+-   Don’t fake headers with divs.
+-   Avoid fixed headers/footers unless using a paged engine.
+-   Test in Chrome/Edge, target that as baseline.

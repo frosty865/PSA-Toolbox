@@ -16,6 +16,8 @@ export type CisaCommandHeroProps = {
   cta: { href: string; label: string; external?: boolean };
   chips: CisaCommandHeroChip[];
   howItFits: CisaCommandHeroHowItem[];
+  /** Right-column panel heading (default: “How it fits”). */
+  howItFitsHeading?: string;
   /** When the app uses `basePath` (e.g. `/cisa-site-assessment`), set this so the seal URL resolves. */
   assetBase?: string;
   logoSrc?: string;
@@ -49,6 +51,7 @@ export function CisaCommandHero({
   cta,
   chips,
   howItFits,
+  howItFitsHeading = 'How it fits',
   assetBase = '',
   logoSrc,
   logoAlt = 'CISA logo',
@@ -64,7 +67,7 @@ export function CisaCommandHero({
   );
 
   return (
-    <div className="landing-hero landing-hero--cisa" data-psa-command-hero>
+    <div className="landing-hero landing-hero--cisa landing-hero--psa-marketing" data-psa-command-hero>
       <div className="landing-hero-topband">
         <span className="landing-hero-topband-title">{topbandTitle}</span>
         <span className="landing-hero-topband-sub">{topbandSub}</span>
@@ -104,7 +107,7 @@ export function CisaCommandHero({
         </div>
         <div className="landing-hero-panel card">
           <div className="card-header">
-            <h4 className="card-title">How it fits</h4>
+            <h4 className="card-title">{howItFitsHeading}</h4>
           </div>
           <div className="card-body landing-panel-list">
             {howItFits.map((item) => (

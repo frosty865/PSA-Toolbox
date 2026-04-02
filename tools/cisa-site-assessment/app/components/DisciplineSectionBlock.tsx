@@ -30,22 +30,25 @@ interface QuestionDTO {
   subtype_guidance?: unknown | null; // SubtypeGuidance for fallback display
   depth?: number;
   response_enum?: ("YES" | "NO" | "N_A")[];
-  current_response?: "YES" | "NO" | "N/A" | "N_A" | null;
+  current_response?: "YES" | "NO" | "N/A" | "N_A" | string | null;
   checklist?: SubtypeChecklist | null;
   depth2_tags?: string[];
   parent_spine_canon_id?: string;
+  response_type?: "YES_NO_NA" | "CHECKLIST" | "ENUM";
+  response_options?: Array<{ value: string; label: string }>;
 }
 
 interface DisciplineSectionBlockProps {
   disciplineCode: string;
   disciplineName: string;
+  sectionId?: string;
   questionsDepth1: QuestionDTO[];
   questionsDepth2: QuestionDTO[];
-  responsesByCanonId: Map<string, "YES" | "NO" | "N/A" | "N_A">;
+  responsesByCanonId: Map<string, string>;
   checklistIndexBySubtype: (subtype_code: string) => SubtypeChecklist | null;
   depth2TagsIndexByCanonId?: (canon_id: string) => string[];
   onWriteResponse: (canon_id: string, value: "YES" | "NO" | "N_A") => Promise<void>;
-  onResponseChange: (canon_id: string, response: "YES" | "NO" | "N/A" | "N_A") => void;
+  onResponseChange: (canon_id: string, response: "YES" | "NO" | "N/A" | "N_A" | string) => void;
   saving?: Record<string, boolean>;
   isReadOnly?: boolean;
   assessmentId?: string;
@@ -63,6 +66,7 @@ interface DisciplineSectionBlockProps {
 export default function DisciplineSectionBlock({
   disciplineCode,
   disciplineName,
+  sectionId,
   questionsDepth1,
   questionsDepth2,
   responsesByCanonId,
@@ -112,6 +116,7 @@ export default function DisciplineSectionBlock({
     const filtered = questionsDepth1.filter(q => 
       !q.subtype_code && 
       q.depth !== 2 &&
+      !q.parent_spine_canon_id &&
       q.canon_id !== gateCanonId // Exclude gate question
     );
     // Deduplicate by canon_id (keep first occurrence)
@@ -220,6 +225,7 @@ export default function DisciplineSectionBlock({
     const filtered = questionsDepth1.filter(q => 
       q.subtype_code && 
       q.depth !== 2 && // Exclude depth-2 questions
+      !q.parent_spine_canon_id &&
       shouldRenderSpineAsQuestion(disciplineCode, q.subtype_code)
     );
     
@@ -247,7 +253,7 @@ export default function DisciplineSectionBlock({
     }
     // For disciplines using selector, include all subtype spines
     return questionsDepth1.filter(q => {
-      if (!q.subtype_code || q.depth === 2) {
+      if (!q.subtype_code || q.depth === 2 || q.parent_spine_canon_id) {
         return false; // Exclude non-subtype and depth-2 questions
       }
       return true; // Include all subtype spines for selector
@@ -397,6 +403,7 @@ export default function DisciplineSectionBlock({
 
   return (
     <div
+      id={sectionId}
       style={{
         marginBottom: 'var(--spacing-lg)',
         padding: 'var(--spacing-md)',
@@ -404,6 +411,7 @@ export default function DisciplineSectionBlock({
         borderRadius: 'var(--border-radius)',
         backgroundColor: '#ffffff',
         position: 'relative',
+        scrollMarginTop: '120px',
       }}
     >
       {/* DEV-ONLY Debug Strip */}
@@ -783,12 +791,11 @@ export default function DisciplineSectionBlock({
               ? 'N_A' 
               : (spineResponse === 'YES' || spineResponse === 'NO' ? spineResponse : null) as "YES" | "NO" | "N_A" | null;
 
-            const depth2Responses = new Map<string, "YES" | "NO" | "N_A">();
+            const depth2Responses = new Map<string, string>();
             for (const d2q of depth2Questions) {
               const resp = responsesByCanonId.get(d2q.canon_id) || d2q.current_response || null;
-              if (resp === 'YES' || resp === 'NO' || resp === 'N/A' || resp === 'N_A') {
-                const normalized = resp === 'N/A' || resp === 'N_A' ? 'N_A' : resp;
-                depth2Responses.set(d2q.canon_id, normalized as "YES" | "NO" | "N_A");
+              if (typeof resp === 'string' && resp.trim().length > 0) {
+                depth2Responses.set(d2q.canon_id, resp === 'N/A' ? 'N_A' : resp);
               }
             }
 
@@ -801,20 +808,20 @@ export default function DisciplineSectionBlock({
                 depth2Responses={depth2Responses}
                 onSpineAnswer={onResponseChange}
                 onDepth2Answer={(canonId: string, response: string | null) => {
-                  // Convert depth-2 responses to the format expected by onResponseChange
-                  // Map PAPER/DIGITAL/HYBRID/null to N_A, or use the response as-is if it's YES/NO/N_A/N/A
+                  // Convert depth-2 responses to the format expected by onResponseChange.
+                  // Preserve explicit enum answers and only collapse placeholders to N_A.
                   if (!response || response === 'PAPER' || response === 'DIGITAL' || response === 'HYBRID') {
                     onResponseChange(canonId, 'N_A');
                   } else if (response === 'N/A') {
                     onResponseChange(canonId, 'N/A');
                   } else {
-                    // Type assertion is safe here because we've handled all special cases
-                    onResponseChange(canonId, response as "YES" | "NO" | "N_A");
+                    onResponseChange(canonId, response);
                   }
                 }}
                 saving={saving}
                 isReadOnly={isReadOnly}
                 assessmentId={assessmentId}
+                subtypeLabel={spine.subtype_name || formatSubtypeName(subtypeCode)}
               />
             );
           })}
@@ -840,6 +847,11 @@ export default function DisciplineSectionBlock({
             // Include if question has any tag that matches selected discipline tags
             return questionTags.some(tag => selectedDisciplineTags.includes(tag));
           });
+        }
+
+        // Skip empty shells so conditional sections do not appear before they can show content.
+        if (!checklist && visibleDepth2.length === 0) {
+          return null;
         }
 
         return (
@@ -906,6 +918,7 @@ export default function DisciplineSectionBlock({
                   const normalizedCurrentResp = currentResponse === 'N/A' || currentResponse === 'N_A' 
                     ? 'N_A' 
                     : (currentResponse === 'YES' || currentResponse === 'NO' ? currentResponse : null);
+                  const currentEnumResponse = typeof currentResponse === 'string' ? currentResponse : null;
                   const isSaving = saving[question.canon_id];
 
                   return (
@@ -947,50 +960,95 @@ export default function DisciplineSectionBlock({
 
                       <fieldset className="usa-fieldset" disabled={isReadOnly || isSaving} style={{ marginTop: '0.5rem', padding: 0, border: 'none' }}>
                         <legend style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', border: 0 }}>{question.question_text}</legend>
-                        <div className="usa-radio" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                          {(question.response_enum || ['YES', 'NO', 'N_A']).map((option) => {
-                            const optionValue = option === 'N_A' ? 'N/A' : option;
-                            const normalizedOption = option === 'N_A' ? 'N_A' : option;
-                            const isSelected = normalizedCurrentResp === normalizedOption;
-                            return (
-                              <div key={option} className="usa-radio__input usa-radio__input--tile" style={{ margin: 0 }}>
-                                <input
-                                  className="usa-radio__input"
-                                  id={`${question.canon_id}-${option}`}
-                                  type="radio"
-                                  name={`response-${question.canon_id}`}
-                                  value={optionValue}
-                                  checked={isSelected}
-                                  onChange={() => {
-                                    if (!isReadOnly && !isSaving) {
-                                      const normalizedValue = optionValue === 'N/A' ? 'N_A' : optionValue;
-                                      onResponseChange(question.canon_id, normalizedValue as "YES" | "NO" | "N_A");
-                                    }
-                                  }}
-                                  disabled={isReadOnly || isSaving}
-                                />
-                                <label
-                                  className="usa-radio__label"
-                                  htmlFor={`${question.canon_id}-${option}`}
-                                  style={{
-                                    padding: '0.75rem 1rem',
-                                    border: isSelected ? '2px solid #005ea2' : '2px solid #dfe1e2',
-                                    borderRadius: '0.25rem',
-                                    backgroundColor: isSelected ? '#e7f3f8' : 'white',
-                                    cursor: isReadOnly || isSaving ? 'not-allowed' : 'pointer',
-                                    opacity: isReadOnly || isSaving ? 0.6 : 1,
-                                    display: 'inline-block',
-                                    whiteSpace: 'nowrap',
-                                    margin: 0,
-                                  }}
-                                >
-                                  {optionValue}
-                                  {isSaving && <span style={{ marginLeft: '0.5rem', fontSize: '0.875rem' }}>(saving...)</span>}
-                                </label>
-                              </div>
-                            );
-                          })}
-                        </div>
+                        {question.response_type === 'ENUM' && question.response_options ? (
+                          <div className="usa-radio" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                            {question.response_options.map((option) => {
+                              const optionValue = option.value;
+                              const isSelected = currentEnumResponse === optionValue;
+                              return (
+                                <div key={optionValue} className="usa-radio__input usa-radio__input--tile" style={{ margin: 0 }}>
+                                  <input
+                                    className="usa-radio__input"
+                                    id={`${question.canon_id}-${optionValue}`}
+                                    type="radio"
+                                    name={`response-${question.canon_id}`}
+                                    value={optionValue}
+                                    checked={isSelected}
+                                    onChange={() => {
+                                      if (!isReadOnly && !isSaving) {
+                                        onResponseChange(question.canon_id, optionValue);
+                                      }
+                                    }}
+                                    disabled={isReadOnly || isSaving}
+                                  />
+                                  <label
+                                    className="usa-radio__label"
+                                    htmlFor={`${question.canon_id}-${optionValue}`}
+                                    style={{
+                                      padding: '0.75rem 1rem',
+                                      border: isSelected ? '2px solid #005ea2' : '2px solid #dfe1e2',
+                                      borderRadius: '0.25rem',
+                                      backgroundColor: isSelected ? '#e7f3f8' : 'white',
+                                      cursor: isReadOnly || isSaving ? 'not-allowed' : 'pointer',
+                                      opacity: isReadOnly || isSaving ? 0.6 : 1,
+                                      display: 'inline-block',
+                                      whiteSpace: 'nowrap',
+                                      margin: 0,
+                                    }}
+                                  >
+                                    {option.label}
+                                    {isSaving && <span style={{ marginLeft: '0.5rem', fontSize: '0.875rem' }}>(saving...)</span>}
+                                  </label>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        ) : (
+                          <div className="usa-radio" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                            {(question.response_enum || ['YES', 'NO', 'N_A']).map((option) => {
+                              const optionValue = option === 'N_A' ? 'N/A' : option;
+                              const normalizedOption = option === 'N_A' ? 'N_A' : option;
+                              const isSelected = normalizedCurrentResp === normalizedOption;
+                              return (
+                                <div key={option} className="usa-radio__input usa-radio__input--tile" style={{ margin: 0 }}>
+                                  <input
+                                    className="usa-radio__input"
+                                    id={`${question.canon_id}-${option}`}
+                                    type="radio"
+                                    name={`response-${question.canon_id}`}
+                                    value={optionValue}
+                                    checked={isSelected}
+                                    onChange={() => {
+                                      if (!isReadOnly && !isSaving) {
+                                        const normalizedValue = optionValue === 'N/A' ? 'N_A' : optionValue;
+                                        onResponseChange(question.canon_id, normalizedValue as "YES" | "NO" | "N_A");
+                                      }
+                                    }}
+                                    disabled={isReadOnly || isSaving}
+                                  />
+                                  <label
+                                    className="usa-radio__label"
+                                    htmlFor={`${question.canon_id}-${option}`}
+                                    style={{
+                                      padding: '0.75rem 1rem',
+                                      border: isSelected ? '2px solid #005ea2' : '2px solid #dfe1e2',
+                                      borderRadius: '0.25rem',
+                                      backgroundColor: isSelected ? '#e7f3f8' : 'white',
+                                      cursor: isReadOnly || isSaving ? 'not-allowed' : 'pointer',
+                                      opacity: isReadOnly || isSaving ? 0.6 : 1,
+                                      display: 'inline-block',
+                                      whiteSpace: 'nowrap',
+                                      margin: 0,
+                                    }}
+                                  >
+                                    {optionValue}
+                                    {isSaving && <span style={{ marginLeft: '0.5rem', fontSize: '0.875rem' }}>(saving...)</span>}
+                                  </label>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        )}
                       </fieldset>
                     </div>
                   );
