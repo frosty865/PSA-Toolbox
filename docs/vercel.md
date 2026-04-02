@@ -10,6 +10,17 @@ The Next.js app is **`tools/dependency-analysis/apps/web`** (that is where `next
 
 Optional: enable **Include files outside the root directory in the Build Step** if a future change needs files above `apps/web` in the serverless bundle (the Git clone still contains the full repo for the build step).
 
+## Modular Site Assessment (proxied at `/cisa-site-assessment/`)
+
+The toolbox app **reverse-proxies** the Modular Site Assessment UI. On your laptop, the default upstream is local PSA on port **3001**. **On Vercel there is no localhost**, so you must configure production:
+
+1. Deploy **`tools/cisa-site-assessment`** as a **separate** Vercel project (or any HTTPS host with `basePath` `/cisa-site-assessment`).
+2. On **this** (toolbox / IDA) Vercel project → **Settings → Environment Variables**, add:
+   - **`PSA_SITE_ASSESSMENT_ORIGIN`** = the PSA deployment **origin** only, e.g. `https://your-psa.vercel.app` (no trailing slash).
+3. Redeploy the toolbox app.
+
+Without `PSA_SITE_ASSESSMENT_ORIGIN`, requests to `/cisa-site-assessment/` on Vercel return **503** with setup instructions.
+
 ## What the repo contains
 
 - **`tools/dependency-analysis/apps/web/vercel.json`** — `installCommand` and `buildCommand` run from the workspace root (`cd ..` → `tools/dependency-analysis`) so pnpm installs all workspace packages; **`outputDirectory` is omitted** so Vercel’s Next.js builder uses `apps/web/.next` normally.

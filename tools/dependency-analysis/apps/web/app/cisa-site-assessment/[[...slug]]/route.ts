@@ -2,18 +2,60 @@ import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
 /**
- * Reverse-proxy PSA Rebuild (port 3001, basePath /cisa-site-assessment) through :3000.
+ * Reverse-proxy Modular Site Assessment (PSA, basePath /cisa-site-assessment) through this app.
  * Implemented as a Route Handler so we avoid Next.js middleware/proxy adapter bugs (Invalid URL on some dev requests).
  *
- * Default uses 127.0.0.1 (not `localhost`) so Node fetch hits IPv4; PSA `pnpm dev` binds
- * `--hostname 127.0.0.1` to match. Without that, Next can listen on ::1 only and the proxy 502s.
+ * - **Local dev:** default upstream `http://127.0.0.1:3001` (run `pnpm dev` from tools/dependency-analysis so PSA starts; it uses `--hostname 127.0.0.1`).
+ * - **Vercel:** set `PSA_SITE_ASSESSMENT_ORIGIN` to your deployed PSA origin (e.g. `https://<psa>.vercel.app`) — there is no localhost on the platform.
  */
-const UPSTREAM = process.env.PSA_SITE_ASSESSMENT_ORIGIN ?? 'http://127.0.0.1:3001';
+function resolveUpstream(): { origin: string } | { response: NextResponse } {
+  const raw = process.env.PSA_SITE_ASSESSMENT_ORIGIN?.trim();
+  if (raw) {
+    try {
+      const u = new URL(raw);
+      return { origin: `${u.protocol}//${u.host}` };
+    } catch {
+      return {
+        response: new NextResponse('PSA_SITE_ASSESSMENT_ORIGIN is not a valid absolute URL (include https://).', {
+          status: 500,
+          headers: { 'content-type': 'text/plain; charset=utf-8' },
+        }),
+      };
+    }
+  }
+  if (process.env.VERCEL === '1') {
+    return {
+      response: new NextResponse(
+        [
+          'Modular Site Assessment is not configured for this deployment.',
+          '',
+          'Deploy tools/cisa-site-assessment as its own Vercel project (or another HTTPS host),',
+          'then add environment variable PSA_SITE_ASSESSMENT_ORIGIN on this project to that origin, e.g.',
+          '  https://your-psa-project.vercel.app',
+          '(no trailing slash; paths like /cisa-site-assessment/... are forwarded automatically).',
+          '',
+          'Local dev does not need this: run pnpm dev from tools/dependency-analysis so PSA listens on :3001.',
+        ].join('\n'),
+        {
+          status: 503,
+          headers: { 'content-type': 'text/plain; charset=utf-8' },
+        },
+      ),
+    };
+  }
+  return { origin: 'http://127.0.0.1:3001' };
+}
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
 async function forward(request: NextRequest): Promise<NextResponse> {
+  const resolved = resolveUpstream();
+  if ('response' in resolved) {
+    return resolved.response;
+  }
+  const UPSTREAM = resolved.origin;
+
   const u = request.nextUrl;
   const pathAndQuery = `${u.pathname}${u.search}`;
   const target = `${UPSTREAM}${pathAndQuery}`;
@@ -67,14 +109,19 @@ async function forward(request: NextRequest): Promise<NextResponse> {
     });
   } catch (err) {
     console.error('[cisa-site-assessment proxy]', err);
+    const isVercel = process.env.VERCEL === '1';
     return new NextResponse(
       [
         'Modular Site Assessment is not reachable.',
         '',
-        'Start the unified dev servers from tools/dependency-analysis:',
-        '  pnpm dev',
-        '(not only pnpm --filter web dev — that skips PSA on :3001.)',
-        'Ensure tools/cisa-site-assessment has node_modules: pnpm install there once.',
+        isVercel
+          ? 'Check PSA_SITE_ASSESSMENT_ORIGIN points to a running HTTPS deployment and that project is up.'
+          : [
+              'Start the unified dev servers from tools/dependency-analysis:',
+              '  pnpm dev',
+              '(not only pnpm --filter web dev — that skips PSA on :3001.)',
+              'Ensure tools/cisa-site-assessment has node_modules: pnpm install there once.',
+            ].join('\n'),
         '',
         `Upstream: ${UPSTREAM}`,
       ].join('\n'),
