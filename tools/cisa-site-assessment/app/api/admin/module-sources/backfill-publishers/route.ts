@@ -8,14 +8,12 @@
 
 import { NextResponse } from 'next/server';
 import { getRuntimePool } from '@/app/lib/db/runtime_client';
+import { extractPdfMetadataFromPath } from '@/app/lib/pdfExtractTitle';
 import { getModuleSourcesRoot } from '@/app/lib/storage/config';
 import { existsSync } from 'fs';
 import path from 'path';
-import { spawn } from 'child_process';
 
 export const dynamic = 'force-dynamic';
-
-const SCRIPT = 'tools/corpus/backfill_module_source_publishers.py';
 
 export async function POST(req: Request) {
   try {
@@ -60,48 +58,26 @@ export async function POST(req: Request) {
       });
     }
 
-    const cwd = process.cwd();
-    const env = { ...process.env, PYTHONPATH: cwd, RUNTIME_DATABASE_URL: process.env.RUNTIME_DATABASE_URL || process.env.DATABASE_URL };
-    const scriptPath = path.join(cwd, SCRIPT);
-    const { existsSync: fsExists } = await import('fs');
-    if (!fsExists(scriptPath)) {
-      return NextResponse.json(
-        { error: 'BACKFILL_SCRIPT_MISSING', message: `Script not found: ${SCRIPT}. Run backfill manually.` },
-        { status: 503 }
-      );
+    const updateSql = `
+      UPDATE public.module_sources
+      SET publisher = $2,
+          updated_at = NOW()
+      WHERE id = $1
+    `;
+    let updated = 0;
+    for (const item of toUpdate) {
+      const meta = await extractPdfMetadataFromPath(item.absPath);
+      const publisher = (meta.publisher || '').trim();
+      if (!publisher || publisher === '—') continue;
+      await pool.query(updateSql, [item.id, publisher]);
+      updated++;
     }
 
-    return new Promise<NextResponse>((resolve) => {
-      const proc = spawn(
-        'python',
-        [SCRIPT, '--limit', String(toUpdate.length)],
-        { cwd, env, stdio: ['ignore', 'pipe', 'pipe'] }
-      );
-      let stdout = '';
-      let stderr = '';
-      proc.stdout?.on('data', (d) => { stdout += d; });
-      proc.stderr?.on('data', (d) => { stderr += d; });
-      proc.on('close', (code) => {
-        if (code !== 0) {
-          resolve(
-            NextResponse.json(
-              { error: 'BACKFILL_FAILED', message: stderr || stdout || `Exit ${code}` },
-              { status: 500 }
-            )
-          );
-          return;
-        }
-        const match = stdout.match(/Updated:\s*(\d+)/);
-        const updated = match ? parseInt(match[1], 10) : 0;
-        resolve(
-          NextResponse.json({
-            ok: true,
-            updated,
-            total: toUpdate.length,
-            message: `Backfilled publisher for ${updated} module source(s).`,
-          })
-        );
-      });
+    return NextResponse.json({
+      ok: true,
+      updated,
+      total: toUpdate.length,
+      message: `Backfilled publisher for ${updated} module source(s).`,
     });
   } catch (e: unknown) {
     console.error('[backfill-publishers]', e);

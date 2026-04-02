@@ -184,7 +184,6 @@ export async function generateModuleContentFromChunks(
   };
 
   const env = { ...process.env } as NodeJS.ProcessEnv;
-  env.PYTHONPATH = process.cwd();
   env.RUNTIME_DATABASE_URL = runtimeUrl;
   env.NO_PROXY = withLocalNoProxy(env.NO_PROXY);
   env.no_proxy = env.NO_PROXY;
