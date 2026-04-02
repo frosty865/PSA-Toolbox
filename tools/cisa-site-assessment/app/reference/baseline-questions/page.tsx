@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 interface BaselineQuestion {
   canon_id: string;
@@ -104,27 +104,40 @@ export default function BaselineQuestionsPage() {
       )
     : questions;
 
-  // Filter options must use API query params (discipline_code, subtype_code), not display names only.
-  const disciplineOptions = Array.from(
-    new Map(
-      questions.map((q) => [q.discipline_code, (q.discipline_name && q.discipline_name.trim()) || q.discipline_code])
-    ).entries()
-  ).sort((a, b) => a[1].localeCompare(b[1]));
-  const subtypeOptions = Array.from(
-    new Map(
-      questions
-        .filter((q): q is BaselineQuestion & { subtype_code: string } =>
-          Boolean(q.subtype_code && String(q.subtype_code).trim())
-        )
-        .map((q) => [
-          q.subtype_code,
-          {
-            code: q.subtype_code,
-            label: (q.discipline_subtype_name && q.discipline_subtype_name.trim()) || q.subtype_code,
-          },
-        ])
-    ).values()
-  ).sort((a, b) => a.label.localeCompare(b.label));
+  // Options use API params (discipline_code, subtype_code). After a filter refetch, `questions` only
+  // contains matching rows — without "pinning" the active filter, the controlled <select> has no matching
+  // <option> and the browser blocks changing the selection.
+  const disciplineOptions = useMemo(() => {
+    const map = new Map<string, string>();
+    for (const q of questions) {
+      const code = q.discipline_code?.trim();
+      if (!code) continue;
+      const label = (q.discipline_name && q.discipline_name.trim()) || code;
+      map.set(code, label);
+    }
+    if (disciplineFilter && !map.has(disciplineFilter)) {
+      map.set(disciplineFilter, disciplineFilter);
+    }
+    return Array.from(map.entries()).sort((a, b) => a[1].localeCompare(b[1]));
+  }, [questions, disciplineFilter]);
+
+  const subtypeOptions = useMemo(() => {
+    const map = new Map<string, { code: string; label: string }>();
+    for (const q of questions) {
+      const code = q.subtype_code?.trim();
+      if (!code) continue;
+      if (!map.has(code)) {
+        map.set(code, {
+          code,
+          label: (q.discipline_subtype_name && q.discipline_subtype_name.trim()) || code,
+        });
+      }
+    }
+    if (subtypeFilter && !map.has(subtypeFilter)) {
+      map.set(subtypeFilter, { code: subtypeFilter, label: subtypeFilter });
+    }
+    return Array.from(map.values()).sort((a, b) => a.label.localeCompare(b.label));
+  }, [questions, subtypeFilter]);
   // Note: capability_dimension not in spine format - reserved for future filter
   const _uniqueCapabilityDimensions: string[] = [];
   void _uniqueCapabilityDimensions;
@@ -267,7 +280,10 @@ export default function BaselineQuestionsPage() {
             </label>
             <select
               value={disciplineFilter}
-              onChange={(e) => setDisciplineFilter(e.target.value)}
+              onChange={(e) => {
+                setDisciplineFilter(e.target.value);
+                setSubtypeFilter('');
+              }}
               style={{
                 width: '100%',
                 padding: 'var(--spacing-xs) var(--spacing-sm)',
