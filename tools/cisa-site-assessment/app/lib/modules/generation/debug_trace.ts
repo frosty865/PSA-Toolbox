@@ -45,7 +45,7 @@ export type GenerationDebugTrace = {
   };
 };
 
-/** Build a partial trace from chunk export + Python output (no LLM details unless Python returns them). */
+/** Build a partial trace from chunk export + generator output (no LLM details unless provided). */
 export function buildTraceFromChunkResult(params: {
   chunksTotal: number;
   chunksUsable: number;
@@ -58,7 +58,7 @@ export function buildTraceFromChunkResult(params: {
   droppedTotal?: number;
   dropReasons?: Record<string, number>;
   dropExamples?: Array<{ reason: string; item_type?: string; text?: string; bad_handles?: string[] | null }>;
-  /** From Python debug_trace if present */
+  /** From generator debug_trace if present */
   llm?: Partial<GenerationDebugTrace["llm"]>;
   parsing?: Partial<GenerationDebugTrace["parsing"]>;
   schema?: Partial<GenerationDebugTrace["schema"]>;

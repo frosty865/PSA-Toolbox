@@ -5,7 +5,7 @@ import { generateModuleContentFromChunks } from '@/app/lib/modules/generation/ge
 /**
  * POST /api/admin/modules/wizard/generate
  *
- * Generates questions and OFCs from document chunks via the Python processor.
+ * Generates questions and OFCs from document chunks via the Node generator path.
  * Uses single-pass consolidated prompt; allows 0–4 OFCs per question (export may require 1–4 or NO_OFC_NEEDED).
  * For 2-pass pipeline (PASS A questions, PASS B OFCs per question) with yield guards and export validation,
  * use CLI: npx tsx tools/module_crawler/generate_module_cli.ts --module MODULE_EV_PARKING

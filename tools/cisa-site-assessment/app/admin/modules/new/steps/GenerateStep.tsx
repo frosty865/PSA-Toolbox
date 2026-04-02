@@ -51,7 +51,7 @@ export default function GenerateStep({ state, onUpdate, onNext, onBack, onError,
           const errorMsg = data.error?.message || data.error || 'Failed to generate content';
           if (data.error?.code === 'CHUNK_EXPORT_MISSING') {
             onError(
-              'Chunk export missing. Run from project root: python tools/modules/extract_module_pdfs_to_chunks.py ' +
+              'Chunk export missing. Run the offline chunk extractor before generating module content for ' +
                 state.module_code
             );
             setGenerating(false);
@@ -120,7 +120,7 @@ export default function GenerateStep({ state, onUpdate, onNext, onBack, onError,
         const errorMsg = data.error?.message || data.error || 'Failed to generate content';
         if (data.error?.code === 'CHUNK_EXPORT_MISSING') {
           onError(
-            'Chunk export missing. Run from project root: python tools/modules/extract_module_pdfs_to_chunks.py ' +
+            'Chunk export missing. Run the offline chunk extractor before generating module content for ' +
               state.module_code
           );
           requestInFlight.current = false;
@@ -163,7 +163,7 @@ export default function GenerateStep({ state, onUpdate, onNext, onBack, onError,
         <h3 style={{ marginTop: 0 }}>Ready to Generate</h3>
         <p>Based on {state.sources?.length || 0} source(s). Generation typically takes 2–10 minutes.</p>
         <p style={{ fontSize: 'var(--font-size-sm)', color: 'var(--cisa-gray)' }}>
-          Requires <code>data/module_chunks/{state.module_code}.json</code>. Run from project root: <code>python tools/modules/extract_module_pdfs_to_chunks.py {state.module_code}</code> if needed.
+          Requires <code>data/module_chunks/{state.module_code}.json</code>. Run the offline chunk extractor for {state.module_code} if needed.
         </p>
       </div>
 
