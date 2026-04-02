@@ -2,8 +2,20 @@ const path = require('path');
 
 const toolRoot = path.resolve(__dirname, '../..');
 const packagesDir = path.join(toolRoot, 'packages');
-/** Turbopack + file tracing use the tool root; on Vercel only this subtree is deployed (monorepo root would resolve to `/`). */
-const tracingRoot = toolRoot;
+/**
+ * File tracing root must match how paths are joined to the Git repo root on Vercel.
+ * If this is only `toolRoot` (dependency-analysis), traces resolve `apps/web` under the
+ * workspace and Vercel incorrectly maps them to `<repo>/apps/web` → missing `next` at runtime
+ * (`noop.js`, Cannot find module `next/dist/compiled/next-server/server.runtime.prod.js`).
+ * On Vercel, use the PSA Toolbox repo root so traced paths stay under `tools/dependency-analysis/...`.
+ */
+const repoRoot = path.resolve(__dirname, '../../../..');
+const tracingRoot = process.env.VERCEL ? repoRoot : toolRoot;
+
+/** POSIX path relative to tracingRoot (Turbopack expects forward slashes). */
+function traceRel(absPath) {
+  return path.relative(tracingRoot, absPath).split(path.sep).join('/');
+}
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -93,18 +105,21 @@ const nextConfig = {
   },
   transpilePackages: ['schema', 'engine', 'ui'],
   // Turbopack (Next 16 default) needs explicit root + resolveAlias for workspace packages.
-  // Use root-relative paths with forward slashes (Turbopack does not support Windows absolute paths in aliases).
+  // Paths are relative to tracingRoot (workspace locally, repo root on Vercel).
   turbopack: {
     root: tracingRoot,
-    resolveAlias: {
-      engine: 'packages/engine',
-      'engine/client': 'packages/engine/dist/client.js',
-      'engine/summary': 'packages/engine/dist/summary.js',
-      'engine/export/export_guard': 'packages/engine/dist/export/export_guard.js',
-      schema: 'packages/schema',
-      security: 'packages/security',
-      ui: 'packages/ui',
-    },
+    resolveAlias: (() => {
+      const enginePkg = path.join(packagesDir, 'engine');
+      return {
+        engine: traceRel(enginePkg),
+        'engine/client': traceRel(path.join(enginePkg, 'dist', 'client.js')),
+        'engine/summary': traceRel(path.join(enginePkg, 'dist', 'summary.js')),
+        'engine/export/export_guard': traceRel(path.join(enginePkg, 'dist', 'export', 'export_guard.js')),
+        schema: traceRel(path.join(packagesDir, 'schema')),
+        security: traceRel(path.join(packagesDir, 'security')),
+        ui: traceRel(path.join(packagesDir, 'ui')),
+      };
+    })(),
   },
   // Resolve workspace packages so client and server bundles can find them (pnpm may not link into apps/web/node_modules)
   webpack: (config) => {

@@ -13,6 +13,7 @@ Optional: enable **Include files outside the root directory in the Build Step** 
 ## What the repo contains
 
 - **`tools/dependency-analysis/apps/web/vercel.json`** — `installCommand` and `buildCommand` run from the workspace root (`cd ..` → `tools/dependency-analysis`) so pnpm installs all workspace packages; **`outputDirectory` is omitted** so Vercel’s Next.js builder uses `apps/web/.next` normally.
+- **`apps/web/next.config.js`** — when **`VERCEL`** is set, **`outputFileTracingRoot`** (and Turbopack **`root`**) use the **Git repository root** so traced paths stay under `tools/dependency-analysis/…`. If tracing used only the workspace folder, Vercel could map routes to `<repo>/apps/web` and fail at runtime with missing `next/dist/compiled/next-server/...`.
 - No **`vercel.json`** at the Git repository root — avoids mixed root/subpath output bugs.
 
 Local preview of the same install/build:
