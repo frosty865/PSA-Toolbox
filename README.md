@@ -45,7 +45,7 @@ Keep **`tools-manifest.json`** and [`tools/dependency-analysis/pnpm-workspace.ya
 
 [github.com/frosty865/PSA-Toolbox](https://github.com/frosty865/PSA-Toolbox)
 
-**Vercel:** Root `vercel.json` runs install/build from the Git repo root and sets **`outputDirectory`** to `tools/dependency-analysis/apps/web/.next` so deployments find the Next output. The repo-root `package.json` still lists `next` (same **exact** version as `apps/web`) for framework detection. **Recommended:** in the Vercel project, set **Root Directory** to `tools/dependency-analysis`, use that folder’s `vercel.json`, and you can drop the root `next` stub and simplify—see Vercel monorepo docs.
+**Vercel:** Set the project **Root Directory** to **`tools/dependency-analysis`** (required). Config lives in [`tools/dependency-analysis/vercel.json`](tools/dependency-analysis/vercel.json). See [`docs/vercel.md`](docs/vercel.md).
 
 ## Local cleanup (optional)
 

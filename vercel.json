@@ -1,7 +1,0 @@
-{
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "nextjs",
-  "installCommand": "npx --yes pnpm@9.15.0 install --frozen-lockfile && npx --yes pnpm@9.15.0 -C tools/dependency-analysis install --frozen-lockfile",
-  "buildCommand": "VERCEL=1 npx --yes pnpm@9.15.0 -C tools/dependency-analysis run build:web",
-  "outputDirectory": "tools/dependency-analysis/apps/web/.next"
-}
