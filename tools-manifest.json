@@ -6,7 +6,7 @@
       "id": "dependency-analysis",
       "displayName": "Infrastructure Dependency Assessment",
       "relativePath": "tools/dependency-analysis",
-      "description": "Infrastructure Dependency Assessment — category workspace, dependency review, continuity, and export artifacts.",
+      "description": "Map dependencies and continuity impacts, work category-by-category, and produce review-ready exports for infrastructure programs.",
       "readmeRelativePath": "README.md",
       "entryPath": "/assessment/categories/",
       "start": {
@@ -19,7 +19,7 @@
       "id": "hotel-analysis",
       "displayName": "Hotel Analysis",
       "relativePath": "tools/hotel-analysis",
-      "description": "Hospitality-sector Hotel Analysis — dedicated product surface and workspace (not the IDA dependency tool).",
+      "description": "Purpose-built for hotels and hospitality: structured HOST assessments, guided workflows, and operational security outputs you can stand behind.",
       "readmeRelativePath": "README.md",
       "entryPath": "/hotel-analysis/"
     },
@@ -27,10 +27,10 @@
       "id": "cisa-site-assessment",
       "displayName": "CISA Site Assessment",
       "relativePath": "tools/cisa-site-assessment",
-      "description": "Protective Security Assessment (PSA Rebuild) — full copy under tools/cisa-site-assessment; served in the toolbox at /cisa-site-assessment/ (dev proxy from port 3000 to local :3001). Configure .env.local and PSA_SYSTEM_ROOT as in README-TOOLBOX.md.",
+      "description": "Full Protective Security Assessment lifecycle: intake through analysis, with reporting aligned to how CISA teams review sites.",
       "readmeRelativePath": "README-TOOLBOX.md",
       "entryPath": "/cisa-site-assessment/",
-      "externalUrl": "http://127.0.0.1:3001/cisa-site-assessment/",
+      "externalUrl": "http://127.0.0.1:3001/cisa-site-assessment/assessments/",
       "start": {
         "kind": "powershell",
         "scriptRelativePath": "Start-CisaSiteAssessment.ps1",

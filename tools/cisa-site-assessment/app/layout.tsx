@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import './globals.css';
 import './styles/mobile.css';
+import CisaApiBasePathShim from './components/CisaApiBasePathShim';
 
 export const metadata = {
-  title: 'PSA Processing Monitor',
-  description: 'System status and processing visibility for PSA assessments',
+  title: 'CISA Site Assessment',
+  description: 'Protective Security Assessment workflow for CISA site assessments',
   icons: { icon: '/favicon.ico' }
 };
 
@@ -16,7 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* Temporarily minimal layout to debug loading issue */}
+        <CisaApiBasePathShim />
+        {/* App shell for the CISA site-assessment workflow */}
         <header className="header">
           <div className="header-content">
             <div className="logo">
