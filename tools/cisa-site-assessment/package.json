@@ -131,7 +131,6 @@
     "zod": "^4.3.5"
   },
   "devDependencies": {
-    "glob": "^11.0.0",
     "@tailwindcss/postcss": "^4",
     "@types/jest": "^30.0.0",
     "@types/node": "^20",
@@ -142,6 +141,7 @@
     "dotenv": "^17.2.3",
     "eslint": "^9",
     "eslint-config-next": "16.0.10",
+    "glob": "^13.0.6",
     "tailwindcss": "^4",
     "tsx": "^4.21.0",
     "typescript": "5.9.3"
