@@ -104,9 +104,27 @@ export default function BaselineQuestionsPage() {
       )
     : questions;
 
-  // Get unique values for filters
-  const uniqueDisciplines = Array.from(new Set(questions.map(q => q.discipline_name))).sort();
-  const uniqueSubtypes = Array.from(new Set(questions.map(q => q.discipline_subtype_name))).sort();
+  // Filter options must use API query params (discipline_code, subtype_code), not display names only.
+  const disciplineOptions = Array.from(
+    new Map(
+      questions.map((q) => [q.discipline_code, (q.discipline_name && q.discipline_name.trim()) || q.discipline_code])
+    ).entries()
+  ).sort((a, b) => a[1].localeCompare(b[1]));
+  const subtypeOptions = Array.from(
+    new Map(
+      questions
+        .filter((q): q is BaselineQuestion & { subtype_code: string } =>
+          Boolean(q.subtype_code && String(q.subtype_code).trim())
+        )
+        .map((q) => [
+          q.subtype_code,
+          {
+            code: q.subtype_code,
+            label: (q.discipline_subtype_name && q.discipline_subtype_name.trim()) || q.subtype_code,
+          },
+        ])
+    ).values()
+  ).sort((a, b) => a.label.localeCompare(b.label));
   // Note: capability_dimension not in spine format - reserved for future filter
   const _uniqueCapabilityDimensions: string[] = [];
   void _uniqueCapabilityDimensions;
@@ -174,9 +192,9 @@ export default function BaselineQuestionsPage() {
             color: '#0369a1',
             fontWeight: 500
           }}>
-            <strong>Baseline Version:</strong> {metadata.baseline_version} ({metadata.status}) • 
-            <strong> Total Questions:</strong> {metadata.total_questions} • 
-            <strong> Subtypes:</strong> {metadata.subtype_count} • 
+            <strong>Baseline Version:</strong> {metadata.baseline_version}
+            {metadata.status ? ` (${metadata.status})` : ''} •<strong> Total Questions:</strong>{' '}
+            {metadata.total_questions ?? '—'} •<strong> Subtypes:</strong> {metadata.subtype_count ?? '—'} •
             {/* Note: capability_dimensions not in spine format - removed */}
           </p>
         </div>
@@ -191,7 +209,7 @@ export default function BaselineQuestionsPage() {
       }}>
         <div className="card" style={{ padding: 'var(--spacing-md)', textAlign: 'center' }}>
           <div style={{ fontSize: 'var(--font-size-2xl)', fontWeight: 700, color: 'var(--cisa-blue)' }}>
-            {metadata?.filtered_count || metadata?.total_questions || 0}
+            {metadata?.filtered_count ?? metadata?.total_questions ?? questions.length}
           </div>
           <div style={{ fontSize: 'var(--font-size-sm)', color: 'var(--cisa-gray)' }}>
             Questions {disciplineFilter || subtypeFilter ? '(Filtered)' : ''}
@@ -215,7 +233,7 @@ export default function BaselineQuestionsPage() {
         </div>
         <div className="card" style={{ padding: 'var(--spacing-md)', textAlign: 'center' }}>
           <div style={{ fontSize: 'var(--font-size-2xl)', fontWeight: 700, color: 'var(--cisa-blue)' }}>
-            {/* Note: capability_dimensions count removed - not in spine format */}
+            {metadata?.capability_dimensions?.length ? metadata.capability_dimensions.length : '—'}
           </div>
           <div style={{ fontSize: 'var(--font-size-sm)', color: 'var(--cisa-gray)' }}>
             Capability Dimensions
@@ -259,9 +277,9 @@ export default function BaselineQuestionsPage() {
               }}
             >
               <option value="">All Disciplines</option>
-              {uniqueDisciplines.map(d => (
-                <option key={d} value={questions.find(q => q.discipline_name === d)?.discipline_id || ''}>
-                  {d}
+              {disciplineOptions.map(([code, name]) => (
+                <option key={code} value={code}>
+                  {name}
                 </option>
               ))}
             </select>
@@ -287,9 +305,9 @@ export default function BaselineQuestionsPage() {
               }}
             >
               <option value="">All Subtypes</option>
-              {uniqueSubtypes.map(s => (
-                <option key={s} value={questions.find(q => q.discipline_subtype_name === s)?.discipline_subtype_id || ''}>
-                  {s}
+              {subtypeOptions.map((o) => (
+                <option key={`${o.code}`} value={o.code}>
+                  {o.label}
                 </option>
               ))}
             </select>
