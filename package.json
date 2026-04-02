@@ -6,7 +6,7 @@
     "node": "22.x"
   },
   "devDependencies": {
-    "next": "^16.1.6"
+    "next": "16.1.6"
   },
   "scripts": {
     "sync:manifest": "node scripts/sync-toolbox-manifest.cjs",
