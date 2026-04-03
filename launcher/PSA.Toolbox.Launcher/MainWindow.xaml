@@ -1,6 +1,0 @@
-<Window
-    x:Class="PSA.Toolbox.Launcher.MainWindow"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Grid x:Name="RootGrid" />
-</Window>

@@ -32,7 +32,7 @@ window.VOFC_OPTIONS = [
   },
   {
     "ofc_number": "OFC003",
-    "option_text": "Develop comprehensive staff security training program covering threat recognition, emergency response procedures, and security protocols. This program should include regular training sessions, certification requirements, and ongoing education to ensure all staff are prepared to respond effectively to security incidents.",
+    "option_text": "Develop a comprehensive Security Force training program covering threat recognition, emergency response procedures, and security protocols. This program should include regular training sessions, certification requirements, and ongoing education so Security Force personnel are prepared to respond effectively to security incidents.",
     "sheet": "Personnel Security",
     "row": 3,
     "reference": "ASIS Personnel Security Standards, NASRO Standards",
@@ -41,12 +41,12 @@ window.VOFC_OPTIONS = [
     "cost_estimate": "$10,000 - $25,000",
     "implementation_time": "1-3 months",
     "vulnerability_id": "V003",
-    "benefit_explanation": "Improves staff preparedness for security incidents, enhances threat recognition capabilities, and creates consistent security response procedures across the facility",
+    "benefit_explanation": "Improves Security Force preparedness for security incidents, enhances threat recognition capabilities, and creates consistent security response procedures for the security function",
     "compliance_impact": "Meets ASIS Personnel Security Standards and enhances overall security preparedness"
   },
   {
     "ofc_number": "OFC004",
-    "option_text": "Create comprehensive emergency response procedures and policies covering all potential emergency scenarios. This should include evacuation procedures, lockdown protocols, communication plans, and coordination with local emergency responders.",
+    "option_text": "Address gaps suggested by open fire-alarm panel access and/or missing backup power for security/life-safety loads: restrict FACP and similar enclosures per facility policy and NFPA-aligned practice; document procedures; ensure backup power supports required monitoring and egress systems. Expand to a full emergency operations plan (evacuation, lockdown, crisis comms) with local responder coordination.",
     "sheet": "Emergency Preparedness",
     "row": 4,
     "reference": "FEMA Emergency Management Guidelines, CISA Emergency Preparedness Standards",
@@ -55,8 +55,8 @@ window.VOFC_OPTIONS = [
     "cost_estimate": "$5,000 - $15,000",
     "implementation_time": "1-2 months",
     "vulnerability_id": "V004",
-    "benefit_explanation": "Provides structured emergency response procedures, improves crisis management capability, and ensures coordinated response during emergency situations",
-    "compliance_impact": "Meets FEMA Emergency Management Guidelines and CISA Emergency Preparedness Standards"
+    "benefit_explanation": "Improves life-safety and security resilience tied to measured FACP access and backup-power posture; supports broader EOP maturity",
+    "compliance_impact": "Aligns with common emergency preparedness practice; validate against applicable NFPA and local AHJ requirements"
   },
   {
     "ofc_number": "OFC005",
@@ -88,7 +88,7 @@ window.VOFC_OPTIONS = [
   },
   {
     "ofc_number": "OFC007",
-    "option_text": "Implement comprehensive visitor management system with digital check-in, photo capture, badge printing, and visitor tracking. This system should integrate with access control and provide real-time visitor monitoring.",
+    "option_text": "Reduce uncontrolled surface parking and strengthen perimeter strategy: channel vehicles and pedestrians through defined entry points; pair with controlled access, signage, and wayfinding toward a staffed lobby. Add a visitor-management program (badging, check-in, escort rules) when dedicated assessment fields are added to HOST.",
     "sheet": "Access Control",
     "row": 7,
     "reference": "ASIS Visitor Management Standards, CISA Access Control Guidelines",
@@ -97,8 +97,8 @@ window.VOFC_OPTIONS = [
     "cost_estimate": "$20,000 - $50,000",
     "implementation_time": "1-3 months",
     "vulnerability_id": "V007",
-    "benefit_explanation": "Provides comprehensive visitor tracking, improves access control, and creates detailed audit trails for all facility visitors",
-    "compliance_impact": "Meets ASIS Visitor Management Standards and CISA Access Control Guidelines"
+    "benefit_explanation": "Addresses the parking/perimeter conditions HOST actually measures; visitor badging is a logical next step once entry points are controlled",
+    "compliance_impact": "Aligns with layered access control concepts; validate against local requirements"
   },
   {
     "ofc_number": "OFC008",
@@ -130,7 +130,7 @@ window.VOFC_OPTIONS = [
   },
   {
     "ofc_number": "OFC010",
-    "option_text": "Install comprehensive emergency communication system with public address capabilities, emergency notification systems, and integration with local emergency services. This should provide reliable communication during emergency situations.",
+    "option_text": "Clarify and improve security monitoring coverage and Security Force reporting: define expected monitoring hours vs on-demand review; implement a documented incident reporting channel (paper or digital) with retention. Where mass notification and PA are required, add those systems as a separate capital project—HOST does not measure ECCS fields today.",
     "sheet": "Emergency Preparedness",
     "row": 10,
     "reference": "FEMA Emergency Communication Guidelines, CISA Emergency Preparedness Standards",
@@ -139,8 +139,8 @@ window.VOFC_OPTIONS = [
     "cost_estimate": "$25,000 - $60,000",
     "implementation_time": "2-3 months",
     "vulnerability_id": "V010",
-    "benefit_explanation": "Provides reliable emergency communication, improves crisis coordination, and ensures effective communication during emergency situations",
-    "compliance_impact": "Meets FEMA Emergency Communication Guidelines and CISA Emergency Preparedness Standards"
+    "benefit_explanation": "Matches the assessment signals (monitoring posture and reporting field); reduces ambiguity during incidents",
+    "compliance_impact": "Align with FEMA/Ready communications planning; add ECCS scope when assessed"
   },
   {
     "ofc_number": "OFC011",
@@ -158,7 +158,7 @@ window.VOFC_OPTIONS = [
   },
   {
     "ofc_number": "OFC012",
-    "option_text": "Integrate fire safety systems with security systems to ensure coordinated emergency response. This should include automatic notifications, system integration, and coordinated emergency procedures.",
+    "option_text": "Second mitigation option for the same FACP-access and backup-power signals as V004: pursue integration testing between fire alarm, access control, and VSS where technically feasible; document interfaces and alarm-response procedures. (Scoring uses V004; catalog retains V012 for historical OFC text.)",
     "sheet": "Emergency Preparedness",
     "row": 12,
     "reference": "NFPA Fire Safety Standards, ASIS Emergency Management Guidelines",
@@ -166,9 +166,9 @@ window.VOFC_OPTIONS = [
     "priority": "High",
     "cost_estimate": "$30,000 - $75,000",
     "implementation_time": "2-4 months",
-    "vulnerability_id": "V012",
-    "benefit_explanation": "Improves emergency response coordination, reduces response time, and ensures integrated emergency systems",
-    "compliance_impact": "Meets NFPA Fire Safety Standards and ASIS Emergency Management Guidelines"
+    "vulnerability_id": "V004",
+    "benefit_explanation": "Supports coordinated response when systems can be integrated; scope is contingent on architecture review",
+    "compliance_impact": "Follow NFPA and AHJ expectations for testing and maintenance; integration must be engineered per site"
   },
   {
     "ofc_number": "OFC013",
@@ -214,7 +214,7 @@ window.VOFC_OPTIONS = [
   },
   {
     "ofc_number": "OFC016",
-    "option_text": "Implement comprehensive vendor and contractor security screening including background checks, access controls, monitoring, and security protocols. This should ensure adequate security for external service providers.",
+    "option_text": "Strengthen vetting and credentials for VIP-facing staff and Security Force (the fields HOST actually measures): background checks where lawful, role-appropriate; maintain certifications; document training. Expand to a formal vendor/contractor program when vendor-specific assessment fields are added.",
     "sheet": "Access Control",
     "row": 16,
     "reference": "ASIS Vendor Security Standards, DHS Contractor Security Guidelines",
@@ -284,7 +284,7 @@ window.VOFC_OPTIONS = [
   },
   {
     "ofc_number": "OFC021",
-    "option_text": "Implement comprehensive data protection and privacy measures including encryption, access controls, data classification, and privacy impact assessments. This should protect guest information and ensure regulatory compliance.",
+    "option_text": "HOST inferred privacy/cyber risk from missing or unknown segmentation of video/security networks. Mitigate with VLANs/firewall rules, monitoring, encryption in transit, and data-handling policies for any recorded or exported footage. Full GDPR/CCPA/PCI programs require business-scope assessment beyond this signal.",
     "sheet": "Technology",
     "row": 21,
     "reference": "GDPR, CCPA, NIST Privacy Framework, PCI DSS",
@@ -293,22 +293,22 @@ window.VOFC_OPTIONS = [
     "cost_estimate": "$50,000 - $125,000",
     "implementation_time": "3-6 months",
     "vulnerability_id": "V021",
-    "benefit_explanation": "Protects guest data, ensures regulatory compliance, and reduces risk of data breaches and privacy violations",
-    "compliance_impact": "Meets GDPR, CCPA, NIST Privacy Framework, and PCI DSS requirements"
+    "benefit_explanation": "Reduces lateral movement and exposure of security-system data paths when segmentation is weak or unknown",
+    "compliance_impact": "Align with NIST CSF and privacy frameworks; legal/regulatory scope varies by processing activity"
   },
   {
     "ofc_number": "OFC022",
-    "option_text": "Implement comprehensive food and beverage security measures including access control, surveillance, contamination prevention, and staff training. This should protect food preparation areas and ensure food safety.",
+    "option_text": "Strengthen physical security for deliveries and receiving: controlled loading-dock and service hours; verify vendor/delivery identity; escort or sign-in rules; adequate lighting and camera coverage at receiving; clear procedures for after-hours deliveries. HOST does not assess food safety law—only security of delivery and receiving access.",
     "sheet": "Physical Security",
     "row": 22,
-    "reference": "FDA Food Security Guidelines, HACCP Standards, ASIS Food Security Guidelines",
+    "reference": "CISA physical security resources; DHS critical infrastructure partnership materials",
     "category": "Physical Security",
     "priority": "Medium",
     "cost_estimate": "$20,000 - $50,000",
     "implementation_time": "1-3 months",
     "vulnerability_id": "V022",
-    "benefit_explanation": "Protects food preparation areas, prevents contamination, and ensures food safety and security",
-    "compliance_impact": "Meets FDA Food Security Guidelines, HACCP Standards, and ASIS Food Security Guidelines"
+    "benefit_explanation": "Reduces theft, tailgating, and unauthorized access at receiving aligned with measured coverage gaps",
+    "compliance_impact": "Supports organizational security policy; not a substitute for food safety regulatory programs"
   },
   {
     "ofc_number": "OFC023",
@@ -326,7 +326,7 @@ window.VOFC_OPTIONS = [
   },
   {
     "ofc_number": "OFC024",
-    "option_text": "Implement comprehensive maintenance and utility area security including access control, surveillance, critical infrastructure protection, and staff screening. This should protect critical infrastructure from sabotage and unauthorized access.",
+    "option_text": "Measured: open fire-alarm panel access and missing restricted-area signage—not a full mechanical-room survey. Mitigate by locking FACP/enclosures, signage for restricted areas, and key control for utility rooms; expand asset inventory when maintenance fields are added.",
     "sheet": "Physical Security",
     "row": 24,
     "reference": "DHS Critical Infrastructure Guidelines, ASIS Infrastructure Security Standards",
@@ -396,7 +396,7 @@ window.VOFC_OPTIONS = [
   },
   {
     "ofc_number": "OFC029",
-    "option_text": "Implement comprehensive business center and office security including access control, surveillance, information protection, and business security protocols. This should secure business facilities and protect confidential information.",
+    "option_text": "Measured gaps: video network segmentation and/or Security Force reporting. Implement segmented networks for business-center PCs and guest printers; document incident reporting for business systems. Add business-center-specific questions later for a tighter mapping.",
     "sheet": "Physical Security",
     "row": 29,
     "reference": "ASIS Business Security Standards, Office Security Guidelines",
@@ -405,8 +405,8 @@ window.VOFC_OPTIONS = [
     "cost_estimate": "$25,000 - $60,000",
     "implementation_time": "2-4 months",
     "vulnerability_id": "V029",
-    "benefit_explanation": "Secures business facilities, protects confidential information, and ensures business security",
-    "compliance_impact": "Meets ASIS Business Security Standards and Office Security Guidelines"
+    "benefit_explanation": "Aligns mitigations with network and reporting signals HOST actually captures",
+    "compliance_impact": "Align with NIST CSF and organizational IT policy"
   },
   {
     "ofc_number": "OFC030",
@@ -522,17 +522,17 @@ window.VOFC_OPTIONS = [
   },
   {
     "ofc_number": "OFC038",
-    "option_text": "Implement comprehensive medical and health services security including access control, information protection, patient safety protocols, and healthcare security measures. This should secure medical areas and protect patient information.",
+    "option_text": "Close the gaps HOST measured: complete Security Force training on all applicable emergency plans (document completions and refresher schedule); ensure backup power supports required security and life-safety loads per site engineering and AHJ expectations; exercise plans with tabletop and walk-through drills.",
     "sheet": "Physical Security",
     "row": 38,
-    "reference": "HIPAA Security Guidelines, ASIS Healthcare Security Standards",
+    "reference": "CISA emergency preparedness; Ready.gov business continuity; NFPA 110 (generator testing concepts, where applicable)",
     "category": "Physical Security",
     "priority": "High",
     "cost_estimate": "$50,000 - $125,000",
     "implementation_time": "3-6 months",
     "vulnerability_id": "V038",
-    "benefit_explanation": "Secures medical areas, protects patient information, and ensures healthcare security compliance",
-    "compliance_impact": "Meets HIPAA Security Guidelines and ASIS Healthcare Security Standards"
+    "benefit_explanation": "Aligns response capability and power resilience with the training and backup-power signals in the assessment",
+    "compliance_impact": "Align with local fire/life-safety and organizational policy; validate generator scope with qualified personnel"
   },
   {
     "ofc_number": "OFC039",
@@ -584,20 +584,20 @@ window.VOFC_OPTIONS = [
     "category": "Recreational Security",
     "priority": "Medium",
     "implementation_time": "2-4 months",
-    "vulnerability_id": "V042",
+    "vulnerability_id": "V015",
     "benefit_explanation": "Prevents unauthorized recreational access, ensures guest safety, and provides comprehensive recreational security",
     "advisory_impact": "Aligns with ASIS Recreational Security Standards and Pool Safety Guidelines"
   },
   {
     "ofc_number": "OFC043",
-    "option_text": "Implement comprehensive vendor and contractor security screening including background checks, access control, and ongoing monitoring procedures.",
+    "option_text": "Alternate mitigation for the same VIP staff / Security Force credential signals as V016: document roles, access tiers, and re-check cadence; integrate with HR and vendor management when contractor fields exist.",
     "sheet": "Vendor Security",
     "row": 43,
     "reference": "ASIS Vendor Security Standards, Contractor Screening Guidelines",
     "category": "Vendor Security",
     "priority": "High",
     "implementation_time": "2-6 months",
-    "vulnerability_id": "V043",
+    "vulnerability_id": "V016",
     "benefit_explanation": "Prevents insider threats, ensures vendor security, and provides comprehensive contractor screening",
     "advisory_impact": "Aligns with ASIS Vendor Security Standards and Contractor Screening Guidelines"
   },
@@ -636,7 +636,7 @@ window.VOFC_OPTIONS = [
     "category": "Incident Management",
     "priority": "High",
     "implementation_time": "4-6 months",
-    "vulnerability_id": "V046",
+    "vulnerability_id": "V019",
     "benefit_explanation": "Ensures effective incident response, prevents crisis management failures, and provides comprehensive emergency coordination",
     "advisory_impact": "Aligns with ASIS Incident Management Standards and Crisis Response Guidelines"
   },
@@ -649,7 +649,7 @@ window.VOFC_OPTIONS = [
     "category": "System Redundancy",
     "priority": "High",
     "implementation_time": "4-8 months",
-    "vulnerability_id": "V047",
+    "vulnerability_id": "V020",
     "benefit_explanation": "Ensures system reliability, prevents system failures, and provides comprehensive continuity of operations",
     "advisory_impact": "Aligns with ASIS System Redundancy Standards and Backup System Guidelines"
   },
@@ -662,22 +662,22 @@ window.VOFC_OPTIONS = [
     "category": "Data Protection",
     "priority": "High",
     "implementation_time": "3-6 months",
-    "vulnerability_id": "V048",
+    "vulnerability_id": "V021",
     "benefit_explanation": "Ensures data security, prevents data breaches, and provides comprehensive privacy protection",
     "advisory_impact": "Aligns with GDPR, CCPA, and ASIS Data Protection Standards"
   },
   {
     "ofc_number": "OFC049",
-    "option_text": "Implement comprehensive food security and safety protocols including contamination prevention, service area security, and food safety procedures.",
-    "sheet": "Food Security",
+    "option_text": "Alternate mitigation for the same finding as OFC022: secure the delivery supply path (vendor lists, delivery schedules, sealed load verification at handoff, dispute resolution for suspicious deliveries). Remains physical security only—not food safety regulation.",
+    "sheet": "Physical Security",
     "row": 49,
-    "reference": "FDA Food Security Guidelines, ASIS Food Service Security Standards",
-    "category": "Food Security",
+    "reference": "CISA physical security resources; DHS critical infrastructure partnership materials",
+    "category": "Physical Security",
     "priority": "Medium",
     "implementation_time": "2-4 months",
-    "vulnerability_id": "V049",
-    "benefit_explanation": "Prevents food contamination, ensures food service security, and provides comprehensive food safety",
-    "advisory_impact": "Aligns with FDA Food Security Guidelines and ASIS Food Service Security Standards"
+    "vulnerability_id": "V022",
+    "benefit_explanation": "Adds layered controls on how deliveries enter the property and transfer to receiving staff",
+    "advisory_impact": "Supports operational security; food safety compliance is outside HOST scope"
   },
   {
     "ofc_number": "OFC050",

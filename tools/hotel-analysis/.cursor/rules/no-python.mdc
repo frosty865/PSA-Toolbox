@@ -1,0 +1,10 @@
+---
+description: Python is not part of the project deliverable; local testing/QC only.
+alwaysApply: true
+---
+
+# Python: local only
+
+- **Do not add Python to the project**: no committed `.py` files, no `requirements.txt` / `pyproject.toml` for app or build, no Python steps in shipped CI or install docs unless the user explicitly changes this.
+- **Local use is allowed**: the agent or developer may run Python on their machine for one-off testing, QC, PDF/text checks, or experiments. Those artifacts stay local; do not commit them as project infrastructure.
+- For fixes and features in-repo, prefer languages and tools already used by the project (HTML/JS, shell, etc.).

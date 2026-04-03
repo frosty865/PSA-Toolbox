@@ -18,7 +18,6 @@ function heuristicAnswerNo(v) {
 class HeuristicVulnerabilityMapper {
     constructor() {
         this.vofcData = null;
-        this.fifaData = null;
         this.questionMappings = this.createQuestionMappings();
         this.securityStandards = this.createSecurityStandards();
     }
@@ -34,11 +33,6 @@ class HeuristicVulnerabilityMapper {
                 console.warn('No embedded VOFC data found');
                 this.vofcData = [];
             }
-
-            // FIFA analysis is handled by FIFAStandardsMapper class
-            // No embedded FIFA data needed for heuristic mapping
-            this.fifaData = [];
-            console.log('FIFA analysis handled by FIFAStandardsMapper class');
 
             return true;
         } catch (error) {
@@ -242,24 +236,6 @@ class HeuristicVulnerabilityMapper {
                 vulnerability_if: 'None',
                 severity: 'High',
                 category: 'Dependencies-Critical Products'
-            },
-
-            // FIFA Requirements
-            'guest_room_count': {
-                intent: 'FIFA minimum room capacity',
-                standard: 'FIFA-Accommodation Capacity',
-                expected: '>= 1000',
-                vulnerability_if: '< 1000',
-                severity: 'High',
-                category: 'FIFA-Accommodation Capacity'
-            },
-            'number_of_floors': {
-                intent: 'FIFA minimum floor count',
-                standard: 'FIFA-Accommodation Capacity',
-                expected: '>= 5',
-                vulnerability_if: '< 5',
-                severity: 'Medium',
-                category: 'FIFA-Accommodation Capacity'
             },
         };
     }
