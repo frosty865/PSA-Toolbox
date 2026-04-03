@@ -48,6 +48,7 @@ from report_humanize import (
     strip_it_transport_mitigation_when_unconfirmed,
 )
 from sanitize import sanitize_text, sanitize_vulnerability_text
+from docx_ops import replace_anchor_in_doc
 
 # Category codes and display names for chart titles (charts only for these five)
 CHART_CATEGORIES = (
@@ -8336,10 +8337,11 @@ def run_from_payload(data: dict, work_dir: str | Path, template_path: str | Path
 
 def _render_generic_report(data: dict, work_path: Path) -> None:
     """
-    Minimal universal DOCX renderer.
+    Universal DOCX renderer.
     Expects payload.generic_report with:
       - title: string
       - subtitle: optional string
+      - header_left / header_right / footer_left / footer_right: optional strings
       - sections: array of { heading: string, paragraphs?: string[], bullets?: string[] }
     """
     generic = data.get("generic_report") if isinstance(data, dict) else None
@@ -8349,23 +8351,39 @@ def _render_generic_report(data: dict, work_path: Path) -> None:
     title = sanitize_text((generic.get("title") or "Report").strip())
     subtitle = sanitize_text((generic.get("subtitle") or "").strip())
     sections = generic.get("sections") if isinstance(generic.get("sections"), list) else []
+    header_left = sanitize_text((generic.get("header_left") or "").strip())
+    header_right = sanitize_text((generic.get("header_right") or "").strip())
+    footer_left = sanitize_text((generic.get("footer_left") or "").strip())
+    footer_right = sanitize_text((generic.get("footer_right") or "").strip())
 
-    doc = Document()
-    # Keep the generated document simple and predictable for non-ADA tools.
-    p = doc.add_paragraph()
-    run = p.add_run(title)
-    run.bold = True
-    try:
-        p.style = "Heading 1"
-    except Exception:
-        pass
-
-    if subtitle:
-        sub = doc.add_paragraph(sanitize_text(subtitle))
+    script_dir = Path(__file__).resolve().parent
+    repo_root = script_dir.parent.parent
+    template_path_env = os.environ.get("TEMPLATE_PATH")
+    template_path = Path(template_path_env) if template_path_env else repo_root / "ADA" / "report template.docx"
+    if template_path.is_file():
+        doc = Document(str(template_path))
+        replace_anchor_in_doc(doc, "[[REPORT_TITLE]]", title, body_only=False)
+        replace_anchor_in_doc(doc, "[[REPORT_SUBTITLE]]", subtitle, body_only=False)
+        replace_anchor_in_doc(doc, "[[REPORT_HEADER_LEFT]]", header_left, body_only=False)
+        replace_anchor_in_doc(doc, "[[REPORT_HEADER_RIGHT]]", header_right, body_only=False)
+        replace_anchor_in_doc(doc, "[[REPORT_FOOTER_LEFT]]", footer_left, body_only=False)
+        replace_anchor_in_doc(doc, "[[REPORT_FOOTER_RIGHT]]", footer_right, body_only=False)
+    else:
+        doc = Document()
+        p = doc.add_paragraph()
+        run = p.add_run(title)
+        run.bold = True
         try:
-            sub.style = "Heading 2"
+            p.style = "Heading 1"
         except Exception:
             pass
+
+        if subtitle:
+            sub = doc.add_paragraph(sanitize_text(subtitle))
+            try:
+                sub.style = "Heading 2"
+            except Exception:
+                pass
 
     for section in sections:
         if not isinstance(section, dict):

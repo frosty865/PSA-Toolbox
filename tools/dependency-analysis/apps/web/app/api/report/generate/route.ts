@@ -12,6 +12,10 @@ type GenericReportPayload = {
   generic_report: {
     title: string;
     subtitle?: string;
+    header_left?: string;
+    header_right?: string;
+    footer_left?: string;
+    footer_right?: string;
     sections?: GenericReportSection[];
   };
 };

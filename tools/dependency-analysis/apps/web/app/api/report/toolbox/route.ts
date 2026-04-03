@@ -37,6 +37,10 @@ export async function POST(_request: NextRequest) {
       generic_report: {
         title: 'PSA Toolbox',
         subtitle: 'Registered tools report',
+        header_left: 'PSA Toolbox',
+        header_right: 'Registered tools',
+        footer_left: 'Hosted DOCX report',
+        footer_right: 'Generated from tools-manifest.json',
         sections,
       },
     }),
