@@ -542,7 +542,7 @@ export async function POST(request: NextRequest) {
       new URL(request.url).searchParams.get('debug') === '1' || request.headers.get('x-export-debug') === '1';
     if (exportDebug) {
       (process.env as NodeJS.ProcessEnv).ADA_REPORTER_DEBUG = '1';
-      console.log(`[export/final] ${requestId} debug=on template=${templatePath} workDir=${workDir} cmd=${reporterCommand}`);
+      console.log(`[export/final] ${requestId} debug=on template=${templatePath} workDir=${workDir}`);
     }
     if (isDev()) console.log(`[export/final] ${requestId} render_start`);
     // reportAssessment, part2, reportVMForPayload, vulnerability_count_summary_for_payload built before annex (above).
@@ -658,13 +658,6 @@ export async function POST(request: NextRequest) {
     console.error(`[export/final] ${requestId} repo_root=${repoRoot} template_path=${templatePathUsed ?? '(not reached)'}`);
     if (stderr) console.error(`[export/final] ${requestId} reporter stderr:`, stderr);
     if (stdout) console.error(`[export/final] ${requestId} reporter stdout:`, stdout);
-    if (stderr && /Python was not found|not recognized|ENOENT.*python/i.test(stderr)) {
-      if (process.env.VERCEL === '1') {
-        message += ' DOCX export is not available on this deployment. Run the app locally (pnpm dev) to generate reports.';
-      } else {
-        message += ' Install Python from python.org (add to PATH) or create .venv (python -m venv .venv && .venv\\Scripts\\pip install -r requirements.txt) or build reporter.exe (apps/reporter/build.ps1).';
-      }
-    }
     const isNarrativeTokens = (err.message?.includes('narrative tokens') ?? false) || (err.message?.includes('Narrative tokens') ?? false);
     const isExportQC = e instanceof ExportQCError;
     const isValidation =
