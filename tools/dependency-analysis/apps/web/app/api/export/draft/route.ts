@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import path from 'path';
-import { spawn } from 'child_process';
 import fs from 'fs/promises';
 import { Writable } from 'stream';
 import { randomUUID } from 'crypto';
@@ -10,7 +9,6 @@ import { encryptRevisionSync } from 'security';
 import type { DependencySessionsMap } from '@/app/lib/io/sessionTypes';
 import { buildSummary, assertExportReady, REQUIRED_ANCHORS } from 'engine';
 import { validateTemplateAnchorsOnce } from '@/app/lib/template/validateAnchors';
-import { getReporterPath } from '@/app/lib/reporter/path';
 import { getRepoRoot, getTemplatePath, getWritableTempBase } from '@/app/lib/template/path';
 import { purgeAll } from '@/app/lib/purge/purgeAll';
 import { buildUiHelpDump } from '@/app/lib/help/uiHelpDump';
@@ -40,9 +38,10 @@ export async function POST(request: NextRequest) {
       );
     }
     const assessment = parseAssessment(raw);
-    if (process.env.VERCEL === '1') {
+    const reportServiceUrl = process.env.REPORT_SERVICE_URL?.trim();
+    if (!reportServiceUrl) {
       return NextResponse.json(
-        { error: 'Draft export is not available on Vercel. Run the app locally (pnpm dev) to generate draft reports.' },
+        { error: 'Draft export requires a hosted reporter service. Set REPORT_SERVICE_URL to the Railway ADA reporter endpoint.' },
         { status: 503 }
       );
     }
@@ -62,10 +61,9 @@ export async function POST(request: NextRequest) {
 
     await validateTemplateAnchorsOnce(getTemplatePath());
 
-    const reporterPath = getReporterPath(repoRoot);
     const templatePath = getTemplatePath();
     const sla_reliability_for_report = buildSlaReliabilityForReport(assessment);
-    const docxBytes = await runReporter(reporterPath, workDir, templatePath, {
+    const docxBytes = await callRemoteReporter(reportServiceUrl, {
       assessment,
       vofc_collection: vofcCollection,
       sla_reliability_for_report,
@@ -100,38 +98,19 @@ export async function POST(request: NextRequest) {
   }
 }
 
-async function runReporter(
-  reporterPath: string,
-  workDir: string,
-  templatePath: string,
-  payload: { assessment: object; vofc_collection?: object; sla_reliability_for_report?: unknown }
-): Promise<Buffer> {
-  return new Promise((resolve, reject) => {
-    const proc = spawn(reporterPath, [], {
-      env: { ...process.env, WORK_DIR: workDir, TEMPLATE_PATH: templatePath, TOOL_VERSION },
-      cwd: getRepoRoot(),
-    });
-    const stdin = JSON.stringify(payload);
-    proc.stdin.write(stdin, () => proc.stdin.end());
-    const chunks: Buffer[] = [];
-    proc.stdout.on('data', (c: Buffer) => chunks.push(c));
-    proc.stderr.on('data', (d: Buffer) => console.error(d.toString()));
-    proc.on('close', (code) => {
-      if (code !== 0) {
-        reject(new Error(`Reporter exited ${code}`));
-        return;
-      }
-      const outPath = Buffer.concat(chunks).toString('utf-8').trim();
-      if (!outPath) {
-        reject(new Error('Reporter did not output path'));
-        return;
-      }
-      fs.readFile(path.join(workDir, 'output.docx'))
-        .then(resolve)
-        .catch(reject);
-    });
-    proc.on('error', reject);
+async function callRemoteReporter(baseUrl: string, payload: object): Promise<Buffer> {
+  const url = `${baseUrl.replace(/\/$/, '')}/render`;
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+    signal: AbortSignal.timeout(120_000),
   });
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`Reporter API ${res.status}: ${text || res.statusText}`);
+  }
+  return Buffer.from(await res.arrayBuffer());
 }
 
 function createZip(

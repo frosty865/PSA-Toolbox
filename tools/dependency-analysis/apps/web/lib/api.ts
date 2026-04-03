@@ -223,6 +223,33 @@ export async function exportFinal(
   return postExportFinalRequest(`${getApiBase()}/api/export/final`, payload, options);
 }
 
+export type GenericReportSection = {
+  heading: string;
+  paragraphs?: string[];
+  bullets?: string[];
+};
+
+export type GenericReportPayload = {
+  generic_report: {
+    title: string;
+    subtitle?: string;
+    sections?: GenericReportSection[];
+  };
+};
+
+export async function generateGenericReport(payload: GenericReportPayload): Promise<Blob> {
+  const res = await fetch(`${getApiBase()}/api/report/generate`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) {
+    const j = await res.json().catch(() => ({}));
+    throw new Error((j as { error?: string }).error ?? 'Generic report generation failed');
+  }
+  return res.blob();
+}
+
 export async function exportRevisionPackage(assessment: Assessment, passphrase: string): Promise<Blob> {
   if (isFieldStaticMode()) return fieldApi.exportRevisionPackage(assessment, passphrase);
   const res = await fetch(`${getApiBase()}/api/revision/export`, {

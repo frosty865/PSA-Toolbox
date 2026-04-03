@@ -8334,6 +8334,73 @@ def run_from_payload(data: dict, work_dir: str | Path, template_path: str | Path
     return (work_path / "output.docx").read_bytes()
 
 
+def _render_generic_report(data: dict, work_path: Path) -> None:
+    """
+    Minimal universal DOCX renderer.
+    Expects payload.generic_report with:
+      - title: string
+      - subtitle: optional string
+      - sections: array of { heading: string, paragraphs?: string[], bullets?: string[] }
+    """
+    generic = data.get("generic_report") if isinstance(data, dict) else None
+    if not isinstance(generic, dict):
+        raise ValueError("generic_report payload missing or invalid")
+
+    title = sanitize_text((generic.get("title") or "Report").strip())
+    subtitle = sanitize_text((generic.get("subtitle") or "").strip())
+    sections = generic.get("sections") if isinstance(generic.get("sections"), list) else []
+
+    doc = Document()
+    # Keep the generated document simple and predictable for non-ADA tools.
+    p = doc.add_paragraph()
+    run = p.add_run(title)
+    run.bold = True
+    try:
+        p.style = "Heading 1"
+    except Exception:
+        pass
+
+    if subtitle:
+        sub = doc.add_paragraph(sanitize_text(subtitle))
+        try:
+            sub.style = "Heading 2"
+        except Exception:
+            pass
+
+    for section in sections:
+        if not isinstance(section, dict):
+            continue
+        heading = sanitize_text((section.get("heading") or "").strip())
+        if not heading:
+            continue
+        h = doc.add_paragraph()
+        h_run = h.add_run(heading)
+        h_run.bold = True
+        try:
+            h.style = "Heading 2"
+        except Exception:
+            pass
+
+        paragraphs = section.get("paragraphs") if isinstance(section.get("paragraphs"), list) else []
+        bullets = section.get("bullets") if isinstance(section.get("bullets"), list) else []
+
+        for para in paragraphs:
+            text = sanitize_text(str(para).strip())
+            if text:
+                doc.add_paragraph(text)
+
+        for bullet in bullets:
+            text = sanitize_text(str(bullet).strip())
+            if text:
+                try:
+                    doc.add_paragraph(text, style="List Bullet")
+                except Exception:
+                    doc.add_paragraph(text)
+
+    output_path = work_path / "output.docx"
+    doc.save(str(output_path))
+
+
 def main() -> None:
     work_dir = os.environ.get("WORK_DIR")
     if not work_dir:
@@ -8352,6 +8419,11 @@ def main() -> None:
     except json.JSONDecodeError as e:
         print(f"Invalid JSON: {e}", file=sys.stderr)
         sys.exit(1)
+
+    if isinstance(data, dict) and isinstance(data.get("generic_report"), dict):
+        _render_generic_report(data, work_path)
+        print(work_path / "output.docx")
+        return
 
     CANONICAL_TEMPLATE_SUFFIX = "ADA" + os.sep + "report template.docx"
     CANONICAL_TEMPLATE_SUFFIX_ALT = "ADA/report template.docx"

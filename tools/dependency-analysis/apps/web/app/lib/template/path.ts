@@ -18,6 +18,11 @@ export function getRepoRoot(): string {
 
   const cwd = process.cwd();
   const dirName = path.basename(cwd);
+  if (fs.existsSync(path.join(cwd, 'tools-manifest.json'))) {
+    const appRoot = path.join(cwd, 'tools', 'dependency-analysis');
+    if (fs.existsSync(path.join(appRoot, 'ADA', 'report template.docx'))) return appRoot;
+    return cwd;
+  }
   if (dirName === 'asset-dependency-tool') return cwd;
   if (dirName === 'web') {
     const parent = path.dirname(cwd);

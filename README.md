@@ -1,6 +1,6 @@
 # PSA Toolbox
 
-Monorepo umbrella for PSA tools: **one unified web app** (Next.js in [`tools/dependency-analysis/`](tools/dependency-analysis/)) serves the toolbox landing (`/`), **Dependency analysis** (`/assessment/…`), **Hotel Analysis** (`/hotel-analysis/`), **SAFE 3.0** (`/safe-3-0/`), and proxied **Modular Site Assessment** (`/cisa-site-assessment/`) on **one port** (where configured). Product folders live under [`tools/`](tools/). The WinUI launcher reads [`tools-manifest.json`](tools-manifest.json).
+Monorepo umbrella for PSA tools: **one unified web app** (Next.js in [`tools/dependency-analysis/`](tools/dependency-analysis/)) serves the toolbox landing (`/`), **Dependency analysis** (`/assessment/…`), **Hotel Analysis** (`/hotel-analysis/`), **SAFE 3.0** (`/safe-3-0/`), and proxied **Modular Site Assessment** (`/cisa-site-assessment/`) on **one port** (where configured). Product folders live under [`tools/`](tools/). The web landing reads [`tools-manifest.json`](tools-manifest.json).
 
 | Tool | Web route | Product folder |
 |------|-----------|----------------|
@@ -15,21 +15,10 @@ Monorepo umbrella for PSA tools: **one unified web app** (Next.js in [`tools/dep
 
 | Item | Purpose |
 |------|---------|
-| [`tools-manifest.json`](tools-manifest.json) | Tool list for launcher + web landing (`entryPath` / `externalUrl`) |
+| [`tools-manifest.json`](tools-manifest.json) | Tool list for the web landing (`entryPath` / `externalUrl`) |
 | [`tools-manifest.schema.json`](tools-manifest.schema.json) | JSON Schema for the manifest |
 | [`shared/`](shared/) | **Branding & style guide** — [`psa-tokens.css`](shared/psa-tokens.css) (design tokens) and [`cisa_styles.css`](shared/cisa_styles.css) (house layout/components); see [`shared/README.md`](shared/README.md) |
-| [`launcher/`](launcher/) | WinUI 3 launcher — open folders, run documented start scripts |
 | [`LICENSE`](LICENSE) | License |
-
-## Launcher (.NET / WinUI)
-
-See [`launcher/README.md`](launcher/README.md).
-
-```powershell
-cd "D:\PSA Toolbox"
-dotnet build .\launcher\PSA.Toolbox.Launcher\PSA.Toolbox.Launcher.csproj
-dotnet run --project .\launcher\PSA.Toolbox.Launcher\PSA.Toolbox.Launcher.csproj
-```
 
 ## Add a tool
 

@@ -1,95 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
 import path from 'path';
 
-import { spawn } from 'child_process';
 import fs from 'fs/promises';
 import { randomUUID } from 'crypto';
 import { parseAssessment, type Assessment } from 'schema';
 import { migrateAssessmentItIsp } from '@/app/lib/dependencies/it_to_category_input';
 import { ZodError } from 'zod';
 import { buildSummary, assertExportReady, REQUIRED_ANCHORS } from 'engine';
-import { validateTemplateAnchorsOnce } from '@/app/lib/template/validateAnchors';
-import { getReporterPath } from '@/app/lib/reporter/path';
 import {
   getRepoRoot,
   getCanonicalTemplatePath,
-  assertCanonicalTemplatePath,
   getWritableTempBase,
 } from '@/app/lib/template/path';
-import { existsSync, readFileSync } from 'fs';
+import { existsSync } from 'fs';
 
 /** Allow enough time for remote reporter (cold start + render); reporter uses template from disk (ADA/report template.docx), not base64. */
 export const maxDuration = 300;
 
-const MAIN_PY_RELATIVE = path.join('apps', 'reporter', 'main.py');
-
-/** Repo root where apps/reporter/main.py exists; same logic as template/path.findRootWithReporter for export. */
-function findRootWithReporter(): string {
-  const root = getRepoRoot();
-  if (existsSync(path.join(root, MAIN_PY_RELATIVE))) return root;
-  const cwd = process.cwd();
-  const candidates = [
-    cwd,
-    path.join(cwd, '..'),
-    path.join(cwd, '..', '..'),
-    path.join(cwd, 'asset-dependency-tool'),
-  ];
-  for (const dir of candidates) {
-    if (existsSync(path.join(dir, MAIN_PY_RELATIVE))) return path.resolve(dir);
-  }
-  return root;
-}
-
-/**
- * Reporter for DOCX export. Prefer Python (main.py) over reporter.exe for CISA/field:
- * - No custom .exe avoids network security and software-approval issues.
- * - Use agency-approved Python + pip install -r apps/reporter/requirements.txt.
- * Set ADA_REPORTER_EXE to force the packaged exe when you have an approved build.
- */
-function getReporterCommand(repoRoot: string): { command: string; args: string[] } {
-  const mainPy = path.join(repoRoot, 'apps', 'reporter', 'main.py');
-  const exePath = getReporterPath(repoRoot);
-  const forceExe = typeof process.env.ADA_REPORTER_EXE === 'string' && process.env.ADA_REPORTER_EXE.length > 0;
-  const usePython =
-    !forceExe &&
-    existsSync(mainPy) &&
-    (process.env.ADA_USE_PYTHON_REPORTER === '1' || isDev() || !existsSync(exePath));
-  if (usePython) {
-    const isWin = process.platform === 'win32';
-    const scriptsOrBin = isWin ? 'Scripts' : 'bin';
-    const pythonName = isWin ? 'python.exe' : 'python';
-    // Prefer .venv (e.g. repo root venv with deps installed); fall back to .venv-reporter
-    const venvPython =
-      path.join(repoRoot, '.venv', scriptsOrBin, pythonName);
-    const venvReporterPython =
-      path.join(repoRoot, '.venv-reporter', scriptsOrBin, pythonName);
-    if (existsSync(venvPython)) {
-      return { command: venvPython, args: [mainPy] };
-    }
-    // Only use .venv-reporter if its base Python exists (pyvenv.cfg may point to a removed Python312)
-    if (existsSync(venvReporterPython)) {
-      const pyvenvCfg = path.join(repoRoot, '.venv-reporter', 'pyvenv.cfg');
-      let useReporterVenv = true;
-      if (existsSync(pyvenvCfg)) {
-        try {
-          const cfg = readFileSync(pyvenvCfg, 'utf8');
-          const m = cfg.match(/^\s*executable\s*=\s*(.+)\s*$/m);
-          const baseExe = m ? m[1].trim().replace(/^["']|["']$/g, '') : '';
-          if (baseExe && !existsSync(baseExe)) useReporterVenv = false;
-        } catch {
-          /* ignore */
-        }
-      }
-      if (useReporterVenv) return { command: venvReporterPython, args: [mainPy] };
-    }
-    // On Windows, 'python' often triggers the Store alias if not on PATH; use the launcher instead.
-    if (isWin) {
-      return { command: 'py', args: ['-3', mainPy] };
-    }
-    return { command: 'python3', args: [mainPy] };
-  }
-  return { command: exePath, args: [] };
-}
 import { buildPart2ForReport } from '@/app/lib/export/build_part2_for_report';
 import {
   buildReportThemedFindingsForExport,
@@ -379,78 +306,10 @@ export async function POST(request: NextRequest) {
     }
     const dependency_sections = buildDependencySectionsFromRepo(depVofcRows);
 
-    repoRoot = findRootWithReporter();
-    let { command: reporterCommand, args: reporterArgs } = getReporterCommand(repoRoot);
-    const reporterExePath = getReporterPath(repoRoot);
-    let usingPython = reporterArgs.length > 0;
-    // On Vercel, Python is not available; do not spawn. We return 503 when render is requested (see below).
-    let useVercelRenderApi = process.env.VERCEL === '1';
-    // Fallback: if exe is missing but main.py exists, use Python so export works without building exe or setting env
-    if (!useVercelRenderApi && !usingPython && !existsSync(reporterExePath)) {
-      const mainPy = path.join(repoRoot, MAIN_PY_RELATIVE);
-      if (existsSync(mainPy)) {
-        const isWin = process.platform === 'win32';
-        const scriptsOrBin = isWin ? 'Scripts' : 'bin';
-        const pythonName = isWin ? 'python.exe' : 'python';
-        const venvPython = path.join(repoRoot, '.venv', scriptsOrBin, pythonName);
-        const venvReporterPython = path.join(repoRoot, '.venv-reporter', scriptsOrBin, pythonName);
-        if (existsSync(venvPython)) {
-          reporterCommand = venvPython;
-          reporterArgs = [mainPy];
-        } else if (existsSync(venvReporterPython)) {
-          const pyvenvCfg = path.join(repoRoot, '.venv-reporter', 'pyvenv.cfg');
-          let useReporterVenv = true;
-          if (existsSync(pyvenvCfg)) {
-            try {
-              const cfg = readFileSync(pyvenvCfg, 'utf8');
-              const m = cfg.match(/^\s*executable\s*=\s*(.+)\s*$/m);
-              const baseExe = m ? m[1].trim().replace(/^["']|["']$/g, '') : '';
-              if (baseExe && !existsSync(baseExe)) useReporterVenv = false;
-            } catch {
-              /* ignore */
-            }
-          }
-          if (useReporterVenv) {
-            reporterCommand = venvReporterPython;
-            reporterArgs = [mainPy];
-          }
-        }
-        if (reporterArgs.length === 0) {
-          if (isWin) {
-            reporterCommand = 'py';
-            reporterArgs = ['-3', mainPy];
-          } else {
-            reporterCommand = 'python3';
-            reporterArgs = [mainPy];
-          }
-        }
-        usingPython = true;
-      } else {
-        if (process.env.VERCEL === '1') {
-          useVercelRenderApi = true;
-        } else {
-          const message =
-            'Export reporter not found. Set IDT_APP_ROOT (or IDT_ROOT; legacy ADT_APP_ROOT/ADT_ROOT also supported) to the asset-dependency-tool directory, or build reporter.exe (apps/reporter/build.ps1), or use Python (set ADA_USE_PYTHON_REPORTER=1 and ensure apps/reporter/main.py and .venv or .venv-reporter exist with pip install -r requirements.txt).';
-          return jsonError(
-            {
-              ok: false,
-              code: 'REPORTER_NOT_BUILT',
-              message,
-              request_id: requestId,
-              failure_reason: 'Reporter executable missing',
-              details: { expected_path: reporterExePath, main_py_checked: mainPy, repo_root_used: repoRoot },
-            },
-            503,
-            request
-          );
-        }
-      }
-    }
-    if (!useVercelRenderApi) {
-      const tempBase = getWritableTempBase(repoRoot);
-      workDir = path.join(tempBase, randomUUID());
-      await fs.mkdir(workDir, { recursive: true });
-    }
+    repoRoot = getRepoRoot();
+    const tempBase = getWritableTempBase(repoRoot);
+    workDir = path.join(tempBase, randomUUID());
+    await fs.mkdir(workDir, { recursive: true });
 
     timings.assemble_start = Date.now() - t0;
     let vofcCollection = buildVofcCollectionFromAssessment(assessment);
@@ -659,46 +518,8 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // On Vercel with REPORT_SERVICE_URL, the template lives on the reporter service; skip local file check.
-    const useRemoteReporter = useVercelRenderApi && (process.env.REPORT_SERVICE_URL?.trim() ?? '').length > 0;
     const templatePath = getCanonicalTemplatePath(repoRoot);
     templatePathUsed = templatePath;
-    if (!useRemoteReporter) {
-      assertCanonicalTemplatePath(templatePath);
-      if (!existsSync(templatePath)) {
-        const msg = `Template not found: export requires ADA/report template.docx at ${templatePath}. Create ADA/report template.docx (narrative-only anchor template) in the repo.`;
-        console.error(`[export/final] ${requestId} ${msg}`);
-        return jsonError(
-          {
-            ok: false,
-            code: 'EXPORT_FAILED',
-            message: msg,
-            request_id: requestId,
-            failure_reason: 'Template file missing',
-          },
-          500,
-          request
-        );
-      }
-      if (isDev()) console.log(`[export/final] ${requestId} template: ${templatePath}`);
-      try {
-        await validateTemplateAnchorsOnce(templatePath);
-      } catch (anchorErr) {
-        const anchorMsg = anchorErr instanceof Error ? anchorErr.message : String(anchorErr);
-        console.error(`[export/final] ${requestId} template validation failed:`, anchorMsg);
-        return jsonError(
-          {
-            ok: false,
-            code: 'EXPORT_FAILED',
-            message: `Template validation failed: ${anchorMsg}`,
-            request_id: requestId,
-            failure_reason: 'Template anchor validation failed',
-          },
-          500,
-          request
-        );
-      }
-    }
 
     const asset = assessment.asset as { psa_phone?: string; psa_cell?: string } | undefined;
     const psaPhone = (asset?.psa_phone ?? asset?.psa_cell ?? '').toString().trim();
@@ -796,62 +617,25 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    let docxBytes: Uint8Array;
-    if (useVercelRenderApi) {
-      const reportServiceUrl = process.env.REPORT_SERVICE_URL?.trim();
-      if (reportServiceUrl) {
-        docxBytes = await callRemoteReporter(reportServiceUrl, payload, requestId);
-      } else {
-        return jsonError(
-          {
-            ok: false,
-            code: 'EXPORT_NOT_AVAILABLE_VERCEL',
-            message:
-              'DOCX export is not available on Vercel. Run the app locally (pnpm dev) or deploy the reporter API and set REPORT_SERVICE_URL.',
-            request_id: requestId,
-            failure_reason: 'No Python in serverless environment',
-          },
-          503,
-          request
-        );
-      }
-    } else {
-      const emitVulnManifest =
-        Array.isArray((payload as Record<string, unknown>).canonicalVulnBlocks) &&
-        ((payload as Record<string, unknown>).canonicalVulnBlocks as unknown[]).length > 0;
-      docxBytes = await runReporter(
-        reporterCommand,
-        reporterArgs,
-        workDir!,
-        templatePath,
-        repoRoot,
-        payload,
-        emitVulnManifest
+    const reportServiceUrl = process.env.REPORT_SERVICE_URL?.trim();
+    if (!reportServiceUrl) {
+      return jsonError(
+        {
+          ok: false,
+          code: 'EXPORT_NOT_AVAILABLE',
+          message: 'DOCX export requires a hosted reporter service. Set REPORT_SERVICE_URL to the Railway ADA reporter endpoint.',
+          request_id: requestId,
+          failure_reason: 'Hosted reporter not configured',
+        },
+        503,
+        request
       );
-      if (emitVulnManifest) {
-        const canonicalVulnBlocks = (payload as Record<string, unknown>).canonicalVulnBlocks as Array<{ vuln_id?: string; title: string; narrative: string; ofcText: string }>;
-        const manifestPath = path.join(workDir!, 'vuln_manifest.json');
-        try {
-          const manifestRaw = await fs.readFile(manifestPath, 'utf8');
-          const rendered = JSON.parse(manifestRaw) as Array<{ title: string; narrative: string; ofcText: string }>;
-          const diff = diffCanonicalVulnToRendered(canonicalVulnBlocks, rendered);
-          if (diff) {
-            throw new ExportQCError(`Vulnerability QC diff failed: ${diff}`);
-          }
-        } catch (e) {
-          if (e instanceof ExportQCError) throw e;
-          if (e instanceof SyntaxError) throw new ExportQCError(`Vuln manifest invalid JSON: ${(e as Error).message}`);
-          if ((e as NodeJS.ErrnoException).code === 'ENOENT') {
-            throw new ExportQCError('Vuln manifest missing (reporter did not emit EMIT_VULN_MANIFEST).');
-          }
-          throw e;
-        }
-      }
     }
+    const docxBytes = await callRemoteReporter(reportServiceUrl, payload, requestId);
 
     timings.render_docx = Date.now() - t0;
     if (isDev()) console.log(`[export/final] ${requestId} render_docx`);
-    if (!useVercelRenderApi) await purgeAll(repoRoot);
+    await purgeAll(repoRoot);
     timings.persist_artifact = Date.now() - t0;
     if (isDev()) console.log(`[export/final] ${requestId} persist_artifact`);
 
@@ -958,95 +742,6 @@ function diffCanonicalVulnToRendered(
     if (norm(c.ofcText) !== norm(r.ofcText)) parts.push(`vuln_id ${vid}: OFC mismatch`);
   }
   return parts.length > 0 ? parts.join('; ') : null;
-}
-
-async function runReporter(
-  command: string,
-  args: string[],
-  workDir: string,
-  templatePath: string,
-  repoRootForCwd: string,
-  payload: {
-    assessment: object;
-    vofc_collection?: object;
-    sla_reliability_for_report?: unknown[];
-    sla_pra_summary?: { items: Array<{ category: string; routine_outage_text: string; widespread_disaster_text: string; confidence?: string }> } | null;
-    energy_dependency?: unknown;
-    dependency_sections?: unknown[];
-    vulnerability_index_rows?: Array<{ title: string; sector: string }>;
-    VULN_NARRATIVE?: string | { sectors: Array<{ sector_label: string; sector_doctrine: string; vulnerabilities: unknown[] }> };
-    narrative_tokens?: Record<string, { impact_onset_hours: number; functional_loss_percent: number; recovery_time_hours: number }>;
-    cross_dependency_summary?: { confirmed_count: number; top_edges: string[]; flags: string[] } | null;
-    cross_dependency_modules?: Array<{
-      module_code: string;
-      title: string;
-      summary_sentences: string[];
-      vulnerabilities: Array<{
-        id: string;
-        title: string;
-        text: string;
-        ofcs: Array<{ id: string; option_for_consideration: string; benefit: string }>;
-      }>;
-    }>;
-    executive_snapshot?: {
-      posture: string;
-      summary: string;
-      drivers: string[];
-      matrixRows: Array<{ sector: string; ttiHrs: string; lossPct: string; backupHrs: string; structuralPosture: string }>;
-      cascade: string | null;
-    };
-    synthesis?: {
-      title: string;
-      paragraphs: string[];
-      bullets: Array<{ label: string; text: string }>;
-    };
-    priority_actions?: {
-      title: string;
-      actions: Array<{ number: number; leadIn: string; fullText: string }>;
-    };
-  },
-  emitVulnManifest?: boolean
-): Promise<Buffer> {
-  return new Promise((resolve, reject) => {
-    const stderrChunks: Buffer[] = [];
-    const stdoutChunks: Buffer[] = [];
-    const env: NodeJS.ProcessEnv = {
-      ...process.env,
-      WORK_DIR: workDir,
-      TEMPLATE_PATH: templatePath,
-      TOOL_VERSION: process.env.TOOL_VERSION ?? '0.1.0',
-    };
-    if (emitVulnManifest) env.EMIT_VULN_MANIFEST = '1';
-    const proc = spawn(command, args, {
-      env,
-      cwd: repoRootForCwd,
-    });
-    proc.stdin.write(JSON.stringify(payload), () => proc.stdin.end());
-    proc.stdout.on('data', (d: Buffer) => {
-      stdoutChunks.push(d);
-      if (process.env.ADA_REPORTER_DEBUG === '1') process.stderr.write(d);
-    });
-    proc.stderr.on('data', (d: Buffer) => {
-      stderrChunks.push(d);
-      if (isDev()) console.error(d.toString());
-    });
-    proc.on('close', (code) => {
-      if (code !== 0) {
-        const stderrText = Buffer.concat(stderrChunks).toString('utf8').trim();
-        const stdoutText = Buffer.concat(stdoutChunks).toString('utf8').trim();
-        const detail = stderrText ? ` ${stderrText}` : '';
-        const err = new Error(`Reporter exited ${code}${detail}`);
-        (err as Error & { reporterStderr?: string }).reporterStderr = stderrText || undefined;
-        (err as Error & { reporterStdout?: string }).reporterStdout = stdoutText || undefined;
-        reject(err);
-        return;
-      }
-      fs.readFile(path.join(workDir, 'output.docx'))
-        .then(resolve)
-        .catch(reject);
-    });
-    proc.on('error', reject);
-  });
 }
 
 async function rmSafe(p: string) {
