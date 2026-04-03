@@ -1,5 +1,5 @@
 # Package the Infrastructure Dependency Tool into a standalone IDT folder (e.g. C:\IDT).
-# Run from asset-dependency-tool repo root. Requires: build:web and reporter.exe already built.
+# Legacy packaging script retained for archival/internal use only.
 # Usage: .\scripts\package-adt.ps1 [-AdtPath C:\IDT]
 
 param(
@@ -35,12 +35,8 @@ Copy-Item -Path (Join-Path $webDir "public") -Destination (Join-Path $appDir "pu
 Copy-Item -Path (Join-Path $webDir "package.json") -Destination (Join-Path $appDir "package.json") -Force
 
 # Reporter and resources
-$reporterExe = Join-Path $RepoRoot "apps\reporter\dist\reporter.exe"
-if (Test-Path $reporterExe) {
-  Copy-Item -Path $reporterExe -Destination (Join-Path $resDir "reporter.exe") -Force
-} else {
-  Write-Warning "reporter.exe not found. Run apps\reporter\build.ps1 and re-run this script."
-}
+Write-Host "Standalone hosted DOCX reporting now lives in the PSA-report-service repo."
+Write-Host "This packaging script no longer copies reporter.exe."
 $templateSrc = Join-Path $RepoRoot "assets\templates\Asset Dependency Assessment Report_BLANK.v2backup.docx"
 if (Test-Path $templateSrc) {
   Copy-Item -Path $templateSrc -Destination $resDir -Force
@@ -58,4 +54,4 @@ if (-not (Test-Path $adtReadme)) {
 
 Write-Host "Package layout created at: $AdtPath"
 Write-Host "Next: cd $appDir ; npm install --production"
-Write-Host "Then run your IDT launcher from $AdtPath"
+Write-Host "Hosted DOCX reports are rendered separately by PSA-report-service."

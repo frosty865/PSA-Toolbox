@@ -1,4 +1,5 @@
-# PyInstaller spec for reporter.exe (no Python required on target)
+# Legacy PyInstaller spec for the old reporter.exe workflow.
+# Production DOCX rendering now lives in the standalone PSA-report-service repo.
 # Build: pyinstaller reporter.spec
 
 block_cipher = None

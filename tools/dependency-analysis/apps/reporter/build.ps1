@@ -1,5 +1,5 @@
-# Build reporter.exe with PyInstaller (no Python required on target).
-# Run from repo root or apps/reporter. Creates apps/reporter/dist/reporter.exe.
+# Legacy build script for the old local reporter.exe workflow.
+# The production DOCX service is now the standalone PSA-report-service repo.
 
 $ErrorActionPreference = "Stop"
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -24,4 +24,4 @@ if (-not (Test-Path "dist\reporter.exe")) {
     Write-Error "Build failed: dist\reporter.exe not found"
     exit 1
 }
-Write-Host "Built: dist\reporter.exe"
+Write-Host "Built legacy artifact: dist\reporter.exe"
