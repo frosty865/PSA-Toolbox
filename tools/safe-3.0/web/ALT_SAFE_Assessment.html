@@ -9342,6 +9342,13 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
             }, 500);
         }
 
+        function buildCurrentFinalReportHTML() {
+            const facilityInfo = collectFacilityInfo();
+            const contactInfo = collectContactInfo();
+            const assessmentData = collectAssessmentData();
+            return generateReportHTML(facilityInfo, contactInfo, assessmentData);
+        }
+
         function collectFacilityInfo() {
             const facilityInfo = {
                 name: document.getElementById('facilityName')?.value || 'Not specified',
@@ -10697,20 +10704,21 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
 
         function previewFinalReport() {
             console.log('previewFinalReport called');
-            // Get the report content
             const reportContent = document.getElementById('reportContent');
-            if (!reportContent || reportContent.innerHTML.includes('Click "Generate Final Report"')) {
+            if (!reportContent) {
                 showSuccessBanner('Please generate the Final Report first!', 'warning');
                 return;
             }
+            const reportHTML = buildCurrentFinalReportHTML();
+            reportContent.innerHTML = reportHTML;
             
             // Create a new window with only the report content for preview
             const previewWindow = window.open('', '_blank', 'width=800,height=600,scrollbars=yes');
             
             // Get the report HTML content and fix logo paths
-            let reportHTML = reportContent.innerHTML;
+            let previewHTML = reportContent.innerHTML;
             // Fix logo path for preview window
-            reportHTML = reportHTML.replace(/src="assets\//g, 'src="./assets/');
+            previewHTML = previewHTML.replace(/src="assets\//g, 'src="./assets/');
             
             // Preserve original formatting by including the original CSS
             const originalCSS = `
@@ -10985,7 +10993,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
         SAFE Final Report - Print Preview (A4 Format)
     </div>
     <div class="preview-container">
-        ${reportHTML}
+        ${previewHTML}
     </div>
     <div class="preview-footer">
         This preview shows how the report will appear when printed. Use Ctrl+P to print or close this window.
@@ -11000,20 +11008,21 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
 
         function printFinalReport() {
             console.log('printFinalReport called');
-            // Get the report content
             const reportContent = document.getElementById('reportContent');
-            if (!reportContent || reportContent.innerHTML.includes('Click "Generate Final Report"')) {
+            if (!reportContent) {
                 showSuccessBanner('Please generate the Final Report first!', 'warning');
                 return;
             }
+            const reportHTML = buildCurrentFinalReportHTML();
+            reportContent.innerHTML = reportHTML;
             
             // Create a new window with only the report content
             const printWindow = window.open('', '_blank', 'width=800,height=600');
             
             // Get the report HTML content and fix logo paths
-            let reportHTML = reportContent.innerHTML;
+            let printHTML = reportContent.innerHTML;
             // Fix logo path for print window
-            reportHTML = reportHTML.replace(/src="assets\//g, 'src="./assets/');
+            printHTML = printHTML.replace(/src="assets\//g, 'src="./assets/');
             
             // Preserve original formatting by including the original CSS
             const originalCSS = `
@@ -11411,7 +11420,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
     </style>
 </head>
 <body>
-    ${reportHTML}
+    ${printHTML}
 </body>
 </html>`;
             
