@@ -12,7 +12,6 @@ import {
   REQUIRED_ANCHORS,
 } from 'engine';
 import { validateTemplateAnchorsOnce } from '@/app/lib/template/validateAnchors';
-import { getReporterPath } from '@/app/lib/reporter/path';
 import { buildReportVM } from '@/app/lib/report/view_model';
 import { composeReportBlocks } from '@/app/lib/report/compose_blocks';
 import { assertCoverageComplete } from '@/app/lib/report/coverage_manifest';
@@ -76,12 +75,8 @@ export async function runExportToDocx(
   const reportVM = buildReportVM(assessment);
   const reportBlocks = composeReportBlocks(reportVM);
 
-  const reporterExe = getReporterPath(repoRoot);
-  const usePython =
-    process.env.ADA_USE_PYTHON_REPORTER === '1' ||
-    !(await fs.access(reporterExe).then(() => true).catch(() => false));
-  const command = usePython ? 'python' : reporterExe;
-  const args = usePython ? [path.join(repoRoot, 'apps', 'reporter', 'main.py')] : [];
+  const command = 'python';
+  const args = [path.join(repoRoot, 'apps', 'reporter', 'main.py')];
   const t1 = recordTimings ? Date.now() : 0;
   const buffer = await runReporter(command, args, workDir, effectiveTemplatePath, repoRoot, {
     assessment,

@@ -2,10 +2,9 @@ import path from 'path';
 import { existsSync } from 'fs';
 
 /**
- * Path to the reporter executable. Used by export routes and runExport.
- * - ADA_REPORTER_EXE: deployment; if relative, resolved against repoRoot (e.g. resources/reporter.exe)
- * - Standalone IDT: resources/reporter.exe under app root
- * - Default (dev): apps/reporter/dist/reporter.exe
+ * Legacy reporter-executable path helper.
+ * The production DOCX service is now hosted separately in PSA-report-service.
+ * Keep only for archival/local tooling that still expects a packaged exe.
  */
 export function getReporterPath(repoRoot: string): string {
   const envPath = process.env.ADA_REPORTER_EXE;
