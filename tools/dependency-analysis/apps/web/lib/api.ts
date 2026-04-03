@@ -254,6 +254,17 @@ export async function generateGenericReport(payload: GenericReportPayload): Prom
   return res.blob();
 }
 
+export async function generateToolReport(toolId: string): Promise<Blob> {
+  const res = await fetch(`${getApiBase()}/api/report/tool/${encodeURIComponent(toolId)}`, {
+    method: 'POST',
+  });
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(text || `Tool report failed (${res.status})`);
+  }
+  return res.blob();
+}
+
 export async function exportRevisionPackage(assessment: Assessment, passphrase: string): Promise<Blob> {
   if (isFieldStaticMode()) return fieldApi.exportRevisionPackage(assessment, passphrase);
   const res = await fetch(`${getApiBase()}/api/revision/export`, {
