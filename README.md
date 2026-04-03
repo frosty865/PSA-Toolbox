@@ -36,6 +36,8 @@ Other tools under **`tools/`** are optional: they are **not** part of the `depen
 
 **Vercel:** Set the project **Root Directory** to **`tools/dependency-analysis/apps/web`** (required — that is where `next.config.js` lives). Config: [`tools/dependency-analysis/apps/web/vercel.json`](tools/dependency-analysis/apps/web/vercel.json). For **Modular Site Assessment** behind `/cisa-site-assessment/`, deploy `tools/cisa-site-assessment` separately and set **`PSA_SITE_ASSESSMENT_ORIGIN`** on the toolbox project. See [`docs/vercel.md`](docs/vercel.md).
 
+**Hosted DOCX print service:** The production reporter now lives in the standalone repo [`https://github.com/frosty865/PSA-report-service`](https://github.com/frosty865/PSA-report-service). Set `REPORT_SERVICE_URL` in Vercel to the Railway public URL for that repo.
+
 ## Local cleanup (optional)
 
 - **Stale path:** If `tools/infrastructure-dependency-assessment/` still exists next to `tools/dependency-analysis/`, it is obsolete — stop dev servers/editors using it, then delete that folder.

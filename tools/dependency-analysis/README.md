@@ -8,7 +8,7 @@ Monorepo: schema, engine, web app (Next.js), Python DOCX reporter.
 
 | Path | Analyst machine | DOCX | Notes |
 |------|-----------------|------|--------|
-| **A — Hosted URL** | Browser only | Yes | Deploy full stack (Next + Python reporter); users open the HTTPS app. Same as internal `next start` + reporter. |
+| **A — Hosted URL** | Browser only | Yes | Deploy the Next app plus the standalone hosted DOCX print service; users open the HTTPS app. |
 | **B — Static `out/`** | Browser only | No (default) | Ship `apps/web/out/` from an internal static host; final export is canonical JSON; draft ZIP and revision crypto stay in-browser. |
 | **B + hybrid** | Browser only | Optional | Build field bundle with `NEXT_PUBLIC_FIELD_EXPORT_BASE_URL` pointing at a **trusted** hosted IDT that serves `/api/export/final`. Hosted app must set `FIELD_EXPORT_CORS_ORIGIN` or `FIELD_EXPORT_CORS_ORIGINS` to the static site origin. **Security / ATO required** before sending assessment JSON cross-origin. |
 
@@ -22,7 +22,7 @@ Release CI builds the field bundle on version tags and uploads `apps/web/out` as
 
 ### Container deploy (Railway / internal)
 
-From `asset-dependency-tool/`: `docker build -t idt .` then run with `IDT_APP_ROOT=/app` and a production template at `ADA/report template.docx` (bake or volume). `railway.toml` uses this Dockerfile when the Railway service root is this directory. Python runs from `/app/.venv` with `apps/reporter/requirements.txt`.
+The production DOCX print service now lives in the standalone [`PSA-report-service`](https://github.com/frosty865/PSA-report-service) repo. Use that repo for Railway deploys of `/render`. Keep this monorepo for the Next app and tool UI only.
 
 ## Dev rules (quick)
 
@@ -71,9 +71,9 @@ Field builds run **`pnpm run template:write-manifest`** (via `build-field-static
 
 `pnpm run verify:field-bundle` runs a **smoke check** (Node-only local HTTP server + asserts relative chunk paths in `index.html`).
 
-## Reporter (Python)
+## Reporter
 
-`cd apps/reporter` → `pip install -r requirements.txt`. Export calls `main.py` by default. Optional: `ADA_REPORTER_EXE` for a signed exe.
+The report renderer is deployed separately as a hosted service. See [`PSA-report-service`](https://github.com/frosty865/PSA-report-service) for the production `/render` app.
 
 ## Workspaces
 
