@@ -18,7 +18,6 @@ function heuristicAnswerNo(v) {
 class HeuristicVulnerabilityMapper {
     constructor() {
         this.vofcData = null;
-        this.fifaData = null;
         this.questionMappings = this.createQuestionMappings();
         this.securityStandards = this.createSecurityStandards();
     }
@@ -34,11 +33,6 @@ class HeuristicVulnerabilityMapper {
                 console.warn('No embedded VOFC data found');
                 this.vofcData = [];
             }
-
-            // FIFA analysis is handled by FIFAStandardsMapper class
-            // No embedded FIFA data needed for heuristic mapping
-            this.fifaData = [];
-            console.log('FIFA analysis handled by FIFAStandardsMapper class');
 
             return true;
         } catch (error) {
