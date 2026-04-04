@@ -63,85 +63,85 @@ export default async function ToolboxLandingPage() {
   const manifest = await loadToolboxManifest();
 
   return (
-    <>
-      <ToolboxLandingClient />
-      <main className="psa-toolbox-landing">
-        {/* Hero outside `.cisa-doc`: shared typography applies dark `h2`/`p` site-wide and breaks contrast on blue. */}
-        <div style={{ paddingBottom: 0 }}>
-          <CisaCommandHero
-            topbandSub="PSA Toolbox"
-            eyebrow="PSA Toolbox"
-            title="Assessment tools"
-            subtitle="Open dependency analysis, hotel security, modular site assessment, or SAFE—pick the tool that fits your work."
-            cta={{ href: '#registered-tools', label: 'Choose a tool' }}
-            chips={[]}
-            howItFitsHeading="How to choose"
-            howItFits={[
-              {
-                title: 'Match the engagement',
-                body: 'Dependency and continuity, hospitality operational security, modular PSA assessments by sector and subsector, or facility-wide SAFE assessments—open the tool that matches.',
-              },
-              {
-                title: 'Stay in one tool',
-                body: 'Complete the assessment in the application you started so the record stays consistent.',
-              },
-              {
-                title: 'Finish there',
-                body: 'Use that tool’s review and reporting steps when the assessment is done.',
-              },
-            ]}
-          />
-          <h1
-            className="cisa-h1"
-            style={{
-              position: 'absolute',
-              width: 1,
-              height: 1,
-              padding: 0,
-              margin: -1,
-              overflow: 'hidden',
-              clip: 'rect(0,0,0,0)',
-              whiteSpace: 'nowrap',
-              border: 0,
-            }}
-          >
-            PSA Toolbox
-          </h1>
-        </div>
+    <main className="psa-toolbox-landing">
+      {/* Hero outside `.cisa-doc`: shared typography applies dark `h2`/`p` site-wide and breaks contrast on blue. */}
+      <div className="psa-toolbox-landing__hero">
+        <CisaCommandHero
+          topbandSub="PSA Toolbox"
+          eyebrow="PSA Toolbox"
+          title="Assessment tools"
+          subtitle="One workspace for dependency and continuity, hospitality security, modular site assessments, and facility-wide SAFE—open the tool that matches your engagement."
+          cta={{ href: '#registered-tools', label: 'Browse registered tools' }}
+          chips={[
+            { label: 'Infrastructure & continuity', icon: 'sync' },
+            { label: 'Hospitality & facilities', icon: 'shield' },
+            { label: 'Reporting & evidence', icon: 'file' },
+          ]}
+          howItFitsHeading="How to choose"
+          howItFits={[
+            {
+              title: 'Match the engagement',
+              body: 'Pick the assessment that aligns with sector, facility type, and scope—IDA, HOST, Modular Site Assessment, or SAFE.',
+            },
+            {
+              title: 'Stay in one tool',
+              body: 'Complete the work in the application you started so responses and records stay in one place.',
+            },
+            {
+              title: 'Close out in place',
+              body: 'Use each tool’s review and export steps when the assessment is finished.',
+            },
+          ]}
+        />
+        <h1
+          className="cisa-h1"
+          style={{
+            position: 'absolute',
+            width: 1,
+            height: 1,
+            padding: 0,
+            margin: -1,
+            overflow: 'hidden',
+            clip: 'rect(0,0,0,0)',
+            whiteSpace: 'nowrap',
+            border: 0,
+          }}
+        >
+          PSA Toolbox
+        </h1>
+      </div>
 
-        <div className="cisa-doc psa-toolbox-landing__tools">
-          {!manifest ? (
-            <div className="cisa-callout cisa-callout--warning" role="alert">
-              <strong>Could not load tools-manifest.json.</strong> Run the app from the PSA Toolbox clone (or set{' '}
-              <code>PSA_TOOLBOX_ROOT</code> to the repo root) so the manifest can be found.
-            </div>
-          ) : manifest.tools.length === 0 ? (
-            <p className="cisa-meta">No tools are defined in the manifest yet.</p>
-          ) : (
-            <>
-              <h2 className="psa-toolbox-section-title" id="registered-tools">
-                Registered tools
-              </h2>
-              <ul
-                style={{
-                  listStyle: 'none',
-                  margin: 0,
-                  padding: 0,
-                  display: 'grid',
-                  gap: '1rem',
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-                }}
-              >
-                {manifest.tools.map((tool) => (
-                  <li key={tool.id}>
-                    <ToolCard tool={tool} />
-                  </li>
-                ))}
-              </ul>
-            </>
-          )}
-        </div>
-      </main>
-    </>
+      <div className="cisa-doc psa-toolbox-landing__tools">
+        {!manifest ? (
+          <div className="cisa-callout cisa-callout--warning" role="alert">
+            <strong>Could not load tools-manifest.json.</strong> Run the app from the PSA Toolbox clone (or set{' '}
+            <code>PSA_TOOLBOX_ROOT</code> to the repo root) so the manifest can be found.
+          </div>
+        ) : manifest.tools.length === 0 ? (
+          <p className="cisa-meta">No tools are defined in the manifest yet.</p>
+        ) : (
+          <>
+            <header className="psa-toolbox-landing__tools-header">
+              <div className="psa-toolbox-landing__tools-intro">
+                <h2 className="psa-toolbox-section-title" id="registered-tools">
+                  Registered tools
+                </h2>
+                <p className="psa-toolbox-section-lede">
+                  Each link opens the tool’s web workspace in this site (or a registered external URL when noted).
+                </p>
+              </div>
+              <ToolboxLandingClient />
+            </header>
+            <ul className="psa-toolbox-grid">
+              {manifest.tools.map((tool) => (
+                <li key={tool.id}>
+                  <ToolCard tool={tool} />
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+      </div>
+    </main>
   );
 }

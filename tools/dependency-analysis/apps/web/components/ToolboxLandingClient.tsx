@@ -42,10 +42,9 @@ export function ToolboxLandingClient() {
       type="button"
       onClick={handleReportClick}
       disabled={busy}
-      className="cisa-button"
-      style={{ marginTop: '1rem' }}
+      className="psa-toolbox-landing__report-btn"
     >
-      {busy ? 'Generating report…' : 'Generate toolbox report'}
+      {busy ? 'Generating…' : 'Download manifest report'}
     </button>
   );
 }

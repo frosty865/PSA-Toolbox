@@ -1,31 +1,119 @@
 /**
- * PSA Toolbox home — tool grid only (hero uses cisa-command-hero.css).
+ * PSA Toolbox home — tool grid + section chrome (hero uses cisa-command-hero.css).
  * Do not wrap the hero in `.cisa-doc`: shared typography forces dark text on all `h2`/`p`.
  */
 
 .psa-toolbox-landing {
-  max-width: 1120px;
+  --psa-landing-max: 1120px;
+  max-width: var(--psa-landing-max);
   margin: 0 auto;
-  padding: 2rem 1rem 1rem;
+  padding: 1rem 1rem 2.75rem;
+}
+
+.psa-toolbox-landing__hero {
+  margin-bottom: 0;
 }
 
 .psa-toolbox-landing__tools {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 1.25rem 1rem 3rem;
+  max-width: var(--psa-landing-max);
+  margin: 1.75rem auto 0;
+  padding: 1.75rem 1.5rem 2rem;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 82, 136, 0.12);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.8) inset,
+    0 8px 28px rgba(12, 17, 24, 0.07);
+}
+
+.psa-toolbox-landing__tools-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(0, 82, 136, 0.1);
+}
+
+.psa-toolbox-landing__tools-intro {
+  flex: 1 1 16rem;
+  min-width: 0;
 }
 
 .psa-toolbox-section-title {
-  margin: 2.25rem 0 1rem;
-  font-size: 1.125rem;
+  margin: 0 0 0.35rem;
+  font-size: 1.375rem;
   font-weight: 700;
+  font-family: ui-serif, 'Source Serif 4', Georgia, 'Times New Roman', serif;
   color: var(--dhs-blue, #005288);
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.psa-toolbox-section-lede {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--color-muted, var(--dhs-dark-gray, #5a5b5d));
+  max-width: 36rem;
+}
+
+.psa-toolbox-landing__report-btn {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--dhs-blue, #005288);
+  background: #fff;
+  border: 1px solid rgba(0, 82, 136, 0.35);
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.psa-toolbox-landing__report-btn:hover:not(:disabled) {
+  background: rgba(0, 82, 136, 0.04);
+  border-color: rgba(0, 82, 136, 0.5);
+  box-shadow: 0 2px 8px rgba(0, 40, 70, 0.08);
+}
+
+.psa-toolbox-landing__report-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.psa-toolbox-landing__report-btn:focus-visible {
+  outline: 3px solid rgba(0, 120, 174, 0.45);
+  outline-offset: 2px;
+}
+
+.psa-toolbox-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.125rem;
+  grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
+}
+
+.psa-toolbox-landing .psa-tool-card.cisa-card {
+  margin: 0;
 }
 
 .psa-toolbox-landing .psa-tool-card {
   position: relative;
+  height: 100%;
+  min-height: 9.5rem;
+  padding: 1.35rem 1.25rem 1.25rem;
   border-radius: var(--radius-md, 12px);
   border: 1px solid rgba(0, 82, 136, 0.14);
   box-shadow: 0 8px 24px rgba(12, 17, 24, 0.06);
@@ -53,4 +141,15 @@
   color: var(--color-text, #1a1d21);
   max-width: none;
   white-space: pre-line;
+}
+
+@media (max-width: 640px) {
+  .psa-toolbox-landing__tools-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .psa-toolbox-landing__report-btn {
+    width: 100%;
+  }
 }
