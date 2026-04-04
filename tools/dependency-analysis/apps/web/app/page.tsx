@@ -73,9 +73,9 @@ export default async function ToolboxLandingPage() {
           subtitle="One workspace for dependency and continuity, hospitality security, modular site assessments, and facility-wide SAFE—open the tool that matches your engagement."
           cta={{ href: '#registered-tools', label: 'Browse registered tools' }}
           chips={[
-            { label: 'Infrastructure & continuity', icon: 'sync' },
-            { label: 'Hospitality & facilities', icon: 'shield' },
-            { label: 'Reporting & evidence', icon: 'file' },
+            { label: 'Infrastructure', icon: 'sync' },
+            { label: 'Hospitality', icon: 'shield' },
+            { label: 'Reporting', icon: 'file' },
           ]}
           howItFitsHeading="How to choose"
           howItFits={[

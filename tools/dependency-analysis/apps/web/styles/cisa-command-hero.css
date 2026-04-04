@@ -72,13 +72,17 @@
 
 .landing-hero-main {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(100px, 0.42fr) minmax(240px, 1fr);
+  grid-template-columns: minmax(0, 1.22fr) minmax(56px, 0.24fr) minmax(248px, 1fr);
   grid-template-areas: "copy figure panel";
   gap: 0;
   align-items: stretch;
   position: relative;
   min-height: min(280px, 48vh);
-  background: #ffffff;
+  /* Single continuous surface — avoids a bright white “pillar” between copy and panel */
+  background:
+    radial-gradient(ellipse 85% 55% at 12% 18%, rgba(0, 120, 174, 0.22), transparent 52%),
+    radial-gradient(ellipse 45% 40% at 78% 88%, rgba(0, 120, 174, 0.12), transparent 48%),
+    linear-gradient(126deg, rgba(0, 26, 44, 0.99) 0%, rgba(0, 78, 124, 0.96) 46%, rgba(0, 48, 74, 0.98) 100%);
 }
 
 .landing-hero-figure {
@@ -87,14 +91,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 0.75rem;
+  padding: 0.75rem 0.5rem;
   overflow: hidden;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .landing-hero-figure-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(245, 245, 246, 0.95) 100%);
+  background: radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0.14) 0%, transparent 58%);
   pointer-events: none;
 }
 
@@ -111,9 +117,10 @@
 .landing-hero-cisa-logo {
   display: block;
   width: 100%;
-  max-width: min(200px, 28vw);
+  max-width: min(168px, 22vw);
   height: auto;
   object-fit: contain;
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.35));
 }
 
 .landing-hero-copy {
@@ -123,10 +130,7 @@
   padding: 1.75rem;
   border-radius: 0;
   border: none;
-  border-right: 1px solid rgba(192, 194, 196, 0.22);
-  background:
-    radial-gradient(circle at top right, rgba(0, 120, 174, 0.22), transparent 28%),
-    linear-gradient(135deg, rgba(0, 31, 51, 0.98) 0%, rgba(0, 82, 136, 0.96) 52%, rgba(0, 61, 92, 0.94) 100%);
+  background: transparent;
 }
 
 .landing-eyebrow {
@@ -193,36 +197,58 @@
 }
 
 .landing-status-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.55rem;
   margin-top: 1.5rem;
 }
 
-.landing-status-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  min-height: 2.25rem;
-  padding: 0.35rem 0.8rem;
-  background: rgba(0, 40, 70, 0.38);
-  border: 1px solid rgba(192, 194, 196, 0.28);
-  border-radius: 999px;
-  color: rgba(248, 250, 252, 0.94);
-  font-size: 0.82rem;
+@media (min-width: 700px) {
+  .landing-status-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.6rem 0.65rem;
+  }
 }
 
-.landing-hero-panel {
+.landing-status-pill {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 2.35rem;
+  padding: 0.4rem 0.55rem;
+  background: rgba(0, 25, 48, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  color: rgba(248, 250, 252, 0.94);
+  font-size: 0.78rem;
+  line-height: 1.25;
+  text-align: center;
+  hyphens: auto;
+}
+
+/* Beat `.card` from CISA_Design_System (white surface) so the panel matches the hero canvas */
+.landing-hero--cisa .landing-hero-panel.card {
   grid-area: panel;
   width: 100%;
-  background: linear-gradient(165deg, rgba(0, 61, 92, 1) 0%, var(--dhs-blue-deep) 45%, var(--dhs-blue) 100%);
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  background: linear-gradient(
+    165deg,
+    rgba(0, 20, 36, 0.58) 0%,
+    rgba(0, 45, 72, 0.52) 48%,
+    rgba(0, 62, 96, 0.48) 100%
+  );
   border: none !important;
-  border-left: 1px solid rgba(192, 194, 196, 0.22) !important;
-  box-shadow: none !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.06) !important;
 }
 
 .landing-hero-panel .card-header {
   padding: 1rem 1.25rem;
+  margin-bottom: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   background: transparent;
 }
@@ -239,6 +265,7 @@
 
 .landing-hero-panel .card-body {
   padding: 1.25rem;
+  color: rgba(226, 232, 240, 0.92);
 }
 
 .landing-panel-list {
@@ -273,11 +300,20 @@
   .landing-hero-figure {
     min-height: 0;
     max-height: none;
-    padding: 0.75rem 1rem 1rem;
+    padding: 0.85rem 1rem;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .landing-hero-cisa-logo {
-    max-width: min(180px, 42vw);
+    max-width: min(160px, 40vw);
+  }
+
+  .landing-hero--cisa .landing-hero-panel.card {
+    border-left: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
   }
 }
 
