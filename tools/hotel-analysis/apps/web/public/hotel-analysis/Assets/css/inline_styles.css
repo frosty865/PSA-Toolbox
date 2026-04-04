@@ -1,0 +1,154 @@
+/* DEPRECATED: not linked by HOST V3. Use Assets/css/host.css (web) and host-report.css (print). */
+/* Consolidated inline styles for the HOST portfolio edition */
+
+/* Alert Styles */
+.alert-warning-inline {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+/* Brand Token Overrides */
+:root {
+    --cisa-primary-blue: #0f172a;
+    --cisa-secondary-blue: #1d4ed8;
+    --cisa-accent-blue: #0369a1;
+    --cisa-light-blue: #dbeafe;
+    --cisa-success-green: #15803d;
+    --cisa-warning-orange: #b45309;
+    --cisa-danger-red: #b91c1c;
+    --cisa-neutral-gray: #64748b;
+    --cisa-light-gray: #f8fafc;
+    --cisa-border-gray: #cbd5e1;
+}
+
+/* Progress Bar Styles */
+.progress-fill {
+    width: 12.5%;
+}
+
+/* Conditional Display Styles */
+#pool-details,
+#pool-chemical-storage-details,
+#parking-details,
+#surface-parking-details,
+#garage-parking-details,
+#residential-details {
+    display: none;
+}
+
+/* Form Row Styles */
+.form-row-inline {
+    margin-bottom: 20px;
+}
+
+/* Card Styles */
+.card-inline {
+    margin-bottom: 20px;
+    display: none;
+}
+
+/* Additional conditional display elements */
+#pool-details,
+#pool-chemical-storage-details,
+#parking-details,
+#surface-parking-details,
+#garage-parking-details,
+#residential-details,
+#pool-details,
+#pool-chemical-storage-details,
+#parking-details,
+#surface-parking-details,
+#garage-parking-details,
+#residential-details {
+    display: none;
+}
+
+/* Form styling */
+.form-row-inline {
+    margin-bottom: 20px;
+}
+
+/* Card styling */
+.card-inline {
+    margin-bottom: 20px;
+    display: none;
+}
+
+/* Additional inline styles */
+.alert-warning-complex {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.hr-spacing {
+    margin: 1.5rem 0;
+}
+
+.h6-styled {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.gray-text {
+    color: gray;
+}
+
+/* Validation Modal Styles */
+.validation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.validation-title {
+    margin: 0;
+    color: #dc3545;
+}
+
+.validation-close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.validation-error-box {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+}
+
+.validation-list {
+    padding-left: 20px;
+}
+
+.validation-item {
+    margin-bottom: 10px;
+}
+
+.validation-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.validation-center {
+    text-align: center;
+}
+
+.validation-button {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}

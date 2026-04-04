@@ -1,0 +1,233 @@
+/*
+ * PSA Toolbox — DHS-aligned house styles (layout patterns + CISA-style utility class names)
+ * Colors follow the U.S. Department of Homeland Security official web palette.
+ * Import order: shared/psa-tokens.css → this file → app overrides.
+ * In dependency-analysis, tsp-global.css supplies tokens for the Next app; still import this file from repo shared/ for parity.
+ */
+
+/* -------------------------------------------------------------------------- */
+/* Header and navigation (site shell)                                         */
+/* -------------------------------------------------------------------------- */
+
+.site-security-header {
+  background: var(--dhs-blue, #005288);
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 80px;
+  width: 100%;
+  margin: 0;
+  position: relative;
+}
+
+.site-security-header.unstick-nav {
+  position: static !important;
+}
+
+.site-security-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 1rem;
+}
+
+.site-security-header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  padding-right: 1rem;
+}
+
+.site-security-header__nav a {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.35rem 0.5rem;
+  border-radius: 4px;
+}
+
+.site-security-header__nav a:hover,
+.site-security-header__nav a:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+  outline: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Page frame & typography                                                    */
+/* -------------------------------------------------------------------------- */
+
+.cisa-doc {
+  max-width: var(--container, 1220px);
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.cisa-doc h1,
+.cisa-doc .cisa-h1 {
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: 700;
+  color: var(--brand-navy, #005288);
+  margin: 0 0 1rem;
+  line-height: 1.2;
+}
+
+.cisa-doc h2,
+.cisa-doc .cisa-h2 {
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  font-weight: 700;
+  color: var(--brand-steel, #5a5b5d);
+  margin: 2rem 0 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid var(--brand-blue, #0078ae);
+}
+
+.cisa-doc h3,
+.cisa-doc .cisa-h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--brand-steel, #5a5b5d);
+  margin: 1.5rem 0 0.5rem;
+}
+
+.cisa-doc p,
+.cisa-doc li {
+  color: var(--color-text, #1a1d21);
+  max-width: 75ch;
+}
+
+.cisa-lede {
+  font-size: 1.1rem;
+  color: var(--color-muted, #5a5b5d);
+  margin-bottom: 1.5rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Cards, callouts, alerts                                                    */
+/* -------------------------------------------------------------------------- */
+
+.cisa-card {
+  background: var(--color-surface, #ffffff);
+  border: 1px solid var(--color-line, rgba(15, 23, 42, 0.24));
+  border-radius: var(--radius-md, 12px);
+  box-shadow: var(--shadow-soft, 0 10px 28px rgba(15, 23, 42, 0.08));
+  padding: 1.25rem 1.5rem;
+  margin: 1rem 0;
+}
+
+.cisa-callout {
+  border-left: 4px solid var(--brand-blue, #0078ae);
+  background: rgba(0, 120, 174, 0.06);
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  border-radius: 0 var(--radius-sm, 8px) var(--radius-sm, 8px) 0;
+}
+
+.cisa-callout--warning {
+  border-left-color: #b8860b;
+  background: rgba(184, 134, 11, 0.08);
+}
+
+.cisa-callout--danger {
+  border-left-color: var(--dhs-red, #c41230);
+  background: rgba(196, 18, 48, 0.06);
+}
+
+.cisa-callout--success {
+  border-left-color: var(--dhs-green, #5e9732);
+  background: rgba(94, 151, 50, 0.08);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Tables                                                                     */
+/* -------------------------------------------------------------------------- */
+
+.cisa-table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0;
+  border: 1px solid var(--color-line, rgba(15, 23, 42, 0.24));
+  border-radius: var(--radius-sm, 8px);
+}
+
+.cisa-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.cisa-table thead th {
+  background: var(--brand-navy, #005288);
+  color: #fff;
+  text-align: left;
+  padding: 0.65rem 0.85rem;
+  font-weight: 600;
+}
+
+.cisa-table tbody td {
+  padding: 0.55rem 0.85rem;
+  border-top: 1px solid var(--color-line, rgba(15, 23, 42, 0.24));
+}
+
+.cisa-table tbody tr:nth-child(even) {
+  background: rgba(244, 246, 248, 0.6);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Buttons (house-style complements app-specific components)                   */
+/* -------------------------------------------------------------------------- */
+
+.cisa-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: var(--radius-sm, 8px);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.cisa-btn--primary {
+  background: var(--brand-blue, #0078ae);
+  color: #fff;
+}
+
+.cisa-btn--primary:hover {
+  background: var(--brand-navy, #005288);
+}
+
+.cisa-btn--outline {
+  background: transparent;
+  color: var(--brand-blue, #0078ae);
+  border-color: var(--brand-blue, #0078ae);
+}
+
+.cisa-btn--outline:hover {
+  background: rgba(0, 120, 174, 0.08);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Lists & meta                                                               */
+/* -------------------------------------------------------------------------- */
+
+.cisa-list-spaced li + li {
+  margin-top: 0.5rem;
+}
+
+.cisa-meta {
+  font-size: 0.875rem;
+  color: var(--color-muted, #5a5b5d);
+}
+
+.cisa-rule {
+  border: none;
+  border-top: 1px solid var(--color-line, rgba(15, 23, 42, 0.24));
+  margin: 2rem 0;
+}

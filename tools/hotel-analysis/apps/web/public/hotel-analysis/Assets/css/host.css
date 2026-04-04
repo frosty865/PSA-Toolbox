@@ -1,0 +1,10 @@
+/**
+ * HOST — single stylesheet entry for the web app (screen + browser print).
+ * Order: legacy CISA base → icon glyphs → tsp-theme (styles.css imports host-tokens.css) → app print.
+ * Generated report documents: host-report.css (+ host-tokens), linked from print iframe only.
+ * UI typography: styles.css (e.g. Sora / Source Serif). Printable report chrome: host-report.css (e.g. Franklin) — intentional split.
+ */
+@import url("cisa_styles.css");
+@import url("fontawesome-local.css");
+@import url("styles.css");
+@import url("host-app-print.css");

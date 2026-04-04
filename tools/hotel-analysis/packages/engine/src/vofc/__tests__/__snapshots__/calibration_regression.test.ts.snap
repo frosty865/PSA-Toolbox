@@ -1,0 +1,190 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`calibration regression > cap_four_per_category: exactly 4 for ELECTRIC_POWER 1`] = `
+"{
+  "generated_at_iso": "2000-01-01T00:00:00Z",
+  "items": [
+    {
+      "applicability": "CONFIRMED",
+      "base_severity": "MODERATE",
+      "calibrated_severity": "HIGH",
+      "calibration_reason": "Escalated based on operational dependency conditions (impact/time/recovery/backup band).",
+      "category": "ELECTRIC_POWER",
+      "impact": null,
+      "option_for_consideration": "Options may be evaluated.",
+      "origin": "GENERATED",
+      "title": "No backup power",
+      "vofc_id": "EP-01",
+      "vulnerability": "Backup was not identified."
+    },
+    {
+      "applicability": "CONFIRMED",
+      "base_severity": "HIGH",
+      "calibrated_severity": "HIGH",
+      "calibration_reason": null,
+      "category": "ELECTRIC_POWER",
+      "impact": null,
+      "option_for_consideration": "Mitigation may be considered.",
+      "origin": "GENERATED",
+      "title": "High loss fraction",
+      "vofc_id": "EP-02",
+      "vulnerability": "Loss fraction meets threshold."
+    },
+    {
+      "applicability": "CONFIRMED",
+      "base_severity": "MODERATE",
+      "calibrated_severity": "HIGH",
+      "calibration_reason": "Escalated based on operational dependency conditions (impact/time/recovery/backup band).",
+      "category": "ELECTRIC_POWER",
+      "impact": null,
+      "option_for_consideration": "Plans may be reviewed.",
+      "origin": "GENERATED",
+      "title": "Short time to impact",
+      "vofc_id": "EP-03",
+      "vulnerability": "Time to impact is within band."
+    },
+    {
+      "applicability": "CONFIRMED",
+      "base_severity": "MODERATE",
+      "calibrated_severity": "HIGH",
+      "calibration_reason": "Escalated based on operational dependency conditions (impact/time/recovery/backup band).",
+      "category": "ELECTRIC_POWER",
+      "impact": null,
+      "option_for_consideration": "May be considered.",
+      "origin": "GENERATED",
+      "title": "EP extra one",
+      "vofc_id": "EP-04",
+      "vulnerability": "Extra rule one."
+    }
+  ],
+  "tool_version": "TEST"
+}
+"
+`;
+
+exports[`calibration regression > comm_backup_short_duration: COM-01 matched 1`] = `
+"{
+  "generated_at_iso": "2000-01-01T00:00:00Z",
+  "items": [
+    {
+      "applicability": "CONFIRMED",
+      "base_severity": "LOW",
+      "calibrated_severity": "MODERATE",
+      "calibration_reason": "Escalated based on operational dependency conditions (impact/time/recovery/backup band).",
+      "category": "COMMUNICATIONS",
+      "impact": null,
+      "option_for_consideration": "Backup options may be considered.",
+      "origin": "GENERATED",
+      "title": "Short backup duration",
+      "vofc_id": "COM-01",
+      "vulnerability": "Backup duration is limited."
+    }
+  ],
+  "tool_version": "TEST"
+}
+"
+`;
+
+exports[`calibration regression > critical_products_single_source: CP-01 matched 1`] = `
+"{
+  "generated_at_iso": "2000-01-01T00:00:00Z",
+  "items": [
+    {
+      "applicability": "CONFIRMED",
+      "base_severity": "MODERATE",
+      "calibrated_severity": "MODERATE",
+      "calibration_reason": null,
+      "category": "CRITICAL_PRODUCTS",
+      "impact": null,
+      "option_for_consideration": "Diversification may be considered.",
+      "origin": "GENERATED",
+      "title": "Single source dependency",
+      "vofc_id": "CP-01",
+      "vulnerability": "Critical product has single source."
+    }
+  ],
+  "tool_version": "TEST"
+}
+"
+`;
+
+exports[`calibration regression > ep_no_backup_short_tti_high_loss: EP-01/02/03 matched, calibration and ordering 1`] = `
+"{
+  "generated_at_iso": "2000-01-01T00:00:00Z",
+  "items": [
+    {
+      "applicability": "CONFIRMED",
+      "base_severity": "MODERATE",
+      "calibrated_severity": "HIGH",
+      "calibration_reason": "Escalated based on operational dependency conditions (impact/time/recovery/backup band).",
+      "category": "ELECTRIC_POWER",
+      "impact": null,
+      "option_for_consideration": "Options may be evaluated.",
+      "origin": "GENERATED",
+      "title": "No backup power",
+      "vofc_id": "EP-01",
+      "vulnerability": "Backup was not identified."
+    },
+    {
+      "applicability": "CONFIRMED",
+      "base_severity": "HIGH",
+      "calibrated_severity": "HIGH",
+      "calibration_reason": null,
+      "category": "ELECTRIC_POWER",
+      "impact": null,
+      "option_for_consideration": "Mitigation may be considered.",
+      "origin": "GENERATED",
+      "title": "High loss fraction",
+      "vofc_id": "EP-02",
+      "vulnerability": "Loss fraction meets threshold."
+    },
+    {
+      "applicability": "CONFIRMED",
+      "base_severity": "MODERATE",
+      "calibrated_severity": "HIGH",
+      "calibration_reason": "Escalated based on operational dependency conditions (impact/time/recovery/backup band).",
+      "category": "ELECTRIC_POWER",
+      "impact": null,
+      "option_for_consideration": "Plans may be reviewed.",
+      "origin": "GENERATED",
+      "title": "Short time to impact",
+      "vofc_id": "EP-03",
+      "vulnerability": "Time to impact is within band."
+    }
+  ],
+  "tool_version": "TEST"
+}
+"
+`;
+
+exports[`calibration regression > requires_service_false_skip: no VOFCs for ELECTRIC_POWER 1`] = `
+"{
+  "generated_at_iso": "2000-01-01T00:00:00Z",
+  "items": [],
+  "tool_version": "TEST"
+}
+"
+`;
+
+exports[`calibration regression > water_long_recovery: W-01 escalated to HIGH 1`] = `
+"{
+  "generated_at_iso": "2000-01-01T00:00:00Z",
+  "items": [
+    {
+      "applicability": "CONFIRMED",
+      "base_severity": "MODERATE",
+      "calibrated_severity": "HIGH",
+      "calibration_reason": "Escalated based on operational dependency conditions (impact/time/recovery/backup band).",
+      "category": "WATER",
+      "impact": null,
+      "option_for_consideration": "Recovery plans may be evaluated.",
+      "origin": "GENERATED",
+      "title": "Long recovery",
+      "vofc_id": "W-01",
+      "vulnerability": "Recovery time is extended."
+    }
+  ],
+  "tool_version": "TEST"
+}
+"
+`;

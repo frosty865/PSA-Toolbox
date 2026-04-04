@@ -1,0 +1,56 @@
+{
+  "meta": { "tool_version": "0.1.0", "template_version": "1", "created_at_iso": "2000-01-01T00:00:00Z" },
+  "asset": { "asset_name": "Perf Small", "visit_date_iso": "2000-01-01" },
+  "categories": {
+    "ELECTRIC_POWER": {
+      "requires_service": true,
+      "time_to_impact_hours": 24,
+      "loss_fraction_no_backup": 0.5,
+      "has_backup_any": true,
+      "backup_duration_hours": 48,
+      "loss_fraction_with_backup": 0.1,
+      "recovery_time_hours": 12
+    },
+    "COMMUNICATIONS": {
+      "requires_service": false,
+      "time_to_impact_hours": 0,
+      "loss_fraction_no_backup": 0,
+      "has_backup": false,
+      "backup_duration_hours": null,
+      "loss_fraction_with_backup": null,
+      "recovery_time_hours": 0
+    },
+    "INFORMATION_TECHNOLOGY": {
+      "requires_service": false,
+      "time_to_impact_hours": 0,
+      "loss_fraction_no_backup": 0,
+      "has_backup": false,
+      "backup_duration_hours": null,
+      "loss_fraction_with_backup": null,
+      "recovery_time_hours": 0
+    },
+    "WATER": {
+      "requires_service": false,
+      "time_to_impact_hours": 0,
+      "loss_fraction_no_backup": 0,
+      "has_backup": false,
+      "backup_duration_hours": null,
+      "loss_fraction_with_backup": null,
+      "recovery_time_hours": 0
+    },
+    "WASTEWATER": {
+      "requires_service": false,
+      "time_to_impact_hours": 0,
+      "loss_fraction_no_backup": 0,
+      "has_backup": false,
+      "backup_duration_hours": null,
+      "loss_fraction_with_backup": null,
+      "recovery_time_hours": 0
+    },
+    "CRITICAL_PRODUCTS": {
+      "critical_products": [
+        { "product_or_service": "One product", "dependency_present": false, "notes": null, "single_source": null, "alternate_supplier_identified": null }
+      ]
+    }
+  }
+}

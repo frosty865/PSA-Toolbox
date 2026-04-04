@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "tools": [
+    {
+      "id": "dependency-analysis",
+      "displayName": "Infrastructure Dependency Assessment",
+      "relativePath": "tools/dependency-analysis",
+      "description": "Infrastructure Dependency Assessment is for documenting how critical assets rely on power, communications, suppliers, and related systems, and for capturing continuity and consequence in a structured assessment you can carry through review.",
+      "readmeRelativePath": "README.md",
+      "entryPath": "/assessment/categories/",
+      "start": {
+        "kind": "powershell",
+        "scriptRelativePath": "Start-PsaIda.ps1",
+        "arguments": []
+      }
+    },
+    {
+      "id": "hotel-analysis",
+      "displayName": "Hotel Analysis (HOST)",
+      "relativePath": "tools/hotel-analysis",
+      "description": "Hotel Analysis is the Hotel Operational Security Toolkit (HOST): a guided assessment for lodging and hospitality properties—facility profile, parking, guest services, surveillance, access control, perimeter, and related operational security so you can cover the property end to end.",
+      "readmeRelativePath": "README.md",
+      "entryPath": "/hotel-analysis/"
+    },
+    {
+      "id": "safe-3-0",
+      "displayName": "SAFE 3.0",
+      "relativePath": "tools/safe-3.0",
+      "description": "SAFE 3.0 (ALT SAFE) is a comprehensive security assessment for facilities and environments—structured sections, scoring, and reporting in one self-contained web application.",
+      "readmeRelativePath": "README.md",
+      "entryPath": "/safe-3-0/"
+    },
+    {
+      "id": "cisa-site-assessment",
+      "displayName": "Modular Site Assessment",
+      "relativePath": "tools/cisa-site-assessment",
+      "description": "Modular Site Assessment is a modular assessment designed so Protective Security Advisors have a flexible tool to conduct assessments based on sector and subsector.",
+      "readmeRelativePath": "README-TOOLBOX.md",
+      "entryPath": "/cisa-site-assessment/",
+      "externalUrl": "https://cisa.zophielgroup.com/cisa-site-assessment/assessments/",
+      "start": {
+        "kind": "powershell",
+        "scriptRelativePath": "Start-CisaSiteAssessment.ps1",
+        "arguments": []
+      }
+    }
+  ]
+}

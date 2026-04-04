@@ -1,0 +1,53 @@
+import { CITATIONS } from '@/app/lib/vuln/citations_registry';
+
+/**
+ * Canonical vulnerability -> citation id mapping.
+ * Keep this as the single source for all report/reference pipelines.
+ */
+export const VULN_TO_CITATION_IDS: Record<string, string[]> = {
+  ENERGY_FEED_DIVERSITY: ['FEMA_CGC', 'NFPA_1600'],
+  ENERGY_BACKUP_ABSENT: ['NFPA_110', 'FEMA_CGC'],
+  ENERGY_BACKUP_SUSTAIN_TEST: ['NFPA_110', 'FEMA_CGC'],
+
+  COMMS_DIVERSITY: ['CISA_EMERGENCY_COMMS_REDUNDANCIES_2021', 'FCC_CSRIC'],
+  COMMS_ALTERNATE_CAPABILITY: ['CISA_PUBLIC_SAFETY_COMMS_RESILIENCY', 'FCC_CSRIC'],
+  COMMS_RESTORATION_REALISM: ['FCC_TSP_PROGRAM', 'CISA_TSP_SERVICE'],
+
+  IT_PROVIDER_CONCENTRATION: ['NIST_CSF', 'ISO_22301'],
+  IT_TRANSPORT_INDEPENDENCE_UNKNOWN: ['CISA_EMERGENCY_COMMS_REDUNDANCIES_2021', 'FCC_CSRIC'],
+  IT_TRANSPORT_DIVERSITY_RECORDED: ['CISA_EMERGENCY_COMMS_REDUNDANCIES_2021', 'FCC_CSRIC'],
+  IT_TRANSPORT_SINGLE_PATH: ['CISA_EMERGENCY_COMMS_REDUNDANCIES_2021', 'FCC_CSRIC'],
+  IT_HOSTED_VENDOR_NO_CONTINUITY: ['NIST_CSF', 'ISO_22301'],
+  IT_HOSTED_VENDOR_CONTINUITY_UNKNOWN: ['NIST_CSF', 'ISO_22301'],
+  IT_CONTINUITY_NOT_DEMONSTRATED: ['ISO_22301', 'NIST_CSF'],
+  IT_MULTIPLE_CONNECTIONS_INDEPENDENCE_UNKNOWN: ['CISA_EMERGENCY_COMMS_REDUNDANCIES_2021', 'FCC_CSRIC'],
+  IT_HOSTED_SERVICES_NOT_IDENTIFIED: ['ISO_22301', 'NIST_CSF'],
+  IT_FALLBACK_CAPABILITY_INSUFFICIENT: ['ISO_22301', 'NIST_CSF'],
+  // Legacy alias retained for compatibility with older derivation paths/tests.
+  IT_FALLBACK_AVAILABILITY: ['ISO_22301', 'NIST_CSF'],
+  IT_CONTINUITY_PLAN_NOT_EXERCISED: ['ISO_22301', 'NIST_CSF'],
+
+  W_NO_PRIORITY_RESTORATION: ['EPA_WATER_SECURITY', 'FEMA_CGC'],
+  W_NO_ALTERNATE_SOURCE: ['EPA_WATER_SECURITY', 'EPA_POWER_RESILIENCE_2023'],
+  W_ALTERNATE_INSUFFICIENT: ['EPA_WATER_SECURITY', 'EPA_POWER_RESILIENCE_2023'],
+  W_SINGLE_CONNECTION_NO_REDUNDANCY: ['EPA_WATER_SECURITY', 'FEMA_CGC'],
+
+  WW_NO_PRIORITY_RESTORATION: ['EPA_WATER_SECURITY', 'EPA_POWER_RESILIENCE_2023'],
+  WW_SINGLE_CONNECTION_NO_REDUNDANCY: ['EPA_WATER_SECURITY', 'FEMA_CGC'],
+  WW_CONSTRAINTS_NOT_EVALUATED: ['EPA_WATER_SECURITY', 'NIST_CSF'],
+};
+
+export function vulnerabilityCitationIds(vulnId: string): string[] {
+  return VULN_TO_CITATION_IDS[vulnId] ?? [];
+}
+
+export function buildVulnerabilityReferences(vulnId: string): string[] {
+  return vulnerabilityCitationIds(vulnId)
+    .map((citationId) => {
+      const citation = CITATIONS[citationId];
+      if (!citation) return null;
+      const year = citation.year ? ` (${citation.year})` : '';
+      return `${citation.title}${year} - ${citation.url}`;
+    })
+    .filter((value): value is string => Boolean(value));
+}

@@ -1,0 +1,6 @@
+Contact: https://zophielgroup.com/contact/
+Contact: mailto:security@zophielgroup.com
+Expires: 2027-03-09T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://zophielgroup.com/.well-known/security.txt
+Policy: https://zophielgroup.com/security/

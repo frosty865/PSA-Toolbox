@@ -1,0 +1,330 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ui_labels_regression > label surface (key, label, label_source) is deterministic and matches snapshot 1`] = `
+"[
+  {
+    "category": "COMMUNICATIONS",
+    "fields": [
+      {
+        "key": "curve_backup_available",
+        "label": "Is there an alternative or backup that can be used in the case of loss of communications?",
+        "label_source": {
+          "cell": "B4",
+          "sheet": "Communication"
+        }
+      },
+      {
+        "key": "curve_backup_duration_hours",
+        "label": "Duration of backup or alternative communications (hours)",
+        "label_source": {
+          "cell": "B5",
+          "sheet": "Communication"
+        }
+      },
+      {
+        "key": "curve_loss_fraction_no_backup",
+        "label": "Once communications are lost (without backup), what percentage of normal business functions are lost or degraded?",
+        "label_source": {
+          "cell": "B3",
+          "sheet": "Communication"
+        }
+      },
+      {
+        "key": "curve_loss_fraction_with_backup",
+        "label": "Once communications are lost (considering backup), what percentage of normal business functions are lost or degraded?",
+        "label_source": {
+          "cell": "B6",
+          "sheet": "Communication"
+        }
+      },
+      {
+        "key": "curve_recovery_time_hours",
+        "label": "Once external service is restored, how long until full resumption of operations?",
+        "label_source": {
+          "cell": "B7",
+          "sheet": "Communication"
+        }
+      },
+      {
+        "key": "curve_requires_service",
+        "label": "Does the asset require communications for its core operations?",
+        "label_source": {
+          "cell": "B1",
+          "sheet": "Communication"
+        }
+      },
+      {
+        "key": "curve_time_to_impact_hours",
+        "label": "If communications are lost (without backup), how soon would the facility be severely impacted?",
+        "label_source": {
+          "cell": "B2",
+          "sheet": "Communication"
+        }
+      }
+    ],
+    "title": "Communications"
+  },
+  {
+    "category": "CRITICAL_PRODUCTS",
+    "fields": [],
+    "title": "Critical Products"
+  },
+  {
+    "category": "ELECTRIC_POWER",
+    "fields": [
+      {
+        "key": "backup_duration_hours",
+        "label": "Duration of backup generation without refueling (numerical value)",
+        "label_source": {
+          "cell": "H46",
+          "sheet": "Electric Power"
+        }
+      },
+      {
+        "key": "has_backup_any",
+        "label": "Is there analternative or backup that can be used in the case of loss of electric source?",
+        "label_source": {
+          "cell": "D39",
+          "sheet": "Electric Power"
+        }
+      },
+      {
+        "key": "has_backup_generator",
+        "label": "Is there a backup generator?",
+        "label_source": {
+          "cell": "H43",
+          "sheet": "Electric Power"
+        }
+      },
+      {
+        "key": "loss_fraction_no_backup",
+        "label": "Once electric supply is lost (without considering any backup or alternative mode), what percentage of normal business functions are lost or degraded? (percentage)",
+        "label_source": {
+          "cell": "D32",
+          "sheet": "Electric Power"
+        }
+      },
+      {
+        "key": "loss_fraction_with_backup",
+        "label": "Once electric supply is lost (and considering your backup or alternative mode), what percentage of normal business functions are lost or degraded?",
+        "label_source": {
+          "cell": "D52",
+          "sheet": "Electric Power"
+        }
+      },
+      {
+        "key": "recovery_time_hours",
+        "label": "Once external service is restored, how long would it take before full resumption of operations?",
+        "label_source": {
+          "cell": "D58",
+          "sheet": "Electric Power"
+        }
+      },
+      {
+        "key": "requires_service",
+        "label": "Does the asset require electrical power for its core operations?",
+        "label_source": {
+          "cell": "D25",
+          "sheet": "Electric Power"
+        }
+      },
+      {
+        "key": "time_to_impact_hours",
+        "label": "If electric supply is lost (without considering any backup or alternative mode), how soon would the facility be severely impacted?",
+        "label_source": {
+          "cell": "D28",
+          "sheet": "Electric Power"
+        }
+      }
+    ],
+    "title": "Electric Power"
+  },
+  {
+    "category": "INFORMATION_TECHNOLOGY",
+    "fields": [
+      {
+        "key": "curve_backup_available",
+        "label": "Is there an alternative or backup that can be used in the case of loss of IT services?",
+        "label_source": {
+          "cell": "B4",
+          "sheet": "Information Technology"
+        }
+      },
+      {
+        "key": "curve_backup_duration_hours",
+        "label": "Duration of backup or alternative IT (hours)",
+        "label_source": {
+          "cell": "B5",
+          "sheet": "Information Technology"
+        }
+      },
+      {
+        "key": "curve_loss_fraction_no_backup",
+        "label": "Once IT services are lost (without backup), what percentage of normal business functions are lost or degraded?",
+        "label_source": {
+          "cell": "B3",
+          "sheet": "Information Technology"
+        }
+      },
+      {
+        "key": "curve_loss_fraction_with_backup",
+        "label": "Once IT services are lost (considering backup), what percentage of normal business functions are lost or degraded?",
+        "label_source": {
+          "cell": "B6",
+          "sheet": "Information Technology"
+        }
+      },
+      {
+        "key": "curve_recovery_time_hours",
+        "label": "Once external service is restored, how long until full resumption of operations?",
+        "label_source": {
+          "cell": "B7",
+          "sheet": "Information Technology"
+        }
+      },
+      {
+        "key": "curve_requires_service",
+        "label": "Does the asset require information technology for its core operations?",
+        "label_source": {
+          "cell": "B1",
+          "sheet": "Information Technology"
+        }
+      },
+      {
+        "key": "curve_time_to_impact_hours",
+        "label": "If IT services are lost (without backup), how soon would the facility be severely impacted?",
+        "label_source": {
+          "cell": "B2",
+          "sheet": "Information Technology"
+        }
+      }
+    ],
+    "title": "Information Technology"
+  },
+  {
+    "category": "WASTEWATER",
+    "fields": [
+      {
+        "key": "backup_duration_hours",
+        "label": "Duration of backup or alternative wastewater capacity (hours)",
+        "label_source": {
+          "cell": "B5",
+          "sheet": "Wastewater"
+        }
+      },
+      {
+        "key": "has_backup",
+        "label": "Is there an alternative or backup that can be used in the case of loss of wastewater services?",
+        "label_source": {
+          "cell": "B4",
+          "sheet": "Wastewater"
+        }
+      },
+      {
+        "key": "loss_fraction_no_backup",
+        "label": "Once wastewater services are lost (without backup), what percentage of normal business functions are lost or degraded?",
+        "label_source": {
+          "cell": "B3",
+          "sheet": "Wastewater"
+        }
+      },
+      {
+        "key": "loss_fraction_with_backup",
+        "label": "Once wastewater services are lost (considering backup), what percentage of normal business functions are lost or degraded?",
+        "label_source": {
+          "cell": "B6",
+          "sheet": "Wastewater"
+        }
+      },
+      {
+        "key": "recovery_time_hours",
+        "label": "Once external service is restored, how long until full resumption of operations?",
+        "label_source": {
+          "cell": "B7",
+          "sheet": "Wastewater"
+        }
+      },
+      {
+        "key": "requires_service",
+        "label": "Does the asset require wastewater services for its core operations?",
+        "label_source": {
+          "cell": "B1",
+          "sheet": "Wastewater"
+        }
+      },
+      {
+        "key": "time_to_impact_hours",
+        "label": "If wastewater services are lost (without backup), how soon would the facility be severely impacted?",
+        "label_source": {
+          "cell": "B2",
+          "sheet": "Wastewater"
+        }
+      }
+    ],
+    "title": "Wastewater"
+  },
+  {
+    "category": "WATER",
+    "fields": [
+      {
+        "key": "backup_duration_hours",
+        "label": "Duration of backup or alternative water supply (hours)",
+        "label_source": {
+          "cell": "B5",
+          "sheet": "Water"
+        }
+      },
+      {
+        "key": "has_backup",
+        "label": "Is there an alternative or backup that can be used in the case of loss of water supply?",
+        "label_source": {
+          "cell": "B4",
+          "sheet": "Water"
+        }
+      },
+      {
+        "key": "loss_fraction_no_backup",
+        "label": "Once water supply is lost (without backup), what percentage of normal business functions are lost or degraded?",
+        "label_source": {
+          "cell": "B3",
+          "sheet": "Water"
+        }
+      },
+      {
+        "key": "loss_fraction_with_backup",
+        "label": "Once water supply is lost (considering backup), what percentage of normal business functions are lost or degraded?",
+        "label_source": {
+          "cell": "B6",
+          "sheet": "Water"
+        }
+      },
+      {
+        "key": "recovery_time_hours",
+        "label": "Once external supply is restored, how long until full resumption of operations?",
+        "label_source": {
+          "cell": "B7",
+          "sheet": "Water"
+        }
+      },
+      {
+        "key": "requires_service",
+        "label": "Does the asset require water for its core operations?",
+        "label_source": {
+          "cell": "B1",
+          "sheet": "Water"
+        }
+      },
+      {
+        "key": "time_to_impact_hours",
+        "label": "If water supply is lost (without backup), how soon would the facility be severely impacted?",
+        "label_source": {
+          "cell": "B2",
+          "sheet": "Water"
+        }
+      }
+    ],
+    "title": "Water"
+  }
+]
+"
+`;

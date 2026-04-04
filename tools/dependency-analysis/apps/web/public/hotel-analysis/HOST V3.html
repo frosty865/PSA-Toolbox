@@ -24238,7 +24238,7 @@
                 <div class="governance-section">
                     <div class="governance-overview">
                         <h3>Program Governance & Procurement</h3>
-                        <p>The topics below support procurement and approval workflows. All recommendations are advisory; see the <strong>Assessment Advisory Notice</strong> for full terms.</p>
+                        <p>The topics below support procurement and approval workflows. All recommendations are advisory and must be evaluated against your organization's procurement, legal, and security governance requirements.</p>
                     </div>
                     
                     <div class="governance-requirements">
@@ -24641,27 +24641,28 @@
                     <div id="assessment-snapshot" class="report-section">
                         <h2><i class="fas fa-chart-line"></i> Assessment Overview</h2>
                         <div class="executive-overview">
-                            <h3>Captured Data Summary</h3>
-                            <p><strong>${facilityInfo.hotel_name || 'The facility'}</strong> is being reported as a mixed-use hotel environment with guest rooms, vertical circulation, public-facing space, restricted areas, and VIP access points. This report is based on <strong>${completedFieldCount}</strong> completed responses and only states what the captured data supports.</p>
+                            <h3>Assessment Summary</h3>
+                            <p>This report summarizes the captured assessment responses for <strong>${facilityInfo.hotel_name || 'the facility'}</strong> and the vulnerabilities derived from those inputs. It does not add claims beyond the recorded data. Reference list entries cite publicly retrievable sources for context and are not an exhaustive legal or standards compliance review.</p>
                             <div class="key-findings">
-                                <h4>Captured Facts</h4>
+                                <h4>Assessment Metrics</h4>
                                 <ul>
                                     <li><strong>Assessment responses:</strong> ${completedFieldCount}</li>
+                                    <li><strong>Security score:</strong> ${reportSecurityScore}/100</li>
                                     <li><strong>Standards scope:</strong> ${standardsNarrative}</li>
                                     <li><strong>Observed categories:</strong> ${topCategorySummary}</li>
                                     <li><strong>Strategic risk classes:</strong> ${riskClassSummary}</li>
                                 </ul>
                             </div>
                             <div class="key-findings">
-                                <h4>Top Findings</h4>
-                                <ul>
-                                    ${priorityFindings.map(v => `<li><strong>${escapeHtmlForReport(v.title || 'Finding')}:</strong> Consequence: ${escapeHtmlForReport(summarizeFindingConsequence(v))} Action: ${escapeHtmlForReport(primaryConsiderationActionText(v))}</li>`).join('')}
-                                </ul>
+                                <h4>Executive Summary</h4>
+                                <ol>
+                                    ${priorityFindings.map((v, idx) => `<li><strong>${idx + 1}. ${escapeHtmlForReport(v.title || 'Finding')}:</strong> ${escapeHtmlForReport(v.description || summarizeFindingConsequence(v))}<br><strong>Action:</strong> ${escapeHtmlForReport(primaryConsiderationActionText(v))}</li>`).join('')}
+                                </ol>
                             </div>
                             <div class="key-findings">
-                                <h4>Top Actions</h4>
+                                <h4>Recommendations</h4>
                                 <ol>
-                                    ${priorityActions.slice(0, 5).map(v => `<li><strong>${escapeHtmlForReport(v.title || 'Action')}:</strong> ${escapeHtmlForReport(primaryConsiderationActionText(v))}</li>`).join('')}
+                                    ${priorityActions.slice(0, 6).map(v => `<li><strong>${escapeHtmlForReport(v.title || 'Action')}:</strong> ${escapeHtmlForReport(primaryConsiderationActionText(v))}</li>`).join('')}
                                 </ol>
                             </div>
                         </div>
@@ -24696,15 +24697,15 @@
                             <div class="methodology-grid">
                                 <div class="methodology-card">
                                     <h3>Standards-Based Approach</h3>
-                                    <p>Assessment conducted using selected security standards and best practices from recognized organizations including ISO and hospitality security guidance.</p>
+                                    <p>This report is based on your assessment responses. Reference list entries cite publicly retrievable sources for context and are not an exhaustive legal or standards compliance review.</p>
                                 </div>
                                 <div class="methodology-card">
                                     <h3>Comprehensive Evaluation</h3>
-                                    <p>Multi-domain security assessment covering physical security, electronic systems, personnel operations, and emergency preparedness.</p>
+                                    <p>HOST evaluates physical security, electronic systems, emergency preparedness, and operational security measures to identify vulnerabilities and support practical improvement planning.</p>
                                 </div>
                                 <div class="methodology-card">
                                     <h3>Vulnerability Analysis</h3>
-                                    <p>Systematic identification and analysis of security vulnerabilities with business impact assessment and options for consideration.</p>
+                                    <p>Systematic identification and analysis of security vulnerabilities with consequence and recommendation text pulled from the recorded assessment inputs.</p>
                                 </div>
                                 <div class="methodology-card">
                                     <h3>Advisory Framework</h3>
@@ -24718,11 +24719,11 @@
                     <div id="facility-overview-report" class="report-section">
                         <h2><i class="fas fa-building"></i> Facility Overview</h2>
                         <div class="facility-details">
-                            <div class="facility-grid">
-                                <div class="facility-card">
-                                    <h3>Property Information</h3>
-                                    <ul>
-                                        <li><strong>Name:</strong> ${facilityInfo.hotel_name || 'Not Specified'}</li>
+                        <div class="facility-grid">
+                            <div class="facility-card">
+                                <h3>Property Information</h3>
+                                <ul>
+                                    <li><strong>Name:</strong> ${facilityInfo.hotel_name || 'Not Specified'}</li>
                                         <li><strong>Address:</strong> ${fullAddress}</li>
                                         <li><strong>Guest Rooms:</strong> ${facilityInfo.guest_room_count || 'Not Specified'}</li>
                                         <li><strong>Property Type:</strong> ${assessmentInfo.assessment_type || 'Not Specified'}</li>
@@ -26399,7 +26400,308 @@
             );
         }
 
-        function buildPrintableReportDocument(reportHTML, reportTitle) {
+        /**
+         * Railway-hosted Python report-service (same ADA/IDA reporter stack): POST /render with JSON { generic_report }.
+         * Set either:
+         *   - window.HOST_REPORT_SERVICE_URL = 'https://your-service.up.railway.app' (base URL; /render is appended), or
+         *   - window.HOST_REPORT_RENDER_URL = 'https://your-service.up.railway.app/render' (full endpoint).
+         * Aliases: HOST_RAILWAY_REPORT_URL (base), meta host-report-service-url / host-report-render-url.
+         * Legacy: HOST_REMOTE_REPORT_URL or meta host-remote-report-url (base or full path; /render appended if missing).
+         */
+        function getHostReportRenderUrl() {
+            const t = (s) => (typeof s === 'string' ? s.trim() : '');
+            const noTrailSlash = (u) => u.replace(/\/+$/, '');
+            const withRender = (base) => {
+                const b = noTrailSlash(base);
+                return /\/render$/i.test(b) ? b : `${b}/render`;
+            };
+
+            const explicit = t(typeof window.HOST_REPORT_RENDER_URL !== 'undefined' ? window.HOST_REPORT_RENDER_URL : '');
+            if (explicit) {
+                return withRender(explicit);
+            }
+            const metaFull = document.querySelector('meta[name="host-report-render-url"]');
+            if (metaFull && t(metaFull.getAttribute('content'))) {
+                return withRender(t(metaFull.getAttribute('content')));
+            }
+
+            const base =
+                t(window.HOST_REPORT_SERVICE_URL) ||
+                t(window.HOST_RAILWAY_REPORT_URL) ||
+                (() => {
+                    const m = document.querySelector('meta[name="host-report-service-url"]');
+                    return m ? t(m.getAttribute('content')) : '';
+                })();
+            if (base) {
+                return withRender(base);
+            }
+
+            const legacy = t(window.HOST_REMOTE_REPORT_URL);
+            if (legacy) {
+                return withRender(legacy);
+            }
+            const metaLegacy = document.querySelector('meta[name="host-remote-report-url"]');
+            if (metaLegacy && t(metaLegacy.getAttribute('content'))) {
+                return withRender(t(metaLegacy.getAttribute('content')));
+            }
+            return '';
+        }
+
+        function sanitizeHostDocxFilenamePart(s) {
+            return String(s || 'report')
+                .replace(/[<>:"/\\|?*\u0000-\u001f]/g, '_')
+                .replace(/\s+/g, '_')
+                .slice(0, 80);
+        }
+
+        function tableElementToPlainLines(table) {
+            const rows = [];
+            table.querySelectorAll('tr').forEach((tr) => {
+                const cells = Array.from(tr.querySelectorAll('th, td')).map((c) =>
+                    String(c.textContent || '').replace(/\s+/g, ' ').trim()
+                );
+                if (cells.some(Boolean)) {
+                    rows.push(cells.join(' — '));
+                }
+            });
+            return rows.join('\n');
+        }
+
+        /**
+         * Map current report HTML into generic_report.sections for remote DOCX (python _render_generic_report).
+         * Handles comprehensive (.report-section) and legacy layouts (h2 chunks).
+         */
+        function hostReportHtmlToGenericSections(html) {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(String(html || ''), 'text/html');
+            doc.querySelectorAll('.report-utility-bar, script, style').forEach((el) => el.remove());
+
+            const pushBlocks = (elements) => {
+                const out = [];
+                elements.forEach((sec) => {
+                    const h2 = sec.querySelector(':scope > h2') || sec.querySelector('h2');
+                    let heading = h2
+                        ? String(h2.textContent || '').replace(/\s+/g, ' ').trim()
+                        : (sec.id || '').replace(/-/g, ' ') || 'Section';
+                    const paragraphs = [];
+                    const bullets = [];
+                    sec.querySelectorAll('p').forEach((p) => {
+                        const t = String(p.textContent || '').replace(/\s+/g, ' ').trim();
+                        if (t) {
+                            paragraphs.push(t);
+                        }
+                    });
+                    sec.querySelectorAll('table').forEach((tb) => {
+                        const lines = tableElementToPlainLines(tb);
+                        if (lines) {
+                            paragraphs.push(lines);
+                        }
+                    });
+                    sec.querySelectorAll('ul li, ol li').forEach((li) => {
+                        const t = String(li.textContent || '').replace(/\s+/g, ' ').trim();
+                        if (t) {
+                            bullets.push(t);
+                        }
+                    });
+                    sec.querySelectorAll('h3, h4').forEach((h) => {
+                        const t = String(h.textContent || '').replace(/\s+/g, ' ').trim();
+                        if (t) {
+                            paragraphs.push(t);
+                        }
+                    });
+                    if (heading || paragraphs.length || bullets.length) {
+                        out.push({ heading: heading || 'Section', paragraphs, bullets });
+                    }
+                });
+                return out;
+            };
+
+            const byClass = doc.querySelectorAll('.report-section');
+            if (byClass.length > 0) {
+                return pushBlocks(Array.from(byClass));
+            }
+
+            const bySectionDiv = doc.querySelectorAll('.detailed-report .section');
+            if (bySectionDiv.length > 0) {
+                return pushBlocks(Array.from(bySectionDiv));
+            }
+
+            const sections = [];
+            const root = doc.querySelector('.detailed-report, .executive-summary, .report-container') || doc.body;
+            const h2s = root.querySelectorAll('h2');
+            h2s.forEach((h2) => {
+                if (h2.closest('.report-header')) {
+                    return;
+                }
+                const heading = String(h2.textContent || '').replace(/\s+/g, ' ').trim();
+                const paragraphs = [];
+                const bullets = [];
+                let el = h2.nextElementSibling;
+                while (el && el.tagName !== 'H2') {
+                    if (el.tagName === 'P') {
+                        const t = String(el.textContent || '').replace(/\s+/g, ' ').trim();
+                        if (t) {
+                            paragraphs.push(t);
+                        }
+                    } else if (el.tagName === 'TABLE') {
+                        const lines = tableElementToPlainLines(el);
+                        if (lines) {
+                            paragraphs.push(lines);
+                        }
+                    } else if (el.tagName === 'UL' || el.tagName === 'OL') {
+                        el.querySelectorAll(':scope > li').forEach((li) => {
+                            const t = String(li.textContent || '').replace(/\s+/g, ' ').trim();
+                            if (t) {
+                                bullets.push(t);
+                            }
+                        });
+                    } else {
+                        el.querySelectorAll('p').forEach((p) => {
+                            const t = String(p.textContent || '').replace(/\s+/g, ' ').trim();
+                            if (t) {
+                                paragraphs.push(t);
+                            }
+                        });
+                        el.querySelectorAll('table').forEach((tb) => {
+                            const lines = tableElementToPlainLines(tb);
+                            if (lines) {
+                                paragraphs.push(lines);
+                            }
+                        });
+                        el.querySelectorAll('ul li, ol li').forEach((li) => {
+                            const t = String(li.textContent || '').replace(/\s+/g, ' ').trim();
+                            if (t) {
+                                bullets.push(t);
+                            }
+                        });
+                    }
+                    el = el.nextElementSibling;
+                }
+                if (heading) {
+                    sections.push({ heading, paragraphs, bullets });
+                }
+            });
+            if (sections.length > 0) {
+                return sections;
+            }
+            const plain = String(root.textContent || '').replace(/\s+/g, ' ').trim();
+            if (plain) {
+                return [{ heading: 'Report', paragraphs: [plain], bullets: [] }];
+            }
+            return [];
+        }
+
+        function buildHostRemoteGenericReportPayload(reportHTML, reportTitle) {
+            const ctx = getReportPrintContext(reportTitle);
+            const sections = hostReportHtmlToGenericSections(reportHTML);
+            return {
+                template_key: 'hotel-analysis',
+                title: ctx.title,
+                subtitle: HOST_REPORT_COPY.reportSubtitle,
+                header_left: ctx.facility,
+                header_right: ctx.assessmentDate,
+                footer_left: HOST_REPORT_COPY.printFooterTagline,
+                footer_right: HOST_REPORT_COPY.copyrightLine,
+                methodology: HOST_REPORT_COPY.methodologyAttribution,
+                note: HOST_REPORT_COPY.shortDisclaimer,
+                version: HOST_APP_VERSION,
+                date: ctx.assessmentDate,
+                facility: ctx.facility,
+                assessor: ctx.assessor,
+                publisher: HOST_REPORT_COPY.publisherLine,
+                sections
+            };
+        }
+
+        async function fetchRemoteHostDocx(reportHTML, reportTitle) {
+            const endpoint = getHostReportRenderUrl();
+            if (!endpoint) {
+                return { ok: false, reason: 'no_url' };
+            }
+            const generic_report = buildHostRemoteGenericReportPayload(reportHTML, reportTitle);
+            const res = await fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ generic_report }),
+                signal: AbortSignal.timeout(120000)
+            });
+            const ct = (res.headers.get('content-type') || '').toLowerCase();
+            if (!res.ok) {
+                const errText = await res.text();
+                throw new Error(errText || `Remote report HTTP ${res.status}`);
+            }
+            if (ct.includes('json')) {
+                const errText = await res.text();
+                throw new Error(errText || 'Remote report returned an error.');
+            }
+            if (
+                !ct.includes('wordprocessingml') &&
+                !ct.includes('octet-stream') &&
+                !ct.includes('application/zip')
+            ) {
+                const maybe = await res.text();
+                throw new Error(maybe || 'Remote report did not return a DOCX file.');
+            }
+            const blob = await res.blob();
+            const filename = `HOST_${sanitizeHostDocxFilenamePart(generic_report.facility)}_${sanitizeHostDocxFilenamePart(generic_report.date)}.docx`;
+            return { ok: true, blob, filename };
+        }
+
+        function triggerHostDocxDownload(blob, filename) {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            setTimeout(() => URL.revokeObjectURL(url), 2000);
+        }
+
+        function loadMammothForPrint() {
+            if (typeof window.mammoth !== 'undefined' && window.mammoth.convertToHtml) {
+                return Promise.resolve();
+            }
+            const existing = document.querySelector('script[data-host-mammoth="1"]');
+            if (existing) {
+                return new Promise((resolve) => {
+                    if (window.mammoth && window.mammoth.convertToHtml) {
+                        resolve();
+                        return;
+                    }
+                    existing.addEventListener('load', () => resolve());
+                    existing.addEventListener('error', () => resolve());
+                });
+            }
+            return new Promise((resolve) => {
+                const s = document.createElement('script');
+                s.src = getHostAssetUrl('Assets/js/mammoth.browser.min.js');
+                s.async = true;
+                s.setAttribute('data-host-mammoth', '1');
+                s.onload = () => resolve();
+                s.onerror = () => resolve();
+                document.head.appendChild(s);
+            });
+        }
+
+        async function fetchDocxTemplateHtml() {
+            if (typeof window.mammoth === 'undefined' || !window.mammoth.convertToHtml) {
+                return '';
+            }
+            try {
+                const url = getHostAssetUrl('Assets/report template.docx');
+                const res = await fetch(url);
+                if (!res.ok) return '';
+                const arrayBuffer = await res.arrayBuffer();
+                const result = await window.mammoth.convertToHtml({ arrayBuffer });
+                return String(result.value || '').trim();
+            } catch (e) {
+                console.warn('HOST: Could not convert Assets/report template.docx for print.', e);
+                return '';
+            }
+        }
+
+        async function buildPrintableReportDocument(reportHTML, reportTitle) {
             const cleanedHTML = absolutizeReportHtmlAssetUrls(
                 String(reportHTML || '')
                     .replace(/<div class="report-utility-bar">[\s\S]*?<\/div>/g, '')
@@ -26407,6 +26709,8 @@
                     .replace(/<div class="print-legal-block" role="note">[\s\S]*?<\/div>/g, '')
                     .replace(/<footer class="print-page-footer" role="contentinfo">[\s\S]*?<\/footer>/g, '')
             );
+            await loadMammothForPrint();
+            const docxTemplateHtml = await fetchDocxTemplateHtml();
             const ctx = getReportPrintContext(reportTitle);
             const safeTitle = escapeHtmlForReport(ctx.title);
             const safeFacility = escapeHtmlForReport(ctx.facility);
@@ -26425,6 +26729,42 @@
             const safeFooterPublisher = escapeHtmlForReport(HOST_REPORT_COPY.publisherLine);
             const safeFooterTagline = escapeHtmlForReport(HOST_REPORT_COPY.printFooterTagline);
             const safeReportVersion = escapeHtmlForReport(HOST_APP_VERSION);
+            const legalBlockHtml = `
+                        <div class="print-legal-block print-report-note" role="note">
+                            <p>${safeShortDisclaimer}</p>
+                            <p>${safeCisaAttribution}</p>
+                            <p>${safeCopyright}</p>
+                        </div>`;
+            const footerBlockHtml = `
+                        <footer class="print-report-footer" role="contentinfo">
+                            <div class="print-footer-tagline">${safeFooterTagline}</div>
+                            <div class="print-footer-publisher">${safeFooterPublisher}</div>
+                            <div class="print-footer-copyright">${safeCopyright}</div>
+                        </footer>`;
+            if (docxTemplateHtml) {
+                return `
+                <!doctype html>
+                <html>
+                <head>
+                    <meta charset="utf-8">
+                    <title>${safeTitle}</title>
+                    <link rel="stylesheet" href="${getHostStylesheetUrl('Assets/css/host-report.css')}">
+                </head>
+                <body>
+                    <main class="print-body print-sheet print-layout-docx">
+                        <section class="print-docx-template" aria-label="Layout from Word template">
+                            ${docxTemplateHtml}
+                        </section>
+                        ${legalBlockHtml}
+                        <div class="host-report-generated">
+                        ${cleanedHTML}
+                        </div>
+                        ${footerBlockHtml}
+                    </main>
+                </body>
+                </html>
+            `;
+            }
             return `
                 <!doctype html>
                 <html>
@@ -26451,17 +26791,11 @@
                                 </div>
                             </div>
                         </header>
-                        <div class="print-legal-block print-report-note" role="note">
-                            <p>${safeShortDisclaimer}</p>
-                            <p>${safeCisaAttribution}</p>
-                            <p>${safeCopyright}</p>
-                        </div>
+                        ${legalBlockHtml}
+                        <div class="host-report-generated">
                         ${cleanedHTML}
-                        <footer class="print-report-footer" role="contentinfo">
-                            <div class="print-footer-tagline">${safeFooterTagline}</div>
-                            <div class="print-footer-publisher">${safeFooterPublisher}</div>
-                            <div class="print-footer-copyright">${safeCopyright}</div>
-                        </footer>
+                        </div>
+                        ${footerBlockHtml}
                     </main>
                 </body>
                 </html>
@@ -26480,7 +26814,7 @@
             return body;
         }
 
-        function printCurrentReport() {
+        async function printCurrentReport() {
             const readiness = validateAssessmentData(collectAllFormData());
             if (!readiness.valid) {
                 alert(formatPrintValidationMessage(readiness));
@@ -26499,7 +26833,30 @@
                 alert('No report content available to print.');
                 return;
             }
-            const printableHTML = buildPrintableReportDocument(reportHTMLToPrint, cachedReportTitle);
+
+            if (getHostReportRenderUrl()) {
+                try {
+                    const remote = await fetchRemoteHostDocx(reportHTMLToPrint, cachedReportTitle);
+                    if (remote && remote.ok && remote.blob && remote.filename) {
+                        triggerHostDocxDownload(remote.blob, remote.filename);
+                        alert(
+                            'A Word report (.docx) was downloaded from the remote template service. Open it in Microsoft Word (or compatible software) and use File → Print to send to your printer.'
+                        );
+                        return;
+                    }
+                } catch (remoteErr) {
+                    console.warn('HOST: Railway report-service DOCX unavailable, using browser print layout.', remoteErr);
+                }
+            }
+
+            let printableHTML;
+            try {
+                printableHTML = await buildPrintableReportDocument(reportHTMLToPrint, cachedReportTitle);
+            } catch (printBuildError) {
+                console.error('Print document build failed:', printBuildError);
+                alert('Unable to prepare print view. Please try again.');
+                return;
+            }
 
             // Preferred path: hidden iframe print (works when popups are blocked).
             const iframe = document.createElement('iframe');
