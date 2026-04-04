@@ -22,6 +22,7 @@ class VOFCFieldMappings {
         this.addMapping('V003', 'secforce_trained_all_plans', { value: 'No', operator: 'equals' });
         this.addMapping('V003', 'secforce_reporting', { value: '', operator: 'is_empty' });
 
+        // V004: life-safety / resilience signals (FACP access, backup power) — not a substitute for a written EOP survey
         this.addMapping('V004', 'fire_panel_access', { value: 'Open Access', operator: 'equals' });
         this.addMapping('V004', 'security_backup_power', { value: 'No', operator: 'equals' });
 
@@ -50,8 +51,7 @@ class VOFCFieldMappings {
         this.addMapping('V011', 'vss_network_segmentation', { value: 'No', operator: 'equals' });
         this.addMapping('V011', 'vss_network_segmentation', { value: 'Unknown', operator: 'equals' });
 
-        this.addMapping('V012', 'fire_panel_access', { value: 'Open Access', operator: 'equals' });
-        this.addMapping('V012', 'security_backup_power', { value: 'No', operator: 'equals' });
+        // V012: consolidated into V004 (identical triggers) — keep V012 row in catalog for OFC012 text only
 
         this.addMapping('V013', 'vip_access_control_systems', { value: 'No VIP Access Control', operator: 'equals' });
         this.addMapping('V013', 'vip_vehicle_screening', { value: 'No Screening', operator: 'equals' });
@@ -138,7 +138,7 @@ class VOFCFieldMappings {
         this.addMapping('V038', 'secforce_trained_all_plans', { value: 'No', operator: 'equals' });
         this.addMapping('V038', 'security_backup_power', { value: 'No', operator: 'equals' });
 
-        this.addMapping('V039', 'has_ev_charging', { value: 'No', operator: 'equals' });
+        // V039: removed auto-trigger — absence of EV charging is not a security defect; add EV/site fields before re-enabling
 
         this.addMapping('V040', 'vip_staff_training', { value: 'Basic Service Training', operator: 'equals' });
         this.addMapping('V040', 'vip_staff_training', { value: 'No Special Training', operator: 'equals' });
@@ -146,11 +146,9 @@ class VOFCFieldMappings {
         this.addMapping('V041', 'vip_vehicle_screening', { value: 'No Screening', operator: 'equals' });
         this.addMapping('V041', 'vip_parking_type', { value: 'Surface Level', operator: 'equals' });
 
-        this.addMapping('V042', 'pool_access_control', { value: 'Open Access', operator: 'equals' });
-        this.addMapping('V042', 'pool_vss_coverage', { value: 'None', operator: 'equals' });
+        // V042: consolidated into V015 (same pool triggers)
 
-        this.addMapping('V043', 'vip_staff_background_checks', { value: 'No Background Checks', operator: 'equals' });
-        this.addMapping('V043', 'secforce_certs', { value: '', operator: 'is_empty' });
+        // V043: consolidated into V016 (same VIP staff / Security Force credential triggers)
 
         this.addMapping('V044', 'els_present', { value: 'No', operator: 'equals' });
         this.addMapping('V044', 'fire_panel_access', { value: 'Open Access', operator: 'equals' });
@@ -158,18 +156,13 @@ class VOFCFieldMappings {
         this.addMapping('V045', 'vss_monitored_by', { value: 'For Evidence Only', operator: 'equals' });
         this.addMapping('V045', 'monitoring_hours', { value: 'Business Hours', operator: 'equals' });
 
-        this.addMapping('V046', 'secforce_reporting', { value: '', operator: 'is_empty' });
-        this.addMapping('V046', 'secforce_trained_all_plans', { value: 'No', operator: 'equals' });
+        // V046: consolidated into V019 (same Security Force reporting / training triggers)
 
-        this.addMapping('V047', 'security_backup_power', { value: 'No', operator: 'equals' });
-        this.addMapping('V047', 'security_backup_power', { value: 'Partial', operator: 'equals' });
-        this.addMapping('V047', 'system_integration', { value: 'Standalone Systems', operator: 'equals' });
+        // V047: consolidated into V020 (same backup power / integration triggers)
 
-        this.addMapping('V048', 'vss_network_segmentation', { value: 'No', operator: 'equals' });
-        this.addMapping('V048', 'vss_network_segmentation', { value: 'Unknown', operator: 'equals' });
+        // V048: consolidated into V021 (same VSS network segmentation triggers)
 
-        this.addMapping('V049', 'secforce_247', { value: 'No', operator: 'equals' });
-        this.addMapping('V049', 'monitoring_hours', { value: 'On-Demand', operator: 'equals' });
+        // V049: consolidated into V022 (same staffing / monitoring triggers — receiving/delivery physical security proxy only; not food safety regulation)
 
         this.addMapping('V050', 'secforce_247', { value: 'No', operator: 'equals' });
         this.addMapping('V050', 'standoff_signage_restricted', { value: 'No', operator: 'equals' });

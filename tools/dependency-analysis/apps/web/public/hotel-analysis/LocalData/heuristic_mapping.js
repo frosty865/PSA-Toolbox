@@ -237,24 +237,6 @@ class HeuristicVulnerabilityMapper {
                 severity: 'High',
                 category: 'Dependencies-Critical Products'
             },
-
-            // FIFA Requirements
-            'guest_room_count': {
-                intent: 'FIFA minimum room capacity',
-                standard: 'FIFA-Accommodation Capacity',
-                expected: '>= 1000',
-                vulnerability_if: '< 1000',
-                severity: 'High',
-                category: 'FIFA-Accommodation Capacity'
-            },
-            'number_of_floors': {
-                intent: 'FIFA minimum floor count',
-                standard: 'FIFA-Accommodation Capacity',
-                expected: '>= 5',
-                vulnerability_if: '< 5',
-                severity: 'Medium',
-                category: 'FIFA-Accommodation Capacity'
-            },
         };
     }
 

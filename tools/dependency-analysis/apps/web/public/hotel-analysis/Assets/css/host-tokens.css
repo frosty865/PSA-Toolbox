@@ -3,9 +3,17 @@
  * Single source for DHS/CISA blues and print palette used by styles.css and host-report.css.
  */
 :root {
-    --host-print-margin-x: 0.7in;
+    /* Printable report: match Assets/report template.docx (Letter, pgMar / body styles). */
+    --host-print-margin-top: 1in;
+    --host-print-margin-right: 0.625in;
+    --host-print-margin-bottom: 1in;
+    --host-print-margin-left: 1in;
+    /** @deprecated use host-print-margin-left/right — kept for older single-value call sites */
+    --host-print-margin-x: 1in;
+    /* Word template Heading2 / Heading3 (secondary blues, not hero #005288) */
+    --host-template-heading2-blue: #2f5496;
+    --host-template-heading3-blue: #1f3763;
     --host-dhs-blue: #005288;
-    --host-dhs-blue-deep: #003d5c;
     --host-dhs-light-blue: #0078ae;
     --host-dhs-dark-gray: #5a5b5d;
     --host-dhs-gray-10: #fcfdfd;

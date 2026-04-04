@@ -22,9 +22,9 @@ body {
     color: var(--brand-steel);
     background:
         linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
-        linear-gradient(90deg, transparent 0 calc(100% - 1px), rgba(192, 194, 196, 0.08) calc(100% - 1px)),
-        linear-gradient(transparent 0 calc(100% - 1px), rgba(192, 194, 196, 0.08) calc(100% - 1px)),
-        linear-gradient(180deg, #ffffff 0%, var(--host-dhs-gray-15) 100%);
+        linear-gradient(90deg, transparent 0 calc(100% - 1px), rgba(148, 163, 184, 0.06) calc(100% - 1px)),
+        linear-gradient(transparent 0 calc(100% - 1px), rgba(148, 163, 184, 0.06) calc(100% - 1px)),
+        linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
     background-size: auto, 120px 120px, 120px 120px, auto, auto;
 }
 
@@ -95,7 +95,7 @@ body.tsp-theme .tsp-button {
     --cisa-text-body: #1e293b;
     --cisa-text-muted: #475569;
     --cisa-border: rgba(0, 82, 136, 0.2);
-    --cisa-panel-dark: linear-gradient(180deg, rgba(0, 40, 70, 0.96), rgba(0, 31, 51, 0.94));
+    --cisa-panel-dark: linear-gradient(180deg, rgba(19, 35, 58, 0.96), rgba(15, 23, 42, 0.94));
 }
 
 /* Typography */
@@ -120,12 +120,12 @@ h6 { font-size: 1rem; }
     padding: 0 1rem;
 }
 
-/* Header — DHS blues only (no portfolio indigo / brass). */
+/* Header */
 .header, .site-security-header {
     background:
         linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-        radial-gradient(circle at 18% 18%, rgba(0, 120, 174, 0.18), transparent 24%),
-        linear-gradient(135deg, var(--host-dhs-blue-deep) 0%, var(--host-dhs-blue) 45%, var(--host-dhs-light-blue) 100%) !important;
+        radial-gradient(circle at 18% 18%, rgba(196, 139, 73, 0.2), transparent 24%),
+        linear-gradient(135deg, var(--brand-night), var(--brand-blue)) !important;
     background-size: 150px 150px, auto, auto !important;
     color: white !important;
     padding: 2rem 0 !important;
@@ -207,8 +207,8 @@ h6 { font-size: 1rem; }
 .site-security-header {
     background:
         linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-        radial-gradient(circle at 18% 18%, rgba(0, 120, 174, 0.18), transparent 24%),
-        linear-gradient(135deg, var(--host-dhs-blue-deep) 0%, var(--host-dhs-blue) 45%, var(--host-dhs-light-blue) 100%) !important;
+        radial-gradient(circle at 18% 18%, rgba(196, 139, 73, 0.2), transparent 24%),
+        linear-gradient(135deg, var(--brand-night), var(--brand-blue)) !important;
     background-size: 150px 150px, auto, auto !important;
     color: white !important;
     padding: 2rem 0 !important;
@@ -281,8 +281,8 @@ h6 { font-size: 1rem; }
 /* Progress Section */
 .progress-section {
     background:
-        linear-gradient(180deg, rgba(0, 40, 70, 0.96), rgba(0, 31, 51, 0.94)),
-        linear-gradient(135deg, rgba(0, 120, 174, 0.08), rgba(255, 255, 255, 0));
+        linear-gradient(180deg, rgba(19, 35, 58, 0.96), rgba(15, 23, 42, 0.94)),
+        linear-gradient(135deg, rgba(196, 139, 73, 0.08), rgba(255, 255, 255, 0));
     border: 1px solid rgba(203, 213, 225, 0.16);
     border-radius: 14px;
     padding: 1.5rem;
@@ -362,12 +362,12 @@ h6 { font-size: 1rem; }
 }
 
 .progress-percentage {
-    background: linear-gradient(135deg, var(--host-dhs-blue-deep) 0%, var(--host-dhs-blue) 50%, var(--host-dhs-light-blue) 100%);
+    background: linear-gradient(135deg, var(--brand-night), var(--brand-blue));
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 999px;
     font-weight: 600;
-    box-shadow: 0 12px 28px rgba(0, 40, 70, 0.2);
+    box-shadow: 0 12px 28px rgba(29, 78, 216, 0.18);
 }
 
 .progress-bar {
@@ -381,7 +381,7 @@ h6 { font-size: 1rem; }
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--host-dhs-blue), #5e9732);
+    background: linear-gradient(90deg, var(--accent-blue), var(--success-green));
     transition: width 0.3s ease;
 }
 
@@ -454,8 +454,8 @@ h6 { font-size: 1rem; }
 
 .content-area {
     background:
-        linear-gradient(180deg, rgba(0, 40, 70, 0.96), rgba(0, 31, 51, 0.94)),
-        linear-gradient(135deg, rgba(0, 120, 174, 0.08), rgba(255, 255, 255, 0));
+        linear-gradient(180deg, rgba(19, 35, 58, 0.96), rgba(15, 23, 42, 0.94)),
+        linear-gradient(135deg, rgba(196, 139, 73, 0.08), rgba(255, 255, 255, 0));
     border: 1px solid rgba(203, 213, 225, 0.16);
     border-radius: 14px;
     padding: 2rem;
@@ -557,7 +557,7 @@ h6 { font-size: 1rem; }
 .landing-hero-figure-bg {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(245, 245, 246, 0.95) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(241, 245, 249, 0.9) 100%);
     pointer-events: none;
 }
 
@@ -586,10 +586,10 @@ h6 { font-size: 1rem; }
     padding: 1.75rem;
     border-radius: 0;
     border: none;
-    border-right: 1px solid rgba(192, 194, 196, 0.22);
+    border-right: 1px solid rgba(239, 223, 200, 0.12);
     background:
-        radial-gradient(circle at top right, rgba(0, 120, 174, 0.22), transparent 28%),
-        linear-gradient(135deg, rgba(0, 31, 51, 0.98) 0%, rgba(0, 82, 136, 0.96) 52%, rgba(0, 61, 92, 0.94) 100%);
+        radial-gradient(circle at top right, rgba(196, 139, 73, 0.2), transparent 26%),
+        linear-gradient(135deg, rgba(8, 17, 29, 0.98), rgba(29, 78, 216, 0.92));
 }
 
 .landing-eyebrow {
@@ -860,13 +860,13 @@ body.tsp-theme .data-management-panel .data-table tbody tr:hover td {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--host-dhs-blue-deep) 0%, var(--host-dhs-blue) 48%, var(--host-dhs-light-blue) 100%);
+    background: linear-gradient(135deg, var(--brand-night), var(--brand-blue));
     color: white;
-    box-shadow: 0 16px 34px rgba(0, 40, 70, 0.22);
+    box-shadow: 0 16px 34px rgba(29, 78, 216, 0.2);
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, rgba(0, 61, 92, 1) 0%, var(--host-dhs-blue) 55%, var(--host-dhs-light-blue) 100%);
+    background: linear-gradient(135deg, #0b1220, var(--brand-blue-deep));
     transform: translateY(-1px);
 }
 
@@ -932,7 +932,7 @@ body[data-current-section="landing_page"] .progress-steps {
 body:not(.tsp-theme)[data-current-section="landing_page"] .site-security-header {
     background:
         linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(135deg, rgba(0, 61, 92, 0.92), rgba(0, 40, 70, 0.82)) !important;
+        linear-gradient(135deg, rgba(8, 17, 29, 0.88), rgba(15, 23, 42, 0.72)) !important;
     background-size: 140px 140px, auto !important;
     margin-bottom: 0 !important;
     box-shadow: none !important;
@@ -1051,7 +1051,7 @@ body.tsp-theme .vulnerability-dashboard .summary-card,
 body.tsp-theme .vulnerability-item,
 body.tsp-theme .data-management {
     background: var(--cisa-panel-dark),
-        linear-gradient(135deg, rgba(0, 120, 174, 0.08), rgba(255, 255, 255, 0));
+        linear-gradient(135deg, rgba(196, 139, 73, 0.08), rgba(255, 255, 255, 0));
     border: 1px solid rgba(203, 213, 225, 0.16);
     color: #f8fafc;
     box-shadow: 0 18px 42px rgba(2, 6, 23, 0.32);
@@ -1254,7 +1254,7 @@ body.tsp-theme h6 {
 
 /* DHS blue masthead (CISA in-house), not portfolio indigo */
 body.tsp-theme .site-security-header {
-    background: linear-gradient(135deg, var(--host-dhs-blue) 0%, var(--host-dhs-blue-deep) 42%, var(--host-dhs-light-blue) 100%) !important;
+    background: linear-gradient(135deg, var(--host-dhs-blue) 0%, #003d5c 42%, var(--host-dhs-light-blue) 100%) !important;
     border-bottom: 3px solid rgba(255, 255, 255, 0.25) !important;
     box-shadow: 0 8px 24px rgba(0, 40, 70, 0.22) !important;
 }
@@ -1325,14 +1325,14 @@ body.tsp-theme .landing-subtitle {
 }
 
 body.tsp-theme .landing-hero--cisa .btn-primary {
-    background: linear-gradient(135deg, var(--host-dhs-blue) 0%, var(--host-dhs-blue-deep) 45%, var(--host-dhs-light-blue) 100%) !important;
+    background: linear-gradient(135deg, var(--host-dhs-blue) 0%, #003d5c 45%, var(--host-dhs-light-blue) 100%) !important;
     color: #ffffff !important;
     border: none !important;
     box-shadow: 0 10px 26px rgba(0, 40, 70, 0.28) !important;
 }
 
 body.tsp-theme .landing-hero--cisa .btn-primary:hover {
-    background: linear-gradient(135deg, var(--host-dhs-blue-deep) 0%, var(--host-dhs-blue) 55%, var(--host-dhs-light-blue) 100%) !important;
+    background: linear-gradient(135deg, #003d5c 0%, var(--host-dhs-blue) 55%, #4a9ec4 100%) !important;
     color: #ffffff !important;
 }
 
@@ -1435,14 +1435,14 @@ body.tsp-theme .progress-fill {
 }
 
 body.tsp-theme .btn-primary {
-    background: linear-gradient(135deg, var(--host-dhs-blue) 0%, var(--host-dhs-blue-deep) 48%, var(--host-dhs-light-blue) 100%) !important;
+    background: linear-gradient(135deg, var(--host-dhs-blue) 0%, #003d5c 48%, var(--host-dhs-light-blue) 100%) !important;
     color: #ffffff !important;
     border: none !important;
     box-shadow: 0 12px 28px rgba(0, 40, 70, 0.22) !important;
 }
 
 body.tsp-theme .btn-primary:hover {
-    background: linear-gradient(135deg, var(--host-dhs-blue-deep) 0%, var(--host-dhs-blue) 50%, var(--host-dhs-light-blue) 100%) !important;
+    background: linear-gradient(135deg, #003d5c 0%, var(--host-dhs-blue) 50%, #5aa9c4 100%) !important;
     color: #ffffff !important;
 }
 
@@ -1957,7 +1957,7 @@ body.tsp-theme .main-content .section .question-item {
 }
 
 body.tsp-theme .main-content .section .card-header {
-    background: linear-gradient(180deg, var(--host-dhs-gray-10) 0%, var(--host-dhs-gray-15) 100%) !important;
+    background: linear-gradient(180deg, var(--cisa-surface-header) 0%, var(--cisa-surface-header-end) 100%) !important;
     border-bottom: 2px solid var(--cisa-dhs-blue) !important;
 }
 
@@ -2042,7 +2042,7 @@ body.tsp-theme #landing_page .landing-content .card:not(.landing-hero-panel) {
 }
 
 body.tsp-theme #landing_page .landing-content .card:not(.landing-hero-panel) .card-header {
-    background: linear-gradient(180deg, var(--host-dhs-gray-10) 0%, var(--host-dhs-gray-15) 100%) !important;
+    background: linear-gradient(180deg, var(--cisa-surface-header) 0%, var(--cisa-surface-header-end) 100%) !important;
     border-bottom: 2px solid var(--cisa-dhs-blue) !important;
 }
 

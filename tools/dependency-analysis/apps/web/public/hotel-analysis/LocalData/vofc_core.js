@@ -189,6 +189,7 @@ class VOFCVulnerabilityEngine {
             backup_systems: ['security_backup_power'],
             data_protection: ['vss_network_segmentation'],
             privacy_measures: ['vss_network_segmentation'],
+            // Delivery/receiving coverage proxy (physical security only—not food safety regulation)
             food_security: ['secforce_247'],
             beverage_security: ['secforce_247'],
             laundry_security: ['secforce_247'],
@@ -237,7 +238,7 @@ class VOFCVulnerabilityEngine {
             incident_management: ['secforce_reporting'],
             crisis_response: ['secforce_trained_all_plans'],
             backup_procedures: ['security_backup_power'],
-            kitchen_security: ['secforce_247'],
+            kitchen_security: ['secforce_247'], // legacy alias; HOST does not assess kitchen food-safety law
             service_area_security: ['secforce_247']
         };
     }

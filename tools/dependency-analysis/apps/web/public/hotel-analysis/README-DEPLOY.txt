@@ -10,13 +10,12 @@ Steps
 1. Extract the ZIP so you get a folder named: HOST-V3
 2. Open either:
    - index.html   (recommended launcher), or
-   - HOST V3.html or HOST-V3.html (same app)
+   - HOST V3.html (canonical app file)
 
 Keep this structure (example):
   HOST-V3\
     index.html
     HOST V3.html
-    HOST-V3.html
     Assets\
     LocalData\
     src\

@@ -23048,12 +23048,12 @@
                 
                 const analysis = performComprehensiveAnalysis(data);
                 console.log('Analysis completed:', analysis);
-
-                const report = buildApprovedTemplateReport(data, analysis);
+                
+                const report = considerComprehensiveFullReport(data, analysis);
                 if (!report || typeof report !== 'string') {
                     throw new Error('Report renderer returned empty output.');
                 }
-                console.log('Approved template report HTML generated, length:', report.length);
+                console.log('Final report HTML generated, length:', report.length);
                 
                 displayReport(report, getHostReportTitleFallback());
                 return report;
@@ -25542,175 +25542,6 @@
 
         function getHostReportTitleFallback() {
             return `${HOST_REPORT_COPY.productName} — ${HOST_REPORT_COPY.reportTitleDefault}`;
-        }
-
-        function buildApprovedTemplateReport(data, analysis) {
-            const facilityInfo = data.sections?.facility_info || {};
-            const assessmentInfo = data.sections?.assessment_info || {};
-            const vulnerabilityList = Array.isArray(analysis?.vulnerabilities) ? analysis.vulnerabilities : [];
-            const opportunityList = Array.isArray(analysis?.opportunities) ? analysis.opportunities : [];
-            const reportScoreStored = Number(analysis?.securityPostureScore);
-            const reportSecurityScore = Number.isFinite(reportScoreStored)
-                ? reportScoreStored
-                : calculateSecurityPostureScore(vulnerabilityList, opportunityList);
-            const completedFieldCount = Object.values(data.sections || {}).reduce((sum, section) => {
-                const values = Object.values(section || {});
-                return sum + values.filter(v => v !== undefined && v !== null && String(v).trim() !== '').length;
-            }, 0);
-            const severityOrder = { critical: 4, significant: 4, high: 3, medium: 2, low: 1 };
-            const orderedFindings = [...vulnerabilityList].sort((a, b) => {
-                const sa = severityOrder[String(a.severity || '').toLowerCase()] || 0;
-                const sb = severityOrder[String(b.severity || '').toLowerCase()] || 0;
-                return sb - sa;
-            });
-            const priorityFindings = orderedFindings.slice(0, 8);
-            const topRecommendations = orderedFindings
-                .filter(v => Array.isArray(v.recommendations) && v.recommendations.length > 0)
-                .slice(0, 6);
-            const facilityName = escapeHtmlForReport(facilityInfo.hotel_name || 'Not Specified');
-            const assessmentDate = escapeHtmlForReport(assessmentInfo.assessment_date || new Date().toLocaleDateString());
-            const assessorName = escapeHtmlForReport(assessmentInfo.assessor_name || 'Security Assessment Team');
-            const reportVersion = escapeHtmlForReport(HOST_APP_VERSION);
-            const reportScore = escapeHtmlForReport(String(reportSecurityScore));
-            const standards = escapeHtmlForReport('ISO 31030, ISO 22301');
-
-            const executiveBullets = [
-                `Assessment responses captured: ${completedFieldCount}`,
-                `Standards scope: ${standards}`,
-                `Posture score: ${reportScore}/100`,
-                `Findings captured: ${vulnerabilityList.length}`
-            ];
-
-            const findingsHtml = priorityFindings.length > 0
-                ? `<ol class="report-list">${priorityFindings.map(v => `<li><strong>${escapeHtmlForReport(v.title || 'Finding')}:</strong> ${escapeHtmlForReport(summarizeFindingConsequence(v))}</li>`).join('')}</ol>`
-                : '<p>No findings were captured in the current assessment data.</p>';
-
-            const recommendationsHtml = topRecommendations.length > 0
-                ? `<ol class="report-list">${topRecommendations.map(v => `<li><strong>${escapeHtmlForReport(v.title || 'Recommendation')}:</strong> ${escapeHtmlForReport(primaryConsiderationActionText(v))}</li>`).join('')}</ol>`
-                : `<p>${escapeHtmlForReport(HOST_REPORT_COPY.noEmbeddedOptionsLine)}</p>`;
-
-            const body = `
-                <div class="approved-report-shell">
-                    <header class="approved-report-header">
-                        <div class="approved-report-kicker">Hotel Operational Security Toolkit (HOST)</div>
-                        <h1>${HOST_REPORT_COPY.productName}</h1>
-                        <p class="approved-report-subtitle">${HOST_REPORT_COPY.reportSubtitle}</p>
-                        <div class="approved-report-meta">
-                            <div><strong>Property:</strong> ${facilityName}</div>
-                            <div><strong>Assessment date:</strong> ${assessmentDate}</div>
-                            <div><strong>Assessor:</strong> ${assessorName}</div>
-                            <div><strong>Report:</strong> v${reportVersion}</div>
-                        </div>
-                    </header>
-
-                    <section class="report-section approved-report-section" id="report-executive">
-                        <h2>Executive Summary</h2>
-                        <p>${escapeHtmlForReport(HOST_REPORT_COPY.hostAdvisoryBody)}</p>
-                        <ul class="report-bullets">
-                            ${executiveBullets.map(item => `<li>${escapeHtmlForReport(item)}</li>`).join('')}
-                        </ul>
-                        <p><strong>Approved standards scope:</strong> ${standards}</p>
-                    </section>
-
-                    <section class="report-section approved-report-section" id="report-findings">
-                        <h2>Findings</h2>
-                        ${findingsHtml}
-                    </section>
-
-                    <section class="report-section approved-report-section" id="report-recommendations">
-                        <h2>Recommendations</h2>
-                        ${recommendationsHtml}
-                    </section>
-
-                    <section class="report-section approved-report-section" id="report-body-end">
-                        <h2>Report Notes</h2>
-                        <p>${escapeHtmlForReport(HOST_REPORT_COPY.methodologyAttribution)}</p>
-                        <p>${escapeHtmlForReport(HOST_REPORT_COPY.shortDisclaimer)}</p>
-                    </section>
-                </div>
-            `;
-            window.__lastApprovedDocxPayload = buildApprovedTemplateDocxPayload(data, analysis, {
-                title: `${HOST_REPORT_COPY.productName} — ${HOST_REPORT_COPY.reportTitleDefault}`,
-                subtitle: HOST_REPORT_COPY.reportSubtitle,
-                facility: facilityInfo.hotel_name || 'Not Specified',
-                assessor: assessmentInfo.assessor_name || 'Security Assessment Team',
-                date: assessmentInfo.assessment_date || new Date().toLocaleDateString(),
-                version: HOST_APP_VERSION,
-                score: reportSecurityScore
-            });
-            return body;
-        }
-
-        function buildApprovedTemplateDocxPayload(data, analysis, meta = {}) {
-            const facilityInfo = data.sections?.facility_info || {};
-            const assessmentInfo = data.sections?.assessment_info || {};
-            const vulnerabilities = Array.isArray(analysis?.vulnerabilities) ? analysis.vulnerabilities : [];
-            const ordered = [...vulnerabilities].sort((a, b) => {
-                const rank = { critical: 4, significant: 4, high: 3, medium: 2, low: 1 };
-                return (rank[String(b.severity || '').toLowerCase()] || 0) - (rank[String(a.severity || '').toLowerCase()] || 0);
-            });
-            const executiveParagraphs = [
-                `Property: ${meta.facility || facilityInfo.hotel_name || 'Not Specified'}`,
-                `Assessment date: ${meta.date || assessmentInfo.assessment_date || new Date().toLocaleDateString()}`,
-                `Assessor: ${meta.assessor || assessmentInfo.assessor_name || 'Security Assessment Team'}`,
-                `Report version: ${meta.version || HOST_APP_VERSION}`,
-                `Standards scope: ISO 31030, ISO 22301`,
-                `Assessment responses captured: ${Object.values(data.sections || {}).reduce((sum, section) => {
-                    const values = Object.values(section || {});
-                    return sum + values.filter(v => v !== undefined && v !== null && String(v).trim() !== '').length;
-                }, 0)}`
-            ];
-            const findingsBullets = ordered.slice(0, 8).map(v => `${v.title || 'Finding'}: ${summarizeFindingConsequence(v)}`);
-            const recommendationsBullets = ordered
-                .filter(v => Array.isArray(v.recommendations) && v.recommendations.length > 0)
-                .slice(0, 6)
-                .map(v => `${v.title || 'Recommendation'}: ${primaryConsiderationActionText(v)}`);
-            return {
-                template_key: 'hotel-analysis',
-                title: meta.title || `${HOST_REPORT_COPY.productName} — ${HOST_REPORT_COPY.reportTitleDefault}`,
-                subtitle: meta.subtitle || HOST_REPORT_COPY.reportSubtitle,
-                header_left: meta.facility || facilityInfo.hotel_name || 'Not Specified',
-                header_right: meta.date || assessmentInfo.assessment_date || new Date().toLocaleDateString(),
-                footer_left: HOST_REPORT_COPY.printFooterTagline,
-                footer_right: HOST_REPORT_COPY.publisherLine,
-                version: meta.version || HOST_APP_VERSION,
-                date: meta.date || assessmentInfo.assessment_date || new Date().toLocaleDateString(),
-                facility: meta.facility || facilityInfo.hotel_name || 'Not Specified',
-                assessor: meta.assessor || assessmentInfo.assessor_name || 'Security Assessment Team',
-                publisher: HOST_REPORT_COPY.publisherLine,
-                methodology: HOST_REPORT_COPY.methodologyAttribution,
-                note: HOST_REPORT_COPY.shortDisclaimer,
-                sections: [
-                    {
-                        role: 'executive',
-                        heading: 'Executive Summary',
-                        paragraphs: executiveParagraphs,
-                        bullets: [
-                            `Posture score: ${meta.score ?? 'n/a'}/100`,
-                            `Findings captured: ${vulnerabilities.length}`,
-                            'This report is advisory and should be validated against local policy.'
-                        ]
-                    },
-                    {
-                        role: 'findings',
-                        heading: 'Findings',
-                        bullets: findingsBullets.length > 0 ? findingsBullets : ['No findings were captured in the current assessment data.']
-                    },
-                    {
-                        role: 'recommendations',
-                        heading: 'Recommendations',
-                        bullets: recommendationsBullets.length > 0 ? recommendationsBullets : [HOST_REPORT_COPY.noEmbeddedOptionsLine]
-                    },
-                    {
-                        role: 'notes',
-                        heading: 'Report Notes',
-                        paragraphs: [
-                            HOST_REPORT_COPY.methodologyAttribution,
-                            HOST_REPORT_COPY.shortDisclaimer
-                        ]
-                    }
-                ]
-            };
         }
 
         /** Normalize title for deduplication (executive views). */
