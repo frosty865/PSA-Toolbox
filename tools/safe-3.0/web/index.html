@@ -1811,30 +1811,14 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
             <button class="nav-tab" data-section="report-review" data-tooltip="Report Review - Review security findings and suggestions">
                 <i class="fas fa-search"></i>
             </button>
-            <button class="nav-tab" data-section="executive-summary" data-tooltip="Executive Summary - High-level security posture overview">
-                <i class="fas fa-chart-line"></i>
-            </button>
             <button class="nav-tab" data-section="final-report" data-tooltip="Final Report - Complete security findings and suggestions">
                 <i class="fas fa-file-alt"></i>
             </button>
         </div>
 
-        <!-- Report Action Bar - Only visible for Executive Summary and Final Report -->
+        <!-- Report Action Bar - Only visible for Final Report -->
         <div id="reportActionBar" class="report-action-bar" style="display: none;">
             <div class="report-action-content">
-                <!-- Executive Summary Buttons -->
-                <div id="executiveSummaryButtons" class="report-buttons" style="display: none;">
-                    <button class="btn btn-primary" onclick="generateExecutiveSummaryData()">
-                        📊 Generate Executive Summary
-                    </button>
-                    <button class="btn btn-warning" onclick="previewExecutiveSummary()">
-                        👁️ Print Preview
-                        </button>
-                    <button class="btn btn-success" onclick="printExecutiveSummary()">
-                        🖨️ Print Executive Summary
-                        </button>
-                </div>
-                
                 <!-- Final Report Buttons -->
                 <div id="finalReportButtons" class="report-buttons" style="display: none;">
                     <button class="btn btn-primary" onclick="generateFinalReport()">
@@ -4678,7 +4662,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
         </section>
 
         <!-- Executive Summary Section -->
-        <section id="executive-summary" class="section">
+        <section id="executive-summary" class="section" style="display: none;">
             <div class="section-header">
                 <h2 class="section-title">Executive Summary</h2>
                 <p style="margin: 0.5rem 0 0 0; font-size: var(--font-size-sm); color: var(--cisa-gray);">
@@ -4969,16 +4953,10 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
             
             // Handle report action bar visibility
             const reportActionBar = document.getElementById('reportActionBar');
-            const executiveSummaryButtons = document.getElementById('executiveSummaryButtons');
             const finalReportButtons = document.getElementById('finalReportButtons');
             
-            if (sectionId === 'executive-summary') {
+            if (sectionId === 'final-report') {
                 reportActionBar.style.display = 'block';
-                executiveSummaryButtons.style.display = 'flex';
-                finalReportButtons.style.display = 'none';
-            } else if (sectionId === 'final-report') {
-                reportActionBar.style.display = 'block';
-                executiveSummaryButtons.style.display = 'none';
                 finalReportButtons.style.display = 'flex';
             } else {
                 reportActionBar.style.display = 'none';
@@ -12635,8 +12613,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
         }
 
         function previewExecutiveSummary() {
-            console.log('previewExecutiveSummary called');
-            // Generate executive summary content using the same data collection as report generation
+            return previewFinalReport();
             const assessmentData = window.collectReportReviewData();
             if (!assessmentData || !assessmentData.facilityName || assessmentData.facilityName === 'Not specified') {
                 showWarningBanner('Please complete an assessment first!', 'warning');
@@ -12948,8 +12925,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
         }
 
         function printExecutiveSummary() {
-            console.log('printExecutiveSummary called');
-            // Generate executive summary content using the same data collection as report generation
+            return printFinalReport();
             const assessmentData = window.collectReportReviewData();
             if (!assessmentData || !assessmentData.facilityName || assessmentData.facilityName === 'Not specified') {
                 showWarningBanner('Please complete an assessment first!', 'warning');
@@ -13200,22 +13176,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
 
 
         function generateExecutiveSummaryData() {
-            // This function generates the executive summary data and populates the executive summary section
-            console.log('generateExecutiveSummaryData called');
-            
-            // Check if we have assessment data
-            const reportData = window.collectReportReviewData ? window.collectReportReviewData() : {};
-            if (!reportData || Object.keys(reportData).length === 0) {
-                showWarningBanner('Please complete the assessment and generate a report review first.', 'warning');
-                return;
-            }
-            
-            // Generate the executive summary
-            if (window.generateExecutiveSummary) {
-                window.generateExecutiveSummary();
-            } else {
-                showErrorBanner('Executive Summary generation function not available.', 'error');
-            }
+            return generateFinalReport();
         }
         </script>
         
