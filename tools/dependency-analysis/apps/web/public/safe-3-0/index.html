@@ -2013,7 +2013,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label">Facility Address *</label>
+                    <label class="form-label">Physical Address *</label>
                     <input type="text" class="form-input" id="facilityAddress" name="facilityAddress" placeholder="Street address" required="">
                 </div>
 
@@ -2149,6 +2149,11 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                         <option value="Water and Wastewater Systems">Water and Wastewater Systems</option>
                         <option value="Other">Other</option>
                     </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Subsector *</label>
+                    <input type="text" class="form-input" id="subsector" name="subsector" placeholder="Enter subsector" required="">
                 </div>
 
                 <div class="form-group">
@@ -5490,7 +5495,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
             }
             
             // Collect facility information fields
-            const facilityFields = ['facilityName', 'facilityAddress', 'facilityCity', 'facilityState', 'facilityZip', 'facilityCountry', 'facilityPhone', 'facilityEmail', 'facilityLatitude', 'facilityLongitude', 'assessmentDate', 'sector', 'facilityType', 'employeeCount', 'facilitySize', 'operatingHours'];
+            const facilityFields = ['facilityName', 'facilityAddress', 'physicalAddress', 'facilityCity', 'facilityState', 'facilityZip', 'facilityCountry', 'facilityPhone', 'facilityEmail', 'facilityLatitude', 'facilityLongitude', 'assessmentDate', 'sector', 'subsector', 'facilityType', 'employeeCount', 'facilitySize', 'operatingHours'];
             facilityFields.forEach(field => {
                 const element = document.getElementById(field);
                 if (element) {
@@ -9353,6 +9358,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                 phone: document.getElementById('facilityPhone')?.value || 'Not specified',
                 email: document.getElementById('facilityEmail')?.value || 'Not specified',
                 sector: document.getElementById('sector')?.value || 'Not specified',
+                subsector: document.getElementById('subsector')?.value || 'Not specified',
                 type: document.getElementById('facilityType')?.value || 'Not specified',
                 employeeCount: document.getElementById('employeeCount')?.value || 'Not specified',
                 facilitySize: document.getElementById('facilitySize')?.value || 'Not specified',
@@ -9677,6 +9683,9 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                         <h3 style="font-size: 1.45rem; margin-bottom: var(--spacing-md);">${facilityInfo.name}</h3>
                         <p style="font-size: 1.03rem; margin: var(--spacing-xs) 0;"><strong>Assessment Date:</strong> ${facilityInfo.assessmentDate}</p>
                         <p style="font-size: 1.03rem; margin: var(--spacing-xs) 0;"><strong>Sector:</strong> ${facilityInfo.sector}</p>
+                        <p style="font-size: 1.03rem; margin: var(--spacing-xs) 0;"><strong>Subsector:</strong> ${facilityInfo.subsector || 'Not specified'}</p>
+                        <p style="font-size: 1.03rem; margin: var(--spacing-xs) 0;"><strong>Physical Address:</strong> ${facilityInfo.physicalAddress || facilityInfo.address || 'Not specified'}</p>
+                        <p style="font-size: 1.03rem; margin: var(--spacing-xs) 0;"><strong>Coordinates:</strong> ${document.getElementById('facilityLatitude')?.value || 'Not specified'}, ${document.getElementById('facilityLongitude')?.value || 'Not specified'}</p>
                         <p style="font-size: 1.03rem; margin: var(--spacing-xs) 0;"><strong>Location:</strong> ${facilityInfo.city}, ${facilityInfo.state}</p>
                         <p style="font-size: 1.03rem; margin: var(--spacing-xs) 0;"><strong>Assessor:</strong> ${facilityInfo.assessorName}</p>
                     </div>
@@ -13485,6 +13494,8 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                 facilityEmail: document.getElementById('facilityEmail')?.value || 'Not specified',
                 facilityLatitude: document.getElementById('facilityLatitude')?.value || 'Not specified',
                 facilityLongitude: document.getElementById('facilityLongitude')?.value || 'Not specified',
+                physicalAddress: document.getElementById('facilityAddress')?.value || 'Not specified',
+                subsector: document.getElementById('subsector')?.value || 'Not specified',
                 assessorName: document.getElementById('assessorName')?.value || 'Not specified',
                 assessorTitle: document.getElementById('assessorTitle')?.value || 'Not specified',
                 assessorAgency: document.getElementById('assessorAgency')?.value || 'CISA',
