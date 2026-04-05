@@ -1824,8 +1824,8 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                     <button class="btn btn-primary" onclick="generateFinalReport()">
                         📋 Generate Final Report
                     </button>
-                    <button class="btn btn-warning" onclick="previewFinalReport()">
-                        ⬇️ Download DOCX
+                    <button class="btn btn-warning" onclick="generateFinalReport()">
+                        🔄 Regenerate Final Report
                         </button>
                     <button class="btn btn-info" onclick="printFinalReport()">
                         ⬇️ Download DOCX
@@ -10624,7 +10624,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
         }
 
         function getReportServiceUrl() {
-            return window.REPORT_SERVICE_URL || window.SAFE_REPORT_SERVICE_URL || 'http://localhost:8080/render';
+            return window.REPORT_SERVICE_URL || window.SAFE_REPORT_SERVICE_URL || '/render';
         }
 
         function buildSafeDocxPayload() {
