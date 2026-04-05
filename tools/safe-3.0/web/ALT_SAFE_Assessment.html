@@ -19,8 +19,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- HTML2PDF.js for PDF generation -->
-    <script src="https://unpkg.com/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
-    <!-- CISA Design System CSS -->
+        <!-- CISA Design System CSS -->
     <style>
         :root {
             /* CISA Official Color Palette */
@@ -1831,20 +1830,20 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                         👁️ Print Preview
                         </button>
                     <button class="btn btn-success" onclick="printExecutiveSummary()">
-                        🖨️ Print Executive Summary
+                        ⬇️ Download DOCX
                         </button>
                 </div>
                 
                 <!-- Final Report Buttons -->
                 <div id="finalReportButtons" class="report-buttons" style="display: none;">
                     <button class="btn btn-primary" onclick="generateFinalReport()">
-                        📋 Generate Final Report
+                        📋 Prepare DOCX Report
                     </button>
                     <button class="btn btn-warning" onclick="previewFinalReport()">
                         👁️ Print Preview
                         </button>
                     <button class="btn btn-info" onclick="printFinalReport()">
-                        🖨️ Print Report
+                        ⬇️ Download DOCX
                         </button>
                 </div>
             </div>
@@ -4895,7 +4894,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
             <div class="report-content" id="reportContent">
                 <div class="report-message">
                     <i class="fas fa-info-circle"></i>
-                    Click "Generate Final Report" to create your comprehensive assessment report
+                    SAFE final reports are prepared as DOCX downloads. Use the button below to download the report.
             </div>
             </div>
 
@@ -11006,13 +11005,51 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
             previewWindow.document.close();
         }
 
-        function printFinalReport() {
-            console.log('printFinalReport called');
-            const reportContent = document.getElementById('reportContent');
-            if (!reportContent) {
-                showSuccessBanner('Please generate the Final Report first!', 'warning');
-                return;
+        function getReportServiceUrl() {
+            return window.REPORT_SERVICE_URL || window.SAFE_REPORT_SERVICE_URL || '/api/report/generate';
+        }
+
+        async function downloadSafeDocxReport() {
+            try {
+                const reportContent = document.getElementById('reportContent');
+                if (!reportContent) {
+                    showSuccessBanner('Please generate the Final Report first!', 'warning');
+                    return;
+                }
+                const payload = {
+                    generic_report: {
+                        template_key: 'safe'
+                    }
+                };
+                const serviceUrl = getReportServiceUrl();
+                const response = await fetch(serviceUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+                if (!response.ok) {
+                    throw new Error(`DOCX export failed: ${response.status}`);
+                }
+                const blob = await response.blob();
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = 'SAFE Final Report.docx';
+                document.body.appendChild(link);
+                link.click();
+                setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+                link.remove();
+                showSuccessBanner('DOCX report downloaded successfully!', 'Success');
+            } catch (error) {
+                console.error('Error downloading DOCX report:', error);
+                showSuccessBanner('DOCX export failed: ' + error.message, 'error');
             }
+        }
+
+        function printFinalReport() {
+            return downloadSafeDocxReport();
+        }
             const reportHTML = buildCurrentFinalReportHTML();
             reportContent.innerHTML = reportHTML;
             
@@ -12918,13 +12955,8 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
         }
 
         function printExecutiveSummary() {
-            console.log('printExecutiveSummary called');
-            // Generate executive summary content using the same data collection as report generation
-            const assessmentData = window.collectReportReviewData();
-            if (!assessmentData || !assessmentData.facilityName || assessmentData.facilityName === 'Not specified') {
-                showWarningBanner('Please complete an assessment first!', 'warning');
-                return;
-            }
+            return downloadSafeDocxReport();
+        }
             
             // Create a new window with only the executive summary content
             const printWindow = window.open('', '_blank', 'width=800,height=600');
