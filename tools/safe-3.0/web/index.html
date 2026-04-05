@@ -1825,10 +1825,10 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                         📋 Generate Final Report
                     </button>
                     <button class="btn btn-warning" onclick="previewFinalReport()">
-                        👁️ Print Preview
+                        ⬇️ Download DOCX
                         </button>
                     <button class="btn btn-info" onclick="printFinalReport()">
-                        🖨️ Print Report
+                        ⬇️ Download DOCX
                         </button>
                 </div>
             </div>
@@ -10708,1435 +10708,161 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
             // No manual input fields to populate
         }
 
+        function getReportServiceUrl() {
+            return window.REPORT_SERVICE_URL || window.SAFE_REPORT_SERVICE_URL || 'http://localhost:8080/render';
+        }
 
-        function previewFinalReport() {
-            console.log('previewFinalReport called');
-            // Get the report content
+        function buildSafeDocxPayload() {
+            const reportData = window.collectReportReviewData ? window.collectReportReviewData() : {};
+            const facilityInfo = collectFacilityInfo();
+            const contactInfo = collectContactInfo();
+            const currentDate = new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            const totalStandards = reportData?.totals?.totalStandards || 0;
+            const metStandards = reportData?.totals?.totalStandardsMet || 0;
+            const totalStandardsLost = reportData?.totals?.totalStandardsLost || 0;
+            const totalEnhancementOptions = reportData?.totals?.totalEnhancementOptions || 0;
+            const totalCommendables = reportData?.totals?.totalCommendables || 0;
+            const posturePct = totalStandards > 0 ? Math.round((metStandards / totalStandards) * 100) : 0;
+            const postureLabel = posturePct >= 80 ? 'High' : posturePct >= 60 ? 'Moderate' : 'Low';
+            const totalVulnerabilities = Array.isArray(reportData?.vulnerabilities) ? reportData.vulnerabilities.length : 0;
+            const byCategory = {};
+            (reportData?.vulnerabilities || []).forEach((item) => {
+                const category = item?.category || 'Uncategorized';
+                if (!byCategory[category]) byCategory[category] = [];
+                const ofc = (item?.optionsForConsideration || '').trim();
+                byCategory[category].push(`${item?.question || 'Untitled issue'}${ofc ? ` - OFC: ${ofc}` : ''}`);
+            });
+            const categoryText = (name) => {
+                const items = byCategory[name] || [];
+                if (!items.length) return [`No findings documented for ${name.toLowerCase()}.`];
+                return items;
+            };
+            const bulletsFrom = (items) => (items && items.length ? items : ['No items documented.']);
+            const facilityLocation = [facilityInfo.city, facilityInfo.state].filter(Boolean).join(', ') || 'Not specified';
+            const psaName = contactInfo.psaName || facilityInfo.assessorName || 'Not specified';
+            const psaRegion = document.getElementById('psaRegion')?.value || '';
+            const psaCity = document.getElementById('psaCity')?.value || '';
+            const psaCell = contactInfo.psaPhone || document.getElementById('psaCell')?.value || 'Not specified';
+            const psaEmail = contactInfo.psaEmail || 'Not specified';
+            const sections = [
+                { heading: 'Executive Summary', paragraphs: [
+                    `This assessment reviewed ${totalStandards} standards and found ${metStandards} currently met.`,
+                    `Overall posture is ${postureLabel} (${posturePct}%).`,
+                    totalStandardsLost > 0 ? `There are ${totalStandardsLost} standards currently lost that require remediation.` : 'No standards are currently lost.',
+                    totalEnhancementOptions > 0 ? `${totalEnhancementOptions} enhancement option${totalEnhancementOptions === 1 ? '' : 's'} were identified.` : 'No enhancement options were identified.',
+                    totalCommendables > 0 ? `${totalCommendables} commendable practice${totalCommendables === 1 ? ' was' : 's were'} documented.` : 'No commendable practices were documented.'
+                ] },
+                { heading: 'Facility Information', paragraphs: [
+                    `Facility: ${facilityInfo.name || 'Not specified'}`,
+                    `Assessment date: ${facilityInfo.assessmentDate || 'Not specified'}`,
+                    `Sector: ${facilityInfo.sector || 'Not specified'}`,
+                    `Location: ${facilityLocation}`,
+                    `Assessor: ${facilityInfo.assessorName || 'Not specified'}`
+                ] },
+                { heading: 'Information Sharing & Communication', paragraphs: categoryText('Information Sharing') },
+                { heading: 'Security Plans & Management', paragraphs: categoryText('Security Plans') },
+                { heading: 'Security Systems', paragraphs: categoryText('Security Systems') },
+                { heading: 'Physical Security', paragraphs: categoryText('Physical Security') },
+                { heading: 'Commendable Practices', bullets: bulletsFrom((reportData?.commendables || []).map((item) => {
+                    const text = item?.question || item?.item || item?.title || '';
+                    return text ? `${text}${item?.impact ? ` - ${item.impact}` : ''}` : '';
+                }).filter(Boolean)) },
+                { heading: 'Custom Vulnerabilities & Options for Consideration', bullets: bulletsFrom((reportData?.vulnerabilities || []).map((item) => {
+                    const question = item?.question || 'Untitled issue';
+                    const category = item?.category ? ` (${item.category})` : '';
+                    const ofc = item?.optionsForConsideration ? ` - OFC: ${item.optionsForConsideration}` : '';
+                    return `${question}${category}${ofc}`;
+                }).filter(Boolean)) },
+                { heading: 'Points of Contact', paragraphs: [
+                    `PSA Name: ${psaName}`,
+                    `PSA Region: ${psaRegion || 'Not specified'}`,
+                    `PSA City: ${psaCity || 'Not specified'}`,
+                    `PSA Cell: ${psaCell || 'Not specified'}`,
+                    `PSA Email: ${psaEmail || 'Not specified'}`
+                ] },
+                { heading: 'Report Review', paragraphs: [
+                    `Total standards: ${totalStandards}`,
+                    `Standards met: ${metStandards}`,
+                    `Standards lost: ${totalStandardsLost}`,
+                    `Enhancement options: ${totalEnhancementOptions}`,
+                    `Commendable practices: ${totalCommendables}`,
+                    `Documented vulnerabilities: ${totalVulnerabilities}`
+                ] },
+                { heading: 'Final Report', paragraphs: [
+                    `Generated on ${currentDate}.`,
+                    `This document replaces the browser print/PDF flow and should be used as the authoritative SAFE report output.`
+                ] }
+            ];
+
+            return {
+                generic_report: {
+                    template_key: 'safe',
+                    title: 'ALT SAFE',
+                    subtitle: 'Security Assessment Report',
+                    facility: facilityInfo.name || 'Not specified',
+                    assessor: facilityInfo.assessorName || psaName,
+                    date: facilityInfo.assessmentDate || currentDate,
+                    publisher: 'Cybersecurity and Infrastructure Security Agency',
+                    version: 'Version: Alpha V3',
+                    note: '',
+                    header_left: facilityInfo.name || 'Not specified',
+                    header_right: facilityInfo.assessmentDate || currentDate,
+                    footer_left: 'Cybersecurity and Infrastructure Security Agency',
+                    footer_right: 'Department of Homeland Security',
+                    psa_name: psaName,
+                    psa_region: psaRegion,
+                    psa_city: psaCity,
+                    psa_cell: psaCell,
+                    psa_email: psaEmail,
+                    sections,
+                }
+            };
+        }
+
+        async function downloadSafeDocxReport() {
             const reportContent = document.getElementById('reportContent');
             if (!reportContent || reportContent.innerHTML.includes('Click "Generate Final Report"')) {
                 showSuccessBanner('Please generate the Final Report first!', 'warning');
                 return;
             }
-            
-            // Create a new window with only the report content for preview
-            const previewWindow = window.open('', '_blank', 'width=800,height=600,scrollbars=yes');
-            
-            // Get the report HTML content and fix logo paths
-            let reportHTML = reportContent.innerHTML;
-            // Fix logo path for preview window
-            reportHTML = reportHTML.replace(/src="assets\//g, 'src="./assets/');
-            
-            // Preserve original formatting by including the original CSS
-            const originalCSS = `
-                <style>
-                    /* Include original CISA design system styles */
-                    :root {
-                        --cisa-blue: #1e3a8a;
-                        --cisa-blue-dark: #1e40af;
-                        --cisa-blue-light: #3b82f6;
-                        --cisa-blue-lightest: #dbeafe;
-                        --cisa-green: #059669;
-                        --cisa-green-dark: #047857;
-                        --cisa-green-light: #10b981;
-                        --cisa-green-lightest: #d1fae5;
-                        --cisa-yellow: #d97706;
-                        --cisa-yellow-dark: #b45309;
-                        --cisa-yellow-light: #f59e0b;
-                        --cisa-yellow-lightest: #fef3c7;
-                        --cisa-red: #dc2626;
-                        --cisa-red-dark: #b91c1c;
-                        --cisa-red-light: #ef4444;
-                        --cisa-red-lightest: #fee2e2;
-                        --cisa-gray: #6b7280;
-                        --cisa-gray-dark: #374151;
-                        --cisa-gray-light: #d1d5db;
-                        --cisa-gray-lightest: #f9fafb;
-                        --cisa-white: #ffffff;
-                        --tlp-red: #dc2626;
-                        --tlp-yellow: #d97706;
-                        --tlp-green: #059669;
-                        --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                        --font-size-xs: 0.75rem;
-                        --font-size-sm: 0.875rem;
-                        --font-size-base: 1rem;
-                        --font-size-lg: 1.125rem;
-                        --font-size-xl: 1.25rem;
-                        --font-size-2xl: 1.5rem;
-                        --font-size-3xl: 1.875rem;
-                        --spacing-xs: 0.25rem;
-                        --spacing-sm: 0.5rem;
-                        --spacing-md: 1rem;
-                        --spacing-lg: 1.5rem;
-                        --spacing-xl: 2rem;
-                        --spacing-xxl: 3rem;
-                        --border-radius: 0.375rem;
-                        --border-radius-lg: 0.5rem;
-                        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-                        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-                    }
-                    
-                    /* Preserve original report styling */
-                    .report-cover-page {
-                        background: white !important;
-                        color: var(--cisa-blue-dark) !important;
-                        border: 2px solid var(--cisa-blue) !important;
-                        text-align: center !important;
-                        padding: var(--spacing-xxl) !important;
-                        min-height: 80vh !important;
-                        display: flex !important;
-                        flex-direction: column !important;
-                        justify-content: center !important;
-                    }
-                    
-                    .report-toc {
-                        padding: var(--spacing-xl) !important;
-                    }
-                    
-                    .report-section {
-                        padding: var(--spacing-xl) !important;
-                    }
-                    
-                    .kpi-grid {
-                        display: grid !important;
-                        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
-                        gap: var(--spacing-lg) !important;
-                        margin: var(--spacing-lg) 0 !important;
-                    }
-                    
-                    .kpi-card {
-                        background: var(--cisa-white) !important;
-                        border: 2px solid var(--cisa-blue-light) !important;
-                        border-radius: var(--border-radius) !important;
-                        padding: var(--spacing-lg) !important;
-                        text-align: center !important;
-                        box-shadow: var(--shadow-sm) !important;
-                    }
-                    
-                    .kpi-number {
-                        font-size: 2rem !important;
-                        font-weight: 700 !important;
-                        color: var(--cisa-blue) !important;
-                        margin-bottom: var(--spacing-sm) !important;
-                    }
-                    
-                    .kpi-label {
-                        font-weight: 600 !important;
-                        color: var(--cisa-blue-dark) !important;
-                        margin-bottom: var(--spacing-xs) !important;
-                    }
-                    
-                    .kpi-subtitle {
-                        font-size: 0.9rem !important;
-                        color: var(--cisa-gray) !important;
-                    }
+            const payload = buildSafeDocxPayload();
+            const serviceUrl = getReportServiceUrl();
+            try {
+                const response = await fetch(serviceUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                });
+                if (!response.ok) {
+                    const message = await response.text();
+                    throw new Error(message || `Report service returned ${response.status}`);
+                }
+                const blob = await response.blob();
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'SAFE Final Report.docx';
+                document.body.appendChild(link);
+                link.click();
+                link.remove();
+                setTimeout(() => URL.revokeObjectURL(url), 1000);
+                showSuccessBanner('DOCX report downloaded successfully!', 'Success');
+            } catch (error) {
+                console.error('Error downloading DOCX report:', error);
+                showSuccessBanner(`DOCX export failed: ${error.message}`, 'warning');
+            }
+        }
 
-                    .final-report-layout .report-kpi-strip {
-                        display: grid !important;
-                        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
-                        gap: 10px !important;
-                    }
-                    .final-report-layout .report-kpi-card {
-                        border: 1px solid #c7d7f0 !important;
-                        background: #ffffff !important;
-                        border-radius: 8px !important;
-                        padding: 12px !important;
-                        text-align: center !important;
-                        box-shadow: 0 1px 3px rgba(0,0,0,0.08) !important;
-                    }
-                    .final-report-layout .report-kpi-number {
-                        font-size: 1.55rem !important;
-                        font-weight: 700 !important;
-                        color: #1e3a8a !important;
-                    }
-                    
-                    h1, h2, h3, h4, h5, h6 {
-                        color: var(--cisa-blue) !important;
-                        margin-top: var(--spacing-lg) !important;
-                        margin-bottom: var(--spacing-md) !important;
-                    }
-                    
-                    h1 { font-size: 2.5rem !important; }
-                    h2 { font-size: 1.8rem !important; }
-                    h3 { font-size: 1.5rem !important; }
-                    
-                    table {
-                        border-collapse: collapse !important;
-                        width: 100% !important;
-                        margin: var(--spacing-md) 0 !important;
-                    }
-                    
-                    th, td {
-                        border: 1px solid var(--cisa-gray-light) !important;
-                        padding: var(--spacing-sm) !important;
-                        text-align: left !important;
-                    }
-                    
-                    th {
-                        background-color: var(--cisa-gray-lightest) !important;
-                        font-weight: 600 !important;
-                        color: var(--cisa-blue-dark) !important;
-                    }
-                    
-                    ${getPrintCSS()}
-                </style>
-            `;
-            
-            // Create a complete HTML document for preview
-            const previewDocument = `
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>SAFE Final Report - Print Preview</title>
-    ${originalCSS}
-    <style>
-        @page {
-            size: A4;
-            margin: 0.5in;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 10pt;
-            line-height: 1.2;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-            background: #f5f5f5;
-        }
-        
-        .preview-container {
-            max-width: 7.5in;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
-            padding: 0;
-        }
-        
-        .report-cover-page {
-            page-break-after: always;
-            page-break-inside: avoid;
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-            padding: 2in;
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
-            color: white;
-            position: relative;
-        }
-        
-        .report-cover-page::after {
-            display: none;
-        }
-        
-        .report-toc {
-            page-break-after: always;
-            page-break-inside: avoid;
-            padding: 1in;
-            position: relative;
-        }
-        
-        .report-toc::after {
-            display: none;
-        }
-        
-        .report-section {
-            page-break-before: auto;
-            page-break-after: auto;
-            page-break-inside: avoid;
-            padding: 1in;
-        }
-        
-        .report-section[style*="page-break-after: always"] {
-            page-break-after: always !important;
-            position: relative;
-        }
-        
-        .report-section[style*="page-break-after: always"]::after {
-            display: none;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            page-break-after: avoid;
-            page-break-inside: avoid;
-        }
-        
-        table {
-            page-break-inside: avoid;
-        }
-        
-        .kpi-section, .kpi-grid {
-            page-break-inside: avoid;
-        }
-        
-        ul, ol {
-            page-break-inside: avoid;
-        }
-        
-        .preview-header {
-            background: #1e3a8a;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        
-        .preview-footer {
-            background: #f0f0f0;
-            padding: 15px;
-            text-align: center;
-            font-size: 12px;
-            color: #666;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-    <div class="preview-header">
-        SAFE Final Report - Print Preview (A4 Format)
-    </div>
-    <div class="preview-container">
-        ${reportHTML}
-    </div>
-    <div class="preview-footer">
-        This preview shows how the report will appear when printed. Use Ctrl+P to print or close this window.
-    </div>
-</body>
-</html>`;
-            
-            // Write the content to the new window
-            previewWindow.document.write(previewDocument);
-            previewWindow.document.close();
+        function previewFinalReport() {
+            return downloadSafeDocxReport();
         }
 
         function printFinalReport() {
-            console.log('printFinalReport called');
-            // Get the report content
-            const reportContent = document.getElementById('reportContent');
-            if (!reportContent || reportContent.innerHTML.includes('Click "Generate Final Report"')) {
-                showSuccessBanner('Please generate the Final Report first!', 'warning');
-                return;
-            }
-            
-            // Create a new window with only the report content
-            const printWindow = window.open('', '_blank', 'width=800,height=600');
-            
-            // Get the report HTML content and fix logo paths
-            let reportHTML = reportContent.innerHTML;
-            // Fix logo path for print window
-            reportHTML = reportHTML.replace(/src="assets\//g, 'src="./assets/');
-            
-            // Preserve original formatting by including the original CSS
-            const originalCSS = `
-                <style>
-                    /* Include original CISA design system styles */
-                    :root {
-                        --cisa-blue: #1e3a8a;
-                        --cisa-blue-dark: #1e40af;
-                        --cisa-blue-light: #3b82f6;
-                        --cisa-blue-lightest: #dbeafe;
-                        --cisa-green: #059669;
-                        --cisa-green-dark: #047857;
-                        --cisa-green-light: #10b981;
-                        --cisa-green-lightest: #d1fae5;
-                        --cisa-yellow: #d97706;
-                        --cisa-yellow-dark: #b45309;
-                        --cisa-yellow-light: #f59e0b;
-                        --cisa-yellow-lightest: #fef3c7;
-                        --cisa-red: #dc2626;
-                        --cisa-red-dark: #b91c1c;
-                        --cisa-red-light: #ef4444;
-                        --cisa-red-lightest: #fee2e2;
-                        --cisa-gray: #6b7280;
-                        --cisa-gray-dark: #374151;
-                        --cisa-gray-light: #d1d5db;
-                        --cisa-gray-lightest: #f9fafb;
-                        --cisa-white: #ffffff;
-                        --tlp-red: #dc2626;
-                        --tlp-yellow: #d97706;
-                        --tlp-green: #059669;
-                        --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                        --font-size-xs: 0.75rem;
-                        --font-size-sm: 0.875rem;
-                        --font-size-base: 1rem;
-                        --font-size-lg: 1.125rem;
-                        --font-size-xl: 1.25rem;
-                        --font-size-2xl: 1.5rem;
-                        --font-size-3xl: 1.875rem;
-                        --spacing-xs: 0.25rem;
-                        --spacing-sm: 0.5rem;
-                        --spacing-md: 1rem;
-                        --spacing-lg: 1.5rem;
-                        --spacing-xl: 2rem;
-                        --spacing-xxl: 3rem;
-                        --border-radius: 0.375rem;
-                        --border-radius-lg: 0.5rem;
-                        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-                        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-                    }
-                    
-                    /* Preserve original report styling */
-                    .report-cover-page {
-                        background: white !important;
-                        color: var(--cisa-blue-dark) !important;
-                        border: 2px solid var(--cisa-blue) !important;
-                        text-align: center !important;
-                        padding: var(--spacing-xxl) !important;
-                        min-height: 80vh !important;
-                        display: flex !important;
-                        flex-direction: column !important;
-                        justify-content: center !important;
-                    }
-                    
-                    .report-toc {
-                        padding: var(--spacing-xl) !important;
-                    }
-                    
-                    .report-section {
-                        padding: var(--spacing-xl) !important;
-                    }
-                    
-                    .kpi-grid {
-                        display: grid !important;
-                        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
-                        gap: var(--spacing-lg) !important;
-                        margin: var(--spacing-lg) 0 !important;
-                    }
-                    
-                    .kpi-card {
-                        background: var(--cisa-white) !important;
-                        border: 2px solid var(--cisa-blue-light) !important;
-                        border-radius: var(--border-radius) !important;
-                        padding: var(--spacing-lg) !important;
-                        text-align: center !important;
-                        box-shadow: var(--shadow-sm) !important;
-                    }
-                    
-                    .kpi-number {
-                        font-size: 2rem !important;
-                        font-weight: 700 !important;
-                        color: var(--cisa-blue) !important;
-                        margin-bottom: var(--spacing-sm) !important;
-                    }
-                    
-                    .kpi-label {
-                        font-weight: 600 !important;
-                        color: var(--cisa-blue-dark) !important;
-                        margin-bottom: var(--spacing-xs) !important;
-                    }
-                    
-                    .kpi-subtitle {
-                        font-size: 0.9rem !important;
-                        color: var(--cisa-gray) !important;
-                    }
-
-                    .final-report-layout .report-kpi-strip {
-                        display: grid !important;
-                        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
-                        gap: 10px !important;
-                    }
-                    .final-report-layout .report-kpi-card {
-                        border: 1px solid #c7d7f0 !important;
-                        background: #ffffff !important;
-                        border-radius: 8px !important;
-                        padding: 12px !important;
-                        text-align: center !important;
-                        box-shadow: 0 1px 3px rgba(0,0,0,0.08) !important;
-                    }
-                    .final-report-layout .report-kpi-number {
-                        font-size: 1.55rem !important;
-                        font-weight: 700 !important;
-                        color: #1e3a8a !important;
-                    }
-                    
-                    h1, h2, h3, h4, h5, h6 {
-                        color: var(--cisa-blue) !important;
-                        margin-top: var(--spacing-lg) !important;
-                        margin-bottom: var(--spacing-md) !important;
-                    }
-                    
-                    h1 { font-size: 2.5rem !important; }
-                    h2 { font-size: 1.8rem !important; }
-                    h3 { font-size: 1.5rem !important; }
-                    
-                    table {
-                        border-collapse: collapse !important;
-                        width: 100% !important;
-                        margin: var(--spacing-md) 0 !important;
-                    }
-                    
-                    th, td {
-                        border: 1px solid var(--cisa-gray-light) !important;
-                        padding: var(--spacing-sm) !important;
-                        text-align: left !important;
-                    }
-                    
-                    th {
-                        background-color: var(--cisa-gray-lightest) !important;
-                        font-weight: 600 !important;
-                        color: var(--cisa-blue-dark) !important;
-                    }
-                    
-                    ${getPrintCSS()}
-                </style>
-            `;
-            
-            // Create a complete HTML document for printing
-            const printDocument = `
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>SAFE Final Report</title>
-    <style>
-        @page {
-            size: A4;
-            margin: 0.5in;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 10pt;
-            line-height: 1.2;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            max-width: 7.5in;
-            box-sizing: border-box;
-        }
-        
-        /* Clean page breaks without external borders */
-        .report-cover-page {
-            page-break-after: always;
-            page-break-inside: avoid;
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-            padding: 0.5in;
-            margin: 0;
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
-            color: white;
-            width: 100%;
-            box-sizing: border-box;
-            border: none;
-        }
-        
-        .report-toc {
-            page-break-after: always !important;
-            page-break-inside: avoid !important;
-            break-after: page !important;
-            padding: 0.5in;
-            margin: 0;
-            width: 100%;
-            box-sizing: border-box;
-            border: none;
-        }
-        
-        /* Clean section styling without problematic borders */
-        .report-section {
-            page-break-before: auto;
-            page-break-after: auto;
-            page-break-inside: auto;
-            padding: 0.5in;
-            margin: 0;
-            width: 100%;
-            box-sizing: border-box;
-            border: none;
-            background: transparent;
-        }
-        
-        /* Only force page breaks for cover page and TOC - let content flow naturally */
-        .report-cover-page {
-            page-break-after: always;
-        }
-        
-        .report-toc {
-            page-break-after: always;
-        }
-        
-        /* Let all other sections flow naturally without forced breaks */
-        
-        /* Do not strip borders on all descendants — it destroys callout boxes, KPI cards, and tables. */
-
-        /* Preserve important backgrounds for print */
-        .kpi-card {
-            background: white !important;
-        }
-        
-        .report-cover-page {
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%) !important;
-        }
-        
-        .alert, .alert-info, .alert-warning, .alert-success, .alert-danger {
-            background: #f8f9fa !important;
-            border: 1px solid #dee2e6 !important;
-        }
-        
-        .bg-light, .bg-info, .bg-warning, .bg-success, .bg-danger {
-            background: #f8f9fa !important;
-        }
-        
-        /* Preserve colored background sections */
-        [style*="background: var(--cisa-blue-lightest)"] {
-            background: #eff6ff !important;
-        }
-        
-        [style*="background: var(--cisa-red-lightest)"] {
-            background: #fef2f2 !important;
-        }
-        
-        [style*="background: var(--cisa-green-lightest)"] {
-            background: #f0fdf4 !important;
-        }
-        
-        [style*="background: var(--cisa-yellow-lightest)"] {
-            background: #fefce8 !important;
-        }
-        
-        [style*="background: var(--cisa-gray-lightest)"] {
-            background: #f9fafb !important;
-        }
-        
-        /* Preserve KPI card styling for print */
-        .kpi-card {
-            border: 2px solid #ddd !important;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
-            background: white !important;
-            padding: 1rem !important;
-            border-radius: 8px !important;
-        }
-        
-        /* Preserve specific KPI card border colors */
-        .kpi-card[style*="border: 2px solid var(--cisa-blue)"] {
-            border: 2px solid #3b82f6 !important;
-        }
-        
-        .kpi-card[style*="border: 2px solid var(--cisa-red)"] {
-            border: 2px solid #ef4444 !important;
-        }
-        
-        .kpi-card[style*="border: 2px solid var(--cisa-gray)"] {
-            border: 2px solid #6b7280 !important;
-        }
-        
-        .kpi-card[style*="border: 2px solid var(--cisa-success)"] {
-            border: 2px solid #10b981 !important;
-        }
-        
-        .kpi-card[style*="border: 2px solid var(--cisa-warning)"] {
-            border: 2px solid #f59e0b !important;
-        }
-        
-        table {
-            border: 1px solid #ddd !important;
-        }
-        
-        th, td {
-            border: 1px solid #ddd !important;
-        }
-        
-        /* Prevent breaking these elements */
-        h1, h2, h3 {
-            page-break-after: avoid;
-            page-break-inside: avoid;
-            orphans: 3;
-            widows: 3;
-        }
-        
-        h4, h5, h6 {
-            page-break-after: avoid;
-            orphans: 2;
-            widows: 2;
-        }
-        
-        /* Allow tables to break if needed, but try to keep them together */
-        table {
-            page-break-inside: auto;
-            break-inside: auto;
-            width: 100%;
-            max-width: 100%;
-            table-layout: fixed;
-            word-wrap: break-word;
-        }
-        
-        th, td {
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            min-width: 0;
-        }
-        
-        /* Keep related content together when possible */
-        .kpi-section {
-            page-break-inside: avoid;
-            break-inside: avoid;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        
-        .kpi-grid {
-            page-break-inside: avoid;
-            break-inside: avoid;
-            width: 100%;
-            box-sizing: border-box;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-        }
-        
-        /* Lists can break but try to keep items together */
-        ul, ol {
-            page-break-inside: auto;
-            break-inside: auto;
-        }
-        
-        li {
-            page-break-inside: avoid;
-            break-inside: avoid;
-        }
-        
-        /* Images should not break and must fit within page */
-        img {
-            page-break-inside: avoid;
-            break-inside: avoid;
-            max-width: 100%;
-            max-height: 4in;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-        }
-        
-        /* Ensure proper spacing */
-        .report-section + .report-section {
-            margin-top: 0;
-        }
-        
-        /* Better spacing for print */
-        p {
-            margin-bottom: 8px;
-            orphans: 2;
-            widows: 2;
-        }
-    </style>
-</head>
-<body>
-    ${reportHTML}
-</body>
-</html>`;
-            
-            // Write the content to the new window
-            printWindow.document.write(printDocument);
-            printWindow.document.close();
-            
-            // Wait for content to load, then print
-            printWindow.onload = function() {
-                printWindow.print();
-                printWindow.close();
-            };
-        }
-
-        // Executive Summary Functions
-        function generateExecutiveSummary() {
-            // Collect assessment data with fallback
-            let reportData = {};
-            let totals = {};
-            
-            // Try to get data from the report review function
-            if (window.collectReportReviewData) {
-                try {
-                    reportData = window.collectReportReviewData();
-                    totals = reportData.totals || {};
-                } catch (error) {
-                    console.log('Report review data collection failed, using fallback:', error);
-                }
-            }
-            
-            // Fallback: collect data directly from form fields
-            if (!totals.metStandards && !totals.totalStandards) {
-                totals = collectAssessmentDataDirectly();
-            }
-            
-            // Update KPI cards with null checks
-            const execStandardsMet = document.getElementById('execStandardsMet');
-            if (execStandardsMet) execStandardsMet.textContent = totals.totalStandardsMet || '0';
-            
-            const execStandardsTotal = document.getElementById('execStandardsTotal');
-            if (execStandardsTotal) execStandardsTotal.textContent = `of ${totals.totalStandards || '0'} total`;
-            
-            const execEnhancementOptions = document.getElementById('execEnhancementOptions');
-            if (execEnhancementOptions) execEnhancementOptions.textContent = totals.totalEnhancementOptions || '0';
-            
-            const execCommendables = document.getElementById('execCommendables');
-            if (execCommendables) execCommendables.textContent = totals.totalCommendables || '0';
-            
-            const execStandardsLost = document.getElementById('execStandardsLost');
-            if (execStandardsLost) execStandardsLost.textContent = totals.totalStandardsLost || '0';
-            
-            
-            // Calculate and display current assessment data
-            const currentScore = parseInt(totals.totalStandardsMet) || 0;
-            const totalStandards = parseInt(totals.totalStandards) || 0;
-            const standardsLost = parseInt(totals.totalStandardsLost) || 0;
-            const enhancementOptions = parseInt(totals.totalEnhancementOptions) || 0;
-            
-            // Update display fields with null checks
-            const currentScoreDisplay = document.getElementById('currentScoreDisplay');
-            if (currentScoreDisplay) currentScoreDisplay.textContent = currentScore;
-            
-            const totalStandardsDisplay = document.getElementById('totalStandardsDisplay');
-            if (totalStandardsDisplay) totalStandardsDisplay.textContent = totalStandards;
-            
-            const vulnerabilityRecovery = document.getElementById('vulnerabilityRecovery');
-            if (vulnerabilityRecovery) vulnerabilityRecovery.textContent = standardsLost;
-            
-            const enhancementRecovery = document.getElementById('enhancementRecovery');
-            if (enhancementRecovery) enhancementRecovery.textContent = enhancementOptions;
-            
-            // Generate streamlined executive summary sections
-            generateStreamlinedPostureChart(totals);
-            generateStreamlinedCategoryPerformance(reportData);
-            generateStreamlinedInsights(totals, reportData);
-            generateCommendablesHighlights(reportData);
-            
-            // Show insights section
-            document.getElementById('executiveInsights').style.display = 'block';
-            document.getElementById('commendablesHighlights').style.display = 'block';
-            
-            showSuccessBanner('Executive Summary generated successfully!', 'Success');
-        }
-
-        function generateStreamlinedPostureChart(totals) {
-            const container = document.getElementById('postureChart');
-            if (!container) return;
-            
-            const totalStandards = parseInt(totals.totalStandards) || 0;
-            const metStandards = parseInt(totals.totalStandardsMet) || 0;
-            const vulnerabilities = parseInt(totals.totalVulnerabilities) || 0;
-            
-            let securityPercentage = 0;
-            if (totalStandards > 0) {
-                securityPercentage = Math.round((metStandards / totalStandards) * 100);
-            }
-            
-            // Determine posture level and color
-            let postureLevel = 'Low';
-            let postureColor = 'var(--tlp-red)';
-            let postureDescription = 'Security standards require attention';
-            
-            if (securityPercentage >= 80) {
-                postureLevel = 'High';
-                postureColor = 'var(--tlp-green)';
-                postureDescription = 'Security standards met with enhancement opportunities available';
-            } else if (securityPercentage >= 60) {
-                postureLevel = 'Medium';
-                postureColor = 'var(--tlp-yellow)';
-                postureDescription = 'Security standards partially met with improvement areas identified';
-            }
-            
-            container.innerHTML = `
-                <div style="text-align: center; padding: var(--spacing-lg); background: linear-gradient(135deg, ${postureColor}15, ${postureColor}05); border-radius: var(--border-radius-lg); border: 2px solid ${postureColor}30;">
-                    <div style="font-size: 3rem; font-weight: 700; color: ${postureColor}; margin-bottom: var(--spacing-sm);">${securityPercentage}%</div>
-                    <div style="font-size: 1.2rem; font-weight: 600; color: var(--cisa-gray-dark); margin-bottom: var(--spacing-xs);">${postureLevel} Security Posture</div>
-                    <div style="font-size: 0.9rem; color: var(--cisa-gray); line-height: 1.4;">${postureDescription}</div>
-                    <div style="margin-top: var(--spacing-md); font-size: 0.8rem; color: var(--cisa-gray);">
-                        ${metStandards} of ${totalStandards} standards met
-                    </div>
-                </div>
-            `;
-        }
-
-        function generateStreamlinedCategoryPerformance(reportData) {
-            const container = document.getElementById('categoryGrid');
-            if (!container) return;
-            
-            const standardsMet = reportData.standardsMet || {};
-            const categories = Object.keys(standardsMet);
-            
-            if (categories.length === 0) {
-                container.innerHTML = `
-                    <div style="text-align: center; padding: var(--spacing-lg); color: var(--cisa-gray);">
-                        <i class="fas fa-info-circle" style="font-size: 2rem; margin-bottom: var(--spacing-sm);"></i>
-                        <p>Complete the assessment to view category performance</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            let html = '';
-            categories.forEach(category => {
-                const stats = standardsMet[category];
-                const percentage = stats.total > 0 ? Math.round((stats.met / stats.total) * 100) : 0;
-                const barWidth = Math.max(10, percentage);
-                
-                // Determine color based on performance
-                let barColor = 'var(--tlp-red)';
-                if (percentage >= 80) barColor = 'var(--tlp-green)';
-                else if (percentage >= 60) barColor = 'var(--tlp-yellow)';
-                
-                html += `
-                    <div style="background: var(--cisa-white); border: 1px solid var(--cisa-gray-light); border-radius: var(--border-radius); padding: var(--spacing-md); margin-bottom: var(--spacing-sm);">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-xs);">
-                            <span style="font-weight: 600; color: var(--cisa-gray-dark); font-size: 0.9rem;">${category}</span>
-                            <span style="font-weight: 700; color: ${barColor}; font-size: 0.9rem;">${percentage}%</span>
-                        </div>
-                        <div style="background: var(--cisa-gray-lightest); height: 8px; border-radius: 4px; overflow: hidden;">
-                            <div style="background: ${barColor}; height: 100%; width: ${barWidth}%; transition: width 0.3s ease;"></div>
-                        </div>
-                        <div style="font-size: 0.8rem; color: var(--cisa-gray); margin-top: var(--spacing-xs);">
-                            ${stats.met} of ${stats.total} standards met
-                        </div>
-                    </div>
-                `;
-            });
-            
-            container.innerHTML = html;
-        }
-
-        /**
-         * Findings that warrant executive focus first: domain-critical questions (access, alarms, plans, risk)
-         * or narrative indicating continuity, life safety, or severe consequence.
-         */
-        const EXEC_PRIORITY_QUESTION_IDS = new Set([
-            'AccessControl', 'PerimeterFencing', 'BuildingEnvelope', 'KeyControl', 'StandoffDistance',
-            'IntrusionDetection', 'AlarmMonitoring', 'SystemIntegration', 'SecurityLighting',
-            'SecurityPlan', 'PlanCoordination', 'PlanTesting', 'RiskAssessment', 'SecurityManager',
-            'EmployeeTraining', 'VideoMonitoring', 'VideoRecording', 'VideoAnalytics', 'VideoSystemType'
-        ]);
-
-        function isExecutivePriorityVulnerability(v) {
-            if (!v) return false;
-            if (v.questionId && EXEC_PRIORITY_QUESTION_IDS.has(String(v.questionId))) return true;
-            const blob = `${v.category || ''} ${v.question || ''} ${v.optionsForConsideration || ''}`.toLowerCase();
-            const patterns = [
-                /life[\s-]?safety/, /continuity|business\s+continuity|continuity\s+of\s+oper/, /cease|shutdown|shut\s*down|disrupt|outage|downtime/,
-                /operational\s+impact|interrupt\s+operat|mission\s+critical/,
-                /evacuat|lockdown|shelter|emergency\s+response|incident\s+command/,
-                /terror|active\s+shooter|weapon|explos|ballistic/,
-                /fatal|casualt|mass\s+casualt|injur(y|ies)\s+risk/,
-                /breach|unauthori[sz]ed|infiltrat|insider\s+threat/,
-                /ransom|catastrophic|imminent\s+threat|severe\s+consequence/
-            ];
-            return patterns.some((re) => re.test(blob));
-        }
-
-        function countExecutivePriorityFindings(reportData) {
-            const list = reportData && Array.isArray(reportData.vulnerabilities) ? reportData.vulnerabilities : [];
-            return list.filter(isExecutivePriorityVulnerability).length;
-        }
-
-        function generateStreamlinedInsights(totals, reportData) {
-            const container = document.getElementById('executiveInsights');
-            if (!container) return;
-            const videoProgram = collectVideoAnalyticsProgramData();
-            const rd = reportData && typeof reportData === 'object' ? reportData : {};
-            
-            const totalStandards = parseInt(totals.totalStandards) || 0;
-            const metStandards = parseInt(totals.totalStandardsMet) || 0;
-            const standardsLost = parseInt(totals.totalStandardsLost) || 0;
-            const enhancements = parseInt(totals.totalEnhancementOptions) || 0;
-            const commendables = parseInt(totals.totalCommendables) || 0;
-            const metric = (v, suffix = '') => (v === null || v === undefined || Number.isNaN(v) ? 'Not provided' : `${v}${suffix}`);
-            
-            let securityPercentage = 0;
-            if (totalStandards > 0) {
-                securityPercentage = Math.round((metStandards / totalStandards) * 100);
-            }
-
-            const findingRows = (rd.vulnerabilities && rd.vulnerabilities.length) || 0;
-            const execPriorityCount = countExecutivePriorityFindings(rd);
-            
-            // Generate key insights based on data (executive: separate enterprise-urgent themes from total gap count)
-            let keyTakeaway = '';
-            let topPriority = '';
-            let quickWin = '';
-            
-            if (securityPercentage >= 80) {
-                keyTakeaway = `Overall performance is strong at ${securityPercentage}% standards achievement. The ${standardsLost} recorded standard-level gap${standardsLost === 1 ? '' : 's'} and ${enhancements} enhancement option${enhancements === 1 ? '' : 's'} should be managed by <strong>consequence and likelihood</strong>, not by count alone.`;
-                if (execPriorityCount > 0) {
-                    topPriority = `<strong>Board- and C-suite focus:</strong> Approximately <strong>${execPriorityCount}</strong> thematic finding${execPriorityCount === 1 ? '' : 's'} align with <strong>continuity of operations</strong>, <strong>life safety</strong>, or <strong>material security consequence</strong> (from assessment scope, domain, and narrative). Resource those before lower-impact backlog items—not every open gap warrants the same executive attention.`;
-                } else {
-                    topPriority = `<strong>Board- and C-suite focus:</strong> Prioritize gaps that could <strong>interrupt operations</strong> or create <strong>unacceptable risk</strong>, even when headline counts are modest. Automated triage did not isolate a distinct high-consequence subset from text alone; review the <strong>${findingRows || 'documented'}</strong> finding row${findingRows === 1 ? '' : 's'} with your PSA to assign executive ownership where warranted.`;
-                }
-                quickWin = `Sequence remediation: close <strong>high-consequence</strong> items first, then apply the <strong>${enhancements}</strong> enhancement option${enhancements === 1 ? '' : 's'} where they deliver the largest risk reduction per your risk register.`;
-            } else if (securityPercentage >= 60) {
-                keyTakeaway = `The organization shows a <strong>moderate</strong> security posture (<strong>${securityPercentage}%</strong> standards achievement). <strong>${standardsLost}</strong> standard-level gap${standardsLost === 1 ? '' : 's'} were recorded—not all carry the same enterprise urgency; triage by <strong>business impact</strong> and <strong>exposure</strong>.`;
-                if (execPriorityCount > 0) {
-                    topPriority = `<strong>Leadership priority (consequence-based):</strong> <strong>${execPriorityCount}</strong> finding${execPriorityCount === 1 ? '' : 's'} tie to <strong>operational continuity</strong>, <strong>elevated consequence</strong>, or <strong>domain-critical controls</strong> (e.g., access, detection, alarms, emergency readiness). Address these before implying all gaps are equally urgent. The <strong>${standardsLost}</strong> figure is the full standard-gap count for program tracking.`;
-                } else {
-                    topPriority = `<strong>Leadership priority (consequence-based):</strong> Direct attention first to gaps that could <strong>cease or severely disrupt operations</strong> or <strong>materially increase life-safety or security risk</strong>. Domain and keyword triage did not isolate a subset automatically—work with your PSA to separate enterprise-critical decisions from phased remediation. Full gap count: <strong>${standardsLost}</strong> standard-level item${standardsLost === 1 ? '' : 's'}.`;
-                }
-                quickWin = `Pair <strong>consequence-based sequencing</strong> with the <strong>${enhancements}</strong> documented enhancement option${enhancements === 1 ? '' : 's'}: implement those that close the largest risk reduction per dollar and schedule.`;
-            } else {
-                keyTakeaway = `Security posture indicates <strong>substantial improvement opportunity</strong> (<strong>${securityPercentage}%</strong> achievement). <strong>${standardsLost}</strong> standard-level gap${standardsLost === 1 ? '' : 's'} need a <strong>structured roadmap</strong>; avoid labeling every gap as top priority without a risk-based stack rank.`;
-                if (execPriorityCount > 0) {
-                    topPriority = `<strong>Enterprise priority:</strong> <strong>${execPriorityCount}</strong> finding${execPriorityCount === 1 ? '' : 's'} align with <strong>continuity</strong>, <strong>severe consequence</strong>, or <strong>critical protective domains</strong>. Fund and govern these first; remaining gaps toward the <strong>${standardsLost}</strong> total should follow a phased plan.`;
-                } else {
-                    topPriority = `<strong>Enterprise priority:</strong> Establish <strong>risk appetite</strong> and prioritize gaps that threaten <strong>operations</strong> or <strong>safety and security consequence</strong>. Review the <strong>${findingRows || 'documented'}</strong> finding row${findingRows === 1 ? '' : 's'} with your PSA to decide what rises to leadership oversight. Aggregate gap count: <strong>${standardsLost}</strong>.`;
-                }
-                quickWin = `Assign <strong>owners and dates</strong> to the highest-consequence items, then batch <strong>${enhancements}</strong> enhancement option${enhancements === 1 ? '' : 's'} into funded projects with measurable risk-reduction targets.`;
-            }
-            
-            if (commendables > 0) {
-                keyTakeaway += ` The assessment also documents <strong>${commendables}</strong> commendable practice${commendables > 1 ? 's' : ''} that exceed baseline expectations—use them as models when closing gaps.`;
-            }
-            
-            container.innerHTML = `
-                <div style="background: var(--cisa-blue-lightest); padding: var(--spacing-lg); border-radius: var(--border-radius); border-left: 4px solid var(--cisa-blue); margin-bottom: var(--spacing-lg);">
-                    <h4 style="color: var(--cisa-blue-dark); margin: 0 0 var(--spacing-sm) 0; font-size: 1.1rem;">
-                        <i class="fas fa-lightbulb" style="margin-right: var(--spacing-xs);"></i>
-                        Key Takeaway
-                    </h4>
-                    <p style="margin: 0; line-height: 1.5; color: var(--cisa-gray-dark);">${keyTakeaway}</p>
-                </div>
-                
-                <div style="background: var(--cisa-red-lightest); padding: var(--spacing-lg); border-radius: var(--border-radius); border-left: 4px solid var(--cisa-red); margin-bottom: var(--spacing-lg);">
-                    <h4 style="color: var(--cisa-red-dark); margin: 0 0 var(--spacing-sm) 0; font-size: 1.1rem;">
-                        <i class="fas fa-exclamation-triangle" style="margin-right: var(--spacing-xs);"></i>
-                        Leadership priority (consequence-based)
-                    </h4>
-                    <p style="margin: 0; line-height: 1.5; color: var(--cisa-gray-dark);">${topPriority}</p>
-                </div>
-                
-                <div style="background: var(--cisa-yellow-lightest); padding: var(--spacing-lg); border-radius: var(--border-radius); border-left: 4px solid var(--cisa-yellow);">
-                    <h4 style="color: var(--cisa-yellow-dark); margin: 0 0 var(--spacing-sm) 0; font-size: 1.1rem;">
-                        <i class="fas fa-rocket" style="margin-right: var(--spacing-xs);"></i>
-                        Quick Win
-                    </h4>
-                    <p style="margin: 0; line-height: 1.5; color: var(--cisa-gray-dark);">${quickWin}</p>
-                </div>
-
-                <div style="background: var(--cisa-white); padding: var(--spacing-lg); border-radius: var(--border-radius); border: 1px solid var(--cisa-gray-light); margin-top: var(--spacing-lg);">
-                    <h4 style="color: var(--cisa-blue-dark); margin: 0 0 var(--spacing-sm) 0; font-size: 1.1rem;">
-                        <i class="fas fa-chart-line" style="margin-right: var(--spacing-xs);"></i>
-                        Video Analytics Outcome Metrics
-                    </h4>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: var(--spacing-sm);">
-                        <div><strong>Detection-to-response:</strong> ${metric(videoProgram.metrics.detectionToResponseMinutes, ' min')}</div>
-                        <div><strong>False positive rate:</strong> ${metric(videoProgram.metrics.falsePositiveRatePercent, '%')}</div>
-                        <div><strong>Unresolved alerts (30 days):</strong> ${metric(videoProgram.metrics.unresolvedAlerts30Days)}</div>
-                        <div><strong>Uptime:</strong> ${metric(videoProgram.metrics.uptimePercent, '%')}</div>
-                    </div>
-                </div>
-            `;
-        }
-
-        function updateAssessmentCounts() {
-            try {
-                console.log('🔄 Updating assessment counts...');
-                
-                // Use the proper report review data collection function
-                const reportData = window.collectReportReviewData ? window.collectReportReviewData() : {};
-                const totals = reportData.totals || {};
-                
-                console.log('📊 Report data collected:', reportData);
-                console.log('📈 Totals:', totals);
-                
-                // Update the display fields
-                const currentScoreDisplay = document.getElementById('currentScoreDisplay');
-                if (currentScoreDisplay) {
-                    currentScoreDisplay.textContent = totals.totalStandardsMet || 0;
-                    console.log('✅ Updated currentScoreDisplay:', totals.totalStandardsMet || 0);
-                } else {
-                    console.log('❌ currentScoreDisplay element not found');
-                }
-                
-                const totalStandardsDisplay = document.getElementById('totalStandardsDisplay');
-                if (totalStandardsDisplay) {
-                    totalStandardsDisplay.textContent = totals.totalStandards || 0;
-                    console.log('✅ Updated totalStandardsDisplay:', totals.totalStandards || 0);
-                } else {
-                    console.log('❌ totalStandardsDisplay element not found');
-                }
-                
-                const vulnerabilityRecovery = document.getElementById('vulnerabilityRecovery');
-                if (vulnerabilityRecovery) {
-                    vulnerabilityRecovery.textContent = totals.totalStandardsLost || 0;
-                    console.log('✅ Updated vulnerabilityRecovery:', totals.totalStandardsLost || 0);
-                } else {
-                    console.log('❌ vulnerabilityRecovery element not found');
-                }
-                
-                const enhancementRecovery = document.getElementById('enhancementRecovery');
-                if (enhancementRecovery) {
-                    enhancementRecovery.textContent = totals.totalEnhancementOptions || 0;
-                    console.log('✅ Updated enhancementRecovery:', totals.totalEnhancementOptions || 0);
-                } else {
-                    console.log('❌ enhancementRecovery element not found');
-                }
-                
-                // Update charts and insights
-                generatePostureChart(totals);
-                generateExecutiveInsights(totals);
-                
-                console.log('✅ Assessment counts update complete');
-            } catch (error) {
-                console.error('❌ Error updating assessment counts:', error);
-            }
-        }
-
-        function collectAssessmentDataDirectly() {
-            // Count YES responses and their checkboxes
-            let metStandards = 0;
-            let totalStandards = 0;
-            let vulnerabilities = 0;
-            let enhancementOptions = 0;
-            let standardsLost = 0;
-            
-            // Use the same question groups as the main counting function
-            const questionGroups = [
-                { name: 'Information Sharing', questions: ['Awareness', 'LawEnforcement', 'LawComm', 'FireAgency', 'FireComm', 'MedicalAgency', 'MedicalComm', 'FBIInfo', 'ISACInfo', 'HSINInfo', 'InfraGard', 'FederalInfo', 'StateLocalInfo', 'NeighborInfo'] },
-                { name: 'Security Plans', questions: ['SecurityManager', 'SecurityPlan', 'PlanTraining', 'PlanCoordination', 'EmployeeTraining', 'PlanTesting', 'RiskAssessment'] },
-                { name: 'Physical Security', questions: ['SecurityPersonnel', 'PerimeterFencing', 'AccessControl', 'SecurityLighting', 'StandoffDistance', 'BuildingEnvelope', 'KeyControl'] },
-                { name: 'Security Systems', questions: ['VideoAnalytics', 'VideoCoverage', 'VideoMonitoring', 'VideoRecording', 'IntrusionDetection', 'AlarmMonitoring', 'SystemIntegration'] }
-            ];
-            
-            // STEP-BY-STEP LOGIC FOR ASSESSMENT TOTALS
-            
-            // Step 1: Discount N/A questions (already handled - N/A responses are ignored)
-            
-            // Step 2: Count remaining possible YES options = Total Standards
-            questionGroups.forEach(group => {
-                group.questions.forEach(questionId => {
-                    const radioButtons = document.querySelectorAll(`input[name="${questionId}"]`);
-                    let response = '';
-                    
-                    radioButtons.forEach(radio => {
-                        if (radio.checked) {
-                            response = radio.value;
-                        }
-                    });
-                    
-                    // Only count YES and NO responses (N/A already discounted)
-                    if (response === 'yes' || response === 'no') {
-                        const allCheckboxes = document.querySelectorAll(`input[id*="${questionId}Comp"]`);
-                        totalStandards += allCheckboxes.length;
-                    }
-                });
-            });
-            
-            // Step 3: Count checked YES = Standards Met
-            questionGroups.forEach(group => {
-                group.questions.forEach(questionId => {
-                    const radioButtons = document.querySelectorAll(`input[name="${questionId}"]`);
-                    let response = '';
-                    
-                    radioButtons.forEach(radio => {
-                        if (radio.checked) {
-                            response = radio.value;
-                        }
-                    });
-                    
-                    if (response === 'yes') {
-                        const checkedCheckboxes = document.querySelectorAll(`input[id*="${questionId}Comp"]:checked`);
-                        metStandards += checkedCheckboxes.length;
-                        
-                        // Count unchecked checkboxes as enhancement options
-                        const uncheckedCheckboxes = document.querySelectorAll(`input[id*="${questionId}Comp"]:not(:checked)`);
-                        enhancementOptions += uncheckedCheckboxes.length;
-                    }
-                });
-            });
-            
-            // Step 4: Count lost YES from NO responses = Standards Lost to Vulnerabilities
-            questionGroups.forEach(group => {
-                group.questions.forEach(questionId => {
-                    const radioButtons = document.querySelectorAll(`input[name="${questionId}"]`);
-                    let response = '';
-                    
-                    radioButtons.forEach(radio => {
-                        if (radio.checked) {
-                            response = radio.value;
-                        }
-                    });
-                    
-                    if (response === 'no') {
-                        const noCheckboxes = document.querySelectorAll(`input[id*="${questionId}Comp"]`);
-                        let lostStandards = noCheckboxes.length;
-                        
-                        // Subtract lost YES options from total standards
-                        totalStandards -= lostStandards;
-                        standardsLost += lostStandards;
-                    }
-                });
-            });
-            
-            // Step 5: Count NO responses = Number of Vulnerabilities
-            questionGroups.forEach(group => {
-                group.questions.forEach(questionId => {
-                    const radioButtons = document.querySelectorAll(`input[name="${questionId}"]`);
-                    let response = '';
-                    
-                    radioButtons.forEach(radio => {
-                        if (radio.checked) {
-                            response = radio.value;
-                        }
-                    });
-                    
-                    if (response === 'no') {
-                        vulnerabilities += 1;
-                    }
-                });
-            });
-            
-            
-            // Count commendables
-            let commendables = 0;
-            for (let i = 1; i <= 3; i++) {
-                const categoryField = document.getElementById(`commendableCategory${i}`);
-                const actionField = document.getElementById(`commendableAction${i}`);
-                
-                if (categoryField?.value && actionField?.value) {
-                    commendables++;
-                }
-            }
-            
-            // Add Dynamic Commendables
-            const dynamicCommendableContainer = document.getElementById('dynamicCommendableActionsContainer');
-            if (dynamicCommendableContainer) {
-                const dynamicItems = dynamicCommendableContainer.querySelectorAll('.question-item');
-                dynamicItems.forEach((item) => {
-                    const categoryField = item.querySelector('select[id*="commendableCategory"]');
-                    const actionField = item.querySelector('textarea[id*="commendableAction"]');
-                    
-                    if (categoryField?.value && actionField?.value) {
-                        commendables++;
-                    }
-                });
-            }
-            
-            return {
-                totalStandardsMet: metStandards,
-                totalStandards: totalStandards,
-                totalEnhancementOptions: enhancementOptions,
-                totalCommendables: commendables,
-                totalStandardsLost: standardsLost
-            };
-        }
-
-        function generateExecutiveInsights(totals) {
-            const totalStandards = parseInt(totals.totalStandards) || 0;
-            const metStandards = parseInt(totals.totalStandardsMet) || 0;
-            const vulnerabilities = parseInt(totals.totalStandardsLost) || 0;
-            const enhancements = parseInt(totals.totalEnhancementOptions) || 0;
-            
-            let securityPercentage = 0;
-            if (totalStandards > 0) {
-                securityPercentage = Math.round((metStandards / totalStandards) * 100);
-            }
-            
-            // Generate key takeaway
-            let keyTakeaway = '';
-            if (securityPercentage >= 80) {
-                keyTakeaway = `Your facility demonstrates security standards with ${securityPercentage}% standards achievement. Consider maintaining current standards and implementing enhancement opportunities to improve performance.`;
-            } else if (securityPercentage >= 60) {
-                keyTakeaway = `Your facility shows moderate security standards achievement at ${securityPercentage}%. There are opportunities to strengthen your security posture through addressing identified areas and implementing enhancements.`;
-            } else {
-                keyTakeaway = `Your facility has security improvement opportunities with ${securityPercentage}% standards achievement. Attention to identified areas is recommended to enhance your security posture.`;
-            }
-            
-            // Generate top priority
-            let topPriority = '';
-            if (vulnerabilities > 0) {
-                topPriority = `Address ${vulnerabilities} identified areas. These represent security considerations that should be prioritized for attention.`;
-            } else if (enhancements > 0) {
-                topPriority = `Implement ${enhancements} available enhancement options to strengthen your security beyond basic requirements.`;
-            } else {
-                topPriority = `Maintain current security standards and consider advanced security technologies for continuous improvement.`;
-            }
-            
-            // Generate quick win
-            let quickWin = '';
-            if (enhancements > 0) {
-                quickWin = `Start with low-cost, high-impact enhancement options like employee training, signage improvements, or basic security awareness programs.`;
-            } else if (vulnerabilities > 0) {
-                quickWin = `Focus on quick fixes like updating emergency contact lists, improving lighting, or establishing regular security patrols.`;
-            } else {
-                quickWin = `Consider implementing advanced security technologies or establishing partnerships with local law enforcement for enhanced protection.`;
-            }
-            
-            // Update insight cards
-            const keyTakeawayEl = document.getElementById('keyTakeaway');
-            const topPriorityEl = document.getElementById('topPriority');
-            const quickWinEl = document.getElementById('quickWin');
-            
-            if (keyTakeawayEl) keyTakeawayEl.textContent = keyTakeaway;
-            if (topPriorityEl) topPriorityEl.textContent = topPriority;
-            if (quickWinEl) quickWinEl.textContent = quickWin;
-        }
-
-        function generatePostureChart(totals) {
-            const totalStandards = parseInt(totals.totalStandards) || 0;
-            const metStandards = parseInt(totals.totalStandardsMet) || 0;
-            const vulnerabilities = parseInt(totals.totalVulnerabilities) || 0;
-            
-            let securityPercentage = 0;
-            if (totalStandards > 0) {
-                securityPercentage = Math.round((metStandards / totalStandards) * 100);
-            }
-            
-            let postureLevel = 'Low';
-            let postureColor = 'var(--tlp-red)';
-            let postureDescription = 'Significant security gaps identified';
-            
-            if (securityPercentage >= 80) {
-                postureLevel = 'High';
-                postureColor = 'var(--tlp-green)';
-                postureDescription = 'Strong security posture with minor enhancement opportunities';
-            } else if (securityPercentage >= 60) {
-                postureLevel = 'Medium';
-                postureColor = 'var(--tlp-yellow)';
-                postureDescription = 'Moderate security posture with several areas for improvement';
-            }
-
-            const postureChart = document.getElementById('postureChart');
-            postureChart.innerHTML = `
-                <div style="text-align: center; padding: var(--spacing-lg);">
-                    <div style="font-size: 3rem; font-weight: 700; color: ${postureColor}; margin-bottom: var(--spacing-sm);">${securityPercentage}%</div>
-                    <div style="font-size: 1.2rem; font-weight: 600; color: var(--cisa-blue-dark); margin-bottom: var(--spacing-xs);">${postureLevel} Security Posture</div>
-                    <p style="color: var(--cisa-gray); font-size: 1rem; line-height: 1.5; margin-bottom: var(--spacing-md);">${postureDescription}</p>
-                    <div style="background: ${postureColor}; height: 8px; border-radius: 4px; width: ${securityPercentage}%; margin: 0 auto;"></div>
-                    <p style="margin-top: var(--spacing-xs); font-size: 0.9rem; color: var(--cisa-gray);">${metStandards} of ${totalStandards} standards met</p>
-                </div>
-            `;
-        }
-
-        function generateCategoryPerformance(reportData) {
-            const categoryGrid = document.getElementById('categoryGrid');
-            const totals = reportData.totals || {};
-            
-            // Calculate category performance metrics
-            const categories = [
-                {
-                    name: 'Information Sharing',
-                    icon: 'fas fa-comments',
-                    color: 'var(--cisa-blue)',
-                    standards: 42, // Approximate based on 14 questions with ~3 standards each
-                    met: Math.floor((totals.totalStandardsMet || 0) * 0.25), // Rough estimate
-                    description: 'Communication & Intelligence'
-                },
-                {
-                    name: 'Security Plans',
-                    icon: 'fas fa-clipboard-list',
-                    color: 'var(--cisa-green)',
-                    standards: 21, // Approximate based on 7 questions
-                    met: Math.floor((totals.totalStandardsMet || 0) * 0.20),
-                    description: 'Planning & Management'
-                },
-                {
-                    name: 'Physical Security',
-                    icon: 'fas fa-building',
-                    color: 'var(--cisa-blue)',
-                    standards: 21, // Approximate based on 7 questions
-                    met: Math.floor((totals.totalStandardsMet || 0) * 0.25),
-                    description: 'Access & Perimeter'
-                },
-                {
-                    name: 'Security Systems',
-                    icon: 'fas fa-cogs',
-                    color: 'var(--cisa-red)',
-                    standards: 21, // Approximate based on 7 questions
-                    met: Math.floor((totals.totalStandardsMet || 0) * 0.30),
-                    description: 'Technology & Monitoring'
-                }
-            ];
-
-            let categoryHTML = '';
-            categories.forEach(category => {
-                const percentage = category.standards > 0 ? Math.round((category.met / category.standards) * 100) : 0;
-                const progressColor = percentage >= 80 ? 'var(--tlp-green)' : percentage >= 60 ? 'var(--tlp-yellow)' : 'var(--tlp-red)';
-                
-                categoryHTML += `
-                    <div style="background: var(--cisa-white); border: 2px solid ${category.color}; border-radius: var(--border-radius); padding: var(--spacing-md); text-align: center; box-shadow: var(--shadow-sm);">
-                        <div style="color: ${category.color}; font-size: 1.5rem; margin-bottom: var(--spacing-xs);">
-                            <i class="${category.icon}"></i>
-                        </div>
-                        <h4 style="color: var(--cisa-blue-dark); margin-bottom: var(--spacing-xs); font-size: 1rem;">${category.name}</h4>
-                        <p style="color: var(--cisa-gray); font-size: 0.8rem; margin-bottom: var(--spacing-sm);">${category.description}</p>
-                        <div style="font-size: 1.2rem; font-weight: 700; color: ${category.color}; margin-bottom: var(--spacing-xs);">
-                            ${category.met}/${category.standards}
-                        </div>
-                        <div style="background: var(--cisa-gray-lightest); height: 6px; border-radius: 3px; margin-bottom: var(--spacing-xs);">
-                            <div style="background: ${progressColor}; height: 100%; border-radius: 3px; width: ${percentage}%; transition: width 0.3s ease;"></div>
-                        </div>
-                        <div style="font-size: 0.8rem; color: var(--cisa-gray);">${percentage}% Achieved</div>
-                    </div>
-                `;
-            });
-
-            categoryGrid.innerHTML = `
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-md);">
-                    ${categoryHTML}
-                </div>
-            `;
-        }
-
-        function generateCommendablesHighlights(reportData) {
-            const commendablesGrid = document.getElementById('commendablesGrid');
-            const commendables = reportData.commendables || [];
-            
-            console.log('generateCommendablesHighlights called with:', { reportData, commendables });
-            
-            if (commendables.length === 0) {
-                commendablesGrid.innerHTML = `
-                    <div class="commendables-message" style="text-align: center; padding: var(--spacing-xl); color: var(--cisa-gray);">
-                        <i class="fas fa-star" style="font-size: 2rem; margin-bottom: var(--spacing-md); opacity: 0.3;"></i>
-                        <p style="margin: 0; font-style: italic;">No commendable practices documented yet. Consider adding security best practices that exceed standard requirements.</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            // Group commendables by category
-            const groupedCommendables = {};
-            commendables.forEach(commendable => {
-                if (!groupedCommendables[commendable.category]) {
-                    groupedCommendables[commendable.category] = [];
-                }
-                groupedCommendables[commendable.category].push(commendable);
-            });
-            
-            let commendablesHTML = '';
-            Object.keys(groupedCommendables).forEach(category => {
-                const categoryCommendables = groupedCommendables[category];
-                commendablesHTML += `
-                    <div class="commendable-category-card" style="background: var(--cisa-white); border: 2px solid var(--cisa-warning); border-radius: var(--border-radius-lg); padding: var(--spacing-lg); margin-bottom: var(--spacing-md);">
-                        <div class="category-header" style="display: flex; align-items: center; margin-bottom: var(--spacing-md);">
-                            <i class="fas fa-trophy" style="color: var(--cisa-warning); font-size: 1.5rem; margin-right: var(--spacing-sm);"></i>
-                            <h4 style="margin: 0; color: var(--cisa-warning); font-weight: 600;">${category}</h4>
-                            <span style="background: var(--cisa-warning); color: white; padding: 4px 8px; border-radius: 12px; font-size: 0.8rem; margin-left: auto;">${categoryCommendables.length} Practice${categoryCommendables.length > 1 ? 's' : ''}</span>
-                        </div>
-                        <div class="commendables-list">
-                `;
-                
-                categoryCommendables.forEach((commendable, index) => {
-                    commendablesHTML += `
-                        <div class="commendable-item" style="background: var(--cisa-warning-lightest); border-left: 4px solid var(--cisa-warning); padding: var(--spacing-md); margin-bottom: var(--spacing-sm); border-radius: var(--border-radius);">
-                            <div class="commendable-action" style="font-weight: 600; color: var(--cisa-gray-dark); margin-bottom: var(--spacing-xs);">
-                                <i class="fas fa-check-circle" style="color: var(--cisa-success); margin-right: var(--spacing-xs);"></i>
-                                ${commendable.action}
-                            </div>
-                            ${commendable.impact ? `
-                                <div class="commendable-impact" style="color: var(--cisa-gray); font-size: 0.9rem; font-style: italic;">
-                                    <i class="fas fa-lightbulb" style="color: var(--cisa-warning); margin-right: var(--spacing-xs);"></i>
-                                    ${commendable.impact}
-                                </div>
-                            ` : ''}
-                        </div>
-                    `;
-                });
-                
-                commendablesHTML += `
-                        </div>
-                    </div>
-                `;
-            });
-            
-            commendablesGrid.innerHTML = commendablesHTML;
+            return downloadSafeDocxReport();
         }
 
         function generateExecutiveSummaryContent(assessmentData) {
