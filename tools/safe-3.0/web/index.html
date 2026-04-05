@@ -1995,7 +1995,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label">Facility Address *</label>
+                    <label class="form-label">Physical Address *</label>
                     <input type="text" class="form-input" id="facilityAddress" name="facilityAddress" placeholder="Street address" required="">
                 </div>
 
@@ -2131,6 +2131,11 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                         <option value="Water and Wastewater Systems">Water and Wastewater Systems</option>
                         <option value="Other">Other</option>
                     </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Subsector *</label>
+                    <input type="text" class="form-input" id="subsector" name="subsector" placeholder="Enter subsector" required="">
                 </div>
 
                 <div class="form-group">
@@ -5392,6 +5397,13 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                 }
             });
             
+            if (formData.facilityAddress && !formData.physicalAddress) {
+                formData.physicalAddress = formData.facilityAddress;
+            }
+            if (formData.subsector && !formData.sectorSubsector) {
+                formData.sectorSubsector = formData.subsector;
+            }
+
             // Collect dynamic custom vulnerabilities (treat as regular VOFCs)
             const dynamicVulnerabilities = [];
             const dynamicContainer = document.getElementById('dynamicCustomVulnerabilitiesContainer');
@@ -5488,7 +5500,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
             }
             
             // Check for required fields
-            const requiredFields = ['facilityName', 'facilityAddress', 'sector', 'facilityType'];
+            const requiredFields = ['facilityName', 'facilityAddress', 'sector', 'subsector', 'facilityType'];
             const missingRequired = requiredFields.filter(field => !data[field]);
             if (missingRequired.length > 0) {
                 errors.push(`❌ MISSING REQUIRED FIELDS: ${missingRequired.join(', ')}`);
@@ -9201,6 +9213,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
         function collectFacilityInfo() {
             const facilityInfo = {
                 name: document.getElementById('facilityName')?.value || 'Not specified',
+                physicalAddress: document.getElementById('facilityAddress')?.value || 'Not specified',
                 address: document.getElementById('facilityAddress')?.value || 'Not specified',
                 city: document.getElementById('facilityCity')?.value || 'Not specified',
                 state: document.getElementById('facilityState')?.value || 'Not specified',
@@ -9209,6 +9222,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                 phone: document.getElementById('facilityPhone')?.value || 'Not specified',
                 email: document.getElementById('facilityEmail')?.value || 'Not specified',
                 sector: document.getElementById('sector')?.value || 'Not specified',
+                subsector: document.getElementById('subsector')?.value || 'Not specified',
                 type: document.getElementById('facilityType')?.value || 'Not specified',
                 employeeCount: document.getElementById('employeeCount')?.value || 'Not specified',
                 facilitySize: document.getElementById('facilitySize')?.value || 'Not specified',
@@ -11525,7 +11539,8 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
             const essentialFields = {
                 assessmentDate: document.getElementById('assessmentDate')?.value || new Date().toISOString().split('T')[0],
                 facilityName: document.getElementById('facilityName')?.value || 'Not specified',
-                facilityAddress: document.getElementById('facilityAddress')?.value || 'Not specified',
+                facilityAddress: document.getElementById('facilityAddress')?.value || data.physicalAddress || 'Not specified',
+                physicalAddress: document.getElementById('facilityAddress')?.value || data.physicalAddress || 'Not specified',
                 facilityCity: document.getElementById('facilityCity')?.value || 'Not specified',
                 facilityState: document.getElementById('facilityState')?.value || 'Not specified',
                 facilityZip: document.getElementById('facilityZip')?.value || 'Not specified',
@@ -11534,12 +11549,14 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                 facilityEmail: document.getElementById('facilityEmail')?.value || 'Not specified',
                 facilityLatitude: document.getElementById('facilityLatitude')?.value || 'Not specified',
                 facilityLongitude: document.getElementById('facilityLongitude')?.value || 'Not specified',
+                subsector: document.getElementById('subsector')?.value || 'Not specified',
                 assessorName: document.getElementById('assessorName')?.value || 'Not specified',
                 assessorTitle: document.getElementById('assessorTitle')?.value || 'Not specified',
                 assessorAgency: document.getElementById('assessorAgency')?.value || 'CISA',
                 assessorPhone: document.getElementById('assessorPhone')?.value || 'Not specified',
                 assessorEmail: document.getElementById('assessorEmail')?.value || 'Not specified',
                 sector: document.getElementById('sector')?.value || 'Not specified',
+                subsector: document.getElementById('subsector')?.value || 'Not specified',
                 facilityType: document.getElementById('facilityType')?.value || 'Not specified',
                 employeeCount: document.getElementById('employeeCount')?.value || 'Not specified',
                 facilitySize: document.getElementById('facilitySize')?.value || 'Not specified',
@@ -11795,7 +11812,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
         }
         
         function isFacilityInfoComplete() {
-            const requiredFields = ['facilityName', 'facilityAddress', 'facilityCity', 'facilityState', 'sector', 'facilityType'];
+            const requiredFields = ['facilityName', 'facilityAddress', 'facilityCity', 'facilityState', 'sector', 'subsector', 'facilityType'];
             return requiredFields.every(fieldId => {
                 const field = document.getElementById(fieldId);
                 return field && field.value && field.value.trim() !== '';
