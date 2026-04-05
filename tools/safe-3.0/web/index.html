@@ -5472,7 +5472,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
             }
             
             // Collect facility information fields
-            const facilityFields = ['facilityName', 'facilityAddress', 'facilityCity', 'facilityState', 'facilityZip', 'facilityCountry', 'facilityPhone', 'facilityEmail', 'facilityLatitude', 'facilityLongitude', 'assessmentDate', 'sector', 'facilityType', 'employeeCount', 'facilitySize', 'operatingHours'];
+            const facilityFields = ['facilityName', 'facilityAddress', 'physicalAddress', 'facilityCity', 'facilityState', 'facilityZip', 'facilityCountry', 'facilityPhone', 'facilityEmail', 'facilityLatitude', 'facilityLongitude', 'assessmentDate', 'sector', 'subsector', 'facilityType', 'employeeCount', 'facilitySize', 'operatingHours'];
             facilityFields.forEach(field => {
                 const element = document.getElementById(field);
                 if (element) {
@@ -10640,6 +10640,9 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
             const psaCity = document.getElementById('psaCity')?.value || '';
             const psaCell = contactInfo.psaPhone || document.getElementById('psaCell')?.value || 'Not specified';
             const psaEmail = contactInfo.psaEmail || 'Not specified';
+            const physicalAddress = facilityInfo.physicalAddress || facilityInfo.address || 'Not specified';
+            const facilityLatitude = document.getElementById('facilityLatitude')?.value || 'Not specified';
+            const facilityLongitude = document.getElementById('facilityLongitude')?.value || 'Not specified';
             const sections = [
                 { heading: 'Executive Summary', paragraphs: [
                     `This assessment reviewed ${totalStandards} standards and found ${metStandards} currently met.`,
@@ -10652,6 +10655,9 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                     `Facility: ${facilityInfo.name || 'Not specified'}`,
                     `Assessment date: ${facilityInfo.assessmentDate || 'Not specified'}`,
                     `Sector: ${facilityInfo.sector || 'Not specified'}`,
+                    `Subsector: ${facilityInfo.subsector || 'Not specified'}`,
+                    `Physical Address: ${physicalAddress}`,
+                    `Coordinates: ${facilityLatitude}, ${facilityLongitude}`,
                     `Location: ${facilityLocation}`,
                     `Assessor: ${facilityInfo.assessorName || 'Not specified'}`
                 ] },
@@ -10696,6 +10702,10 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                     title: 'ALT SAFE',
                     subtitle: 'Security Assessment Report',
                     facility: facilityInfo.name || 'Not specified',
+                    physicalAddress,
+                    subsector: facilityInfo.subsector || 'Not specified',
+                    latitude: facilityLatitude,
+                    longitude: facilityLongitude,
                     assessor: facilityInfo.assessorName || psaName,
                     date: facilityInfo.assessmentDate || currentDate,
                     publisher: 'Cybersecurity and Infrastructure Security Agency',
