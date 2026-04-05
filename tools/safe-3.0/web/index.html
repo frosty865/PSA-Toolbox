@@ -9185,6 +9185,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
         function generateFinalReport() {
             const reportContent = document.getElementById('reportContent');
             if (reportContent) {
+                reportContent.dataset.safeDocxReady = '1';
                 reportContent.innerHTML = `
                     <div style="text-align: center; padding: var(--spacing-xl); background: white; border: 1px solid var(--cisa-gray-light); border-radius: var(--border-radius-lg);">
                         <i class="fas fa-file-word" style="font-size: 2.5rem; color: var(--cisa-blue); margin-bottom: var(--spacing-md);"></i>
@@ -10702,7 +10703,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
 
         async function downloadSafeDocxReport() {
             const reportContent = document.getElementById('reportContent');
-            if (!reportContent || reportContent.innerHTML.includes('Click "Generate Final Report"')) {
+            if (!reportContent || reportContent.dataset.safeDocxReady !== '1') {
                 showSuccessBanner('Please generate the Final Report first!', 'warning');
                 return;
             }
