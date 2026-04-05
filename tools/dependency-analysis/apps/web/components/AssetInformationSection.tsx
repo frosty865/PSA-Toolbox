@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import type { Assessment } from 'schema';
+import { IDA_TAXONOMY, getIdaSubsectors } from '@/lib/ida-taxonomy';
 
 export interface AssetInformationSectionProps {
   asset: Assessment['asset'];
@@ -46,6 +47,7 @@ export function AssetInformationSection({ asset, onUpdate }: AssetInformationSec
   const physicalAddress = asset.physical_address ?? asset.location ?? '';
   const latValue = asset.facility_latitude ?? '';
   const lonValue = asset.facility_longitude ?? '';
+  const subsectorOptions = getIdaSubsectors(asset.sector ?? '');
 
   const handleAutoFill = async () => {
     const coordsFromField = parseCoords(physicalAddress);
@@ -100,25 +102,36 @@ export function AssetInformationSection({ asset, onUpdate }: AssetInformationSec
         <div className="form-row" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <div className="form-group" style={{ flex: '1 1 180px' }}>
             <label className="form-label" htmlFor="sector">Sector</label>
-            <input
+            <select
               id="sector"
-              type="text"
               className="form-control"
               value={asset.sector ?? ''}
-              onChange={(e) => onUpdate({ sector: e.target.value || undefined })}
-              placeholder="Sector"
-            />
+              onChange={(e) => onUpdate({ sector: e.target.value || undefined, subsector: undefined })}
+            >
+              <option value="">Select a sector</option>
+              {IDA_TAXONOMY.map((sector) => (
+                <option key={sector.code} value={sector.name}>
+                  {sector.name}
+                </option>
+              ))}
+            </select>
           </div>
           <div className="form-group" style={{ flex: '1 1 180px' }}>
             <label className="form-label" htmlFor="subsector">Subsector</label>
-            <input
+            <select
               id="subsector"
-              type="text"
               className="form-control"
               value={asset.subsector ?? ''}
               onChange={(e) => onUpdate({ subsector: e.target.value || undefined })}
-              placeholder="Subsector"
-            />
+              disabled={!asset.sector}
+            >
+              <option value="">{asset.sector ? 'Select a subsector' : 'Select a sector first'}</option>
+              {subsectorOptions.map((subsector) => (
+                <option key={subsector.code} value={subsector.name}>
+                  {subsector.name}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
         <div className="form-group">

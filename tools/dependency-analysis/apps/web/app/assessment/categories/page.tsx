@@ -50,6 +50,7 @@ import { isCrossDependencyEnabled } from '@/lib/cross-dependency-enabled';
 import { deriveCurveValuesFromCategoryInput } from '@/app/lib/assessment/normalize_curve_storage';
 import { categoryCodeToInfrastructure, mergeCurveIntoCategory, setCurveValues } from '@/app/lib/curves/curve_accessors';
 import { CisaCommandHero } from '@/components/CisaCommandHero';
+import { IDA_TAXONOMY, getIdaSubsectors } from '@/lib/ida-taxonomy';
 
 /**
  * Build dependency rows for the Hosted Services continuity block only.
@@ -809,25 +810,36 @@ function CategoriesPageContent() {
         >
           <div>
             <label className="form-label" htmlFor="ida-sector">Sector</label>
-            <input
+            <select
               id="ida-sector"
               className="form-control"
-              type="text"
               value={assessment.asset.sector ?? ''}
-              onChange={(e) => updateAsset({ sector: e.target.value || undefined })}
-              placeholder="Enter sector"
-            />
+              onChange={(e) => updateAsset({ sector: e.target.value || undefined, subsector: undefined })}
+            >
+              <option value="">Select a sector</option>
+              {IDA_TAXONOMY.map((sector) => (
+                <option key={sector.code} value={sector.name}>
+                  {sector.name}
+                </option>
+              ))}
+            </select>
           </div>
           <div>
             <label className="form-label" htmlFor="ida-subsector">Subsector</label>
-            <input
+            <select
               id="ida-subsector"
               className="form-control"
-              type="text"
               value={assessment.asset.subsector ?? ''}
               onChange={(e) => updateAsset({ subsector: e.target.value || undefined })}
-              placeholder="Enter subsector"
-            />
+              disabled={!assessment.asset.sector}
+            >
+              <option value="">{assessment.asset.sector ? 'Select a subsector' : 'Select a sector first'}</option>
+              {getIdaSubsectors(assessment.asset.sector ?? '').map((subsector) => (
+                <option key={subsector.code} value={subsector.name}>
+                  {subsector.name}
+                </option>
+              ))}
+            </select>
           </div>
           <div>
             <label className="form-label" htmlFor="ida-physical-address">Physical Address</label>
