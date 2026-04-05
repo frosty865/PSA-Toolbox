@@ -58,8 +58,19 @@ export default function ReportPage() {
           <section className="report-section">
             <h2 style={{ fontSize: '1.125rem', marginBottom: '0.5rem' }}>Facility</h2>
             <p><strong>Asset:</strong> {asset.asset_name}</p>
+            {asset.sector && <p><strong>Sector:</strong> {asset.sector}</p>}
+            {asset.subsector && <p><strong>Subsector:</strong> {asset.subsector}</p>}
+            {asset.physical_address && <p><strong>Physical Address:</strong> {asset.physical_address}</p>}
             <p><strong>Visit date:</strong> {asset.visit_date_iso}</p>
-            {asset.location && <p><strong>Location (Lat/Long):</strong> {asset.location}</p>}
+            {(asset.facility_latitude || asset.facility_longitude) && (
+              <p>
+                <strong>Coordinates:</strong>{' '}
+                {asset.facility_latitude || '—'}, {asset.facility_longitude || '—'}
+              </p>
+            )}
+            {!asset.facility_latitude && !asset.facility_longitude && asset.location && (
+              <p><strong>Location (Lat/Long):</strong> {asset.location}</p>
+            )}
             {asset.assessor && <p><strong>Assessor:</strong> {asset.assessor}</p>}
           </section>
 

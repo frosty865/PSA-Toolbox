@@ -18,7 +18,12 @@ export function getDefaultAssessment(): Assessment {
     asset: {
       asset_name: '',
       visit_date_iso: new Date().toISOString().slice(0, 10),
+      sector: '',
+      subsector: '',
+      physical_address: '',
       location: '',
+      facility_latitude: '',
+      facility_longitude: '',
       assessor: '',
       psa_name: undefined,
       psa_region: undefined,

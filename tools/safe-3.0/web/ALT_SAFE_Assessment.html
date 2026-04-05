@@ -11032,9 +11032,121 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                     showSuccessBanner('Please generate the Final Report first!', 'warning');
                     return;
                 }
+                const reportData = window.collectReportReviewData ? window.collectReportReviewData() : {};
+                const facilityInfo = collectFacilityInfo();
+                const contactInfo = collectContactInfo();
+                const assessmentData = collectAssessmentData();
+                const currentDate = new Date().toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                const facilityLatitude = document.getElementById('facilityLatitude')?.value || 'Not specified';
+                const facilityLongitude = document.getElementById('facilityLongitude')?.value || 'Not specified';
+                const totalStandards = reportData?.totals?.totalStandards || assessmentData.totalStandards || 0;
+                const metStandards = reportData?.totals?.totalStandardsMet || assessmentData.totalStandardsMet || 0;
+                const totalStandardsLost = reportData?.totals?.totalStandardsLost || assessmentData.totalStandardsLost || 0;
+                const totalEnhancementOptions = reportData?.totals?.totalEnhancementOptions || assessmentData.totalEnhancementOptions || 0;
+                const totalCommendables = reportData?.totals?.totalCommendables || assessmentData.totalCommendables || 0;
+                const posturePct = totalStandards > 0 ? Math.round((metStandards / totalStandards) * 100) : 0;
+                const postureLabel = posturePct >= 80 ? 'High' : posturePct >= 60 ? 'Moderate' : 'Low';
+                const totalVulnerabilities = Array.isArray(reportData?.vulnerabilities) ? reportData.vulnerabilities.length : 0;
+                const byCategory = {};
+                (reportData?.vulnerabilities || []).forEach((item) => {
+                    const category = item?.category || 'Uncategorized';
+                    if (!byCategory[category]) byCategory[category] = [];
+                    const ofc = (item?.optionsForConsideration || '').trim();
+                    byCategory[category].push(`${item?.question || 'Untitled issue'}${ofc ? ` - OFC: ${ofc}` : ''}`);
+                });
+                const categoryText = (name) => {
+                    const items = byCategory[name] || [];
+                    if (!items.length) return [`No findings documented for ${name.toLowerCase()}.`];
+                    return items;
+                };
+                const bulletsFrom = (items) => (items && items.length ? items : ['No items documented.']);
+                const facilityLocation = [facilityInfo.city, facilityInfo.state].filter(Boolean).join(', ') || 'Not specified';
+                const psaName = contactInfo.psaName || facilityInfo.assessorName || 'Not specified';
+                const psaRegion = document.getElementById('psaRegion')?.value || '';
+                const psaCity = document.getElementById('psaCity')?.value || '';
+                const psaCell = contactInfo.psaPhone || document.getElementById('psaCell')?.value || 'Not specified';
+                const psaEmail = contactInfo.psaEmail || 'Not specified';
                 const payload = {
                     generic_report: {
-                        template_key: 'safe'
+                        template_key: 'safe',
+                        title: 'ALT SAFE',
+                        subtitle: 'Security Assessment Report',
+                        facility: facilityInfo.name || 'Not specified',
+                        sector: facilityInfo.sector || 'Not specified',
+                        physicalAddress: facilityInfo.physicalAddress || facilityInfo.address || 'Not specified',
+                        subsector: facilityInfo.subsector || 'Not specified',
+                        latitude: facilityLatitude,
+                        longitude: facilityLongitude,
+                        assessor: facilityInfo.assessorName || contactInfo.psaName || 'Not specified',
+                        date: facilityInfo.assessmentDate || currentDate,
+                        publisher: 'Cybersecurity and Infrastructure Security Agency',
+                        version: 'Version: Alpha V3',
+                        note: '',
+                        header_left: facilityInfo.name || 'Not specified',
+                        header_right: facilityInfo.assessmentDate || currentDate,
+                        footer_left: 'Cybersecurity and Infrastructure Security Agency',
+                        footer_right: 'Department of Homeland Security',
+                        psa_name: psaName,
+                        psa_region: psaRegion,
+                        psa_city: psaCity,
+                        psa_cell: psaCell,
+                        psa_email: psaEmail,
+                        sections: [
+                            { heading: 'Executive Summary', paragraphs: [
+                                `This assessment reviewed ${totalStandards} standards and found ${metStandards} currently met.`,
+                                `Overall posture is ${postureLabel} (${posturePct}%).`,
+                                totalStandardsLost > 0 ? `There are ${totalStandardsLost} standards currently lost that require remediation.` : 'No standards are currently lost.',
+                                totalEnhancementOptions > 0 ? `${totalEnhancementOptions} enhancement option${totalEnhancementOptions === 1 ? '' : 's'} were identified.` : 'No enhancement options were identified.',
+                                totalCommendables > 0 ? `${totalCommendables} commendable practice${totalCommendables === 1 ? ' was' : 's were'} documented.` : 'No commendable practices were documented.'
+                            ] },
+                            { heading: 'Facility Information', paragraphs: [
+                                `Facility: ${facilityInfo.name || 'Not specified'}`,
+                                `Assessment date: ${facilityInfo.assessmentDate || 'Not specified'}`,
+                                `Sector: ${facilityInfo.sector || 'Not specified'}`,
+                                `Subsector: ${facilityInfo.subsector || 'Not specified'}`,
+                                `Physical Address: ${facilityInfo.physicalAddress || facilityInfo.address || 'Not specified'}`,
+                                `Coordinates: ${facilityLatitude}, ${facilityLongitude}`,
+                                `Location: ${facilityLocation}`,
+                                `Assessor: ${facilityInfo.assessorName || 'Not specified'}`
+                            ] },
+                            { heading: 'Information Sharing & Communication', paragraphs: categoryText('Information Sharing') },
+                            { heading: 'Security Plans & Management', paragraphs: categoryText('Security Plans') },
+                            { heading: 'Security Systems', paragraphs: categoryText('Security Systems') },
+                            { heading: 'Physical Security', paragraphs: categoryText('Physical Security') },
+                            { heading: 'Commendable Practices', bullets: bulletsFrom((reportData?.commendables || []).map((item) => {
+                                const text = item?.question || item?.item || item?.title || '';
+                                return text ? `${text}${item?.impact ? ` - ${item.impact}` : ''}` : '';
+                            }).filter(Boolean)) },
+                            { heading: 'Custom Vulnerabilities & Options for Consideration', bullets: bulletsFrom((reportData?.vulnerabilities || []).map((item) => {
+                                const question = item?.question || 'Untitled issue';
+                                const category = item?.category ? ` (${item.category})` : '';
+                                const ofc = item?.optionsForConsideration ? ` - OFC: ${item.optionsForConsideration}` : '';
+                                return `${question}${category}${ofc}`;
+                            }).filter(Boolean)) },
+                            { heading: 'Points of Contact', paragraphs: [
+                                `PSA Name: ${psaName}`,
+                                `PSA Region: ${psaRegion || 'Not specified'}`,
+                                `PSA City: ${psaCity || 'Not specified'}`,
+                                `PSA Cell: ${psaCell || 'Not specified'}`,
+                                `PSA Email: ${psaEmail || 'Not specified'}`
+                            ] },
+                            { heading: 'Report Review', paragraphs: [
+                                `Total standards: ${totalStandards}`,
+                                `Standards met: ${metStandards}`,
+                                `Standards lost: ${totalStandardsLost}`,
+                                `Enhancement options: ${totalEnhancementOptions}`,
+                                `Commendable practices: ${totalCommendables}`,
+                                `Documented vulnerabilities: ${totalVulnerabilities}`
+                            ] },
+                            { heading: 'Final Report', paragraphs: [
+                                `Generated on ${currentDate}.`,
+                                `This document is the authoritative SAFE report output.`
+                            ] },
+                        ],
                     }
                 };
                 const serviceUrl = getReportServiceUrl();

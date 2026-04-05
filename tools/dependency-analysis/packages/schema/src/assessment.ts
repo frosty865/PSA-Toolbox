@@ -675,8 +675,18 @@ const MetaSchema = z.object({
 const AssetSchema = z.object({
   asset_name: z.string(),
   visit_date_iso: z.string(),
+  /** Primary sector for the assessment. */
+  sector: z.string().optional(),
+  /** Primary subsector for the assessment. */
+  subsector: z.string().optional(),
+  /** Physical address of the asset/site. */
+  physical_address: z.string().optional(),
   /** Location as Lat/Long (e.g. "38.9072, -77.0369"). */
   location: z.string().optional(),
+  /** Auto-populated latitude derived from the physical address. */
+  facility_latitude: z.string().optional(),
+  /** Auto-populated longitude derived from the physical address. */
+  facility_longitude: z.string().optional(),
   assessor: z.string().optional(),
   /** PSA contact (report cover / landing). */
   psa_name: z.string().optional(),

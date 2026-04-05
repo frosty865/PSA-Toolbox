@@ -121,6 +121,8 @@ function CategoriesPageContent() {
   const searchParams = useSearchParams();
   const [activeTabId, setActiveTabId] = useState<SectionTabId>('ASSET_INFORMATION');
   const crossDependencyEnabled = isCrossDependencyEnabled(assessment);
+  const [geoBusy, setGeoBusy] = useState(false);
+  const [geoError, setGeoError] = useState<string | null>(null);
 
   // Open tab from ?tab= (e.g. from export validation "go to missing data" link)
   useEffect(() => {
@@ -196,6 +198,54 @@ function CategoriesPageContent() {
     },
     [assessment, setAssessment]
   );
+
+  const autofillCoordinates = useCallback(async () => {
+    const address = (assessment.asset.physical_address || assessment.asset.location || '').trim();
+    if (!address) {
+      setGeoError('Enter a physical address before auto-filling coordinates.');
+      return;
+    }
+    const parts = address.split(/[,\s]+/).map((p) => p.trim()).filter(Boolean);
+    if (parts.length >= 2) {
+      const lat = Number(parts[0]);
+      const lon = Number(parts[1]);
+      if (Number.isFinite(lat) && Number.isFinite(lon)) {
+        updateAsset({
+          facility_latitude: lat.toFixed(6),
+          facility_longitude: lon.toFixed(6),
+          location: `${lat.toFixed(6)}, ${lon.toFixed(6)}`,
+        });
+        setGeoError(null);
+        return;
+      }
+    }
+
+    setGeoBusy(true);
+    setGeoError(null);
+    try {
+      const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=${encodeURIComponent(address)}`;
+      const response = await fetch(url, {
+        headers: { Accept: 'application/json' },
+      });
+      if (!response.ok) {
+        throw new Error(`Geocoding failed (${response.status})`);
+      }
+      const results = (await response.json()) as Array<{ lat?: string; lon?: string }>;
+      const first = results[0];
+      if (!first?.lat || !first?.lon) {
+        throw new Error('No coordinates found for that address');
+      }
+      updateAsset({
+        facility_latitude: first.lat,
+        facility_longitude: first.lon,
+        location: `${first.lat}, ${first.lon}`,
+      });
+    } catch (error) {
+      setGeoError(error instanceof Error ? error.message : 'Failed to geocode address');
+    } finally {
+      setGeoBusy(false);
+    }
+  }, [assessment.asset.location, assessment.asset.physical_address, updateAsset]);
 
   const updateCategoryForCurve = useCallback(
     (category: CategoryCode, categoryInput: CategoryInput) => {
@@ -753,32 +803,72 @@ function CategoriesPageContent() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-            gap: '0.75rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: '0.9rem',
           }}
         >
-          {[
-            'Sector',
-            'Subsector',
-            'Physical Address',
-            'City / State / ZIP',
-            'Latitude / Longitude',
-          ].map((label) => (
-            <div
-              key={label}
-              style={{
-                padding: '0.75rem',
-                borderRadius: '0.5rem',
-                background: 'var(--cisa-gray-lighter, #f7f8fa)',
-                border: '1px solid var(--cisa-gray-light)',
-                fontWeight: 600,
-                color: 'var(--cisa-gray-dark)',
-              }}
-            >
-              {label}
-            </div>
-          ))}
+          <div>
+            <label className="form-label" htmlFor="ida-sector">Sector</label>
+            <input
+              id="ida-sector"
+              className="form-control"
+              type="text"
+              value={assessment.asset.sector ?? ''}
+              onChange={(e) => updateAsset({ sector: e.target.value || undefined })}
+              placeholder="Enter sector"
+            />
+          </div>
+          <div>
+            <label className="form-label" htmlFor="ida-subsector">Subsector</label>
+            <input
+              id="ida-subsector"
+              className="form-control"
+              type="text"
+              value={assessment.asset.subsector ?? ''}
+              onChange={(e) => updateAsset({ subsector: e.target.value || undefined })}
+              placeholder="Enter subsector"
+            />
+          </div>
+          <div>
+            <label className="form-label" htmlFor="ida-physical-address">Physical Address</label>
+            <input
+              id="ida-physical-address"
+              className="form-control"
+              type="text"
+              value={assessment.asset.physical_address ?? ''}
+              onChange={(e) => updateAsset({ physical_address: e.target.value || undefined, location: e.target.value || undefined })}
+              placeholder="Street, city, state, ZIP"
+            />
+          </div>
+          <div>
+            <label className="form-label" htmlFor="ida-latitude">Latitude</label>
+            <input
+              id="ida-latitude"
+              className="form-control"
+              type="text"
+              value={assessment.asset.facility_latitude ?? ''}
+              onChange={(e) => updateAsset({ facility_latitude: e.target.value || undefined })}
+              placeholder="Auto-populated"
+            />
+          </div>
+          <div>
+            <label className="form-label" htmlFor="ida-longitude">Longitude</label>
+            <input
+              id="ida-longitude"
+              className="form-control"
+              type="text"
+              value={assessment.asset.facility_longitude ?? ''}
+              onChange={(e) => updateAsset({ facility_longitude: e.target.value || undefined })}
+              placeholder="Auto-populated"
+            />
+          </div>
+          <div style={{ alignSelf: 'end' }}>
+            <button type="button" className="btn btn-secondary" onClick={autofillCoordinates} disabled={geoBusy}>
+              {geoBusy ? 'Retrieving…' : 'Auto-fill lat/long'}
+            </button>
+          </div>
         </div>
+        {geoError ? <p className="small text-danger mt-2 mb-0">{geoError}</p> : null}
       </div>
       <div
         id="category-workspace"

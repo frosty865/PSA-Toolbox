@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import type { Assessment } from 'schema';
 
 export interface AssetInformationSectionProps {
@@ -8,13 +8,83 @@ export interface AssetInformationSectionProps {
   onUpdate: (patch: Partial<Assessment['asset']>) => void;
 }
 
-/** Asset Information tab: asset name, visit date, location (Lat/Long), PSA contact. */
+function parseCoords(text: string): { lat: string; lon: string } | null {
+  const parts = text
+    .split(/[,\s]+/)
+    .map((p) => p.trim())
+    .filter(Boolean);
+  if (parts.length < 2) return null;
+  const lat = Number(parts[0]);
+  const lon = Number(parts[1]);
+  if (!Number.isFinite(lat) || !Number.isFinite(lon)) return null;
+  return { lat: lat.toFixed(6), lon: lon.toFixed(6) };
+}
+
+async function geocodeAddress(address: string): Promise<{ lat: string; lon: string }> {
+  const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=${encodeURIComponent(address)}`;
+  const res = await fetch(url, {
+    headers: {
+      Accept: 'application/json',
+    },
+  });
+  if (!res.ok) {
+    throw new Error(`Geocoding failed (${res.status})`);
+  }
+  const data = (await res.json()) as Array<{ lat?: string; lon?: string }>;
+  const first = data[0];
+  if (!first?.lat || !first?.lon) {
+    throw new Error('No coordinates found for that address');
+  }
+  return { lat: first.lat, lon: first.lon };
+}
+
+/** Asset Information tab: sector, subsector, address, coordinates, PSA contact. */
 export function AssetInformationSection({ asset, onUpdate }: AssetInformationSectionProps) {
+  const [geocodeError, setGeocodeError] = useState<string | null>(null);
+  const [geocoding, setGeocoding] = useState(false);
+
+  const physicalAddress = asset.physical_address ?? asset.location ?? '';
+  const latValue = asset.facility_latitude ?? '';
+  const lonValue = asset.facility_longitude ?? '';
+
+  const handleAutoFill = async () => {
+    const coordsFromField = parseCoords(physicalAddress);
+    if (coordsFromField) {
+      onUpdate({
+        facility_latitude: coordsFromField.lat,
+        facility_longitude: coordsFromField.lon,
+        location: `${coordsFromField.lat}, ${coordsFromField.lon}`,
+      });
+      setGeocodeError(null);
+      return;
+    }
+
+    if (!physicalAddress.trim()) {
+      setGeocodeError('Enter a physical address before auto-filling coordinates.');
+      return;
+    }
+
+    setGeocoding(true);
+    setGeocodeError(null);
+    try {
+      const coords = await geocodeAddress(physicalAddress);
+      onUpdate({
+        facility_latitude: coords.lat,
+        facility_longitude: coords.lon,
+        location: `${coords.lat}, ${coords.lon}`,
+      });
+    } catch (error) {
+      setGeocodeError(error instanceof Error ? error.message : 'Failed to geocode address');
+    } finally {
+      setGeocoding(false);
+    }
+  };
+
   return (
     <section className="card">
-      <h3 className="card-title">Asset Information</h3>
+      <h3 className="card-title">Facility Information</h3>
       <p className="text-secondary mb-3">
-        Basic information about the asset and assessment visit.
+        Capture the sector, subsector, address, and coordinates used in the save data and report.
       </p>
       <div className="form-section">
         <div className="form-group">
@@ -27,6 +97,82 @@ export function AssetInformationSection({ asset, onUpdate }: AssetInformationSec
             onChange={(e) => onUpdate({ asset_name: e.target.value })}
           />
         </div>
+        <div className="form-row" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <div className="form-group" style={{ flex: '1 1 180px' }}>
+            <label className="form-label" htmlFor="sector">Sector</label>
+            <input
+              id="sector"
+              type="text"
+              className="form-control"
+              value={asset.sector ?? ''}
+              onChange={(e) => onUpdate({ sector: e.target.value || undefined })}
+              placeholder="Sector"
+            />
+          </div>
+          <div className="form-group" style={{ flex: '1 1 180px' }}>
+            <label className="form-label" htmlFor="subsector">Subsector</label>
+            <input
+              id="subsector"
+              type="text"
+              className="form-control"
+              value={asset.subsector ?? ''}
+              onChange={(e) => onUpdate({ subsector: e.target.value || undefined })}
+              placeholder="Subsector"
+            />
+          </div>
+        </div>
+        <div className="form-group">
+          <label className="form-label" htmlFor="physical-address">Physical Address</label>
+          <input
+            id="physical-address"
+            type="text"
+            className="form-control"
+            value={physicalAddress}
+            onChange={(e) => {
+              const next = e.target.value;
+              onUpdate({
+                physical_address: next || undefined,
+                location: next || undefined,
+              });
+            }}
+            placeholder="Street, city, state, ZIP"
+          />
+        </div>
+        <div className="form-group">
+          <div className="form-row" style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', alignItems: 'end' }}>
+            <div className="form-group" style={{ flex: '1 1 160px' }}>
+              <label className="form-label" htmlFor="facility-latitude">Latitude</label>
+              <input
+                id="facility-latitude"
+                type="text"
+                className="form-control"
+                value={latValue}
+                onChange={(e) => onUpdate({ facility_latitude: e.target.value || undefined })}
+                placeholder="Auto-populated"
+              />
+            </div>
+            <div className="form-group" style={{ flex: '1 1 160px' }}>
+              <label className="form-label" htmlFor="facility-longitude">Longitude</label>
+              <input
+                id="facility-longitude"
+                type="text"
+                className="form-control"
+                value={lonValue}
+                onChange={(e) => onUpdate({ facility_longitude: e.target.value || undefined })}
+                placeholder="Auto-populated"
+              />
+            </div>
+            <button
+              type="button"
+              className="btn btn-secondary"
+              onClick={handleAutoFill}
+              disabled={geocoding}
+            >
+              {geocoding ? 'Retrieving…' : 'Auto-fill lat/long'}
+            </button>
+          </div>
+          {geocodeError && <p className="text-danger small mt-2 mb-0">{geocodeError}</p>}
+        </div>
         <div className="form-group">
           <label className="form-label" htmlFor="visit-date">Visit date</label>
           <input
@@ -35,17 +181,6 @@ export function AssetInformationSection({ asset, onUpdate }: AssetInformationSec
             className="form-control"
             value={asset.visit_date_iso.slice(0, 10)}
             onChange={(e) => onUpdate({ visit_date_iso: e.target.value ? `${e.target.value}T00:00:00.000Z` : asset.visit_date_iso })}
-          />
-        </div>
-        <div className="form-group">
-          <label className="form-label" htmlFor="asset-location">Location (Lat/Long, optional)</label>
-          <input
-            id="asset-location"
-            type="text"
-            className="form-control"
-            value={asset.location ?? ''}
-            onChange={(e) => onUpdate({ location: e.target.value || undefined })}
-            placeholder="e.g. 38.9072, -77.0369"
           />
         </div>
         <div className="form-group">
