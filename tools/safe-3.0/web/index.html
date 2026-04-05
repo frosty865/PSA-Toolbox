@@ -10624,7 +10624,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
         }
 
         function getReportServiceUrl() {
-            return window.REPORT_SERVICE_URL || window.SAFE_REPORT_SERVICE_URL || '/render';
+            return window.REPORT_SERVICE_URL || window.SAFE_REPORT_SERVICE_URL || '/api/report/generate';
         }
 
         function buildSafeDocxPayload() {
