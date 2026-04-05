@@ -442,7 +442,18 @@ export function ItQuestionnaireSection({
                     name="IT-3"
                     value={value}
                     checked={answers['IT-3_multiple_connections'] === value}
-                    onChange={() => update({ 'IT-3_multiple_connections': value })}
+                    onChange={() =>
+                      update({
+                        'IT-3_multiple_connections': value,
+                        ...(value === 'yes'
+                          ? {
+                              'IT-4_physically_separated': undefined,
+                              'IT-4_service_connections': undefined,
+                              'IT-5_survivability': undefined,
+                            }
+                          : {}),
+                      })
+                    }
                     aria-label={`${IT_QUESTIONS[2].prompt}: ${label}`}
                   />
                   <span>{label}</span>
@@ -451,63 +462,67 @@ export function ItQuestionnaireSection({
             </div>
           </QuestionBlock>
 
-          {/* IT-4 */}
-          <QuestionBlock
-            questionId="IT-4"
-            prompt={qIT4.prompt}
-            helpText={qIT4.helpText}
-          >
-            <div className="mb-3">
-              <p className="font-semibold mb-2 flex items-center gap-2">
-                Are primary and secondary internet terminations physically separated?
-                <HelpTooltip helpText="Different rooms, building entries, or conduits = Yes. Same room/entry or shared corridor = No." />
-              </p>
-              <div className="radio-group-vertical">
-                {[
-                  { value: 'yes' as const, label: 'Yes - physically separated' },
-                  { value: 'no' as const, label: 'No - same room/entry or shared path' },
-                  { value: 'unknown' as const, label: 'Unknown' },
-                  { value: 'na' as const, label: 'N/A' },
-                ].map(({ value, label }) => (
-                  <div key={value} className="radio-option-item">
-                    <label className="flex items-center gap-2 cursor-pointer">
-                      <input
-                        type="radio"
-                        name="IT-4_physically_separated"
-                        value={value}
-                        checked={answers['IT-4_physically_separated'] === value}
-                        onChange={() => update({ 'IT-4_physically_separated': value })}
-                        aria-label={`${qIT4.prompt}: ${label}`}
-                      />
-                      <span>{label}</span>
-                    </label>
+          {answers['IT-3_multiple_connections'] !== 'yes' && (
+            <>
+              {/* IT-4 */}
+              <QuestionBlock
+                questionId="IT-4"
+                prompt={qIT4.prompt}
+                helpText={qIT4.helpText}
+              >
+                <div className="mb-3">
+                  <p className="font-semibold mb-2 flex items-center gap-2">
+                    Are primary and secondary internet terminations physically separated?
+                    <HelpTooltip helpText="Different rooms, building entries, or conduits = Yes. Same room/entry or shared corridor = No." />
+                  </p>
+                  <div className="radio-group-vertical">
+                    {[
+                      { value: 'yes' as const, label: 'Yes - physically separated' },
+                      { value: 'no' as const, label: 'No - same room/entry or shared path' },
+                      { value: 'unknown' as const, label: 'Unknown' },
+                      { value: 'na' as const, label: 'N/A' },
+                    ].map(({ value, label }) => (
+                      <div key={value} className="radio-option-item">
+                        <label className="flex items-center gap-2 cursor-pointer">
+                          <input
+                            type="radio"
+                            name="IT-4_physically_separated"
+                            value={value}
+                            checked={answers['IT-4_physically_separated'] === value}
+                            onChange={() => update({ 'IT-4_physically_separated': value })}
+                            aria-label={`${qIT4.prompt}: ${label}`}
+                          />
+                          <span>{label}</span>
+                        </label>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </div>
+                </div>
 
-            {(answers['IT-4_physically_separated'] === 'yes' || answers['IT-4_physically_separated'] === 'no') && (
-              <div>
-                <p className="font-semibold mb-2 flex items-center gap-2">
-                  Document each connection demarcation and path details
-                  <HelpTooltip helpText="Add one row per connection. Include provider name, exact termination location, and whether route segments are shared." />
-                </p>
-                <ItConnectionEntriesEditor
-                  connections={answers['IT-4_service_connections']}
-                  onChange={(c) => update({ 'IT-4_service_connections': c })}
-                />
-              </div>
-            )}
-          </QuestionBlock>
+                {(answers['IT-4_physically_separated'] === 'yes' || answers['IT-4_physically_separated'] === 'no') && (
+                  <div>
+                    <p className="font-semibold mb-2 flex items-center gap-2">
+                      Document each connection demarcation and path details
+                      <HelpTooltip helpText="Add one row per connection. Include provider name, exact termination location, and whether route segments are shared." />
+                    </p>
+                    <ItConnectionEntriesEditor
+                      connections={answers['IT-4_service_connections']}
+                      onChange={(c) => update({ 'IT-4_service_connections': c })}
+                    />
+                  </div>
+                )}
+              </QuestionBlock>
 
-          {/* IT-5 */}
-          <QuestionBlock
-            questionId="IT-5"
-            prompt={qIT5.prompt}
-            helpText={qIT5.helpText}
-          >
-            <YesNoUnknownRow value={answers['IT-5_survivability']} onChange={(v) => update({ 'IT-5_survivability': v })} />
-          </QuestionBlock>
+              {/* IT-5 */}
+              <QuestionBlock
+                questionId="IT-5"
+                prompt={qIT5.prompt}
+                helpText={qIT5.helpText}
+              >
+                <YesNoUnknownRow value={answers['IT-5_survivability']} onChange={(v) => update({ 'IT-5_survivability': v })} />
+              </QuestionBlock>
+            </>
+          )}
 
           {/* IT-6 deprecated — hidden */}
 
