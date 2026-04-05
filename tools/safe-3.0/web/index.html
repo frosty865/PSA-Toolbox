@@ -9186,53 +9186,17 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
         // Final Report Generation Functions
         function generateFinalReport() {
             const reportContent = document.getElementById('reportContent');
-            
-            // Show loading message
-            reportContent.innerHTML = `
-                <div style="text-align: center; padding: var(--spacing-xl);">
-                    <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: var(--cisa-blue); margin-bottom: var(--spacing-md);"></i>
-                    <p style="color: var(--cisa-gray);">Generating comprehensive report...</p>
-                </div>
-            `;
-            
-            // Small delay to show loading message
-            setTimeout(() => {
-                try {
-                    // Collect facility and contact information
-                    const facilityInfo = collectFacilityInfo();
-                    const contactInfo = collectContactInfo();
-                    const assessmentData = collectAssessmentData();
-                    
-                    console.log('Facility Info:', facilityInfo);
-                    console.log('Contact Info:', contactInfo);
-                    console.log('Assessment Data:', assessmentData);
-                    
-                    // Generate the report HTML
-                    const reportHTML = generateReportHTML(facilityInfo, contactInfo, assessmentData);
-                    
-                    // Display the report
-                    reportContent.innerHTML = reportHTML;
-                    
-                    // Auto-populate report fields
-                    populateReportFields();
-                    
-                    // Show success message
-                    showSuccessBanner('Final Report generated successfully!', 'Success');
-                    
-                    // Scroll to the report content
-                    reportContent.scrollIntoView({ behavior: 'smooth' });
-                    
-                } catch (error) {
-                    console.error('Error generating final report:', error);
-                    reportContent.innerHTML = `
-                        <div style="text-align: center; padding: var(--spacing-xl); color: var(--cisa-red);">
-                            <i class="fas fa-exclamation-triangle" style="font-size: 2rem; margin-bottom: var(--spacing-md);"></i>
-                            <p>Error generating report. Please try again.</p>
-                            <p style="font-size: 0.9rem; color: var(--cisa-gray);">${error.message}</p>
-                        </div>
-                    `;
-                }
-            }, 500);
+            if (reportContent) {
+                reportContent.innerHTML = `
+                    <div style="text-align: center; padding: var(--spacing-xl); background: white; border: 1px solid var(--cisa-gray-light); border-radius: var(--border-radius-lg);">
+                        <i class="fas fa-file-word" style="font-size: 2.5rem; color: var(--cisa-blue); margin-bottom: var(--spacing-md);"></i>
+                        <h3 style="margin: 0 0 var(--spacing-sm) 0; color: var(--cisa-blue-dark);">DOCX Final Report</h3>
+                        <p style="margin: 0 0 var(--spacing-md) 0; color: var(--cisa-gray);">The SAFE final report is generated as a DOCX download. Use the button below to download the report.</p>
+                        <button class="btn btn-primary" onclick="printFinalReport()">Download DOCX</button>
+                    </div>
+                `;
+            }
+            return downloadSafeDocxReport();
         }
 
         function collectFacilityInfo() {
