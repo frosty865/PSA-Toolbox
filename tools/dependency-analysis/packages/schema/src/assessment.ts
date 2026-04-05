@@ -679,7 +679,19 @@ const AssetSchema = z.object({
   sector: z.string().optional(),
   /** Primary subsector for the assessment. */
   subsector: z.string().optional(),
-  /** Physical address of the asset/site. */
+  /** Mailing/street address line 1 of the asset/site. */
+  mailing_address_line1: z.string().optional(),
+  /** Mailing address line 2 of the asset/site. */
+  mailing_address_line2: z.string().optional(),
+  /** Mailing city of the asset/site. */
+  mailing_city: z.string().optional(),
+  /** Mailing state / province of the asset/site. */
+  mailing_state: z.string().optional(),
+  /** Mailing ZIP / postal code of the asset/site. */
+  mailing_zip: z.string().optional(),
+  /** Mailing country of the asset/site. */
+  mailing_country: z.string().optional(),
+  /** Physical address of the asset/site, composed from the mailing fields. */
   physical_address: z.string().optional(),
   /** Location as Lat/Long (e.g. "38.9072, -77.0369"). */
   location: z.string().optional(),

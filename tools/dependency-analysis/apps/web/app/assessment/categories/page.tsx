@@ -115,6 +115,25 @@ function isCurveTab(id: SectionTabId): boolean {
   return CURVE_TAB_IDS.includes(id);
 }
 
+function composeMailingAddress(parts: {
+  line1?: string;
+  line2?: string;
+  city?: string;
+  state?: string;
+  zip?: string;
+  country?: string;
+}): string {
+  return [
+    parts.line1 ?? '',
+    parts.line2 ?? '',
+    [parts.city ?? '', parts.state ?? '', parts.zip ?? ''].filter(Boolean).join(', '),
+    parts.country ?? '',
+  ]
+    .filter(Boolean)
+    .join('\n')
+    .trim();
+}
+
 const VALID_TAB_IDS = new Set(SECTION_TABS.map((t) => t.id));
 
 function CategoriesPageContent() {
@@ -199,6 +218,21 @@ function CategoriesPageContent() {
     },
     [assessment, setAssessment]
   );
+
+  const mailingAddressLine1 = assessment.asset.mailing_address_line1 ?? '';
+  const mailingAddressLine2 = assessment.asset.mailing_address_line2 ?? '';
+  const mailingCity = assessment.asset.mailing_city ?? '';
+  const mailingState = assessment.asset.mailing_state ?? '';
+  const mailingZip = assessment.asset.mailing_zip ?? '';
+  const mailingCountry = assessment.asset.mailing_country ?? '';
+  const composedMailingAddress = composeMailingAddress({
+    line1: mailingAddressLine1,
+    line2: mailingAddressLine2,
+    city: mailingCity,
+    state: mailingState,
+    zip: mailingZip,
+    country: mailingCountry,
+  });
 
   const autofillCoordinates = useCallback(async () => {
     const address = (assessment.asset.physical_address || assessment.asset.location || '').trim();
@@ -843,13 +877,139 @@ function CategoriesPageContent() {
           </div>
           <div>
             <label className="form-label" htmlFor="ida-physical-address">Physical Address</label>
-            <input
+            <textarea
               id="ida-physical-address"
               className="form-control"
-              type="text"
-              value={assessment.asset.physical_address ?? ''}
+              rows={4}
+              value={composedMailingAddress || assessment.asset.physical_address || ''}
               onChange={(e) => updateAsset({ physical_address: e.target.value || undefined, location: e.target.value || undefined })}
-              placeholder="Street, city, state, ZIP"
+              placeholder="Address lines, city, state, ZIP, country"
+            />
+          </div>
+          <div>
+            <label className="form-label" htmlFor="ida-address-line1">Address line 1</label>
+            <input
+              id="ida-address-line1"
+              className="form-control"
+              type="text"
+              value={mailingAddressLine1}
+              onChange={(e) => updateAsset({
+                mailing_address_line1: e.target.value || undefined,
+                physical_address: composeMailingAddress({
+                  line1: e.target.value,
+                  line2: mailingAddressLine2,
+                  city: mailingCity,
+                  state: mailingState,
+                  zip: mailingZip,
+                  country: mailingCountry,
+                }) || undefined,
+              })}
+              placeholder="Street address"
+            />
+          </div>
+          <div>
+            <label className="form-label" htmlFor="ida-address-line2">Address line 2</label>
+            <input
+              id="ida-address-line2"
+              className="form-control"
+              type="text"
+              value={mailingAddressLine2}
+              onChange={(e) => updateAsset({
+                mailing_address_line2: e.target.value || undefined,
+                physical_address: composeMailingAddress({
+                  line1: mailingAddressLine1,
+                  line2: e.target.value,
+                  city: mailingCity,
+                  state: mailingState,
+                  zip: mailingZip,
+                  country: mailingCountry,
+                }) || undefined,
+              })}
+              placeholder="Suite, building, PO box"
+            />
+          </div>
+          <div>
+            <label className="form-label" htmlFor="ida-city">City</label>
+            <input
+              id="ida-city"
+              className="form-control"
+              type="text"
+              value={mailingCity}
+              onChange={(e) => updateAsset({
+                mailing_city: e.target.value || undefined,
+                physical_address: composeMailingAddress({
+                  line1: mailingAddressLine1,
+                  line2: mailingAddressLine2,
+                  city: e.target.value,
+                  state: mailingState,
+                  zip: mailingZip,
+                  country: mailingCountry,
+                }) || undefined,
+              })}
+              placeholder="City"
+            />
+          </div>
+          <div>
+            <label className="form-label" htmlFor="ida-state">State</label>
+            <input
+              id="ida-state"
+              className="form-control"
+              type="text"
+              value={mailingState}
+              onChange={(e) => updateAsset({
+                mailing_state: e.target.value || undefined,
+                physical_address: composeMailingAddress({
+                  line1: mailingAddressLine1,
+                  line2: mailingAddressLine2,
+                  city: mailingCity,
+                  state: e.target.value,
+                  zip: mailingZip,
+                  country: mailingCountry,
+                }) || undefined,
+              })}
+              placeholder="State"
+            />
+          </div>
+          <div>
+            <label className="form-label" htmlFor="ida-zip">ZIP</label>
+            <input
+              id="ida-zip"
+              className="form-control"
+              type="text"
+              value={mailingZip}
+              onChange={(e) => updateAsset({
+                mailing_zip: e.target.value || undefined,
+                physical_address: composeMailingAddress({
+                  line1: mailingAddressLine1,
+                  line2: mailingAddressLine2,
+                  city: mailingCity,
+                  state: mailingState,
+                  zip: e.target.value,
+                  country: mailingCountry,
+                }) || undefined,
+              })}
+              placeholder="ZIP"
+            />
+          </div>
+          <div>
+            <label className="form-label" htmlFor="ida-country">Country</label>
+            <input
+              id="ida-country"
+              className="form-control"
+              type="text"
+              value={mailingCountry}
+              onChange={(e) => updateAsset({
+                mailing_country: e.target.value || undefined,
+                physical_address: composeMailingAddress({
+                  line1: mailingAddressLine1,
+                  line2: mailingAddressLine2,
+                  city: mailingCity,
+                  state: mailingState,
+                  zip: mailingZip,
+                  country: e.target.value,
+                }) || undefined,
+              })}
+              placeholder="United States"
             />
           </div>
           <div>

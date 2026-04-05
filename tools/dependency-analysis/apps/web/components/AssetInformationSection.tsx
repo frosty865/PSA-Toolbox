@@ -45,6 +45,21 @@ export function AssetInformationSection({ asset, onUpdate }: AssetInformationSec
   const [geocoding, setGeocoding] = useState(false);
 
   const physicalAddress = asset.physical_address ?? asset.location ?? '';
+  const mailingAddressLine1 = asset.mailing_address_line1 ?? '';
+  const mailingAddressLine2 = asset.mailing_address_line2 ?? '';
+  const mailingCity = asset.mailing_city ?? '';
+  const mailingState = asset.mailing_state ?? '';
+  const mailingZip = asset.mailing_zip ?? '';
+  const mailingCountry = asset.mailing_country ?? '';
+  const composedMailingAddress = [
+    mailingAddressLine1,
+    mailingAddressLine2,
+    [mailingCity, mailingState, mailingZip].filter(Boolean).join(', '),
+    mailingCountry,
+  ]
+    .filter(Boolean)
+    .join('\n')
+    .trim();
   const latValue = asset.facility_latitude ?? '';
   const lonValue = asset.facility_longitude ?? '';
   const subsectorOptions = getIdaSubsectors(asset.sector ?? '');
@@ -82,11 +97,11 @@ export function AssetInformationSection({ asset, onUpdate }: AssetInformationSec
     }
   };
 
-  return (
+    return (
     <section className="card">
       <h3 className="card-title">Facility Information</h3>
       <p className="text-secondary mb-3">
-        Capture the sector, subsector, address, and coordinates used in the save data and report.
+        Capture the sector, subsector, mailing address, and coordinates used in the save data and report.
       </p>
       <div className="form-section">
         <div className="form-group">
@@ -134,13 +149,148 @@ export function AssetInformationSection({ asset, onUpdate }: AssetInformationSec
             </select>
           </div>
         </div>
+        <h4 className="form-label mt-3 mb-2">Mailing Address</h4>
         <div className="form-group">
-          <label className="form-label" htmlFor="physical-address">Physical Address</label>
+          <label className="form-label" htmlFor="mailing-address-line1">Address line 1</label>
           <input
-            id="physical-address"
+            id="mailing-address-line1"
             type="text"
             className="form-control"
-            value={physicalAddress}
+            value={mailingAddressLine1}
+            onChange={(e) => {
+              const next = e.target.value;
+              onUpdate({
+                mailing_address_line1: next || undefined,
+                physical_address: [
+                  next,
+                  mailingAddressLine2,
+                  [mailingCity, mailingState, mailingZip].filter(Boolean).join(', '),
+                  mailingCountry,
+                ].filter(Boolean).join('\n') || undefined,
+              });
+            }}
+            placeholder="Street address"
+          />
+        </div>
+        <div className="form-group">
+          <label className="form-label" htmlFor="mailing-address-line2">Address line 2</label>
+          <input
+            id="mailing-address-line2"
+            type="text"
+            className="form-control"
+            value={mailingAddressLine2}
+            onChange={(e) => {
+              const next = e.target.value;
+              onUpdate({
+                mailing_address_line2: next || undefined,
+                physical_address: [
+                  mailingAddressLine1,
+                  next,
+                  [mailingCity, mailingState, mailingZip].filter(Boolean).join(', '),
+                  mailingCountry,
+                ].filter(Boolean).join('\n') || undefined,
+              });
+            }}
+            placeholder="Suite, building, PO box"
+          />
+        </div>
+        <div className="form-row" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <div className="form-group" style={{ flex: '2 1 180px' }}>
+            <label className="form-label" htmlFor="mailing-city">City</label>
+            <input
+              id="mailing-city"
+              type="text"
+              className="form-control"
+              value={mailingCity}
+              onChange={(e) => {
+                const next = e.target.value;
+                onUpdate({
+                  mailing_city: next || undefined,
+                  physical_address: [
+                    mailingAddressLine1,
+                    mailingAddressLine2,
+                    [next, mailingState, mailingZip].filter(Boolean).join(', '),
+                    mailingCountry,
+                  ].filter(Boolean).join('\n') || undefined,
+                });
+              }}
+              placeholder="City"
+            />
+          </div>
+          <div className="form-group" style={{ flex: '1 1 120px' }}>
+            <label className="form-label" htmlFor="mailing-state">State</label>
+            <input
+              id="mailing-state"
+              type="text"
+              className="form-control"
+              value={mailingState}
+              onChange={(e) => {
+                const next = e.target.value;
+                onUpdate({
+                  mailing_state: next || undefined,
+                  physical_address: [
+                    mailingAddressLine1,
+                    mailingAddressLine2,
+                    [mailingCity, next, mailingZip].filter(Boolean).join(', '),
+                    mailingCountry,
+                  ].filter(Boolean).join('\n') || undefined,
+                });
+              }}
+              placeholder="State"
+            />
+          </div>
+          <div className="form-group" style={{ flex: '1 1 120px' }}>
+            <label className="form-label" htmlFor="mailing-zip">ZIP</label>
+            <input
+              id="mailing-zip"
+              type="text"
+              className="form-control"
+              value={mailingZip}
+              onChange={(e) => {
+                const next = e.target.value;
+                onUpdate({
+                  mailing_zip: next || undefined,
+                  physical_address: [
+                    mailingAddressLine1,
+                    mailingAddressLine2,
+                    [mailingCity, mailingState, next].filter(Boolean).join(', '),
+                    mailingCountry,
+                  ].filter(Boolean).join('\n') || undefined,
+                });
+              }}
+              placeholder="ZIP"
+            />
+          </div>
+          <div className="form-group" style={{ flex: '1 1 160px' }}>
+            <label className="form-label" htmlFor="mailing-country">Country</label>
+            <input
+              id="mailing-country"
+              type="text"
+              className="form-control"
+              value={mailingCountry}
+              onChange={(e) => {
+                const next = e.target.value;
+                onUpdate({
+                  mailing_country: next || undefined,
+                  physical_address: [
+                    mailingAddressLine1,
+                    mailingAddressLine2,
+                    [mailingCity, mailingState, mailingZip].filter(Boolean).join(', '),
+                    next,
+                  ].filter(Boolean).join('\n') || undefined,
+                });
+              }}
+              placeholder="United States"
+            />
+          </div>
+        </div>
+        <div className="form-group">
+          <label className="form-label" htmlFor="physical-address">Physical Address</label>
+          <textarea
+            id="physical-address"
+            className="form-control"
+            rows={3}
+            value={composedMailingAddress || physicalAddress}
             onChange={(e) => {
               const next = e.target.value;
               onUpdate({
@@ -148,7 +298,7 @@ export function AssetInformationSection({ asset, onUpdate }: AssetInformationSec
                 location: next || undefined,
               });
             }}
-            placeholder="Street, city, state, ZIP"
+            placeholder="Address lines, city, state, ZIP, country"
           />
         </div>
         <div className="form-group">
