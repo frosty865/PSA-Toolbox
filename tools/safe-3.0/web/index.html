@@ -4626,12 +4626,6 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                 <button class="btn btn-success" onclick="generateReportReview()" style="margin-left: var(--spacing-sm);">
                     <i class="fas fa-chart-bar"></i> Generate Report Review
                 </button>
-                <button class="btn btn-info" onclick="exportLogs()" style="margin-left: var(--spacing-sm);">
-                    <i class="fas fa-download"></i> Export Logs
-                </button>
-                <button class="btn btn-warning" onclick="clearLogs()" style="margin-left: var(--spacing-sm);">
-                    <i class="fas fa-trash"></i> Clear Logs
-                </button>
                 <p style="color: var(--cisa-gray); font-size: var(--font-size-sm); margin-top: var(--spacing-sm);">
                     <i class="fas fa-info-circle"></i>
                     Validate your assessment first, then generate a comprehensive report review organized by findings.
@@ -8194,78 +8188,6 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
         }
         
         /**
-         * Exports all logs to downloadable files
-         */
-        function exportLogs() {
-            try {
-                const logs = {
-                    validation: [],
-                    system: [],
-                    json: []
-                };
-                
-                // Collect all logs from localStorage
-                for (let i = 0; i < localStorage.length; i++) {
-                    const key = localStorage.key(i);
-                    if (key && key.startsWith('SAFE_')) {
-                        const logData = JSON.parse(localStorage.getItem(key));
-                        const logType = logData.type;
-                        if (logs[logType]) {
-                            logs[logType].push(logData);
-                        }
-                    }
-                }
-                
-                // Create downloadable files for each log type
-                Object.keys(logs).forEach(logType => {
-                    if (logs[logType].length > 0) {
-                        const logContent = JSON.stringify(logs[logType], null, 2);
-                        const blob = new Blob([logContent], { type: 'application/json' });
-                        const url = URL.createObjectURL(blob);
-                        
-                        const a = document.createElement('a');
-                        a.href = url;
-                        a.download = `SAFE_${logType}_logs_${new Date().toISOString().split('T')[0]}.json`;
-                        document.body.appendChild(a);
-                        a.click();
-                        document.body.removeChild(a);
-                        URL.revokeObjectURL(url);
-                    }
-                });
-                
-                console.log('📁 Logs exported successfully');
-                showSuccessBanner('✅ Logs exported to Downloads folder');
-                
-            } catch (error) {
-                console.error('Error exporting logs:', error);
-                alert('Error exporting logs. Check console for details.');
-            }
-        }
-        
-        /**
-         * Clears all logs from localStorage
-         */
-        function clearLogs() {
-            try {
-                const keysToRemove = [];
-                for (let i = 0; i < localStorage.length; i++) {
-                    const key = localStorage.key(i);
-                    if (key && key.startsWith('SAFE_')) {
-                        keysToRemove.push(key);
-                    }
-                }
-                
-                keysToRemove.forEach(key => localStorage.removeItem(key));
-                console.log('🗑️ All logs cleared');
-                showSuccessBanner('✅ All logs cleared');
-                
-            } catch (error) {
-                console.error('Error clearing logs:', error);
-                alert('Error clearing logs. Check console for details.');
-            }
-        }
-        
-        /**
          * Comprehensive validation system for all human-interactive elements
          * @returns {Object} Validation results with errors and warnings
          */
@@ -8645,13 +8567,6 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                 console.log('🔍 Starting comprehensive validation...');
                 const validationResults = validateAllFields();
                 
-                // Log validation results
-                logError('validation', 'Validation completed', {
-                    isValid: validationResults.isValid,
-                    errorCount: validationResults.errors ? validationResults.errors.length : 0,
-                    warningCount: validationResults.warnings ? validationResults.warnings.length : 0
-                });
-                
                 // Always show detailed results for debugging
                 console.log('📊 Validation Results:', validationResults);
                 console.log('📊 Errors count:', validationResults.errors.length);
@@ -8670,7 +8585,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                 }
                 
             } catch (error) {
-                logError('system', 'Validation execution error', { error: error.message, stack: error.stack });
+                console.error('Validation execution error', error);
                 showValidationError('Validation failed due to system error: ' + error.message);
             }
         }
