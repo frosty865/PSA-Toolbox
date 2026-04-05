@@ -9545,6 +9545,46 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
             return labels[value] || 'Not specified';
         }
 
+
+        function generateReportCoverPage({
+            reportTitle,
+            reportSubtitle,
+            facilityName,
+            assessmentDate,
+            sector,
+            location,
+            assessorName,
+            contactName,
+            contactRegion,
+            contactCity,
+            contactCell,
+            contactEmail,
+        }) {
+            return `
+                <div class="report-cover-page" style="page-break-after: always; page-break-inside: avoid; text-align: center; padding: var(--spacing-xxl); color: var(--cisa-blue-dark); min-height: 82vh; display: flex; flex-direction: column; justify-content: center;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; gap: var(--spacing-sm); background: rgba(17, 46, 81, 0.08); color: var(--cisa-blue-dark); border-radius: 999px; padding: 6px 14px; margin: 0 auto var(--spacing-lg) auto; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">
+                        CISA
+                    </div>
+                    <div style="margin-bottom: var(--spacing-md);">
+                        <img src="./assets/CISA_Logo.png" alt="CISA Logo" style="height: 96px; margin-bottom: var(--spacing-md);">
+                        <h1 style="font-size: 2.55rem; font-weight: 700; margin: 0;">${reportTitle}</h1>
+                        <h2 style="font-size: 1.35rem; font-weight: 500; margin: var(--spacing-sm) 0 0 0; opacity: 0.92;">${reportSubtitle}</h2>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.82); border: 1px solid #c7d7f0; padding: var(--spacing-xl); border-radius: var(--border-radius-lg); margin: var(--spacing-md) 0;">
+                        <h3 style="font-size: 1.45rem; margin-bottom: var(--spacing-md);">${facilityName}</h3>
+                        <p style="font-size: 1.03rem; margin: var(--spacing-xs) 0;"><strong>Assessment Date:</strong> ${assessmentDate}</p>
+                        <p style="font-size: 1.03rem; margin: var(--spacing-xs) 0;"><strong>Sector:</strong> ${sector}</p>
+                        <p style="font-size: 1.03rem; margin: var(--spacing-xs) 0;"><strong>Location:</strong> ${location}</p>
+                        <p style="font-size: 1.03rem; margin: var(--spacing-xs) 0;"><strong>Assessor:</strong> ${assessorName}</p>
+                    </div>
+                    <div style="font-size: 0.92rem; line-height: 1.45; color: #334155; text-align: left; max-width: 6.8in; margin: 0 auto var(--spacing-md) auto;">
+                        <p style="margin: 0 0 8px 0;"><strong>Disclaimer:</strong> This information is FOR OFFICIAL USE ONLY (FOUO). It must be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy.</p>
+                        <p style="margin: 0;">Report contact: ${contactName || 'Not specified'}${contactRegion ? ` | Region ${contactRegion}` : ''}${contactCity ? ` | ${contactCity}` : ''}${contactCell ? ` | Cell: ${contactCell}` : ''}${contactEmail ? ` | Email: ${contactEmail}` : ''}</p>
+                    </div>
+                </div>
+            `;
+        }
+
         function generateVideoAnalyticsProgramSection(program) {
             if (!program) return '';
 
@@ -9662,26 +9702,22 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                     }
                 </style>
                 <!-- Cover Page -->
-                <div class="report-cover-page" style="page-break-after: always; text-align: center; padding: var(--spacing-xxl); color: var(--cisa-blue-dark); min-height: 82vh; display: flex; flex-direction: column; justify-content: center;">
-                    <div style="display: inline-flex; align-items: center; justify-content: center; gap: var(--spacing-sm); background: rgba(17, 46, 81, 0.08); color: var(--cisa-blue-dark); border-radius: 999px; padding: 6px 14px; margin: 0 auto var(--spacing-lg) auto; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">
-                        CISA | ALT SAFE
-                    </div>
+                ${generateReportCoverPage({
+                    reportTitle: 'ALT SAFE',
+                    reportSubtitle: 'Security Assessment Report',
+                    facilityName: facilityInfo.name,
+                    assessmentDate: facilityInfo.assessmentDate,
+                    sector: facilityInfo.sector,
+                    location: `${facilityInfo.city}, ${facilityInfo.state}`,
+                    assessorName: facilityInfo.assessorName,
+                    contactName: contactInfo.psaName,
+                    contactRegion: contactInfo.psaRegion || '',
+                    contactCity: contactInfo.psaCity || '',
+                    contactCell: contactInfo.psaPhone || '',
+                    contactEmail: contactInfo.psaEmail || '',
+                })}
 
-                    <div style="margin-bottom: var(--spacing-lg);">
-                        <img src="./assets/CISA_Logo.png" alt="CISA Logo" style="height: 110px; margin-bottom: var(--spacing-md);">
-                        <h1 style="font-size: 2.55rem; font-weight: 700; margin: 0;">ALT SAFE</h1>
-                        <h2 style="font-size: 1.45rem; font-weight: 500; margin: var(--spacing-sm) 0 0 0; opacity: 0.92;">Security Assessment Report</h2>
-                    </div>
-                    
-                    <div style="background: rgba(255,255,255,0.82); border: 1px solid #c7d7f0; padding: var(--spacing-xl); border-radius: var(--border-radius-lg); margin: var(--spacing-md) 0;">
-                        <h3 style="font-size: 1.45rem; margin-bottom: var(--spacing-md);">${facilityInfo.name}</h3>
-                        <p style="font-size: 1.03rem; margin: var(--spacing-xs) 0;"><strong>Assessment Date:</strong> ${facilityInfo.assessmentDate}</p>
-                        <p style="font-size: 1.03rem; margin: var(--spacing-xs) 0;"><strong>Sector:</strong> ${facilityInfo.sector}</p>
-                        <p style="font-size: 1.03rem; margin: var(--spacing-xs) 0;"><strong>Location:</strong> ${facilityInfo.city}, ${facilityInfo.state}</p>
-                        <p style="font-size: 1.03rem; margin: var(--spacing-xs) 0;"><strong>Assessor:</strong> ${facilityInfo.assessorName}</p>
-                    </div>
-
-                    <div class="report-kpi-strip" style="margin: var(--spacing-lg) 0 var(--spacing-xl) 0;">
+                <div class="report-kpi-strip" style="margin: var(--spacing-lg) 0 var(--spacing-xl) 0;">
                         <div class="report-kpi-card">
                             <div class="report-kpi-number">${securityPercentage}%</div>
                             <div class="report-kpi-label">Security Posture</div>
@@ -12297,20 +12333,23 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                             }
                         }
                     </style>
+                    ${generateReportCoverPage({
+                        reportTitle: 'ALT SAFE',
+                        reportSubtitle: 'Executive Summary',
+                        facilityName: assessmentData.facilityName || 'Facility',
+                        assessmentDate,
+                        sector: assessmentData.sector || 'Not specified',
+                        location: assessmentData.location || 'Not specified',
+                        assessorName: assessmentData.assessorName || 'Not specified',
+                        contactName: assessmentData.psaName || assessmentData.assessorName || 'Not specified',
+                        contactRegion: assessmentData.psaRegion || '',
+                        contactCity: assessmentData.psaCity || '',
+                        contactCell: assessmentData.psaPhone || assessmentData.psaCell || '',
+                        contactEmail: assessmentData.psaEmail || '',
+                    })}
 
                     <div class="exec-report">
-                        <div class="exec-hero">
-                            <img src="./assets/CISA_Logo.png" alt="CISA Logo" style="height: 84px; margin-bottom: 10px;">
-                            <h1 style="font-size: 2rem; font-weight: 700; margin: 0; color: #1e3a8a;">ALT SAFE</h1>
-                            <h2 style="font-size: 1.2rem; font-weight: 500; margin: 4px 0 0 0; color: #1e3a8a;">Executive Summary</h2>
-                            <div class="exec-meta">
-                                <span><strong>Facility:</strong> ${assessmentData.facilityName || 'Facility'}</span>
-                                <span><strong>Assessment Date:</strong> ${assessmentDate}</span>
-                                <span><strong>Summary Generated:</strong> ${generatedDate}</span>
-                            </div>
-                        </div>
-
-                        <div class="exec-body">
+                    <div class="exec-body">
                             <div class="exec-panel" style="background: #f8fbff; border-left: 4px solid #1e3a8a;">
                                 <h3 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 1.05rem;">Leadership Snapshot</h3>
                                 <p style="margin: 0;">
