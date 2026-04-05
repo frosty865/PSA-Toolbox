@@ -136,38 +136,6 @@ export function SupplySourcesEditor({ categoryCode, value, onChange }: SupplySou
             />
           </div>
           <div className="form-group">
-            <label className="form-label" htmlFor={`${baseId}-d0`}>Demarcation description</label>
-            <input
-              id={`${baseId}-d0`}
-              type="text"
-              className="form-control"
-              value={sources[0]?.demarcation_description ?? ''}
-              onChange={(e) => updateSource(0, { demarcation_description: e.target.value || null })}
-            />
-          </div>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <div className="form-group" style={{ flex: '1 1 8rem' }}>
-              <label className="form-label" htmlFor={`${baseId}-lat0`}>Latitude</label>
-              <NumericInput
-                id={`${baseId}-lat0`}
-                value={sources[0]?.demarcation_lat ?? null}
-                onValueChange={(n) => updateSource(0, { demarcation_lat: n })}
-                integer={false}
-                allowEmpty
-              />
-            </div>
-            <div className="form-group" style={{ flex: '1 1 8rem' }}>
-              <label className="form-label" htmlFor={`${baseId}-lon0`}>Longitude</label>
-              <NumericInput
-                id={`${baseId}-lon0`}
-                value={sources[0]?.demarcation_lon ?? null}
-                onValueChange={(n) => updateSource(0, { demarcation_lon: n })}
-                integer={false}
-                allowEmpty
-              />
-            </div>
-          </div>
-          <div className="form-group">
             <label className="form-label" htmlFor={`${baseId}-n0`}>Notes</label>
             <input
               id={`${baseId}-n0`}
@@ -177,6 +145,9 @@ export function SupplySourcesEditor({ categoryCode, value, onChange }: SupplySou
               onChange={(e) => updateSource(0, { notes: e.target.value || null })}
             />
           </div>
+          <p className="text-secondary small mb-0">
+            Demarcation and independence only apply when there is an alternate source/feed.
+          </p>
         </div>
       ) : (
         <div style={{ marginTop: '0.5rem' }}>
