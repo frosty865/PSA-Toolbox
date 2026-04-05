@@ -19,7 +19,7 @@ const SKIP_NULL_NORMALIZE = new Set([
 
 function isLikelyStringKey(key: string): boolean {
   if (SKIP_NULL_NORMALIZE.has(key)) return false;
-  if (/^(tool_version|template_version|created_at_iso|asset_name|visit_date_iso|sector|subsector|mailing_address_line1|mailing_address_line2|mailing_city|mailing_state|mailing_zip|mailing_country|physical_address|location|facility_latitude|facility_longitude|assessor|description|from_category|backup_type|pra_category_other|product_or_service|component_or_service|provider_name|alternate_supplier_name|source_id|source_label|demarcation_description|connection_label|facility_entry_location|associated_provider|capability_type|scope|capacity_description|estimated_duration|plan_description|mitigation_description|protection_type)$/.test(key))
+  if (/^(tool_version|template_version|created_at_iso|asset_name|visit_date_iso|sector|subsector|mailing_address_line1|mailing_address_line2|mailing_address_line3|mailing_city|mailing_state|mailing_zip|mailing_country|physical_address|location|facility_latitude|facility_longitude|assessor|description|from_category|backup_type|pra_category_other|product_or_service|component_or_service|provider_name|alternate_supplier_name|source_id|source_label|demarcation_description|connection_label|facility_entry_location|associated_provider|capability_type|scope|capacity_description|estimated_duration|plan_description|mitigation_description|protection_type)$/.test(key))
     return true;
   return (
     key.endsWith('_name') ||

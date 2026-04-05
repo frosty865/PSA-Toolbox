@@ -681,8 +681,10 @@ const AssetSchema = z.object({
   subsector: z.string().optional(),
   /** Mailing/street address line 1 of the asset/site. */
   mailing_address_line1: z.string().optional(),
-  /** Mailing address line 2 of the asset/site. */
+  /** Mailing/street address line 2 of the asset/site. */
   mailing_address_line2: z.string().optional(),
+  /** Mailing/street address line 3 of the asset/site. */
+  mailing_address_line3: z.string().optional(),
   /** Mailing city of the asset/site. */
   mailing_city: z.string().optional(),
   /** Mailing state / province of the asset/site. */

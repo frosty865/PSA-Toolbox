@@ -22,6 +22,7 @@ export function getDefaultAssessment(): Assessment {
       subsector: '',
       mailing_address_line1: '',
       mailing_address_line2: '',
+      mailing_address_line3: '',
       mailing_city: '',
       mailing_state: '',
       mailing_zip: '',

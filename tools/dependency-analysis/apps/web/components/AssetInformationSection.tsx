@@ -47,6 +47,7 @@ export function AssetInformationSection({ asset, onUpdate }: AssetInformationSec
   const physicalAddress = asset.physical_address ?? asset.location ?? '';
   const mailingAddressLine1 = asset.mailing_address_line1 ?? '';
   const mailingAddressLine2 = asset.mailing_address_line2 ?? '';
+  const mailingAddressLine3 = asset.mailing_address_line3 ?? '';
   const mailingCity = asset.mailing_city ?? '';
   const mailingState = asset.mailing_state ?? '';
   const mailingZip = asset.mailing_zip ?? '';
@@ -54,6 +55,7 @@ export function AssetInformationSection({ asset, onUpdate }: AssetInformationSec
   const composedMailingAddress = [
     mailingAddressLine1,
     mailingAddressLine2,
+    mailingAddressLine3,
     [mailingCity, mailingState, mailingZip].filter(Boolean).join(', '),
     mailingCountry,
   ]
@@ -164,6 +166,7 @@ export function AssetInformationSection({ asset, onUpdate }: AssetInformationSec
                 physical_address: [
                   next,
                   mailingAddressLine2,
+                  mailingAddressLine3,
                   [mailingCity, mailingState, mailingZip].filter(Boolean).join(', '),
                   mailingCountry,
                 ].filter(Boolean).join('\n') || undefined,
@@ -186,12 +189,36 @@ export function AssetInformationSection({ asset, onUpdate }: AssetInformationSec
                 physical_address: [
                   mailingAddressLine1,
                   next,
+                  mailingAddressLine3,
                   [mailingCity, mailingState, mailingZip].filter(Boolean).join(', '),
                   mailingCountry,
                 ].filter(Boolean).join('\n') || undefined,
               });
             }}
             placeholder="Suite, building, PO box"
+          />
+        </div>
+        <div className="form-group">
+          <label className="form-label" htmlFor="mailing-address-line3">Address line 3</label>
+          <input
+            id="mailing-address-line3"
+            type="text"
+            className="form-control"
+            value={mailingAddressLine3}
+            onChange={(e) => {
+              const next = e.target.value;
+              onUpdate({
+                mailing_address_line3: next || undefined,
+                physical_address: [
+                  mailingAddressLine1,
+                  mailingAddressLine2,
+                  next,
+                  [mailingCity, mailingState, mailingZip].filter(Boolean).join(', '),
+                  mailingCountry,
+                ].filter(Boolean).join('\n') || undefined,
+              });
+            }}
+            placeholder="Department, attention, or additional address line"
           />
         </div>
         <div className="form-row" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>

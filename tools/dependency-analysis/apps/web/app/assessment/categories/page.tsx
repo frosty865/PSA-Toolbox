@@ -118,6 +118,7 @@ function isCurveTab(id: SectionTabId): boolean {
 function composeMailingAddress(parts: {
   line1?: string;
   line2?: string;
+  line3?: string;
   city?: string;
   state?: string;
   zip?: string;
@@ -126,6 +127,7 @@ function composeMailingAddress(parts: {
   return [
     parts.line1 ?? '',
     parts.line2 ?? '',
+    parts.line3 ?? '',
     [parts.city ?? '', parts.state ?? '', parts.zip ?? ''].filter(Boolean).join(', '),
     parts.country ?? '',
   ]
@@ -221,6 +223,7 @@ function CategoriesPageContent() {
 
   const mailingAddressLine1 = assessment.asset.mailing_address_line1 ?? '';
   const mailingAddressLine2 = assessment.asset.mailing_address_line2 ?? '';
+  const mailingAddressLine3 = assessment.asset.mailing_address_line3 ?? '';
   const mailingCity = assessment.asset.mailing_city ?? '';
   const mailingState = assessment.asset.mailing_state ?? '';
   const mailingZip = assessment.asset.mailing_zip ?? '';
@@ -228,6 +231,7 @@ function CategoriesPageContent() {
   const composedMailingAddress = composeMailingAddress({
     line1: mailingAddressLine1,
     line2: mailingAddressLine2,
+    line3: mailingAddressLine3,
     city: mailingCity,
     state: mailingState,
     zip: mailingZip,
@@ -898,6 +902,7 @@ function CategoriesPageContent() {
                 physical_address: composeMailingAddress({
                   line1: e.target.value,
                   line2: mailingAddressLine2,
+                  line3: mailingAddressLine3,
                   city: mailingCity,
                   state: mailingState,
                   zip: mailingZip,
@@ -919,6 +924,7 @@ function CategoriesPageContent() {
                 physical_address: composeMailingAddress({
                   line1: mailingAddressLine1,
                   line2: e.target.value,
+                  line3: mailingAddressLine3,
                   city: mailingCity,
                   state: mailingState,
                   zip: mailingZip,
@@ -926,6 +932,28 @@ function CategoriesPageContent() {
                 }) || undefined,
               })}
               placeholder="Suite, building, PO box"
+            />
+          </div>
+          <div>
+            <label className="form-label" htmlFor="ida-address-line3">Address line 3</label>
+            <input
+              id="ida-address-line3"
+              className="form-control"
+              type="text"
+              value={mailingAddressLine3}
+              onChange={(e) => updateAsset({
+                mailing_address_line3: e.target.value || undefined,
+                physical_address: composeMailingAddress({
+                  line1: mailingAddressLine1,
+                  line2: mailingAddressLine2,
+                  line3: e.target.value,
+                  city: mailingCity,
+                  state: mailingState,
+                  zip: mailingZip,
+                  country: mailingCountry,
+                }) || undefined,
+              })}
+              placeholder="Department, attention, or additional line"
             />
           </div>
           <div>
@@ -940,6 +968,7 @@ function CategoriesPageContent() {
                 physical_address: composeMailingAddress({
                   line1: mailingAddressLine1,
                   line2: mailingAddressLine2,
+                  line3: mailingAddressLine3,
                   city: e.target.value,
                   state: mailingState,
                   zip: mailingZip,
@@ -961,6 +990,7 @@ function CategoriesPageContent() {
                 physical_address: composeMailingAddress({
                   line1: mailingAddressLine1,
                   line2: mailingAddressLine2,
+                  line3: mailingAddressLine3,
                   city: mailingCity,
                   state: e.target.value,
                   zip: mailingZip,
@@ -982,6 +1012,7 @@ function CategoriesPageContent() {
                 physical_address: composeMailingAddress({
                   line1: mailingAddressLine1,
                   line2: mailingAddressLine2,
+                  line3: mailingAddressLine3,
                   city: mailingCity,
                   state: mailingState,
                   zip: e.target.value,
@@ -1003,6 +1034,7 @@ function CategoriesPageContent() {
                 physical_address: composeMailingAddress({
                   line1: mailingAddressLine1,
                   line2: mailingAddressLine2,
+                  line3: mailingAddressLine3,
                   city: mailingCity,
                   state: mailingState,
                   zip: mailingZip,
