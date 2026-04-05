@@ -737,6 +737,50 @@ function CategoriesPageContent() {
         />
       </div>
       <div
+        style={{
+          marginBottom: '1.5rem',
+          padding: '1rem 1.25rem',
+          border: '1px solid var(--cisa-gray-light)',
+          borderRadius: '0.75rem',
+          background: 'var(--cisa-white)',
+          boxShadow: '0 6px 18px rgba(15, 23, 42, 0.06)',
+        }}
+      >
+        <h3 style={{ margin: '0 0 0.5rem 0', color: 'var(--cisa-blue-dark)' }}>Required facility fields</h3>
+        <p style={{ margin: '0 0 0.75rem 0', color: 'var(--cisa-gray-dark)' }}>
+          Capture these fields before starting the dependency sections so the save JSON and report output stay aligned.
+        </p>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+            gap: '0.75rem',
+          }}
+        >
+          {[
+            'Sector',
+            'Subsector',
+            'Physical Address',
+            'City / State / ZIP',
+            'Latitude / Longitude',
+          ].map((label) => (
+            <div
+              key={label}
+              style={{
+                padding: '0.75rem',
+                borderRadius: '0.5rem',
+                background: 'var(--cisa-gray-lighter, #f7f8fa)',
+                border: '1px solid var(--cisa-gray-light)',
+                fontWeight: 600,
+                color: 'var(--cisa-gray-dark)',
+              }}
+            >
+              {label}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div
         id="category-workspace"
         style={{
           backgroundColor: 'var(--cisa-gray-lighter, #f1f1f2)',
