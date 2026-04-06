@@ -26250,10 +26250,10 @@
                 const printReadiness = validateAssessmentData(collectAllFormData());
                 const printButtonHtml = printReadiness.valid
                     ? `<button type="button" onclick="printCurrentReport()" class="btn btn-primary btn-sm">
-                                <i class="fas fa-print"></i> Print
+                                <i class="fas fa-file-word"></i> Export DOCX
                             </button>`
                     : `<button type="button" class="btn btn-primary btn-sm" disabled title="Complete all required assessment fields before printing." aria-disabled="true">
-                                <i class="fas fa-print"></i> Print
+                                <i class="fas fa-file-word"></i> Export DOCX
                             </button>`;
                 const actionButtons = `
                     <div class="report-utility-bar">
