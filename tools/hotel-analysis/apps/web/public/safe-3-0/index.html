@@ -18,8 +18,6 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
     <title>ALT SAFE - Comprehensive Security Assessment (Updated: 2024-12-19 15:30)</title>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- HTML2PDF.js for PDF generation -->
-    <script src="https://unpkg.com/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
     <!-- CISA Design System CSS -->
     <style>
         :root {
@@ -762,7 +760,6 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
             }
         }
 
-        /* Print Preview Mode - Shows page breaks visually */
         body.print-preview {
             background: #f0f0f0 !important;
         }
@@ -1824,28 +1821,16 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
             <div class="report-action-content">
                 <!-- Executive Summary Buttons -->
                 <div id="executiveSummaryButtons" class="report-buttons" style="display: none;">
-                    <button class="btn btn-primary" onclick="generateExecutiveSummaryData()">
-                        📊 Generate Executive Summary
+                    <button class="btn btn-primary" onclick="downloadSafeDocxReport()">
+                        ⬇️ Export DOCX
                     </button>
-                    <button class="btn btn-warning" onclick="previewExecutiveSummary()">
-                        👁️ Print Preview
-                        </button>
-                    <button class="btn btn-success" onclick="printExecutiveSummary()">
-                        🖨️ Print Executive Summary
-                        </button>
                 </div>
                 
                 <!-- Final Report Buttons -->
                 <div id="finalReportButtons" class="report-buttons" style="display: none;">
-                    <button class="btn btn-primary" onclick="generateFinalReport()">
-                        📋 Generate DOCX Report
+                    <button class="btn btn-primary" onclick="downloadSafeDocxReport()">
+                        ⬇️ Export DOCX
                     </button>
-                    <button class="btn btn-warning" onclick="previewFinalReport()">
-                        👁️ Export DOCX Preview
-                        </button>
-                    <button class="btn btn-info" onclick="printFinalReport()">
-                        🖨️ Download DOCX Export
-                        </button>
                 </div>
             </div>
         </div>
@@ -4853,11 +4838,8 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
 
                 <!-- Executive Summary Action Buttons -->
                 <div class="executive-actions">
-                    <button class="btn btn-primary" onclick="generateExecutiveSummary()">
-                        <i class="fas fa-chart-line"></i> Generate Executive Summary
-                    </button>
-                    <button class="btn btn-info" onclick="printExecutiveSummary()">
-                        <i class="fas fa-print"></i> Print Summary
+                    <button class="btn btn-primary" onclick="downloadSafeDocxReport()">
+                        ⬇️ Export DOCX
                     </button>
                 </div>
             </div>

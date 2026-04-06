@@ -44,7 +44,7 @@ export function ToolboxLandingClient() {
       disabled={busy}
       className="psa-toolbox-landing__report-btn"
     >
-      {busy ? 'Generating DOCX…' : 'Export DOCX manifest'}
+      {busy ? 'Exporting DOCX…' : 'Export DOCX'}
     </button>
   );
 }
