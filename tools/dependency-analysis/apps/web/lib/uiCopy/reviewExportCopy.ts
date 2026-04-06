@@ -25,7 +25,7 @@ export const reviewExportCopy = {
 
   // Export buttons
   exportJsonButton: 'Export JSON (canonical)',
-  exportDocxButton: 'Export report (DOCX)',
+  exportDocxButton: 'Generate Report (Review Report)',
   exportImportJsonLink: 'Export / Import JSON',
   generatingReport: 'Generating report…',
 
