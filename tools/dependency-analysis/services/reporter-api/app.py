@@ -36,10 +36,8 @@ if _REPORTER_PATH.is_dir() and str(_REPORTER_PATH) not in sys.path:
 
 
 def _get_template_path() -> Path:
-    """Resolve template path; allow override via env."""
-    env_path = os.environ.get("TEMPLATE_PATH")
-    if env_path and Path(env_path).is_file():
-        return Path(env_path)
+    if not _TEMPLATE_PATH.is_file():
+        raise FileNotFoundError(f"Template not found: {_TEMPLATE_PATH}")
     return _TEMPLATE_PATH
 
 
