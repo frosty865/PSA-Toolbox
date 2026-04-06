@@ -26845,80 +26845,17 @@
                         return;
                     }
                 } catch (remoteErr) {
-                    console.warn('HOST: Railway report-service DOCX unavailable, using browser print layout.', remoteErr);
+                    console.error('HOST: Railway report-service DOCX unavailable.', remoteErr);
+                    alert(
+                        'DOCX export failed because the hosted report service is unavailable. Check the Railway report service URL and try again.'
+                    );
+                    return;
                 }
             }
 
-            let printableHTML;
-            try {
-                printableHTML = await buildPrintableReportDocument(reportHTMLToPrint, cachedReportTitle);
-            } catch (printBuildError) {
-                console.error('Print document build failed:', printBuildError);
-                alert('Unable to prepare print view. Please try again.');
-                return;
-            }
-
-            // Preferred path: hidden iframe print (works when popups are blocked).
-            const iframe = document.createElement('iframe');
-            iframe.style.position = 'fixed';
-            iframe.style.right = '0';
-            iframe.style.bottom = '0';
-            iframe.style.width = '0';
-            iframe.style.height = '0';
-            iframe.style.border = '0';
-            iframe.setAttribute('aria-hidden', 'true');
-            document.body.appendChild(iframe);
-
-            const cleanupIframe = () => {
-                setTimeout(() => {
-                    if (iframe && iframe.parentNode) {
-                        iframe.parentNode.removeChild(iframe);
-                    }
-                }, 800);
-            };
-
-            try {
-                const frameDoc = iframe.contentWindow?.document || iframe.contentDocument;
-                if (!frameDoc) {
-                    throw new Error('Iframe document unavailable');
-                }
-                frameDoc.open();
-                frameDoc.write(printableHTML);
-                frameDoc.close();
-
-                setTimeout(() => {
-                    try {
-                        iframe.contentWindow.focus();
-                        iframe.contentWindow.print();
-                        cleanupIframe();
-                    } catch (framePrintError) {
-                        console.error('Iframe print failed:', framePrintError);
-                        cleanupIframe();
-                        // Secondary path: popup print if iframe print is blocked.
-                        const printWindow = window.open('', '_blank', 'noopener,noreferrer,width=1100,height=800');
-                        if (printWindow) {
-                            printWindow.document.open();
-                            printWindow.document.write(printableHTML);
-                            printWindow.document.close();
-                            printWindow.focus();
-                            setTimeout(() => {
-                                try {
-                                    printWindow.print();
-                                } catch (popupPrintError) {
-                                    console.error('Popup print failed:', popupPrintError);
-                                    alert('Printing failed in this browser.');
-                                }
-                            }, 150);
-                        } else {
-                            alert('Printing blocked by browser settings. Please allow popups/print for this page and try again.');
-                        }
-                    }
-                }, 150);
-            } catch (error) {
-                console.error('Print preparation failed:', error);
-                cleanupIframe();
-                alert('Unable to prepare print view. Please regenerate the report and try again.');
-            }
+            alert(
+                'No hosted DOCX report service is configured. Set HOST_REPORT_SERVICE_URL or HOST_REPORT_RENDER_URL to the Railway report endpoint.'
+            );
         }
 
         // ============================================
