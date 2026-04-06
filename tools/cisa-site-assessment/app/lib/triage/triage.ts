@@ -101,6 +101,41 @@ function canonicalSector(s: string): string {
   return raw;
 }
 
+export function readLeadingBytes(filePath: string, byteCount: number): Buffer {
+  const buffer = Buffer.alloc(byteCount);
+  const fd = fs.openSync(filePath, "r");
+  try {
+    fs.readSync(fd, buffer, 0, byteCount, 0);
+  } finally {
+    fs.closeSync(fd);
+  }
+  return buffer;
+}
+
+function buildDestinationPath(params: {
+  libraryRoot: string;
+  moduleFolder: string;
+  decision: TriageDecision;
+  absPath: string;
+}): string {
+  const { libraryRoot, moduleFolder, decision, absPath } = params;
+  const filename = cleanPathSegment(path.basename(absPath));
+
+  if (decision.kind === "MODULE" && decision.moduleCode) {
+    return buildDestPath(libraryRoot, moduleFolder, decision.moduleCode, filename);
+  }
+
+  if (decision.kind === "SECTOR") {
+    const sector = decision.sector?.trim() || "general";
+    if (decision.subsector) {
+      return buildDestPath(libraryRoot, sector, decision.subsector, filename);
+    }
+    return buildDestPath(libraryRoot, sector, filename);
+  }
+
+  return buildDestPath(libraryRoot, "general", filename);
+}
+
 /**
  * Compute SHA256 hash of a file
  */
@@ -121,45 +156,20 @@ export function triageOne(params: {
 }): TriageItem {
   const { libraryRoot, incomingRoot: _incomingRoot, defaults, moduleFolder, absPath } = params;
   void _incomingRoot;
-  
-  // Compute hash
+
   const sha256 = sha256File(absPath);
-  
-  // For now, use default triage logic (can be enhanced later)
-  // TODO: Add actual triage decision logic based on file content/metadata
+
   const decision: TriageDecision = {
     kind: 'SECTOR',
     sector: defaults.sector || 'general',
     rule: 'default_triage',
   };
-  
-  // Apply canonical sector normalization
+
   if (decision.sector) {
     decision.sector = canonicalSector(decision.sector);
   }
-  
-  // Build destination path
-  let destinationPath: string;
-  const filename = cleanPathSegment(path.basename(absPath));
-  
-  if (decision.kind === 'MODULE' && decision.moduleCode) {
-    destinationPath = buildDestPath(
-      libraryRoot,
-      moduleFolder,
-      decision.moduleCode,
-      filename
-    );
-  } else if (decision.kind === 'SECTOR') {
-    const sector = decision.sector?.trim() || 'general';
-    if (decision.subsector) {
-      destinationPath = buildDestPath(libraryRoot, sector, decision.subsector, filename);
-    } else {
-      destinationPath = buildDestPath(libraryRoot, sector, filename);
-    }
-  } else {
-    // Unknown - move to general
-    destinationPath = buildDestPath(libraryRoot, 'general', filename);
-  }
+
+  const destinationPath = buildDestinationPath({ libraryRoot, moduleFolder, decision, absPath });
   
   return {
     absolutePath: absPath,
@@ -173,12 +183,10 @@ export function triageOne(params: {
  * Safely move a file, creating parent directories if needed
  */
 export function safeMove(source: string, dest: string): void {
-  // Ensure destination directory exists
   const destDir = path.dirname(dest);
   if (!fs.existsSync(destDir)) {
     fs.mkdirSync(destDir, { recursive: true });
   }
-  
-  // Move file
+
   fs.renameSync(source, dest);
 }

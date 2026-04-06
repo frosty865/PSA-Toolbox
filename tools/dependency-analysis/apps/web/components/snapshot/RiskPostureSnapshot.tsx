@@ -21,6 +21,39 @@ const SEVERITY_COLORS: Record<string, string> = {
   MODERATE: '#fdb81e',
 };
 
+const SENSITIVITY_COLORS: Record<string, string> = {
+  Immediate: '#e31c3d',
+  'Near-term': '#fa9441',
+  Tolerant: '#fdb81e',
+  None: '#e31c3d',
+  Limited: '#fa9441',
+  Sustained: '#00a91c',
+  Extended: '#e31c3d',
+  Managed: '#fa9441',
+  Rapid: '#00a91c',
+  High: '#e31c3d',
+  Moderate: '#fa9441',
+  Low: '#00a91c',
+};
+
+const badgeStyle = (backgroundColor: string, fontSize: string, extra: React.CSSProperties = {}): React.CSSProperties => ({
+  display: 'inline-block',
+  paddingLeft: '0.5rem',
+  paddingRight: '0.5rem',
+  paddingTop: '0.25rem',
+  paddingBottom: '0.25rem',
+  borderRadius: '0.25rem',
+  fontSize,
+  fontWeight: 600,
+  backgroundColor,
+  color: 'white',
+  ...extra,
+});
+
+function getSensitivityColor(value: string) {
+  return SENSITIVITY_COLORS[value] || '#ccc';
+}
+
 interface RiskPostureSnapshotProps {
   snapshot: ExecutiveRiskPostureSnapshotVM;
 }
@@ -33,42 +66,8 @@ function SensitivityBar({
 }: {
   value: string;
 }) {
-  const colorMap: Record<string, string> = {
-    // Impact Sensitivity
-    'Immediate': '#e31c3d',
-    'Near-term': '#fa9441',
-    'Tolerant': '#fdb81e',
-    // Mitigation Depth
-    'None': '#e31c3d',
-    'Limited': '#fa9441',
-    // NOTE: 'Moderate' removed due to duplicate with Cascade Exposure
-    // TODO: Restructure to support context-sensitive color mapping
-    'Sustained': '#00a91c',
-    // Recovery Sensitivity
-    'Extended': '#e31c3d',
-    'Managed': '#fa9441',
-    'Rapid': '#00a91c',
-    // Cascade Exposure
-    'High': '#e31c3d',
-    'Moderate': '#fa9441',  // Used for both Mitigation and Cascade 'Moderate'
-    'Low': '#00a91c',
-  };
-
   return (
-    <span
-      style={{
-        display: 'inline-block',
-        paddingLeft: '0.5rem',
-        paddingRight: '0.5rem',
-        paddingTop: '0.25rem',
-        paddingBottom: '0.25rem',
-        borderRadius: '0.25rem',
-        fontSize: '0.85rem',
-        fontWeight: 600,
-        backgroundColor: colorMap[value] || '#ccc',
-        color: 'white',
-      }}
-    >
+    <span style={badgeStyle(getSensitivityColor(value), '0.85rem')}>
       {value}
     </span>
   );
@@ -170,20 +169,10 @@ export function RiskPostureSnapshot({ snapshot }: RiskPostureSnapshotProps) {
                     {driver.title}
                   </h5>
                   <span
-                    style={{
-                      display: 'inline-block',
-                      paddingLeft: '0.5rem',
-                      paddingRight: '0.5rem',
-                      paddingTop: '0.25rem',
-                      paddingBottom: '0.25rem',
-                      borderRadius: '0.25rem',
-                      fontSize: '0.75rem',
-                      fontWeight: 600,
-                      backgroundColor: SEVERITY_COLORS[driver.severity] || '#ccc',
-                      color: 'white',
+                    style={badgeStyle(SEVERITY_COLORS[driver.severity] || '#ccc', '0.75rem', {
                       whiteSpace: 'nowrap',
                       marginLeft: '0.5rem',
-                    }}
+                    })}
                   >
                     {driver.severity}
                   </span>

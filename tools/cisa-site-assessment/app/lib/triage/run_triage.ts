@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import triageConfig from "@/tools/triage/triage_config.json";
-import { scanForFiles, triageOne, safeMove } from "@/app/lib/triage/triage";
+import { readLeadingBytes, scanForFiles, triageOne, safeMove } from "@/app/lib/triage/triage";
 import { createOrGetSourceRegistryForLocalFile, ingestSourceRegistryId } from "@/app/lib/sourceRegistry/ingestion";
 import { verifyPdfBuffer } from "@/app/lib/crawler/pdfVerify";
 
@@ -19,6 +19,10 @@ function isSidecar(p: string) {
 function isTempFile(name: string) {
   const n = name.toLowerCase();
   return n.endsWith(".tmp") || n.endsWith(".part") || n.endsWith(".crdownload") || n.startsWith("~$");
+}
+
+function isPdfFile(filePath: string) {
+  return filePath.toLowerCase().endsWith(".pdf");
 }
 
 // Prevent processing a file while it is still being written.
@@ -64,14 +68,8 @@ export async function runTriage(params?: { roots?: string[] }): Promise<RunResul
       const stable = await waitForStableSize(absPath);
       if (!stable) continue;
 
-      if (absPath.toLowerCase().endsWith(".pdf")) {
-        const buf = Buffer.alloc(5);
-        const fd = fs.openSync(absPath, "r");
-        try {
-          fs.readSync(fd, buf, 0, 5, 0);
-        } finally {
-          fs.closeSync(fd);
-        }
+      if (isPdfFile(absPath)) {
+        const buf = readLeadingBytes(absPath, 5);
         if (!verifyPdfBuffer(buf)) {
           errors.push({ file: absPath, error: "Not a valid PDF (missing %PDF- signature)" });
           continue;
@@ -83,7 +81,7 @@ export async function runTriage(params?: { roots?: string[] }): Promise<RunResul
         incomingRoot,
         defaults,
         moduleFolder,
-        absPath
+        absPath,
       });
 
       const sourceRegistryId = await createOrGetSourceRegistryForLocalFile(
@@ -119,7 +117,7 @@ export async function runTriage(params?: { roots?: string[] }): Promise<RunResul
         dest: item.destinationPath,
         sha256: item.sha256,
         decision: item.decision,
-        source_registry_id: sourceRegistryId
+        source_registry_id: sourceRegistryId,
       });
     } catch (e: unknown) {
       const msg = e instanceof Error ? e.message : String(e);
@@ -131,6 +129,6 @@ export async function runTriage(params?: { roots?: string[] }): Promise<RunResul
     processed_count: processed.length,
     error_count: errors.length,
     processed,
-    errors
+    errors,
   };
 }
