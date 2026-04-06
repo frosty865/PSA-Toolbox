@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from '@/components/FieldLink';
 import { useAssessment } from '@/lib/assessment-context';
-import { getVofcCollection } from '@/lib/api';
+import { downloadReportDocx, generateGenericReport, getVofcCollection } from '@/lib/api';
 import type { VOFCCollection } from 'schema';
 
 export default function ReportPage() {
@@ -11,6 +11,7 @@ export default function ReportPage() {
   const [collection, setCollection] = useState<VOFCCollection | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [previewReady, setPreviewReady] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -32,12 +33,53 @@ export default function ReportPage() {
   const items = collection?.items ?? [];
   const { meta, asset } = assessment;
 
+  async function handleGenerateReport() {
+    setPreviewReady(true);
+  }
+
+  async function handleDownloadDocx() {
+    const blob = await generateGenericReport({
+      generic_report: {
+        template_key: 'ada',
+        title: 'Infrastructure Dependency Tool Report',
+        subtitle: 'Review report and DOCX export',
+        header_left: asset.asset_name,
+        header_right: asset.visit_date_iso,
+        footer_left: 'Infrastructure Dependency Tool',
+        footer_right: 'DOCX export',
+        sections: [
+          {
+            heading: 'Facility',
+            paragraphs: [
+              `Asset: ${asset.asset_name}`,
+              `Visit date: ${asset.visit_date_iso}`,
+              asset.location ? `Location (Lat/Long): ${asset.location}` : '',
+              asset.assessor ? `Assessor: ${asset.assessor}` : '',
+            ].filter(Boolean),
+          },
+          {
+            heading: 'Vulnerabilities and Options for Consideration',
+            bullets: items.length
+              ? items.map((row) => `${row.category}: ${row.vulnerability} - ${row.option_for_consideration}`)
+              : ['No vulnerabilities generated for the current assessment.'],
+          },
+        ],
+      },
+    });
+    downloadReportDocx(blob);
+  }
+
   return (
     <main className="report-page section active">
       <div className="no-print mb-4" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignItems: 'center' }}>
-        <button type="button" className="btn btn-primary" disabled title="Generate the report review before DOCX conversion">
+        <button type="button" className="btn btn-primary" onClick={handleGenerateReport}>
           Generate Report (Review Report)
         </button>
+        {previewReady && (
+          <button type="button" className="btn btn-success" onClick={handleDownloadDocx}>
+            Download DOCX
+          </button>
+        )}
         <Link href="/assessment/review/" className="btn btn-secondary">← Back to Review</Link>
       </div>
 
@@ -46,6 +88,11 @@ export default function ReportPage() {
 
       {!loading && !error && (
         <div className="report-content">
+          {previewReady && (
+            <div className="alert alert-info" role="status" style={{ marginBottom: '1rem' }}>
+              Report preview is ready. Review the content below, then download the DOCX.
+            </div>
+          )}
           <h1 className="report-title" style={{ marginBottom: '0.5rem' }}>Infrastructure Dependency Tool Report</h1>
           <p className="text-secondary" style={{ fontSize: 'var(--font-size-sm)', marginBottom: '1.5rem' }}>
             Tool version: {meta.tool_version} · Created: {meta.created_at_iso}

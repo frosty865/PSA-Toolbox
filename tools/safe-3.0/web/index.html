@@ -1211,6 +1211,80 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
             font-size: var(--font-size-xl);
         }
 
+        .safe-report-preview__shell {
+            background: var(--cisa-white);
+            border: 1px solid var(--cisa-gray-light);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: var(--spacing-xl);
+        }
+
+        .safe-report-preview__header {
+            display: flex;
+            justify-content: space-between;
+            gap: var(--spacing-lg);
+            flex-wrap: wrap;
+            padding-bottom: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            border-bottom: 2px solid var(--cisa-blue-lightest);
+        }
+
+        .safe-report-preview__eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: var(--font-size-xs);
+            font-weight: 700;
+            color: var(--cisa-blue-light);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .safe-report-preview__header h3 {
+            color: var(--cisa-blue);
+            margin: 0 0 var(--spacing-xs) 0;
+            font-size: var(--font-size-xl);
+        }
+
+        .safe-report-preview__header p {
+            margin: 0;
+            color: var(--cisa-gray);
+        }
+
+        .safe-report-preview__meta {
+            display: grid;
+            gap: var(--spacing-xs);
+            font-size: var(--font-size-sm);
+            color: var(--cisa-gray);
+        }
+
+        .safe-report-preview__body {
+            display: grid;
+            gap: var(--spacing-lg);
+        }
+
+        .report-preview-section {
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            background: var(--cisa-gray-lighter);
+            border-left: 4px solid var(--cisa-blue);
+        }
+
+        .report-preview-section h3 {
+            margin: 0 0 var(--spacing-sm) 0;
+            color: var(--cisa-blue);
+        }
+
+        .report-preview-section p,
+        .report-preview-section li {
+            color: var(--cisa-gray-dark);
+            line-height: 1.6;
+        }
+
+        .safe-report-preview__footer {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: var(--spacing-lg);
+        }
+
         .summary-stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -9184,21 +9258,71 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
             }
         });
 
+        function escapeHtml(value) {
+            return String(value ?? '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function renderSafeReportPreview(payload) {
+            const report = payload?.generic_report || {};
+            const sections = Array.isArray(report.sections) ? report.sections : [];
+            const sectionHtml = sections.map((section) => {
+                const heading = escapeHtml(section?.heading || 'Untitled section');
+                const paragraphs = Array.isArray(section?.paragraphs) ? section.paragraphs : [];
+                const bullets = Array.isArray(section?.bullets) ? section.bullets : [];
+                return `
+                    <section class="report-preview-section">
+                        <h3>${heading}</h3>
+                        ${paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('')}
+                        ${bullets.length ? `<ul>${bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join('')}</ul>` : ''}
+                    </section>
+                `;
+            }).join('');
+
+            const downloadButton = '<button class="btn btn-primary" type="button" onclick="downloadSafeDocxReport()">Download DOCX</button>';
+
+            return `
+                <div class="safe-report-preview">
+                    <div class="safe-report-preview__shell">
+                        <div class="safe-report-preview__header">
+                            <div>
+                                <div class="safe-report-preview__eyebrow">Current assigned template</div>
+                                <h3>${escapeHtml(report.title || 'ALT SAFE')}</h3>
+                                <p>${escapeHtml(report.subtitle || 'Security Assessment Report')}</p>
+                            </div>
+                            <div class="safe-report-preview__meta">
+                                <span><strong>Template:</strong> ${escapeHtml(report.template_key || 'safe')}</span>
+                                <span><strong>Facility:</strong> ${escapeHtml(report.facility || 'Not specified')}</span>
+                                <span><strong>Assessor:</strong> ${escapeHtml(report.assessor || 'Not specified')}</span>
+                                <span><strong>Date:</strong> ${escapeHtml(report.date || 'Not specified')}</span>
+                            </div>
+                        </div>
+                        <div class="safe-report-preview__body">
+                            ${sectionHtml}
+                        </div>
+                        <div class="safe-report-preview__footer">
+                            ${downloadButton}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
         // Final Report Generation Functions
         function generateFinalReport() {
             const reportContent = document.getElementById('reportContent');
             if (reportContent) {
+                const payload = buildSafeDocxPayload();
                 reportContent.dataset.safeDocxReady = '1';
-                reportContent.innerHTML = `
-                    <div style="text-align: center; padding: var(--spacing-xl); background: white; border: 1px solid var(--cisa-gray-light); border-radius: var(--border-radius-lg);">
-                        <i class="fas fa-file-word" style="font-size: 2.5rem; color: var(--cisa-blue); margin-bottom: var(--spacing-md);"></i>
-                        <h3 style="margin: 0 0 var(--spacing-sm) 0; color: var(--cisa-blue-dark);">DOCX Final Report</h3>
-                        <p style="margin: 0 0 var(--spacing-md) 0; color: var(--cisa-gray);">SAFE final reports are compiled first, then downloaded as DOCX.</p>
-                        <button class="btn btn-primary" onclick="generateFinalReport()">Generate Final Report</button>
-                    </div>
-                `;
+                reportContent.dataset.safeDocxPreview = '1';
+                reportContent.innerHTML = renderSafeReportPreview(payload);
+                reportContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
-            return downloadSafeDocxReport();
+            showSuccessBanner('Report preview generated. Review it below, then download the DOCX when ready.', 'Success');
         }
 
         function collectFacilityInfo() {
@@ -10752,11 +10876,11 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
         }
 
         function previewFinalReport() {
-            return downloadSafeDocxReport();
+            return generateFinalReport();
         }
 
         function printFinalReport() {
-            return downloadSafeDocxReport();
+            return generateFinalReport();
         }
 
         function generateExecutiveSummaryContent(assessmentData) {
@@ -11233,11 +11357,11 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
         }
 
         function previewExecutiveSummary() {
-            return downloadSafeDocxReport();
+            return generateFinalReport();
         }
 
         function printExecutiveSummary() {
-            return downloadSafeDocxReport();
+            return generateFinalReport();
         }
 
         function generateExecutiveSummaryData() {
