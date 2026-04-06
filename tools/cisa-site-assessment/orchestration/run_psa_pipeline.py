@@ -3,7 +3,7 @@
 This module provides a single entry point that:
 - Invokes psa_engine (Phase 2, Phase 3, projection)
 - Derives baseline coverage summary
-- Generates a print-ready PDF report
+- Generates a DOCX report
 
 It does NOT embed engine logic, catch-and-soften errors, or infer sectors.
 """
@@ -21,20 +21,20 @@ from psa_engine.projection.report_projection import project_phase3_for_report
 # If these don't exist yet, they should be created per previous design
 try:
     from reporting.baseline_text_report import derive_baseline_coverage_summary
-    from reporting.pdf_report import generate_pdf_report
+    from reporting.docx_report import generate_docx_report
 except ImportError:
     # Fallback: define minimal stubs if reporting modules don't exist yet
     def derive_baseline_coverage_summary(report_projection: Dict[str, Any]) -> Dict[str, Any]:
         """Placeholder if reporting module not yet created."""
         raise NotImplementedError("reporting.baseline_text_report not yet implemented")
 
-    def generate_pdf_report(
+    def generate_docx_report(
         report_projection: Dict[str, Any],
         baseline_summary: Dict[str, Any],
         output_path: str | Path,
     ) -> None:
         """Placeholder if reporting module not yet created."""
-        raise NotImplementedError("reporting.pdf_report not yet implemented")
+        raise NotImplementedError("reporting.docx_report not yet implemented")
 
 
 def _create_evaluator(
@@ -93,7 +93,7 @@ def run_psa_pipeline(
     sector_delta_code: str | None = None,
     output_path: str | Path | None = None,
 ) -> Path:
-    """Run the full PSA pipeline and generate a PDF report.
+    """Run the full PSA pipeline and generate a DOCX report.
 
     Args:
         document_id: Unique document identifier
@@ -103,14 +103,14 @@ def run_psa_pipeline(
             - For "rule_based": {"rules": {element_code: [keywords]}}
             - For "ollama": {"model": "...", "temperature": 0.0, "seed": ...}
         sector_delta_code: Optional sector delta code (metadata only)
-        output_path: Path for PDF output (defaults to {document_id}_report.pdf)
+        output_path: Path for DOCX output (defaults to {document_id}_report.docx)
 
     Returns:
-        Path to generated PDF file
+        Path to generated DOCX file
 
     Raises:
         ValueError: If configuration is invalid
-        RuntimeError: If engine execution or PDF generation fails
+        RuntimeError: If engine execution or DOCX generation fails
     """
     if not isinstance(document_id, str) or not document_id.strip():
         raise ValueError("document_id must be a non-empty string")
@@ -135,13 +135,13 @@ def run_psa_pipeline(
     # Derive baseline coverage summary
     baseline_summary = derive_baseline_coverage_summary(report_projection)
 
-    # Generate PDF
+    # Generate DOCX
     if output_path is None:
-        output_path = Path(f"{document_id}_report.pdf")
+        output_path = Path(f"{document_id}_report.docx")
     else:
         output_path = Path(output_path)
 
-    generate_pdf_report(
+    generate_docx_report(
         report_projection=report_projection,
         baseline_summary=baseline_summary,
         output_path=output_path,
@@ -155,12 +155,12 @@ def main() -> None:
     import argparse
 
     parser = argparse.ArgumentParser(
-        description="Run PSA pipeline and generate PDF report"
+        description="Run PSA pipeline and generate DOCX report"
     )
     parser.add_argument("document_id", help="Document identifier")
     parser.add_argument("--evaluator", choices=["rule_based", "ollama"], default="rule_based")
     parser.add_argument("--sector-delta", help="Sector delta code (optional)")
-    parser.add_argument("--output", help="Output PDF path (default: {document_id}_report.pdf)")
+    parser.add_argument("--output", help="Output DOCX path (default: {document_id}_report.docx)")
     args = parser.parse_args()
 
     # Minimal document_context (CLI would need to load actual document)
@@ -178,7 +178,7 @@ def main() -> None:
             sector_delta_code=args.sector_delta,
             output_path=args.output,
         )
-        print(f"PDF report generated: {output_path}")
+        print(f"DOCX report generated: {output_path}")
     except Exception as e:
         print(f"Pipeline failed: {e}", file=__import__("sys").stderr)
         raise
