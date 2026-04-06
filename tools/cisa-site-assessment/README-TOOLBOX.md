@@ -10,7 +10,7 @@ This directory is a **full copy** of PSA Rebuild (CISA Site Assessment UI), inte
    - **This Next app** on **http://127.0.0.1:3001** (`next dev --hostname 127.0.0.1` so the :3000 proxy can reach IPv4 loopback) with `basePath` **`/cisa-site-assessment`**
 3. Open the Site Assessment at **http://localhost:3000/cisa-site-assessment/** — traffic is **forwarded** by **`apps/web/app/cisa-site-assessment/[[...slug]]/route.ts`** (Node route handler, not middleware), so requests avoid Next **proxy/middleware** adapter issues in dev.
 
-**Production (Vercel):** deploy this app as its own project, then on the **toolbox** (`dependency-analysis`) Vercel project set **`PSA_SITE_ASSESSMENT_ORIGIN`** to this deployment’s origin (e.g. `https://cisa.zophielgroup.com` or `https://<this-project>.vercel.app`). Local dev: optional override; default is `http://127.0.0.1:3001`.
+**Production (Vercel):** deploy this app as its own project, then on the **toolbox** (`dependency-analysis`) Vercel project set **`PSA_SITE_ASSESSMENT_ORIGIN`** to this deployment’s origin (e.g. `https://zophielgroup.com` or `https://<this-project>.vercel.app`). Local dev: optional override; default is `http://127.0.0.1:3001`.
 
 ### Required environment variables on **this** (CISA) Vercel project
 

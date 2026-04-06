@@ -6,7 +6,7 @@ import { NextResponse } from 'next/server';
  * Implemented as a Route Handler so we avoid Next.js middleware/proxy adapter bugs (Invalid URL on some dev requests).
  *
  * - **Local dev:** default upstream `http://127.0.0.1:3001` (run `pnpm dev` from tools/dependency-analysis so PSA starts; it uses `--hostname 127.0.0.1`).
- * - **Vercel:** set `PSA_SITE_ASSESSMENT_ORIGIN` to your deployed PSA origin (e.g. `https://<psa>.vercel.app`) — there is no localhost on the platform.
+ * - **Vercel:** set `PSA_SITE_ASSESSMENT_ORIGIN` to your deployed PSA origin (e.g. `https://zophielgroup.com` or `https://<psa>.vercel.app`) — there is no localhost on the platform.
  */
 function resolveUpstream(): { origin: string } | { response: NextResponse } {
   /** Alias for teams that prefer one name; same format as PSA_SITE_ASSESSMENT_ORIGIN. */
@@ -37,7 +37,7 @@ function resolveUpstream(): { origin: string } | { response: NextResponse } {
           '',
           'This toolbox app proxies /cisa-site-assessment/ to a separate PSA deployment. Set on THIS project',
           '(the one serving this domain — e.g. www.zophielgroup.com) in Vercel → Settings → Environment Variables:',
-          '  PSA_SITE_ASSESSMENT_ORIGIN = https://<your-psa-deployment>.vercel.app',
+          '  PSA_SITE_ASSESSMENT_ORIGIN = https://zophielgroup.com',
           '  (or https://psa.yourdomain.com if you assigned a custom domain to the PSA project)',
           'Use the origin only: no trailing slash, no path. Alias: MODULAR_SITE_ASSESSMENT_ORIGIN.',
           'Enable it for Production, save, then Redeploy — env vars apply after a new deployment.',

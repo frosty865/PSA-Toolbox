@@ -3,7 +3,7 @@
 
   Remote / non-local dev requires the same token as server env ADMIN_API_TOKEN:
     $env:PSA_ADMIN_API_TOKEN = "<same as server ADMIN_API_TOKEN>"
-    $env:PSA_CISA_BASE = "https://cisa.zophielgroup.com/cisa-site-assessment"
+    $env:PSA_CISA_BASE = "https://zophielgroup.com/cisa-site-assessment"
     .\scripts\purge_test_assessments.ps1 -DryRun
 
   Or: -AdminToken "<token>" (avoid echoing in shared history)
