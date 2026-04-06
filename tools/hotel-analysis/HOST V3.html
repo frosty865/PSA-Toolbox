@@ -26248,11 +26248,11 @@
                 }
                 
                 const printReadiness = validateAssessmentData(collectAllFormData());
-                const printButtonHtml = printReadiness.valid
+                const docxButtonHtml = printReadiness.valid
                     ? `<button type="button" onclick="printCurrentReport()" class="btn btn-primary btn-sm">
                                 <i class="fas fa-file-word"></i> Export DOCX
                             </button>`
-                    : `<button type="button" class="btn btn-primary btn-sm" disabled title="Complete all required assessment fields before printing." aria-disabled="true">
+                    : `<button type="button" class="btn btn-primary btn-sm" disabled title="Complete all required assessment fields before exporting." aria-disabled="true">
                                 <i class="fas fa-file-word"></i> Export DOCX
                             </button>`;
                 const actionButtons = `
@@ -26266,10 +26266,7 @@
                             </button>
                         </div>
                         <div class="report-utility-right">
-                            <button type="button" onclick="copyReport()" class="btn btn-secondary btn-sm">
-                                <i class="fas fa-copy"></i> Copy Report
-                            </button>
-                            ${printButtonHtml}
+                            ${docxButtonHtml}
                         </div>
                     </div>
                 `;
@@ -26318,22 +26315,6 @@
             const root = document.querySelector('#report-content');
             if (!root) return;
             root.classList.toggle('report-density-compact');
-        }
-
-        function copyReport() {
-            const sourceHTML = typeof window.__lastGeneratedReportHTML === 'string' && window.__lastGeneratedReportHTML.trim() !== ''
-                ? window.__lastGeneratedReportHTML
-                : (document.querySelector('#report-content')?.innerHTML || '');
-            if (!sourceHTML) return;
-            const source = document.createElement('div');
-            source.innerHTML = sourceHTML;
-            source.querySelectorAll('.report-utility-bar').forEach((node) => node.remove());
-            const text = source.innerText || source.textContent || '';
-            navigator.clipboard.writeText(text).then(() => {
-                alert('Report copied to clipboard.');
-            }).catch(() => {
-                alert('Unable to copy report in this browser.');
-            });
         }
 
         function getActiveReportContainer() {
