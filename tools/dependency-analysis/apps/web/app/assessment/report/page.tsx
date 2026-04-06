@@ -29,18 +29,14 @@ export default function ReportPage() {
     return () => { cancelled = true; };
   }, [assessment]);
 
-  const handlePrint = () => {
-    window.print();
-  };
-
   const items = collection?.items ?? [];
   const { meta, asset } = assessment;
 
   return (
     <main className="report-page section active">
       <div className="no-print mb-4" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignItems: 'center' }}>
-        <button type="button" className="btn btn-primary" onClick={handlePrint}>
-          Print
+        <button type="button" className="btn btn-primary" disabled title="DOCX export is handled by the report export flow">
+          Export DOCX
         </button>
         <Link href="/assessment/review/" className="btn btn-secondary">← Back to Review</Link>
       </div>
