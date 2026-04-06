@@ -231,6 +231,7 @@ export type GenericReportSection = {
 
 export type GenericReportPayload = {
   generic_report: {
+    template_key: string;
     title: string;
     subtitle?: string;
     header_left?: string;

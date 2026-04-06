@@ -547,6 +547,7 @@ export async function POST(request: NextRequest) {
     if (isDev()) console.log(`[export/final] ${requestId} render_start`);
     // reportAssessment, part2, reportVMForPayload, vulnerability_count_summary_for_payload built before annex (above).
     const payload = {
+      template_key: 'host',
       assessment: reportAssessment,
       report_vm: reportVMForPayload,
       canonicalVulnBlocks,

@@ -51,6 +51,7 @@ export async function POST(
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       generic_report: {
+        template_key: 'ada',
         title: tool.displayName,
         subtitle: 'Tool overview report',
         header_left: tool.displayName,

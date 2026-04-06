@@ -35,6 +35,7 @@ export async function POST(_request: NextRequest) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       generic_report: {
+        template_key: 'ada',
         title: 'PSA Toolbox',
         subtitle: 'Registered tools report',
         header_left: 'PSA Toolbox',

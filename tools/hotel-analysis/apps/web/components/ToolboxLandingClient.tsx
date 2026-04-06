@@ -16,6 +16,7 @@ export function ToolboxLandingClient() {
     try {
       const blob = await generateGenericReport({
         generic_report: {
+          template_key: 'host',
           title: 'PSA Toolbox',
           subtitle: 'Registered tools report',
           sections: [

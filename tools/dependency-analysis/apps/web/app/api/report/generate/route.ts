@@ -10,6 +10,7 @@ type GenericReportSection = {
 
 type GenericReportPayload = {
   generic_report: {
+    template_key: string;
     title: string;
     subtitle?: string;
     header_left?: string;
@@ -43,6 +44,12 @@ export async function POST(request: NextRequest) {
   if (typeof genericReport.title !== 'string' || !genericReport.title.trim()) {
     return NextResponse.json(
       { error: 'generic_report.title required' },
+      { status: 400 }
+    );
+  }
+  if (typeof genericReport.template_key !== 'string' || !genericReport.template_key.trim()) {
+    return NextResponse.json(
+      { error: 'generic_report.template_key required' },
       { status: 400 }
     );
   }
