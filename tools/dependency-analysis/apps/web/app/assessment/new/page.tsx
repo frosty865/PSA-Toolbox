@@ -8,14 +8,12 @@ import {
   exportDraft,
   exportFinal,
   getTemplateCheck,
-  getRevisionPackageMetadata,
-  importRevisionPackage,
-  downloadDraftZip,
+  downloadJson,
   downloadFinalExport,
   ApiError,
 } from '@/lib/api';
-import { collectAllSessionsFromLocalStorage } from '@/app/lib/io/collectSessions';
 import { writeSessionsToPerTabStorage } from '@/app/lib/io/writeSessionsToStorage';
+import { importProgress } from '@/app/lib/io/progressFile';
 import { useAssessment } from '@/lib/assessment-context';
 import { getDefaultAssessment } from '@/lib/default-assessment';
 import { navigateFieldFile, shouldUseFieldFileNavigation } from '@/lib/field/fileProtocolNav';
@@ -25,15 +23,7 @@ type ReportStage = 'idle' | 'starting' | 'loading_assessment' | 'validating' | '
 export default function NewAssessmentPage() {
   const router = useRouter();
   const { assessment, setAssessment } = useAssessment();
-  const [passphrase, setPassphrase] = useState('');
-  const [importFile, setImportFile] = useState<File | null>(null);
-  const [importPassphrase, setImportPassphrase] = useState('');
-  const [importPreviewMeta, setImportPreviewMeta] = useState<{
-    tool_version: string;
-    template_version: string;
-    created_at_iso: string;
-    current_tool_version: string;
-  } | null>(null);
+  const [jsonImportFile, setJsonImportFile] = useState<File | null>(null);
   const [finalExportAcknowledged, setFinalExportAcknowledged] = useState(false);
   const [status, setStatus] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -53,25 +43,18 @@ export default function NewAssessmentPage() {
       .catch(() => setTemplateReady(false));
   }, []);
 
-  const draftPassphraseValid = passphrase.trim().length >= 12;
-
   const handleExportDraft = useCallback(async () => {
-    if (!draftPassphraseValid) {
-      setError('Passphrase must be at least 12 characters to encrypt the revision package.');
-      return;
-    }
-    setError(null);
-    setStatus('Exporting draft...');
+      setError(null);
+    setStatus('Exporting JSON...');
     try {
-      const sessions = collectAllSessionsFromLocalStorage();
-      const blob = await exportDraft(assessment, passphrase.trim(), sessions);
-      downloadDraftZip(blob);
-      setStatus('Draft downloaded (report + revision package).');
+      const blob = await exportDraft(assessment);
+      downloadJson(blob);
+      setStatus('JSON downloaded.');
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'Draft export failed');
+      setError(e instanceof Error ? e.message : 'JSON export failed');
       setStatus(null);
     }
-  }, [assessment, passphrase, draftPassphraseValid]);
+  }, [assessment]);
 
   const handleExportFinal = useCallback(async () => {
     if (!finalExportAcknowledged || reportInFlightRef.current) return;
@@ -120,63 +103,34 @@ export default function NewAssessmentPage() {
     setReportStage('idle');
   }, []);
 
-  const canPreviewImport = importFile != null && importPassphrase.trim().length > 0;
-
-  const handlePreviewImport = useCallback(async () => {
-    if (!importFile || !importPassphrase.trim()) return;
+  const handleJsonImport = useCallback(async () => {
+    if (!jsonImportFile) return;
     setError(null);
-    setStatus('Reading package...');
-    setImportPreviewMeta(null);
+    setStatus('Loading IDT JSON...');
     try {
-      const meta = await getRevisionPackageMetadata(importFile, importPassphrase.trim());
-      setImportPreviewMeta(meta);
-      setStatus(null);
-    } catch (e) {
-      setError(e instanceof Error ? e.message : 'Failed to read package');
-      setStatus(null);
-    }
-  }, [importFile, importPassphrase]);
-
-  const handleConfirmRestore = useCallback(async () => {
-    if (!importFile || !importPassphrase.trim() || !importPreviewMeta) return;
-    setError(null);
-    setStatus('Restoring...');
-    try {
-      const restored = await importRevisionPackage(importFile, importPassphrase.trim());
-      setAssessment(restored.assessment);
-      if (restored.sessions && Object.keys(restored.sessions).length > 0) {
-        writeSessionsToPerTabStorage(restored.sessions);
+      const result = await importProgress(jsonImportFile);
+      if (!result.ok) {
+        setError(result.error);
+        setStatus(null);
+        return;
       }
-      setImportFile(null);
-      setImportPassphrase('');
-      setImportPreviewMeta(null);
-      setStatus('Assessment restored.');
+      setAssessment({
+        ...result.assessment,
+        priority_restoration: result.assessment.priority_restoration ?? getDefaultAssessment().priority_restoration,
+      });
+      setJsonImportFile(null);
+      setStatus('Assessment restored from IDT JSON.');
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'Import failed');
+      setError(e instanceof Error ? e.message : 'JSON import failed');
       setStatus(null);
     }
-  }, [importFile, importPassphrase, importPreviewMeta, setAssessment]);
-
-  const handleImportFileChange = useCallback((file: File | null) => {
-    setImportFile(file);
-    setImportPreviewMeta(null);
-  }, []);
-
-  const handleImportPassphraseChange = useCallback((value: string) => {
-    setImportPassphrase(value);
-    setImportPreviewMeta(null);
-  }, []);
-
-  const importToolVersionMismatch = importPreviewMeta != null
-    && importPreviewMeta.tool_version !== importPreviewMeta.current_tool_version;
-
-  const exportDisabled = templateReady === false;
+  }, [jsonImportFile, setAssessment]);
 
   return (
     <main className="section active">
       <h2 className="section-title">New Assessment</h2>
       <p className="text-secondary mb-4">
-        Session is in-memory only. Use draft export to save a revision package.
+        Session is in-memory only. Use JSON export to save progress.
       </p>
 
       {templateReady === false && (
@@ -188,29 +142,16 @@ export default function NewAssessmentPage() {
       )}
 
       <section className="card mt-4">
-        <h3 className="card-title">Export draft (report + revision package)</h3>
+        <h3 className="card-title">Export JSON</h3>
         <p className="text-secondary mb-3">
-          A passphrase is required to encrypt the revision package.
+          Downloads the canonical IDT progress JSON.
         </p>
-        <div className="form-group">
-          <label className="form-label" htmlFor="draft-passphrase">Passphrase (min. 12 characters)</label>
-          <input
-            id="draft-passphrase"
-            type="password"
-            className="form-control"
-            placeholder="Passphrase"
-            value={passphrase}
-            onChange={(e) => setPassphrase(e.target.value)}
-            minLength={12}
-          />
-        </div>
         <button
           type="button"
           className="btn btn-primary"
           onClick={handleExportDraft}
-          disabled={!draftPassphraseValid || exportDisabled}
         >
-          Download draft (ZIP)
+          Download JSON
         </button>
       </section>
 
@@ -240,7 +181,7 @@ export default function NewAssessmentPage() {
           type="button"
           className="btn btn-primary"
           onClick={handleExportFinal}
-          disabled={!finalExportAcknowledged || exportDisabled || (reportStage !== 'idle' && reportStage !== 'error')}
+          disabled={!finalExportAcknowledged || (reportStage !== 'idle' && reportStage !== 'error')}
         >
           {reportStage === 'rendering' || reportStage === 'assembling' || reportStage === 'loading_assessment' || reportStage === 'validating' || reportStage === 'starting'
             ? 'Generating…'
@@ -268,60 +209,48 @@ export default function NewAssessmentPage() {
       </section>
 
       <section className="card mt-4">
-        <h3 className="card-title">Import revision package</h3>
+        <h3 className="card-title">Import IDT JSON</h3>
         <div className="form-group">
-          <label className="form-label">Revision package file</label>
+          <label className="form-label">IDT JSON file</label>
           <input
             type="file"
             className="form-control"
-            accept=".pkg,application/octet-stream"
-            onChange={(e) => handleImportFileChange(e.target.files?.[0] ?? null)}
-          />
-        </div>
-        <div className="form-group">
-          <label className="form-label" htmlFor="import-passphrase">Passphrase</label>
-          <input
-            id="import-passphrase"
-            type="password"
-            className="form-control"
-            placeholder="Passphrase"
-            value={importPassphrase}
-            onChange={(e) => handleImportPassphraseChange(e.target.value)}
+            accept=".json,application/json"
+            onChange={(e) => setJsonImportFile(e.target.files?.[0] ?? null)}
           />
         </div>
         <button
           type="button"
           className="btn btn-secondary"
-          onClick={handlePreviewImport}
-          disabled={!canPreviewImport}
+          onClick={handleJsonImport}
+          disabled={jsonImportFile == null}
         >
-          Preview package
+          Load JSON
         </button>
+      </section>
 
-        {importPreviewMeta != null && (
-          <div className="mt-4 p-3" style={{ background: 'var(--cisa-gray-lighter)', borderRadius: 'var(--border-radius)' }}>
-            <h4 className="text-primary" style={{ marginBottom: 'var(--spacing-sm)', fontSize: 'var(--font-size-md)' }}>
-              Revision package details
-            </h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-              <li>Tool version: {importPreviewMeta.tool_version}</li>
-              <li>Template version: {importPreviewMeta.template_version}</li>
-              <li>Created: {importPreviewMeta.created_at_iso}</li>
-            </ul>
-            {importToolVersionMismatch && (
-              <div className="alert alert-warning mt-3" role="alert">
-                This package was created with a different tool version. Review outputs carefully.
-              </div>
-            )}
-            <button
-              type="button"
-              className="btn btn-primary mt-3"
-              onClick={handleConfirmRestore}
-            >
-              Confirm restore
-            </button>
-          </div>
-        )}
+      <section className="card mt-4">
+        <h3 className="card-title">Import IDT JSON</h3>
+        <p className="text-secondary mb-3">
+          Loads a plain IDT progress JSON and populates the assessment directly.
+        </p>
+        <div className="form-group">
+          <label className="form-label">IDT JSON file</label>
+          <input
+            type="file"
+            className="form-control"
+            accept=".json,application/json"
+            onChange={(e) => setJsonImportFile(e.target.files?.[0] ?? null)}
+          />
+        </div>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={handleJsonImport}
+          disabled={jsonImportFile == null}
+        >
+          Load IDT JSON
+        </button>
       </section>
 
       {status && <div className="alert alert-success mt-4" role="status">{status}</div>}

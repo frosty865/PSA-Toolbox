@@ -9,6 +9,9 @@ import { purgeAllLocalState } from '@/app/lib/io/purge';
 import { buildVofcCollectionFromAssessment } from '@/app/lib/vofc/build_vofc_collection';
 import { isPraSlaEnabled } from '@/lib/pra-sla-enabled';
 import { isCrossDependencyEnabled } from '@/lib/cross-dependency-enabled';
+import { buildProgressFileV2 } from '@/app/lib/io/progressFile';
+import { collectAllSessionsFromLocalStorage } from '@/app/lib/io/collectSessions';
+import { sanitizeAssessmentBeforeSave } from '@/app/lib/assessment/sanitize_assessment';
 
 /** Thrown when an API request returns non-2xx. message is user-facing; code and details from server. */
 export class ApiError extends Error {
@@ -88,24 +91,11 @@ export async function purge(): Promise<void> {
   if (!res.ok) throw new Error(res.error);
 }
 
-export type DependencySessionsMap = import('@/app/lib/io/sessionTypes').DependencySessionsMap;
-
-export async function exportDraft(
-  assessment: Assessment,
-  passphrase: string,
-  sessions?: DependencySessionsMap
-): Promise<Blob> {
-  if (isFieldStaticMode()) return fieldApi.exportDraft(assessment, passphrase, sessions);
-  const res = await fetch(`${getApiBase()}/api/export/draft`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ assessment, passphrase, sessions }),
-  });
-  if (!res.ok) {
-    const j = await res.json().catch(() => ({}));
-    throw new Error((j as { error?: string }).error ?? 'Draft export failed');
-  }
-  return res.blob();
+export async function exportDraft(assessment: Assessment): Promise<Blob> {
+  if (isFieldStaticMode()) return fieldApi.exportDraft(assessment);
+  const sessions = collectAllSessionsFromLocalStorage();
+  const file = buildProgressFileV2(sanitizeAssessmentBeforeSave(assessment), sessions);
+  return new Blob([JSON.stringify(file, null, 2)], { type: 'application/json' });
 }
 
 export type ExportFinalErrorPayload = {
@@ -265,66 +255,6 @@ export async function generateToolReport(toolId: string): Promise<Blob> {
   return res.blob();
 }
 
-export async function exportRevisionPackage(assessment: Assessment, passphrase: string): Promise<Blob> {
-  if (isFieldStaticMode()) return fieldApi.exportRevisionPackage(assessment, passphrase);
-  const res = await fetch(`${getApiBase()}/api/revision/export`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ assessment, passphrase }),
-  });
-  if (!res.ok) {
-    const j = await res.json().catch(() => ({}));
-    throw new Error((j as { error?: string }).error ?? 'Revision export failed');
-  }
-  return res.blob();
-}
-
-export type RevisionPackageMetadata = {
-  tool_version: string;
-  template_version: string;
-  created_at_iso: string;
-  current_tool_version: string;
-};
-
-export async function getRevisionPackageMetadata(file: File, passphrase: string): Promise<RevisionPackageMetadata> {
-  if (isFieldStaticMode()) return fieldApi.getRevisionPackageMetadata(file, passphrase);
-  const form = new FormData();
-  form.set('file', file);
-  form.set('passphrase', passphrase);
-  const res = await fetch(`${getApiBase()}/api/revision/metadata`, {
-    method: 'POST',
-    body: form,
-  });
-  if (!res.ok) {
-    const j = await res.json().catch(() => ({}));
-    throw new Error((j as { error?: string }).error ?? 'Failed to read package');
-  }
-  return res.json() as Promise<RevisionPackageMetadata>;
-}
-
-export type ImportRevisionResult = { assessment: Assessment; sessions?: DependencySessionsMap };
-
-export async function importRevisionPackage(file: File, passphrase: string): Promise<ImportRevisionResult> {
-  if (isFieldStaticMode()) return fieldApi.importRevisionPackage(file, passphrase);
-  const form = new FormData();
-  form.set('file', file);
-  form.set('passphrase', passphrase);
-  const res = await fetch(`${getApiBase()}/api/revision/import`, {
-    method: 'POST',
-    body: form,
-  });
-  if (!res.ok) {
-    const j = await res.json().catch(() => ({}));
-    throw new Error((j as { error?: string }).error ?? 'Import failed');
-  }
-  const json = await res.json();
-  // Backward compat: older API returned assessment directly
-  if (json?.assessment != null) {
-    return json as ImportRevisionResult;
-  }
-  return { assessment: json as Assessment };
-}
-
 function downloadBlob(blob: Blob, filename: string) {
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
@@ -333,8 +263,8 @@ function downloadBlob(blob: Blob, filename: string) {
   URL.revokeObjectURL(a.href);
 }
 
-export function downloadDraftZip(blob: Blob) {
-  downloadBlob(blob, 'draft-report-and-revision.zip');
+export function downloadJson(blob: Blob) {
+  downloadBlob(blob, 'idt-progress.json');
 }
 
 export function downloadReportDocx(blob: Blob) {

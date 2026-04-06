@@ -1,6 +1,6 @@
 /**
  * Write sessions map to per-tab localStorage keys.
- * Used on progress file import and revision package import.
+ * Used on progress file import and JSON restore flows.
  */
 import type { DependencySessionsMap } from './sessionTypes';
 import { saveEnergyAnswers, saveCommsAnswers } from '@/app/lib/dependencies/persistence';
