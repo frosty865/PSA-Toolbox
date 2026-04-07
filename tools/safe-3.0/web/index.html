@@ -9546,25 +9546,46 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
             contactEmail,
         }) {
             return `
-                <div class="report-cover-page" style="page-break-after: always; page-break-inside: avoid; text-align: center; padding: var(--spacing-xxl); color: var(--cisa-blue-dark); min-height: 82vh; display: flex; flex-direction: column; justify-content: center;">
-                    <div style="display: inline-flex; align-items: center; justify-content: center; gap: var(--spacing-sm); background: rgba(17, 46, 81, 0.08); color: var(--cisa-blue-dark); border-radius: 999px; padding: 6px 14px; margin: 0 auto var(--spacing-lg) auto; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">
-                        CISA
-                    </div>
-                    <div style="margin-bottom: var(--spacing-md);">
-                        <img src="./assets/CISA_Logo.png" alt="CISA Logo" style="height: 96px; margin-bottom: var(--spacing-md);">
-                        <h1 style="font-size: 2.55rem; font-weight: 700; margin: 0;">${reportTitle}</h1>
-                        <h2 style="font-size: 1.35rem; font-weight: 500; margin: var(--spacing-sm) 0 0 0; opacity: 0.92;">${reportSubtitle}</h2>
-                    </div>
-                    <div style="background: rgba(255,255,255,0.82); border: 1px solid #c7d7f0; padding: var(--spacing-xl); border-radius: var(--border-radius-lg); margin: var(--spacing-md) 0;">
-                        <h3 style="font-size: 1.45rem; margin-bottom: var(--spacing-md);">${facilityName}</h3>
-                        <p style="font-size: 1.03rem; margin: var(--spacing-xs) 0;"><strong>Assessment Date:</strong> ${assessmentDate}</p>
-                        <p style="font-size: 1.03rem; margin: var(--spacing-xs) 0;"><strong>Sector:</strong> ${sector}</p>
-                        <p style="font-size: 1.03rem; margin: var(--spacing-xs) 0;"><strong>Location:</strong> ${location}</p>
-                        <p style="font-size: 1.03rem; margin: var(--spacing-xs) 0;"><strong>Assessor:</strong> ${assessorName}</p>
-                    </div>
-                    <div style="font-size: 0.92rem; line-height: 1.45; color: #334155; text-align: left; max-width: 6.8in; margin: 0 auto var(--spacing-md) auto;">
-                        <p style="margin: 0 0 8px 0;"><strong>Disclaimer:</strong> This information is FOR OFFICIAL USE ONLY (FOUO). It must be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy.</p>
-                        <p style="margin: 0;">Report contact: ${contactName || 'Not specified'}${contactRegion ? ` | Region ${contactRegion}` : ''}${contactCity ? ` | ${contactCity}` : ''}${contactCell ? ` | Cell: ${contactCell}` : ''}${contactEmail ? ` | Email: ${contactEmail}` : ''}</p>
+                <div class="report-cover-page" style="page-break-after: always; page-break-inside: avoid; min-height: 82vh; display: flex; flex-direction: column; justify-content: center; padding: var(--spacing-xxl); color: var(--cisa-blue-dark);">
+                    <div style="max-width: 7.5in; margin: 0 auto; width: 100%;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: var(--spacing-lg); margin-bottom: var(--spacing-xl);">
+                            <div>
+                                <div style="display: inline-flex; align-items: center; gap: 10px; color: var(--cisa-blue-dark); font-size: 0.84rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">
+                                    <span style="width: 38px; height: 2px; background: var(--cisa-blue-dark); display: inline-block;"></span>
+                                    SAFE Executive Report
+                                </div>
+                                <h1 style="font-size: 2.65rem; font-weight: 800; margin: 14px 0 0 0; line-height: 1.05;">${reportTitle}</h1>
+                                <h2 style="font-size: 1.2rem; font-weight: 500; margin: 10px 0 0 0; color: #334155;">${reportSubtitle}</h2>
+                            </div>
+                            <div style="text-align: right; min-width: 2.25in;">
+                                <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #475569;">Assessment Date</div>
+                                <div style="font-size: 1.05rem; font-weight: 600; margin-top: 4px;">${assessmentDate}</div>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1.3fr 0.9fr; gap: var(--spacing-lg); align-items: stretch;">
+                            <div style="background: rgba(255,255,255,0.9); border: 1px solid #c7d7f0; border-radius: 18px; overflow: hidden; box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);">
+                                <div style="height: 220px; background: linear-gradient(135deg, rgba(30, 58, 138, 0.08), rgba(2, 132, 199, 0.18)), url('./assets/CISA_Logo.png') center/120px no-repeat, linear-gradient(135deg, #eaf3ff 0%, #f8fbff 100%); border-bottom: 1px solid #d6e0ef;"></div>
+                                <div style="padding: var(--spacing-xl); text-align: left;">
+                                    <div style="font-size: 0.86rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #0f4c81;">Facility Profile</div>
+                                    <h3 style="font-size: 1.4rem; margin: 10px 0 16px 0; color: #0f172a;">${facilityName}</h3>
+                                    <div style="display: grid; gap: 8px; font-size: 1rem; color: #334155;">
+                                        <div><strong>Sector:</strong> ${sector}</div>
+                                        <div><strong>Location:</strong> ${location}</div>
+                                        <div><strong>Assessor:</strong> ${assessorName}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 12px;">
+                                <div style="background: rgba(255,255,255,0.88); border: 1px solid #d6e0ef; border-radius: 14px; padding: 16px;">
+                                    <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #475569;">Report Contact</div>
+                                    <div style="margin-top: 8px; font-size: 0.98rem; line-height: 1.55; color: #1f2937;">${contactName || 'Not specified'}${contactRegion ? `<br>Region ${contactRegion}` : ''}${contactCity ? `<br>${contactCity}` : ''}${contactCell ? `<br>Cell: ${contactCell}` : ''}${contactEmail ? `<br>Email: ${contactEmail}` : ''}</div>
+                                </div>
+                                <div style="background: rgba(255,255,255,0.88); border: 1px solid #d6e0ef; border-radius: 14px; padding: 16px;">
+                                    <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #475569;">Report Use</div>
+                                    <div style="margin-top: 8px; font-size: 0.92rem; line-height: 1.55; color: #334155;">This information is FOR OFFICIAL USE ONLY (FOUO). It must be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy.</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             `;
@@ -9800,7 +9821,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                             The Alternative Security Assessment for Enterprises (ALT SAFE) Beta is a comprehensive security assessment tool developed by the Cybersecurity and Infrastructure Security Agency (CISA) to help organizations evaluate and improve their physical security posture. This assessment examines multiple security domains including access control, surveillance systems, perimeter security, and emergency preparedness.
                         </p>
                         <p style="line-height: 1.6; margin-bottom: var(--spacing-md);">
-                            <strong>In simple terms:</strong> Think of ALT SAFE as a comprehensive security "check-up" for your facility. Just like a doctor examines different parts of your body to assess your health, SAFE examines different aspects of your facility's security to identify strengths and areas that need attention.
+                            <strong>Executive summary:</strong> ALT SAFE is a structured security assessment that identifies strengths, gaps, and priority actions across facility protection, response readiness, and security management.
                         </p>
                     </div>
 
@@ -9838,12 +9859,10 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                             you are currently meeting ${metStandards} of them. 
                         </p>
                         <p style="line-height: 1.6; margin-bottom: var(--spacing-md);">
-                            Think of it like a test with ${totalStandards} questions - you got ${metStandards} right. The good news is that you have ${assessmentData.totalEnhancementOptions || 0} 
-                            additional opportunities to improve your score by implementing the enhancement options identified in this assessment.
+                            This result shows the current control baseline for the facility. The assessment also identifies ${assessmentData.totalEnhancementOptions || 0} enhancement option${(assessmentData.totalEnhancementOptions || 0) === 1 ? '' : 's'} that can be used to improve performance.
                         </p>
                         <p style="line-height: 1.6; margin: 0;">
-                            However, there are ${assessmentData.totalStandardsLost || 0} areas where your facility is not meeting basic security standards. 
-                            These areas represent opportunities for improvement that should be addressed to enhance your overall security posture.
+                            There are ${assessmentData.totalStandardsLost || 0} areas where the facility is not meeting basic security standards. Those items should be treated as priority remediation actions.
                         </p>
                     </div>
                 </div>
@@ -9902,7 +9921,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                             These are areas where your facility is not meeting basic security standards and should be addressed.
                         </p>
                         <p style="line-height: 1.6; margin: 0;">
-                            <strong>What this means:</strong> Think of these areas like unlocked doors in your house - they represent opportunities for improvement. 
+                            <strong>Executive interpretation:</strong> These are priority remediation items that require attention to reduce exposure and strengthen control.
                             Each area represents a potential enhancement point that could strengthen your security measures.
                         </p>
                     </div>
@@ -9914,7 +9933,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                             These represent additional security measures that can accelerate your compliance progress.
                         </p>
                         <p style="line-height: 1.6; margin: 0;">
-                            <strong>What this means:</strong> Enhancement options are like adding extra locks, security cameras, or alarm systems to your house. 
+                            <strong>Executive interpretation:</strong> These are targeted improvements that increase resilience and close control gaps.
                             They're not required for basic security, but they make your facility even more secure.
                         </p>
                     </div>
@@ -9926,7 +9945,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                             It's important to maintain these existing security measures and ensure they continue to function properly.
                         </p>
                         <p style="line-height: 1.6; margin: 0;">
-                            <strong>What this means:</strong> These are the security measures you already have in place that are working well. 
+                            <strong>Executive interpretation:</strong> These are current strengths that should be sustained and reinforced.
                             Keep doing what you're doing in these areas, but make sure to maintain and update them regularly.
                         </p>
                     </div>
@@ -9954,7 +9973,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                             These represent opportunities to improve security standards.
                         </p>
                         <p style="line-height: 1.6; margin: 0;">
-                            <strong>What this means:</strong> Each area is like a door that could benefit from additional security measures - it represents an opportunity for improvement. 
+                            <strong>Executive interpretation:</strong> Each item identifies a measurable opportunity to improve the control environment.
                             These areas in your security measures need attention to enhance your facility's security posture.
                         </p>
                     </div>
@@ -9966,7 +9985,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                             These represent additional security measures that can accelerate your compliance progress.
                         </p>
                         <p style="line-height: 1.6; margin: 0;">
-                            <strong>What this means:</strong> Think of these as optional upgrades to your security system - like adding motion sensors to existing cameras. 
+                            <strong>Executive interpretation:</strong> These are optional improvements that can accelerate maturity without changing core operations.
                             While not required for basic security, they provide additional layers of protection and peace of mind.
                         </p>
                     </div>
@@ -9978,7 +9997,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                             These represent areas where your security measures are working effectively.
                         </p>
                         <p style="line-height: 1.6; margin: 0;">
-                            <strong>What this means:</strong> These are the security measures you already have in place that are working well. 
+                            <strong>Executive interpretation:</strong> These are established practices that are functioning as intended.
                             It's important to maintain these existing protections and ensure they continue to function properly.
                         </p>
                     </div>
@@ -10007,7 +10026,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                             The results show that your facility currently meets ${metStandards} of these standards, representing a ${securityPercentage}% standards achievement rate.
                         </p>
                         <p style="line-height: 1.6; margin: 0;">
-                            <strong>What this means:</strong> Your facility is performing at a ${postureLevel.toLowerCase()} level compared to industry security standards. 
+                            <strong>Executive interpretation:</strong> Your facility is performing at a ${postureLevel.toLowerCase()} level relative to the applicable security standard.
                             This assessment provides a roadmap for improving your security posture through addressing vulnerabilities and implementing enhancement options.
                         </p>
                     </div>
@@ -10737,18 +10756,57 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
             const postureLabel = posturePct >= 80 ? 'High' : posturePct >= 60 ? 'Moderate' : 'Low';
             const totalVulnerabilities = Array.isArray(reportData?.vulnerabilities) ? reportData.vulnerabilities.length : 0;
             const byCategory = {};
+            const categoryMeta = {
+                'Information Sharing': { label: 'Information Sharing & Communication', color: '#0f4c81' },
+                'Security Plans': { label: 'Security Plans & Management', color: '#1d4ed8' },
+                'Security Systems': { label: 'Security Systems', color: '#0369a1' },
+                'Physical Security': { label: 'Physical Security', color: '#b45309' },
+            };
             (reportData?.vulnerabilities || []).forEach((item) => {
                 const category = item?.category || 'Uncategorized';
                 if (!byCategory[category]) byCategory[category] = [];
-                const ofc = (item?.optionsForConsideration || '').trim();
-                byCategory[category].push(`${item?.question || 'Untitled issue'}${ofc ? ` - OFC: ${ofc}` : ''}`);
+                byCategory[category].push({
+                    question: item?.question || 'Untitled issue',
+                    optionsForConsideration: (item?.optionsForConsideration || '').trim(),
+                    category,
+                });
             });
             const categoryText = (name) => {
                 const items = byCategory[name] || [];
                 if (!items.length) return [`No findings documented for ${name.toLowerCase()}.`];
-                return items;
+                return items.map((item, index) => {
+                    const ofc = item.optionsForConsideration ? ` | Options: ${item.optionsForConsideration}` : '';
+                    return `${index + 1}. ${item.question}${ofc}`;
+                });
             };
             const bulletsFrom = (items) => (items && items.length ? items : ['No items documented.']);
+            const severityCounts = {
+                lost: totalStandardsLost,
+                enhancement: totalEnhancementOptions,
+                commendable: totalCommendables,
+            };
+            const safeMetrics = {
+                met_standards: metStandards,
+                standards_lost: totalStandardsLost,
+                enhancement_options: totalEnhancementOptions,
+                commendable_practices: totalCommendables,
+                total_vulnerabilities: totalVulnerabilities,
+                information_sharing_vulnerabilities: (byCategory['Information Sharing'] || []).length,
+                security_plans_vulnerabilities: (byCategory['Security Plans'] || []).length,
+                security_systems_vulnerabilities: (byCategory['Security Systems'] || []).length,
+                physical_security_vulnerabilities: (byCategory['Physical Security'] || []).length,
+                information_sharing_ofc: (byCategory['Information Sharing'] || []).filter((item) => item.optionsForConsideration).length,
+                security_plans_ofc: (byCategory['Security Plans'] || []).filter((item) => item.optionsForConsideration).length,
+                security_systems_ofc: (byCategory['Security Systems'] || []).filter((item) => item.optionsForConsideration).length,
+                physical_security_ofc: (byCategory['Physical Security'] || []).filter((item) => item.optionsForConsideration).length,
+            };
+            const visuals = [
+                { label: 'Standards Met', value: `${metStandards}/${totalStandards}` },
+                { label: 'Standards Lost', value: `${totalStandardsLost}` },
+                { label: 'Enhancement Options', value: `${totalEnhancementOptions}` },
+                { label: 'Commendable Practices', value: `${totalCommendables}` },
+                { label: 'Documented Vulnerabilities', value: `${totalVulnerabilities}` },
+            ];
             const facilityLocation = [facilityInfo.city, facilityInfo.state].filter(Boolean).join(', ') || 'Not specified';
             const psaName = contactInfo.psaName || facilityInfo.assessorName || 'Not specified';
             const psaRegion = document.getElementById('psaRegion')?.value || '';
@@ -10784,11 +10842,11 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                     const text = item?.question || item?.item || item?.title || '';
                     return text ? `${text}${item?.impact ? ` - ${item.impact}` : ''}` : '';
                 }).filter(Boolean)) },
-                { heading: 'Custom Vulnerabilities & Options for Consideration', bullets: bulletsFrom((reportData?.vulnerabilities || []).map((item) => {
+                { heading: 'Custom Vulnerabilities & Options for Consideration', paragraphs: bulletsFrom((reportData?.vulnerabilities || []).map((item, index) => {
                     const question = item?.question || 'Untitled issue';
-                    const category = item?.category ? ` (${item.category})` : '';
-                    const ofc = item?.optionsForConsideration ? ` - OFC: ${item.optionsForConsideration}` : '';
-                    return `${question}${category}${ofc}`;
+                    const category = item?.category ? `Category: ${item.category}` : 'Category: Unspecified';
+                    const ofc = item?.optionsForConsideration ? `Options for Consideration: ${item.optionsForConsideration}` : 'Options for Consideration: Not provided';
+                    return `Finding ${index + 1}\n${question}\n${category}\n${ofc}`;
                 }).filter(Boolean)) },
                 { heading: 'Points of Contact', paragraphs: [
                     `PSA Name: ${psaName}`,
@@ -10836,6 +10894,7 @@ Updated: 2025-01-10 - Font consistency fixes and folder organization
                     psa_city: psaCity,
                     psa_cell: psaCell,
                     psa_email: psaEmail,
+                    safe_metrics: safeMetrics,
                     sections,
                 }
             };
