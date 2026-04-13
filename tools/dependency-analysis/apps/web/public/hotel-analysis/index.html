@@ -21013,7 +21013,16 @@
             // Use our new Six Tab VOFC System
             const sixTabAnalysis = performSixTabVOFCAnalysis(data);
             const businessImpactAnalysis = performCitedBusinessImpactAnalysis(data);
-            
+            const manualVulnerabilities = analyzeVulnerabilities(data);
+            const mergedVulnerabilities = [...(sixTabAnalysis.vulnerabilities || []), ...(manualVulnerabilities || [])];
+            const uniqueVulnerabilities = mergedVulnerabilities.filter((vuln, index, self) => {
+                const key = vuln.vofc_id || vuln.id || vuln.title || `${vuln.category || 'unknown'}:${vuln.issue || vuln.description || index}`;
+                return index === self.findIndex((other) => {
+                    const otherKey = other.vofc_id || other.id || other.title || `${other.category || 'unknown'}:${other.issue || other.description || index}`;
+                    return otherKey === key;
+                });
+            });
+
             const analysis = {
                 facility: analyzeFacilityInfo(data.sections?.facility_info || {}),
                 security: analyzeSecuritySystems(data.sections?.security_systems || {}),
@@ -21022,7 +21031,9 @@
                 vipHosting: analyzeVIPHostingCapability(data),
                 securityPostureScore: sixTabAnalysis.securityScore,
                 assessmentPercentage: sixTabAnalysis.assessmentPercentage,
-                vulnerabilities: sixTabAnalysis.vulnerabilities,
+                vulnerabilities: uniqueVulnerabilities,
+                sixTabVulnerabilities: sixTabAnalysis.vulnerabilities || [],
+                manualVulnerabilities: manualVulnerabilities || [],
                 opportunities: sixTabAnalysis.opportunities,
                 businessImpact: businessImpactAnalysis,
                 methodology: getAnalysisMethodology()
