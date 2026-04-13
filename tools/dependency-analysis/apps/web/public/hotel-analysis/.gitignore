@@ -1,0 +1,43 @@
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+*.bak
+*.backup
+
+# Node modules (if any are added later)
+node_modules/
+package-lock.json
+
+# Build files (if any are added later)
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+
+# User-specific data files (keep sample data, ignore user exports)
+*_Assessment_*.json
+!Sample_Assessment_Data.json
+!Complete_Assessment_Scenario.json
+
+# Backup files
+*_BACKUP_*.html
+*_BACKUP_*.json
+

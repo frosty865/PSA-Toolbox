@@ -1,0 +1,517 @@
+{
+  "sections": {
+    "landing_page": {
+      "assessment_started": false,
+      "welcome_message": "Welcome to the HOST V1 Security Assessment Tool"
+    },
+    "facility_info": {
+      "hotel_name": "Grand Plaza Hotel & Convention Center",
+      "hotel_address_1": "1001 Collins Avenue",
+      "hotel_city": "Miami Beach",
+      "hotel_state": "FL",
+      "hotel_zip": "33139",
+      "hotel_phone": "(305) 555-0123",
+      "hotel_email": "info@grandplazamiami.com",
+      "hotel_website": "www.grandplazamiami.com",
+      "hotel_chain": "Independent",
+      "hotel_rating": "4.5 stars",
+      "guest_room_count": "450",
+      "number_of_floors": "25",
+      "convention_space": "Yes",
+      "convention_sqft": "50000",
+      "restaurant_count": "3",
+      "bar_count": "2",
+      "pool_count": "2",
+      "has_pool": "Yes",
+      "fitness_center": "Yes",
+      "spa_services": "Yes",
+      "parking_spaces": "300",
+      "has_parking": "Yes",
+      "valet_parking": "Yes",
+      "business_center": "Yes",
+      "room_service": "24/7",
+      "concierge_services": "Yes",
+      "hotel_type": "Luxury Resort",
+      "target_market": "Business and Leisure",
+      "peak_season": "December - April",
+      "average_occupancy": "85%",
+      "special_events": "Yes",
+      "event_capacity": "500",
+      "vip_services": "Yes",
+      "security_contact": "John Smith",
+      "security_phone": "(305) 555-0124",
+      "security_email": "security@grandplazamiami.com"
+    },
+    "assessment_info": {
+      "assessor_name": "Sarah Johnson",
+      "assessor_title": "Senior Security Consultant",
+      "assessor_organization": "CISA Security Solutions",
+      "assessor_phone": "(202) 555-0199",
+      "assessor_email": "sarah.johnson@cisa.dhs.gov",
+      "assessment_date": "2025-01-27",
+      "assessment_type": "Comprehensive Security Assessment",
+      "facility_contact": "Michael Rodriguez",
+      "facility_title": "Director of Security",
+      "facility_phone": "(305) 555-0125",
+      "facility_email": "mrodriguez@grandplazamiami.com",
+      "assessment_scope": "Full Property Assessment",
+      "assessment_duration": "3 days",
+      "team_size": "4",
+      "assessment_methodology": "CISA HOST V1 Framework",
+      "previous_assessment": "2023-08-15",
+      "assessment_frequency": "Annual",
+      "compliance_requirements": "DHS Guidelines, ASIS Standards",
+      "special_considerations": "High-profile events, VIP guests, international visitors"
+    },
+    "dependencies": {
+      "primary_power_source": "FPL Grid",
+      "backup_power_systems": "Yes",
+      "generator_capacity": "2MW",
+      "generator_fuel_type": "Diesel",
+      "generator_runtime": "72 hours",
+      "ups_systems": "Yes",
+      "ups_capacity": "500kVA",
+      "ups_runtime": "4 hours",
+      "water_supply": "Municipal",
+      "backup_water": "Yes",
+      "water_storage": "50000 gallons",
+      "internet_provider": "Comcast Business",
+      "backup_internet": "Verizon 5G",
+      "network_redundancy": "Yes",
+      "data_center": "On-site",
+      "cloud_backup": "Yes",
+      "critical_systems": "HVAC, Security, Communications",
+      "system_interdependencies": "High",
+      "single_points_failure": "Generator fuel supply",
+      "redundancy_level": "N+1",
+      "recovery_time": "4 hours",
+      "business_continuity": "Yes",
+      "disaster_recovery": "Yes",
+      "vendor_relationships": "Multiple",
+      "contract_terms": "24/7 support",
+      "maintenance_schedules": "Monthly",
+      "testing_frequency": "Quarterly"
+    },
+    "physical_security": {
+      "has_standoff_measures": "Yes",
+      "has_perimeter_barriers": "Yes",
+      "barrier_type": "Concrete walls with decorative elements",
+      "barrier_height": "8 feet",
+      "barrier_condition": "Excellent",
+      "barrier_lighting": "Yes",
+      "barrier_cameras": "Yes",
+      "barrier_alarms": "Yes",
+      "security_force_present": "Yes",
+      "security_force_size": "12 officers",
+      "security_force_shifts": "24/7 coverage",
+      "security_force_training": "Certified",
+      "security_force_equipment": "Radio, flashlight, first aid",
+      "security_force_weapons": "Non-lethal only",
+      "standoff_distance": "50 feet minimum",
+      "vehicle_barriers": "Yes",
+      "vehicle_barrier_type": "Retractable bollards",
+      "vehicle_barrier_control": "Remote and manual",
+      "pedestrian_access": "Controlled",
+      "pedestrian_screening": "Yes",
+      "visitor_management": "Yes",
+      "visitor_badges": "Yes",
+      "visitor_escort": "Required for restricted areas",
+      "employee_access": "Badge system",
+      "employee_screening": "Background checks",
+      "contractor_access": "Temporary badges",
+      "contractor_escort": "Required",
+      "delivery_access": "Designated areas",
+      "delivery_screening": "Yes",
+      "emergency_access": "Multiple routes",
+      "access_control_system": "Card readers",
+      "access_control_integration": "Security system",
+      "access_control_monitoring": "24/7",
+      "access_control_logs": "Yes",
+      "access_control_alerts": "Yes"
+    },
+    "security_systems": {
+      "vss_present": "Yes",
+      "vss_camera_count": "85",
+      "vss_camera_types": "Fixed and PTZ",
+      "vss_resolution": "4K",
+      "vss_coverage": "95%",
+      "vss_night_vision": "Yes",
+      "vss_analytics": "Yes",
+      "vss_storage": "30 days",
+      "vss_backup": "Yes",
+      "vss_monitoring": "24/7",
+      "vss_alerts": "Yes",
+      "vss_integration": "Access control",
+      "vss_network": "Dedicated",
+      "vss_encryption": "Yes",
+      "vss_maintenance": "Monthly",
+      "vss_testing": "Weekly",
+      "vss_vendor": "Axis Communications",
+      "vss_support": "24/7",
+      "vss_updates": "Automatic",
+      "vss_compliance": "Yes",
+      "els_present": "Yes",
+      "els_type": "Card readers and biometrics",
+      "els_coverage": "All access points",
+      "els_integration": "VSS and alarm",
+      "els_monitoring": "24/7",
+      "els_alerts": "Yes",
+      "els_backup": "Yes",
+      "els_maintenance": "Monthly",
+      "els_testing": "Weekly",
+      "els_vendor": "HID Global",
+      "els_support": "24/7",
+      "els_updates": "Scheduled",
+      "els_compliance": "Yes",
+      "soc_monitoring": "Yes",
+      "soc_location": "On-site",
+      "soc_staffing": "4 operators",
+      "soc_shifts": "24/7",
+      "soc_training": "Certified",
+      "soc_equipment": "Multiple monitors",
+      "soc_communications": "Radio and phone",
+      "soc_procedures": "Documented",
+      "soc_testing": "Monthly",
+      "soc_backup": "Yes",
+      "soc_integration": "All systems",
+      "soc_alerts": "Immediate",
+      "soc_reporting": "Daily",
+      "soc_maintenance": "Weekly",
+      "soc_vendor": "Internal",
+      "soc_support": "24/7",
+      "soc_updates": "As needed",
+      "soc_compliance": "Yes"
+    },
+    "vip_planning": {
+      "vip_vehicle_screening": "Comprehensive",
+      "vip_parking_type": "Dedicated",
+      "vip_parking_capacity": "15",
+      "vip_parking_security_level": "Maximum",
+      "vip_parking_access_control": "Biometric",
+      "vip_parking_surveillance": "24/7",
+      "vip_parking_lighting": "High-intensity",
+      "vip_parking_barriers": "Bollards and barriers",
+      "vip_parking_emergency_access": "Dedicated routes",
+      "vip_parking_staffing": "Dedicated security",
+      "vip_parking_vehicle_screening": "Full inspection",
+      "vip_escort_services": "Professional",
+      "vip_transport_coordination": "Advanced",
+      "vip_communication_channels": "Secure",
+      "vip_emergency_contact": "Direct line",
+      "vip_alert_systems": "Multi-channel",
+      "vip_communication_equipment": "Encrypted",
+      "vip_staff_training": "Specialized",
+      "vip_staff_background_checks": "Comprehensive",
+      "vip_security_personnel": "Dedicated team",
+      "vip_service_staff": "Vetted",
+      "vip_evacuation_procedures": "Dedicated routes",
+      "vip_medical_emergency": "On-site medical",
+      "vip_security_incident": "Immediate response",
+      "vip_emergency_communication": "Secure channels",
+      "vip_access_control_systems": "Advanced",
+      "vip_monitoring_surveillance": "24/7",
+      "vip_communication_tech": "State-of-the-art",
+      "vip_technology_integration": "Fully integrated"
+    },
+    "executive_summary": {
+      "summary_generated": false,
+      "key_findings": [],
+      "recommendations": [],
+      "security_score": 0
+    },
+    "final_report": {
+      "report_generated": false,
+      "report_sections": [
+        "executive_summary",
+        "facility_overview", 
+        "vulnerability_analysis",
+        "recommendations"
+      ]
+    },
+    "planning_emergency": {
+      "emergency_plans": [
+        "Fire Emergency Response Plan",
+        "Medical Emergency Response Plan", 
+        "Security Incident Response Plan",
+        "Evacuation Plan",
+        "Lockdown Procedures",
+        "Bomb Threat Response Plan",
+        "Active Shooter Response Plan",
+        "Natural Disaster Response Plan",
+        "Power Outage Response Plan",
+        "Water Emergency Response Plan"
+      ],
+      "emergency_contacts": [
+        "Miami-Dade Fire Rescue: 911",
+        "Miami-Dade Police: 911", 
+        "Miami Beach Fire: (305) 673-7000",
+        "Miami Beach Police: (305) 673-7900",
+        "FBI Miami Field Office: (305) 944-9101",
+        "DHS Miami Field Office: (305) 863-6500",
+        "Hotel Security Director: (305) 555-0125",
+        "Hotel General Manager: (305) 555-0126",
+        "Emergency Medical Services: 911",
+        "Poison Control: (800) 222-1222"
+      ],
+      "emergency_equipment": [
+        "Fire extinguishers (50 units)",
+        "First aid kits (25 units)",
+        "Emergency lighting systems",
+        "Emergency communication devices",
+        "Evacuation chairs (10 units)",
+        "Emergency generators",
+        "Emergency water supply",
+        "Emergency food supplies",
+        "Emergency medical supplies",
+        "Emergency shelter materials"
+      ],
+      "emergency_training": [
+        "Fire Safety Training (Quarterly)",
+        "First Aid/CPR Training (Annually)",
+        "Active Shooter Response (Semi-annually)",
+        "Evacuation Procedures (Quarterly)",
+        "Emergency Communication (Monthly)",
+        "Crisis Management (Annually)",
+        "Security Incident Response (Quarterly)",
+        "Medical Emergency Response (Semi-annually)",
+        "Natural Disaster Preparedness (Annually)",
+        "Emergency Equipment Operation (Monthly)"
+      ],
+      "emergency_exercises": [
+        "Fire Drill (Monthly)",
+        "Evacuation Drill (Quarterly)",
+        "Active Shooter Drill (Semi-annually)",
+        "Medical Emergency Drill (Quarterly)",
+        "Security Incident Drill (Quarterly)",
+        "Lockdown Drill (Semi-annually)",
+        "Bomb Threat Drill (Annually)",
+        "Natural Disaster Drill (Annually)",
+        "Power Outage Drill (Semi-annually)",
+        "Communication System Test (Monthly)"
+      ],
+      "emergency_procedures": "Comprehensive documented procedures",
+      "emergency_communication": "Multiple redundant systems",
+      "emergency_coordination": "External agency integration",
+      "emergency_testing": "Regular drills and exercises",
+      "emergency_review": "Annual plan review",
+      "emergency_updates": "As needed",
+      "emergency_training_frequency": "Ongoing",
+      "emergency_exercise_frequency": "Regular",
+      "emergency_equipment_maintenance": "Monthly",
+      "emergency_system_testing": "Weekly",
+      "emergency_documentation": "Comprehensive",
+      "emergency_reporting": "Immediate",
+      "emergency_follow_up": "Required",
+      "emergency_lessons_learned": "Documented",
+      "emergency_improvements": "Implemented"
+    }
+  },
+  "tables": {
+    "plan-table": [
+      {
+        "plan_type": "Fire Emergency Response Plan",
+        "plan_written": "Yes",
+        "plan_last_updated": "2024-01-15",
+        "plan_exercise": "Yes",
+        "plan_exercise_date": "2024-01-10"
+      },
+      {
+        "plan_type": "Medical Emergency Response Plan",
+        "plan_written": "Yes", 
+        "plan_last_updated": "2024-01-10",
+        "plan_exercise": "Yes",
+        "plan_exercise_date": "2024-01-05"
+      },
+      {
+        "plan_type": "Security Incident Response Plan",
+        "plan_written": "Yes",
+        "plan_last_updated": "2024-01-12",
+        "plan_exercise": "Yes",
+        "plan_exercise_date": "2024-01-08"
+      },
+      {
+        "plan_type": "Evacuation Plan",
+        "plan_written": "Yes",
+        "plan_last_updated": "2024-01-14",
+        "plan_exercise": "Yes",
+        "plan_exercise_date": "2024-01-12"
+      },
+      {
+        "plan_type": "Active Shooter Response Plan",
+        "plan_written": "Yes",
+        "plan_last_updated": "2024-01-16",
+        "plan_exercise": "Yes",
+        "plan_exercise_date": "2024-01-14"
+      }
+    ],
+    "training-table": [
+      {
+        "training_type": "Fire Safety Training",
+        "training_participants": "All Staff",
+        "training_frequency": "Quarterly"
+      },
+      {
+        "training_type": "First Aid/CPR Training",
+        "training_participants": "Security Staff",
+        "training_frequency": "Annually"
+      },
+      {
+        "training_type": "Active Shooter Response",
+        "training_participants": "Security Staff",
+        "training_frequency": "Semi-annually"
+      },
+      {
+        "training_type": "Evacuation Procedures",
+        "training_participants": "All Staff",
+        "training_frequency": "Quarterly"
+      },
+      {
+        "training_type": "Emergency Communication",
+        "training_participants": "Management Staff",
+        "training_frequency": "Monthly"
+      }
+    ],
+    "emergency_exercises": [
+      {
+        "exercise_type": "Fire Drill",
+        "exercise_frequency": "Monthly",
+        "exercise_participants": "All Occupants",
+        "exercise_duration": "30 minutes",
+        "exercise_objectives": "Evacuation procedures",
+        "exercise_evaluation": "Performance review"
+      },
+      {
+        "exercise_type": "Active Shooter Drill",
+        "exercise_frequency": "Semi-annually",
+        "exercise_participants": "Security Staff",
+        "exercise_duration": "2 hours", 
+        "exercise_objectives": "Response procedures",
+        "exercise_evaluation": "Detailed assessment"
+      }
+    ],
+    "first_responder_table": [
+      {
+        "responder_agency": "Miami-Dade Fire Rescue",
+        "responder_contact": "Captain Rodriguez",
+        "responder_phone": "(305) 673-7000",
+        "responder_response_time": "5",
+        "responder_special_capabilities": "Hazmat, Technical Rescue, EMS"
+      },
+      {
+        "responder_agency": "Miami Beach Police",
+        "responder_contact": "Sergeant Martinez",
+        "responder_phone": "(305) 673-7900",
+        "responder_response_time": "3",
+        "responder_special_capabilities": "SWAT, K-9, Bomb Squad"
+      },
+      {
+        "responder_agency": "FBI Miami Field Office",
+        "responder_contact": "Special Agent Johnson",
+        "responder_phone": "(305) 944-9101",
+        "responder_response_time": "15",
+        "responder_special_capabilities": "Counterterrorism, Cyber Crime, Hostage Negotiation"
+      },
+      {
+        "responder_agency": "DHS Miami Field Office",
+        "responder_contact": "Special Agent Williams",
+        "responder_phone": "(305) 863-6500",
+        "responder_response_time": "20",
+        "responder_special_capabilities": "Infrastructure Protection, Threat Assessment"
+      },
+      {
+        "responder_agency": "Emergency Medical Services",
+        "responder_contact": "Paramedic Supervisor",
+        "responder_phone": "911",
+        "responder_response_time": "4",
+        "responder_special_capabilities": "Advanced Life Support, Mass Casualty"
+      }
+    ],
+    "vendor_table": [
+      {
+        "vendor_company": "ABC Security Services",
+        "vendor_service": "Security Guard Services",
+        "vendor_background_check": "Required - Full Background Check",
+        "vendor_escort": "No",
+        "vendor_access": "Permanent Badges",
+        "vendor_recurrence": "Daily"
+      },
+      {
+        "vendor_company": "XYZ Maintenance Corp",
+        "vendor_service": "Facility Maintenance",
+        "vendor_background_check": "Required - Basic Background Check",
+        "vendor_escort": "Yes",
+        "vendor_access": "Temporary Badges",
+        "vendor_recurrence": "Weekly"
+      },
+      {
+        "vendor_company": "Tech Solutions Inc",
+        "vendor_service": "IT Support",
+        "vendor_background_check": "Required - Full Background Check",
+        "vendor_escort": "No",
+        "vendor_access": "Permanent Badges",
+        "vendor_recurrence": "As Needed"
+      },
+      {
+        "vendor_company": "Clean Pro Services",
+        "vendor_service": "Janitorial Services",
+        "vendor_background_check": "Required - Basic Background Check",
+        "vendor_escort": "Yes",
+        "vendor_access": "Temporary Badges",
+        "vendor_recurrence": "Daily"
+      },
+      {
+        "vendor_company": "Food Service Partners",
+        "vendor_service": "Catering Services",
+        "vendor_background_check": "Required - Basic Background Check",
+        "vendor_escort": "Yes",
+        "vendor_access": "Escort Only",
+        "vendor_recurrence": "Event-based"
+      }
+    ],
+    "vip_access_table": [
+      {
+        "vip_entrance_type": "Main VIP Entrance",
+        "vip_access_control": "Biometric + Key Card",
+        "vip_vehicle_access": "Dedicated VIP Driveway",
+        "vip_vss_coverage": "Full Coverage"
+      },
+      {
+        "vip_entrance_type": "Porte Cochere",
+        "vip_access_control": "Key Card + Security Escort",
+        "vip_vehicle_access": "Valet Service",
+        "vip_vss_coverage": "Full Coverage"
+      },
+      {
+        "vip_entrance_type": "Private Elevator",
+        "vip_access_control": "Biometric Only",
+        "vip_vehicle_access": "Underground Garage",
+        "vip_vss_coverage": "Full Coverage"
+      },
+      {
+        "vip_entrance_type": "Service Entrance",
+        "vip_access_control": "Security Escort Required",
+        "vip_vehicle_access": "Service Vehicles Only",
+        "vip_vss_coverage": "Full Coverage"
+      },
+      {
+        "vip_entrance_type": "Emergency Exit",
+        "vip_access_control": "Emergency Use Only",
+        "vip_vehicle_access": "Emergency Vehicles",
+        "vip_vss_coverage": "Full Coverage"
+      }
+    ]
+  },
+  "metadata": {
+    "assessment_id": "HOST-2025-001",
+    "facility_id": "GPH-001",
+    "assessor_id": "SJ-001",
+    "assessment_version": "HOST V1.0",
+    "data_collection_date": "2025-01-27",
+    "last_updated": "2025-01-27T15:30:00Z",
+    "completion_status": "Complete",
+    "data_quality": "High",
+    "validation_status": "Validated",
+    "peer_review": "Pending",
+    "approval_status": "Approved"
+  }
+}

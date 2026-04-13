@@ -2,279 +2,73 @@
         
         /* Header and Navigation Styles */
         .site-security-header {
-            background: #1e3a8a;
+            background: linear-gradient(135deg, var(--cisa-primary-blue), var(--cisa-light-blue));
             color: white;
             padding: 1rem 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 80px;
-            width: 100%;
-            margin: 0;
             position: relative;
-        }
-        
-        /* Unstick navigation for report tabs to improve readability */
-        .site-security-header.unstick-nav {
-            position: static !important;
-            top: auto !important;
-            z-index: auto !important;
-            width: 100% !important;
-            left: auto !important;
-            right: auto !important;
-            margin-left: 0 !important;
-        }
-        
-        /* Ensure report sections have proper spacing when navigation is unstuck */
-        #executive_summary, #final_report {
-            margin-top: 0 !important;
-            padding-top: 1rem !important;
-        }
-        
-        /* CISA Style Report Formatting */
-        .cisa-report {
-            font-family: 'Source Sans Pro', Arial, sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
-            background: #ffffff;
-        }
-        
-        .cisa-report h1 {
-            color: #1e3a8a;
-            font-size: 2.25rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            border-bottom: 3px solid #1e3a8a;
-            padding-bottom: 0.5rem;
-        }
-        
-        .cisa-report h2 {
-            color: #1e3a8a;
-            font-size: 1.875rem;
-            font-weight: 600;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #e5e7eb;
-            padding-bottom: 0.25rem;
-        }
-        
-        .cisa-report h3 {
-            color: #374151;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
-        
-        .cisa-report h4 {
-            color: #4b5563;
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-top: 1rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .cisa-report p {
-            margin-bottom: 1rem;
-            text-align: justify;
-        }
-        
-        .cisa-report ul, .cisa-report ol {
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-        }
-        
-        .cisa-report li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .cisa-report table {
+            top: auto;
+            z-index: auto;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            font-size: 0.9rem;
-        }
-        
-        .cisa-report th {
-            background: #1e3a8a;
-            color: white;
-            padding: 0.75rem;
-            text-align: left;
-            font-weight: 600;
-        }
-        
-        .cisa-report td {
-            padding: 0.75rem;
-            border: 1px solid #d1d5db;
-        }
-        
-        .cisa-report tr:nth-child(even) {
-            background: #f9fafb;
-        }
-        
-        .cisa-report .highlight {
-            background: #fef3c7;
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.25rem;
-            font-weight: 600;
-        }
-        
-        .cisa-report .vulnerability-high {
-            color: #dc2626;
-            font-weight: 600;
-        }
-        
-        .cisa-report .vulnerability-medium {
-            color: #d97706;
-            font-weight: 600;
-        }
-        
-        .cisa-report .vulnerability-low {
-            color: #059669;
-            font-weight: 600;
-        }
-        
-        /* Override any conflicting styles in reports */
-        .cisa-report * {
-            background: none !important;
-            background-image: none !important;
-            background-color: transparent !important;
-        }
-        
-        .cisa-report {
-            background: #ffffff !important;
-            color: #1a1a1a !important;
-        }
-        
-        .cisa-report h1, .cisa-report h2, .cisa-report h3, .cisa-report h4 {
-            background: none !important;
-            background-image: none !important;
-            background-color: transparent !important;
-        }
-        
-        .cisa-report .report-header, .cisa-report .executive-header {
-            background: #ffffff !important;
-            background-image: none !important;
-        }
-        
-        .cisa-report .metric-card, .cisa-report .summary-metrics {
-            background: #f8f9fa !important;
-            background-image: none !important;
-            border: 1px solid #dee2e6 !important;
-        }
-        
-        /* Fix text colors on dark blue backgrounds */
-        .cisa-report .report-header,
-        .cisa-report .executive-header,
-        .cisa-report .metric-card,
-        .cisa-report .summary-metrics,
-        .cisa-report .vulnerability-item,
-        .cisa-report .options-for-consideration {
-            color: #ffffff !important;
-        }
-        
-        /* Ensure all text on blue backgrounds is white */
-        .cisa-report [style*="background"] *,
-        .cisa-report [style*="background-color"] *,
-        .cisa-report .blue-background *,
-        .cisa-report .dark-background * {
-            color: #ffffff !important;
-        }
-        
-        /* Specific fixes for common dark background elements */
-        .cisa-report h1, .cisa-report h2, .cisa-report h3, .cisa-report h4,
-        .cisa-report p, .cisa-report div, .cisa-report span {
-            color: inherit !important;
-        }
-        
-        /* Override any dark text on blue backgrounds */
-        .cisa-report .report-section {
-            color: #1a1a1a !important;
-        }
-        
-        .cisa-report .report-section h2 {
-            color: #1e3a8a !important;
-        }
-        
-        /* Comprehensive fix for all dark background text */
-        .cisa-report * {
-            color: #ffffff !important;
-        }
-        
-        /* But keep normal text dark on light backgrounds */
-        .cisa-report .report-section,
-        .cisa-report .report-section *,
-        .cisa-report .vulnerability-list,
-        .cisa-report .vulnerability-list *,
-        .cisa-report .options-for-consideration,
-        .cisa-report .options-for-consideration * {
-            color: #1a1a1a !important;
-        }
-        
-        /* Headers should be blue on light backgrounds */
-        .cisa-report .report-section h1,
-        .cisa-report .report-section h2,
-        .cisa-report .report-section h3,
-        .cisa-report .report-section h4 {
-            color: #1e3a8a !important;
-        }
-        
-        /* Header should never be sticky - always scroll normally */
-        .site-security-header,
-        body.report-mode .site-security-header {
-            position: relative !important;
-            top: auto !important;
-            z-index: auto !important;
+            min-height: 100px;
         }
         
         .header-left {
             display: flex;
             align-items: center;
             padding-left: 20px;
+            flex: 1;
+            min-width: 0;
+            gap: 1.5rem;
         }
         
         .header-right {
             text-align: right;
             padding-right: 20px;
+            flex-shrink: 0;
+            min-width: 250px;
         }
         
         .header-content {
-            /* max-width: 1200px; */
-            /* margin: 0 auto; */
             padding: 0 20px;
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
+            width: 100%;
             min-height: 80px;
         }
         
         .logo {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-left: 0px;
+            flex-shrink: 0;
         }
         
         .logo img {
-            height: 70px;
+            height: 60px;
             width: auto;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        
+        .logo-text {
+            padding-left: 1rem;
         }
         
         .logo-text h1 {
             color: white;
-            font-size: 32px;
+            font-size: 24px;
             font-weight: bold;
             margin: 0;
-            line-height: 1.1;
+            line-height: 1.2;
         }
         
         .logo-text p {
             color: white;
-            font-size: 16px;
+            font-size: 14px;
             margin: 0;
-            line-height: 1.1;
-            font-weight: 500;
+            line-height: 1.2;
+            font-weight: 400;
         }
         
         .assessment-info {
@@ -293,16 +87,6 @@
             font-weight: 500;
         }
         
-        .assessment-progress {
-            position: sticky !important;
-            top: 0 !important;
-            z-index: 1000 !important;
-            background: #f8f9fa;
-            border-bottom: 1px solid #e5e7eb;
-            padding: 0.25rem 0;
-            margin-top: 0;
-            transform: translateZ(0);
-        }
         
         .progress-header {
             /* max-width: 1200px; */
@@ -337,12 +121,29 @@
             transition: width 0.3s ease;
         }
         
+        .assessment-progress {
+            position: -webkit-sticky !important;
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 1000 !important;
+            background: #f8f9fa !important;
+            border-bottom: 1px solid #dee2e6 !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+            width: 100% !important;
+            margin: 0 !important;
+            transform: translateZ(0) !important;
+            will-change: transform !important;
+            padding: 0.5rem 1rem !important;
+            display: block !important;
+        }
+
         .progress-steps {
             display: flex;
             gap: 0.5rem;
             flex-wrap: wrap;
             justify-content: flex-start;
             align-items: center;
+            padding: 1rem 0;
         }
         
         /* CISA Navigation Tabs Styling */
@@ -351,7 +152,7 @@
             background: #ffffff;
             border-radius: 8px;
             padding: 0.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
             box-shadow: 0 1px 3px rgba(0,0,0,0.12);
             border: 1px solid #d6d7d9;
             justify-content: center;
@@ -368,7 +169,7 @@
             font-weight: 600;
             color: #5b616b;
             transition: all 0.3s ease;
-            font-family: 'Franklin Gothic', 'Arial', 'Helvetica', sans-serif;
+            font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             font-size: 1.125rem;
             width: 60px;
             height: 60px;
@@ -398,7 +199,7 @@
         /* Landing Page Button Styling */
         .landing-actions {
             text-align: center;
-            margin: 2rem 0;
+            margin: 0.5rem 0;
         }
         
         .landing-actions .btn {
@@ -410,7 +211,7 @@
         
         /* Executive Report Readability Improvements */
         .strategic-recommendations {
-            margin: 2rem 0;
+            margin: 0.5rem 0;
             padding: 1.5rem;
             background: #f8f9fa;
             border-radius: 8px;
@@ -421,7 +222,7 @@
             color: #112e51;
             font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
             border-bottom: 2px solid #0071bc;
             padding-bottom: 0.5rem;
         }
@@ -485,10 +286,11 @@
         
         /* CISA Executive Summary Style Guidelines */
         .executive-summary {
-            font-family: 'Franklin Gothic', 'Arial', 'Helvetica', sans-serif;
+            font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #1b1b1b;
             background: #ffffff;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
@@ -497,7 +299,7 @@
             color: #112e51;
             font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
             border-bottom: 3px solid #0071bc;
             padding-bottom: 0.5rem;
         }
@@ -550,7 +352,7 @@
         .executive-summary table {
             width: 100%;
             border-collapse: collapse;
-            margin: 1.5rem 0;
+            margin: 0.5rem 0;
             background: #ffffff;
             border-radius: 4px;
             overflow: hidden;
@@ -614,15 +416,15 @@
         .cisa-alert {
             padding: 1rem 1.5rem;
             border-radius: 4px;
-            margin: 1.5rem 0;
+            margin: 0.5rem 0;
             border-left: 4px solid;
             font-weight: 500;
         }
         
         .cisa-alert-info {
             background-color: #e1f3fd;
-            border-left-color: var(--cisa-primary-blue);
-            color: var(--cisa-primary-blue);
+            border-left-color: #0071bc;
+            color: #112e51;
         }
         
         .cisa-alert-warning {
@@ -632,15 +434,15 @@
         }
         
         .cisa-alert-success {
-            background-color: rgba(94, 151, 50, 0.1);
-            border-left-color: var(--cisa-green);
-            color: var(--cisa-green);
+            background-color: rgba(40, 167, 69, 0.1);
+            border-left-color: #28a745;
+            color: #155724;
         }
         
         .cisa-alert-danger {
-            background-color: rgba(196, 18, 48, 0.1);
-            border-left-color: var(--cisa-red);
-            color: var(--cisa-red);
+            background-color: #f8d7da;
+            border-left-color: #d83933;
+            color: #a94442;
         }
         
         /* CISA Executive Dashboard */
@@ -649,7 +451,7 @@
             border: 1px solid #d6d7d9;
             border-radius: 8px;
             padding: 1.5rem;
-            margin: 2rem 0;
+            margin: 0.5rem 0;
         }
         
         .executive-dashboard h3 {
@@ -705,7 +507,7 @@
             display: none;
             align-items: center;
             justify-content: center;
-            font-family: 'Franklin Gothic', 'Arial', 'Helvetica', sans-serif;
+            font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             font-weight: 600;
         }
         
@@ -841,154 +643,18 @@
             /* max-width: 1200px; */
             /* margin: 0 auto; */
             padding: 0 0 120px 0; /* Space for fixed bottom elements */
-            position: relative;
-        }
-        
-        /* Robust sticky navigation implementation */
-        .assessment-progress {
-            position: -webkit-sticky; /* Safari support */
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: #f8f9fa;
-            border-bottom: 1px solid #dee2e6;
-            width: 100%;
-            margin: 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            /* Force hardware acceleration for better performance */
-            transform: translateZ(0);
-            will-change: transform;
-        }
-        
-        /* Ensure sticky works even with dynamic content */
-        .assessment-progress[style*="display: block"] {
-            position: -webkit-sticky !important;
-            position: sticky !important;
-            top: 0 !important;
-        }
-        
-        /* Force sticky behavior with maximum specificity */
-        body .assessment-progress,
-        html body .assessment-progress,
-        .site-security-container .assessment-progress {
-            position: -webkit-sticky !important;
-            position: sticky !important;
-            top: 0 !important;
-            z-index: 1000 !important;
-        }
-        
-        /* Fix gap between navigation and content */
-        .site-security-container {
-            padding-top: 0 !important;
-        }
-        
-        /* Ensure proper spacing between header, progress bar, and content */
-        .site-security-header {
-            margin-bottom: 0 !important;
-        }
-        
-        .assessment-progress {
-            margin-bottom: 0 !important;
-        }
-        
-        .section {
-            margin-top: 0 !important;
-            padding-top: 1rem !important;
-        }
-        
-        .section-header {
-            margin-top: 0 !important;
-            padding-top: 0 !important;
-        }
-        
-        /* Fix gaps on pages 2-8 by targeting specific elements */
-        .section .alert {
-            margin-top: 0 !important;
-            margin-bottom: 0.5rem !important;
-        }
-        
-        .section .question-item {
-            margin-top: 0 !important;
-            margin-bottom: 0.5rem !important;
-        }
-        
-        .section .question-item:first-child {
-            margin-top: 0 !important;
-        }
-        
-        /* Remove any default margins from form elements in sections */
-        .section .form-row,
-        .section .form-group,
-        .section .card,
-        .section .card-body {
-            margin-top: 0 !important;
-            margin-bottom: 0.5rem !important;
-        }
-        
-        /* Ensure consistent spacing for all content in sections 2-8 */
-        .section > *:first-child {
-            margin-top: 0 !important;
-        }
-        
-        .section > *:last-child {
-            margin-bottom: 0 !important;
-        }
-        
-        /* Ensure no margins on body/html that could push content down */
-        html, body {
-            margin: 0 !important;
-            padding: 0 !important;
         }
         
         /* Fix any layout issues - REMOVED CONFLICTING RULE */
         
-        /* Uniform title styling across all sections */
+        /* Main title and section styling */
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             font-weight: 700;
             color: #1e3a8a;
-            margin: 0 0 1rem 0;
-            padding: 1rem 0 0.5rem 0;
+            margin: 2rem 0 1rem 0;
             line-height: 1.2;
-            border-bottom: 3px solid #1e3a8a;
-            width: 100%;
-        }
-        
-        /* Ensure all h2 elements in sections follow the same pattern */
-        .section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #1e3a8a;
-            margin: 0 0 1rem 0;
-            padding: 1rem 0 0.5rem 0;
-            line-height: 1.2;
-            border-bottom: 3px solid #1e3a8a;
-            width: 100%;
-        }
-        
-        /* Override any conflicting title styles */
-        .section-header h2,
-        .section-header .section-title,
-        #landing_page h2,
-        #facility_info h2,
-        #dependencies h2,
-        #physical_security h2,
-        #security_systems h2,
-        #vip_planning h2,
-        #planning_emergency h2,
-        #executive_summary h2,
-        #final_report h2 {
-            text-align: center !important;
-            font-size: 2.5rem !important;
-            font-weight: 700 !important;
-            color: #1e3a8a !important;
-            margin: 0 0 1rem 0 !important;
-            padding: 1rem 0 0.5rem 0 !important;
-            line-height: 1.2 !important;
-            border-bottom: 3px solid #1e3a8a !important;
-            width: 100% !important;
         }
         
         .section-description {
@@ -1008,12 +674,13 @@
         }
         
         /* Typography - DHS CISA Standards */
-        body {
-            font-family: 'Franklin Gothic', 'Arial', 'Helvetica', sans-serif;
+        html, body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: 14px;
             line-height: 1.6;
             color: #212529;
             background-color: #ffffff;
+            position: relative;
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -1031,27 +698,16 @@
         
         /* Color Palette - DHS CISA Standards */
         :root {
-            /* CISA Official Color Palette */
-            --cisa-primary-blue: #005288;      /* DHS Blue */
-            --cisa-light-blue: #0078AE;       /* DHS Light Blue */
-            --cisa-gray: #C0C2C4;             /* DHS Gray */
-            --cisa-dark-gray: #5A5B5D;        /* DHS Dark Gray */
-            --cisa-red: #C41230;              /* DHS Red */
-            --cisa-green: #5E9732;           /* DHS Green */
-            --old-glory-blue: #002868;        /* Old Glory Blue */
-            --old-glory-red: #BF0A30;         /* Old Glory Red */
-            
-            /* Legacy variables for compatibility */
-            --primary-blue: var(--cisa-primary-blue);
-            --secondary-blue: var(--cisa-light-blue);
-            --accent-blue: var(--cisa-light-blue);
-            --light-blue: #ebf8ff;
-            --success-green: var(--cisa-green);
-            --warning-orange: #ed8936;
-            --danger-red: var(--cisa-red);
-            --neutral-gray: var(--cisa-dark-gray);
-            --light-gray: var(--cisa-gray);
-            --border-gray: #e2e8f0;
+            --cisa-primary-blue: #1a365d;
+            --cisa-secondary-blue: #2c5282;
+            --cisa-accent-blue: #3182ce;
+            --cisa-light-blue: #ebf8ff;
+            --cisa-success-green: #38a169;
+            --cisa-warning-orange: #ed8936;
+            --cisa-danger-red: #e53e3e;
+            --cisa-neutral-gray: #718096;
+            --cisa-light-gray: #f7fafc;
+            --cisa-border-gray: #e2e8f0;
         }
         
         /* Cards Grid - DHS CISA Layout Standards */
@@ -1059,7 +715,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
             width: 100%;
         }
         
@@ -1133,7 +789,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
         }
         
         .process-step {
@@ -1170,6 +826,11 @@
             box-shadow: 0 4px 8px rgba(30, 58, 138, 0.3);
         }
         
+        .icon-text {
+            font-size: 28px;
+            line-height: 1;
+        }
+        
         .step-content h5 {
             margin: 0 0 0.75rem 0;
             color: #1f2937;
@@ -1190,17 +851,21 @@
         /* Fix bottom navigation covering form fields - MERGED INTO ABOVE */
         
         .section {
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
             display: none;
-            padding: 0 20px;
-            margin-top: 0;
+            padding: 220px 0 0 0;
+            width: 100%;
         }
         
-        /* Ensure consistent spacing for all sections */
+        .section .card,
+        .section .form-row,
+        .section .form-group {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        
         .section.active {
             display: block;
-            margin-top: 0;
-            padding-top: 0.25rem;
         }
         
         /* Help Text and Tooltips */
@@ -1239,7 +904,8 @@
             padding: 8px 12px;
             position: absolute;
             z-index: 1000;
-            bottom: 125%;
+            bottom: 100%;
+            margin-bottom: 8px;
             left: 50%;
             margin-left: -150px;
             opacity: 0;
@@ -1291,8 +957,8 @@
             position: sticky;
             bottom: 0;
             background: #ffffff;
-            border-top: 3px solid #1e3a8a;
-            box-shadow: 0 -4px 15px rgba(30,58,138,0.2);
+            border-top: 3px solid #0071bc;
+            box-shadow: 0 -4px 15px rgba(0,113,188,0.2);
             z-index: 1000;
             margin-top: 2rem;
         }
@@ -1311,7 +977,7 @@
         }
         
         .report-section {
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
             padding: 1.5rem;
             border: 1px solid #e0e0e0;
             border-radius: 8px;
@@ -1359,7 +1025,8 @@
             padding: 8px 12px;
             position: absolute;
             z-index: 1000;
-            bottom: 125%;
+            bottom: 100%;
+            margin-bottom: 8px;
             left: 50%;
             margin-left: -150px;
             opacity: 0;
@@ -1539,11 +1206,11 @@
             display: block;
         }
         
-        /* Data Management Toggle Button - DHS Blue Styling */
+        /* Data Management Toggle Button - High Contrast */
         .data-management-header button {
-            background: #ffffff;
-            color: #1e3a8a;
-            border: 2px solid #1e3a8a;
+            background: #ffffff !important;
+            color: #1e3a8a !important;
+            border: 2px solid #1e3a8a !important;
             border-radius: 6px;
             padding: 0.5rem 0.75rem;
             font-weight: 600;
@@ -1552,16 +1219,11 @@
         }
         
         .data-management-header button:hover {
-            background: #1e3a8a;
-            color: #ffffff;
-            border-color: #1e3a8a;
+            background: #1e3a8a !important;
+            color: #ffffff !important;
+            border-color: #1e3a8a !important;
             transform: translateY(-1px);
             box-shadow: 0 4px 8px rgba(30,58,138,0.3);
-        }
-        
-        .data-management-header button:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 4px rgba(30,58,138,0.3);
         }
         
         .data-management-header button i {
@@ -1580,26 +1242,70 @@
         .data-controls {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
-            align-items: end;
+            gap: 1.5rem;
+            align-items: flex-start;
         }
         
         .control-group {
             flex: 1;
             min-width: 200px;
-        }
-        
-        .control-buttons {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 0.5rem;
         }
         
-        /* Data Management Control Buttons - DHS Blue Styling */
+        .control-group .form-label {
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+            color: #112e51;
+        }
+        
+        .control-group .form-input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 2px solid #d6d7d9;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .control-group .btn {
+            align-self: flex-start;
+            margin-top: 0.25rem;
+        }
+        
+        /* Generate Report Button - High Contrast */
+        .btn-primary {
+            background: #1e3a8a !important;
+            color: #ffffff !important;
+            border: 2px solid #1e3a8a !important;
+            border-radius: 6px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            background: #ffffff !important;
+            color: #1e3a8a !important;
+            border-color: #1e3a8a !important;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(30,58,138,0.3);
+        }
+        
+        .btn-primary:disabled {
+            background: #6c757d !important;
+            color: #ffffff !important;
+            border-color: #6c757d !important;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        
+        /* Data Management Control Buttons - High Contrast */
         .data-management-content .btn {
-            background: #1e3a8a;
-            color: #ffffff;
-            border: 2px solid #1e3a8a;
+            background: #1e3a8a !important;
+            color: #ffffff !important;
+            border: 2px solid #1e3a8a !important;
             border-radius: 6px;
             padding: 0.5rem 1rem;
             font-weight: 600;
@@ -1612,82 +1318,21 @@
         }
         
         .data-management-content .btn:hover {
-            background: #ffffff;
-            color: #1e3a8a;
-            border-color: #1e3a8a;
+            background: #ffffff !important;
+            color: #1e3a8a !important;
+            border-color: #1e3a8a !important;
             transform: translateY(-1px);
             box-shadow: 0 4px 8px rgba(30,58,138,0.3);
-        }
-        
-        .data-management-content .btn:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 4px rgba(30,58,138,0.3);
         }
         
         .data-management-content .btn i {
             font-size: 0.9rem;
         }
         
-        /* Save button specific styling */
-        .data-management-content .btn-primary {
-            background: #1e3a8a;
-            border-color: #1e3a8a;
-        }
-        
-        .data-management-content .btn-success {
-            background: #38a169;
-            border-color: #38a169;
-        }
-        
-        .data-management-content .btn-success:hover {
-            background: #ffffff;
-            color: #38a169;
-            border-color: #38a169;
-        }
-        
-        /* Data Management Form Inputs - DHS Styling */
-        .data-management-content .form-input {
-            border: 2px solid #d6d7d9;
-            border-radius: 6px;
-            padding: 0.5rem 0.75rem;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-        
-        .data-management-content .form-input:focus {
-            border-color: #1e3a8a;
-            box-shadow: 0 0 0 3px rgba(30,58,138,0.1);
-            outline: none;
-        }
-        
-        .data-management-content .form-label {
-            color: #1e3a8a;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 0.25rem;
-        }
-        
-        /* Data Management Status Indicators */
-        .data-management-content .status-indicator {
-            font-weight: 600;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-        }
-        
-        .data-management-content .status-indicator.ready {
-            background: #d4edda;
-            color: #155724;
-        }
-        
-        .data-management-content .status-indicator.saved {
-            background: #d1ecf1;
-            color: #0c5460;
-        }
-        
-        .data-management-content .status-indicator.error {
-            background: #f8d7da;
-            color: #721c24;
+        .control-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
         
         /* Validation Section Styles */
@@ -1697,13 +1342,13 @@
         }
         
         .validation-header {
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
         }
         
         .validation-controls {
             display: flex;
             gap: 1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
             flex-wrap: wrap;
         }
         
@@ -1716,7 +1361,7 @@
         }
         
         .validation-summary {
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
         }
         
         .validation-summary h4 {
@@ -1809,7 +1454,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
             padding: 2rem;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border-radius: 12px;
@@ -1869,7 +1514,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
         }
         
         .vip-card {
@@ -1976,7 +1621,7 @@
         .vip-report-controls {
             display: flex;
             gap: 1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
             justify-content: center;
         }
         
@@ -1989,7 +1634,7 @@
         }
         
         .vip-report-section {
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
             padding-bottom: 1rem;
             border-bottom: 1px solid #e9ecef;
         }
@@ -2056,7 +1701,7 @@
         
         .placeholder-icon {
             color: #6c757d;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
         }
         
         .placeholder-card h3 {
@@ -2067,13 +1712,13 @@
         
         .placeholder-card p {
             color: #6c757d;
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
             line-height: 1.6;
         }
         
         .placeholder-features {
             text-align: left;
-            margin: 2rem 0;
+            margin: 0.5rem 0;
             padding: 1.5rem;
             background: #f8f9fa;
             border-radius: 8px;
@@ -2541,7 +2186,7 @@
         
         /* Professional Report Styling */
         .executive-summary, .full-report {
-            font-family: 'Franklin Gothic', 'Arial', 'Helvetica', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #212529;
             /* max-width: 1200px; */
@@ -2576,7 +2221,7 @@
         .report-header h1 {
             font-size: 3rem;
             font-weight: 800;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
             text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
             letter-spacing: -0.02em;
             background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
@@ -2591,7 +2236,7 @@
             font-size: 1.25rem;
             font-weight: 300;
             opacity: 0.9;
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
             position: relative;
             z-index: 1;
         }
@@ -2630,7 +2275,7 @@
         .enhancement-opportunities h2, .strategic-recommendations h2 {
             color: #1f2937;
             font-size: 1.75rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
             border-bottom: 2px solid var(--border-gray);
             padding-bottom: 0.5rem;
         }
@@ -2638,7 +2283,7 @@
         .system-category {
             background: white;
             padding: 1.5rem;
-            margin: 1.5rem 0;
+            margin: 0.5rem 0;
             border-radius: 6px;
             border: 1px solid var(--border-gray);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
@@ -2663,7 +2308,7 @@
             padding: 2rem;
             border-radius: 8px;
             text-align: center;
-            margin: 2rem 0;
+            margin: 0.5rem 0;
         }
         
         .assessment-score h3 {
@@ -2680,7 +2325,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            margin: 2rem 0;
+            margin: 0.5rem 0;
         }
         
         .strengths, .areas-for-improvement {
@@ -2771,7 +2416,7 @@
             background: var(--light-gray);
             padding: 2rem;
             border-radius: 8px;
-            margin: 2rem 0;
+            margin: 0.5rem 0;
         }
         
         .table-of-contents h2 {
@@ -2821,7 +2466,7 @@
             background: var(--light-blue);
             padding: 2rem;
             border-radius: 8px;
-            margin: 2rem 0;
+            margin: 0.5rem 0;
             border-left: 4px solid var(--accent-blue);
         }
         
@@ -2860,13 +2505,13 @@
             border: 2px solid #1e88e5;
             border-radius: 8px;
             padding: 2rem;
-            margin: 2rem 0;
+            margin: 0.5rem 0;
         }
         
         .vip-hosting-analysis h3 {
             color: #1e88e5;
             font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
             border-bottom: 2px solid #1e88e5;
             padding-bottom: 0.5rem;
         }
@@ -2875,7 +2520,7 @@
             background: white;
             border-radius: 8px;
             padding: 1.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
@@ -2925,7 +2570,7 @@
             background: #f8f9fa;
             border-radius: 8px;
             padding: 1.5rem;
-            margin: 1.5rem 0;
+            margin: 0.5rem 0;
         }
         
         .breakdown-grid {
@@ -3019,7 +2664,7 @@
         .emergency-planning-analysis h2 {
             color: #1f2937;
             font-size: 1.75rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
             border-bottom: 2px solid var(--border-gray);
             padding-bottom: 0.5rem;
         }
@@ -3027,7 +2672,7 @@
         .planning-assessment, .training-assessment, .exercise-assessment {
             background: white;
             padding: 1.5rem;
-            margin: 1.5rem 0;
+            margin: 0.5rem 0;
             border-radius: 6px;
             border: 1px solid var(--border-gray);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
@@ -3062,7 +2707,7 @@
             border: 1px solid #bbdefb;
             border-radius: 6px;
             padding: 1.5rem;
-            margin: 1.5rem 0;
+            margin: 0.5rem 0;
         }
         
         .standards-overview h3 {
@@ -3117,12 +2762,12 @@
             color: white;
             padding: 2rem;
             border-radius: 8px;
-            margin: 2rem 0;
+            margin: 0.5rem 0;
         }
         
         .executive-dashboard h2 {
             color: white;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
             text-align: center;
         }
         
@@ -3157,7 +2802,7 @@
             background: #f8f9fa;
             padding: 2rem;
             border-radius: 8px;
-            margin: 2rem 0;
+            margin: 0.5rem 0;
             border-left: 4px solid var(--primary-blue);
         }
         
@@ -3170,7 +2815,7 @@
             background: white;
             padding: 1.5rem;
             border-radius: 6px;
-            margin: 1.5rem 0;
+            margin: 0.5rem 0;
             border: 1px solid var(--border-gray);
         }
         
@@ -3194,742 +2839,872 @@
             font-weight: 600;
         }
 
-/* Report readability improvements when navigation is unstuck */
-.site-security-header.unstick-nav ~ .assessment-progress ~ .site-security-container {
-    padding-top: 0 !important;
-}
+        /* Federal Agency Advisory Styles */
+        .federal-advisory-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #f8f9fa;
+            border: 2px solid var(--cisa-primary-blue);
+            border-radius: 8px;
+        }
 
-.site-security-header.unstick-nav ~ .assessment-progress ~ .site-security-container .section {
-    margin-top: 0 !important;
-    padding-top: 1rem !important;
-}
+        .federal-advisory-section h2 {
+            color: var(--cisa-primary-blue);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
 
-/* Ensure report content has proper spacing */
-#executive_summary .container,
-#final_report .container {
-    padding-top: 1rem;
-}
+        .advisory-notice {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--cisa-primary-blue);
+        }
 
-/* Make report sections more readable with unstuck navigation */
-#executive_summary .section-header,
-#final_report .section-header {
-    margin-top: 0;
-    padding-top: 1rem;
-}
+        .advisory-notice p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
 
-/* Ensure report content is not cut off */
-#executive_summary .section,
-#final_report .section {
-    min-height: auto;
-    padding-bottom: 2rem;
-}
-/* Dynamic Vulnerability Analysis Styles */
-.vulnerability-indicator {
-    border: 2px solid #dc3545 !important;
-    background-color: #f8d7da !important;
-    box-shadow: 0 0 8px rgba(220, 53, 69, 0.3) !important;
-    animation: vulnerabilityPulse 2s infinite;
-}
+        .advisory-notice p:last-child {
+            margin-bottom: 0;
+        }
 
-.enhancement-indicator {
-    border: 2px solid #28a745 !important;
-    background-color: #d4edda !important;
-    box-shadow: 0 0 8px rgba(40, 167, 69, 0.3) !important;
-    animation: enhancementGlow 2s infinite;
-}
-
-@keyframes vulnerabilityPulse {
-    0%, 100% { box-shadow: 0 0 8px rgba(220, 53, 69, 0.3); }
-    50% { box-shadow: 0 0 16px rgba(220, 53, 69, 0.6); }
-}
-
-@keyframes enhancementGlow {
-    0%, 100% { box-shadow: 0 0 8px rgba(40, 167, 69, 0.3); }
-    50% { box-shadow: 0 0 16px rgba(40, 167, 69, 0.6); }
-}
-
-/* Security Score Classes */
-.score-excellent {
-    color: #28a745;
-    font-weight: bold;
-}
-
-.score-good {
-    color: #17a2b8;
-    font-weight: bold;
-}
-
-.score-fair {
-    color: #ffc107;
-    font-weight: bold;
-}
-
-.score-poor {
-    color: #dc3545;
-    font-weight: bold;
-}
-
-/* Vulnerability Counter Styles */
-.vulnerability-count {
-    color: #dc3545;
-    font-weight: bold;
-    background: #f8d7da;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #dc3545;
-}
-
-.enhancement-count {
-    color: #28a745;
-    font-weight: bold;
-    background: #d4edda;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #28a745;
-}
-
-/* Real-time Analysis Panel */
-.dynamic-analysis-panel {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 300px;
-    background: white;
-    border: 2px solid var(--cisa-primary-blue);
-    border-radius: 8px;
+.federal-disclaimer {
+    margin-top: 2rem;
     padding: 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    z-index: 1000;
-    max-height: 400px;
-    overflow-y: auto;
-}
-
-.dynamic-analysis-panel h4 {
-    color: var(--cisa-primary-blue);
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-
-.vulnerability-item {
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-    border-radius: 4px;
-    border-left: 4px solid;
-    font-size: 0.9rem;
-}
-
-.vulnerability-item.high {
-    background: #f8d7da;
-    border-left-color: #dc3545;
-}
-
-.vulnerability-item.medium {
     background: #fff3cd;
-    border-left-color: #ffc107;
-}
-
-.vulnerability-item.low {
-    background: #d1ecf1;
-    border-left-color: #17a2b8;
-}
-
-.vulnerability-field {
-    font-weight: bold;
-    color: var(--cisa-dark-gray);
-}
-
-.vulnerability-intent {
-    color: var(--cisa-dark-gray);
-    font-size: 0.8rem;
-    margin-top: 0.25rem;
-}
-
-/* Progress Bar Enhancements */
-.progress-fill[data-score] {
-    transition: width 0.5s ease, background-color 0.5s ease;
-}
-
-.progress-fill[data-score= 100] {
-    background: linear-gradient(90deg, #28a745, #20c997);
-}
-
-.progress-fill[data-score]:not([data-score=100]) {
-    background: linear-gradient(90deg, var(--cisa-primary-blue), var(--cisa-light-blue));
-}
-/* Analysis Panel Additional Styles */
-.analysis-summary {
-    background: #f8f9fa;
+    border: 1px solid #ffeaa7;
     border-radius: 6px;
-    padding: 1rem;
-    margin-bottom: 1rem;
+    border-left: 4px solid #ffc107;
 }
 
-.summary-item {
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-}
-
-.summary-item:last-child {
-    margin-bottom: 0;
-}
-
-.no-vulnerabilities {
-    text-align: center;
-    color: #28a745;
-    font-weight: bold;
-    padding: 1rem;
-    background: #d4edda;
-    border-radius: 4px;
-    border: 1px solid #28a745;
-}
-
-.vulnerability-list {
-    max-height: 200px;
-    overflow-y: auto;
-}
-
-#analysis-toggle {
-    background: var(--cisa-primary-blue);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
-}
-
-#analysis-toggle:hover {
-    background: var(--cisa-dark-blue);
-}
-
-#analysis-toggle.active {
-    background: #dc3545;
-}
-/* Header should always scroll normally */
-.site-security-header {
-    position: relative !important;
-}
-
-/* Ensure header stays at top of viewport */
-body {
+.federal-disclaimer p {
     margin: 0;
-    padding: 0;
-}
-
-/* Fix any potential overflow issues */
-.site-security-container {
-    overflow-x: hidden;
-}
-/* References Section Styles */
-.references-section {
-    background: #f8f9fa;
-    border-radius: 8px;
-    padding: 2rem;
-    margin: 2rem 0;
-    border: 1px solid #e9ecef;
-}
-
-.references-overview {
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
-    color: var(--cisa-dark-gray);
-}
-
-.references-categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.reference-category {
-    background: white;
-    border-radius: 6px;
-    padding: 1.5rem;
-    border: 1px solid #e9ecef;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.reference-category h4 {
-    color: var(--cisa-primary-blue);
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-    border-bottom: 2px solid var(--cisa-light-blue);
-    padding-bottom: 0.5rem;
-}
-
-.reference-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.reference-list li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #f1f3f4;
-    color: var(--cisa-dark-gray);
-    font-size: 0.95rem;
-    line-height: 1.4;
-}
-
-.reference-list li:last-child {
-    border-bottom: none;
-}
-
-.reference-list li:before {
-    content: '•';
-    color: var(--cisa-primary-blue);
-    font-weight: bold;
-    margin-right: 0.5rem;
-}
-
-.references-note {
-    background: #e3f2fd;
-    border: 1px solid #bbdefb;
-    border-radius: 6px;
-    padding: 1rem;
-    margin-top: 1rem;
-}
-
-.references-note p {
-    margin: 0;
-    color: var(--cisa-dark-gray);
     font-size: 0.9rem;
     line-height: 1.5;
 }
 
-/* Missing CSS Classes - Critical Issue Fix */
 
-/* Form Section Styles */
-.form-section {
-    margin: 20px 0;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background: white;
+/* Brief Executive Summary Styles */
+.key-metrics-dashboard {
+    margin: 2rem 0;
 }
 
-.form-section.completed {
-    border-color: #28a745;
-    background: #f8fff9;
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
 }
 
-.form-section h3 {
-    color: #2c3e50;
-    margin-bottom: 15px;
-    font-size: 1.3em;
-}
-
-.form-section .form-group {
-    margin-bottom: 15px;
-}
-
-.form-section .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #495057;
-}
-
-.form-section .form-group input,
-.form-section .form-group select,
-.form-section .form-group textarea {
-    width: 100%;
-    padding: 8px 12px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-.form-section .form-group input:focus,
-.form-section .form-group select:focus,
-.form-section .form-group textarea:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
-}
-
-/* Progress Container Styles */
-.progress-container {
+.metric-card {
     background: #f8f9fa;
-    padding: 20px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.metric-card.primary {
+    border-color: var(--cisa-primary-blue);
+    background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
+}
+
+.metric-card.critical {
+    border-color: #dc3545;
+    background: linear-gradient(135deg, #fff5f5, #ffe6e6);
+}
+
+.metric-card.good {
+    border-color: #28a745;
+    background: linear-gradient(135deg, #f0fff4, #e6ffe6);
+}
+
+.metric-value {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.metric-value.excellent { color: #28a745; }
+.metric-value.good { color: #17a2b8; }
+.metric-value.fair { color: #ffc107; }
+.metric-value.poor { color: #dc3545; }
+
+.metric-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--cisa-primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.metric-description {
+    font-size: 0.9rem;
+    color: var(--cisa-dark-gray);
+    line-height: 1.4;
+}
+
+/* Quick Status Styles */
+.quick-status {
+    margin: 2rem 0;
+}
+
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
     border-radius: 6px;
-    margin: 20px 0;
+    border-left: 4px solid #e9ecef;
+}
+
+.status-item .status-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.status-item .status-icon.critical { color: #dc3545; }
+.status-item .status-icon.good { color: #28a745; }
+.status-item .status-icon.warning { color: #ffc107; }
+.status-item .status-icon.info { color: #17a2b8; }
+
+.status-text {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: var(--cisa-dark-gray);
+}
+
+/* Priority Actions Styles */
+.priority-actions {
+    margin: 2rem 0;
+}
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.action-item {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #e9ecef;
+    transition: transform 0.2s ease;
+}
+
+.action-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.action-item.critical {
+    border-left-color: #dc3545;
+    background: linear-gradient(135deg, #fff5f5, #ffe6e6);
+}
+
+.action-item.high {
+    border-left-color: #ffc107;
+    background: linear-gradient(135deg, #fffbf0, #fff8e6);
+}
+
+.action-item.medium {
+    border-left-color: #17a2b8;
+    background: linear-gradient(135deg, #f0f9ff, #e6f7ff);
+}
+
+.action-item.good {
+    border-left-color: #28a745;
+    background: linear-gradient(135deg, #f0fff4, #e6ffe6);
+}
+
+.action-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.action-content {
+    flex: 1;
+}
+
+.action-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--cisa-primary-blue);
+    margin-bottom: 0.25rem;
+}
+
+.action-description {
+    font-size: 0.9rem;
+    color: var(--cisa-dark-gray);
+    line-height: 1.4;
+}
+
+
+/* Comprehensive Final Report Styles */
+.comprehensive-full-report {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Franklin Gothic', 'Arial', 'Helvetica', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.comprehensive-full-report .report-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
+    border-radius: 12px;
+    border: 2px solid var(--cisa-primary-blue);
+}
+
+.comprehensive-full-report .report-header h1 {
+    color: var(--cisa-primary-blue);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.comprehensive-full-report .subtitle {
+    font-size: 1.2rem;
+    color: var(--cisa-dark-gray);
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.meta-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--cisa-primary-blue);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Table of Contents */
+.table-of-contents {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 3rem;
     border: 1px solid #e9ecef;
 }
 
-.progress-container .progress-header {
-    margin-bottom: 15px;
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
 }
 
-.progress-container .progress-header h3 {
-    color: #2c3e50;
-    margin-bottom: 10px;
+.toc-section h3 {
+    color: var(--cisa-primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
 }
 
-.progress-container .progress-text {
-    color: #6c757d;
-    font-size: 14px;
+.toc-section ul {
+    list-style: none;
+    padding: 0;
 }
 
-.progress-container .progress-bar {
+.toc-section li {
+    margin-bottom: 0.5rem;
+}
+
+.toc-section a {
+    color: var(--cisa-dark-gray);
+    text-decoration: none;
+    padding: 0.5rem;
+    display: block;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.toc-section a:hover {
+    background: var(--cisa-primary-blue);
+    color: white;
+    transform: translateX(5px);
+}
+
+/* Report Sections */
+.report-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-left: 4px solid var(--cisa-primary-blue);
+}
+
+.report-section h2 {
+    color: var(--cisa-primary-blue);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 0.5rem;
+}
+
+/* Methodology Grid */
+.methodology-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.methodology-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--cisa-primary-blue);
+}
+
+.methodology-card h3 {
+    color: var(--cisa-primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Facility Details */
+.facility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.facility-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.facility-card h3 {
+    color: var(--cisa-primary-blue);
+    margin-bottom: 1rem;
+}
+
+.facility-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.facility-card li {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+/* Vulnerability Analysis */
+.vulnerability-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 2px solid;
+}
+
+.stat-card.critical {
+    background: #fff5f5;
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+.stat-card.high {
+    background: #fff8e1;
+    border-color: #ffc107;
+    color: #e65100;
+}
+
+.stat-card.medium {
+    background: #e3f2fd;
+    border-color: #2196f3;
+    color: #1976d2;
+}
+
+.stat-card.low {
+    background: #f0fff4;
+    border-color: #28a745;
+    color: #2e7d32;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Vulnerability List */
+.vulnerability-list {
+    margin-top: 2rem;
+}
+
+.vulnerability-item {
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid;
+    overflow: hidden;
+}
+
+.vulnerability-item.critical {
+    border-left-color: #dc3545;
+}
+
+.vulnerability-item.high {
+    border-left-color: #ffc107;
+}
+
+.vulnerability-item.medium {
+    border-left-color: #2196f3;
+}
+
+.vulnerability-item.low {
+    border-left-color: #28a745;
+}
+
+.vulnerability-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: white;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.vulnerability-header h4 {
+    margin: 0;
+    color: var(--cisa-primary-blue);
+}
+
+.severity-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.severity-badge.critical {
+    background: #dc3545;
+    color: white;
+}
+
+.severity-badge.high {
+    background: #ffc107;
+    color: #333;
+}
+
+.severity-badge.medium {
+    background: #2196f3;
+    color: white;
+}
+
+.severity-badge.low {
+    background: #28a745;
+    color: white;
+}
+
+.vulnerability-content {
+    padding: 1.5rem;
+}
+
+.options-for-consideration {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #e3f2fd;
+    border-radius: 6px;
+    border-left: 4px solid var(--cisa-primary-blue);
+}
+
+.options-for-consideration h5 {
+    color: var(--cisa-primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+/* Business Impact */
+.impact-analysis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.impact-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.impact-card h4 {
+    color: var(--cisa-primary-blue);
+    margin-bottom: 1rem;
+}
+
+/* Standards Analysis */
+.standards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.standard-card {
+    text-align: center;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.standard-card h4 {
+    color: var(--cisa-primary-blue);
+    margin-bottom: 1rem;
+}
+
+.alignment-score {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.alignment-score.excellent { color: #28a745; }
+.alignment-score.good { color: #17a2b8; }
+.alignment-score.fair { color: #ffc107; }
+.alignment-score.poor { color: #dc3545; }
+
+.standards-breakdown {
+    margin-top: 2rem;
+}
+
+.standard-detail {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--cisa-primary-blue);
+}
+
+.standard-detail h4 {
+    color: var(--cisa-primary-blue);
+    margin-bottom: 1rem;
+}
+
+.alignment-details {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+}
+
+.alignment-label {
+    font-weight: 600;
+    color: var(--cisa-dark-gray);
+}
+
+.alignment-value {
+    font-weight: bold;
+    margin-left: 0.5rem;
+}
+
+/* Implementation Guidance */
+.phase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.phase-card {
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid;
+}
+
+.phase-card.immediate {
+    background: #fff5f5;
+    border-left-color: #dc3545;
+}
+
+.phase-card.short-term {
+    background: #fff8e1;
+    border-left-color: #ffc107;
+}
+
+.phase-card.long-term {
+    background: #e3f2fd;
+    border-left-color: #2196f3;
+}
+
+.phase-card h4 {
+    color: var(--cisa-primary-blue);
+    margin-bottom: 1rem;
+}
+
+.phase-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.phase-card li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.phase-card li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--cisa-primary-blue);
+    font-weight: bold;
+}
+
+.considerations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.consideration-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.consideration-card h4 {
+    color: var(--cisa-primary-blue);
+    margin-bottom: 1rem;
+}
+
+/* Enhancement Roadmap */
+.roadmap-phases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.phase-immediate, .phase-short-term, .phase-long-term {
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid;
+}
+
+.phase-immediate {
+    background: #fff5f5;
+    border-left-color: #dc3545;
+}
+
+.phase-short-term {
+    background: #fff8e1;
+    border-left-color: #ffc107;
+}
+
+.phase-long-term {
+    background: #e3f2fd;
+    border-left-color: #2196f3;
+}
+
+.phase-immediate h4, .phase-short-term h4, .phase-long-term h4 {
+    color: var(--cisa-primary-blue);
+    margin-bottom: 1rem;
+}
+
+.opportunity-count {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--cisa-primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.roadmap-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.roadmap-metrics .metric-card {
+    text-align: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.roadmap-metrics .metric-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--cisa-primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.roadmap-metrics .metric-label {
+    font-size: 0.9rem;
+    color: var(--cisa-dark-gray);
+}
+
+/* Federal Compliance */
+.requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.requirement-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.requirement-card h4 {
+    color: var(--cisa-primary-blue);
+    margin-bottom: 1rem;
+}
+
+.advisory-disclaimer {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #fff3cd;
+    border-radius: 8px;
+    border-left: 4px solid #ffc107;
+}
+
+.advisory-disclaimer h3 {
+    color: #856404;
+    margin-bottom: 1rem;
+}
+
+.disclaimer-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.disclaimer-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* No Assessment Data Styles */
+.no-assessment-data {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.no-data-message {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.no-data-message h2 {
+    color: var(--cisa-primary-blue);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.no-data-message p {
+    color: var(--cisa-dark-gray);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.next-steps {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-left: 4px solid var(--cisa-primary-blue);
+    text-align: left;
+}
+
+.next-steps h3 {
+    color: var(--cisa-primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.next-steps ol {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.next-steps li {
+    margin-bottom: 0.5rem;
+    color: var(--cisa-dark-gray);
+    line-height: 1.5;
+}
+
+
+.assessment-progress p {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: var(--cisa-primary-blue);
+}
+
+.progress-bar {
     width: 100%;
     height: 20px;
     background: #e9ecef;
     border-radius: 10px;
     overflow: hidden;
-    margin: 10px 0;
 }
 
-.progress-container .progress-fill {
+.progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #28a745, #20c997);
+    background: linear-gradient(90deg, var(--cisa-primary-blue), var(--cisa-light-blue));
     transition: width 0.3s ease;
-}
-
-/* Main Content Styles */
-.main-content {
-    padding: 20px;
-    margin: 0 auto;
-    background: white;
-    min-height: 100vh;
-}
-
-.main-content .section {
-    margin-bottom: 30px;
-}
-
-.main-content .section-header {
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #e9ecef;
-}
-
-.main-content .section-title {
-    color: #2c3e50;
-    font-size: 1.8em;
-    margin-bottom: 10px;
-}
-
-.main-content .section-description {
-    color: #6c757d;
-    font-size: 1.1em;
-    line-height: 1.6;
-}
-
-/* Executive Summary Container */
-.executive-summary-container {
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 6px;
-    margin: 20px 0;
-    border: 1px solid #e9ecef;
-}
-
-.executive-summary-container h2 {
-    color: #2c3e50;
-    margin-bottom: 15px;
-    font-size: 1.5em;
-}
-
-.executive-summary-container .summary-content {
-    color: #495057;
-    line-height: 1.6;
-}
-
-.executive-summary-container .summary-metrics {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin: 20px 0;
-}
-
-.executive-summary-container .metric-card {
-    background: white;
-    padding: 15px;
-    border-radius: 4px;
-    border: 1px solid #dee2e6;
-    text-align: center;
-}
-
-.executive-summary-container .metric-value {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #007bff;
-    margin-bottom: 5px;
-}
-
-.executive-summary-container .metric-label {
-    color: #6c757d;
-    font-size: 0.9em;
-}
-
-/* Comprehensive Full Report */
-.comprehensive-full-report {
-    background: white;
-    padding: 20px;
-    border-radius: 6px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    margin: 20px 0;
-}
-
-.comprehensive-full-report h1 {
-    color: #2c3e50;
-    margin-bottom: 20px;
-    font-size: 2em;
-    border-bottom: 3px solid #007bff;
-    padding-bottom: 10px;
-}
-
-.comprehensive-full-report h2 {
-    color: #34495e;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    font-size: 1.4em;
-}
-
-.comprehensive-full-report h3 {
-    color: #2c3e50;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-size: 1.2em;
-}
-
-.comprehensive-full-report .report-section {
-    margin-bottom: 30px;
-    padding: 20px;
-    border: 1px solid #e9ecef;
-    border-radius: 6px;
-    background: #f8f9fa;
-}
-
-.comprehensive-full-report .report-section h2 {
-    margin-top: 0;
-    color: #2c3e50;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 8px;
-}
-
-.comprehensive-full-report .vulnerability-item {
-    background: white;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 4px;
-    border-left: 4px solid #dc3545;
-}
-
-.comprehensive-full-report .vulnerability-item.high {
-    border-left-color: #dc3545;
-}
-
-.comprehensive-full-report .vulnerability-item.medium {
-    border-left-color: #fd7e14;
-}
-
-.comprehensive-full-report .vulnerability-item.low {
-    border-left-color: #17a2b8;
-}
-
-.comprehensive-full-report .options-for-consideration {
-    background: #d4edda;
-    padding: 15px;
-    border-radius: 4px;
-    margin: 10px 0;
-    border-left: 4px solid #28a745;
-}
-
-.comprehensive-full-report .options-for-consideration h4 {
-    color: #155724;
-    margin-bottom: 10px;
-}
-
-.comprehensive-full-report .options-for-consideration ul {
-    margin: 10px 0;
-    padding-left: 20px;
-}
-
-.comprehensive-full-report .options-for-consideration li {
-    margin: 5px 0;
-    color: #155724;
-}
-
-/* Cross-Browser Compatibility - Critical Issue Fix */
-
-/* CSS Grid Support with Fallbacks */
-@supports (display: grid) {
-    .executive-summary-container .summary-metrics {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 15px;
-    }
-}
-
-/* Fallback for browsers without Grid support */
-@supports not (display: grid) {
-    .executive-summary-container .summary-metrics {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    
-    .executive-summary-container .metric-card {
-        flex: 1 1 200px;
-        margin: 5px;
-    }
-}
-
-/* Flexbox Support with Fallbacks */
-.site-security-header {
-    display: flex;
-    display: -webkit-flex; /* Safari */
-    display: -ms-flexbox; /* IE 10 */
-    justify-content: space-between;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    align-items: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-}
-
-/* IE 10/11 Flexbox Support */
-.site-security-header {
-    -ms-flex-direction: row;
-    -ms-flex-wrap: nowrap;
-}
-
-/* Modern CSS with Fallbacks */
-.progress-container .progress-fill {
-    background: #28a745; /* Fallback */
-    background: linear-gradient(90deg, #28a745, #20c997);
-    transition: width 0.3s ease;
-    -webkit-transition: width 0.3s ease;
-    -moz-transition: width 0.3s ease;
-    -o-transition: width 0.3s ease;
-}
-
-/* Box Shadow with Fallbacks */
-.comprehensive-full-report {
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    -webkit-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    -moz-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-/* Border Radius with Fallbacks */
-.form-section,
-.progress-container,
-.executive-summary-container,
-.comprehensive-full-report {
-    border-radius: 6px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-}
-
-/* CSS Variables with Fallbacks */
-:root {
-    --cisa-primary-blue: #1e3a8a;
-    --cisa-light-blue: #3b82f6;
-    --cisa-dark-gray: #374151;
-    --cisa-light-gray: #f3f4f6;
-}
-
-/* Fallback colors for browsers without CSS variable support */
-.site-security-header {
-    background: #1e3a8a; /* Fallback */
-    background: var(--cisa-primary-blue);
-    color: white;
-}
-
-/* Responsive Design with Fallbacks */
-@media (max-width: 768px) {
-    .site-security-header {
-        flex-direction: column;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        padding: 10px;
-    }
-    
-    .main-content {
-        padding: 10px;
-    }
-    
-    .form-section {
-        margin: 10px 0;
-        padding: 15px;
-    }
-}
-
-/* Print Styles */
-@media print {
-    .site-security-header,
-    .progress-container {
-        display: none;
-    }
-    
-    .main-content {
-        padding: 0;
-        box-shadow: none;
-    }
-    
-    .comprehensive-full-report {
-        box-shadow: none;
-        border: 1px solid #000;
-    }
-}
-
-/* High Contrast Mode Support */
-@media (prefers-contrast: high) {
-    .form-section {
-        border: 2px solid #000;
-    }
-    
-    .vulnerability-item {
-        border-left: 6px solid #000;
-    }
-    
-    .options-for-consideration {
-        border-left: 6px solid #000;
-    }
-}
-
-/* Reduced Motion Support */
-@media (prefers-reduced-motion: reduce) {
-    .progress-container .progress-fill {
-        transition: none;
-        -webkit-transition: none;
-        -moz-transition: none;
-        -o-transition: none;
-    }
-    
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --cisa-primary-blue: #3b82f6;
-        --cisa-light-blue: #60a5fa;
-        --cisa-dark-gray: #f3f4f6;
-        --cisa-light-gray: #1f2937;
-    }
-    
-    .main-content {
-        background: #1f2937;
-        color: #f3f4f6;
-    }
-    
-    .form-section {
-        background: #374151;
-        border-color: #4b5563;
-        color: #f3f4f6;
-    }
-    
-    .comprehensive-full-report {
-        background: #1f2937;
-        color: #f3f4f6;
-    }
+    border-radius: 10px;
 }

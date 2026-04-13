@@ -174,11 +174,7 @@ class VOFCIntegration {
             }
             
             categories[category].count++;
-            const severityKey = (vulnerability.severity || 'low').toLowerCase();
-            if (!Object.prototype.hasOwnProperty.call(categories[category], severityKey)) {
-                categories[category][severityKey] = 0;
-            }
-            categories[category][severityKey]++;
+            categories[category][vulnerability.severity.toLowerCase()]++;
         }
         
         return categories;

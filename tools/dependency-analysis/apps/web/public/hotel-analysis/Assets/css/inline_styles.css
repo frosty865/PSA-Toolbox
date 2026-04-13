@@ -1,5 +1,4 @@
-/* DEPRECATED: not linked by HOST V3. Use Assets/css/host.css (web) and host-report.css (print). */
-/* Consolidated inline styles for the HOST portfolio edition */
+/* Consolidated Inline Styles from HOST_V1_MAIN.html */
 
 /* Alert Styles */
 .alert-warning-inline {
@@ -10,18 +9,10 @@
     margin: 10px 0;
 }
 
-/* Brand Token Overrides */
-:root {
-    --cisa-primary-blue: #0f172a;
-    --cisa-secondary-blue: #1d4ed8;
-    --cisa-accent-blue: #0369a1;
-    --cisa-light-blue: #dbeafe;
-    --cisa-success-green: #15803d;
-    --cisa-warning-orange: #b45309;
-    --cisa-danger-red: #b91c1c;
-    --cisa-neutral-gray: #64748b;
-    --cisa-light-gray: #f8fafc;
-    --cisa-border-gray: #cbd5e1;
+/* Logo Styles */
+.cisa-logo {
+    height: 85px;
+    width: auto;
 }
 
 /* Progress Bar Styles */

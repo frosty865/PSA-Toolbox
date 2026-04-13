@@ -1,0 +1,160 @@
+{
+  "timestamp": "2025-10-01T01:02:51.937Z",
+  "summary": {
+    "hostV1Vulnerabilities": 46,
+    "safeV2Vulnerabilities": 0,
+    "totalImprovement": "-100.0"
+  },
+  "models": {
+    "severity": {
+      "hostV1": {
+        "counts": {
+          "Critical": 8,
+          "High": 20,
+          "Medium": 17,
+          "Low": 1,
+          "Unknown": 0
+        },
+        "percentages": {
+          "Critical": "17.4",
+          "High": "43.5",
+          "Medium": "37.0",
+          "Low": "2.2",
+          "Unknown": "0.0"
+        },
+        "total": 46
+      },
+      "safeV2": {
+        "counts": {
+          "Critical": 0,
+          "High": 0,
+          "Medium": 0,
+          "Low": 0,
+          "Unknown": 0
+        },
+        "percentages": {
+          "Critical": 0,
+          "High": 0,
+          "Medium": 0,
+          "Low": 0,
+          "Unknown": 0
+        },
+        "total": 0
+      },
+      "analysis": {
+        "criticalDifference": "-17.4",
+        "highDifference": "-43.5",
+        "mediumDifference": "-37.0",
+        "totalVulnerabilities": -46,
+        "coverageImprovement": "-100.0"
+      }
+    },
+    "categories": {
+      "hostV1": {
+        "Physical Security": 7,
+        "Technology": 7,
+        "Personnel Security": 4,
+        "Emergency Preparedness": 12,
+        "Access Control": 10,
+        "Policies & Procedures": 6
+      },
+      "safeV2": [],
+      "analysis": {
+        "hostV1UniqueCategories": [
+          "Physical Security",
+          "Technology",
+          "Personnel Security",
+          "Emergency Preparedness",
+          "Access Control",
+          "Policies & Procedures"
+        ],
+        "safeV2UniqueCategories": [],
+        "commonCategories": [],
+        "categoryExpansion": -6,
+        "coverageImprovement": "-100.0"
+      }
+    },
+    "complexity": {
+      "hostV1": {
+        "totalWords": 560,
+        "totalChars": 4282,
+        "avgWordsPerVuln": 12.2,
+        "avgCharsPerVuln": 93.1,
+        "totalVulnerabilities": 46
+      },
+      "safeV2": {
+        "totalWords": 0,
+        "totalChars": 0,
+        "avgWordsPerVuln": 0,
+        "avgCharsPerVuln": 0,
+        "totalVulnerabilities": 0
+      },
+      "analysis": {
+        "wordCountDifference": -560,
+        "charCountDifference": -4282,
+        "avgWordsDifference": "-12.2",
+        "avgCharsDifference": "-93.1",
+        "complexityImprovement": "-100.0"
+      }
+    },
+    "sources": {
+      "hostV1": {
+        "totalSources": 15,
+        "sources": [
+          "CISA K-12 Security Guide, DHS Infrastructure Protection Guidelines",
+          "CISA K-12 Guidelines Section 3.1 - Perimeter Security",
+          "CISA K-12 Security Guide, NIST Cybersecurity Framework, ASIS Physical Security Standards",
+          "CISA K-12 Guidelines Section 4.2 - Surveillance Systems",
+          "USSS Averting Targeted School Violence, CISA K-12 Security Guide, FBI School Safety Guidelines",
+          "USSS Averting Targeted School Violence Guidelines, CISA K-12 Guidelines Section 6.1",
+          "DHS Infrastructure Protection Guidelines, CISA K-12 Security Guide, FEMA Building Security Guidelines",
+          "DHS Infrastructure Protection Guidelines, CISA K-12 Guidelines Section 3.2",
+          "CISA K-12 Security Guide, FEMA Active Shooter Preparedness, FBI School Safety Guidelines",
+          "CISA K-12 Guidelines Section 5.3, FEMA Active Shooter Preparedness",
+          "CISA K-12 Security Guide, FEMA Emergency Communication Guidelines, FBI School Safety Protocols",
+          "CISA K-12 Guidelines Section 5.2, FEMA Emergency Communication",
+          "CISA K-12 Security Guide, DHS Infrastructure Protection Guidelines, ASIS Physical Security Standards",
+          "CISA K-12 Guidelines Section 4.3, DHS Infrastructure Protection",
+          "CISA K-12 Guidelines Section 4.2 - Surveillance Systems, NIST Cybersecurity Framework"
+        ],
+        "governmentSources": 15,
+        "professionalSources": 2
+      },
+      "safeV2": {
+        "totalSources": 0,
+        "sources": [],
+        "governmentSources": 0,
+        "professionalSources": 0
+      },
+      "analysis": {
+        "sourceCountDifference": -15,
+        "governmentSourceDifference": -15,
+        "professionalSourceDifference": -2,
+        "sourceExpansion": "-100.0",
+        "credibilityImprovement": "-100.0"
+      }
+    },
+    "risk": {
+      "hostV1": {
+        "highRisk": 28,
+        "mediumRisk": 17,
+        "lowRisk": 1,
+        "totalRisk": 46,
+        "highRiskPercentage": "60.9"
+      },
+      "safeV2": {
+        "highRisk": 0,
+        "mediumRisk": 0,
+        "lowRisk": 0,
+        "totalRisk": 0,
+        "highRiskPercentage": "NaN"
+      },
+      "analysis": {
+        "highRiskDifference": -28,
+        "riskPercentageDifference": "NaN",
+        "riskCoverageImprovement": "-100.0"
+      }
+    }
+  },
+  "recommendations": []
+}

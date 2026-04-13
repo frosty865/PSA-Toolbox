@@ -1,4 +1,4 @@
-/* Local Font Awesome Icons - HOST V3 */
+/* Local Font Awesome Icons - HOST V1 Specific */
 /* Using Unicode symbols that match Font Awesome icons */
 
 .fas {
@@ -7,7 +7,7 @@
     text-rendering: auto;
     line-height: 1;
     display: inline-block;
-    color: inherit;
+    color: white;
     font-weight: bold;
     background: none;
     border-radius: 0px;
@@ -16,7 +16,7 @@
     text-shadow: none;
 }
 
-/* Specific icons used in HOST V3 — Professional line art symbols */
+/* Specific icons used in HOST V1 - Professional line art symbols */
 .fa-sync-alt:before { content: "↻"; }
 .fa-shield-alt:before { content: "◊"; }
 .fa-building:before { content: "▦"; }
@@ -71,7 +71,12 @@
     text-shadow: none;
 }
 
-/* Help icons — CISA link color (no legacy .card .fas pill; icons use color: inherit elsewhere) */
+.card .fas {
+    color: white;
+    background: var(--cisa-primary-blue);
+    text-shadow: none;
+}
+
 .help-icon {
     color: var(--cisa-primary-blue);
     background: none;

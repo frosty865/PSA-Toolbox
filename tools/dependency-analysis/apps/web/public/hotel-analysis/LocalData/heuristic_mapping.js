@@ -1,23 +1,10 @@
 // Heuristic Vulnerability Mapping System
 // Maps form questions to security standards and identifies vulnerabilities
 
-function heuristicAnswerYes(v) {
-    if (typeof HostAnswerNormalize !== 'undefined' && HostAnswerNormalize.isAffirmativeYes) {
-        return HostAnswerNormalize.isAffirmativeYes(v);
-    }
-    return String(v ?? '').trim().toLowerCase() === 'yes';
-}
-function heuristicAnswerNo(v) {
-    if (typeof HostAnswerNormalize !== 'undefined' && HostAnswerNormalize.isNegativeResponse) {
-        return HostAnswerNormalize.isNegativeResponse(v);
-    }
-    const n = String(v ?? '').trim().toLowerCase();
-    return n === 'no' || n === 'false' || n === '0' || n === 'none' || n === 'n/a' || n === 'na';
-}
-
 class HeuristicVulnerabilityMapper {
     constructor() {
         this.vofcData = null;
+        this.fifaData = null;
         this.questionMappings = this.createQuestionMappings();
         this.securityStandards = this.createSecurityStandards();
     }
@@ -33,6 +20,11 @@ class HeuristicVulnerabilityMapper {
                 console.warn('No embedded VOFC data found');
                 this.vofcData = [];
             }
+
+            // FIFA analysis is handled by FIFAStandardsMapper class
+            // No embedded FIFA data needed for heuristic mapping
+            this.fifaData = [];
+            console.log('FIFA analysis handled by FIFAStandardsMapper class');
 
             return true;
         } catch (error) {
@@ -237,6 +229,58 @@ class HeuristicVulnerabilityMapper {
                 severity: 'High',
                 category: 'Dependencies-Critical Products'
             },
+
+            // FIFA Requirements
+            'guest_room_count': {
+                intent: 'FIFA minimum room capacity',
+                standard: 'FIFA-Accommodation Capacity',
+                expected: '>= 1000',
+                vulnerability_if: '< 1000',
+                severity: 'High',
+                category: 'FIFA-Accommodation Capacity'
+            },
+            'number_of_floors': {
+                intent: 'FIFA minimum floor count',
+                standard: 'FIFA-Accommodation Capacity',
+                expected: '>= 5',
+                vulnerability_if: '< 5',
+                severity: 'Medium',
+                category: 'FIFA-Accommodation Capacity'
+            },
+            
+            // Additional Security Fields
+            'standoff_street_distance': {
+                intent: 'Adequate standoff distance from street',
+                standard: 'Barriers',
+                expected: '>= 25',
+                vulnerability_if: '< 25',
+                severity: 'High',
+                category: 'Barriers'
+            },
+            'vehicle_barrier_rating': {
+                intent: 'Adequate vehicle barrier rating',
+                standard: 'Barriers',
+                expected: 'K12',
+                vulnerability_if: 'K4',
+                severity: 'Medium',
+                category: 'Barriers'
+            },
+            'secforce_response_time': {
+                intent: 'Quick security response time',
+                standard: 'Security Force Profile',
+                expected: '<= 2 minutes',
+                vulnerability_if: '> 5 minutes',
+                severity: 'Medium',
+                category: 'Security Force Profile'
+            },
+            'pool_chemical_storage_secured': {
+                intent: 'Secured chemical storage',
+                standard: 'Facility Information',
+                expected: 'Yes',
+                vulnerability_if: 'No',
+                severity: 'Medium',
+                category: 'Facility Information'
+            }
         };
     }
 
@@ -320,19 +364,18 @@ class HeuristicVulnerabilityMapper {
 
     // Evaluate vulnerability condition
     evaluateVulnerabilityCondition(value, mapping) {
-        if (mapping.vulnerability_if === 'No' && heuristicAnswerNo(value)) return true;
-        if (mapping.vulnerability_if === 'Yes' && heuristicAnswerYes(value)) return true;
+        if (mapping.vulnerability_if === 'No' && value === 'No') return true;
+        if (mapping.vulnerability_if === 'Yes' && value === 'Yes') return true;
         if (mapping.vulnerability_if === 'None' && (!value || value === 'None')) return true;
         
         // Numeric comparisons
-        const numericValue = Number(value);
-        if (mapping.vulnerability_if.startsWith('<') && Number.isFinite(numericValue)) {
-            const threshold = parseInt(mapping.vulnerability_if.replace(/[^\d.-]/g, ''));
-            return numericValue < threshold;
+        if (mapping.vulnerability_if.startsWith('<') && typeof value === 'number') {
+            const threshold = parseInt(mapping.vulnerability_if.substring(1));
+            return value < threshold;
         }
-        if (mapping.vulnerability_if.startsWith('>') && Number.isFinite(numericValue)) {
-            const threshold = parseInt(mapping.vulnerability_if.replace(/[^\d.-]/g, ''));
-            return numericValue > threshold;
+        if (mapping.vulnerability_if.startsWith('>') && typeof value === 'number') {
+            const threshold = parseInt(mapping.vulnerability_if.substring(1));
+            return value > threshold;
         }
         
         // String comparisons
@@ -343,41 +386,36 @@ class HeuristicVulnerabilityMapper {
         return false;
     }
 
-    /**
-     * Options for consideration: OFC option_text from embedded VOFC catalog only (no generated advice).
-     */
+    // Get recommendations for a specific field
     getRecommendationsForField(fieldName, mapping) {
-        const embedded = typeof window !== 'undefined' && window.EMBEDDED_VOFC_DATA;
-        if (!embedded || !Array.isArray(embedded)) return [];
-
-        const hintLists = {
-            has_perimeter_barriers: ['high-speed avenues of approach'],
-            standoff_vehicle_barriers: ['high-speed avenues of approach'],
-            vss_present: ['does not have a cctv system'],
-            vss_camera_count: ['cctv coverage of the facility'],
-            vss_retention: ['recorded information from the cctv system for no more than 1 month'],
-            els_present: ['limited or no access control policies/procedures for employees'],
-            els_integration: ['limited or no access control policies/procedures for visitors'],
-            soc_present: ['does not use real-time monitoring for the cctv system'],
-            monitoring_hours: ['does not use real-time monitoring for the cctv system'],
-            secforce_247: ['deploy the security force to regularly patrol'],
-            secforce_type: ['deploy the security force to regularly patrol']
-        };
-
-        const hints = hintLists[fieldName];
-        if (!hints) return [];
-
-        for (let i = 0; i < hints.length; i++) {
-            const sub = hints[i].toLowerCase();
-            const row = embedded.find(
-                (v) => (v.vulnerability_text || '').toLowerCase().includes(sub)
-            );
-            if (row && Array.isArray(row.options) && row.options.length) {
-                return row.options.slice(0, 8).map((o) => o.option_text);
-            }
+        const recommendations = [];
+        
+        switch (fieldName) {
+            case 'vss_present':
+                recommendations.push('Install comprehensive video surveillance system');
+                recommendations.push('Ensure coverage of all critical areas');
+                break;
+            case 'els_present':
+                recommendations.push('Implement electronic locking system');
+                recommendations.push('Install key card access control');
+                break;
+            case 'soc_present':
+                recommendations.push('Establish security operations center');
+                recommendations.push('Implement 24/7 monitoring capabilities');
+                break;
+            case 'has_perimeter_barriers':
+                recommendations.push('Install perimeter barriers');
+                recommendations.push('Implement vehicle barriers and bollards');
+                break;
+            case 'secforce_247':
+                recommendations.push('Implement 24/7 security force');
+                recommendations.push('Ensure adequate staffing levels');
+                break;
+            default:
+                recommendations.push(`Address ${mapping.intent} to meet ${mapping.standard} standards`);
         }
-
-        return [];
+        
+        return recommendations;
     }
 
     // Generate comprehensive vulnerability report

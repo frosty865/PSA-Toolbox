@@ -1,4 +1,4 @@
-// VOFC Vulnerabilities Database for HOST V3 integration
+// VOFC Vulnerabilities Database for HOST V2 Integration
 // This file contains 400+ pre-defined vulnerabilities for automated security assessment
 
 window.VOFC_VULNERABILITIES = [
@@ -41,13 +41,13 @@ window.VOFC_VULNERABILITIES = [
   },
   {
     "v_number": "V003",
-    "vulnerability_text": "Insufficient Security Force training on security procedures",
+    "vulnerability_text": "Insufficient staff training on security procedures",
     "sheet": "Personnel Security",
     "row": 3,
     "category": "Personnel Security",
     "severity": "Medium",
     "5_ds_category": "Defend",
-    "description": "Security Force personnel lack comprehensive training on security procedures, emergency response protocols, and threat recognition. This creates gaps in the facility's ability to respond effectively to security incidents and maintain consistent security posture.",
+    "description": "Staff lack comprehensive training on security procedures, emergency response protocols, and threat recognition. This creates gaps in the facility's ability to respond effectively to security incidents and maintain consistent security posture.",
     "compliance_gap": "Personnel Security Training Requirements",
     "attack_vectors": ["Inadequate response to incidents", "Poor threat recognition", "Inconsistent security procedures"],
     "risk_impact": "Reduced effectiveness of security response and increased vulnerability to security incidents",
@@ -59,13 +59,13 @@ window.VOFC_VULNERABILITIES = [
   },
   {
     "v_number": "V004",
-    "vulnerability_text": "Fire alarm panel access and security backup power gaps (life-safety resilience)",
+    "vulnerability_text": "Missing emergency response policies",
     "sheet": "Emergency Preparedness",
     "row": 4,
     "category": "Emergency Preparedness",
     "severity": "High",
     "5_ds_category": "Defend",
-    "description": "HOST flags open access to fire-alarm controls and/or missing backup power for security-related loads. That indicates life-safety and resilience gaps—it does not, by itself, prove whether written emergency policies exist. Pair technical fixes with an emergency operations plan and drills.",
+    "description": "Absence of comprehensive emergency response policies and procedures leaves the facility unprepared for various emergency scenarios. This creates significant gaps in emergency preparedness and response capability.",
     "compliance_gap": "Emergency Preparedness Requirements",
     "attack_vectors": ["Uncoordinated emergency response", "Delayed incident management", "Poor crisis communication"],
     "risk_impact": "Inadequate emergency response capability leading to increased risk during crisis situations",
@@ -113,13 +113,13 @@ window.VOFC_VULNERABILITIES = [
   },
   {
     "v_number": "V007",
-    "vulnerability_text": "Uncontrolled surface parking combined with weak perimeter (access layering risk)",
+    "vulnerability_text": "No visitor management system",
     "sheet": "Access Control",
     "row": 7,
     "category": "Access Control",
     "severity": "Medium",
     "5_ds_category": "Deny",
-    "description": "Triggered when surface parking is open and perimeter barriers are absent—an access-layering problem, not a direct measure of visitor badging or VM software. Address parking and perimeter first; add visitor-management fields later for precise VM scoring.",
+    "description": "Absence of visitor management system prevents effective tracking and control of facility visitors. This creates significant gaps in visitor security and access control.",
     "compliance_gap": "Visitor Management Requirements",
     "attack_vectors": ["Unauthorized visitor access", "Poor visitor tracking", "Inadequate visitor screening"],
     "risk_impact": "Reduced visitor security and increased vulnerability to unauthorized access",
@@ -167,13 +167,13 @@ window.VOFC_VULNERABILITIES = [
   },
   {
     "v_number": "V010",
-    "vulnerability_text": "Limited security monitoring coverage and/or undocumented Security Force reporting",
+    "vulnerability_text": "Inadequate emergency communication systems",
     "sheet": "Emergency Preparedness",
     "row": 10,
     "category": "Emergency Preparedness",
     "severity": "High",
     "5_ds_category": "Defend",
-    "description": "Based on monitoring-hours choices and an empty Security Force reporting field—not a direct measure of mass notification, PA, or ECCS. Improve monitoring posture and reporting procedures; add communications-system fields if ECCS must be scored.",
+    "description": "Insufficient emergency communication systems prevent effective coordination during emergency situations and reduce the facility's ability to communicate with staff, guests, and emergency responders.",
     "compliance_gap": "Emergency Communication Requirements",
     "attack_vectors": ["Poor emergency coordination", "Delayed emergency response", "Inadequate crisis communication"],
     "risk_impact": "Reduced emergency response effectiveness and increased risk during crisis situations",
@@ -185,13 +185,13 @@ window.VOFC_VULNERABILITIES = [
   },
   {
     "v_number": "V011",
-    "vulnerability_text": "Weak or unknown network segmentation for video / security systems",
+    "vulnerability_text": "Insufficient cybersecurity measures for security systems",
     "sheet": "Technology",
     "row": 11,
     "category": "Technology",
     "severity": "High",
     "5_ds_category": "Defend",
-    "description": "HOST currently measures VSS network segmentation (No/Unknown). That is one important cyber control—not a full penetration test or enterprise security assessment.",
+    "description": "Security systems lack adequate cybersecurity protection, making them vulnerable to cyber attacks that could compromise surveillance, access control, and other critical security functions.",
     "compliance_gap": "Cybersecurity Requirements for Security Systems",
     "attack_vectors": ["System compromise", "Data breach", "Unauthorized access", "System disruption"],
     "risk_impact": "Security systems vulnerable to cyber attacks, potential system compromise and data breach",
@@ -203,18 +203,21 @@ window.VOFC_VULNERABILITIES = [
   },
   {
     "v_number": "V012",
-    "vulnerability_text": "[Catalog reference] Fire/life-safety access and power — scoring merged with V004",
+    "vulnerability_text": "Inadequate fire safety and emergency systems integration",
     "sheet": "Emergency Preparedness",
     "row": 12,
     "category": "Emergency Preparedness",
     "severity": "High",
     "5_ds_category": "Defend",
-    "description": "V012 used the same field mappings as V004. Automated scoring uses V004 only; OFC012 is retained as a second mitigation option attached to V004. Integration between fire and security systems is not directly measured—requires engineering review.",
+    "description": "Fire safety systems are not properly integrated with security systems, creating gaps in emergency response coordination and potentially delaying critical emergency actions.",
     "compliance_gap": "Fire Safety Integration Requirements",
     "attack_vectors": ["Delayed fire response", "Poor emergency coordination", "System isolation"],
     "risk_impact": "Reduced emergency response effectiveness, potential delays in fire safety actions",
     "standards_reference": "NFPA Fire Safety Standards, ASIS Emergency Management Guidelines",
-    "trigger_conditions": {}
+    "trigger_conditions": {
+      "fire_safety_integration": "No",
+      "emergency_system_coordination": "inadequate"
+    }
   },
   {
     "v_number": "V013",
@@ -272,13 +275,13 @@ window.VOFC_VULNERABILITIES = [
   },
   {
     "v_number": "V016",
-    "vulnerability_text": "Gaps in VIP staff background checks and Security Force certifications",
+    "vulnerability_text": "Inadequate vendor and contractor security screening",
     "sheet": "Access Control",
     "row": 16,
     "category": "Access Control",
     "severity": "High",
     "5_ds_category": "Deny",
-    "description": "Triggered by VIP staff background-check responses and missing Security Force certification data—not vendor questionnaires. Strengthen vetting for VIP-facing and security roles; add vendor/contractor assessment fields to score supply-chain screening separately.",
+    "description": "Lack of comprehensive vendor and contractor security screening creates vulnerabilities for unauthorized access and potential security threats from external service providers.",
     "compliance_gap": "Vendor Security Screening Requirements",
     "attack_vectors": ["Unauthorized vendor access", "Contractor security threats", "Insider threats", "System compromise"],
     "risk_impact": "Increased risk of security incidents from external vendors and contractors",
@@ -362,13 +365,13 @@ window.VOFC_VULNERABILITIES = [
   },
   {
     "v_number": "V021",
-    "vulnerability_text": "Unknown or missing network segmentation for video / security systems",
+    "vulnerability_text": "Insufficient data protection and privacy measures",
     "sheet": "Technology",
     "row": 21,
     "category": "Technology",
     "severity": "High",
     "5_ds_category": "Defend",
-    "description": "Inferred from VSS network segmentation answers. This is a network architecture and privacy-risk signal—not a full GDPR/CCPA/PCI assessment. Broader privacy compliance requires inventory of personal data and processing.",
+    "description": "Lack of comprehensive data protection and privacy measures creates vulnerabilities for data breaches, unauthorized access to guest information, and potential regulatory violations.",
     "compliance_gap": "Data Protection Requirements",
     "attack_vectors": ["Data breach", "Unauthorized access", "Privacy violations", "Regulatory non-compliance"],
     "risk_impact": "Increased risk of data breaches, privacy violations, and regulatory penalties",
@@ -380,18 +383,21 @@ window.VOFC_VULNERABILITIES = [
   },
   {
     "v_number": "V022",
-    "vulnerability_text": "Limited security posture during receiving and delivery periods (measured proxy)",
+    "vulnerability_text": "Inadequate food and beverage security measures",
     "sheet": "Physical Security",
     "row": 22,
     "category": "Physical Security",
     "severity": "Medium",
     "5_ds_category": "Detect",
-    "description": "HOST infers a gap in coverage for loading/receiving activity from Security Force 24/7 and monitoring-hours answers. This addresses physical security of deliveries and service access only—it does not assess food safety, HACCP, sanitary regulation, or other food-law compliance (out of scope for HOST).",
-    "compliance_gap": "Physical security of receiving and delivery access",
-    "attack_vectors": ["Theft or diversion at receiving", "Unauthorized access via service entrances", "Poor visibility during delivery windows"],
-    "risk_impact": "Increased physical security risk at receiving and back-of-house access points during delivery-related periods",
-    "standards_reference": "CISA physical security; DHS critical infrastructure protection (general concepts)",
-    "trigger_conditions": {}
+    "description": "Food and beverage areas lack adequate security measures, creating vulnerabilities for contamination, theft, and unauthorized access to food preparation areas.",
+    "compliance_gap": "Food Security Requirements",
+    "attack_vectors": ["Food contamination", "Theft", "Unauthorized access", "Health and safety risks"],
+    "risk_impact": "Increased risk of food safety incidents, theft, and unauthorized access to food areas",
+    "standards_reference": "FDA Food Security Guidelines, HACCP Standards, ASIS Food Security Guidelines",
+    "trigger_conditions": {
+      "food_security": "inadequate",
+      "beverage_security": "insufficient"
+    }
   },
   {
     "v_number": "V023",
@@ -467,13 +473,13 @@ window.VOFC_VULNERABILITIES = [
   },
   {
     "v_number": "V027",
-    "vulnerability_text": "Spa/wellness (pool-area proxy): open access and limited pool video coverage",
+    "vulnerability_text": "Insufficient spa and wellness area security",
     "sheet": "Physical Security",
     "row": 27,
     "category": "Physical Security",
     "severity": "Medium",
     "5_ds_category": "Detect",
-    "description": "Uses the same pool access and pool VSS fields as other aquatic findings—HOST does not yet isolate spa-only controls. Treat as layered aquatic/wellness access risk.",
+    "description": "Spa and wellness areas lack adequate security measures, creating vulnerabilities for unauthorized access, privacy violations, and potential security incidents in sensitive guest areas.",
     "compliance_gap": "Wellness Area Security Requirements",
     "attack_vectors": ["Unauthorized access", "Privacy violations", "Sensitive area incidents", "Guest safety issues"],
     "risk_impact": "Increased risk of privacy violations and security incidents in wellness areas",
@@ -503,13 +509,13 @@ window.VOFC_VULNERABILITIES = [
   },
   {
     "v_number": "V029",
-    "vulnerability_text": "Business center proxy: weak VSS network segmentation and/or Security Force reporting",
+    "vulnerability_text": "Insufficient business center and office security",
     "sheet": "Physical Security",
     "row": 29,
     "category": "Physical Security",
     "severity": "Medium",
     "5_ds_category": "Detect",
-    "description": "Triggered by video network segmentation and Security Force reporting—not business-center walk-through data. Align mitigations with segmentation and reporting; add dedicated business-center fields for a tighter map.",
+    "description": "Business centers and office areas lack adequate security measures, creating vulnerabilities for unauthorized access, information theft, and potential security incidents in business facilities.",
     "compliance_gap": "Business Center Security Requirements",
     "attack_vectors": ["Unauthorized access", "Information theft", "Business disruption", "Data security risks"],
     "risk_impact": "Increased risk of unauthorized access and information theft in business areas",
@@ -521,13 +527,13 @@ window.VOFC_VULNERABILITIES = [
   },
   {
     "v_number": "V030",
-    "vulnerability_text": "Aquatic safety proxy for families: pool access and lifeguarding gaps",
+    "vulnerability_text": "Inadequate children's area and family security",
     "sheet": "Physical Security",
     "row": 30,
     "category": "Physical Security",
     "severity": "High",
     "5_ds_category": "Defend",
-    "description": "Uses pool lifeguard and pool access fields as a stand-in for child/family risk—not kids’ club or childcare metrics. Prioritize water safety; add youth-program fields if applicable.",
+    "description": "Children's areas and family facilities lack adequate security measures, creating vulnerabilities for child safety, unauthorized access, and potential security incidents involving minors.",
     "compliance_gap": "Children's Area Security Requirements",
     "attack_vectors": ["Child safety risks", "Unauthorized access", "Minor safety incidents", "Family security risks"],
     "risk_impact": "Increased risk of child safety incidents and security risks involving minors",
@@ -665,33 +671,39 @@ window.VOFC_VULNERABILITIES = [
   },
   {
     "v_number": "V038",
-    "vulnerability_text": "Security Force not trained on all emergency plans and/or missing backup power for security loads",
+    "vulnerability_text": "Inadequate medical and health services security",
     "sheet": "Physical Security",
     "row": 38,
     "category": "Physical Security",
     "severity": "High",
     "5_ds_category": "Defend",
-    "description": "HOST flags this when responses indicate Security Force personnel are not trained on all emergency plans and/or backup power for security-related systems is absent. This is a general emergency-preparedness and resilience signal—it does not assess clinical services, patient data, or healthcare regulatory programs.",
-    "compliance_gap": "Emergency preparedness and security power resilience",
-    "attack_vectors": ["Weaker coordinated response during incidents", "Security systems at risk during power loss", "Gaps in plan execution under stress"],
-    "risk_impact": "Reduced ability to execute emergency plans and maintain security functions during outages",
-    "standards_reference": "CISA emergency preparedness resources; Ready.gov business continuity concepts",
-    "trigger_conditions": {}
+    "description": "Medical and health services areas lack adequate security measures, creating vulnerabilities for unauthorized access to medical information, patient safety, and potential security incidents in healthcare facilities.",
+    "compliance_gap": "Medical Security Requirements",
+    "attack_vectors": ["Medical information breach", "Patient safety risks", "Unauthorized access", "Healthcare security incidents"],
+    "risk_impact": "Increased risk of medical information breaches and patient safety incidents",
+    "standards_reference": "HIPAA Security Guidelines, ASIS Healthcare Security Standards",
+    "trigger_conditions": {
+      "medical_security": "inadequate",
+      "health_services_security": "insufficient"
+    }
   },
   {
     "v_number": "V039",
-    "vulnerability_text": "[No auto-score] Environmental / EV infrastructure security — requires future fields",
+    "vulnerability_text": "Insufficient environmental and sustainability security",
     "sheet": "Physical Security",
     "row": 39,
     "category": "Physical Security",
     "severity": "Medium",
     "5_ds_category": "Detect",
-    "description": "Prior mapping treated absence of EV charging as a finding; that logic was removed. HOST does not currently auto-score environmental sustainability security. OFC039 remains in the catalog for manual planning only until dedicated fields exist.",
+    "description": "Environmental and sustainability systems lack adequate security measures, creating vulnerabilities for unauthorized access to environmental controls, system sabotage, and potential security incidents in green infrastructure.",
     "compliance_gap": "Environmental Security Requirements",
     "attack_vectors": ["Environmental sabotage", "Unauthorized access", "System disruption", "Green infrastructure risks"],
     "risk_impact": "Increased risk of environmental system sabotage and green infrastructure security incidents",
     "standards_reference": "ASIS Environmental Security Standards, Green Building Security Guidelines",
-    "trigger_conditions": {}
+    "trigger_conditions": {
+      "environmental_security": "inadequate",
+      "sustainability_security": "insufficient"
+    }
   },
   {
     "v_number": "V040",
@@ -731,33 +743,39 @@ window.VOFC_VULNERABILITIES = [
   },
   {
     "v_number": "V042",
-    "vulnerability_text": "[Catalog reference] Recreational access — scoring merged with V015",
+    "vulnerability_text": "Insufficient recreational area access control",
     "sheet": "Recreational Security",
     "row": 42,
     "category": "Recreational Security",
     "severity": "Medium",
     "5_ds_category": "Deter",
-    "description": "Previously duplicated pool triggers now consolidated under V015. OFC042 attaches to V015 for mitigation text.",
+    "description": "Lack of proper access control measures for recreational areas creates security vulnerabilities in pool areas, fitness centers, and other recreational facilities.",
     "compliance_gap": "Recreational Area Security Requirements",
     "attack_vectors": ["Unauthorized recreational access", "Pool area security gaps", "Fitness center vulnerabilities", "Recreational facility incidents"],
     "risk_impact": "Increased risk of unauthorized access to recreational areas and potential security incidents",
     "standards_reference": "ASIS Recreational Security Standards, Pool Safety Guidelines",
-    "trigger_conditions": {}
+    "trigger_conditions": {
+      "recreational_access_control": "inadequate",
+      "pool_security": "insufficient"
+    }
   },
   {
     "v_number": "V043",
-    "vulnerability_text": "[Catalog reference] Vendor screening — scoring merged with V016",
+    "vulnerability_text": "Inadequate vendor and contractor security screening",
     "sheet": "Vendor Security",
     "row": 43,
     "category": "Vendor Security",
     "severity": "High",
     "5_ds_category": "Detect",
-    "description": "Duplicate of V016 field logic. Automated scoring uses V016; OFC043 provides an alternate mitigation narrative under V016.",
+    "description": "Insufficient background checks and security screening for vendors and contractors creates potential insider threat vulnerabilities and unauthorized access risks.",
     "compliance_gap": "Vendor Security Screening Requirements",
     "attack_vectors": ["Insider threats", "Unauthorized vendor access", "Contractor security gaps", "Vendor-based attacks"],
     "risk_impact": "Increased risk of insider threats and unauthorized access through vendor relationships",
     "standards_reference": "ASIS Vendor Security Standards, Contractor Screening Guidelines",
-    "trigger_conditions": {}
+    "trigger_conditions": {
+      "vendor_background_checks": "inadequate",
+      "contractor_screening": "insufficient"
+    }
   },
   {
     "v_number": "V044",
@@ -797,63 +815,75 @@ window.VOFC_VULNERABILITIES = [
   },
   {
     "v_number": "V046",
-    "vulnerability_text": "[Catalog reference] Incident management — scoring merged with V019",
+    "vulnerability_text": "Insufficient incident management and response protocols",
     "sheet": "Incident Management",
     "row": 46,
     "category": "Incident Management",
     "severity": "High",
     "5_ds_category": "Defend",
-    "description": "Same Security Force reporting and training triggers as V019. Automated scoring uses V019; OFC046 attaches to V019.",
+    "description": "Lack of comprehensive incident management protocols and response procedures creates vulnerabilities in emergency response and crisis management capabilities.",
     "compliance_gap": "Incident Management Requirements",
     "attack_vectors": ["Poor incident response", "Crisis management gaps", "Emergency coordination failures", "Incident escalation risks"],
     "risk_impact": "Increased risk of poor incident response and crisis management failures",
     "standards_reference": "ASIS Incident Management Standards, Crisis Response Guidelines",
-    "trigger_conditions": {}
+    "trigger_conditions": {
+      "incident_management": "inadequate",
+      "crisis_response": "insufficient"
+    }
   },
   {
     "v_number": "V047",
-    "vulnerability_text": "[Catalog reference] System redundancy — scoring merged with V020",
+    "vulnerability_text": "Inadequate system redundancy and backup procedures",
     "sheet": "System Redundancy",
     "row": 47,
     "category": "System Redundancy",
     "severity": "High",
     "5_ds_category": "Defend",
-    "description": "Same backup power and integration triggers as V020. Automated scoring uses V020; OFC047 attaches to V020.",
+    "description": "Lack of system redundancy and backup procedures creates vulnerabilities in system reliability and continuity of operations during system failures.",
     "compliance_gap": "System Redundancy Requirements",
     "attack_vectors": ["System failure vulnerabilities", "Backup system gaps", "Redundancy failures", "Continuity risks"],
     "risk_impact": "Increased risk of system failures and operational disruptions",
     "standards_reference": "ASIS System Redundancy Standards, Backup System Guidelines",
-    "trigger_conditions": {}
+    "trigger_conditions": {
+      "system_redundancy": "inadequate",
+      "backup_procedures": "insufficient"
+    }
   },
   {
     "v_number": "V048",
-    "vulnerability_text": "[Catalog reference] Data protection — scoring merged with V021",
+    "vulnerability_text": "Insufficient data protection and privacy measures",
     "sheet": "Data Protection",
     "row": 48,
     "category": "Data Protection",
     "severity": "High",
     "5_ds_category": "Defend",
-    "description": "Same VSS segmentation triggers as V011/V021. Automated scoring uses V021 for privacy-oriented OFC; OFC048 attaches to V021.",
+    "description": "Lack of comprehensive data protection and privacy measures creates vulnerabilities in guest data security and compliance with privacy regulations.",
     "compliance_gap": "Data Protection Requirements",
     "attack_vectors": ["Data breaches", "Privacy violations", "Guest data exposure", "Compliance failures"],
     "risk_impact": "Increased risk of data breaches and privacy violations",
     "standards_reference": "GDPR, CCPA, ASIS Data Protection Standards",
-    "trigger_conditions": {}
+    "trigger_conditions": {
+      "data_protection": "inadequate",
+      "privacy_measures": "insufficient"
+    }
   },
   {
     "v_number": "V049",
-    "vulnerability_text": "[Catalog reference] Delivery / receiving security — scoring merged with V022",
-    "sheet": "Physical Security",
+    "vulnerability_text": "Inadequate food security and safety protocols",
+    "sheet": "Food Security",
     "row": 49,
-    "category": "Physical Security",
+    "category": "Food Security",
     "severity": "Medium",
     "5_ds_category": "Defend",
-    "description": "Duplicate proxy triggers as V022. Automated scoring uses V022; OFC049 attaches to V022. HOST does not cover food safety regulation—only physical security of deliveries and receiving.",
-    "compliance_gap": "Physical security of receiving and delivery access",
-    "attack_vectors": ["Theft or diversion at receiving", "Unauthorized service-area access", "Weak controls during delivery windows"],
-    "risk_impact": "Increased physical security risk at receiving and related access points",
-    "standards_reference": "CISA physical security; DHS critical infrastructure protection (general concepts)",
-    "trigger_conditions": {}
+    "description": "Lack of comprehensive food security and safety protocols creates vulnerabilities in food service areas and potential contamination risks.",
+    "compliance_gap": "Food Security Requirements",
+    "attack_vectors": ["Food contamination", "Service area vulnerabilities", "Kitchen security gaps", "Food safety incidents"],
+    "risk_impact": "Increased risk of food contamination and service area security incidents",
+    "standards_reference": "FDA Food Security Guidelines, ASIS Food Service Security Standards",
+    "trigger_conditions": {
+      "food_security": "inadequate",
+      "kitchen_security": "insufficient"
+    }
   },
   {
     "v_number": "V050",

@@ -1,0 +1,853 @@
+{
+  "sections": {
+    "assessment_info": {
+      "assessor_name": "Michael Rodriguez",
+      "assessor_title": "Senior Security Consultant",
+      "assessor_organization": "DHS CISA Region IV",
+      "assessor_phone": "(305) 555-0123",
+      "assessor_email": "m.rodriguez@cisa.dhs.gov",
+      "assessor_credentials": "CISSP, CPP, CISA, PSP",
+      "assessment_date": "2024-01-15",
+      "assessment_type": "Initial"
+    },
+    "facility_info": {
+      "hotel_name": "The Breakers Palm Beach",
+      "hotel_website": "https://www.thebreakers.com",
+      "guest_room_count": 540,
+      "hotel_phone": "(561) 655-6611",
+      "hotel_email": "security@thebreakers.com",
+      "number_of_floors": 12,
+      "has_13th_floor": "No",
+      "hotel_address_1": "1 S County Rd",
+      "hotel_address_2": "",
+      "hotel_city": "Palm Beach",
+      "hotel_state": "Florida",
+      "hotel_zip": "33480",
+      "hotel_country": "United States",
+      "hotel_latitude": "26.7056",
+      "hotel_longitude": "-80.0364",
+      "occ_staff_day": 65,
+      "occ_staff_night": 18,
+      "occ_guests_combined": 1200,
+      "has_ev_charging": "Yes",
+      "soc_present": "Yes",
+      "system_integration": "Fully Integrated",
+      "security_backup_power": "Yes",
+      "json_filename": "The_Breakers_Palm_Beach_Assessment_DTG"
+    },
+    "pool_facilities": {
+      "has_pool": "Yes",
+      "pool_type": "Both",
+      "pool_size": 25000,
+      "pool_depth_max": 8.5,
+      "pool_hours": "6:00 AM - 11:00 PM",
+      "pool_lifeguard": "Yes",
+      "pool_access_control": "Key Card",
+      "pool_vss_coverage": "Full",
+      "pool_emergency_equipment": "Full Equipment",
+      "pool_chemical_storage": "Yes",
+      "pool_chemical_storage_secured": "Yes",
+      "pool_chemical_security_method": "Locked Storage Room",
+      "pool_chemical_storage_type": "Dedicated Room",
+      "pool_lifeguard_present": "Yes",
+      "pool_lifeguard_certification": "Certified Lifeguards",
+      "pool_equipment_present": "All Available",
+      "pool_floor_drainage": "Yes",
+      "pool_storage_room": "Dedicated Room",
+      "pool_rental_equipment": "Yes",
+      "pool_charging_stations": "Yes",
+      "pool_barrier_protection": "Yes",
+      "pool_els_present": "Yes"
+    },
+    "parking_facilities": {
+      "has_parking": "Yes",
+      "has_surface_parking": "Yes",
+      "has_garage_parking": "Yes",
+      "surface_parking_spaces": 150,
+      "surface_parking_control": "Key Card",
+      "surface_parking_vss": "Full",
+      "surface_parking_lighting": "Excellent",
+      "garage_parking_spaces": 200,
+      "garage_parking_levels": 4,
+      "garage_height_clearance": "8' 6\"",
+      "garage_parking_hours": "24/7",
+      "garage_parking_type": "Multi-Level",
+      "garage_parking_control": "Key Card",
+      "garage_parking_vss": "Full",
+      "garage_parking_lighting": "Excellent",
+      "surface_parking_security": "VSS + Patrol",
+      "garage_parking_security": "VSS + Access Control",
+      "has_ev_charging": "Yes",
+      "ev_charging_stations": 12,
+      "ev_charging_type": "Level 2 + DC Fast"
+    },
+    "fire_safety": {
+      "fire_panel_location": "Main Lobby Security Office",
+      "fire_panel_access": "Restricted Access",
+      "has_residential": "No",
+      "residential_units": 0,
+      "residential_management": "N/A",
+      "residential_separated": "N/A",
+      "short_term_rentals": "No",
+      "short_term_rental_units": 0,
+      "short_term_rental_platform": "N/A"
+    },
+    "physical_security": {
+      "has_standoff_measures": "Yes",
+      "standoff_street_distance": 75,
+      "standoff_property_distance": 50,
+      "standoff_minimum_distance": 25,
+      "standoff_blast_protection": "50+ ft",
+      "has_perimeter_barriers": "Yes",
+      "standoff_vehicle_barriers": "Yes",
+      "standoff_system_integration": "Fully Integrated",
+      "standoff_perimeter_fencing": "Decorative Steel",
+      "standoff_fence_condition": "Excellent",
+      "standoff_fence_height": 8,
+      "standoff_fence_barbed_wire": "No",
+      "standoff_fence_razor_wire": "No",
+      "standoff_fence_electrified": "No",
+      "standoff_fence_sensors": "Yes",
+      "vehicle_barrier_rating": "K12",
+      "standoff_bollard_type": "Decorative Steel",
+      "standoff_bollard_spacing": 4,
+      "standoff_bollard_height": 3.5,
+      "standoff_bollard_material": "Steel Core Concrete",
+      "standoff_signage_no_trespassing": "Yes",
+      "standoff_signage_private_property": "Yes",
+      "standoff_signage_surveillance": "Yes",
+      "standoff_signage_restricted": "Yes",
+      "standoff_landscaping_clear_zones": "Yes",
+      "standoff_landscaping_thorny_plants": "Yes",
+      "standoff_landscaping_lighting": "Yes",
+      "standoff_landscaping_none": "No",
+      "standoff_combined_distance": "Yes",
+      "standoff_combined_landscaping": "Yes",
+      "standoff_combined_physical": "Yes",
+      "standoff_combined_technology": "Yes",
+      "standoff_threat_vehicle": "Yes",
+      "standoff_threat_pedestrian": "Yes",
+      "standoff_threat_blast": "Yes",
+      "standoff_threat_projectile": "Yes",
+      "standoff_north_distance": 75,
+      "standoff_south_distance": 50,
+      "standoff_east_distance": 100,
+      "standoff_west_distance": 60,
+      "standoff_primary_method": "Combined Approach"
+    },
+    "security_systems": {
+      "secforce_type": "Hybrid (In-House + Contract)",
+      "secforce_provider_name": "Palms Security Services + Allied Universal",
+      "secforce_247": "Yes",
+      "secforce_day": 12,
+      "secforce_night": 8,
+      "secforce_surge_capacity": "Yes",
+      "secforce_response_time": "2-3 minutes",
+      "secforce_armed": "Yes",
+      "secforce_unarmed": "Yes",
+      "secforce_patrol_foot": "Yes",
+      "secforce_patrol_vehicle": "Yes",
+      "secforce_patrol_segway": "Yes",
+      "secforce_patrol_bicycle": "No",
+      "secforce_patrol_static": "Yes",
+      "secforce_patrol_other": "Yes",
+      "secforce_reporting": "Omnigo + iViewNow + Custom Dashboard",
+      "secforce_certs": "Guard Licensing, Armed Endorsements, CPR/AED, De-escalation, Active Shooter Response",
+      "secforce_training_active_shooter": "Yes",
+      "secforce_training_deescalation": "Yes",
+      "secforce_training_medical": "Yes",
+      "secforce_training_evacuation": "Yes",
+      "secforce_training_bomb": "Yes",
+      "secforce_training_cyber": "Yes",
+      "secforce_trained_all_plans": "Yes",
+      "vss_present": "Yes",
+      "vss_cloud": "Yes",
+      "vss_monitored_by": "Dedicated Operator",
+      "vss_network_segmentation": "Yes",
+      "vss_system_type": "Digital",
+      "vss_retention": "90",
+      "vss_camera_count": 127,
+      "vss_ip_cameras": "Yes",
+      "vss_ptz_cameras": "Yes",
+      "vss_dome_cameras": "Yes",
+      "vss_bullet_cameras": "Yes",
+      "vss_thermal_cameras": "Yes",
+      "vss_lpr": "Yes",
+      "vss_facial_recognition": "Yes",
+      "vss_motion_detection": "Yes",
+      "access_main_control": "Multi-Factor Authentication",
+      "access_service_control": "Key Card + Biometric",
+      "access_loading_control": "Key Card + PIN",
+      "access_parking_control": "Key Card + License Plate Recognition",
+      "els_present": "Yes",
+      "els_system_type": "IP-Based Access Control",
+      "els_integration": "Fully Integrated",
+      "els_proximity": "Yes",
+      "els_rfid": "Yes",
+      "els_magstripe": "Yes",
+      "els_pin": "Yes",
+      "els_biometric": "Yes",
+      "els_mobile": "Yes",
+      "soc_present": "Yes",
+      "monitoring_hours": "24/7",
+      "system_integration": "Fully Integrated",
+      "security_backup_power": "Yes"
+    }
+  },
+  "tables": {
+    "contacts_table": [
+      {
+        "contact_name": "James Mitchell",
+        "contact_title": "Director of Security",
+        "contact_department": "Security",
+        "contact_phone": "(561) 655-6611",
+        "contact_email": "j.mitchell@thebreakers.com",
+        "contact_emergency_contact": "Yes"
+      },
+      {
+        "contact_name": "Maria Rodriguez",
+        "contact_title": "IT Security Manager",
+        "contact_department": "Information Technology",
+        "contact_phone": "(561) 655-6612",
+        "contact_email": "m.rodriguez@thebreakers.com",
+        "contact_emergency_contact": "Yes"
+      },
+      {
+        "contact_name": "David Chen",
+        "contact_title": "Facilities Manager",
+        "contact_department": "Facilities",
+        "contact_phone": "(561) 655-6613",
+        "contact_email": "d.chen@thebreakers.com",
+        "contact_emergency_contact": "No"
+      },
+      {
+        "contact_name": "Lisa Thompson",
+        "contact_title": "VIP Services Manager",
+        "contact_department": "Guest Services",
+        "contact_phone": "(561) 655-6614",
+        "contact_email": "l.thompson@thebreakers.com",
+        "contact_emergency_contact": "Yes"
+      }
+    ],
+    "elevators_table": [
+      {
+        "elevator_shaft": "A",
+        "elevator_car": "1",
+        "elevator_floors_served": "B1-28",
+        "elevator_type": "High-Speed Passenger",
+        "elevator_key_access": "Yes"
+      },
+      {
+        "elevator_shaft": "A",
+        "elevator_car": "2",
+        "elevator_floors_served": "B1-28",
+        "elevator_type": "High-Speed Passenger",
+        "elevator_key_access": "Yes"
+      },
+      {
+        "elevator_shaft": "B",
+        "elevator_car": "1",
+        "elevator_floors_served": "B1-28",
+        "elevator_type": "High-Speed Passenger",
+        "elevator_key_access": "Yes"
+      },
+      {
+        "elevator_shaft": "B",
+        "elevator_car": "2",
+        "elevator_floors_served": "B1-28",
+        "elevator_type": "High-Speed Passenger",
+        "elevator_key_access": "Yes"
+      },
+      {
+        "elevator_shaft": "C",
+        "elevator_car": "1",
+        "elevator_floors_served": "B1-28",
+        "elevator_type": "Service Elevator",
+        "elevator_key_access": "Yes"
+      },
+      {
+        "elevator_shaft": "VIP",
+        "elevator_car": "1",
+        "elevator_floors_served": "Lobby, 15, 28",
+        "elevator_type": "Express VIP",
+        "elevator_key_access": "Yes"
+      },
+      {
+        "elevator_shaft": "VIP",
+        "elevator_car": "2",
+        "elevator_floors_served": "Lobby, 15, 28",
+        "elevator_type": "Express VIP",
+        "elevator_key_access": "Yes"
+      },
+      {
+        "elevator_shaft": "Suite",
+        "elevator_car": "1",
+        "elevator_floors_served": "Lobby, 20, 25, 28",
+        "elevator_type": "Express Suite",
+        "elevator_key_access": "Yes"
+      },
+      {
+        "elevator_shaft": "Suite",
+        "elevator_car": "2",
+        "elevator_floors_served": "Lobby, 20, 25, 28",
+        "elevator_type": "Express Suite",
+        "elevator_key_access": "Yes"
+      },
+      {
+        "elevator_shaft": "D",
+        "elevator_car": "1",
+        "elevator_floors_served": "B1-28",
+        "elevator_type": "Freight Elevator",
+        "elevator_key_access": "Yes"
+      }
+    ],
+    "stairwells_table": [
+      {
+        "stairwell_id": "A",
+        "stairwell_location": "Northeast Corner",
+        "stairwell_floors_served": "B1-28",
+        "stairwell_restricted_access": "Yes",
+        "stairwell_access_control_method": "Key Card + Biometric",
+        "stairwell_monitoring": "VSS + Motion Sensors",
+        "stairwell_emergency_exit": "Yes"
+      },
+      {
+        "stairwell_id": "B",
+        "stairwell_location": "Southeast Corner",
+        "stairwell_floors_served": "B1-28",
+        "stairwell_restricted_access": "Yes",
+        "stairwell_access_control_method": "Key Card + Biometric",
+        "stairwell_monitoring": "VSS + Motion Sensors",
+        "stairwell_emergency_exit": "Yes"
+      },
+      {
+        "stairwell_id": "C",
+        "stairwell_location": "Northwest Corner",
+        "stairwell_floors_served": "B1-28",
+        "stairwell_restricted_access": "Yes",
+        "stairwell_access_control_method": "Key Card + Biometric",
+        "stairwell_monitoring": "VSS + Motion Sensors",
+        "stairwell_emergency_exit": "Yes"
+      },
+      {
+        "stairwell_id": "D",
+        "stairwell_location": "Southwest Corner",
+        "stairwell_floors_served": "B1-28",
+        "stairwell_restricted_access": "Yes",
+        "stairwell_access_control_method": "Key Card + Biometric",
+        "stairwell_monitoring": "VSS + Motion Sensors",
+        "stairwell_emergency_exit": "Yes"
+      }
+    ],
+    "vip_access_table": [
+      {
+        "vip_entrance_type": "Main VIP Entrance",
+        "vip_access_type": "Both",
+        "vip_access_control": "Biometric",
+        "vip_vehicle_access": "Luxury Sedan",
+        "vip_vss_coverage": "Full"
+      },
+      {
+        "vip_entrance_type": "Porte Cochere",
+        "vip_access_type": "Both",
+        "vip_access_control": "Facial Recognition",
+        "vip_vehicle_access": "Limousine",
+        "vip_vss_coverage": "Full"
+      },
+      {
+        "vip_entrance_type": "Private VIP Entrance",
+        "vip_access_type": "Both",
+        "vip_access_control": "Multi-Factor",
+        "vip_vehicle_access": "Luxury SUV",
+        "vip_vss_coverage": "Full"
+      },
+      {
+        "vip_entrance_type": "Executive Entrance",
+        "vip_access_type": "Both",
+        "vip_access_control": "Iris Scan",
+        "vip_vehicle_access": "Sedan",
+        "vip_vss_coverage": "Full"
+      },
+      {
+        "vip_entrance_type": "Valet Entrance",
+        "vip_access_type": "Both",
+        "vip_access_control": "Key Card",
+        "vip_vehicle_access": "Bus",
+        "vip_vss_coverage": "Full"
+      }
+    ],
+    "restricted_table": [
+      {
+        "restricted_area_type": "Executive Floor",
+        "restricted_location": "28th Floor",
+        "restricted_rooms": "12",
+        "restricted_occupancy": "24",
+        "restricted_access_control": "Card Reader + Biometric",
+        "restricted_elevator_access": "Yes",
+        "restricted_stairwell_exclusion": "Card Swipe",
+        "restricted_vss_coverage": "Full Coverage",
+        "restricted_monitoring_type": "VSS + Motion"
+      }
+    ],
+    "emergency_contacts_table": [
+      {
+        "emergency_agency": "Palm Beach Police Department",
+        "emergency_contact": "Lt. Sarah Martinez",
+        "emergency_phone": "(561) 822-1900",
+        "emergency_email": "s.martinez@pbpd.org"
+      },
+      {
+        "emergency_agency": "Palm Beach Fire Rescue",
+        "emergency_contact": "Capt. Michael Johnson",
+        "emergency_phone": "(561) 822-1900",
+        "emergency_email": "m.johnson@pbpd.org"
+      },
+      {
+        "emergency_agency": "Palm Beach County Sheriff",
+        "emergency_contact": "Sgt. Jennifer Lee",
+        "emergency_phone": "(561) 688-3000",
+        "emergency_email": "j.lee@pbso.org"
+      }
+    ],
+    "ev_charging_table": [
+      {
+        "ev_location": "Main Pool Area",
+        "ev_charger_type": "Level 2",
+        "ev_power_level": "7.2 kW",
+        "ev_access_type": "Key Card",
+        "ev_site_suppression": "Yes",
+        "ev_fd_suppression": "Yes"
+      },
+      {
+        "ev_location": "Valet Parking",
+        "ev_charger_type": "DC Fast",
+        "ev_power_level": "150 kW",
+        "ev_access_type": "App",
+        "ev_site_suppression": "Yes",
+        "ev_fd_suppression": "Yes"
+      }
+    ],
+    "first_responder_table": [
+      {
+        "responder_agency": "Palm Beach Fire Rescue",
+        "responder_contact": "Capt. Michael Johnson",
+        "responder_phone": "(561) 822-1900",
+        "responder_response_time": "3-5 minutes",
+        "responder_special_capabilities": "High-rise rescue, hazmat response"
+      },
+      {
+        "responder_agency": "Palm Beach Police Department",
+        "responder_contact": "Lt. Sarah Martinez",
+        "responder_phone": "(561) 822-1900",
+        "responder_response_time": "2-4 minutes",
+        "responder_special_capabilities": "VIP protection, crowd control"
+      }
+    ],
+    "vendor_table": [
+      {
+        "vendor_company": "Allied Universal Security",
+        "vendor_service": "Security Services",
+        "vendor_background_check": "Yes",
+        "vendor_escort": "Yes",
+        "vendor_access": "Escort Only",
+        "vendor_recurrence": "Daily"
+      },
+      {
+        "vendor_company": "Johnson Controls",
+        "vendor_service": "Building Automation",
+        "vendor_background_check": "Yes",
+        "vendor_escort": "No",
+        "vendor_access": "Permanent Badges",
+        "vendor_recurrence": "As Needed"
+      },
+      {
+        "vendor_company": "Palm Beach Cleaning Services",
+        "vendor_service": "Janitorial Services",
+        "vendor_background_check": "Yes",
+        "vendor_escort": "Conditional",
+        "vendor_access": "Temporary Badges",
+        "vendor_recurrence": "Daily"
+      },
+      {
+        "vendor_company": "Miami Tech Solutions",
+        "vendor_service": "IT Support",
+        "vendor_background_check": "Yes",
+        "vendor_escort": "No",
+        "vendor_access": "Mixed",
+        "vendor_recurrence": "Weekly"
+      }
+    ],
+    "dep-table": [
+      {
+        "dep_dependency": "Electrical Power",
+        "dep_company": "Florida Power & Light",
+        "dep_poc_title": "Account Manager",
+        "dep_poc_name": "Robert Martinez",
+        "dep_poc_phone": "(561) 697-8000",
+        "dep_poc_email": "r.martinez@fpl.com",
+        "dep_pra": "Yes"
+      },
+      {
+        "dep_dependency": "Water Service",
+        "dep_company": "City of Palm Beach Utilities",
+        "dep_poc_title": "Service Manager",
+        "dep_poc_name": "Jennifer Walsh",
+        "dep_poc_phone": "(561) 838-5400",
+        "dep_poc_email": "j.walsh@palmbeachfl.gov",
+        "dep_pra": "Yes"
+      },
+      {
+        "dep_dependency": "Natural Gas",
+        "dep_company": "TECO Peoples Gas",
+        "dep_poc_title": "Commercial Account Rep",
+        "dep_poc_name": "Michael Torres",
+        "dep_poc_phone": "(813) 228-7777",
+        "dep_poc_email": "m.torres@tecoenergy.com",
+        "dep_pra": "No"
+      }
+    ],
+    "backup-table": [
+      {
+        "backup_type": "Emergency Generator",
+        "backup_fuel": "Diesel",
+        "backup_capacity": "2,500",
+        "backup_location": "Ground Floor Mechanical Room",
+        "backup_runtime": "72 hours"
+      },
+      {
+        "backup_type": "UPS System",
+        "backup_fuel": "Battery",
+        "backup_capacity": "500",
+        "backup_location": "Data Center",
+        "backup_runtime": "4 hours"
+      },
+      {
+        "backup_type": "Water Storage Tank",
+        "backup_fuel": "Gravity Feed",
+        "backup_capacity": "50,000",
+        "backup_location": "Roof Level",
+        "backup_runtime": "48 hours"
+      }
+    ],
+    "fdc-table": [
+      {
+        "fdc_location": "North Side - Main Entrance",
+        "fdc_combined": "Combined",
+        "fdc_side": "North",
+        "fdc_zoned": "Yes"
+      },
+      {
+        "fdc_location": "South Side - Service Entrance",
+        "fdc_combined": "Separate",
+        "fdc_side": "South",
+        "fdc_zoned": "Yes"
+      }
+    ],
+    "standpipe-table": [
+      {
+        "standpipe_present": "Yes",
+        "standpipe_test_date": "2024-01-15",
+        "standpipe_class": "Class I",
+        "standpipe_type": "Wet",
+        "standpipe_prd": "Yes",
+        "standpipe_pressure": "100 PSI",
+        "standpipe_floors": "B1-28"
+      }
+    ],
+    "sprinkler-table": [
+      {
+        "sprinkler_coverage": "Full Building",
+        "sprinkler_partial": "None",
+        "sprinkler_type": "Wet Pipe",
+        "sprinkler_zone_valves": "Floor-by-Floor",
+        "sprinkler_pumps": "Yes",
+        "sprinkler_pump_type": "Electric + Diesel",
+        "sprinkler_pump_fuel": "Diesel"
+      }
+    ],
+    "exterior-doors-table": [
+      {
+        "door_location": "Main Lobby Entrance",
+        "door_type": "Revolving",
+        "door_access_control": "None",
+        "door_vss": "Yes",
+        "door_emergency_exit": "Yes"
+      },
+      {
+        "door_location": "Main Lobby Side Doors",
+        "door_type": "Double",
+        "door_access_control": "None",
+        "door_vss": "Yes",
+        "door_emergency_exit": "Yes"
+      },
+      {
+        "door_location": "VIP Porte Cochere",
+        "door_type": "Automatic",
+        "door_access_control": "Biometric",
+        "door_vss": "Yes",
+        "door_emergency_exit": "Yes"
+      },
+      {
+        "door_location": "Employee Entrance",
+        "door_type": "Single",
+        "door_access_control": "Key Card",
+        "door_vss": "Yes",
+        "door_emergency_exit": "Yes"
+      },
+      {
+        "door_location": "Service/Loading Dock",
+        "door_type": "Rolling",
+        "door_access_control": "Keypad",
+        "door_vss": "Yes",
+        "door_emergency_exit": "Yes"
+      },
+      {
+        "door_location": "Pool Deck Access",
+        "door_type": "Glass",
+        "door_access_control": "Key Card",
+        "door_vss": "Yes",
+        "door_emergency_exit": "Yes"
+      },
+      {
+        "door_location": "Spa Entrance",
+        "door_type": "French",
+        "door_access_control": "Key Card",
+        "door_vss": "Yes",
+        "door_emergency_exit": "Yes"
+      },
+      {
+        "door_location": "Restaurant Patio",
+        "door_type": "Sliding",
+        "door_access_control": "None",
+        "door_vss": "Yes",
+        "door_emergency_exit": "Yes"
+      },
+      {
+        "door_location": "Valet Parking Entrance",
+        "door_type": "Automatic",
+        "door_access_control": "Key Card",
+        "door_vss": "Yes",
+        "door_emergency_exit": "Yes"
+      },
+      {
+        "door_location": "Garage Resident Entrance",
+        "door_type": "Automatic",
+        "door_access_control": "Key Card",
+        "door_vss": "Yes",
+        "door_emergency_exit": "Yes"
+      },
+      {
+        "door_location": "Retail Space Entrance",
+        "door_type": "Swing",
+        "door_access_control": "Key Card",
+        "door_vss": "Yes",
+        "door_emergency_exit": "Yes"
+      },
+      {
+        "door_location": "Conference Center",
+        "door_type": "Double",
+        "door_access_control": "Key Card",
+        "door_vss": "Yes",
+        "door_emergency_exit": "Yes"
+      },
+      {
+        "door_location": "Beach Access",
+        "door_type": "Swing",
+        "door_access_control": "Key Card",
+        "door_vss": "Yes",
+        "door_emergency_exit": "Yes"
+      },
+      {
+        "door_location": "Tennis Club",
+        "door_type": "Glass",
+        "door_access_control": "Key Card",
+        "door_vss": "Yes",
+        "door_emergency_exit": "Yes"
+      },
+      {
+        "door_location": "Golf Clubhouse",
+        "door_type": "Double",
+        "door_access_control": "Key Card",
+        "door_vss": "Yes",
+        "door_emergency_exit": "Yes"
+      }
+    ],
+    "retail_spaces_table": [
+      {
+        "retail_space_name": "Oceanview Bistro",
+        "retail_space_location": "Ground Floor - Main Lobby",
+        "retail_entrance_type": "Both",
+        "retail_door_lock_tech": "Key Card + Biometric",
+        "retail_open_to_public": "No",
+        "retail_management": "Hotel Managed",
+        "retail_restrictable_access": "Yes",
+        "retail_vss_coverage": "Full"
+      },
+      {
+        "retail_space_name": "Poolside Grill",
+        "retail_space_location": "Ground Floor - Pool Deck",
+        "retail_entrance_type": "Exterior Entrance",
+        "retail_door_lock_tech": "Key Card",
+        "retail_open_to_public": "Yes",
+        "retail_management": "Hotel Managed",
+        "retail_restrictable_access": "Yes",
+        "retail_vss_coverage": "Full"
+      },
+      {
+        "retail_space_name": "Executive Dining Room",
+        "retail_space_location": "28th Floor - Executive Level",
+        "retail_entrance_type": "Interior Entrance",
+        "retail_door_lock_tech": "Biometric + Key Card",
+        "retail_open_to_public": "No",
+        "retail_management": "Hotel Managed",
+        "retail_restrictable_access": "Yes",
+        "retail_vss_coverage": "Full"
+      },
+      {
+        "retail_space_name": "Serenity Spa & Wellness",
+        "retail_space_location": "2nd Floor - Spa Level",
+        "retail_entrance_type": "Interior Entrance",
+        "retail_door_lock_tech": "Key Card + Keypad",
+        "retail_open_to_public": "No",
+        "retail_management": "Third Party",
+        "retail_restrictable_access": "Yes",
+        "retail_vss_coverage": "Full"
+      },
+      {
+        "retail_space_name": "Executive Spa Suite",
+        "retail_space_location": "28th Floor - Executive Level",
+        "retail_entrance_type": "Interior Entrance",
+        "retail_door_lock_tech": "Biometric + Key Card",
+        "retail_open_to_public": "No",
+        "retail_management": "Hotel Managed",
+        "retail_restrictable_access": "Yes",
+        "retail_vss_coverage": "Full"
+      },
+      {
+        "retail_space_name": "Ocean Fitness Club",
+        "retail_space_location": "3rd Floor - Fitness Level",
+        "retail_entrance_type": "Interior Entrance",
+        "retail_door_lock_tech": "Key Card",
+        "retail_open_to_public": "No",
+        "retail_management": "Hotel Managed",
+        "retail_restrictable_access": "Yes",
+        "retail_vss_coverage": "Full"
+      },
+      {
+        "retail_space_name": "The Breakers Shops",
+        "retail_space_location": "Ground Floor - Main Lobby",
+        "retail_entrance_type": "Interior Entrance",
+        "retail_door_lock_tech": "Key Card",
+        "retail_open_to_public": "Yes",
+        "retail_management": "Hotel Managed",
+        "retail_restrictable_access": "Yes",
+        "retail_vss_coverage": "Full"
+      },
+      {
+        "retail_space_name": "Executive Shopping Suite",
+        "retail_space_location": "28th Floor - Executive Level",
+        "retail_entrance_type": "Interior Entrance",
+        "retail_door_lock_tech": "Biometric + Key Card",
+        "retail_open_to_public": "No",
+        "retail_management": "Hotel Managed",
+        "retail_restrictable_access": "Yes",
+        "retail_vss_coverage": "Full"
+      },
+      {
+        "retail_space_name": "Championship Golf Shop",
+        "retail_space_location": "Ground Floor - Golf Clubhouse",
+        "retail_entrance_type": "Exterior Entrance",
+        "retail_door_lock_tech": "Key Card",
+        "retail_open_to_public": "Yes",
+        "retail_management": "Hotel Managed",
+        "retail_restrictable_access": "Yes",
+        "retail_vss_coverage": "Full"
+      },
+      {
+        "retail_space_name": "Hotel Marketplace",
+        "retail_space_location": "Ground Floor - Lobby Level",
+        "retail_entrance_type": "Interior Entrance",
+        "retail_door_lock_tech": "Key Card",
+        "retail_open_to_public": "Yes",
+        "retail_management": "Third Party",
+        "retail_restrictable_access": "Partial",
+        "retail_vss_coverage": "Partial"
+      }
+    ],
+    "plan-table": [
+      {
+        "plan_type": "Emergency Evacuation",
+        "plan_written": "Yes",
+        "plan_last_updated": "2024-01-15",
+        "plan_exercise": "Yes",
+        "plan_exercise_date": "2024-01-10"
+      },
+      {
+        "plan_type": "Active Shooter Response",
+        "plan_written": "Yes",
+        "plan_last_updated": "2024-01-10",
+        "plan_exercise": "Yes",
+        "plan_exercise_date": "2024-01-05"
+      },
+      {
+        "plan_type": "Bomb Threat Response",
+        "plan_written": "Yes",
+        "plan_last_updated": "2024-01-05",
+        "plan_exercise": "Yes",
+        "plan_exercise_date": "2023-12-15"
+      }
+    ],
+    "training-table": [
+      {
+        "training_type": "Active Shooter Response",
+        "training_participants": "All Security Staff",
+        "training_frequency": "Quarterly"
+      },
+      {
+        "training_type": "De-escalation Techniques",
+        "training_participants": "All Staff",
+        "training_frequency": "Bi-Annual"
+      },
+      {
+        "training_type": "Emergency Medical Response",
+        "training_participants": "Security + Management",
+        "training_frequency": "Annual"
+      }
+    ],
+    "vip_security": {
+      "vip_areas_present": "Yes",
+      "vip_room_count": 24,
+      "vip_floor_count": 2,
+      "vip_entrance_count": 3,
+      "vip_elevators": "Yes",
+      "vip_parking": "Yes",
+      "vip_security_staff": "Yes",
+      "vip_screening": "Yes",
+      "vip_escort_service": "Yes",
+      "vip_threat_assessment": "Yes",
+      "vip_risk_management": "Yes",
+      "vip_intelligence": "Yes",
+      "vip_threat_levels": "Yes",
+      "vip_mitigation": "Yes",
+      "vip_coordination": "Yes",
+      "vip_emergency_protocols": "Yes",
+      "vip_crisis_management": "Yes",
+      "vip_evacuation": "Yes",
+      "vip_communication": "Yes",
+      "vip_medical": "Yes",
+      "vip_reunification": "Yes",
+      "vip_security_training": "Yes",
+      "vip_crisis_training": "Yes",
+      "vip_escort_training": "Yes",
+      "vip_certification": "Yes",
+      "vip_experience": "Yes",
+      "vip_continuing_education": "Yes",
+      "vip_technology_integration": "Yes",
+      "vip_advanced_systems": "Yes",
+      "vip_monitoring": "Yes",
+      "vip_communication_systems": "Yes",
+      "vip_data_security": "Yes",
+      "vip_system_redundancy": "Yes"
+    }
+  }
+}

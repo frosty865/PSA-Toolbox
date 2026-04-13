@@ -10,162 +10,86 @@ class VOFCFieldMappings {
     }
     
     setupDefaultMappings() {
-        // Baseline mappings aligned to current HOST form field names
+        // Physical Security Mappings
         this.addMapping('V001', 'has_perimeter_barriers', { value: 'No', operator: 'equals' });
         this.addMapping('V001', 'standoff_perimeter_fencing', { value: 'None', operator: 'equals' });
-        this.addMapping('V001', 'standoff_vehicle_barriers', { value: 'No', operator: 'equals' });
-
-        this.addMapping('V002', 'vss_present', { value: 'No', operator: 'equals' });
-        this.addMapping('V002', 'vss_camera_count', { value: 10, operator: 'less_than' });
-        this.addMapping('V002', 'vss_system_type', { value: '', operator: 'is_empty' });
-
-        this.addMapping('V003', 'secforce_trained_all_plans', { value: 'No', operator: 'equals' });
-        this.addMapping('V003', 'secforce_reporting', { value: '', operator: 'is_empty' });
-
-        // V004: life-safety / resilience signals (FACP access, backup power) — not a substitute for a written EOP survey
-        this.addMapping('V004', 'fire_panel_access', { value: 'Open Access', operator: 'equals' });
-        this.addMapping('V004', 'security_backup_power', { value: 'No', operator: 'equals' });
-
-        this.addMapping('V005', 'els_present', { value: 'No', operator: 'equals' });
-        this.addMapping('V005', 'els_system_type', { value: '', operator: 'is_empty' });
-
-        this.addMapping('V006', 'surface_parking_lighting', { value: 'Poor', operator: 'equals' });
-        this.addMapping('V006', 'surface_parking_lighting', { value: 'Fair', operator: 'equals' });
-        this.addMapping('V006', 'garage_parking_lighting', { value: 'Poor', operator: 'equals' });
-        this.addMapping('V006', 'garage_parking_lighting', { value: 'Fair', operator: 'equals' });
-
-        this.addMapping('V007', 'surface_parking_control', { value: 'Open Access', operator: 'equals' });
-        this.addMapping('V007', 'has_perimeter_barriers', { value: 'No', operator: 'equals' });
-
+        
+        this.addMapping('V002', 'standoff_landscaping_lighting', { value: 'No', operator: 'equals' });
+        this.addMapping('V002', 'surface_parking_lighting', { value: 'None', operator: 'equals' });
+        
+        this.addMapping('V003', 'standoff_vehicle_barriers', { value: 'No', operator: 'equals' });
+        this.addMapping('V003', 'vehicle_barrier_rating', { value: '', operator: 'is_empty' });
+        
+        this.addMapping('V004', 'standoff_fence_sensors', { value: 'No', operator: 'equals' });
+        this.addMapping('V004', 'perimeter_alarm_system', { value: 'No', operator: 'equals' });
+        
+        this.addMapping('V005', 'standoff_blast_protection', { value: '', operator: 'is_empty' });
+        this.addMapping('V005', 'standoff_minimum_distance', { value: 100, operator: 'less_than' });
+        
+        this.addMapping('V006', 'standoff_signage_no_trespassing', { value: 'No', operator: 'equals' });
+        this.addMapping('V006', 'standoff_signage_private_property', { value: 'No', operator: 'equals' });
+        
+        this.addMapping('V007', 'standoff_landscaping_clear_zones', { value: 'No', operator: 'equals' });
+        this.addMapping('V007', 'standoff_landscaping_thorny_plants', { value: 'No', operator: 'equals' });
+        
         this.addMapping('V008', 'standoff_minimum_distance', { value: 50, operator: 'less_than' });
         this.addMapping('V008', 'standoff_street_distance', { value: 50, operator: 'less_than' });
-
-        this.addMapping('V009', 'secforce_247', { value: 'No', operator: 'equals' });
-        this.addMapping('V009', 'secforce_day', { value: 1, operator: 'less_than' });
-        this.addMapping('V009', 'secforce_night', { value: 1, operator: 'less_than' });
-
-        this.addMapping('V010', 'monitoring_hours', { value: 'Business Hours', operator: 'equals' });
-        this.addMapping('V010', 'monitoring_hours', { value: 'On-Demand', operator: 'equals' });
-        this.addMapping('V010', 'secforce_reporting', { value: '', operator: 'is_empty' });
-
-        this.addMapping('V011', 'vss_network_segmentation', { value: 'No', operator: 'equals' });
-        this.addMapping('V011', 'vss_network_segmentation', { value: 'Unknown', operator: 'equals' });
-
-        // V012: consolidated into V004 (identical triggers) — keep V012 row in catalog for OFC012 text only
-
-        this.addMapping('V013', 'vip_access_control_systems', { value: 'No VIP Access Control', operator: 'equals' });
-        this.addMapping('V013', 'vip_vehicle_screening', { value: 'No Screening', operator: 'equals' });
-
-        this.addMapping('V014', 'surface_parking_control', { value: 'Open Access', operator: 'equals' });
-        this.addMapping('V014', 'garage_parking_control', { value: 'None', operator: 'equals' });
-        this.addMapping('V014', 'surface_parking_vss', { value: 'None', operator: 'equals' });
-        this.addMapping('V014', 'garage_parking_vss', { value: 'None', operator: 'equals' });
-
-        this.addMapping('V015', 'pool_vss_coverage', { value: 'None', operator: 'equals' });
-        this.addMapping('V015', 'pool_vss_coverage', { value: 'Partial', operator: 'equals' });
-        this.addMapping('V015', 'pool_access_control', { value: 'Open Access', operator: 'equals' });
-        this.addMapping('V015', 'pool_lifeguard', { value: 'No', operator: 'equals' });
-
-        this.addMapping('V016', 'vip_staff_background_checks', { value: 'No Background Checks', operator: 'equals' });
-        this.addMapping('V016', 'secforce_certs', { value: '', operator: 'is_empty' });
-
-        this.addMapping('V017', 'els_present', { value: 'No', operator: 'equals' });
-        this.addMapping('V017', 'vss_camera_count', { value: 30, operator: 'less_than' });
-
-        this.addMapping('V018', 'vss_monitored_by', { value: 'For Evidence Only', operator: 'equals' });
-        this.addMapping('V018', 'vss_camera_count', { value: 50, operator: 'less_than' });
-
-        this.addMapping('V019', 'secforce_reporting', { value: '', operator: 'is_empty' });
-        this.addMapping('V019', 'secforce_trained_all_plans', { value: 'No', operator: 'equals' });
-
-        this.addMapping('V020', 'security_backup_power', { value: 'No', operator: 'equals' });
-        this.addMapping('V020', 'security_backup_power', { value: 'Partial', operator: 'equals' });
-        this.addMapping('V020', 'system_integration', { value: 'Standalone Systems', operator: 'equals' });
-
-        this.addMapping('V021', 'vss_network_segmentation', { value: 'No', operator: 'equals' });
-        this.addMapping('V021', 'vss_network_segmentation', { value: 'Unknown', operator: 'equals' });
-
-        this.addMapping('V022', 'secforce_247', { value: 'No', operator: 'equals' });
-        this.addMapping('V022', 'monitoring_hours', { value: 'On-Demand', operator: 'equals' });
-
-        this.addMapping('V023', 'secforce_247', { value: 'No', operator: 'equals' });
-        this.addMapping('V023', 'secforce_trained_all_plans', { value: 'No', operator: 'equals' });
-
-        this.addMapping('V024', 'fire_panel_access', { value: 'Open Access', operator: 'equals' });
-        this.addMapping('V024', 'standoff_signage_restricted', { value: 'No', operator: 'equals' });
-
-        this.addMapping('V025', 'els_present', { value: 'No', operator: 'equals' });
-        this.addMapping('V025', 'residential_separated', { value: 'No', operator: 'equals' });
-
-        // Extended operational coverage using currently collected fields
-        this.addMapping('V026', 'vss_camera_count', { value: 50, operator: 'less_than' });
-        this.addMapping('V026', 'secforce_surge_capacity', { value: 'No', operator: 'equals' });
-
-        this.addMapping('V027', 'pool_access_control', { value: 'Open Access', operator: 'equals' });
-        this.addMapping('V027', 'pool_vss_coverage', { value: 'None', operator: 'equals' });
-
-        this.addMapping('V028', 'secforce_247', { value: 'No', operator: 'equals' });
-        this.addMapping('V028', 'vss_camera_count', { value: 40, operator: 'less_than' });
-
-        this.addMapping('V029', 'vss_network_segmentation', { value: 'No', operator: 'equals' });
-        this.addMapping('V029', 'secforce_reporting', { value: '', operator: 'is_empty' });
-
-        this.addMapping('V030', 'pool_lifeguard', { value: 'No', operator: 'equals' });
-        this.addMapping('V030', 'pool_access_control', { value: 'Open Access', operator: 'equals' });
-
-        this.addMapping('V031', 'security_backup_power', { value: 'No', operator: 'equals' });
-        this.addMapping('V031', 'security_backup_power', { value: 'Partial', operator: 'equals' });
-        this.addMapping('V031', 'secforce_trained_all_plans', { value: 'No', operator: 'equals' });
-
-        this.addMapping('V032', 'secforce_247', { value: 'No', operator: 'equals' });
-        this.addMapping('V032', 'secforce_reporting', { value: '', operator: 'is_empty' });
-
-        this.addMapping('V033', 'surface_parking_control', { value: 'Open Access', operator: 'equals' });
-        this.addMapping('V033', 'vip_vehicle_screening', { value: 'No Screening', operator: 'equals' });
-
-        this.addMapping('V034', 'secforce_surge_capacity', { value: 'No', operator: 'equals' });
-        this.addMapping('V034', 'monitoring_hours', { value: 'Business Hours', operator: 'equals' });
-
-        this.addMapping('V035', 'monitoring_hours', { value: 'On-Demand', operator: 'equals' });
-        this.addMapping('V035', 'vss_monitored_by', { value: 'For Evidence Only', operator: 'equals' });
-
-        this.addMapping('V036', 'vss_monitored_by', { value: 'For Evidence Only', operator: 'equals' });
-        this.addMapping('V036', 'vss_camera_count', { value: 60, operator: 'less_than' });
-
-        this.addMapping('V037', 'vss_camera_count', { value: 50, operator: 'less_than' });
-        this.addMapping('V037', 'vss_monitored_by', { value: 'For Evidence Only', operator: 'equals' });
-
-        this.addMapping('V038', 'secforce_trained_all_plans', { value: 'No', operator: 'equals' });
-        this.addMapping('V038', 'security_backup_power', { value: 'No', operator: 'equals' });
-
-        // V039: removed auto-trigger — absence of EV charging is not a security defect; add EV/site fields before re-enabling
-
-        this.addMapping('V040', 'vip_staff_training', { value: 'Basic Service Training', operator: 'equals' });
-        this.addMapping('V040', 'vip_staff_training', { value: 'No Special Training', operator: 'equals' });
-
-        this.addMapping('V041', 'vip_vehicle_screening', { value: 'No Screening', operator: 'equals' });
-        this.addMapping('V041', 'vip_parking_type', { value: 'Surface Level', operator: 'equals' });
-
-        // V042: consolidated into V015 (same pool triggers)
-
-        // V043: consolidated into V016 (same VIP staff / Security Force credential triggers)
-
-        this.addMapping('V044', 'els_present', { value: 'No', operator: 'equals' });
-        this.addMapping('V044', 'fire_panel_access', { value: 'Open Access', operator: 'equals' });
-
-        this.addMapping('V045', 'vss_monitored_by', { value: 'For Evidence Only', operator: 'equals' });
-        this.addMapping('V045', 'monitoring_hours', { value: 'Business Hours', operator: 'equals' });
-
-        // V046: consolidated into V019 (same Security Force reporting / training triggers)
-
-        // V047: consolidated into V020 (same backup power / integration triggers)
-
-        // V048: consolidated into V021 (same VSS network segmentation triggers)
-
-        // V049: consolidated into V022 (same staffing / monitoring triggers — receiving/delivery physical security proxy only; not food safety regulation)
-
-        this.addMapping('V050', 'secforce_247', { value: 'No', operator: 'equals' });
-        this.addMapping('V050', 'standoff_signage_restricted', { value: 'No', operator: 'equals' });
+        
+        this.addMapping('V009', 'standoff_fence_height', { value: 6, operator: 'less_than' });
+        this.addMapping('V009', 'standoff_fence_condition', { value: 'Poor', operator: 'equals' });
+        
+        this.addMapping('V010', 'secforce_reporting', { value: 'None', operator: 'equals' });
+        this.addMapping('V010', 'monitoring_hours', { value: 'None', operator: 'equals' });
+        
+        // Security Systems Mappings
+        this.addMapping('V011', 'vss_present', { value: 'No', operator: 'equals' });
+        this.addMapping('V011', 'vss_system_type', { value: 'None', operator: 'equals' });
+        
+        this.addMapping('V012', 'els_present', { value: 'No', operator: 'equals' });
+        this.addMapping('V012', 'els_system_type', { value: '', operator: 'is_empty' });
+        
+        this.addMapping('V013', 'secforce_247', { value: 'No', operator: 'equals' });
+        this.addMapping('V013', 'secforce_armed', { value: 'No', operator: 'equals' });
+        
+        this.addMapping('V014', 'soc_present', { value: 'No', operator: 'equals' });
+        this.addMapping('V014', 'central_monitoring', { value: 'No', operator: 'equals' });
+        
+        this.addMapping('V015', 'vss_coverage', { value: 'Partial', operator: 'equals' });
+        this.addMapping('V015', 'vss_coverage', { value: 'None', operator: 'equals' });
+        
+        // VIP Security Mappings
+        this.addMapping('V016', 'vip_areas_present', { value: 'No', operator: 'equals' });
+        this.addMapping('V016', 'vip_room_count', { value: 0, operator: 'less_than' });
+        
+        this.addMapping('V017', 'vip_access_control', { value: 'No', operator: 'equals' });
+        this.addMapping('V017', 'vip_screening', { value: 'No', operator: 'equals' });
+        
+        this.addMapping('V018', 'vip_security_staff', { value: 'No', operator: 'equals' });
+        this.addMapping('V018', 'vip_escort_service', { value: 'No', operator: 'equals' });
+        
+        this.addMapping('V019', 'vip_parking', { value: 'No', operator: 'equals' });
+        this.addMapping('V019', 'vip_vehicle_screening', { value: 'No', operator: 'equals' });
+        
+        this.addMapping('V020', 'vip_elevators', { value: 'No', operator: 'equals' });
+        this.addMapping('V020', 'vip_entrance_count', { value: 0, operator: 'less_than' });
+        
+        // Emergency Planning Mappings
+        this.addMapping('V021', 'emergency_plan_written', { value: 'No', operator: 'equals' });
+        this.addMapping('V021', 'emergency_plan_updated', { value: 'No', operator: 'equals' });
+        
+        this.addMapping('V022', 'emergency_training_frequency', { value: 'None', operator: 'equals' });
+        this.addMapping('V022', 'emergency_exercise_frequency', { value: 'None', operator: 'equals' });
+        
+        this.addMapping('V023', 'first_responder_contacts', { value: 0, operator: 'less_than' });
+        this.addMapping('V023', 'emergency_communication_system', { value: 'None', operator: 'equals' });
+        
+        this.addMapping('V024', 'backup_power_system', { value: 'No', operator: 'equals' });
+        this.addMapping('V024', 'backup_communication_system', { value: 'No', operator: 'equals' });
+        
+        this.addMapping('V025', 'evacuation_plan', { value: 'No', operator: 'equals' });
+        this.addMapping('V025', 'evacuation_routes', { value: 'No', operator: 'equals' });
+        
+        // Add more mappings as needed...
     }
     
     addMapping(vulnerabilityId, fieldPath, condition) {
