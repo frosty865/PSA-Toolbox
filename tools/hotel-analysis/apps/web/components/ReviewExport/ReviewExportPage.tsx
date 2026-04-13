@@ -11,6 +11,7 @@ import { getTemplateCheck } from '@/lib/api';
 import { computeCompletion } from '@/app/lib/assessment/completion';
 import { reviewExportCopy } from '@/lib/uiCopy/reviewExportCopy';
 import { AssessmentStatusStrip } from './AssessmentStatusStrip';
+import { ExecutiveSummaryPreview } from './sections/ExecutiveSummaryPreview';
 import { InfrastructureSectionsPreview } from './sections/InfrastructureSectionsPreview';
 import { CrossDependencyPreview } from './sections/CrossDependencyPreview';
 import { SynthesisPreview } from './sections/SynthesisPreview';
@@ -154,8 +155,9 @@ export function ReviewExportPage() {
         {expandedSections.synthesis && (
           <div style={{ padding: 'var(--spacing-md)' }}>
             <p className="text-secondary" style={{ marginTop: 0 }}>
-              The executive summary is included in the report payload and will render in the final DOCX output.
+              The executive summary, citations, and vulnerabilities are included in the report payload and will render in the final DOCX output.
             </p>
+            <ExecutiveSummaryPreview assessment={assessment} reportVM={reportVM ?? null} completion={completion} showHelp={true} />
             <SynthesisPreview assessment={assessment} reportVM={reportVM ?? null} showHelp={true} />
           </div>
         )}

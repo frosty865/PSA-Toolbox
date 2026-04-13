@@ -72,16 +72,7 @@ export function vmToExecutiveSnapshot(vm: ReportVM): ReporterExecutiveSnapshot {
   const executive_summary_brief =
     synthesisText.slice(0, 400) + (synthesisText.length > 400 ? '…' : '');
 
-  const executiveCitationKeys = Array.from(
-    new Set(
-      (vm.infrastructures ?? [])
-        .flatMap((infra) => infra.vulnerabilities ?? [])
-        .flatMap((vuln) => vuln.citations ?? [])
-        .map((key) => key.trim())
-        .filter(Boolean)
-    )
-  );
-  const citations = executiveCitationKeys.length > 0 ? compileCitations(executiveCitationKeys) : [];
+  const citations = vm.appendices?.citations_used ?? [];
 
   const matrixRows = curves
     .filter((c) => c.infra)

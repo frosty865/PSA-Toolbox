@@ -66,6 +66,27 @@ export function ExecutiveSummaryPreview({
     const refs = reportVM?.executive?.citations ?? [];
     return dedupeCitations(refs);
   }, [reportVM]);
+  const topVulnerabilities = useMemo(() => {
+    const seen = new Set<string>();
+    const items =
+      reportVM?.infrastructures
+        ?.flatMap((infra) =>
+          (infra.vulnerabilities ?? []).map((vuln) => ({
+            infra: infra.display_name,
+            title: vuln.title,
+            summary: vuln.summary,
+            driverCategory: vuln.driverCategory,
+          }))
+        )
+        .filter((item) => {
+          const key = `${item.infra}|${item.title}`.trim();
+          if (!key || seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        })
+        .slice(0, 6) ?? [];
+    return items;
+  }, [reportVM]);
 
   return (
     <div>
@@ -113,6 +134,37 @@ export function ExecutiveSummaryPreview({
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+      )}
+
+      {topVulnerabilities.length > 0 && (
+        <div style={{ marginBottom: 'var(--spacing-lg)' }}>
+          <h4 style={{ fontSize: 'var(--font-size-md)', fontWeight: 600, marginBottom: 'var(--spacing-md)' }}>
+            Vulnerabilities
+          </h4>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'var(--spacing-md)' }}>
+            {topVulnerabilities.map((vuln, idx) => (
+              <div
+                key={`${vuln.infra}-${idx}`}
+                style={{
+                  border: '1px solid var(--cisa-gray-light)',
+                  borderRadius: 'var(--border-radius)',
+                  padding: 'var(--spacing-md)',
+                  backgroundColor: 'white',
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', gap: '0.75rem', marginBottom: '0.5rem' }}>
+                  <strong style={{ fontSize: 'var(--font-size-sm)' }}>{vuln.title}</strong>
+                  <span style={{ fontSize: 'var(--font-size-xs)', backgroundColor: 'var(--cisa-gray-light)', padding: '0.2rem 0.45rem', borderRadius: '3px', whiteSpace: 'nowrap' }}>
+                    {vuln.infra}
+                  </span>
+                </div>
+                <p style={{ fontSize: 'var(--font-size-sm)', color: 'var(--color-secondary, #666)', lineHeight: 1.6, margin: 0 }}>
+                  {vuln.summary}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       )}

@@ -34,13 +34,7 @@ export function AssessmentStatusStrip({
   const hasCascadingDeps =
     reportVM?.cross_dependency?.confirmed_edges != null && reportVM.cross_dependency.confirmed_edges.length > 0;
 
-  const citationsCount = reportVM
-    ? reportVM.infrastructures.reduce((sum, inf) => {
-        const citations = inf.findings?.flatMap((f) => f.citations ?? []) ?? [];
-        const seen = new Set(citations.map((c) => (c.key ?? '') + (c.short ?? '')));
-        return sum + seen.size;
-      }, 0)
-    : 0;
+  const citationsCount = reportVM?.executive?.citations?.length ?? 0;
 
   return (
     <div
