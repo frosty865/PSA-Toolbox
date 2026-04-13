@@ -25455,7 +25455,7 @@
                                 <div class="recommendations">
                                     <h5>Options for Consideration:</h5>
                                     <ul>
-                                        ${match.vulnerability.options.map(option => `<li>${option.description}</li>`).join('')}
+                                        ${match.vulnerability.options.map(option => `<li>${option.option_text || option.description || 'Not specified'}</li>`).join('')}
                                     </ul>
                                 </div>
                             </div>
@@ -25547,7 +25547,7 @@
                                     <ol>
                                         ${match.vulnerability.options.map((option, optIndex) => `
                                             <li>
-                                                <strong>Option ${optIndex + 1}:</strong> ${option.description}
+                                                <strong>Option ${optIndex + 1}:</strong> ${option.option_text || option.description || 'Not specified'}
                                                 <br><em>consideration: ${option.consideration || 'Not specified'}</em>
                                                 ${option.cost ? `<br><em>Cost: ${option.cost}</em>` : ''}
                                             </li>
@@ -25630,13 +25630,13 @@
                                     <div class="vulnerability-section">
                                         <h4>Options for Consideration</h4>
                                         <ol class="recommendations-list">
-                                            ${match.vulnerability.options.map((option, optIndex) => `
-                                                <li>
-                                                    <strong>Option ${optIndex + 1}:</strong> ${option.description}
-                                                    <br><em>consideration: ${option.consideration || 'Not specified'}</em>
-                                                    ${option.cost ? `<br><em>Cost: ${option.cost}</em>` : ''}
-                                                </li>
-                                            `).join('')}
+                                        ${match.vulnerability.options.map((option, optIndex) => `
+                                            <li>
+                                                <strong>Option ${optIndex + 1}:</strong> ${option.option_text || option.description || 'Not specified'}
+                                                <br><em>consideration: ${option.consideration || 'Not specified'}</em>
+                                                ${option.cost ? `<br><em>Cost: ${option.cost}</em>` : ''}
+                                            </li>
+                                        `).join('')}
                                         </ol>
                                     </div>
                                     
