@@ -80,7 +80,6 @@ const nextConfig = {
       { source: '/ada/:path*', destination: '/:path*', permanent: true },
       { source: '/host-v3', destination: '/hotel-analysis/', permanent: true },
       { source: '/host-v3/', destination: '/hotel-analysis/', permanent: true },
-      { source: '/hotel-analysis/HOST%20V3.html', destination: '/hotel-analysis/', permanent: true },
     ];
   },
   /**
