@@ -22994,6 +22994,27 @@
                 </div>
             `;
         }
+
+        function generateVulnerabilityDetails(vulnerabilities) {
+            if (!Array.isArray(vulnerabilities) || vulnerabilities.length === 0) {
+                return '<p>No vulnerabilities were identified.</p>';
+            }
+
+            return vulnerabilities.map(vuln => {
+                const title = vuln.title || 'Untitled vulnerability';
+                const severity = vuln.severity || 'Unspecified';
+                const summary = vuln.summary || vuln.description || vuln.businessImpact || 'No description provided.';
+                const options = vuln.businessImpact || vuln.recommendation || vuln.remediation || 'Review and document options for consideration.';
+                return `
+                    <div style="border: 1px solid #dfe1e2; border-left: 4px solid #0071bc; border-radius: 4px; padding: 0.9rem; margin-bottom: 0.75rem; background: #fff;">
+                        <div style="font-weight: 700; color: #1b1b1b; margin-bottom: 0.25rem;">${title}</div>
+                        <div style="font-size: 0.85rem; color: #5b616b; margin-bottom: 0.5rem;">Severity: ${severity}</div>
+                        <div style="margin-bottom: 0.5rem;">${summary}</div>
+                        <div style="font-style: italic;"><strong>Options for Consideration:</strong> ${options}</div>
+                    </div>
+                `;
+            }).join('');
+        }
         
         function generateStandardsAnalysis(data, analysis) {
             const fifaScore = calculateFIFAScore(data);
@@ -26347,5 +26368,4 @@
 </script>
 </body>
 </html>
-
 
