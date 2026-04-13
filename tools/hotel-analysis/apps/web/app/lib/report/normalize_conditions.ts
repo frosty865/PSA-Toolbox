@@ -37,6 +37,16 @@ export type SectorConditions = {
   recovery_duration_class: RecClass;
   pace_depth: PaceDepth;
   pace_missing_layers: string[];
+  /** Optional implied-answer flags used by the report vulnerability map. */
+  electric_backup_sustainment_established?: boolean;
+  electric_backup_tested_under_load?: boolean;
+  comm_interoperability?: boolean;
+  it_continuity_plan_exists?: boolean;
+  it_plan_exercised?: boolean;
+  water_contingency_plan?: boolean;
+  water_alternate_supports_core?: boolean;
+  wastewater_contingency_plan?: boolean;
+  wastewater_constraints_evaluated?: boolean;
 };
 
 export type PaceConditions = {
@@ -120,6 +130,11 @@ function toBoolYesNo(v: unknown): boolean | undefined {
   if (v === true || v === 'yes' || v === 'Yes' || v === 'YES' || v === 'true' || v === 'TRUE') return true;
   if (v === false || v === 'no' || v === 'No' || v === 'NO' || v === 'false' || v === 'FALSE') return false;
   return undefined;
+}
+
+function getAnswerValue(data: Record<string, unknown>, key: string): unknown {
+  const answers = data.answers as Record<string, unknown> | undefined;
+  return data[key] ?? answers?.[key];
 }
 
 function resolveAlternatePresent(
@@ -422,6 +437,15 @@ function normalizeSectorFromMap(
     const seg = data.network_segmentation ?? data['IT-5_survivability'];
     const networkSegmentation: boolean | undefined =
       seg === true || seg === 'yes' ? true : seg === false || seg === 'no' ? false : undefined;
+    const electricBackupSustainmentEstablished = toBoolYesNo(getAnswerValue(data, 'E-9_refuel_sustainment_established'));
+    const electricBackupTestedUnderLoad = toBoolYesNo(getAnswerValue(data, 'E-10_tested_under_load'));
+    const commInteroperability = toBoolYesNo(getAnswerValue(data, 'comm_interoperability'));
+    const itContinuityPlanExists = toBoolYesNo(getAnswerValue(data, 'it_continuity_plan_exists'));
+    const itPlanExercised = toBoolYesNo(getAnswerValue(data, 'it_plan_exercised'));
+    const waterContingencyPlan = toBoolYesNo(getAnswerValue(data, 'W_Q7_contingency_plan'));
+    const waterAlternateSupportsCore = toBoolYesNo(getAnswerValue(data, 'W_Q9_alternate_supports_core'));
+    const wastewaterContingencyPlan = toBoolYesNo(getAnswerValue(data, 'WW_Q7_contingency_plan'));
+    const wastewaterConstraintsEvaluated = toBoolYesNo(getAnswerValue(data, 'WW_Q14_constraints_evaluated'));
     return {
       ...base,
       single_provider_or_path: single,
@@ -431,6 +455,15 @@ function normalizeSectorFromMap(
       hosted_continuity_weakness,
       hosted_continuity_unknown,
       hosted_continuity_unevaluated,
+      electric_backup_sustainment_established: electricBackupSustainmentEstablished,
+      electric_backup_tested_under_load: electricBackupTestedUnderLoad,
+      comm_interoperability: commInteroperability,
+      it_continuity_plan_exists: itContinuityPlanExists,
+      it_plan_exercised: itPlanExercised,
+      water_contingency_plan: waterContingencyPlan,
+      water_alternate_supports_core: waterAlternateSupportsCore,
+      wastewater_contingency_plan: wastewaterContingencyPlan,
+      wastewater_constraints_evaluated: wastewaterConstraintsEvaluated,
       it_transport_single_path_exposure: itTransportSinglePathExposure === true,
       no_it_incident_response_owner: noItIncidentResponseOwner,
       network_segmentation: networkSegmentation,

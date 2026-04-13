@@ -1951,6 +1951,158 @@ export const QUESTION_VULN_MAP: QuestionVulnMap = {
       ],
     },
   ],
+  'E-9_refuel_sustainment_established': [
+    {
+      id: 'EP_BACKUP_SUSTAINMENT_NOT_DOCUMENTED',
+      category: 'ELECTRIC_POWER',
+      title: 'Backup sustainment for electric power is not documented',
+      summary:
+        'Backup power refueling or sustainment is not documented, which can limit usable runtime during extended outages.',
+      triggers: [
+        { op: 'eq', questionId: 'E-9_refuel_sustainment_established', value: 'NO' },
+        { op: 'eq', questionId: 'E-9_refuel_sustainment_established', value: 'UNKNOWN' },
+      ],
+      citations: ['FEMA_CGC', 'NFPA_1600'],
+      ofcs: [
+        { id: 'OFC_EP_E9_1', title: 'Document sustainment procedures', text: 'Document refueling or sustainment procedures for backup power assets and verify responsible parties.' },
+        { id: 'OFC_EP_E9_2', title: 'Confirm delivery expectations', text: 'Confirm supplier arrangements and delivery expectations for extended outage conditions.' },
+        { id: 'OFC_EP_E9_3', title: 'Estimate usable runtime', text: 'Estimate usable runtime under load and compare it with recovery expectations.' },
+      ],
+    },
+  ],
+  'E-10_tested_under_load': [
+    {
+      id: 'EP_BACKUP_LOAD_TESTING_NOT_DOCUMENTED',
+      category: 'ELECTRIC_POWER',
+      title: 'Backup power testing under load is not documented',
+      summary:
+        'Backup power testing under load is not documented, leaving backup performance assumptions unverified.',
+      triggers: [
+        { op: 'eq', questionId: 'E-10_tested_under_load', value: 'NO' },
+        { op: 'eq', questionId: 'E-10_tested_under_load', value: 'UNKNOWN' },
+      ],
+      citations: ['FEMA_CGC', 'NFPA_1600'],
+      ofcs: [
+        { id: 'OFC_EP_E10_1', title: 'Document load testing', text: 'Document backup power testing under load and retain results for review.' },
+        { id: 'OFC_EP_E10_2', title: 'Use realistic load conditions', text: 'Use realistic load conditions that reflect critical operational demand.' },
+        { id: 'OFC_EP_E10_3', title: 'Track corrective actions', text: 'Track deficiencies identified during load testing to closure.' },
+      ],
+    },
+  ],
+  comm_interoperability: [
+    {
+      id: 'COMMS_INTEROPERABILITY_GAP',
+      category: 'COMMUNICATIONS',
+      title: 'Communications interoperability is not documented',
+      summary:
+        'Interoperability between communications modes or providers is not documented or confirmed, which can block fallback contact paths.',
+      triggers: [
+        { op: 'eq', questionId: 'comm_interoperability', value: 'NO' },
+        { op: 'eq', questionId: 'comm_interoperability', value: 'UNKNOWN' },
+      ],
+      citations: ['CISA_EMERGENCY_COMMS_REDUNDANCIES_2021', 'FEMA_CGC'],
+      ofcs: [
+        { id: 'OFC_COMMS_INT_1', title: 'Document fallback interoperability', text: 'Document which communications paths and devices must interoperate during fallback operations.' },
+        { id: 'OFC_COMMS_INT_2', title: 'Test fallback communications', text: 'Test fallback communications across carriers, devices, and operating modes.' },
+        { id: 'OFC_COMMS_INT_3', title: 'Verify contactability', text: 'Verify that critical staff can be contacted through each intended fallback mode.' },
+      ],
+    },
+  ],
+  it_continuity_plan_exists: [
+    {
+      id: 'IT_CONTINUITY_PLAN_NOT_DOCUMENTED',
+      category: 'INFORMATION_TECHNOLOGY',
+      title: 'IT continuity plan is not documented',
+      summary:
+        'A continuity plan for critical IT services is not documented, leaving recovery roles and assumptions unclear.',
+      triggers: [
+        { op: 'eq', questionId: 'it_continuity_plan_exists', value: 'NO' },
+        { op: 'eq', questionId: 'it_continuity_plan_exists', value: 'UNKNOWN' },
+      ],
+      citations: ['ISO_22301', 'NIST_CSF'],
+      ofcs: [
+        { id: 'OFC_IT_CP_1', title: 'Document continuity plan', text: 'Document continuity plan coverage for critical IT services and dependencies.' },
+        { id: 'OFC_IT_CP_2', title: 'Define minimum operating mode', text: 'Define minimum operating mode, staffing, and escalation roles for IT disruption.' },
+        { id: 'OFC_IT_CP_3', title: 'Review annually', text: 'Review and update the continuity plan annually or after major changes.' },
+      ],
+    },
+  ],
+  W_Q7_contingency_plan: [
+    {
+      id: 'WATER_CONTINGENCY_PLAN_NOT_DOCUMENTED',
+      category: 'WATER',
+      title: 'Water contingency plan is not documented',
+      summary:
+        'A water contingency plan is not documented for disruption scenarios.',
+      triggers: [
+        { op: 'eq', questionId: 'W_Q7_contingency_plan', value: 'NO' },
+        { op: 'eq', questionId: 'W_Q7_contingency_plan', value: 'UNKNOWN' },
+      ],
+      citations: ['FEMA_CGC', 'EPA_WATER_SECURITY'],
+      ofcs: [
+        { id: 'OFC_W_CTG_1', title: 'Document contingency plan', text: 'Document a water contingency plan covering disruption scenarios and decision thresholds.' },
+        { id: 'OFC_W_CTG_2', title: 'Identify staging resources', text: 'Identify staging resources, substitute supply options, and conservation measures.' },
+        { id: 'OFC_W_CTG_3', title: 'Exercise plan', text: 'Exercise the contingency plan and update it based on findings.' },
+      ],
+    },
+  ],
+  W_Q9_alternate_supports_core: [
+    {
+      id: 'WATER_ALTERNATE_DOES_NOT_SUPPORT_CORE',
+      category: 'WATER',
+      title: 'Alternate water support does not cover core operations',
+      summary:
+        'Documented alternate support does not appear sufficient to sustain core water-dependent operations.',
+      triggers: [
+        { op: 'eq', questionId: 'W_Q9_alternate_supports_core', value: 'NO' },
+        { op: 'eq', questionId: 'W_Q9_alternate_supports_core', value: 'UNKNOWN' },
+      ],
+      citations: ['FEMA_CGC', 'EPA_WATER_SECURITY'],
+      ofcs: [
+        { id: 'OFC_W_ALT_1', title: 'Validate alternate support scope', text: 'Validate that alternate water support can sustain core operations for the expected outage window.' },
+        { id: 'OFC_W_ALT_2', title: 'Document minimum operating mode', text: 'Document the minimum operating mode required during disruption and map it to support capacity.' },
+        { id: 'OFC_W_ALT_3', title: 'Test fallback procedures', text: 'Test fallback procedures against realistic loss-of-water scenarios.' },
+      ],
+    },
+  ],
+  WW_Q7_contingency_plan: [
+    {
+      id: 'WASTEWATER_CONTINGENCY_PLAN_NOT_DOCUMENTED',
+      category: 'WASTEWATER',
+      title: 'Wastewater contingency plan is not documented',
+      summary:
+        'A wastewater contingency plan is not documented for disruption scenarios.',
+      triggers: [
+        { op: 'eq', questionId: 'WW_Q7_contingency_plan', value: 'NO' },
+        { op: 'eq', questionId: 'WW_Q7_contingency_plan', value: 'UNKNOWN' },
+      ],
+      citations: ['FEMA_CGC', 'EPA_WATER_SECURITY'],
+      ofcs: [
+        { id: 'OFC_WW_CTG_1', title: 'Document contingency plan', text: 'Document a wastewater contingency plan covering disruption scenarios and decision thresholds.' },
+        { id: 'OFC_WW_CTG_2', title: 'Identify staging resources', text: 'Identify staging resources, substitute treatment options, and conservation measures.' },
+        { id: 'OFC_WW_CTG_3', title: 'Exercise plan', text: 'Exercise the contingency plan and update it based on findings.' },
+      ],
+    },
+  ],
+  WW_Q14_constraints_evaluated: [
+    {
+      id: 'WASTEWATER_CONSTRAINTS_NOT_EVALUATED',
+      category: 'WASTEWATER',
+      title: 'Wastewater constraints are not evaluated',
+      summary:
+        'Constraints affecting wastewater alternate support have not been evaluated.',
+      triggers: [
+        { op: 'eq', questionId: 'WW_Q14_constraints_evaluated', value: 'NO' },
+        { op: 'eq', questionId: 'WW_Q14_constraints_evaluated', value: 'UNKNOWN' },
+      ],
+      citations: ['FEMA_CGC', 'EPA_WATER_SECURITY'],
+      ofcs: [
+        { id: 'OFC_WW_CONS_1', title: 'Review operational constraints', text: 'Review site and utility constraints that could limit alternate wastewater support.' },
+        { id: 'OFC_WW_CONS_2', title: 'Document dependencies', text: 'Document dependencies that must remain available during fallback operations.' },
+        { id: 'OFC_WW_CONS_3', title: 'Validate alternate assumptions', text: 'Validate alternate support assumptions against realistic outage scenarios.' },
+      ],
+    },
+  ],
 };
 
 const total = Object.keys(QUESTION_VULN_MAP).length;
