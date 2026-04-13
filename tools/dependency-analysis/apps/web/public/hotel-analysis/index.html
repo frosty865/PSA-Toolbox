@@ -22896,15 +22896,15 @@
                                 
                                 <p><strong>Security Posture:</strong> ${securityPosture}</p>
                                 
-                                <p><strong>Vulnerabilities Analysis:</strong> The assessment identified ${significantCount + highCount} vulnerabilities that may require review to prevent potential security breaches and protect guest safety.${realVulnerabilities.length > 0 ? ' These include: ' + realVulnerabilities.map(vuln => vuln.title).filter(Boolean).join(', ') + '.' : ''}</p>
+                                <p><strong>Vulnerabilities Analysis:</strong> The assessment identified ${significantCount + highCount} vulnerabilities requiring review.${realVulnerabilities.length > 0 ? ' These include: ' + realVulnerabilities.map(vuln => vuln.title).filter(Boolean).join(', ') + '.' : ''}</p>
                                 
-                                <p><strong>Enhancement Opportunities Analysis:</strong> ${enhancementOpportunities.length} enhancement opportunities were identified that represent areas for security optimization.${enhancementOpportunities.length > 0 ? ' These include: ' + enhancementOpportunities.map(option => option.title).filter(Boolean).join(', ') + '.' : ''} These opportunities should be reviewed to further strengthen the facility's security posture.</p>
+                                <p><strong>Enhancement Opportunities Analysis:</strong> ${enhancementOpportunities.length} enhancement opportunities were identified for review.${enhancementOpportunities.length > 0 ? ' These include: ' + enhancementOpportunities.map(option => option.title).filter(Boolean).join(', ') + '.' : ''} These opportunities should be reviewed to further strengthen the facility's security posture.</p>
                                 
                                 <p><strong>Unauthorized Access Paths Analysis:</strong> The assessment identified ${unauthorizedAccessPaths.length} potential unauthorized access paths that could be exploited by threat actors.${unauthorizedAccessPaths.length > 0 ? ' These include: ' + unauthorizedAccessPaths.filter(Boolean).join(', ') + '.' : ''} These access paths should be secured to prevent unauthorized entry.</p>
                             </div>
                             
                             <div class="analysis-section">
-                                <h4>Options for consideration (${enhancementOpportunities.length})</h4>
+                        <h4>Options for Review (${enhancementOpportunities.length})</h4>
                                 <ul>
                                     ${enhancementOpportunities.length > 0 ? enhancementOpportunities.filter(Boolean).map(option => `<li>${option}</li>`).join('') : '<li>No enhancement opportunities identified.</li>'}
                                 </ul>
@@ -22923,7 +22923,7 @@
                                     </div>
                                     <div style="color: #5b616b; font-size: 0.9rem; font-style: italic;">
                                         <i class="fas fa-lightbulb" style="color: #0071bc; margin-right: 0.25rem;"></i>
-                                        <strong>Options for Consideration:</strong> ${vuln.businessImpact}
+                                        <strong>Options for Review:</strong> ${vuln.businessImpact}
                                     </div>
                                 </div>
                             `).join('')}
@@ -23083,56 +23083,56 @@
         
         function generateconsiderationGuidance(data, analysis) {
             return `
-                <div class="consideration-guidance">
-                    <div class="consideration-overview">
-                        <h3>consideration Framework</h3>
-                        <p>This section provides guidance for considering security considerations based on considered standards and best practices. All recommendations are advisory in nature and identified as evaluated according to your organization's procurement policies and security requirements.</p>
+                <div class="recommendation-guidance">
+                    <div class="recommendation-overview">
+                        <h3>Recommendation Framework</h3>
+                        <p>This section provides guidance for reviewing security recommendations based on established standards and best practices. All recommendations are advisory in nature and aligned to your organization's procurement policies and security requirements.</p>
                     </div>
                     
-                    <div class="consideration-phases">
-                        <h3>consideration Phases</h3>
+                    <div class="recommendation-phases">
+                        <h3>Recommendation Phases</h3>
                         <div class="phase-grid">
                             <div class="phase-card immediate">
                                 <h4>Immediate Actions (0-30 days)</h4>
                                 <ul>
                                     <li>address significant vulnerabilities</li>
-                                    <li>consider emergency security measures</li>
+                                    <li>review emergency security measures</li>
                                     <li>Review and update security procedures</li>
                                 </ul>
                             </div>
                             <div class="phase-card short-term">
-                                <h4>Short-term considerations (1-6 months)</h4>
+                                <h4>Short-term recommendations (1-6 months)</h4>
                                 <ul>
-                                    <li>consider physical security systems</li>
-                                    <li>consider electronic security infrastructure</li>
+                                    <li>review physical security systems</li>
+                                    <li>review electronic security infrastructure</li>
                                     <li>Strengthen security personnel training</li>
                                 </ul>
                             </div>
                             <div class="phase-card long-term">
-                                <h4>Long-term considerations (6-24 months)</h4>
+                                <h4>Long-term recommendations (6-24 months)</h4>
                                 <ul>
-                                    <li>consider comprehensive security considers</li>
-                                    <li>consider advanced security capabilities</li>
-                                    <li>consider continuous consideration processes</li>
+                                    <li>review comprehensive security improvements</li>
+                                    <li>review advanced security capabilities</li>
+                                    <li>maintain continuous improvement processes</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="consideration-considerations">
-                        <h3>consideration Considerations</h3>
-                        <div class="considerations-grid">
-                            <div class="consideration-card">
+                    <div class="recommendation-considerations">
+                        <h3>Recommendation Notes</h3>
+                        <div class="recommendations-grid">
+                            <div class="recommendation-card">
                                 <h4>Procurement Requirements</h4>
-                                <p>All security system considerations must comply with federal acquisition regulations and your organization's procurement policies.</p>
+                                <p>All security system recommendations must comply with federal acquisition regulations and your organization's procurement policies.</p>
                             </div>
-                            <div class="consideration-card">
+                            <div class="recommendation-card">
                                 <h4>Security Clearances</h4>
-                                <p>Consider security clearance requirements for vendors and contractors involved in security system consideration.</p>
+                                <p>Consider security clearance requirements for vendors and contractors involved in security system reviews.</p>
                             </div>
-                            <div class="consideration-card">
+                            <div class="recommendation-card">
                                 <h4>Standards Compliance</h4>
-                                <p>Ensure all considerations align with considered security standards and federal guidelines.</p>
+                                <p>Ensure all recommendations align with applicable security standards and federal guidelines.</p>
                             </div>
                         </div>
                     </div>
@@ -26368,4 +26368,3 @@
 </script>
 </body>
 </html>
-
