@@ -11,6 +11,7 @@ import { hasAnyCurveData, getCurveEmptyReason } from '@/app/lib/report/visual_an
 import { CHART_CATEGORIES, buildCategoryChartData, shouldShowChart } from '@/app/lib/charts/chartService';
 import { mergeCurveIntoCategory } from '@/app/lib/curves/curve_accessors';
 import { CategoryChart } from '@/app/lib/charts/CategoryChart';
+import type { CitationRef } from '@/app/lib/report/citations/registry';
 
 const CATEGORY_TITLES: Record<CategoryCode, string> = {
   ELECTRIC_POWER: 'Electric Power',
@@ -20,6 +21,18 @@ const CATEGORY_TITLES: Record<CategoryCode, string> = {
   WASTEWATER: 'Wastewater',
   CRITICAL_PRODUCTS: 'Critical Products',
 };
+
+function dedupeCitations(citations: CitationRef[]): CitationRef[] {
+  const seen = new Set<string>();
+  const result: CitationRef[] = [];
+  for (const citation of citations) {
+    const key = (citation.key ?? '').trim();
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    result.push(citation);
+  }
+  return result;
+}
 
 /**
  * Executive Summary Preview: Shows purpose/scope + Risk Posture Snapshot + Key Risk Drivers
@@ -49,6 +62,10 @@ export function ExecutiveSummaryPreview({
       return { code, title, data };
     });
   }, [assessment, categories]);
+  const sourceCitations = useMemo(() => {
+    const refs = reportVM?.executive?.citations ?? [];
+    return dedupeCitations(refs);
+  }, [reportVM]);
 
   return (
     <div>
@@ -69,6 +86,36 @@ export function ExecutiveSummaryPreview({
           operational thresholds.
         </p>
       </div>
+
+      {sourceCitations.length > 0 && (
+        <div style={{ marginBottom: 'var(--spacing-lg)' }}>
+          <h4 style={{ fontSize: 'var(--font-size-md)', fontWeight: 600, marginBottom: 'var(--spacing-md)' }}>
+            Source References
+          </h4>
+          <div
+            style={{
+              border: '1px solid var(--cisa-gray-light)',
+              borderRadius: 'var(--border-radius)',
+              padding: 'var(--spacing-md)',
+              backgroundColor: 'white',
+            }}
+          >
+            <p style={{ fontSize: 'var(--font-size-sm)', marginTop: 0, lineHeight: 1.6 }}>
+              These references are attached to the executive snapshot and carry through to the final report export.
+            </p>
+            <ul style={{ margin: 0, paddingLeft: '1.25rem' }}>
+              {sourceCitations.map((citation) => (
+                <li key={citation.key} style={{ marginBottom: '0.5rem' }}>
+                  <strong style={{ fontSize: 'var(--font-size-sm)' }}>{citation.short}</strong>
+                  <div style={{ fontSize: 'var(--font-size-xs)', color: 'var(--color-secondary)', lineHeight: 1.5 }}>
+                    {citation.full}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
 
       {/* Key Risk Drivers: real data only; no fake placeholders */}
       <div style={{ marginBottom: 'var(--spacing-lg)' }}>

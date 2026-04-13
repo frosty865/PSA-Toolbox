@@ -7,6 +7,7 @@ import type { Assessment } from 'schema';
 import type { ReportVM } from './view_model';
 import type { CurveSummary } from './view_model';
 import type { EvaluatedVulnerability } from './view_model';
+import type { CitationRef } from './citations/registry';
 import { compileCitations, CITATION_REGISTRY_VERSION } from './citations/registry';
 import type { ItExternalService } from './it_services_builder';
 import { buildSectorFieldBullets } from './cross_infrastructure_synthesis';
@@ -15,6 +16,7 @@ export type ReporterExecutiveSnapshot = {
   posture: string;
   summary: string;
   executive_summary_brief?: string;
+  citations?: CitationRef[];
   drivers: string[];
   matrixRows: Array<{
     sector: string;
@@ -70,6 +72,17 @@ export function vmToExecutiveSnapshot(vm: ReportVM): ReporterExecutiveSnapshot {
   const executive_summary_brief =
     synthesisText.slice(0, 400) + (synthesisText.length > 400 ? '…' : '');
 
+  const executiveCitationKeys = Array.from(
+    new Set(
+      (vm.infrastructures ?? [])
+        .flatMap((infra) => infra.vulnerabilities ?? [])
+        .flatMap((vuln) => vuln.citations ?? [])
+        .map((key) => key.trim())
+        .filter(Boolean)
+    )
+  );
+  const citations = executiveCitationKeys.length > 0 ? compileCitations(executiveCitationKeys) : [];
+
   const matrixRows = curves
     .filter((c) => c.infra)
     .map((curve: CurveSummary) => ({
@@ -86,6 +99,7 @@ export function vmToExecutiveSnapshot(vm: ReportVM): ReporterExecutiveSnapshot {
     posture,
     summary,
     executive_summary_brief: executive_summary_brief || summary,
+    citations,
     drivers: narrative && narrative.length > 0 ? [] : driverTitles,
     matrixRows,
     cascade,

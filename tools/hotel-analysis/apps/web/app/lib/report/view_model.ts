@@ -404,6 +404,7 @@ export type ReportVM = {
     purpose_scope: string; // 1–2 sentences
     curve_summaries: CurveSummary[]; // All 5+ infrastructure summaries
     key_risk_drivers: KeyRiskDriver[]; // up to 3 callouts (unique labels, deduplicated)
+    citations?: CitationRef[];
     cross_dependency_overview: {
       confirmed_edges: EdgeVM[];
       heatmap: HeatmapVM;
