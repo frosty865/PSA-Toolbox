@@ -18,6 +18,7 @@ function isDev(): boolean {
 export function RootLayoutClientLoader({ children }: { children: ReactNode }) {
   const pathname = usePathname() ?? '';
   const isLanding = pathname === '/' || pathname === '';
+  const isHotelAnalysis = pathname.startsWith('/hotel-analysis');
 
   useEffect(() => {
     if (typeof window === 'undefined' || !('serviceWorker' in navigator)) return;
@@ -31,11 +32,11 @@ export function RootLayoutClientLoader({ children }: { children: ReactNode }) {
   return (
     <AssessmentProvider>
       <div className="ida-app">
-        {isLanding ? (
+        {isLanding || isHotelAnalysis ? (
           <div className="container">{children}</div>
         ) : (
           <>
-            <CisaHeader variant="page" />
+            <CisaHeader variant="page" title="Infrastructure Dependency Tool (IDT)" />
             <div className="container">{children}</div>
           </>
         )}
