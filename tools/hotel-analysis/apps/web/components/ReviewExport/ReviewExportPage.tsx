@@ -11,7 +11,6 @@ import { getTemplateCheck } from '@/lib/api';
 import { computeCompletion } from '@/app/lib/assessment/completion';
 import { reviewExportCopy } from '@/lib/uiCopy/reviewExportCopy';
 import { AssessmentStatusStrip } from './AssessmentStatusStrip';
-import { ExecutiveSummaryPreview } from './sections/ExecutiveSummaryPreview';
 import { InfrastructureSectionsPreview } from './sections/InfrastructureSectionsPreview';
 import { CrossDependencyPreview } from './sections/CrossDependencyPreview';
 import { SynthesisPreview } from './sections/SynthesisPreview';
@@ -39,7 +38,6 @@ export function ReviewExportPage() {
   const [error, setError] = useState<string | null>(null);
   const [templateReady, setTemplateReady] = useState<boolean | null>(null);
   const [expandedSections, setExpandedSections] = useState({
-    executiveSummary: true,
     infrastructure_power: false,
     infrastructure_comms: false,
     infrastructure_it: false,
@@ -136,7 +134,7 @@ export function ReviewExportPage() {
       {/* ASSESSMENT STATUS STRIP */}
       <AssessmentStatusStrip completion={completion} reportVM={reportVM} />
 
-      {/* EXECUTIVE SUMMARY PREVIEW */}
+      {/* FINAL REPORT PREVIEW */}
       <section className="card" style={{ marginBottom: 'var(--spacing-lg)' }}>
         <div
           style={{
@@ -145,17 +143,20 @@ export function ReviewExportPage() {
             alignItems: 'center',
             cursor: 'pointer',
             padding: 'var(--spacing-md)',
-            marginBottom: expandedSections.executiveSummary ? 'var(--spacing-md)' : 0,
-            borderBottom: expandedSections.executiveSummary ? '1px solid var(--cisa-gray-light)' : 'none',
+            marginBottom: expandedSections.synthesis ? 'var(--spacing-md)' : 0,
+            borderBottom: expandedSections.synthesis ? '1px solid var(--cisa-gray-light)' : 'none',
           }}
-          onClick={() => toggleSection('executiveSummary')}
+          onClick={() => toggleSection('synthesis')}
         >
-          <h3 style={{ fontSize: 'var(--font-size-lg)', fontWeight: 600, margin: 0 }}>{reviewExportCopy.executiveSummary}</h3>
-          <span style={{ fontSize: '1.5rem' }}>{expandedSections.executiveSummary ? reviewExportCopy.expandIndicator : reviewExportCopy.collapseIndicator}</span>
+          <h3 style={{ fontSize: 'var(--font-size-lg)', fontWeight: 600, margin: 0 }}>Final Report Preview</h3>
+          <span style={{ fontSize: '1.5rem' }}>{expandedSections.synthesis ? reviewExportCopy.expandIndicator : reviewExportCopy.collapseIndicator}</span>
         </div>
-        {expandedSections.executiveSummary && (
+        {expandedSections.synthesis && (
           <div style={{ padding: 'var(--spacing-md)' }}>
-            <ExecutiveSummaryPreview assessment={mergedAssessment} reportVM={reportVM} completion={completion} showHelp={true} />
+            <p className="text-secondary" style={{ marginTop: 0 }}>
+              The executive summary is included in the report payload and will render in the final DOCX output.
+            </p>
+            <SynthesisPreview assessment={assessment} reportVM={reportVM ?? null} showHelp={true} />
           </div>
         )}
       </section>
@@ -196,30 +197,6 @@ export function ReviewExportPage() {
           )}
         </section>
       )}
-
-      {/* SYNTHESIS PREVIEW */}
-      <section className="card" style={{ marginBottom: 'var(--spacing-lg)' }}>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            cursor: 'pointer',
-            padding: 'var(--spacing-md)',
-            marginBottom: expandedSections.synthesis ? 'var(--spacing-md)' : 0,
-            borderBottom: expandedSections.synthesis ? '1px solid var(--cisa-gray-light)' : 'none',
-          }}
-          onClick={() => toggleSection('synthesis')}
-        >
-          <h3 style={{ fontSize: 'var(--font-size-lg)', fontWeight: 600, margin: 0 }}>{reviewExportCopy.synthesisAnalysis}</h3>
-          <span style={{ fontSize: '1.5rem' }}>{expandedSections.synthesis ? reviewExportCopy.expandIndicator : reviewExportCopy.collapseIndicator}</span>
-        </div>
-        {expandedSections.synthesis && (
-          <div style={{ padding: 'var(--spacing-md)' }}>
-            <SynthesisPreview assessment={assessment} reportVM={reportVM ?? null} showHelp={true} />
-          </div>
-        )}
-      </section>
 
       {/* METHODOLOGY & APPENDICES (collapsed by default) */}
       <section className="card" style={{ marginBottom: '200px' }}>
