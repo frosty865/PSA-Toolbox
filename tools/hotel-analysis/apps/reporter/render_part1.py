@@ -190,6 +190,7 @@ def inject_executive_snapshot_at_anchors(doc: Document, snapshot: dict) -> None:
                 title = str(vuln.get("title") or "").strip()
                 narrative = str(vuln.get("narrative") or "").strip()
                 sector = str(vuln.get("sector") or "").strip()
+                ofcs = vuln.get("ofcs") or []
                 if title and sector:
                     label = f"{sector} - {title}"
                 else:
@@ -198,6 +199,27 @@ def inject_executive_snapshot_at_anchors(doc: Document, snapshot: dict) -> None:
                     insert_after = insert_paragraph_after(insert_after, sanitize_text(label), style="List Bullet")
                     if narrative:
                         insert_after = insert_paragraph_after(insert_after, sanitize_text(narrative), style="Normal")
+                    valid_ofcs = []
+                    if isinstance(ofcs, list):
+                        for o in ofcs[:4]:
+                            if isinstance(o, dict):
+                                text = str(o.get("text") or o.get("title") or "").strip()
+                            else:
+                                text = str(o or "").strip()
+                            if text:
+                                valid_ofcs.append(text)
+                    if valid_ofcs:
+                        ofc_heading = insert_paragraph_after(insert_after, "Options for Consideration", style="Heading 4")
+                        set_paragraph_keep_with_next(ofc_heading)
+                        insert_after = ofc_heading
+                        for idx, ofc_text in enumerate(valid_ofcs, 1):
+                            insert_after = insert_paragraph_after(
+                                insert_after,
+                                sanitize_text(f"{idx}. {ofc_text}"),
+                                style="Normal",
+                            )
+        else:
+            insert_after = insert_paragraph_after(insert_after, "No vulnerabilities were triggered based on provided inputs.", style="Normal")
 
     p = find_paragraph_by_exact_text(doc, "[[SNAPSHOT_DRIVERS]]", body_only=True)
     if p and drivers:

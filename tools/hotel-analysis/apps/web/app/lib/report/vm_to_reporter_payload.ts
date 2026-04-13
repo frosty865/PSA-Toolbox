@@ -22,6 +22,7 @@ export type ReporterExecutiveSnapshot = {
     sector: string;
     title: string;
     narrative: string;
+    ofcs?: Array<{ title: string; text: string }>;
     citations?: CitationRef[];
   }>;
   matrixRows: Array<{
@@ -98,6 +99,10 @@ export function vmToExecutiveSnapshot(vm: ReportVM): ReporterExecutiveSnapshot {
           sector: infra.display_name,
           title: vuln.title ?? '',
           narrative: vuln.summary ?? '',
+          ofcs: (vuln.ofcs ?? []).slice(0, 4).map((o) => ({
+            title: o.title ?? '',
+            text: o.text ?? '',
+          })),
           citations: vuln.citations && vuln.citations.length > 0 ? compileCitations(vuln.citations) : [],
         }))
       )
