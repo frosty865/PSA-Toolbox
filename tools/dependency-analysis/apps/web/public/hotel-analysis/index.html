@@ -22896,17 +22896,17 @@
                                 
                                 <p><strong>Security Posture:</strong> ${securityPosture}</p>
                                 
-                                <p><strong>Vulnerabilities Analysis:</strong> The assessment identified ${significantCount + highCount} vulnerabilities that pose immediate threats to facility security. ${realVulnerabilities.length > 0 ? 'These include: ' + realVulnerabilities.map(vuln => vuln.title).join(', ') + '. ' : ''}These vulnerabilities require identified for review to prevent potential security breaches and protect guest safety.</p>
+                                <p><strong>Vulnerabilities Analysis:</strong> The assessment identified ${significantCount + highCount} vulnerabilities that may require review to prevent potential security breaches and protect guest safety.${realVulnerabilities.length > 0 ? ' These include: ' + realVulnerabilities.map(vuln => vuln.title).filter(Boolean).join(', ') + '.' : ''}</p>
                                 
-                                <p><strong>Enhancement Opportunities Analysis:</strong> ${enhancementOpportunities.length} enhancement opportunities were identified that represent areas for security optimization. ${enhancementOpportunities.length > 0 ? 'These include: ' + enhancementOpportunities.map(option => option.title).join(', ') + '. ' : ''}These opportunities should be identified for review to further strengthen the facility's security posture.</p>
+                                <p><strong>Enhancement Opportunities Analysis:</strong> ${enhancementOpportunities.length} enhancement opportunities were identified that represent areas for security optimization.${enhancementOpportunities.length > 0 ? ' These include: ' + enhancementOpportunities.map(option => option.title).filter(Boolean).join(', ') + '.' : ''} These opportunities should be reviewed to further strengthen the facility's security posture.</p>
                                 
-                                <p><strong>Unauthorized Access Paths Analysis:</strong> The assessment identified ${unauthorizedAccessPaths.length} potential unauthorized access paths that could be exploited by threat actors. ${unauthorizedAccessPaths.length > 0 ? 'These include: ' + unauthorizedAccessPaths.join(', ') + '. ' : ''}These access paths represent significant security risks that identified as secured to prevent unauthorized entry.</p>
+                                <p><strong>Unauthorized Access Paths Analysis:</strong> The assessment identified ${unauthorizedAccessPaths.length} potential unauthorized access paths that could be exploited by threat actors.${unauthorizedAccessPaths.length > 0 ? ' These include: ' + unauthorizedAccessPaths.filter(Boolean).join(', ') + '.' : ''} These access paths should be secured to prevent unauthorized entry.</p>
                             </div>
                             
                             <div class="analysis-section">
                                 <h4>Options for consideration (${enhancementOpportunities.length})</h4>
                                 <ul>
-                                    ${enhancementOpportunities.map(option => `<li>${option}</li>`).join('')}
+                                    ${enhancementOpportunities.length > 0 ? enhancementOpportunities.filter(Boolean).map(option => `<li>${option}</li>`).join('') : '<li>No enhancement opportunities identified.</li>'}
                                 </ul>
                             </div>
                         </div>
@@ -26347,6 +26347,5 @@
 </script>
 </body>
 </html>
-
 
 
