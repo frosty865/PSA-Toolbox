@@ -85,9 +85,11 @@ const nextConfig = {
   /**
    * Public files live at /hotel-analysis/index.html, but Next does not automatically map /hotel-analysis/ to that file
    * (directory index). Without this, /hotel-analysis/ returns 404 and the HOST tool never loads.
+   * App routes live at /assessment/… (not under /hotel-analysis/); map legacy/bookmarked URLs into the app.
    */
   async rewrites() {
     return [
+      { source: '/hotel-analysis/assessment/:path*', destination: '/assessment/:path*' },
       { source: '/hotel-analysis', destination: '/hotel-analysis/index.html' },
       { source: '/hotel-analysis/', destination: '/hotel-analysis/index.html' },
       { source: '/safe-3-0', destination: '/safe-3-0/index.html' },

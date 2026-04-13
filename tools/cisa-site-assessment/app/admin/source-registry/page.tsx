@@ -79,7 +79,19 @@ export default function SourceRegistryPage() {
   const [showReportPanel, setShowReportPanel] = useState(false);
   const [reportData, setReportData] = useState<{
     report_date: string;
-    summary: { statistics: Record<string, unknown>; duplicates_count: number; missing_info_count: Record<string, number> };
+    summary: {
+      statistics: Record<string, unknown>;
+      highlights?: {
+        top_publishers?: Array<{ publisher: string; count: number }>;
+        issue_summary?: {
+          total_missing_fields: number;
+          duplicate_groups: number;
+          not_ingested_with_url: number;
+        };
+      };
+      duplicates_count: number;
+      missing_info_count: Record<string, number>;
+    };
     duplicates: Array<{ type: string; sources: Array<{ source_key: string; publisher: string; title: string; canonical_url?: string | null }> }>;
     missing_info: Record<string, Array<{ source_key: string; publisher: string; title: string; [k: string]: unknown }>>;
     all_sources: Array<{ source_key: string; publisher: string; tier: number; title: string; publication_date: string | null; source_type: string; canonical_url: string | null; ingested: boolean; retrieved_at: string | null; created_at: string }>;
@@ -109,6 +121,37 @@ export default function SourceRegistryPage() {
   /** Subsectors for selected sector from /api/reference/subsectors?sectorId= */
   const [referenceSubsectors, setReferenceSubsectors] = useState<Array<{ id: string; name: string }>>([]);
   const [loadingSubsectors, setLoadingSubsectors] = useState(false);
+  const reportStats = reportData?.summary.statistics as {
+    total?: number;
+    by_tier?: Record<number, number>;
+    by_type?: Record<string, number>;
+    ingested?: number;
+    not_ingested?: number;
+    distinct_publishers?: number;
+  } | undefined;
+  const reportHighlights = reportData?.summary.highlights;
+  const missingInfoCount = reportData?.summary.missing_info_count ?? {};
+  const totalSources = reportStats?.total ?? 0;
+  const ingestedCount = reportStats?.ingested ?? 0;
+  const coveragePct = totalSources > 0 ? Math.round((ingestedCount / totalSources) * 100) : 0;
+  const sourceTypeRows = [
+    { label: 'PDF', value: reportStats?.by_type?.pdf ?? 0 },
+    { label: 'Web', value: reportStats?.by_type?.web ?? 0 },
+    { label: 'Doc', value: reportStats?.by_type?.doc ?? 0 },
+  ];
+  const issueRows = [
+    { label: 'No publisher', value: missingInfoCount.no_publisher ?? 0 },
+    { label: 'No title', value: missingInfoCount.no_title ?? 0 },
+    { label: 'No publication date', value: missingInfoCount.no_publication_date ?? 0 },
+    { label: 'No URL', value: missingInfoCount.no_url ?? 0 },
+    { label: 'Has URL, not ingested', value: missingInfoCount.not_ingested_with_url ?? 0 },
+  ];
+  const maxPublisherCount = Math.max(1, ...(reportHighlights?.top_publishers?.map((p) => p.count) ?? [1]));
+  const tierRows = [
+    { label: 'Tier 1', value: reportStats?.by_tier?.[1] ?? 0 },
+    { label: 'Tier 2', value: reportStats?.by_tier?.[2] ?? 0 },
+    { label: 'Tier 3', value: reportStats?.by_tier?.[3] ?? 0 },
+  ];
 
   useEffect(() => {
     loadSources();
@@ -1549,13 +1592,16 @@ export default function SourceRegistryPage() {
 
       {/* Sources Report Panel */}
       {showReportPanel && (
-        <div style={{ border: '1px solid #005ea2', borderRadius: '0.25rem', padding: '1.5rem', marginBottom: '1.5rem', backgroundColor: '#f0f9ff' }}>
+        <div style={{ border: '1px solid #b6d4fe', borderRadius: '0.75rem', padding: '1.5rem', marginBottom: '1.5rem', background: 'linear-gradient(180deg, #f8fbff 0%, #ffffff 100%)', boxShadow: '0 10px 30px rgba(15, 23, 42, 0.06)' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-            <h2 style={{ margin: 0, fontSize: '1.25rem' }}>Sources Report</h2>
+            <div>
+              <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em' }}>Report output</div>
+              <h2 style={{ margin: '0.15rem 0 0', fontSize: '1.55rem', lineHeight: 1.15, fontWeight: 800, letterSpacing: '-0.02em' }}>Sources Report</h2>
+            </div>
             <button
               type="button"
               onClick={() => { setShowReportPanel(false); setReportData(null); setReportError(null); }}
-              style={{ padding: '0.25rem 0.75rem', border: '1px solid #005ea2', backgroundColor: 'transparent', color: '#005ea2', borderRadius: '0.25rem', cursor: 'pointer', fontSize: '0.875rem' }}
+              style={{ padding: '0.35rem 0.9rem', border: '1px solid #93c5fd', backgroundColor: '#fff', color: '#1d4ed8', borderRadius: '999px', cursor: 'pointer', fontSize: '0.875rem', fontWeight: 600 }}
             >
               Close
             </button>
@@ -1567,43 +1613,128 @@ export default function SourceRegistryPage() {
             </div>
           )}
           {reportData && !reportLoading && (
-            <div style={{ fontSize: '0.875rem' }}>
-              <section style={{ marginBottom: '1.25rem' }}>
-                <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1rem' }}>Summary</h3>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '0.75rem' }}>
-                  <div style={{ padding: '0.5rem', backgroundColor: '#fff', border: '1px solid #dfe1e2', borderRadius: '0.25rem' }}>
-                    <strong>Total sources</strong><br />{String((reportData.summary.statistics as { total?: number }).total)}
+            <div style={{ fontSize: '0.875rem', display: 'grid', gap: '1rem' }}>
+              <section style={{ padding: '1rem', backgroundColor: '#fff', border: '1px solid #dbe3ee', borderRadius: '0.75rem', boxShadow: '0 8px 24px rgba(15, 23, 42, 0.04)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '0.75rem' }}>
+                  <div>
+                    <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 700, letterSpacing: '-0.01em' }}>Assessment summary</h3>
+                    <p style={{ margin: '0.35rem 0 0', color: '#475569', lineHeight: 1.5 }}>
+                      Ingestion coverage is {coveragePct}% across {totalSources} sources. {reportData.summary.duplicates_count} duplicate groups were identified for review.
+                    </p>
                   </div>
-                  <div style={{ padding: '0.5rem', backgroundColor: '#fff', border: '1px solid #dfe1e2', borderRadius: '0.25rem' }}>
-                    <strong>Tier 1</strong><br />{String((reportData.summary.statistics as { by_tier?: Record<number, number> }).by_tier?.[1] ?? 0)}
+                  <div style={{ padding: '0.55rem 0.85rem', borderRadius: '999px', backgroundColor: '#eff6ff', color: '#1d4ed8', fontWeight: 700, boxShadow: 'inset 0 0 0 1px #bfdbfe' }}>
+                    {reportStats?.distinct_publishers ?? 0} publishers represented
                   </div>
-                  <div style={{ padding: '0.5rem', backgroundColor: '#fff', border: '1px solid #dfe1e2', borderRadius: '0.25rem' }}>
-                    <strong>Tier 2</strong><br />{String((reportData.summary.statistics as { by_tier?: Record<number, number> }).by_tier?.[2] ?? 0)}
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '0.75rem' }}>
+                  <div style={{ padding: '0.85rem', backgroundColor: '#f8fafc', border: '1px solid #e5e7eb', borderRadius: '0.65rem' }}>
+                    <div style={{ color: '#6b7280', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Total sources</div>
+                    <div style={{ fontSize: '1.75rem', fontWeight: 800, lineHeight: 1.1 }}>{totalSources}</div>
                   </div>
-                  <div style={{ padding: '0.5rem', backgroundColor: '#fff', border: '1px solid #dfe1e2', borderRadius: '0.25rem' }}>
-                    <strong>Tier 3</strong><br />{String((reportData.summary.statistics as { by_tier?: Record<number, number> }).by_tier?.[3] ?? 0)}
+                  <div style={{ padding: '0.85rem', backgroundColor: '#f8fafc', border: '1px solid #e5e7eb', borderRadius: '0.65rem' }}>
+                    <div style={{ color: '#6b7280', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Ingested</div>
+                    <div style={{ fontSize: '1.75rem', fontWeight: 800, lineHeight: 1.1 }}>{ingestedCount}</div>
                   </div>
-                  <div style={{ padding: '0.5rem', backgroundColor: '#fff', border: '1px solid #dfe1e2', borderRadius: '0.25rem' }}>
-                    <strong>Ingested</strong><br />{String((reportData.summary.statistics as { ingested?: number }).ingested ?? 0)}
+                  <div style={{ padding: '0.85rem', backgroundColor: '#f8fafc', border: '1px solid #e5e7eb', borderRadius: '0.65rem' }}>
+                    <div style={{ color: '#6b7280', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Needs attention</div>
+                    <div style={{ fontSize: '1.75rem', fontWeight: 800, lineHeight: 1.1 }}>{reportData.summary.highlights?.issue_summary?.total_missing_fields ?? 0}</div>
                   </div>
-                  <div style={{ padding: '0.5rem', backgroundColor: '#fff', border: '1px solid #dfe1e2', borderRadius: '0.25rem' }}>
-                    <strong>Not ingested (has URL)</strong><br />{String((reportData.summary.statistics as { not_ingested?: number }).not_ingested ?? 0)}
-                  </div>
-                  <div style={{ padding: '0.5rem', backgroundColor: '#fff', border: '1px solid #dfe1e2', borderRadius: '0.25rem' }}>
-                    <strong>Duplicates</strong><br />{reportData.summary.duplicates_count}
+                  <div style={{ padding: '0.85rem', backgroundColor: '#f8fafc', border: '1px solid #e5e7eb', borderRadius: '0.65rem' }}>
+                    <div style={{ color: '#6b7280', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Duplicates</div>
+                    <div style={{ fontSize: '1.75rem', fontWeight: 800, lineHeight: 1.1 }}>{reportData.summary.duplicates_count}</div>
                   </div>
                 </div>
               </section>
+
+              <section style={{ padding: '1rem', backgroundColor: '#fff', border: '1px solid #dbe3ee', borderRadius: '0.75rem', boxShadow: '0 8px 24px rgba(15, 23, 42, 0.04)' }}>
+                <h3 style={{ margin: '0 0 0.75rem 0', fontSize: '1.05rem', fontWeight: 700, letterSpacing: '-0.01em' }}>Source composition</h3>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '0.75rem' }}>
+                  {sourceTypeRows.map((row) => (
+                    <div key={row.label} style={{ padding: '0.85rem', backgroundColor: '#f8fafc', border: '1px solid #e5e7eb', borderRadius: '0.65rem' }}>
+                      <div style={{ color: '#6b7280', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{row.label}</div>
+                      <div style={{ fontSize: '1.75rem', fontWeight: 800, lineHeight: 1.1 }}>{row.value}</div>
+                    </div>
+                  ))}
+                  <div style={{ padding: '0.85rem', backgroundColor: '#f8fafc', border: '1px solid #e5e7eb', borderRadius: '0.65rem' }}>
+                    <div style={{ color: '#6b7280', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Authority tiers</div>
+                    <div style={{ fontSize: '1.1rem', fontWeight: 800, lineHeight: 1.2 }}>
+                      {(reportStats?.by_tier?.[1] ?? 0)} / {(reportStats?.by_tier?.[2] ?? 0)} / {(reportStats?.by_tier?.[3] ?? 0)}
+                    </div>
+                  </div>
+                </div>
+                <div style={{ marginTop: '1rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.65rem' }}>
+                    {tierRows.map((tier) => (
+                      <div key={tier.label} style={{ padding: '0.75rem', backgroundColor: '#f8fafc', border: '1px solid #e5e7eb', borderRadius: '0.65rem' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', marginBottom: '0.4rem' }}>
+                          <span style={{ fontWeight: 600 }}>{tier.label}</span>
+                          <span style={{ fontWeight: 700 }}>{tier.value}</span>
+                        </div>
+                        <div style={{ height: 8, backgroundColor: '#e2e8f0', borderRadius: 999, overflow: 'hidden' }}>
+                          <div style={{ width: `${Math.max(4, Math.round((tier.value / Math.max(1, totalSources)) * 100))}%`, height: '100%', backgroundColor: tier.label === 'Tier 1' ? '#2563eb' : tier.label === 'Tier 2' ? '#0f766e' : '#7c3aed' }} />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                {reportHighlights?.top_publishers && reportHighlights.top_publishers.length > 0 && (
+                  <div style={{ marginTop: '0.9rem' }}>
+                    <div style={{ fontWeight: 700, marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>Leading publishers</div>
+                    <div style={{ display: 'grid', gap: '0.35rem' }}>
+                      {reportHighlights.top_publishers.map((pub) => (
+                        <div key={pub.publisher} style={{ display: 'grid', gridTemplateColumns: 'minmax(120px, 220px) 1fr auto', alignItems: 'center', gap: '0.75rem', padding: '0.45rem 0.5rem', backgroundColor: '#f8fafc', borderRadius: '0.45rem' }}>
+                          <span style={{ color: '#0f172a', fontWeight: 500, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{pub.publisher || 'Unassigned'}</span>
+                          <div style={{ height: 8, backgroundColor: '#e2e8f0', borderRadius: 999, overflow: 'hidden' }}>
+                            <div style={{ width: `${Math.max(4, Math.round((pub.count / maxPublisherCount) * 100))}%`, height: '100%', backgroundColor: '#2563eb' }} />
+                          </div>
+                          <span style={{ color: '#1f2937', fontWeight: 700 }}>{pub.count}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </section>
+
+              <section style={{ padding: '1rem', backgroundColor: '#fff', border: '1px solid #dbe3ee', borderRadius: '0.75rem', boxShadow: '0 8px 24px rgba(15, 23, 42, 0.04)' }}>
+                <h3 style={{ margin: '0 0 0.75rem 0', fontSize: '1.05rem', fontWeight: 700, letterSpacing: '-0.01em' }}>Issues requiring attention</h3>
+                <div style={{ display: 'grid', gap: '0.5rem' }}>
+                  {issueRows.map((row) => (
+                    <div key={row.label} style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', padding: '0.7rem 0.8rem', backgroundColor: row.value > 0 ? '#fff7ed' : '#f8fafc', border: '1px solid #e5e7eb', borderRadius: '0.55rem' }}>
+                      <span style={{ fontWeight: 500 }}>{row.label}</span>
+                      <strong style={{ fontSize: '0.95rem' }}>{row.value}</strong>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ marginTop: '0.9rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.65rem' }}>
+                  {issueRows.map((row) => (
+                    <div key={`bar-${row.label}`} style={{ padding: '0.65rem 0.75rem', backgroundColor: '#f8fafc', border: '1px solid #e5e7eb', borderRadius: '0.55rem' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', marginBottom: '0.35rem' }}>
+                        <span style={{ fontWeight: 600, fontSize: '0.8125rem' }}>{row.label}</span>
+                        <span style={{ fontWeight: 700, fontSize: '0.8125rem' }}>{row.value}</span>
+                      </div>
+                      <div style={{ height: 8, backgroundColor: '#e2e8f0', borderRadius: 999, overflow: 'hidden' }}>
+                        <div style={{ width: `${Math.max(2, Math.round((row.value / Math.max(1, totalSources)) * 100))}%`, height: '100%', backgroundColor: row.value > 0 ? '#ea580c' : '#94a3b8' }} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
               {reportData.summary.duplicates_count > 0 && (
-                <section style={{ marginBottom: '1.25rem' }}>
-                  <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1rem' }}>Duplicate groups</h3>
-                  <div style={{ overflowX: 'auto' }}>
+                <section style={{ padding: '1rem', backgroundColor: '#fff', border: '1px solid #dbe3ee', borderRadius: '0.75rem', boxShadow: '0 8px 24px rgba(15, 23, 42, 0.04)' }}>
+                  <h3 style={{ margin: '0 0 0.75rem 0', fontSize: '1.05rem', fontWeight: 700, letterSpacing: '-0.01em' }}>Duplicate groups</h3>
+                  <div style={{ display: 'grid', gap: '0.75rem' }}>
                     {reportData.duplicates.map((group, i) => (
-                      <div key={i} style={{ marginBottom: '0.75rem', padding: '0.75rem', backgroundColor: '#fff', border: '1px solid #dfe1e2', borderRadius: '0.25rem' }}>
-                        <strong>{group.type === 'url' ? 'Same URL' : 'Same publisher + title'}</strong>
-                        <ul style={{ margin: '0.25rem 0 0 1.25rem', padding: 0 }}>
+                      <div key={i} style={{ padding: '0.8rem', backgroundColor: '#f8fafc', border: '1px solid #e5e7eb', borderRadius: '0.65rem' }}>
+                        <div style={{ fontWeight: 700, marginBottom: '0.5rem' }}>{group.type === 'url' ? 'Same URL' : 'Same publisher + title'}</div>
+                        <ul style={{ margin: 0, paddingLeft: '1.25rem', lineHeight: 1.55 }}>
                           {group.sources.map((s, j) => (
-                            <li key={j}>{s.source_key} — {s.publisher} — {s.title}{group.type === 'url' && s.canonical_url ? ` (${s.canonical_url})` : ''}</li>
+                            <li key={j}>
+                              <span style={{ fontFamily: 'monospace' }}>{s.source_key}</span>
+                              {s.publisher ? ` · ${s.publisher}` : ''}
+                              {s.title ? ` · ${s.title}` : ''}
+                              {group.type === 'url' && s.canonical_url ? ` · ${s.canonical_url}` : ''}
+                            </li>
                           ))}
                         </ul>
                       </div>
@@ -1611,61 +1742,44 @@ export default function SourceRegistryPage() {
                   </div>
                 </section>
               )}
-              <section style={{ marginBottom: '1.25rem' }}>
-                <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1rem' }}>Missing information</h3>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '0.75rem' }}>
-                  {reportData.summary.missing_info_count.no_publisher > 0 && (
-                    <div style={{ padding: '0.5rem', backgroundColor: '#fef3c7', border: '1px solid #fcd34d', borderRadius: '0.25rem' }}>
-                      <strong>No publisher</strong> ({reportData.summary.missing_info_count.no_publisher})
-                      <ul style={{ margin: '0.25rem 0 0 1rem', padding: 0, fontSize: '0.8125rem' }}>
-                        {reportData.missing_info.no_publisher.slice(0, 5).map((s, j) => <li key={j}>{s.source_key}</li>)}
-                        {reportData.missing_info.no_publisher.length > 5 && <li>… and {reportData.missing_info.no_publisher.length - 5} more</li>}
-                      </ul>
-                    </div>
-                  )}
-                  {reportData.summary.missing_info_count.no_title > 0 && (
-                    <div style={{ padding: '0.5rem', backgroundColor: '#fef3c7', border: '1px solid #fcd34d', borderRadius: '0.25rem' }}>
-                      <strong>No title</strong> ({reportData.summary.missing_info_count.no_title})
-                      <ul style={{ margin: '0.25rem 0 0 1rem', padding: 0, fontSize: '0.8125rem' }}>
-                        {reportData.missing_info.no_title.slice(0, 5).map((s, j) => <li key={j}>{s.source_key}</li>)}
-                        {reportData.missing_info.no_title.length > 5 && <li>… and {reportData.missing_info.no_title.length - 5} more</li>}
-                      </ul>
-                    </div>
-                  )}
-                  {reportData.summary.missing_info_count.no_publication_date > 0 && (
-                    <div style={{ padding: '0.5rem', backgroundColor: '#fef3c7', border: '1px solid #fcd34d', borderRadius: '0.25rem' }}>
-                      <strong>No publication date</strong> ({reportData.summary.missing_info_count.no_publication_date})
-                      <ul style={{ margin: '0.25rem 0 0 1rem', padding: 0, fontSize: '0.8125rem' }}>
-                        {reportData.missing_info.no_publication_date.slice(0, 5).map((s, j) => <li key={j}>{s.source_key}</li>)}
-                        {reportData.missing_info.no_publication_date.length > 5 && <li>… and {reportData.missing_info.no_publication_date.length - 5} more</li>}
-                      </ul>
-                    </div>
-                  )}
-                  {reportData.summary.missing_info_count.no_url > 0 && (
-                    <div style={{ padding: '0.5rem', backgroundColor: '#fef3c7', border: '1px solid #fcd34d', borderRadius: '0.25rem' }}>
-                      <strong>Web source, no URL</strong> ({reportData.summary.missing_info_count.no_url})
-                      <ul style={{ margin: '0.25rem 0 0 1rem', padding: 0, fontSize: '0.8125rem' }}>
-                        {reportData.missing_info.no_url.slice(0, 5).map((s, j) => <li key={j}>{s.source_key}</li>)}
-                        {reportData.missing_info.no_url.length > 5 && <li>… and {reportData.missing_info.no_url.length - 5} more</li>}
-                      </ul>
-                    </div>
-                  )}
-                  {reportData.summary.missing_info_count.not_ingested_with_url > 0 && (
-                    <div style={{ padding: '0.5rem', backgroundColor: '#fef3c7', border: '1px solid #fcd34d', borderRadius: '0.25rem' }}>
-                      <strong>Has URL but not ingested</strong> ({reportData.summary.missing_info_count.not_ingested_with_url})
-                      <ul style={{ margin: '0.25rem 0 0 1rem', padding: 0, fontSize: '0.8125rem' }}>
-                        {reportData.missing_info.not_ingested_with_url.slice(0, 5).map((s, j) => <li key={j}>{s.source_key}</li>)}
-                        {reportData.missing_info.not_ingested_with_url.length > 5 && <li>… and {reportData.missing_info.not_ingested_with_url.length - 5} more</li>}
-                      </ul>
-                    </div>
-                  )}
-                  {Object.values(reportData.summary.missing_info_count).every(n => n === 0) && (
-                    <p style={{ margin: 0, color: '#065f46' }}>No missing critical information.</p>
-                  )}
+
+              <section style={{ padding: '1rem', backgroundColor: '#fff', border: '1px solid #dbe3ee', borderRadius: '0.75rem', boxShadow: '0 8px 24px rgba(15, 23, 42, 0.04)' }}>
+                <h3 style={{ margin: '0 0 0.75rem 0', fontSize: '1.05rem', fontWeight: 700, letterSpacing: '-0.01em' }}>Representative sample</h3>
+                <div style={{ overflowX: 'auto' }}>
+                  <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '760px', fontSize: '0.875rem' }}>
+                    <thead>
+                      <tr style={{ textAlign: 'left', color: '#334155', borderBottom: '1px solid #cbd5e1' }}>
+                        <th style={{ padding: '0.65rem 0.4rem', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Source key</th>
+                        <th style={{ padding: '0.65rem 0.4rem', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Publisher</th>
+                        <th style={{ padding: '0.65rem 0.4rem', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Title</th>
+                        <th style={{ padding: '0.65rem 0.4rem', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Tier</th>
+                        <th style={{ padding: '0.65rem 0.4rem', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Type</th>
+                        <th style={{ padding: '0.65rem 0.4rem', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {reportData.all_sources.slice(0, 12).map((source) => (
+                        <tr key={source.source_key} style={{ borderBottom: '1px solid #eef2f7' }}>
+                          <td style={{ padding: '0.7rem 0.4rem', fontFamily: 'monospace', color: '#0f172a' }}>{source.source_key}</td>
+                          <td style={{ padding: '0.7rem 0.4rem', color: '#0f172a' }}>{source.publisher || 'Unassigned'}</td>
+                          <td style={{ padding: '0.7rem 0.4rem', color: '#0f172a' }}>{source.title || 'Untitled'}</td>
+                          <td style={{ padding: '0.7rem 0.4rem', color: '#0f172a', fontWeight: 600 }}>{source.tier}</td>
+                          <td style={{ padding: '0.7rem 0.4rem', color: '#0f172a' }}>{source.source_type}</td>
+                          <td style={{ padding: '0.7rem 0.4rem', color: source.ingested ? '#166534' : '#9a3412', fontWeight: 600 }}>{source.ingested ? 'Ingested' : 'Pending'}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
+                {reportData.all_sources.length > 12 && (
+                  <p style={{ margin: '0.75rem 0 0', color: '#64748b', fontSize: '0.8125rem', fontStyle: 'italic' }}>
+                    Showing a representative sample of 12 of {reportData.all_sources.length} sources.
+                  </p>
+                )}
               </section>
-              <p style={{ margin: 0, color: '#71717a', fontSize: '0.8125rem' }}>
-                Report generated {reportData.report_date ? new Date(reportData.report_date).toLocaleString() : ''}. {reportData.all_sources.length} sources total.
+
+              <p style={{ margin: 0, color: '#64748b', fontSize: '0.8125rem' }}>
+                Prepared {reportData.report_date ? new Date(reportData.report_date).toLocaleString() : ''}.
               </p>
             </div>
           )}

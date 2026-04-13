@@ -1,0 +1,165 @@
+{
+  "generic_report": {
+    "template_key": "safe",
+    "title": "ALT SAFE",
+    "subtitle": "Security Assessment Report",
+    "facility": "South Florida Manufacturing Corp",
+    "sector": "Commercial Facilities",
+    "physicalAddress": "12345 NW 12th Street",
+    "subsector": "Manufacturing Plant",
+    "latitude": "25.783331",
+    "longitude": "-80.265639",
+    "assessor": "Not specified",
+    "date": "2025-01-27",
+    "publisher": "Cybersecurity and Infrastructure Security Agency",
+    "version": "Version: Alpha V3",
+    "note": "",
+    "header_left": "South Florida Manufacturing Corp",
+    "header_right": "2025-01-27",
+    "footer_left": "Cybersecurity and Infrastructure Security Agency",
+    "footer_right": "Department of Homeland Security",
+    "psa_name": "John Smith",
+    "psa_region": "",
+    "psa_city": "Miami",
+    "psa_cell": "(202) 555-0101",
+    "psa_email": "john.smith@cisa.dhs.gov",
+    "safe_metrics": {
+      "met_standards": 0,
+      "standards_lost": 0,
+      "enhancement_options": 0,
+      "commendable_practices": 3,
+      "total_vulnerabilities": 3,
+      "information_sharing_vulnerabilities": 1,
+      "security_plans_vulnerabilities": 1,
+      "security_systems_vulnerabilities": 1,
+      "physical_security_vulnerabilities": 1,
+      "information_sharing_ofc": 1,
+      "security_plans_ofc": 1,
+      "security_systems_ofc": 1,
+      "physical_security_ofc": 1
+    },
+    "sections": [
+      {
+        "heading": "Executive Summary",
+        "paragraphs": [
+          "Facility: South Florida Manufacturing Corp",
+          "Assessment date: 2025-01-27",
+          "Sector: Commercial Facilities",
+          "Security posture: Not specified",
+          "Security percentage: Not specified",
+          "Standards met: Not specified",
+          "Total standards: Not specified"
+        ]
+      },
+      {
+        "heading": "Facility Information",
+        "paragraphs": [
+          "Facility: South Florida Manufacturing Corp",
+          "Address: 12345 NW 12th Street",
+          "City: Miami",
+          "State: FL",
+          "Zip: 33126",
+          "Facility type: Manufacturing Plant",
+          "Employee count: 150"
+        ]
+      },
+      {
+        "heading": "Information Sharing & Communication",
+        "paragraphs": [
+          "Awareness: yes",
+          "Law Enforcement: yes",
+          "Fire Agency: yes",
+          "Medical Agency: no",
+          "FBI Info: yes",
+          "ISAC Info: no",
+          "HSIN Info: no",
+          "InfraGard: yes",
+          "Federal Info: yes",
+          "State/Local Info: yes",
+          "Neighbor Info: no"
+        ]
+      },
+      {
+        "heading": "Security Plans & Management",
+        "paragraphs": [
+          "Security Manager: yes",
+          "Security Plan: yes",
+          "Plan Training: no",
+          "Plan Coordination: yes",
+          "Employee Training: no",
+          "Plan Testing: no",
+          "Risk Assessment: yes"
+        ]
+      },
+      {
+        "heading": "Physical Security",
+        "paragraphs": [
+          "Security Personnel: yes",
+          "Perimeter Fencing: no",
+          "Access Control: yes",
+          "Security Lighting: no",
+          "Standoff Distance: no",
+          "Building Envelope: yes",
+          "Key Control: no"
+        ]
+      },
+      {
+        "heading": "Security Systems",
+        "paragraphs": [
+          "Video System Type: digital",
+          "Video Coverage: no",
+          "Video Monitoring: yes",
+          "Video Recording: yes",
+          "Intrusion Detection: no",
+          "Alarm Monitoring: yes",
+          "System Integration: no"
+        ]
+      },
+      {
+        "heading": "Commendable Practices",
+        "bullets": [
+          "Conducted quarterly emergency response drills - Improved coordination during emergency situations",
+          "Active participation in InfraGard program - Enhanced threat intelligence capabilities",
+          "Implemented 24/7 security personnel - Significantly improved facility security posture"
+        ]
+      },
+      {
+        "heading": "Custom Vulnerabilities & Options for Consideration",
+        "paragraphs": [
+          "Finding 1\nInsufficient perimeter lighting creates security blind spots\nCategory: Physical Security\nOptions for Consideration: Install additional LED security lighting with motion sensors",
+          "Finding 2\nOutdated network equipment increases cyber attack risk\nCategory: Facility Information\nOptions for Consideration: Implement network segmentation and upgrade infrastructure",
+          "Finding 3\nIncomplete background check procedures for contractors\nCategory: Security Plans\nOptions for Consideration: Establish comprehensive background check requirements"
+        ]
+      },
+      {
+        "heading": "Points of Contact",
+        "paragraphs": [
+          "PSA Name: John Smith",
+          "PSA Title: PSA",
+          "PSA Email: john.smith@cisa.dhs.gov",
+          "PSA Phone: (202) 555-0101",
+          "Facility Contact: Michael Rodriguez",
+          "Facility Contact Email: michael.rodriguez@southfloridamfg.com"
+        ]
+      },
+      {
+        "heading": "Report Review",
+        "paragraphs": [
+          "Total standards: Not specified",
+          "Standards met: Not specified",
+          "Security percentage: Not specified",
+          "Enhancement opportunities: Not specified",
+          "Documented vulnerabilities: 3",
+          "Commendable practices: 3"
+        ]
+      },
+      {
+        "heading": "Final Report",
+        "paragraphs": [
+          "Generated from the current SAFE assessment data in the repository.",
+          "This document is the authoritative SAFE report output."
+        ]
+      }
+    ]
+  }
+}

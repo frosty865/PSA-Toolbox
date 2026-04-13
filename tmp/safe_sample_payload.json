@@ -1,0 +1,143 @@
+{
+  "generic_report": {
+    "template_key": "safe",
+    "title": "ALT SAFE",
+    "subtitle": "Security Assessment Report",
+    "facility": "South Florida Manufacturing Corp",
+    "sector": "Commercial Facilities",
+    "physicalAddress": "12345 NW 12th Street",
+    "subsector": "Manufacturing Plant",
+    "latitude": "25.783331",
+    "longitude": "-80.265639",
+    "assessor": "Not specified",
+    "date": "2025-01-27",
+    "publisher": "Cybersecurity and Infrastructure Security Agency",
+    "version": "Version: Alpha V3",
+    "note": "",
+    "header_left": "South Florida Manufacturing Corp",
+    "header_right": "2025-01-27",
+    "footer_left": "Cybersecurity and Infrastructure Security Agency",
+    "footer_right": "Department of Homeland Security",
+    "psa_name": "John Smith",
+    "psa_region": "",
+    "psa_city": "Miami",
+    "psa_cell": "(202) 555-0101",
+    "psa_email": "john.smith@cisa.dhs.gov",
+    "safe_metrics": {
+      "met_standards": 0,
+      "standards_lost": 0,
+      "enhancement_options": 0,
+      "commendable_practices": 3,
+      "total_vulnerabilities": 3,
+      "information_sharing_vulnerabilities": 0,
+      "security_plans_vulnerabilities": 0,
+      "security_systems_vulnerabilities": 0,
+      "physical_security_vulnerabilities": 0,
+      "information_sharing_ofc": 0,
+      "security_plans_ofc": 0,
+      "security_systems_ofc": 0,
+      "physical_security_ofc": 0
+    },
+    "sections": [
+      {
+        "heading": "Executive Summary",
+        "paragraphs": [
+          "This assessment reviewed 0 standards and found 0 currently met.",
+          "Overall posture is Not specified%.",
+          "0 standards currently require remediation.",
+          "0 enhancement option(s) were identified.",
+          "3 commendable practice(s) were documented."
+        ]
+      },
+      {
+        "heading": "Visual Summary",
+        "paragraphs": [
+          "Security posture: Not specified%",
+          "Standards met: 0",
+          "Standards lost: 0",
+          "Enhancement options: 0",
+          "Commendable practices: 3"
+        ]
+      },
+      {
+        "heading": "Facility Information",
+        "paragraphs": [
+          "Facility: South Florida Manufacturing Corp",
+          "Assessment date: 2025-01-27",
+          "Sector: Commercial Facilities",
+          "Facility type: Manufacturing Plant",
+          "Physical Address: 12345 NW 12th Street",
+          "Coordinates: 25.783331, -80.265639",
+          "Assessor: Not specified"
+        ]
+      },
+      {
+        "heading": "Information Sharing & Communication",
+        "paragraphs": [
+          "1. No additional information-sharing detail was supplied in the sample data."
+        ]
+      },
+      {
+        "heading": "Security Plans & Management",
+        "paragraphs": [
+          "1. No additional security-planning detail was supplied in the sample data."
+        ]
+      },
+      {
+        "heading": "Security Systems",
+        "paragraphs": [
+          "1. No additional security-systems detail was supplied in the sample data."
+        ]
+      },
+      {
+        "heading": "Physical Security",
+        "paragraphs": [
+          "1. No additional physical-security detail was supplied in the sample data."
+        ]
+      },
+      {
+        "heading": "Commendable Practices",
+        "bullets": [
+          "Conducted quarterly emergency response drills - Improved coordination during emergency situations",
+          "Active participation in InfraGard program - Enhanced threat intelligence capabilities",
+          "Implemented 24/7 security personnel - Significantly improved facility security posture"
+        ]
+      },
+      {
+        "heading": "Custom Vulnerabilities & Options for Consideration",
+        "paragraphs": [
+          "1. Insufficient perimeter lighting creates security blind spots\nCategory: Physical Security\nOptions for Consideration: Install additional LED security lighting with motion sensors",
+          "2. Outdated network equipment increases cyber attack risk\nCategory: Facility Information\nOptions for Consideration: Implement network segmentation and upgrade infrastructure",
+          "3. Incomplete background check procedures for contractors\nCategory: Security Plans\nOptions for Consideration: Establish comprehensive background check requirements"
+        ]
+      },
+      {
+        "heading": "Points of Contact",
+        "paragraphs": [
+          "PSA Name: John Smith",
+          "PSA City: Miami",
+          "PSA Cell: (202) 555-0101",
+          "PSA Email: john.smith@cisa.dhs.gov"
+        ]
+      },
+      {
+        "heading": "Report Review",
+        "paragraphs": [
+          "Total standards: 0",
+          "Standards met: 0",
+          "Standards lost: 0",
+          "Enhancement options: 0",
+          "Commendable practices: 3",
+          "Documented vulnerabilities: 3"
+        ]
+      },
+      {
+        "heading": "Final Report",
+        "paragraphs": [
+          "Generated from the current SAFE assessment data.",
+          "This document is the authoritative SAFE report output."
+        ]
+      }
+    ]
+  }
+}

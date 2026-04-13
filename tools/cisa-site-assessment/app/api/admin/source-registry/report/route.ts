@@ -55,6 +55,13 @@ export async function GET() {
         2: sources.filter((s) => s.tier === 2).length,
         3: sources.filter((s) => s.tier === 3).length,
       },
+      distinct_publishers: Object.keys(
+        sources.reduce((acc, source) => {
+          const pub = source.publisher?.trim() && !isUnacceptablePublisher(source.publisher) ? source.publisher.trim() : '';
+          if (pub) acc[pub] = true;
+          return acc;
+        }, {} as Record<string, true>)
+      ).length,
       by_publisher: {} as Record<string, number>,
       by_type: {
         pdf: sources.filter((s) => s.source_type === 'pdf').length,
@@ -138,6 +145,22 @@ export async function GET() {
       not_ingested_with_url: sources.filter((s) => s.canonical_url && !s.doc_sha256),
     };
 
+    const topPublishers = Object.entries(stats.by_publisher)
+      .map(([publisher, count]) => ({ publisher, count }))
+      .sort((a, b) => b.count - a.count || a.publisher.localeCompare(b.publisher))
+      .slice(0, 8);
+
+    const issueSummary = {
+      total_missing_fields:
+        missingInfo.no_publisher.length +
+        missingInfo.no_title.length +
+        missingInfo.no_url.length +
+        missingInfo.no_publication_date.length +
+        missingInfo.not_ingested_with_url.length,
+      duplicate_groups: duplicates.length,
+      not_ingested_with_url: missingInfo.not_ingested_with_url.length,
+    };
+
     // Generate report date
     const reportDate = new Date().toISOString();
 
@@ -146,6 +169,10 @@ export async function GET() {
       report_date: reportDate,
       summary: {
         statistics: stats,
+        highlights: {
+          top_publishers: topPublishers,
+          issue_summary: issueSummary,
+        },
         duplicates_count: duplicates.length,
         missing_info_count: {
           no_publisher: missingInfo.no_publisher.length,

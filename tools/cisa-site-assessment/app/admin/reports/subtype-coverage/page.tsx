@@ -90,6 +90,12 @@ export default function SubtypeCoverageReportPage() {
     }
     return r;
   }, [report, filter, search]);
+  const maxTotal = Math.max(1, report?.totals.questions_total ?? 1);
+  const completionRows = [
+    { label: "With subtype", value: report?.totals.with_subtype ?? 0, color: "#2563eb" },
+    { label: "With overview", value: report?.totals.with_overview ?? 0, color: "#0f766e" },
+    { label: "With reference implementation", value: report?.totals.with_reference_implementation ?? 0, color: "#7c3aed" },
+  ];
 
   const handleExport = () => {
     if (!report) return;
@@ -139,38 +145,56 @@ export default function SubtypeCoverageReportPage() {
         </Link>
       </div>
 
-      <h1 style={{ fontSize: "1.5rem", fontWeight: 700, marginBottom: 8 }}>
-        Subtype Coverage &amp; Gap Audit
-      </h1>
-      <p style={{ color: "#666", fontSize: "14px", marginBottom: 16 }}>
-        Baseline questions from baseline_spines_runtime: subtype, overview, reference implementation. Generated: {report.generated_at}
+      <div style={{ marginBottom: 16 }}>
+        <div style={{ color: "#2563eb", fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em" }}>Coverage report</div>
+        <h1 style={{ fontSize: "1.6rem", fontWeight: 800, letterSpacing: "-0.02em", margin: "4px 0 0" }}>
+          Subtype Coverage and Gap Audit
+        </h1>
+      </div>
+      <p style={{ color: "#475569", fontSize: "14px", marginBottom: 16, maxWidth: 900, lineHeight: 1.55 }}>
+        This report reviews baseline questions in <code>baseline_spines_runtime</code> for subtype assignment, overview text, and reference implementation coverage. Prepared: {report.generated_at}
       </p>
 
       {/* Totals */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 12, marginBottom: 24 }}>
-        <div style={{ padding: 12, backgroundColor: "#f3f4f6", borderRadius: 6 }}>
-          <div style={{ fontSize: "1.25rem", fontWeight: 600 }}>{report.totals.questions_total}</div>
-          <div style={{ fontSize: "12px", color: "#666" }}>Questions total</div>
+        <div style={{ padding: 12, backgroundColor: "#f8fafc", borderRadius: 8, border: "1px solid #e2e8f0" }}>
+          <div style={{ fontSize: "1.35rem", fontWeight: 800 }}>{report.totals.questions_total}</div>
+          <div style={{ fontSize: "12px", color: "#64748b", textTransform: "uppercase", letterSpacing: "0.04em" }}>Total questions</div>
         </div>
-        <div style={{ padding: 12, backgroundColor: "#f3f4f6", borderRadius: 6 }}>
-          <div style={{ fontSize: "1.25rem", fontWeight: 600 }}>{report.totals.with_subtype}</div>
-          <div style={{ fontSize: "12px", color: "#666" }}>With subtype</div>
+        <div style={{ padding: 12, backgroundColor: "#f8fafc", borderRadius: 8, border: "1px solid #e2e8f0" }}>
+          <div style={{ fontSize: "1.35rem", fontWeight: 800 }}>{report.totals.with_subtype}</div>
+          <div style={{ fontSize: "12px", color: "#64748b", textTransform: "uppercase", letterSpacing: "0.04em" }}>With subtype</div>
         </div>
-        <div style={{ padding: 12, backgroundColor: "#fef3c7", borderRadius: 6 }}>
-          <div style={{ fontSize: "1.25rem", fontWeight: 600 }}>{report.totals.without_subtype}</div>
-          <div style={{ fontSize: "12px", color: "#666" }}>Without subtype</div>
+        <div style={{ padding: 12, backgroundColor: "#fff7ed", borderRadius: 8, border: "1px solid #fed7aa" }}>
+          <div style={{ fontSize: "1.35rem", fontWeight: 800 }}>{report.totals.without_subtype}</div>
+          <div style={{ fontSize: "12px", color: "#9a3412", textTransform: "uppercase", letterSpacing: "0.04em" }}>Without subtype</div>
         </div>
-        <div style={{ padding: 12, backgroundColor: "#f3f4f6", borderRadius: 6 }}>
-          <div style={{ fontSize: "1.25rem", fontWeight: 600 }}>{report.totals.with_overview}</div>
-          <div style={{ fontSize: "12px", color: "#666" }}>With overview</div>
+        <div style={{ padding: 12, backgroundColor: "#f8fafc", borderRadius: 8, border: "1px solid #e2e8f0" }}>
+          <div style={{ fontSize: "1.35rem", fontWeight: 800 }}>{report.totals.with_overview}</div>
+          <div style={{ fontSize: "12px", color: "#64748b", textTransform: "uppercase", letterSpacing: "0.04em" }}>With overview</div>
         </div>
-        <div style={{ padding: 12, backgroundColor: "#f3f4f6", borderRadius: 6 }}>
-          <div style={{ fontSize: "1.25rem", fontWeight: 600 }}>{report.totals.with_reference_implementation}</div>
-          <div style={{ fontSize: "12px", color: "#666" }}>With ref. impl.</div>
+        <div style={{ padding: 12, backgroundColor: "#f8fafc", borderRadius: 8, border: "1px solid #e2e8f0" }}>
+          <div style={{ fontSize: "1.35rem", fontWeight: 800 }}>{report.totals.with_reference_implementation}</div>
+          <div style={{ fontSize: "12px", color: "#64748b", textTransform: "uppercase", letterSpacing: "0.04em" }}>With reference implementation</div>
         </div>
-        <div style={{ padding: 12, backgroundColor: "#fee2e2", borderRadius: 6 }}>
-          <div style={{ fontSize: "1.25rem", fontWeight: 600 }}>{report.totals.help_enabled_but_empty}</div>
-          <div style={{ fontSize: "12px", color: "#666" }}>Help empty</div>
+        <div style={{ padding: 12, backgroundColor: "#fff7ed", borderRadius: 8, border: "1px solid #fed7aa" }}>
+          <div style={{ fontSize: "1.35rem", fontWeight: 800 }}>{report.totals.help_enabled_but_empty}</div>
+          <div style={{ fontSize: "12px", color: "#9a3412", textTransform: "uppercase", letterSpacing: "0.04em" }}>Help enabled, empty</div>
+        </div>
+      </div>
+
+      <div style={{ marginBottom: 24, padding: 16, backgroundColor: "#fff", border: "1px solid #e2e8f0", borderRadius: 10 }}>
+        <div style={{ fontSize: 14, fontWeight: 700, marginBottom: 12 }}>Coverage comparison</div>
+        <div style={{ display: "grid", gap: 10 }}>
+          {completionRows.map((row) => (
+            <div key={row.label} style={{ display: "grid", gridTemplateColumns: "220px 1fr auto", gap: 12, alignItems: "center" }}>
+              <span style={{ fontWeight: 600 }}>{row.label}</span>
+              <div style={{ height: 10, backgroundColor: "#e2e8f0", borderRadius: 999, overflow: "hidden" }}>
+                <div style={{ width: `${Math.max(4, Math.round((row.value / maxTotal) * 100))}%`, height: "100%", backgroundColor: row.color }} />
+              </div>
+              <strong>{row.value}</strong>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -182,14 +206,14 @@ export default function SubtypeCoverageReportPage() {
           style={{ padding: "8px 12px", border: "1px solid #d1d5db", borderRadius: 6, fontSize: "14px" }}
         >
           <option value="">All rows</option>
-          <option value="missing_subtype">Missing subtype</option>
-          <option value="subtype_no_overview">Subtype missing overview</option>
-          <option value="subtype_no_reference_implementation">Subtype missing reference implementation</option>
-          <option value="help_empty">Help empty</option>
+          <option value="missing_subtype">Questions without subtype</option>
+          <option value="subtype_no_overview">Subtypes without overview</option>
+          <option value="subtype_no_reference_implementation">Subtypes without reference implementation</option>
+          <option value="help_empty">Help enabled, empty</option>
         </select>
         <input
           type="text"
-          placeholder="Search question text or canon_id…"
+          placeholder="Search question text or canon_id..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           style={{ padding: "8px 12px", border: "1px solid #d1d5db", borderRadius: 6, fontSize: "14px", minWidth: 240 }}
@@ -199,7 +223,7 @@ export default function SubtypeCoverageReportPage() {
           onClick={handleExport}
           style={{ padding: "8px 16px", backgroundColor: "#4b5563", color: "white", border: "none", borderRadius: 6, fontSize: "14px", cursor: "pointer" }}
         >
-          Export JSON
+          Export report
         </button>
       </div>
 
@@ -208,14 +232,14 @@ export default function SubtypeCoverageReportPage() {
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "13px" }}>
           <thead>
             <tr style={{ backgroundColor: "#f9fafb", borderBottom: "1px solid #e5e7eb" }}>
-              <th style={{ padding: 10, textAlign: "left", fontWeight: 600 }}>canon_id</th>
-              <th style={{ padding: 10, textAlign: "left", fontWeight: 600 }}>question_text</th>
+              <th style={{ padding: 10, textAlign: "left", fontWeight: 600 }}>Canon ID</th>
+              <th style={{ padding: 10, textAlign: "left", fontWeight: 600 }}>Question text</th>
               <th style={{ padding: 10, textAlign: "left", fontWeight: 600 }}>discipline</th>
               <th style={{ padding: 10, textAlign: "left", fontWeight: 600 }}>subtype</th>
-              <th style={{ padding: 10, textAlign: "center", fontWeight: 600 }}>overview</th>
-              <th style={{ padding: 10, textAlign: "center", fontWeight: 600 }}>ref.impl</th>
-              <th style={{ padding: 10, textAlign: "center", fontWeight: 600 }}>help enabled</th>
-              <th style={{ padding: 10, textAlign: "center", fontWeight: 600 }}>help empty</th>
+              <th style={{ padding: 10, textAlign: "center", fontWeight: 600 }}>Overview</th>
+              <th style={{ padding: 10, textAlign: "center", fontWeight: 600 }}>Reference impl.</th>
+              <th style={{ padding: 10, textAlign: "center", fontWeight: 600 }}>Help enabled</th>
+              <th style={{ padding: 10, textAlign: "center", fontWeight: 600 }}>Help empty</th>
             </tr>
           </thead>
           <tbody>

@@ -56,6 +56,44 @@ interface SourcesDataSummary {
   total_linked_chunks?: number;
 }
 
+interface ModuleSourceReportData {
+  report_date: string;
+  module: { module_code: string; title: string | null; summary: string | null };
+  summary: {
+    statistics: {
+      total_sources?: number;
+      by_type?: Record<string, number>;
+      by_status?: Record<string, number>;
+      total_linked_documents?: number;
+      total_linked_chunks?: number;
+      sources_with_documents?: number;
+      sources_without_documents?: number;
+    };
+    issues_count: {
+      missing_files: number;
+      failed_downloads: number;
+      sources_without_documents: number;
+      missing_labels: number;
+    };
+  };
+  sources: Array<{
+    id: string;
+    source_type?: string;
+    source_label?: string;
+    source_url?: string;
+    linked_documents_count?: number;
+    file_exists?: boolean | null;
+    fetch_status?: string | null;
+    fetch_error?: string | null;
+  }>;
+  issues: {
+    missing_files: Array<{ id: string; source_label?: string; storage_relpath?: string }>;
+    failed_downloads: Array<{ id: string; source_label?: string; fetch_error?: string | null }>;
+    sources_without_documents: Array<{ id: string; source_label?: string }>;
+    missing_labels: Array<{ id: string; source_label?: string }>;
+  };
+}
+
 export default function AdminModuleDetailPage() {
   const params = useParams();
   const moduleCode = params.moduleCode as string;
@@ -65,6 +103,9 @@ export default function AdminModuleDetailPage() {
   const [activeTab, setActiveTab] = useState<"overview" | "sources" | "comprehension" | "standard" | "vofcs" | "review">("overview");
   const [sourcesData, setSourcesData] = useState<{ sources?: ModuleSourceRow[]; summary?: SourcesDataSummary } | null>(null);
   const [sourcesLoading, setSourcesLoading] = useState(false);
+  const [sourceReportData, setSourceReportData] = useState<ModuleSourceReportData | null>(null);
+  const [sourceReportLoading, setSourceReportLoading] = useState(false);
+  const [sourceReportError, setSourceReportError] = useState<string | null>(null);
   const [showAddQ, setShowAddQ] = useState(false);
   const [showAddO, setShowAddO] = useState(false);
   const [disciplines, setDisciplines] = useState<DisciplineWithSubtypes[]>([]);
@@ -2261,6 +2302,8 @@ export default function AdminModuleDetailPage() {
             <button
               onClick={async () => {
                 try {
+                  setSourceReportLoading(true);
+                  setSourceReportError(null);
                   const response = await fetch(`/api/admin/modules/${encodeURIComponent(moduleCode)}/sources/report`, {
                     cache: 'no-store'
                   });
@@ -2269,7 +2312,8 @@ export default function AdminModuleDetailPage() {
                     throw new Error(`Failed to generate report: ${response.status}`);
                   }
                   
-                  const data = await response.json();
+                  const data = (await response.json()) as ModuleSourceReportData;
+                  setSourceReportData(data);
                   
                   // Create a downloadable JSON file
                   const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
@@ -2282,12 +2326,12 @@ export default function AdminModuleDetailPage() {
                   document.body.removeChild(a);
                   URL.revokeObjectURL(url);
                   
-                  // Show summary in alert
-                  const stats = data.summary?.statistics;
-                  const issues = data.summary?.issues_count;
-                  alert(`Module Source Report Generated!\n\nModule: ${data.module?.title || moduleCode}\n\nStatistics:\n- Total Sources: ${stats?.total_sources || 0}\n- CORPUS Pointers: ${stats?.by_type?.CORPUS_POINTER || 0}\n- Module Uploads: ${stats?.by_type?.MODULE_UPLOAD || 0}\n- Linked Documents: ${stats?.total_linked_documents || 0}\n- Linked Chunks: ${stats?.total_linked_chunks || 0}\n\nIssues:\n- Missing Files: ${issues?.missing_files || 0}\n- Failed Downloads: ${issues?.failed_downloads || 0}\n- Sources Without Documents: ${issues?.sources_without_documents || 0}\n\nReport downloaded as JSON file.`);
                 } catch (err) {
-                  alert(`Failed to generate report: ${err instanceof Error ? err.message : 'Unknown error'}`);
+                  const message = err instanceof Error ? err.message : 'Unknown error';
+                  setSourceReportError(message);
+                }
+                finally {
+                  setSourceReportLoading(false);
                 }
               }}
               style={{ padding: "8px 16px", backgroundColor: "#6c757d", color: "white", border: "none", borderRadius: 4, fontSize: "14px", fontWeight: 500, cursor: "pointer" }}
@@ -2295,6 +2339,98 @@ export default function AdminModuleDetailPage() {
               Generate Source Report
             </button>
           </div>
+          {sourceReportLoading && (
+            <div style={{ marginBottom: 16, padding: 12, backgroundColor: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 8, color: "#334155", fontSize: 14 }}>
+              Generating report…
+            </div>
+          )}
+          {sourceReportError && (
+            <div style={{ marginBottom: 16, padding: 12, backgroundColor: "#fef2f2", border: "1px solid #fecaca", borderRadius: 8, color: "#991b1b", fontSize: 14 }}>
+              {sourceReportError}
+            </div>
+          )}
+          {sourceReportData && !sourceReportLoading && (
+            <div style={{ marginBottom: 24, padding: 16, background: "linear-gradient(180deg, #fbfdff 0%, #ffffff 100%)", border: "1px solid #dbe3ee", borderRadius: 12, boxShadow: "0 8px 24px rgba(15, 23, 42, 0.04)" }}>
+              <div style={{ marginBottom: 16 }}>
+                <div style={{ color: "#2563eb", fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em" }}>Source report</div>
+                <h3 style={{ margin: "4px 0 0", fontSize: 22, lineHeight: 1.15, fontWeight: 800, letterSpacing: "-0.02em" }}>{data?.module?.module_name || moduleCode}</h3>
+                <p style={{ margin: "6px 0 0", color: "#475569" }}>
+                  Module uploads are maintained within the module. Attached evidence is read-only and references the global registry. This report summarizes source mix, link status, and outstanding issues.
+                </p>
+              </div>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 12, marginBottom: 16 }}>
+                {[
+                  { label: "Total sources", value: sourceReportData.summary.statistics.total_sources ?? 0 },
+                  { label: "Linked documents", value: sourceReportData.summary.statistics.total_linked_documents ?? 0 },
+                  { label: "Linked chunks", value: sourceReportData.summary.statistics.total_linked_chunks ?? 0 },
+                  { label: "Sources with docs", value: sourceReportData.summary.statistics.sources_with_documents ?? 0 },
+                ].map((card) => (
+                  <div key={card.label} style={{ padding: 12, backgroundColor: "#f8fafc", border: "1px solid #e5e7eb", borderRadius: 10 }}>
+                    <div style={{ color: "#64748b", fontSize: 12, textTransform: "uppercase", letterSpacing: "0.04em" }}>{card.label}</div>
+                    <div style={{ fontSize: 24, fontWeight: 800, lineHeight: 1.15 }}>{card.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div style={{ display: "grid", gap: 16 }}>
+                <section style={{ padding: 12, backgroundColor: "#fff", border: "1px solid #e5e7eb", borderRadius: 10 }}>
+                  <h4 style={{ margin: "0 0 10px", fontSize: 16, fontWeight: 700 }}>Source mix</h4>
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))", gap: 10 }}>
+                    <div style={{ padding: 10, backgroundColor: "#f8fafc", borderRadius: 8 }}><strong>Module uploads</strong><br />{sourceReportData.summary.statistics.by_type?.MODULE_UPLOAD ?? 0}</div>
+                    <div style={{ padding: 10, backgroundColor: "#f8fafc", borderRadius: 8 }}><strong>Attached evidence</strong><br />{sourceReportData.summary.statistics.by_type?.CORPUS_POINTER ?? 0}</div>
+                    <div style={{ padding: 10, backgroundColor: "#f8fafc", borderRadius: 8 }}><strong>Pending</strong><br />{sourceReportData.summary.statistics.by_status?.PENDING ?? 0}</div>
+                    <div style={{ padding: 10, backgroundColor: "#f8fafc", borderRadius: 8 }}><strong>Downloaded</strong><br />{sourceReportData.summary.statistics.by_status?.DOWNLOADED ?? 0}</div>
+                    <div style={{ padding: 10, backgroundColor: "#f8fafc", borderRadius: 8 }}><strong>Failed</strong><br />{sourceReportData.summary.statistics.by_status?.FAILED ?? 0}</div>
+                  </div>
+                  <div style={{ marginTop: 12, display: "grid", gap: 10 }}>
+                    {[
+                      { label: "Module uploads", value: sourceReportData.summary.statistics.by_type?.MODULE_UPLOAD ?? 0, color: "#2563eb" },
+                      { label: "Attached evidence", value: sourceReportData.summary.statistics.by_type?.CORPUS_POINTER ?? 0, color: "#0f766e" },
+                    ].map((row) => (
+                      <div key={row.label} style={{ display: "grid", gridTemplateColumns: "180px 1fr auto", gap: 10, alignItems: "center" }}>
+                        <span style={{ fontSize: 13, fontWeight: 600 }}>{row.label}</span>
+                        <div style={{ height: 8, backgroundColor: "#e2e8f0", borderRadius: 999, overflow: "hidden" }}>
+                          <div style={{ width: `${Math.max(4, Math.round((row.value / Math.max(1, sourceReportData.summary.statistics.total_sources ?? 1)) * 100))}%`, height: "100%", backgroundColor: row.color }} />
+                        </div>
+                        <strong>{row.value}</strong>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+                <section style={{ padding: 12, backgroundColor: "#fff", border: "1px solid #e5e7eb", borderRadius: 10 }}>
+                  <h4 style={{ margin: "0 0 10px", fontSize: 16, fontWeight: 700 }}>Issues requiring attention</h4>
+                  <div style={{ display: "grid", gap: 8 }}>
+                    {[
+                      { label: "Missing files", value: sourceReportData.summary.issues_count.missing_files },
+                      { label: "Failed downloads", value: sourceReportData.summary.issues_count.failed_downloads },
+                      { label: "Without documents", value: sourceReportData.summary.issues_count.sources_without_documents },
+                      { label: "Missing labels", value: sourceReportData.summary.issues_count.missing_labels },
+                    ].map((row) => (
+                      <div key={row.label} style={{ display: "flex", justifyContent: "space-between", gap: 12, padding: "10px 12px", backgroundColor: row.value > 0 ? "#fff7ed" : "#f8fafc", borderRadius: 8 }}>
+                        <span style={{ fontWeight: 500 }}>{row.label}</span>
+                        <strong>{row.value}</strong>
+                      </div>
+                    ))}
+                  </div>
+                  <div style={{ marginTop: 12, display: "grid", gap: 10 }}>
+                    {[
+                      { label: "Missing files", value: sourceReportData.summary.issues_count.missing_files, color: "#ea580c" },
+                      { label: "Failed downloads", value: sourceReportData.summary.issues_count.failed_downloads, color: "#b91c1c" },
+                      { label: "Without documents", value: sourceReportData.summary.issues_count.sources_without_documents, color: "#a16207" },
+                      { label: "Missing labels", value: sourceReportData.summary.issues_count.missing_labels, color: "#64748b" },
+                    ].map((row) => (
+                      <div key={`bar-${row.label}`} style={{ display: "grid", gridTemplateColumns: "180px 1fr auto", gap: 10, alignItems: "center" }}>
+                        <span style={{ fontSize: 13, fontWeight: 600 }}>{row.label}</span>
+                        <div style={{ height: 8, backgroundColor: "#e2e8f0", borderRadius: 999, overflow: "hidden" }}>
+                          <div style={{ width: `${Math.max(2, Math.round((row.value / Math.max(1, sourceReportData.summary.statistics.total_sources ?? 1)) * 100))}%`, height: "100%", backgroundColor: row.color }} />
+                        </div>
+                        <strong>{row.value}</strong>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              </div>
+            </div>
+          )}
           {sourcesLoading ? (
             <div>Loading sources...</div>
           ) : sourcesData ? (
