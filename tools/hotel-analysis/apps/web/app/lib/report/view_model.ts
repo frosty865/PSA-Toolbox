@@ -6,6 +6,7 @@
 
 import type { Assessment, CategoryCode, CrossDependencyEdge } from 'schema';
 import type { CitationRef } from './citations/registry';
+import { compileCitations } from './citations/registry';
 import {
   evaluateVulnerabilities,
   evaluateCrossDependencyVulnerabilities,
@@ -405,6 +406,12 @@ export type ReportVM = {
     curve_summaries: CurveSummary[]; // All 5+ infrastructure summaries
     key_risk_drivers: KeyRiskDriver[]; // up to 3 callouts (unique labels, deduplicated)
     citations?: CitationRef[];
+    vulnerabilities?: Array<{
+      sector: string;
+      title: string;
+      narrative: string;
+      citations?: CitationRef[];
+    }>;
     cross_dependency_overview: {
       confirmed_edges: EdgeVM[];
       heatmap: HeatmapVM;
@@ -969,6 +976,14 @@ export function buildReportVM(
       purpose_scope: 'This assessment evaluates the facility\'s operational reliance on external infrastructure systems and identifies vulnerabilities that could materially degrade operations during service disruptions. The analysis integrates dependency curves, vulnerability triggers, and restoration considerations to define the facility\'s overall infrastructure risk posture.',
       curve_summaries: infrastructures.map((i) => i.curve),
       key_risk_drivers: keyRiskDrivers,
+      vulnerabilities: infrastructures.flatMap((infra) =>
+        (infra.vulnerabilities ?? []).map((v) => ({
+          sector: infra.display_name,
+          title: v.title,
+          narrative: v.summary,
+          citations: v.citations ? compileCitations(v.citations) : [],
+        }))
+      ),
       cross_dependency_overview: {
         confirmed_edges: confirmedEdges,
         heatmap: {

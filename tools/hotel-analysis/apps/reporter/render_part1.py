@@ -164,6 +164,7 @@ def inject_executive_snapshot_at_anchors(doc: Document, snapshot: dict) -> None:
     """Inject curve-driven executive snapshot content at SNAPSHOT_* anchors."""
     posture = (snapshot.get("posture") or "").strip()
     summary = (snapshot.get("summary") or "").strip()
+    vulnerabilities = snapshot.get("vulnerabilities") or []
     drivers = snapshot.get("drivers") or []
     matrix_rows = snapshot.get("matrixRows") or []
     cascade = snapshot.get("cascade")
@@ -176,7 +177,27 @@ def inject_executive_snapshot_at_anchors(doc: Document, snapshot: dict) -> None:
     p = find_paragraph_by_exact_text(doc, "[[SNAPSHOT_SUMMARY]]", body_only=True)
     if p and summary:
         p.clear()
-        insert_paragraph_after(p, sanitize_text(summary), style="Normal")
+        insert_after = insert_paragraph_after(p, sanitize_text(summary), style="Normal")
+        valid_vulns = [
+            v for v in vulnerabilities
+            if isinstance(v, dict) and (str(v.get("title") or "").strip() or str(v.get("narrative") or "").strip())
+        ]
+        if valid_vulns:
+            heading = insert_paragraph_after(insert_after, "Executive Vulnerabilities", style="Heading 3")
+            set_paragraph_keep_with_next(heading)
+            insert_after = heading
+            for vuln in valid_vulns[:5]:
+                title = str(vuln.get("title") or "").strip()
+                narrative = str(vuln.get("narrative") or "").strip()
+                sector = str(vuln.get("sector") or "").strip()
+                if title and sector:
+                    label = f"{sector} - {title}"
+                else:
+                    label = title or sector
+                if label:
+                    insert_after = insert_paragraph_after(insert_after, sanitize_text(label), style="List Bullet")
+                    if narrative:
+                        insert_after = insert_paragraph_after(insert_after, sanitize_text(narrative), style="Normal")
 
     p = find_paragraph_by_exact_text(doc, "[[SNAPSHOT_DRIVERS]]", body_only=True)
     if p and drivers:

@@ -18,6 +18,12 @@ export type ReporterExecutiveSnapshot = {
   executive_summary_brief?: string;
   citations?: CitationRef[];
   drivers: string[];
+  vulnerabilities?: Array<{
+    sector: string;
+    title: string;
+    narrative: string;
+    citations?: CitationRef[];
+  }>;
   matrixRows: Array<{
     sector: string;
     ttiHrs: string;
@@ -85,6 +91,17 @@ export function vmToExecutiveSnapshot(vm: ReportVM): ReporterExecutiveSnapshot {
     }));
 
   const cascade = snapshot?.cascadingIndicator?.summary ?? null;
+  const vulnerabilities =
+    (vm.infrastructures ?? [])
+      .flatMap((infra) =>
+        (infra.vulnerabilities ?? []).slice(0, 3).map((vuln) => ({
+          sector: infra.display_name,
+          title: vuln.title ?? '',
+          narrative: vuln.summary ?? '',
+          citations: vuln.citations && vuln.citations.length > 0 ? compileCitations(vuln.citations) : [],
+        }))
+      )
+      .filter((item) => item.title || item.narrative) ?? [];
 
   return {
     posture,
@@ -92,6 +109,7 @@ export function vmToExecutiveSnapshot(vm: ReportVM): ReporterExecutiveSnapshot {
     executive_summary_brief: executive_summary_brief || summary,
     citations,
     drivers: narrative && narrative.length > 0 ? [] : driverTitles,
+    vulnerabilities,
     matrixRows,
     cascade,
   };
