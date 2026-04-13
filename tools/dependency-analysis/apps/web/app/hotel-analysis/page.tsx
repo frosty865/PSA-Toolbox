@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
 
 export default function HotelAnalysisPage() {
-  redirect('/assessment/categories/');
+  redirect('/hotel-analysis/HOST%20V3.html');
 }
