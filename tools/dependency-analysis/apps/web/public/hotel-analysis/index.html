@@ -18265,14 +18265,27 @@
             input.click();
         }
 
+        function normalizeImportedHostJson(data) {
+            if (!data || typeof data !== 'object') {
+                return { sections: null, tables: null, metadata: null };
+            }
+            const payload = data.data && typeof data.data === 'object' ? data.data : data;
+            return {
+                sections: payload.sections && typeof payload.sections === 'object' ? payload.sections : null,
+                tables: payload.tables && typeof payload.tables === 'object' ? payload.tables : null,
+                metadata: data.metadata && typeof data.metadata === 'object' ? data.metadata : null,
+            };
+        }
+
         function loadCleanJSONData(data) {
             try {
                 // Loading JSON data
+                const normalized = normalizeImportedHostJson(data);
                 
                 // Simple direct loading - just set field values
-                if (data.sections) {
-                    Object.keys(data.sections).forEach(sectionName => {
-                        const section = data.sections[sectionName];
+                if (normalized.sections) {
+                    Object.keys(normalized.sections).forEach(sectionName => {
+                        const section = normalized.sections[sectionName];
                         Object.keys(section).forEach(fieldName => {
                             const value = section[fieldName];
                             
@@ -18306,8 +18319,27 @@
                 }
                 
                 // Load table data from old structure
-                if (data.tables) {
-                    loadArrayFields(data.tables);
+                if (normalized.tables) {
+                    loadArrayFields(normalized.tables);
+                }
+
+                if (normalized.metadata) {
+                    const facilityField = document.getElementById('hotel_name') || document.getElementById('facility_name');
+                    if (facilityField && normalized.metadata.facility_name) {
+                        facilityField.value = normalized.metadata.facility_name;
+                    }
+                    const assessorField = document.getElementById('assessor_name');
+                    if (assessorField && normalized.metadata.assessor_name) {
+                        assessorField.value = normalized.metadata.assessor_name;
+                    }
+                    const dateField = document.getElementById('assessment_date');
+                    if (dateField && normalized.metadata.assessment_date) {
+                        dateField.value = normalized.metadata.assessment_date;
+                    }
+                    const typeField = document.getElementById('assessment_type');
+                    if (typeField && normalized.metadata.assessment_type) {
+                        typeField.value = normalized.metadata.assessment_type;
+                    }
                 }
                 
                 // Load VIP access table data specifically
@@ -26315,7 +26347,6 @@
 </script>
 </body>
 </html>
-
 
 
 
