@@ -157,7 +157,7 @@ export type CurveSummary = {
 };
 
 /**
- * Key risk driver callout (for Executive Summary infographic).
+ * Key risk driver callout (for Hotel Fact Sheet infographic).
  * Re-exported from key_risk_driver_engine for convenience.
  */
 export type KeyRiskDriver = KeyRiskDriverVM;
@@ -400,8 +400,14 @@ export type ReportVM = {
     version: string; // TOOL_VERSION
   };
 
-  /** Executive Impact Overview. */
+  /** Hotel Fact Sheet / security overview. */
   executive: {
+    hotel_fact_sheet?: {
+      sections: Array<{
+        heading: string;
+        lines: string[];
+      }>;
+    };
     purpose_scope: string; // 1–2 sentences
     curve_summaries: CurveSummary[]; // All 5+ infrastructure summaries
     key_risk_drivers: KeyRiskDriver[]; // up to 3 callouts (unique labels, deduplicated)
@@ -973,7 +979,8 @@ export function buildReportVM(
       version: toolVersion,
     },
     executive: {
-      purpose_scope: 'This assessment evaluates the facility\'s operational reliance on external infrastructure systems and identifies vulnerabilities that could materially degrade operations during service disruptions. The analysis integrates dependency curves, vulnerability triggers, and restoration considerations to define the facility\'s overall infrastructure risk posture.',
+      hotel_fact_sheet: buildHotelFactSheet(assessment),
+      purpose_scope: 'This assessment evaluates the hotel\'s physical security maturity, exposure around entrances and approach paths, and vulnerabilities that could materially reduce protection of the building envelope and protected areas. The analysis integrates observed conditions, vulnerability triggers, and mitigations to define the facility\'s security posture.',
       curve_summaries: infrastructures.map((i) => i.curve),
       key_risk_drivers: keyRiskDrivers,
       vulnerabilities: infrastructures.flatMap((infra) =>
@@ -1092,6 +1099,114 @@ function buildRelianceIntroSentence(code: CategoryCode, answers: Record<string, 
     return `This facility relies on ${rely}. Primary provider: ${providerStr}.`;
   }
   return `This facility relies on ${rely}.`;
+}
+
+function buildHotelFactSheet(assessment: Assessment): {
+  sections: Array<{ heading: string; lines: string[] }>;
+} {
+  const categories = assessment.categories ?? {};
+  const sec = categories.ELECTRIC_POWER as Record<string, unknown> | undefined;
+  const comms = categories.COMMUNICATIONS as Record<string, unknown> | undefined;
+  const it = categories.INFORMATION_TECHNOLOGY as Record<string, unknown> | undefined;
+  const water = categories.WATER as Record<string, unknown> | undefined;
+  const ww = categories.WASTEWATER as Record<string, unknown> | undefined;
+
+  const text = (...values: unknown[]): string => {
+    for (const v of values) {
+      if (v == null) continue;
+      const s = String(v).trim();
+      if (s) return s;
+    }
+    return 'Not provided';
+  };
+
+  const yesNo = (v: unknown): string => {
+    if (v === true) return 'Yes';
+    if (v === false) return 'No';
+    const s = String(v ?? '').trim();
+    return s ? s : 'Not provided';
+  };
+
+  const num = (v: unknown): string => {
+    if (typeof v === 'number' && Number.isFinite(v)) return String(v);
+    const s = String(v ?? '').trim();
+    return s ? s : 'Not provided';
+  };
+
+  const sections: Array<{ heading: string; lines: string[] }> = [];
+  const assetName = text(assessment.asset?.asset_name, (assessment.asset as { name?: string } | undefined)?.name, (assessment.asset as { facility_name?: string } | undefined)?.facility_name);
+
+  sections.push({
+    heading: 'Property Profile',
+    lines: [
+      `Property name: ${assetName}`,
+      'Assessment focus: Physical security maturity and low-resistance access paths',
+    ],
+  });
+
+  sections.push({
+    heading: 'Entrances and Envelope',
+    lines: [
+      `Perimeter barriers: ${yesNo(sec?.has_perimeter_barriers)}`,
+      `Street standoff distance: ${num(sec?.standoff_street_distance)}`,
+      `Electronic locking system present: ${yesNo(sec?.els_present)}`,
+      `Dedicated VIP entrance: ${text(sec?.vip_entrance_type)}`,
+      `VIP access control method: ${text(sec?.vip_access_control)}`,
+      `Monitoring hours: ${text(sec?.monitoring_hours)}`,
+    ],
+  });
+
+  sections.push({
+    heading: 'Parking and Vehicle Approach',
+    lines: [
+      `Surface parking control: ${text(sec?.surface_parking_control)}`,
+      `Garage parking control: ${text(sec?.garage_parking_control)}`,
+      `Surface parking lighting: ${text(sec?.surface_parking_lighting)}`,
+      `Garage parking lighting: ${text(sec?.garage_parking_lighting)}`,
+      `Vehicle barrier coverage: ${text(sec?.standoff_vehicle_barriers, sec?.vehicle_barrier_rating)}`,
+    ],
+  });
+
+  sections.push({
+    heading: 'Vertical Circulation and Public Areas',
+    lines: [
+      `Elevator security: ${yesNo(sec?.els_present)}`,
+      `Stairwell security: ${yesNo(sec?.els_present)}`,
+      `Lobby monitoring: ${text(sec?.vss_monitored_by)}`,
+      `Public area monitoring: ${text(sec?.vss_monitored_by)}`,
+      `Guest room access control: ${yesNo(sec?.els_present)}`,
+    ],
+  });
+
+  const lowResistance: string[] = [];
+  if (sec?.has_perimeter_barriers === 'No' || sec?.has_perimeter_barriers === false) lowResistance.push('no perimeter barriers');
+  if (sec?.surface_parking_control === 'Open Access') lowResistance.push('open surface parking');
+  if (sec?.garage_parking_control === 'None') lowResistance.push('uncontrolled garage access');
+  if (typeof sec?.standoff_street_distance === 'number' && Number(sec.standoff_street_distance) < 25) lowResistance.push('short street standoff');
+  if (sec?.monitoring_hours === 'Business Hours' || sec?.monitoring_hours === 'On-Demand') lowResistance.push('limited monitoring hours');
+  if (sec?.els_present === 'No' || sec?.els_present === false) lowResistance.push('no electronic access control');
+
+  sections.push({
+    heading: 'Path of Least Resistance',
+    lines: [
+      lowResistance.length > 0
+        ? `Likely low-resistance approach conditions: ${lowResistance.join(', ')}.`
+        : 'Not enough physical-security detail is captured to isolate a single low-resistance path.',
+    ],
+  });
+
+  const support: string[] = [];
+  if (comms?.vss_monitored_by || it?.vss_monitored_by) support.push('video surveillance monitoring');
+  if (it?.secforce_247) support.push('24/7 security force presence');
+  if (water?.W_Q17_pump_alarming || ww?.WW_Q11_pump_alarming) support.push('utility alarm coverage');
+  if (support.length > 0) {
+    sections.push({
+      heading: 'Supporting Security Systems',
+      lines: support.map((s) => `Present or indicated: ${s}.`),
+    });
+  }
+
+  return { sections };
 }
 
 const CURVE_ANSWER_KEYS = [

@@ -87,7 +87,7 @@ export type SectorData = {
 export type ExecutiveSnapshotContent = {
   posture: string;
   summary: string;
-  /** Executive Summary section: 2–5 sentences, no bullets/tables. Injected at TABLE_SUMMARY anchor. */
+  /** Hotel Fact Sheet section: 2–5 sentences, no bullets/tables. Injected at TABLE_SUMMARY anchor. */
   executive_summary_brief: string;
   drivers: string[];
   matrixRows: Array<{
@@ -413,7 +413,7 @@ function buildSummarySentences(
 }
 
 /**
- * Executive Summary brief: 2–5 sentences, 1 paragraph, no bullets/tables.
+ * Hotel Fact Sheet brief: 2–5 sentences, 1 paragraph, no bullets/tables.
  * Deterministic: posture, fastest failure, deepest loss, sustainment (if alternates), cascade (if cross-dep).
  */
 function buildExecutiveSummaryBrief(

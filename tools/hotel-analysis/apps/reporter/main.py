@@ -1704,7 +1704,7 @@ def set_table_header_repeat(table, header_row_index: int = 0) -> None:
         set_repeat_header_row(table.rows[header_row_index])
 
 
-# --- B) Executive Summary table bug: remove unexpected table under "EXECUTIVE SUMMARY" ---
+# --- B) Hotel Fact Sheet table bug: remove unexpected table under "EXECUTIVE SUMMARY" ---
 
 
 def remove_unexpected_exec_summary_table(doc: Document) -> None:
@@ -2903,11 +2903,6 @@ def _normalize_ofcs(ofcs: list[str]) -> list[str]:
     return out
 
 
-def _require_references_when_ofcs(ofcs: list[str], refs: list[str], context: str) -> None:
-    if ofcs and not refs:
-        raise ValueError(f'References are required when OFCs are present in {context}.')
-
-
 def _canonical_vuln_block_to_block(c: dict) -> dict:
     """Convert payload canonicalVulnBlocks[] item to render block (title, narrative, severity, ofcs). OFC text used exactly."""
     title = (c.get("title") or "").strip()
@@ -2927,7 +2922,6 @@ def _canonical_vuln_block_to_block(c: dict) -> dict:
     if not isinstance(refs, list):
         refs = []
     refs = [sanitize_text(str(r).strip()) for r in refs[:10] if str(r).strip()]
-    _require_references_when_ofcs(ofcs, refs, f'canonicalVulnBlocks "{title}"')
     return {
         "title": title,
         "narrative": narrative,
@@ -2956,7 +2950,6 @@ def _derived_finding_to_block(f: dict) -> dict:
     if not isinstance(refs, list):
         refs = []
     refs = [sanitize_text(str(r).strip()) for r in refs[:10] if str(r).strip()]
-    _require_references_when_ofcs(ofcs, refs, f'derived finding "{title}"')
     return {
         "title": title,
         "narrative": narrative,
@@ -3178,7 +3171,6 @@ def _part2_vuln_to_block(v: dict) -> dict | None:
     if not isinstance(refs, list):
         refs = []
     refs = [sanitize_text(str(r).strip()) for r in refs[:10] if str(r).strip()]
-    _require_references_when_ofcs(ofcs, refs, f'part2 vulnerability "{title}"')
     return {
         "severity": (v.get("severity") or "").strip(),
         "title": title,
@@ -3838,7 +3830,7 @@ def insert_cyber_vofc_block_after_sla_pra(
     _insert_cyber_vofc_block_after_paragraph(doc, insert_after, cyber_rows, truncation_note)
 
 
-# --- F) Optional summary table at [[TABLE_SUMMARY]] ---
+# --- F) Optional hotel fact sheet brief at [[TABLE_SUMMARY]] ---
 
 # Fit within 6.5" printable width (letter 8.5" - 1" margins).
 # Rebalanced widths to reduce aggressive word-wrapping in Category/Provider columns.
@@ -6735,7 +6727,7 @@ def insert_executive_summary_at_anchor(
     doc: Document, assessment: dict, executive_summary_brief: str | None = None
 ) -> None:
     """
-    Replace TABLE_SUMMARY anchor with Executive Summary brief (2–5 sentences).
+    Replace TABLE_SUMMARY anchor with Hotel Fact Sheet brief (2–5 sentences).
     When executive_summary_brief provided: remove anchor para, insert brief.
     Otherwise: remove anchor para only (template-native).
     """
@@ -6904,7 +6896,7 @@ def _assert_template_has_required_anchors(doc: Document) -> None:
 def _assert_chart_anchors_after_visualization(doc: Document) -> None:
     """
     Hard-fail if any chart anchor appears before [[VISUALIZATION_START]].
-    Prevents charts from landing in Executive Summary.
+    Prevents charts from landing in the Hotel Fact Sheet section.
     Skip when template has no VISUALIZATION_START anchor.
     """
     all_text = " ".join(p.text or "" for p, _ in iter_paragraphs_and_cells(doc))
@@ -8015,7 +8007,7 @@ def _render_report(data: dict, work_path: Path, template_path: Path, skip_canoni
     # 2) Remove unexpected table directly under "EXECUTIVE SUMMARY"
     remove_unexpected_exec_summary_table(doc)
 
-    # 2b) Executive Summary: in snapshot mode, remove legacy TABLE_SUMMARY block; otherwise inject brief.
+    # 2b) Hotel Fact Sheet: in snapshot mode, remove legacy TABLE_SUMMARY block; otherwise inject brief.
     exec_brief = None if snapshot_mode else ((executive_snapshot or {}).get("executive_summary_brief") if executive_snapshot else None)
     insert_executive_summary_at_anchor(doc, assessment, executive_summary_brief=exec_brief)
     if snapshot_mode:

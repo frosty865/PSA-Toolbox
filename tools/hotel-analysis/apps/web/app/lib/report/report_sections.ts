@@ -23,7 +23,7 @@ export type ReportSectionDef = {
 
 /** Canonical order: used for TOC and body rendering. */
 export const REPORT_SECTIONS: ReportSectionDef[] = [
-  { id: 'executive', title: 'Executive Impact Overview' },
+  { id: 'executive', title: 'Hotel Fact Sheet' },
   { id: 'electric_power', title: 'Electric Power' },
   { id: 'communications', title: 'Communications' },
   { id: 'information_technology', title: 'Information Technology' },

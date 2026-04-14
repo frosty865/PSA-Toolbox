@@ -11,7 +11,6 @@ import { getTemplateCheck } from '@/lib/api';
 import { computeCompletion } from '@/app/lib/assessment/completion';
 import { reviewExportCopy } from '@/lib/uiCopy/reviewExportCopy';
 import { AssessmentStatusStrip } from './AssessmentStatusStrip';
-import { ExecutiveSummaryPreview } from './sections/ExecutiveSummaryPreview';
 import { InfrastructureSectionsPreview } from './sections/InfrastructureSectionsPreview';
 import { CrossDependencyPreview } from './sections/CrossDependencyPreview';
 import { SynthesisPreview } from './sections/SynthesisPreview';
@@ -25,7 +24,6 @@ type PageState = 'loading' | 'ready' | 'error';
  * LAYOUT (top to bottom):
  * - Header (title + template status)
  * - Assessment Status Strip (badges with completion %, triggers, etc.)
- * - Executive Summary Preview (collapsible)
  * - Asset Dependency Visualization Preview
  * - Infrastructure Sections (5 accordion panels)
  * - Cross-Dependency Preview (collapsible)
@@ -155,9 +153,8 @@ export function ReviewExportPage() {
         {expandedSections.synthesis && (
           <div style={{ padding: 'var(--spacing-md)' }}>
             <p className="text-secondary" style={{ marginTop: 0 }}>
-              The executive summary, citations, and vulnerabilities are included in the report payload and will render in the final DOCX output.
+              The hotel fact sheet and executive content are merged into the final report payload and will render in the final DOCX output.
             </p>
-            <ExecutiveSummaryPreview assessment={assessment} reportVM={reportVM ?? null} completion={completion} showHelp={true} />
             <SynthesisPreview assessment={assessment} reportVM={reportVM ?? null} showHelp={true} />
           </div>
         )}

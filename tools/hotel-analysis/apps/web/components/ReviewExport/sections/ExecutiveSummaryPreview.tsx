@@ -35,7 +35,7 @@ function dedupeCitations(citations: CitationRef[]): CitationRef[] {
 }
 
 /**
- * Executive Summary Preview: Shows purpose/scope + Risk Posture Snapshot + Key Risk Drivers
+ * Hotel Fact Sheet Preview: Shows purpose/scope + security snapshot + key risk drivers
  */
 export function ExecutiveSummaryPreview({
   assessment,

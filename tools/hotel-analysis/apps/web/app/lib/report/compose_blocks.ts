@@ -86,28 +86,36 @@ export function composeReportBlocks(vm: ReportVM): ReportBlock[] {
     }
   };
   
-  // ========== SECTION 1: EXECUTIVE IMPACT OVERVIEW ==========
+  // ========== SECTION 1: HOTEL FACT SHEET ==========
   const sec1Num = getSectionNumber(0);
   blocks.push(heading(1, REPORT_SECTIONS[0].title, { number: sec1Num, pageBreakBefore: true }));
   
-  blocks.push(paragraph(vm.executive.purpose_scope || 'This report assesses asset dependency vulnerabilities and infrastructure resilience posture.'));
+  blocks.push(paragraph(vm.executive.purpose_scope || 'This report documents the hotel fact sheet, physical exposure profile, and the vulnerabilities that affect operational security.'));
 
-  // Executive Risk Posture Snapshot: 3-paragraph narrative only (no driver labels, no matrix)
-  const executiveNarrative = vm.executive.executive_risk_posture_narrative;
-  const hasExecutiveSnapshot = (executiveNarrative?.length ?? 0) > 0 || !!vm.executive.risk_posture_snapshot;
-  if (executiveNarrative && executiveNarrative.length > 0) {
-    blocks.push(heading(2, 'Executive Risk Posture Snapshot', { number: '1.1' }));
-    executiveNarrative.forEach((p) => blocks.push(paragraph(p)));
-  } else if (vm.executive.risk_posture_snapshot) {
-    blocks.push(heading(2, 'Executive Risk Posture Snapshot', { number: '1.1' }));
-    blocks.push(paragraph('The following snapshot synthesizes key risk drivers, infrastructure sensitivity, and cascading exposure indicators.'));
-    blocks.push(...composeSnapshotBlocks(vm.executive.risk_posture_snapshot));
+  const factSheet = vm.executive.hotel_fact_sheet;
+  const factSheetSectionCount = factSheet?.sections?.length ?? 0;
+  if (factSheet?.sections?.length) {
+    factSheet.sections.forEach((section, idx) => {
+      blocks.push(heading(2, section.heading, { number: `1.${idx + 1}` }));
+      section.lines.forEach((line) => blocks.push(paragraph(line)));
+    });
+  } else {
+    // Fallback: preserve prior merged snapshot when no physical fact sheet is available.
+    const executiveNarrative = vm.executive.executive_risk_posture_narrative;
+    if (executiveNarrative && executiveNarrative.length > 0) {
+      blocks.push(heading(2, 'Hotel Fact Sheet Snapshot', { number: '1.1' }));
+      executiveNarrative.forEach((p) => blocks.push(paragraph(p)));
+    } else if (vm.executive.risk_posture_snapshot) {
+      blocks.push(heading(2, 'Hotel Fact Sheet Snapshot', { number: '1.1' }));
+      blocks.push(paragraph('The following snapshot synthesizes the hotel security profile, physical exposure, and cascading risk indicators.'));
+      blocks.push(...composeSnapshotBlocks(vm.executive.risk_posture_snapshot));
+    }
   }
 
   // Curve overview graphic
   if (vm.executive.curve_summaries.length > 0) {
-    const curveHeadingNum = hasExecutiveSnapshot ? `${sec1Num}.2` : `${sec1Num}.1`;
-    const figureNum = hasExecutiveSnapshot ? `Figure ${sec1Num}-2` : `Figure ${sec1Num}-1`;
+    const curveHeadingNum = factSheetSectionCount > 0 ? `${sec1Num}.${factSheetSectionCount + 1}` : `${sec1Num}.1`;
+    const figureNum = factSheetSectionCount > 0 ? `Figure ${sec1Num}-${factSheetSectionCount + 1}` : `Figure ${sec1Num}-1`;
     blocks.push(heading(2, 'Impact Curves', { number: curveHeadingNum }));
     blocks.push(paragraph('The following charts illustrate operational loss over time for each critical infrastructure dependency. Impact severity is categorized by time-to-impact threshold.'));
     
@@ -121,7 +129,7 @@ export function composeReportBlocks(vm: ReportVM): ReportBlock[] {
   
   // Key risk drivers (infographic-style)
   if (vm.executive.key_risk_drivers.length > 0) {
-    const driverHeadingNum = hasExecutiveSnapshot ? `${sec1Num}.3` : `${sec1Num}.2`;
+    const driverHeadingNum = factSheetSectionCount > 0 ? `${sec1Num}.${factSheetSectionCount + 2}` : `${sec1Num}.2`;
     blocks.push(heading(2, 'Key Risk Drivers', { number: driverHeadingNum }));
     blocks.push(paragraph('The following risk drivers represent the most critical vulnerabilities identified across all infrastructures:'));
     
@@ -141,9 +149,9 @@ export function composeReportBlocks(vm: ReportVM): ReportBlock[] {
   
   // Cross-dependency overview
   if (vm.executive.cross_dependency_overview.confirmed_edges.length > 0) {
-    const cdHeadingNum = hasExecutiveSnapshot ? `${sec1Num}.4` : `${sec1Num}.3`;
-    const matrixFigureNum = hasExecutiveSnapshot ? `Figure ${sec1Num}-3` : `Figure ${sec1Num}-2`;
-    const graphFigureNum = hasExecutiveSnapshot ? `Figure ${sec1Num}-4` : `Figure ${sec1Num}-3`;
+    const cdHeadingNum = factSheetSectionCount > 0 ? `${sec1Num}.${factSheetSectionCount + 3}` : `${sec1Num}.3`;
+    const matrixFigureNum = factSheetSectionCount > 0 ? `Figure ${sec1Num}-${factSheetSectionCount + 3}` : `Figure ${sec1Num}-2`;
+    const graphFigureNum = factSheetSectionCount > 0 ? `Figure ${sec1Num}-${factSheetSectionCount + 4}` : `Figure ${sec1Num}-3`;
     
     blocks.push(heading(2, 'Cross-Dependency Overview', { number: cdHeadingNum }));
     blocks.push(paragraph('Infrastructure dependencies create cascading risk pathways. The following visualizations identify confirmed dependencies and timing sensitivities.'));
@@ -210,7 +218,18 @@ export function composeReportBlocks(vm: ReportVM): ReportBlock[] {
       
       vulns.forEach((vuln, vulnIdx) => {
         blocks.push(heading(3, vuln.title, { number: `${sectionNumber}.3.${vulnIdx + 1}` }));
-        blocks.push(paragraph(vuln.summary));
+        if (vuln.condition_identified) {
+          blocks.push(paragraph(`Condition identified: ${vuln.condition_identified}`));
+        }
+        if (vuln.operational_exposure) {
+          blocks.push(paragraph(`Operational exposure: ${vuln.operational_exposure}`));
+        }
+        if (vuln.why_this_matters) {
+          blocks.push(paragraph(`Why this matters: ${vuln.why_this_matters}`));
+        }
+        if (!vuln.condition_identified && !vuln.operational_exposure && !vuln.why_this_matters) {
+          blocks.push(paragraph(vuln.summary));
+        }
         
         if (vuln.ofcs && vuln.ofcs.length > 0) {
           blocks.push(paragraph('Options for Consideration:', { indent: 0 }));
