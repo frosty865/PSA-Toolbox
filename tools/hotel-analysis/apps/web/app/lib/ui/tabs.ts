@@ -10,7 +10,7 @@ export const SECTION_TABS = [
   { id: 'WATER', title: 'Water' },
   { id: 'WASTEWATER', title: 'Wastewater' },
   { id: 'CRITICAL_PRODUCTS', title: 'Critical Products' },
-  { id: 'SUMMARY', title: 'Summary' },
+  { id: 'SUMMARY', title: 'Hotel Fact Sheet' },
   { id: 'CROSS_DEPENDENCIES', title: 'Cross-Dependency & Cascading Risk' },
   { id: 'REVIEW_EXPORT', title: 'Review & Export' },
 ] as const;

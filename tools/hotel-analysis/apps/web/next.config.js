@@ -90,8 +90,8 @@ const nextConfig = {
   async rewrites() {
     return [
       { source: '/hotel-analysis/assessment/:path*', destination: '/assessment/:path*' },
-      { source: '/hotel-analysis', destination: '/hotel-analysis/index.html' },
-      { source: '/hotel-analysis/', destination: '/hotel-analysis/index.html' },
+      { source: '/hotel-analysis', destination: '/assessment/' },
+      { source: '/hotel-analysis/', destination: '/assessment/' },
       { source: '/safe-3-0', destination: '/safe-3-0/index.html' },
       { source: '/safe-3-0/', destination: '/safe-3-0/index.html' },
       // CISA Site Assessment is proxied by app/cisa-site-assessment/[[...slug]]/route.ts; do not use external rewrites here.

@@ -18,7 +18,7 @@ export const reviewExportCopy = {
   templateDetailsLink: 'Details',
 
   // Section headings
-  executiveSummary: 'Executive Summary',
+  hotelFactSheet: 'Hotel Fact Sheet',
   crossDependencyCascadingRisk: 'Cross-Dependency & Cascading Risk',
   synthesisAnalysis: 'Synthesis & Analysis',
   methodologyAppendices: 'Methodology & Appendices',
