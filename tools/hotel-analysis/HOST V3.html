@@ -15540,6 +15540,19 @@
                             <input type="number" name="number_of_floors" id="number_of_floors" class="form-input">
            </div>
            <div class="form-group">
+                            <label for="property_type" class="form-label">Property Type</label>
+                            <select name="property_type" id="property_type" class="form-select">
+               <option value=""></option>
+               <option value="Hotel">Hotel</option>
+               <option value="Resort">Resort</option>
+               <option value="Motel">Motel</option>
+               <option value="Extended Stay">Extended Stay</option>
+               <option value="Conference Center">Conference Center</option>
+               <option value="Mixed Use">Mixed Use</option>
+               <option value="Other">Other</option>
+                            </select>
+           </div>
+           <div class="form-group">
                             <label for="has_13th_floor" class="form-label">Has 13th Floor?</label>
                             <select name="has_13th_floor" id="has_13th_floor" class="form-select">
                <option value=""></option>
@@ -15594,6 +15607,129 @@
          </div>
        </div>
 
+        <div class="question-item">
+                     <h4>Operational Profile</h4>
+         <div class="form-row">
+           <div class="form-group">
+                             <label for="check_in_window_start" class="form-label">Check-in Window Start</label>
+                             <input type="time" name="check_in_window_start" id="check_in_window_start" class="form-input">
+           </div>
+           <div class="form-group">
+                             <label for="check_in_window_end" class="form-label">Check-in Window End</label>
+                             <input type="time" name="check_in_window_end" id="check_in_window_end" class="form-input">
+           </div>
+         </div>
+         <div class="form-row">
+           <div class="form-group">
+                            <label for="peak_lobby_wait_minutes" class="form-label">Peak Lobby Wait Time (minutes)</label>
+                            <p class="help-text">Use the longest typical guest wait time observed during the busiest check-in period, in minutes.</p>
+                            <input type="number" name="peak_lobby_wait_minutes" id="peak_lobby_wait_minutes" class="form-input" min="0" step="1" placeholder="Example: 12">
+           </div>
+           <div class="form-group">
+                            <label for="front_desk_staff_peak" class="form-label">Front Desk Staff at Peak</label>
+                            <p class="help-text">Count the number of front desk staff on duty during the busiest check-in period.</p>
+                            <input type="number" name="front_desk_staff_peak" id="front_desk_staff_peak" class="form-input" min="0" step="1" placeholder="Example: 4">
+           </div>
+         </div>
+         <div class="form-row">
+           <div class="form-group">
+                             <label for="shared_entry_points" class="form-label">Shared Guest / Public Entry Points?</label>
+                             <select name="shared_entry_points" id="shared_entry_points" class="form-select">
+                <option value=""></option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                             </select>
+           </div>
+           <div class="form-group">
+                             <label for="loading_dock_control" class="form-label">Loading Dock Control</label>
+                             <p class="help-text">Describe whether deliveries are screened, supervised, and restricted to approved personnel or are open to uncontrolled access.</p>
+                             <select name="loading_dock_control" id="loading_dock_control" class="form-select">
+                <option value=""></option>
+                <option value="Controlled">Controlled</option>
+                <option value="Partially Controlled">Partially Controlled</option>
+                <option value="Uncontrolled">Uncontrolled</option>
+                             </select>
+           </div>
+         </div>
+         <div class="form-row">
+           <div class="form-group">
+                             <label for="receiving_window_247" class="form-label">Receiving Window Is 24/7?</label>
+                             <select name="receiving_window_247" id="receiving_window_247" class="form-select" onchange="toggleReceivingWindowDetails(this.value)">
+               <option value=""></option>
+               <option value="Yes">Yes</option>
+               <option value="No">No</option>
+                             </select>
+           </div>
+           <div class="form-group">
+                            <label for="deliveries_per_day" class="form-label">Deliveries Per Day</label>
+                            <input type="number" name="deliveries_per_day" id="deliveries_per_day" class="form-input" min="0" step="1" placeholder="Example: 6">
+           </div>
+         </div>
+         <div class="form-row" id="receiving_window_group">
+           <div class="form-group" id="receiving_window_start_group">
+                             <label for="receiving_window_start" class="form-label">Receiving Window Start (if not 24/7)</label>
+                             <input type="time" name="receiving_window_start" id="receiving_window_start" class="form-input">
+           </div>
+           <div class="form-group" id="receiving_window_end_group">
+                             <label for="receiving_window_end" class="form-label">Receiving Window End (if not 24/7)</label>
+                             <input type="time" name="receiving_window_end" id="receiving_window_end" class="form-input">
+           </div>
+         </div>
+         <div class="form-row">
+           <div class="form-group">
+                             <label for="contractor_escort_required" class="form-label">Contractor Escort Required?</label>
+                             <p class="help-text">Select yes if contractors must be accompanied or monitored when working in guest, back-of-house, or restricted areas.</p>
+                             <select name="contractor_escort_required" id="contractor_escort_required" class="form-select">
+                <option value=""></option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                             </select>
+           </div>
+           <div class="form-group">
+                             <label for="special_event_space" class="form-label">Special Event / Conference Space on Site?</label>
+                             <p class="help-text">Use yes if the property has meeting rooms, event space, banquet space, or similar areas that draw outside visitors.</p>
+                             <select name="special_event_space" id="special_event_space" class="form-select">
+                <option value=""></option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                             </select>
+           </div>
+         </div>
+         <div class="form-row">
+           <div class="form-group">
+                             <label for="conference_activity" class="form-label">Event Activity Level</label>
+                             <p class="help-text">Choose the expected level of event or meeting activity: Low, Moderate, or High.</p>
+                             <select name="conference_activity" id="conference_activity" class="form-select">
+                <option value=""></option>
+                <option value="Low">Low</option>
+                <option value="Moderate">Moderate</option>
+                <option value="High">High</option>
+                             </select>
+           </div>
+           <div class="form-group">
+                             <label for="restaurant_activity" class="form-label">Restaurant / Food Service Activity?</label>
+                             <p class="help-text">Use yes if the property operates a restaurant, bar, room service, banquet kitchen, or other food service operation.</p>
+                             <select name="restaurant_activity" id="restaurant_activity" class="form-select">
+                <option value=""></option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                             </select>
+           </div>
+         </div>
+         <div class="form-row">
+           <div class="form-group">
+                            <label for="valet_turns_peak" class="form-label">Valet Turns at Peak</label>
+                            <p class="help-text">Use the maximum number of valet vehicle handoffs expected during the busiest hour of the day or event period.</p>
+                            <input type="number" name="valet_turns_peak" id="valet_turns_peak" class="form-input" min="0" step="1" placeholder="Example: 18">
+           </div>
+           <div class="form-group">
+                            <label for="front_of_house_peak_staff" class="form-label">Front-of-House Staff at Peak</label>
+                            <p class="help-text">Count the front-of-house personnel on duty during the busiest guest-facing period, including valet, concierge, and lobby attendants if applicable.</p>
+                            <input type="number" name="front_of_house_peak_staff" id="front_of_house_peak_staff" class="form-input" min="0" step="1" placeholder="Example: 6">
+           </div>
+         </div>
+       </div>
+
 
              <!-- Hotel Contacts -->
                 <div class="table-section full-width">
@@ -15641,6 +15777,16 @@
            <div class="form-group">
                                 <label for="occ_guests_combined" class="form-label">Combined Guest Capacity</label>
                                 <input type="number" name="occ_guests_combined" id="occ_guests_combined" class="form-input">
+           </div>
+         </div>
+         <div class="form-row">
+           <div class="form-group">
+                                <label for="peak_occupancy_percent" class="form-label">Peak Occupancy (%)</label>
+                                <input type="number" name="peak_occupancy_percent" id="peak_occupancy_percent" class="form-input" min="0" max="100" step="1" placeholder="Example: 82">
+           </div>
+           <div class="form-group">
+                                <label for="rooms_turning_over_daily" class="form-label">Rooms Turning Over Daily</label>
+                                <input type="number" name="rooms_turning_over_daily" id="rooms_turning_over_daily" class="form-input" min="0" step="1" placeholder="Example: 120">
            </div>
          </div>
        </div>
@@ -17137,14 +17283,14 @@
                             <select class="form-select" name="security_backup_power" id="security_backup_power">
                                     <option value=""></option>
 
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
                                 <option value="Partial">Partial</option>
-                        </select>
-                    </div>
-                        </div>
+                                </select>
                     </div>
                 </div>
+                </div>
+            </div>
 
         </section>
 
@@ -17531,6 +17677,46 @@
                 </div>
             </div>
 
+            <!-- VIP Arrival Control -->
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">VIP ARRIVAL CONTROL</h4>
+                </div>
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">VIP Arrival Screening</label>
+                            <select class="form-select" name="vip_arrival_screening" id="vip_arrival_screening">
+                                <option value=""></option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                <option value="Conditional">Conditional</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Vehicle Approach Control</label>
+                            <select class="form-select" name="vehicle_approach_control" id="vehicle_approach_control">
+                                <option value=""></option>
+                                <option value="Controlled">Controlled</option>
+                                <option value="Partially Controlled">Partially Controlled</option>
+                                <option value="Uncontrolled">Uncontrolled</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Arrival Observation Coverage</label>
+                            <select class="form-select" name="arrival_observation_coverage" id="arrival_observation_coverage">
+                                <option value=""></option>
+                                <option value="Full">Full</option>
+                                <option value="Partial">Partial</option>
+                                <option value="None">None</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- VIP Emergency Procedures -->
             <div class="card">
                 <div class="card-header">
@@ -17585,6 +17771,17 @@
                                 <option value="Standard Emergency Communication">Standard Emergency Communication</option>
                                 <option value="Basic Emergency Communication">Basic Emergency Communication</option>
                                 <option value="No VIP Emergency Communication">No VIP Emergency Communication</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">VIP Travel Risk Management (ISO 31030)</label>
+                            <select name="vip_travel_risk_plan" id="vip_travel_risk_plan" class="form-select">
+                                <option value=""></option>
+                                <option value="Documented VIP Travel Risk Plan">Documented VIP Travel Risk Plan</option>
+                                <option value="Partially Documented VIP Travel Risk Plan">Partially Documented VIP Travel Risk Plan</option>
+                                <option value="No VIP Travel Risk Plan">No VIP Travel Risk Plan</option>
                             </select>
                         </div>
                     </div>
@@ -18245,7 +18442,8 @@
                 'has_pool', 'has_parking', 'has_surface_parking', 'has_garage_parking',
                 'pool_chemical_storage', 'pool_chemical_storage_secured', 'has_residential',
                 'short_term_rentals', 'has_ev_charging', 'has_standoff_measures', 'has_perimeter_barriers',
-                'standoff_vehicle_barriers', 'vss_present', 'vss_system_type', 'els_present'
+                'standoff_vehicle_barriers', 'vss_present', 'vss_system_type', 'els_present',
+                'receiving_window_247'
             ];
             
             conditionalFields.forEach(fieldId => {
@@ -18268,6 +18466,7 @@
                         case 'vss_present': toggleVssDetails(field.value === 'Yes'); break;
                         case 'vss_system_type': toggleVssTechnologyDetails(field.value); break;
                         case 'els_present': toggleELSDetails(field.value === 'Yes'); break;
+                        case 'receiving_window_247': toggleReceivingWindowDetails(field.value); break;
                     }
                 }
             });
@@ -18302,6 +18501,20 @@
             const garageParkingDetails = document.getElementById('garage-parking-details');
             if (garageParkingDetails) {
                 garageParkingDetails.style.display = value === 'Yes' ? 'block' : 'none';
+            }
+        }
+
+        function toggleReceivingWindowDetails(value) {
+            const startGroup = document.getElementById('receiving_window_start_group');
+            const endGroup = document.getElementById('receiving_window_end_group');
+            const startField = document.getElementById('receiving_window_start');
+            const endField = document.getElementById('receiving_window_end');
+            const is247 = value === 'Yes';
+            if (startGroup) startGroup.style.display = is247 ? 'none' : 'block';
+            if (endGroup) endGroup.style.display = is247 ? 'none' : 'block';
+            if (is247) {
+                if (startField) startField.value = '';
+                if (endField) endField.value = '';
             }
         }
 
@@ -18782,12 +18995,37 @@
 
         function considerPlanRow() {
             considerTableRow('plan-table', [
-                { type: 'select', name: 'plan_type[]', options: ['', 'Emergency Action Plan', 'Business Continuity Plan', 'Evacuation Plan', 'Shelter-in-Place Plan', 'Active Shooter Plan', 'Bomb Threat Plan', 'Cyber Incident Response Plan', 'Medical Emergency Plan', 'Fire Response Plan', 'Natural Disaster Plan'] },
+                { type: 'select', name: 'plan_type[]', options: ['', 'Emergency Action Plan', 'Business Continuity Plan', 'ISO 22301 Business Continuity Plan', 'Evacuation Plan', 'Shelter-in-Place Plan', 'Active Shooter Plan', 'Bomb Threat Plan', 'Cyber Incident Response Plan', 'Medical Emergency Plan', 'Fire Response Plan', 'Natural Disaster Plan'] },
                 { type: 'select', name: 'plan_written[]', options: ['', 'Yes', 'No'] },
                 { type: 'date', name: 'plan_last_updated[]', placeholder: 'Last Review Date' },
                 { type: 'select', name: 'plan_exercise[]', options: ['', 'Yes', 'No'] },
                 { type: 'date', name: 'plan_exercise_date[]', placeholder: 'Exercise Date' }
             ]);
+        }
+
+        function ensureISOEmergencyPlans() {
+            const planTable = document.getElementById('plan-table');
+            if (!planTable) return;
+            const tbody = planTable.querySelector('tbody');
+            if (!tbody) return;
+
+            const existingTypes = Array.from(tbody.querySelectorAll('tr td:first-child select, tr td:first-child input'))
+                .map(el => String(el.value || '').trim().toLowerCase())
+                .filter(Boolean);
+
+            const requiredPlans = [
+                'ISO 22301 Business Continuity Plan'
+            ];
+
+            requiredPlans.forEach(planName => {
+                if (existingTypes.includes(planName.toLowerCase())) return;
+                considerPlanRow();
+                const rows = tbody.querySelectorAll('tr');
+                const newRow = rows[rows.length - 1];
+                if (!newRow) return;
+                const planTypeField = newRow.querySelector('td:nth-child(1) select, td:nth-child(1) input');
+                if (planTypeField) planTypeField.value = planName;
+            });
         }
 
         function considerTrainingRow() {
@@ -18813,6 +19051,9 @@
             const planToTraining = {
                 'Emergency Action Plan': 'Emergency Procedures',
                 'Business Continuity Plan': 'Cybersecurity Awareness',
+                'ISO 22301 Business Continuity Plan': 'Emergency Procedures',
+                'VIP Travel Risk Plan': 'Travel Risk Management',
+                'VIP Travel Risk Management (ISO 31030)': 'Travel Risk Management',
                 'Evacuation Plan': 'Evacuation Drill',
                 'Shelter-in-Place Plan': 'Shelter-in-Place',
                 'Active Shooter Plan': 'Active Shooter Response',
@@ -18830,7 +19071,6 @@
                 if (!planType) return;
 
                 const mappedTraining = planToTraining[planType] || 'Emergency Procedures';
-                if (existingTrainingTypes.has(mappedTraining)) return;
 
                 considerTrainingRow();
                 const newRow = trainingTable.querySelector('tbody tr:last-child');
@@ -19465,7 +19705,7 @@
             } else if (fieldName.includes('plan_written') || fieldName.includes('plan_exercise')) {
                 return ['Yes', 'No'];
             } else if (fieldName.includes('training_type')) {
-                return ['Emergency Procedures', 'Evacuation Drill', 'Shelter-in-Place', 'Active Shooter Response', 'Fire Extinguisher Use', 'Medical/First Aid', 'CPR/AED', 'Bomb Threat Response', 'Cybersecurity Awareness', 'De-escalation'];
+                return ['Emergency Procedures', 'Travel Risk Management', 'Evacuation Drill', 'Shelter-in-Place', 'Active Shooter Response', 'Fire Extinguisher Use', 'Medical/First Aid', 'CPR/AED', 'Bomb Threat Response', 'Cybersecurity Awareness', 'De-escalation'];
             } else if (fieldName.includes('training_frequency')) {
                 return ['Monthly', 'Quarterly', 'Semi-Annual', 'Annual', 'Biannual', 'As Needed'];
             } else if (fieldName.includes('access') || fieldName.includes('Access')) {
@@ -21896,15 +22136,15 @@
                 const uncheckedVss = vssCapabilities.filter(cap => n(security[cap.key]) !== 'yes').map(cap => cap.label);
                 // Only flag when VSS is "present" but no capability type is affirmed — not for each optional tech left unchecked.
                 if (selectedVss.length === 0 && uncheckedVss.length > 0) {
-                    vulnerabilities.push({
-                        category: 'Video Surveillance Capability',
-                        severity: 'Medium',
-                        issue: 'VSS present but no capability types selected',
-                        description: 'Video surveillance is indicated as present, but no VSS technology types are selected. Confirm which capabilities are deployed or update the VSS present response.',
-                        recommendation: 'Select the VSS technologies in use, or document why the inventory is not itemized here.',
-                        source_field: 'security_systems.vss_capabilities',
-                        source_question: 'Which VSS technologies are present?'
-                    });
+                vulnerabilities.push({
+                    category: 'Video Surveillance Capability',
+                    severity: 'Medium',
+                    issue: 'VSS present but no capability types selected',
+                    description: 'Video surveillance is indicated as present, but no capability selections are recorded. Confirm which deployed capabilities apply, such as IP cameras, PTZ cameras, dome cameras, bullet cameras, thermal cameras, license plate recognition, facial recognition, motion detection, cloud recording, retention, monitoring, network segmentation, or system type, or update the VSS present response.',
+                    recommendation: 'Select the VSS technologies in use or correct the VSS present response so the inventory matches the deployed system.',
+                    source_field: 'security_systems.vss_capabilities',
+                    source_question: 'Which VSS technologies are present?'
+                });
                 }
             }
             
@@ -22112,14 +22352,17 @@
                     });
                 }
             }
-            const missingPraCount = dependencies.filter(row => n(valueOf(row, ['dep_pra'])) !== 'yes').length;
-            if (dependencies.length > 0 && missingPraCount > 0) {
+            const missingPraDependencies = dependencies
+                .filter(row => n(valueOf(row, ['dep_pra'])) !== 'yes')
+                .map(row => firstNonEmptyValue(row, ['dep_dependency', 'dep_company', 'dep_poc_title']))
+                .filter(Boolean);
+            if (dependencies.length > 0 && missingPraDependencies.length > 0) {
                 vulnerabilities.push({
                     category: 'Dependency Resilience',
                     severity: 'Medium',
                     issue: 'Critical utility dependencies lack priority restoration agreements',
-                    description: `${missingPraCount} dependency entries do not indicate a Priority Restoration Agreement (PRA).`,
-                    recommendation: 'Establish priority restoration agreements for critical utilities and service dependencies supporting life safety and security operations.',
+                    description: `Priority Restoration Agreements are not confirmed for: ${missingPraDependencies.join(', ')}.`,
+                    recommendation: 'Establish priority restoration agreements for the listed utility and service dependencies supporting life safety and security operations.',
                     source_field: 'dep-table.dep_pra',
                     source_question: 'Is a Priority Restoration Agreement (PRA) in place for each dependency?'
                 });
@@ -23075,7 +23318,7 @@
             const vipOperations = data.sections?.vip_planning || data.sections?.vip_security || {};
             const poolFacilities = data.sections?.pool_facilities || {};
             const parkingFacilities = data.sections?.parking_facilities || {};
-            const standardsScope = 'ISO 31030 Travel Risk Management, ISO 22301 Business Continuity Management';
+            const standardsScope = 'VIP Travel Risk Management (ISO 31030), ISO 22301 Business Continuity Management';
             
             // Use real calculated values (avoid `|| 0` so a valid 0 score is preserved)
             const vulnerabilities = Array.isArray(analysis.vulnerabilities) ? analysis.vulnerabilities : [];
@@ -23162,6 +23405,8 @@
             // Analyze SOC monitoring
             const hasSOC = isAffirmativeYes(securitySystems.soc_present);
             const monitoringHours = securitySystems.monitoring_hours || 'Unknown';
+            const incidentLogRetentionDays = parseInt(securitySystems.incident_log_retention_days) || 0;
+            const shiftHandoffProcedure = securitySystems.shift_handoff_procedure || 'None';
             
             if (!hasSOC) {
                 securityGaps.push('No Security Operations Center - no centralized monitoring');
@@ -23170,6 +23415,17 @@
             } else if (monitoringHours !== '24/7') {
                 securityGaps.push('Limited SOC monitoring hours - security gaps during off-hours');
                 unauthorizedAccessPaths.push('Reduced monitoring during off-hours');
+            }
+            if (incidentLogRetentionDays > 0 && incidentLogRetentionDays < 30) {
+                securityGaps.push('Short incident log retention - limited incident review window');
+                unauthorizedAccessPaths.push('Reduced ability to reconstruct incidents after short retention');
+            } else if (!incidentLogRetentionDays) {
+                securityGaps.push('Incident log retention not confirmed - continuity gap');
+                unauthorizedAccessPaths.push('No confirmed incident history retention');
+            }
+            if (shiftHandoffProcedure !== 'Documented') {
+                securityGaps.push('Shift handoff procedure is not fully documented - continuity gap');
+                unauthorizedAccessPaths.push('Information loss between security shifts');
             }
             
             // Analyze parking security
@@ -23208,6 +23464,9 @@
             const isSEARLevel = assessmentInfo.sear_rating && ['Level 1', 'Level 2'].includes(assessmentInfo.sear_rating);
             const hasVIPVehicleScreening = isAffirmativeYes(vipOperations.vip_vehicle_screening);
             const hasVIPParking = vipOperations.vip_parking_type && vipOperations.vip_parking_type !== 'None';
+            const hasVIPArrivalScreening = isAffirmativeYes(vipOperations.vip_arrival_screening);
+            const vehicleApproachControl = vipOperations.vehicle_approach_control || 'Uncontrolled';
+            const arrivalObservationCoverage = vipOperations.arrival_observation_coverage || 'None';
             
             if (isSEARLevel && !hasVIPVehicleScreening) {
                 securityGaps.push('No VIP vehicle screening - security gap for high-profile events');
@@ -23217,6 +23476,18 @@
             if (isSEARLevel && !hasVIPParking) {
                 securityGaps.push('No dedicated VIP parking - security gap for VIP events');
                 unauthorizedAccessPaths.push('Unauthorized access to VIP parking areas');
+            }
+            if (isSEARLevel && !hasVIPArrivalScreening) {
+                securityGaps.push('No VIP arrival screening - arrival control gap');
+                unauthorizedAccessPaths.push('Unscreened VIP arrival path');
+            }
+            if (isSEARLevel && vehicleApproachControl === 'Uncontrolled') {
+                securityGaps.push('Uncontrolled vehicle approach - exposed arrival path');
+                unauthorizedAccessPaths.push('Uncontrolled vehicle access to arrival point');
+            }
+            if (isSEARLevel && arrivalObservationCoverage === 'None') {
+                securityGaps.push('No arrival observation coverage - blind spot at arrival point');
+                unauthorizedAccessPaths.push('No observation coverage for VIP arrival point');
             }
             
             // COMPREHENSIVE VULNERABILITY ANALYSIS - Look at ALL data
@@ -23373,6 +23644,18 @@
                 if (!securitySystemsAnalysis.vip.hasParking) {
                     securitySystemsAnalysis.vip.vulnerabilities.push('No dedicated VIP parking - security gap for VIP events');
                     allVulnerabilities.push('High: No dedicated VIP parking for high-profile events');
+                }
+                if (!hasVIPArrivalScreening) {
+                    securitySystemsAnalysis.vip.vulnerabilities.push('No VIP arrival screening - arrival control gap');
+                    allVulnerabilities.push('High: No VIP arrival screening');
+                }
+                if (vehicleApproachControl === 'Uncontrolled') {
+                    securitySystemsAnalysis.vip.vulnerabilities.push('Vehicle approach remains uncontrolled - exposed arrival path');
+                    allVulnerabilities.push('High: Uncontrolled vehicle approach');
+                }
+                if (arrivalObservationCoverage === 'None') {
+                    securitySystemsAnalysis.vip.vulnerabilities.push('No arrival observation coverage - blind spot at arrival point');
+                    allVulnerabilities.push('High: No arrival observation coverage');
                 }
             }
             
@@ -23794,8 +24077,8 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>ISO 31030</td>
-                                        <td>Travel Risk Management</td>
+                                        <td>VIP Travel Risk Management</td>
+                                        <td>VIP scope only</td>
                                         <td>${iso31030Summary.metCount}</td>
                                         <td>${iso31030Summary.total}</td>
                                         <td><strong>${iso31030Summary.score}%</strong></td>
@@ -23816,10 +24099,10 @@
                             <p class="standards-calculation">${overallAlignmentNote}</p>
                             <div class="standards-breakdown">
                                 <section class="standard-detail">
-                                    <h4>ISO 31030 Travel Risk Management</h4>
-                                    <p>Score calculation: ${iso31030Summary.metCount} of ${iso31030Summary.total} criteria were affirmed in the captured responses, producing ${iso31030Summary.score}%.</p>
+                                    <h4>VIP Travel Risk Management (ISO 31030)</h4>
+                                    <p>Score calculation: ${iso31030Summary.metCount} of ${iso31030Summary.total} criteria were affirmed in the captured VIP responses, producing ${iso31030Summary.score}%.</p>
                                     <p><strong>Criteria summary:</strong> ${iso31030Summary.metCount} met, ${iso31030Summary.unmetCount} not met.</p>
-                                    ${renderStandardCriteriaTable('ISO 31030 Criteria', iso31030Criteria)}
+                                    ${renderStandardCriteriaTable('VIP Travel Risk Management Criteria', iso31030Criteria)}
                                 </section>
                                 <section class="standard-detail">
                                     <h4>ISO 22301 Business Continuity</h4>
@@ -24035,7 +24318,7 @@
             return {
                 overallScore,
                 details: [
-                    { framework: 'ISO 31030', score: overallScore },
+                    { framework: 'VIP Travel Risk Management', score: overallScore },
                     { framework: 'ISO 22301', score: Math.max(30, overallScore - 4) }
                 ]
             };
@@ -24238,7 +24521,7 @@
         }
         
         function generateGovernanceSection() {
-            const standardsApproach = 'ISO 31030 Travel Risk Management and ISO 22301 Business Continuity Management';
+            const standardsApproach = 'VIP Travel Risk Management (ISO 31030) and ISO 22301 Business Continuity Management';
             return `
                 <div class="governance-section">
                     <div class="governance-overview">
@@ -24259,7 +24542,7 @@
                             </div>
                             <div class="requirement-card">
                                 <h4>Standards-Based Requirements</h4>
-                                <p>All recommendations are based on selected standards including ISO 31030 and ISO 22301 without specific product endorsements.</p>
+                                <p>All recommendations are based on selected standards including VIP travel risk management (ISO 31030) where applicable and ISO 22301 without specific product endorsements.</p>
                             </div>
                         </div>
                     </div>
@@ -24482,9 +24765,9 @@
         function considerComprehensiveFullReport(data, analysis) {
             const facilityInfo = data.sections?.facility_info || {};
             const assessmentInfo = data.sections?.assessment_info || {};
-            const standardsApplied = 'ISO 31030, ISO 22301';
+            const standardsApplied = 'VIP Travel Risk Management (ISO 31030), ISO 22301';
             const standardsNarrative =
-                'Standards alignment uses selected criteria from ISO 31030 and ISO 22301 (see the Standards Alignment section).';
+                'Standards alignment uses selected criteria from VIP travel risk management (ISO 31030) where applicable and ISO 22301 (see the Standards Alignment section).';
             const fullAddress = [
                 facilityInfo.hotel_address_1,
                 facilityInfo.hotel_address_2,
@@ -24560,7 +24843,7 @@
                 <div class="systems-synopsis-grid">
                     <div class="summary-card">
                         <h4>Property profile</h4>
-                        <p><strong>Property type:</strong> Not captured</p>
+                        <p><strong>Property type:</strong> ${facilityInfo.property_type || 'Not specified'}</p>
                         <p><strong>Guest rooms:</strong> ${facilityInfo.guest_room_count || 'Not Specified'}</p>
                         <p><strong>Floors:</strong> ${facilityInfo.number_of_floors || 'Not Specified'}</p>
                     </div>
@@ -24744,7 +25027,7 @@
                                         <li><strong>Name:</strong> ${facilityInfo.hotel_name || 'Not Specified'}</li>
                                         <li><strong>Address:</strong> ${fullAddress}</li>
                                         <li><strong>Guest Rooms:</strong> ${facilityInfo.guest_room_count || 'Not Specified'}</li>
-                                        <li><strong>Property Type:</strong> ${assessmentInfo.assessment_type || 'Not Specified'}</li>
+                                        <li><strong>Property Type:</strong> ${facilityInfo.property_type || 'Not Specified'}</li>
                                     </ul>
                                 </div>
                                 <div class="facility-card">
@@ -25119,6 +25402,13 @@
                     vulnerability: 'Inadequate VIP emergency communication',
                     severity: 'Critical',
                     category: 'VIP Emergency Procedures'
+                },
+                'vip_travel_risk_plan': {
+                    required: 'Documented VIP Travel Risk Plan',
+                    alternatives: ['Partially Documented VIP Travel Risk Plan'],
+                    vulnerability: 'Insufficient VIP travel risk management',
+                    severity: 'High',
+                    category: 'VIP Emergency Procedures'
                 }
             };
             
@@ -25215,6 +25505,43 @@
             }
             return String(fieldName).replace(/_/g, ' ');
         }
+
+        function getSourceControlForField(fieldPath) {
+            const field = String(fieldPath || '').split('.').pop();
+            const sourceMap = {
+                vip_vehicle_screening: { source_control: 'VIP movement', source_family: 'CISA / ASIS' },
+                vip_parking_type: { source_control: 'VIP movement', source_family: 'CISA / ASIS' },
+                vip_escort_services: { source_control: 'VIP movement', source_family: 'CISA / ASIS' },
+                vip_transport_coordination: { source_control: 'VIP movement', source_family: 'CISA / ASIS' },
+                vip_access_control_systems: { source_control: 'Guest-area access control', source_family: 'ASIS / AHLA' },
+                vip_monitoring_surveillance: { source_control: 'Surveillance and monitoring', source_family: 'ASIS / CISA' },
+                vip_communication_tech: { source_control: 'Response and incident management', source_family: 'ASIS / Ready.gov' },
+                vip_communication_channels: { source_control: 'Response and incident management', source_family: 'ASIS / Ready.gov' },
+                vip_emergency_contact: { source_control: 'Response and incident management', source_family: 'ASIS / Ready.gov' },
+                vip_alert_systems: { source_control: 'Response and incident management', source_family: 'ASIS / Ready.gov' },
+                vip_communication_equipment: { source_control: 'Response and incident management', source_family: 'ASIS / Ready.gov' },
+                vip_technology_integration: { source_control: 'Surveillance and monitoring', source_family: 'ASIS / CISA' },
+                vip_staff_training: { source_control: 'Security training and exercise readiness', source_family: 'ASIS / Ready.gov' },
+                vip_staff_background_checks: { source_control: 'Personnel security and oversight', source_family: 'ASIS / AHLA' },
+                vip_security_personnel: { source_control: 'Personnel security and oversight', source_family: 'ASIS / AHLA' },
+                vip_service_staff: { source_control: 'Personnel security and oversight', source_family: 'ASIS / AHLA' },
+                vip_evacuation_procedures: { source_control: 'Response and incident management', source_family: 'Ready.gov / FEMA' },
+                vip_medical_emergency: { source_control: 'Response and incident management', source_family: 'Ready.gov / FEMA' },
+                vip_security_incident: { source_control: 'Response and incident management', source_family: 'ASIS / Ready.gov' },
+                vip_emergency_communication: { source_control: 'Response and incident management', source_family: 'ASIS / Ready.gov' },
+                vip_travel_risk_plan: { source_control: 'VIP movement and travel risk management', source_family: 'ISO 31030 / ASIS' },
+                incident_log_retention_days: { source_control: 'Response and incident management', source_family: 'ASIS / Ready.gov' },
+                shift_handoff_procedure: { source_control: 'Response and incident management', source_family: 'ASIS / Ready.gov' },
+                loading_dock_control: { source_control: 'Service area separation and supervision', source_family: 'AHLA / ASIS' },
+                contractor_escort_required: { source_control: 'Vendor and contractor screening', source_family: 'AHLA / ASIS' },
+                receiving_window_247: { source_control: 'Service area separation and supervision', source_family: 'AHLA / ASIS' },
+                deliveries_per_day: { source_control: 'Service area separation and supervision', source_family: 'AHLA / ASIS' },
+                special_event_space: { source_control: 'Guest-area access control', source_family: 'ASIS / AHLA' },
+                conference_activity: { source_control: 'Guest-area access control', source_family: 'ASIS / AHLA' },
+                restaurant_activity: { source_control: 'Guest-area access control', source_family: 'ASIS / AHLA' }
+            };
+            return sourceMap[field] || null;
+        }
         
         function getVOFCTraceForId(vofcId, flatData) {
             if (!vofcId) return null;
@@ -25238,36 +25565,37 @@
             
             return {
                 source_field: matched.fieldPath,
-                source_question: getQuestionContextForField(matched.fieldPath)
+                source_question: getQuestionContextForField(matched.fieldPath),
+                ...getSourceControlForField(matched.fieldPath)
             };
         }
         
         const VULNERABILITY_QUESTION_MAP = {
-            'No Video Surveillance System': { source_field: 'security_systems.vss_present', source_question: 'Is a Video Surveillance System (VSS) present?' },
-            'No Electronic Locking System': { source_field: 'security_systems.els_present', source_question: 'Is an Electronic Locking System (ELS) present?' },
-            'No Security Operations Center': { source_field: 'security_systems.soc_present', source_question: 'Is a Security Operations Center (SOC) present?' },
-            'Insufficient Standoff Distance': { source_field: 'physical_security.has_standoff_measures', source_question: 'Are standoff distance measures in place?' },
-            'No Perimeter Barriers': { source_field: 'physical_security.has_perimeter_barriers', source_question: 'Are perimeter barriers in place?' },
-            'No 24/7 Security Coverage': { source_field: 'physical_security.secforce_247', source_question: 'Is 24/7 security force coverage provided?' },
-            'No Lifeguard Coverage': { source_field: 'pool_facilities.pool_lifeguard', source_question: 'Is lifeguard coverage provided for the pool?' },
-            'Missing Emergency Response Plan': { source_field: 'planning_emergency.emergency_plan_present', source_question: 'Is an emergency response plan present?' },
-            'Missing Active Shooter Response Plan': { source_field: 'planning_emergency.active_shooter_plan', source_question: 'Is an active shooter response plan documented?' },
-            'Missing Bomb Threat Response Plan': { source_field: 'planning_emergency.bomb_threat_plan', source_question: 'Is a bomb threat response plan documented?' },
-            'Missing Medical Emergency Plan': { source_field: 'planning_emergency.medical_emergency_plan', source_question: 'Is a medical emergency plan documented?' },
-            'Missing Fire Safety Plan': { source_field: 'planning_emergency.fire_safety_plan', source_question: 'Is a fire safety plan documented?' },
-            'Missing Severe Weather Plan': { source_field: 'planning_emergency.severe_weather_plan', source_question: 'Is a severe weather plan documented?' },
-            'Missing Family Reunification Plan': { source_field: 'planning_emergency.family_reunification_plan', source_question: 'Is a family reunification plan documented?' },
-            'Missing Accountability Plan': { source_field: 'planning_emergency.accountability_plan', source_question: 'Is an accountability plan documented?' },
-            'Missing CISA De-escalation Training': { source_field: 'security_systems.cisa_deescalation_training', source_question: 'Is CISA de-escalation training provided?' },
-            'Missing Active Shooter Response Training': { source_field: 'security_systems.active_shooter_training', source_question: 'Is active shooter response training provided?' },
-            'Missing Bomb Threat Awareness Training': { source_field: 'security_systems.bomb_threat_training', source_question: 'Is bomb threat awareness training provided?' },
-            'Missing Medical Emergency Training': { source_field: 'security_systems.medical_emergency_training', source_question: 'Is medical emergency training provided?' },
-            'Missing Evacuation Training': { source_field: 'security_systems.evacuation_training', source_question: 'Is evacuation training provided?' },
-            'Missing Cybersecurity Awareness Training': { source_field: 'security_systems.cybersecurity_training', source_question: 'Is cybersecurity awareness training provided?' },
-            'Missing Emergency Response Exercises': { source_field: 'planning_emergency.emergency_exercises_conducted', source_question: 'Are emergency response exercises conducted?' },
-            'Missing Active Shooter Exercises': { source_field: 'planning_emergency.active_shooter_drills', source_question: 'Are active shooter exercises (including drills) conducted?' },
-            'Missing Fire Exercises': { source_field: 'planning_emergency.fire_drills', source_question: 'Are fire exercises (including drills) conducted?' },
-            'Missing Medical Emergency Exercises': { source_field: 'planning_emergency.medical_emergency_drills', source_question: 'Are medical emergency exercises (including drills) conducted?' }
+            'No Video Surveillance System': { source_field: 'security_systems.vss_present', source_question: 'Is a Video Surveillance System (VSS) present?', source_control: 'Surveillance and monitoring', source_family: 'ASIS / CISA' },
+            'No Electronic Locking System': { source_field: 'security_systems.els_present', source_question: 'Is an Electronic Locking System (ELS) present?', source_control: 'Guest-area access control', source_family: 'ASIS / AHLA' },
+            'No Security Operations Center': { source_field: 'security_systems.soc_present', source_question: 'Is a Security Operations Center (SOC) present?', source_control: 'Response and incident management', source_family: 'ASIS / Ready.gov' },
+            'Insufficient Standoff Distance': { source_field: 'physical_security.has_standoff_measures', source_question: 'Are standoff distance measures in place?', source_control: 'Perimeter and vehicle access', source_family: 'FEMA / CISA' },
+            'No Perimeter Barriers': { source_field: 'physical_security.has_perimeter_barriers', source_question: 'Are perimeter barriers in place?', source_control: 'Perimeter and vehicle access', source_family: 'FEMA / CISA' },
+            'No 24/7 Security Coverage': { source_field: 'physical_security.secforce_247', source_question: 'Is 24/7 security force coverage provided?', source_control: 'Personnel security and oversight', source_family: 'ASIS / AHLA' },
+            'No Lifeguard Coverage': { source_field: 'pool_facilities.pool_lifeguard', source_question: 'Is lifeguard coverage provided for the pool?', source_control: 'Guest-area access control', source_family: 'AHLA / ASIS' },
+            'Missing Emergency Response Plan': { source_field: 'planning_emergency.emergency_plan_present', source_question: 'Is an emergency response plan present?', source_control: 'Response and incident management', source_family: 'Ready.gov / FEMA' },
+            'Missing Active Shooter Response Plan': { source_field: 'planning_emergency.active_shooter_plan', source_question: 'Is an active shooter response plan documented?', source_control: 'Response and incident management', source_family: 'Ready.gov / FEMA' },
+            'Missing Bomb Threat Response Plan': { source_field: 'planning_emergency.bomb_threat_plan', source_question: 'Is a bomb threat response plan documented?', source_control: 'Response and incident management', source_family: 'Ready.gov / FEMA' },
+            'Missing Medical Emergency Plan': { source_field: 'planning_emergency.medical_emergency_plan', source_question: 'Is a medical emergency plan documented?', source_control: 'Response and incident management', source_family: 'Ready.gov / FEMA' },
+            'Missing Fire Safety Plan': { source_field: 'planning_emergency.fire_safety_plan', source_question: 'Is a fire safety plan documented?', source_control: 'Response and incident management', source_family: 'USFA / NFPA' },
+            'Missing Severe Weather Plan': { source_field: 'planning_emergency.severe_weather_plan', source_question: 'Is a severe weather plan documented?', source_control: 'Response and incident management', source_family: 'Ready.gov / FEMA' },
+            'Missing Family Reunification Plan': { source_field: 'planning_emergency.family_reunification_plan', source_question: 'Is a family reunification plan documented?', source_control: 'Response and incident management', source_family: 'Ready.gov / FEMA' },
+            'Missing Accountability Plan': { source_field: 'planning_emergency.accountability_plan', source_question: 'Is an accountability plan documented?', source_control: 'Response and incident management', source_family: 'Ready.gov / FEMA' },
+            'Missing CISA De-escalation Training': { source_field: 'security_systems.cisa_deescalation_training', source_question: 'Is CISA de-escalation training provided?', source_control: 'Security training and exercise readiness', source_family: 'CISA / ASIS' },
+            'Missing Active Shooter Response Training': { source_field: 'security_systems.active_shooter_training', source_question: 'Is active shooter response training provided?', source_control: 'Security training and exercise readiness', source_family: 'CISA / Ready.gov' },
+            'Missing Bomb Threat Awareness Training': { source_field: 'security_systems.bomb_threat_training', source_question: 'Is bomb threat awareness training provided?', source_control: 'Security training and exercise readiness', source_family: 'Ready.gov / ASIS' },
+            'Missing Medical Emergency Training': { source_field: 'security_systems.medical_emergency_training', source_question: 'Is medical emergency training provided?', source_control: 'Security training and exercise readiness', source_family: 'Ready.gov / ASIS' },
+            'Missing Evacuation Training': { source_field: 'security_systems.evacuation_training', source_question: 'Is evacuation training provided?', source_control: 'Security training and exercise readiness', source_family: 'USFA / NFPA' },
+            'Missing Cybersecurity Awareness Training': { source_field: 'security_systems.cybersecurity_training', source_question: 'Is cybersecurity awareness training provided?', source_control: 'Security training and exercise readiness', source_family: 'ASIS / CISA' },
+            'Missing Emergency Response Exercises': { source_field: 'planning_emergency.emergency_exercises_conducted', source_question: 'Are emergency response exercises conducted?', source_control: 'Security training and exercise readiness', source_family: 'Ready.gov / FEMA' },
+            'Missing Active Shooter Exercises': { source_field: 'planning_emergency.active_shooter_drills', source_question: 'Are active shooter exercises (including drills) conducted?', source_control: 'Security training and exercise readiness', source_family: 'Ready.gov / FEMA' },
+            'Missing Fire Exercises': { source_field: 'planning_emergency.fire_drills', source_question: 'Are fire exercises (including drills) conducted?', source_control: 'Security training and exercise readiness', source_family: 'USFA / NFPA' },
+            'Missing Medical Emergency Exercises': { source_field: 'planning_emergency.medical_emergency_drills', source_question: 'Are medical emergency exercises (including drills) conducted?', source_control: 'Security training and exercise readiness', source_family: 'Ready.gov / FEMA' }
         };
         
         const VIP_FIELD_QUESTION_MAP = {
@@ -25290,7 +25618,8 @@
             vip_evacuation_procedures: 'What VIP evacuation procedures are configured?',
             vip_medical_emergency: 'What VIP medical emergency capability is configured?',
             vip_security_incident: 'What VIP security incident response capability is configured?',
-            vip_emergency_communication: 'What VIP emergency communication capability is configured?'
+            vip_emergency_communication: 'What VIP emergency communication capability is configured?',
+            vip_travel_risk_plan: 'What VIP travel risk management plan is configured?'
         };
 
         const HOST_VIP_PROFILE_CITATION = 'HOST VIP Security Planning — in-tool advisory expected profile (benchmark for gap analysis; not a substitute for organizational policy or law).';
@@ -25316,17 +25645,18 @@
         }
         
         const CATEGORY_TRACE_FALLBACK = {
-            'Video Surveillance': { source_field: 'security_systems.vss_present', source_question: 'Is a Video Surveillance System (VSS) present?' },
-            'Electronic Security': { source_field: 'security_systems.vss_present', source_question: 'Is a Video Surveillance System (VSS) present?' },
-            'Access Control': { source_field: 'security_systems.els_present', source_question: 'Is an Electronic Locking System (ELS) present?' },
-            'Security Operations': { source_field: 'security_systems.soc_present', source_question: 'Is a Security Operations Center (SOC) present?' },
-            'Perimeter Security': { source_field: 'physical_security.has_perimeter_barriers', source_question: 'Are perimeter barriers in place?' },
-            'Physical Security': { source_field: 'physical_security.has_standoff_measures', source_question: 'Are standoff distance measures in place?' },
-            'Security Personnel': { source_field: 'physical_security.secforce_247', source_question: 'Is 24/7 security force coverage provided?' },
-            'Pool Security': { source_field: 'pool_facilities.pool_lifeguard', source_question: 'Is lifeguard coverage provided for the pool?' },
-            'Emergency Planning': { source_field: 'planning_emergency.emergency_plan_present', source_question: 'Is an emergency response plan present?' },
-            'Security Training': { source_field: 'security_systems.active_shooter_training', source_question: 'Is active shooter response training provided?' },
-            'Emergency Exercises': { source_field: 'planning_emergency.emergency_exercises_conducted', source_question: 'Are emergency response exercises conducted?' }
+            'Video Surveillance': { source_field: 'security_systems.vss_present', source_question: 'Is a Video Surveillance System (VSS) present?', source_control: 'Surveillance and monitoring', source_family: 'ASIS / CISA' },
+            'Electronic Security': { source_field: 'security_systems.vss_present', source_question: 'Is a Video Surveillance System (VSS) present?', source_control: 'Surveillance and monitoring', source_family: 'ASIS / CISA' },
+            'Access Control': { source_field: 'security_systems.els_present', source_question: 'Is an Electronic Locking System (ELS) present?', source_control: 'Guest-area access control', source_family: 'ASIS / AHLA' },
+            'Security Operations': { source_field: 'security_systems.soc_present', source_question: 'Is a Security Operations Center (SOC) present?', source_control: 'Response and incident management', source_family: 'ASIS / Ready.gov' },
+            'Perimeter Security': { source_field: 'physical_security.has_perimeter_barriers', source_question: 'Are perimeter barriers in place?', source_control: 'Perimeter and vehicle access', source_family: 'FEMA / CISA' },
+            'Physical Security': { source_field: 'physical_security.has_standoff_measures', source_question: 'Are standoff distance measures in place?', source_control: 'Perimeter and vehicle access', source_family: 'FEMA / CISA' },
+            'Security Personnel': { source_field: 'physical_security.secforce_247', source_question: 'Is 24/7 security force coverage provided?', source_control: 'Personnel security and oversight', source_family: 'ASIS / AHLA' },
+            'Pool Security': { source_field: 'pool_facilities.pool_lifeguard', source_question: 'Is lifeguard coverage provided for the pool?', source_control: 'Guest-area access control', source_family: 'AHLA / ASIS' },
+            'Emergency Planning': { source_field: 'planning_emergency.emergency_plan_present', source_question: 'Is an emergency response plan present?', source_control: 'Response and incident management', source_family: 'Ready.gov / FEMA' },
+            'VIP Emergency Procedures': { source_field: 'vip_planning.vip_travel_risk_plan', source_question: 'What VIP travel risk management plan is configured?', source_control: 'VIP movement and travel risk management', source_family: 'ISO 31030 / ASIS' },
+            'Security Training': { source_field: 'security_systems.active_shooter_training', source_question: 'Is active shooter response training provided?', source_control: 'Security training and exercise readiness', source_family: 'CISA / Ready.gov' },
+            'Emergency Exercises': { source_field: 'planning_emergency.emergency_exercises_conducted', source_question: 'Are emergency response exercises conducted?', source_control: 'Security training and exercise readiness', source_family: 'Ready.gov / FEMA' }
         };
         
         function inferStrategicRiskClass(vulnerability) {
@@ -25411,6 +25741,12 @@
         
         function attachQuestionTrace(vulnerability) {
             const v = { ...(vulnerability || {}) };
+            const sourceMetaFor = (sourceField, sourceQuestion, existing = {}) => ({
+                ...existing,
+                ...(getSourceControlForField(sourceField) || {}),
+                source_field: existing.source_field || sourceField || '',
+                source_question: existing.source_question || sourceQuestion || ''
+            });
             const withRiskClass = (obj) => {
                 const severityAssessment = classifySeverityFromEvidence(obj);
                 return {
@@ -25421,33 +25757,33 @@
                     trace_status: obj?.source_field && obj?.source_question ? 'direct' : 'derived'
                 };
             };
-            if (v.source_question && v.source_field) return withRiskClass(v);
+            if (v.source_question && v.source_field) return withRiskClass(sourceMetaFor(v.source_field, v.source_question, v));
             if (v.source_field && !v.source_question) {
-                return withRiskClass({ ...v, source_question: getQuestionContextForField(String(v.source_field).split('.').pop()) });
+                return withRiskClass(sourceMetaFor(v.source_field, getQuestionContextForField(String(v.source_field).split('.').pop()), v));
             }
             if (v.source_question && !v.source_field) {
-                return withRiskClass({ ...v, source_field: 'derived.question_trace' });
+                return withRiskClass(sourceMetaFor('derived.question_trace', v.source_question, v));
             }
             
             if (v.field) {
                 const fieldName = String(v.field);
-                return withRiskClass({
+                return withRiskClass(sourceMetaFor(`vip_planning.${fieldName}`, v.source_question || VIP_FIELD_QUESTION_MAP[fieldName] || `VIP question: ${fieldName}`, {
                     ...v,
                     source_field: v.source_field || `vip_planning.${fieldName}`,
                     source_question: v.source_question || VIP_FIELD_QUESTION_MAP[fieldName] || `VIP question: ${fieldName}`
-                });
+                }));
             }
             
             const title = String(v.title || v.issue || '');
             const mapped = VULNERABILITY_QUESTION_MAP[title];
             if (mapped) {
-                return withRiskClass({ ...v, source_field: mapped.source_field, source_question: mapped.source_question });
+                return withRiskClass(sourceMetaFor(mapped.source_field, mapped.source_question, { ...v, ...mapped }));
             }
             
             const categoryKey = String(v.category || '');
             const categoryFallback = CATEGORY_TRACE_FALLBACK[categoryKey];
             if (categoryFallback) {
-                return withRiskClass({ ...v, source_field: categoryFallback.source_field, source_question: categoryFallback.source_question });
+                return withRiskClass(sourceMetaFor(categoryFallback.source_field, categoryFallback.source_question, { ...v, ...categoryFallback }));
             }
             
             if (v.vofc_id) {
@@ -25455,7 +25791,9 @@
                 return withRiskClass({
                     ...v,
                     source_field: v.source_field || vofcTrace?.source_field || `vofc.${v.vofc_id}`,
-                    source_question: v.source_question || vofcTrace?.source_question || `Mapped VOFC control check for ${v.vofc_id}`
+                    source_question: v.source_question || vofcTrace?.source_question || `Mapped VOFC control check for ${v.vofc_id}`,
+                    ...(vofcTrace?.source_control ? { source_control: vofcTrace.source_control } : {}),
+                    ...(vofcTrace?.source_family ? { source_family: vofcTrace.source_family } : {})
                 });
             }
             
@@ -25624,7 +25962,7 @@
 
         function summarizeFindingConsequence(vuln) {
             const raw = String(vuln?.risk_impact || vuln?.impact || vuln?.businessImpact || vuln?.description || '').trim();
-            if (!raw) return 'The issue may affect operations, safety, or the ability to respond effectively.';
+            if (!raw) return '';
             return getFirstSentence(raw);
         }
 
@@ -25639,46 +25977,16 @@
                     label: 'catalog_source'
                 };
             }
-            const text = `${String(vuln?.title || '')} ${String(vuln?.description || '')} ${String(vuln?.risk_impact || '')} ${String(vuln?.category || '')}`.toLowerCase();
-            if (/(vip|principal|executive|escort|motorcade)/.test(text)) {
-                return {
-                    source: 'ASIS International VIP Security Best Practices',
-                    url: 'https://www.asisonline.org/security-management/vip-security/',
-                    label: 'vip_security'
-                };
-            }
-            if (/(vehicle|ramming|standoff|perimeter|bollard|parking|driveway|entry road)/.test(text)) {
-                return {
-                    source: 'FEMA 430 - Site and Urban Design for Security',
-                    url: 'https://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf',
-                    label: 'vehicle_ramming'
-                };
-            }
-            if (/(data|privacy|information|records|network|cyber|breach)/.test(text)) {
-                return {
-                    source: 'IBM Cost of Data Breach Report 2024',
-                    url: 'https://www.ibm.com/reports/data-breach',
-                    label: 'data_breach'
-                };
-            }
-            if (/(incident|response|monitoring|security|training|alarm|camera|access|continuity|evacuation|life safety|emergency)/.test(text)) {
-                return {
-                    source: 'ASIS International Security Management Guidelines',
-                    url: 'https://www.asisonline.org/security-management/',
-                    label: 'security_incident'
-                };
-            }
-            return {
-                source: 'Hospitality Industry Security Standards',
-                url: 'https://www.hospitalitynet.org/security-standards/',
-                label: 'liability'
-            };
+            return null;
         }
 
         function formatImpactWithCitation(vuln) {
             const consequence = summarizeFindingConsequence(vuln);
             const citation = getImpactCitationSource(vuln);
-            return `${consequence} (Source: ${citation.source})`;
+            if (consequence && citation?.source) return `${consequence} (Source: ${citation.source})`;
+            if (consequence) return consequence;
+            if (citation?.source) return `(Source: ${citation.source})`;
+            return '';
         }
 
         function escapeHtmlWithLinks(value) {
@@ -25814,6 +26122,7 @@
                 }
             }
             const concreteImpact = formatImpactWithCitation(v);
+            const sourceMeta = getSourceControlForField(v.source_field || v.field || v.trigger_field || v.question_field || '');
             return attachQuestionTrace({
                 title: v.title || v.issue || 'Security Vulnerability',
                 description: v.description || v.issue || 'Security vulnerability detected in assessment',
@@ -25827,7 +26136,8 @@
                 id: v.id,
                 vofc_id: v.vofc_id || '',
                 standards_reference: v.standards_reference || '',
-                compliance_gap: v.compliance_gap || ''
+                compliance_gap: v.compliance_gap || '',
+                ...sourceMeta
             });
         }
 
@@ -25872,7 +26182,9 @@
                     category: v.category || 'Security',
                     recommendations: recs,
                     source_field: vofcTrace?.source_field || '',
-                    source_question: vofcTrace?.source_question || ''
+                    source_question: vofcTrace?.source_question || '',
+                    ...(vofcTrace?.source_control ? { source_control: vofcTrace.source_control } : {}),
+                    ...(vofcTrace?.source_family ? { source_family: vofcTrace.source_family } : {})
                 };
             });
             const planningTrainingVulnerabilities = identifyVulnerabilities(assessmentData).map(mapLegacyVulnerability);
@@ -26155,8 +26467,8 @@
                             <div class="vulnerability-item high-notable">
                                 <h4>${vuln.title}</h4>
                                 <p><strong>Category:</strong> ${vuln.category}</p>
-                                <p><strong>Why it matters:</strong> ${summarizeFindingConsequence(vuln)}</p>
-                                <p><strong>Recommended direction:</strong> ${primaryConsiderationActionText(vuln)}</p>
+                                <p><strong>Operational impact:</strong> ${summarizeFindingConsequence(vuln)}</p>
+                                <p><strong>Recommended action:</strong> ${primaryConsiderationActionText(vuln)}</p>
                                 <div class="recommendations">
                                     <h5>Leadership Actions:</h5>
                                     <ul>
@@ -26246,6 +26558,7 @@
                                 <li><strong>Property name:</strong> ${facilityInfo.hotel_name || 'Not Specified'}</li>
                                 <li><strong>Guest rooms:</strong> ${facilityInfo.guest_room_count || 'Not Specified'}</li>
                                 <li><strong>Floors:</strong> ${facilityInfo.number_of_floors || 'Not Specified'}</li>
+                                <li><strong>Property type:</strong> ${facilityInfo.property_type || 'Not Specified'}</li>
                                 <li><strong>Operating model:</strong> Hotel / resort with mixed-use exposures</li>
                             </ul>
                         </div>
@@ -26276,10 +26589,10 @@
                                     <span class="category-badge">${vuln.category}</span>
                                 </div>
                                 <div class="vulnerability-content">
-                                    <h4>Business concern</h4>
+                                    <h4>Observed issue</h4>
                                     <p>${vuln.description}</p>
                                     
-                                    <h4>Why it matters</h4>
+                                    <h4>Operational impact</h4>
                                     <p>${formatImpactWithCitation(vuln)}</p>
 
                                     <h4>Source family</h4>
@@ -26288,7 +26601,7 @@
                                     <h4>Definitive references</h4>
                                     <p>${renderCitationLinks(vuln)}</p>
                                     
-                                    <h4>Recommended direction</h4>
+                                    <h4>Recommended action</h4>
                                     <ol>
                                         ${vuln.recommendations.map(rec => `<li>${rec}</li>`).join('')}
                                     </ol>
@@ -26404,7 +26717,7 @@
                                     </div>
                                 <div style="color: #5b616b; font-size: 0.9rem; font-style: italic;">
                                     <i class="fas fa-lightbulb" style="color: #0071bc; margin-right: 0.25rem;"></i>
-                                    <strong>Why it matters:</strong> ${formatImpactWithCitation(vuln)}
+                                    <strong>Operational impact:</strong> ${formatImpactWithCitation(vuln)}
                                 </div>
                                 <div style="color: #5b616b; font-size: 0.9rem; margin-top: 0.4rem;">
                                     <strong>Source family:</strong> ${escapeHtmlForReport(vuln.source_family || 'Unassigned')}<br>
@@ -26474,6 +26787,7 @@
             const retailSpaces = data.sections?.retail_spaces_table || [];
             const conferenceSpaces = data.sections?.conference_spaces_table || [];
             const restaurantSpaces = data.sections?.restaurant_spaces_table || [];
+            const opProfile = data.sections?.facility_info || {};
             const vipData = data.sections?.vip_planning || data.sections?.vip_security || {};
             return `
                 <div class="operations-overview">
@@ -26491,10 +26805,10 @@
                     </ul>
                     <h3>Operational layout</h3>
                     <ul>
-                        <li><strong>Guest flow:</strong> lobby, rooms, elevators, amenities, and common areas</li>
-                        <li><strong>Service flow:</strong> receiving, housekeeping, maintenance, laundry, and utility spaces</li>
-                        <li><strong>Event / meeting flow:</strong> conference and gathering spaces where applicable</li>
-                        <li><strong>Guest services:</strong> concierge, valet, and front-of-house operations where applicable</li>
+                        <li><strong>Guest flow:</strong> ${opProfile.check_in_window_start && opProfile.check_in_window_end ? `check-in window ${opProfile.check_in_window_start} to ${opProfile.check_in_window_end}` : 'check-in window not specified'}${opProfile.peak_lobby_wait_minutes ? `, peak lobby wait ${opProfile.peak_lobby_wait_minutes} minutes` : ''}${opProfile.front_desk_staff_peak ? `, peak front desk staff ${opProfile.front_desk_staff_peak}` : ''}${opProfile.peak_occupancy_percent ? `, peak occupancy ${opProfile.peak_occupancy_percent}%` : ''}${opProfile.rooms_turning_over_daily ? `, rooms turning over daily ${opProfile.rooms_turning_over_daily}` : ''}</li>
+                        <li><strong>Service flow:</strong> ${opProfile.receiving_window_247 === 'Yes' ? 'receiving window 24/7' : (opProfile.receiving_window_start && opProfile.receiving_window_end ? `receiving window ${opProfile.receiving_window_start} to ${opProfile.receiving_window_end}` : 'receiving window not specified')}${opProfile.deliveries_per_day ? `, ${opProfile.deliveries_per_day} deliveries/day` : ''}${opProfile.loading_dock_control ? `, dock control ${opProfile.loading_dock_control.toLowerCase()}` : ''}${opProfile.contractor_escort_required ? `, contractor escort ${opProfile.contractor_escort_required.toLowerCase()}` : ''}</li>
+                        <li><strong>Special event flow:</strong> ${conferenceSpaces.length > 0 ? `special event / conference spaces (${conferenceSpaces.length} identified)` : 'special event / conference spaces where applicable'}${opProfile.special_event_space ? `, site event space ${opProfile.special_event_space.toLowerCase()}` : ''}${opProfile.conference_activity ? `, activity level ${opProfile.conference_activity.toLowerCase()}` : ''}</li>
+                        <li><strong>Guest services:</strong> ${restaurantSpaces.length > 0 ? `food service / restaurant operations (${restaurantSpaces.length} identified)` : 'concierge, valet, and front-of-house operations where applicable'}${opProfile.restaurant_activity ? `, restaurant activity ${opProfile.restaurant_activity.toLowerCase()}` : ''}${opProfile.valet_turns_peak ? `, valet turns at peak ${opProfile.valet_turns_peak}` : ''}${opProfile.front_of_house_peak_staff ? `, peak front-of-house staff ${opProfile.front_of_house_peak_staff}` : ''}</li>
                     </ul>
                     <h3>Operating dependencies</h3>
                     <ul>
@@ -27232,154 +27546,11 @@
         // ============================================
         
         function considerExecutiveSummaryWithHeuristic(data, vulnerabilityReport) {
-            const facilityInfo = data.sections?.facility_info || {};
-            const assessmentInfo = data.sections?.assessment_info || {};
-            const vulnerabilities = vulnerabilityReport.vulnerabilities || [];
-            const severity = vulnerabilities.map(v => String(v.severity || '').toLowerCase());
-            const highCount = severity.filter(s => s === 'high' || s === 'critical' || s === 'significant').length;
-            const mediumCount = severity.filter(s => s === 'medium').length;
-            const lowCount = severity.filter(s => s === 'low').length;
-            const topCategories = Object.entries(vulnerabilities.reduce((acc, v) => {
-                const c = v.category || 'General Security';
-                acc[c] = (acc[c] || 0) + 1;
-                return acc;
-            }, {})).sort((a, b) => b[1] - a[1]).slice(0, 2);
-            const topCategorySummary = topCategories.length > 0
-                ? topCategories.map(([name, count]) => `${name} (${count})`).join(', ')
-                : 'No dominant category identified';
-            
-            return `
-                <div class="executive-summary">
-                    <div class="report-header">
-                        <h1>${HOST_REPORT_COPY.productName} — Leadership Brief</h1>
-                        <div class="report-meta">
-                            <p><strong>Facility:</strong> ${facilityInfo.hotel_name || 'Not Specified'}</p>
-                            <p><strong>Assessment Date:</strong> ${assessmentInfo.assessment_date || 'Not Specified'}</p>
-                            <p><strong>Assessor:</strong> ${assessmentInfo.assessor_name || 'Not Specified'}</p>
-                        </div>
-                    </div>
-                    
-                    <div class="executive-overview">
-                        <h2>What Leadership Should Know</h2>
-                        <p><strong>${facilityInfo.hotel_name || 'The facility'}</strong> has a clear security story: the property is operational, but several areas would benefit from tighter control, clearer ownership, and faster remediation.</p>
-                        
-                        <div class="key-findings">
-                            <h3>Business-Impact Highlights</h3>
-                            <ul>
-                                <li><strong>Risk profile:</strong> ${vulnerabilities.length} items identified, with ${highCount} requiring near-term executive attention</li>
-                                <li><strong>Primary exposure areas:</strong> ${topCategorySummary}</li>
-                                <li><strong>Operational effect:</strong> The most material gaps affect guest safety, continuity of operations, and brand reputation</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="significant-vulnerabilities">
-                        <h2>Priority Issues</h2>
-                        ${vulnerabilities.filter(v => v.severity === 'High').map(vuln => `
-                            <div class="vulnerability-item high-notable">
-                                <h4>${vuln.description}</h4>
-                                <p><strong>Why it matters:</strong> ${summarizeFindingConsequence(vuln)}</p>
-                                <p><strong>Recommended direction:</strong> ${vuln.recommendations?.[0] || HOST_REPORT_COPY.noEmbeddedOptionsLine}</p>
-                                <div class="recommendations">
-                                    <h5>Leadership Actions:</h5>
-                                    <ul>
-                                        ${vuln.recommendations.map(rec => `<li>${rec}</li>`).join('')}
-                                    </ul>
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                    
-                    <div class="strategic-recommendations">
-                        <h2>Recommended Executive Actions</h2>
-                        <div class="recommendation-categories">
-                            ${Object.keys(vulnerabilityReport.categories).map(category => `
-                                <div class="recommendation-category">
-                                    <h3>${category}</h3>
-                                    <p>${vulnerabilityReport.categories[category].length} items identified</p>
-                                    <ul>
-                                        ${vulnerabilityReport.categories[category].slice(0, 3).map(vuln => `
-                                            <li>${vuln.description}</li>
-                                        `).join('')}
-                                    </ul>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                    
-                    <div class="next-steps">
-                        <h2>Next Steps</h2>
-                        <ol>
-                            <li>Address the highest-risk items first</li>
-                            <li>Assign clear owners and deadlines to medium-priority items</li>
-                            <li>Keep leadership review tight and recurring</li>
-                            <li>Maintain a continuous improvement cadence</li>
-                        </ol>
-                    </div>
-                </div>
-            `;
+            return considerExecutiveSummary(data, vulnerabilityReport.vulnerabilities || []);
         }
         
         function considerFullReportWithHeuristic(data, vulnerabilityReport) {
-            const facilityInfo = data.sections?.facility_info || {};
-            const assessmentInfo = data.sections?.assessment_info || {};
-            const vulnerabilities = vulnerabilityReport.vulnerabilities || [];
-            
-            return `
-                <div class="full-report">
-                    <div class="report-header">
-                        <h1>${HOST_REPORT_COPY.productName} — ${HOST_REPORT_COPY.reportTitleDefault}</h1>
-                        <div class="report-meta">
-                            <p><strong>Facility:</strong> ${facilityInfo.hotel_name || 'Not Specified'}</p>
-                            <p><strong>Assessment Date:</strong> ${assessmentInfo.assessment_date || 'Not Specified'}</p>
-                            <p><strong>Assessor:</strong> ${assessmentInfo.assessor_name || 'Not Specified'}</p>
-                        </div>
-                    </div>
-                    
-                    <div class="table-of-contents">
-                        <h2>Contents</h2>
-                        <ul>
-                            <li><a href="#executive-summary-final">Leadership Summary</a></li>
-                            <li><a href="#facility-overview">Property Overview</a></li>
-                            <li><a href="#vulnerability-analysis-detailed">Priority Issues</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div id="executive-summary-final" class="executive-summary">
-                        <h2>Leadership Summary</h2>
-                        <p>${vulnerabilityReport.summary}</p>
-                        <p>The leadership view should focus on the issues most likely to affect guest safety, continuity, and reputation, with the highest-risk items handled first.</p>
-                    </div>
-                    
-                    <div id="vulnerability-analysis-detailed" class="vulnerability-analysis">
-                        <h2>Priority Issues</h2>
-                        ${Object.keys(vulnerabilityReport.categories).map(category => `
-                            <div class="vulnerability-category">
-                                <h3>${category}</h3>
-                                <div class="vulnerability-list">
-                                    ${vulnerabilityReport.categories[category].map(vuln => `
-                                        <div class="vulnerability-item ${vuln.severity.toLowerCase()}">
-                                            <h4>${vuln.description}</h4>
-                                            <div class="vulnerability-details">
-                                                <p><strong>Business concern:</strong> ${vuln.field}</p>
-                                                <p><strong>Current state:</strong> ${vuln.value}</p>
-                                                <p><strong>Recommended state:</strong> ${vuln.expected}</p>
-                                                <p><strong>Priority:</strong> <span class="severity-badge ${vuln.severity.toLowerCase()}">${vuln.severity}</span></p>
-                                            </div>
-                                            <div class="recommendations">
-                                                <h5>Recommended actions:</h5>
-                                                <ul>
-                                                    ${vuln.recommendations.map(rec => `<li>${rec}</li>`).join('')}
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    `).join('')}
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-            `;
+            return considerFullReport(data, vulnerabilityReport.vulnerabilities || []);
         }
 
         // ============================================
@@ -27387,138 +27558,26 @@
         // ============================================
         
         function considerExecutiveSummaryWithVOFC(data, vulnerabilityReport, matcher) {
-            const facilityInfo = data.sections?.facility_info || {};
-            const assessmentInfo = data.sections?.assessment_info || {};
-            const matchedVulns = matcher.matchedVulnerabilities || [];
-            const highCount = matchedVulns.filter(v => Number(v.relevanceScore || 0) >= 8).length;
-            const mediumCount = matchedVulns.filter(v => Number(v.relevanceScore || 0) >= 5 && Number(v.relevanceScore || 0) < 8).length;
-            const lowCount = matchedVulns.filter(v => Number(v.relevanceScore || 0) < 5).length;
-            const topCategories = Object.entries(matchedVulns.reduce((acc, m) => {
-                const c = m.category || m.vulnerability?.category || 'General Security';
-                acc[c] = (acc[c] || 0) + 1;
-                return acc;
-            }, {})).sort((a, b) => b[1] - a[1]).slice(0, 2);
-            const topCategorySummary = topCategories.length > 0
-                ? topCategories.map(([name, count]) => `${name} (${count})`).join(', ')
-                : 'No dominant category identified';
-            
-            return `
-                <div class="executive-summary">
-                    <div class="report-header">
-                        <h1>${HOST_REPORT_COPY.productName} — Leadership Brief</h1>
-                        <div class="report-meta">
-                            <p><strong>Facility:</strong> ${facilityInfo.hotel_name || 'Not Specified'}</p>
-                            <p><strong>Assessment Date:</strong> ${assessmentInfo.assessment_date || 'Not Specified'}</p>
-                            <p><strong>Assessor:</strong> ${assessmentInfo.assessor_name || 'Not Specified'}</p>
-                        </div>
-                    </div>
-                    
-                    <div class="executive-overview">
-                        <h2>What Leadership Should Know</h2>
-                        <p>This brief translates the assessment into business terms so leadership can focus on the material risks, the operational consequences, and the actions that will deliver the most value.</p>
-                        
-                        <div class="key-findings">
-                            <h3>Business-Impact Highlights</h3>
-                            <ul>
-                                <li><strong>Risk profile:</strong> ${matchedVulns.length} items identified, with ${highCount} requiring near-term executive attention</li>
-                                <li><strong>Primary exposure areas:</strong> ${topCategorySummary}</li>
-                                <li><strong>Operational effect:</strong> The most material gaps affect guest safety, continuity of operations, and brand reputation</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="significant-vulnerabilities">
-                        <h2>Priority Issues</h2>
-                        ${matchedVulns.filter(v => v.relevanceScore >= 8).map(match => `
-                            <div class="vulnerability-item high-notable">
-                                <h4>${match.vulnerability.v_number} - ${match.vulnerability.vulnerability_text}</h4>
-                                <p><strong>Category:</strong> ${match.category}</p>
-                                <p><strong>Section:</strong> ${match.section}</p>
-                                <p><strong>Why it matters:</strong> ${summarizeFindingConsequence(match.vulnerability)}</p>
-                                <p><strong>Recommended direction:</strong> ${primaryConsiderationActionText(match.vulnerability)}</p>
-                                <div class="recommendations">
-                                    <h5>Leadership Actions:</h5>
-                                    <ul>
-                                        ${match.vulnerability.options.map(option => `<li>${option.description}</li>`).join('')}
-                                    </ul>
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                    
-                    <div class="executive-recommendations">
-                        <h2>Recommended Executive Actions</h2>
-                        <ol>
-                            <li><strong>Stabilize the highest-risk gaps:</strong> address the most material findings first to reduce immediate exposure</li>
-                            <li><strong>Protect critical guest-facing functions:</strong> prioritize controls that support access, monitoring, and continuity</li>
-                            <li><strong>Reinforce accountability:</strong> assign each material gap to an owner with a clear due date</li>
-                            <li><strong>Strengthen readiness:</strong> confirm staff training, incident response, and escalation paths are current</li>
-                            <li><strong>Maintain oversight:</strong> review progress regularly at the leadership level until closure</li>
-                        </ol>
-                    </div>
-                </div>
-            `;
+            return considerExecutiveSummary(data, (matcher.matchedVulnerabilities || []).map(match => ({
+                title: `${match.vulnerability.v_number} - ${match.vulnerability.vulnerability_text}`,
+                description: match.vulnerability.vulnerability_text,
+                severity: match.relevanceScore >= 8 ? 'High' : match.relevanceScore >= 5 ? 'Medium' : 'Low',
+                category: match.category,
+                recommendations: (match.vulnerability.options || []).map(option => ({ description: option.description }))
+            })));
         }
         
         function considerFullReportWithVOFC(data, vulnerabilityReport, matcher) {
-            const facilityInfo = data.sections?.facility_info || {};
-            const assessmentInfo = data.sections?.assessment_info || {};
-            const matchedVulns = matcher.matchedVulnerabilities || [];
-            const responseCount = countCompletedAssessmentResponses(data);
-            
-            return `
-                <div class="detailed-report">
-                    <div class="report-header">
-                        <h1>${HOST_REPORT_COPY.productName} — Board Report</h1>
-                        <div class="report-meta">
-                            <p><strong>Facility:</strong> ${facilityInfo.hotel_name || 'Not Specified'}</p>
-                            <p><strong>Address:</strong> ${facilityInfo.hotel_address_1 || ''} ${facilityInfo.hotel_city || ''}, ${facilityInfo.hotel_state || ''} ${facilityInfo.hotel_zip || ''}</p>
-                            <p><strong>Assessment Date:</strong> ${assessmentInfo.assessment_date || 'Not Specified'}</p>
-                            <p><strong>Assessor:</strong> ${assessmentInfo.assessor_name || 'Not Specified'}</p>
-                        </div>
-                    </div>
-                    
-                    <div class="assessment-metrics">
-                        <h2>Leadership Summary</h2>
-                        <table class="metrics-table">
-                            <tr><th>Focus Area</th><th>Leadership Message</th></tr>
-                            <tr><td>Exposure</td><td>Prioritize the issues most likely to affect guest safety, operations, or reputation.</td></tr>
-                            <tr><td>Continuity</td><td>Protect the systems and procedures that keep the property running during disruption.</td></tr>
-                            <tr><td>Governance</td><td>Assign clear ownership and review timelines for every material gap.</td></tr>
-                            <tr><td>Actionability</td><td>Use a short, disciplined remediation plan rather than a broad redesign.</td></tr>
-                        </table>
-                    </div>
-                    
-                    <div class="vulnerability-analysis">
-                        <h2>Priority Issues</h2>
-                        ${matchedVulns.map((match, index) => `
-                            <div class="vulnerability-detail">
-                                <h3>${index + 1}. ${match.vulnerability.v_number} - ${match.vulnerability.vulnerability_text}</h3>
-                                <div class="vulnerability-meta">
-                                    <span class="severity-badge ${match.relevanceScore >= 8 ? 'high' : match.relevanceScore >= 5 ? 'medium' : 'low'}">
-                                        ${match.relevanceScore >= 8 ? 'High' : match.relevanceScore >= 5 ? 'Medium' : 'Low'} notable
-                                    </span>
-                                    <span class="category-badge">${match.category}</span>
-                                    <span class="section-badge">${match.section}</span>
-                                    <span class="relevance-badge">Relevance: ${match.relevanceScore}/10</span>
-                                </div>
-                                <div class="vulnerability-content">
-                                    <h4>Recommended actions</h4>
-                                    <ol>
-                                        ${match.vulnerability.options.map((option, optIndex) => `
-                                            <li>
-                                                <strong>Option ${optIndex + 1}:</strong> ${option.description}
-                                                <br><em>consideration: ${option.consideration || 'Not specified'}</em>
-                                                ${option.cost ? `<br><em>Cost: ${option.cost}</em>` : ''}
-                                            </li>
-                                        `).join('')}
-                                    </ol>
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-            `;
+            return considerFullReport(data, (matcher.matchedVulnerabilities || []).map(match => ({
+                title: `${match.vulnerability.v_number} - ${match.vulnerability.vulnerability_text}`,
+                description: match.vulnerability.vulnerability_text,
+                severity: match.relevanceScore >= 8 ? 'High' : match.relevanceScore >= 5 ? 'Medium' : 'Low',
+                category: match.category,
+                field: match.section,
+                value: '',
+                expected: '',
+                recommendations: (match.vulnerability.options || []).map(option => ({ description: option.description }))
+            })));
         }
         
         function considerVulnerabilityReportWithVOFC(data, vulnerabilityReport, matcher) {
@@ -27828,6 +27887,8 @@
             initializeDefaultValues();
             // Restore auto-saved assessment from localStorage (must run after defaults clear empty state)
             loadFromLocalStorage({ silent: true });
+            ensureISOEmergencyPlans();
+            populateTrainingFromPlans();
             updateFilenamePreview();
             
             // Update header on page load
