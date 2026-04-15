@@ -146,12 +146,14 @@ class VOFCIntegration {
      */
     calculateOverallScore(results) {
         const totalVulnerabilities = results.vulnerabilities.length;
-        const criticalCount = results.vulnerabilities.filter(v => v.severity === 'Critical').length;
-        const highCount = results.vulnerabilities.filter(v => v.severity === 'High').length;
-        const mediumCount = results.vulnerabilities.filter(v => v.severity === 'Medium').length;
+        const highCount = results.vulnerabilities.filter(v => {
+            const severity = String(v.severity || '').toLowerCase();
+            return severity === 'high' || severity === 'critical' || severity === 'significant';
+        }).length;
+        const mediumCount = results.vulnerabilities.filter(v => String(v.severity || '').toLowerCase() === 'medium').length;
         
-        // Scoring algorithm: 100 - (critical*10 + high*5 + medium*2)
-        const score = Math.max(0, 100 - (criticalCount * 10 + highCount * 5 + mediumCount * 2));
+        // Scoring algorithm: 100 - (high*5 + medium*2)
+        const score = Math.max(0, 100 - (highCount * 5 + mediumCount * 2));
         return Math.round(score);
     }
     
@@ -166,7 +168,6 @@ class VOFCIntegration {
             if (!categories[category]) {
                 categories[category] = {
                     count: 0,
-                    critical: 0,
                     high: 0,
                     medium: 0,
                     low: 0
@@ -174,11 +175,10 @@ class VOFCIntegration {
             }
             
             categories[category].count++;
-            const severityKey = (vulnerability.severity || 'low').toLowerCase();
-            if (!Object.prototype.hasOwnProperty.call(categories[category], severityKey)) {
-                categories[category][severityKey] = 0;
-            }
-            categories[category][severityKey]++;
+            const severityKey = String(vulnerability.severity || 'low').toLowerCase();
+            if (severityKey === 'high' || severityKey === 'critical' || severityKey === 'significant') categories[category].high++;
+            else if (severityKey === 'medium') categories[category].medium++;
+            else if (severityKey === 'low') categories[category].low++;
         }
         
         return categories;

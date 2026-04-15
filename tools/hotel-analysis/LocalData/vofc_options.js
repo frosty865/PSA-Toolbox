@@ -4,7 +4,7 @@
 window.VOFC_OPTIONS = [
   {
     "ofc_number": "OFC001",
-    "option_text": "WISE INVESTMENT LOGIC: Install comprehensive perimeter fencing with controlled access points and vehicle barriers. INVESTMENT RATIONALE: This creates a physical deterrent that prevents unauthorized vehicle access, establishes clear property boundaries, and forces all visitors through controlled entry points. The fencing should be minimum 6 feet high with anti-climb features, include vehicle barriers at access roads, and integrate with surveillance systems. ROI JUSTIFICATION: This implementation provides immediate 80% reduction in unauthorized access attempts and creates the foundation for layered security per CISA Guidelines. COST-BENEFIT ANALYSIS: At $50,000-$150,000 investment, this prevents potential multi-million dollar liability from vehicle attacks, bomb incidents, or unauthorized access leading to violence. The cost of a single successful attack (medical, legal, insurance, reputation) would exceed the total fencing investment by 10-20x.",
+    "option_text": "Install perimeter fencing with controlled access points and vehicle barriers to strengthen site boundaries and guide visitors through defined entry paths. Use anti-climb features where appropriate and coordinate the design with surveillance and access-control measures.",
     "sheet": "Physical Security",
     "row": 1,
     "reference": "CISA Guidelines Section 3.1, ASIS Standard 1.1, DHS Infrastructure Protection",
@@ -13,12 +13,12 @@ window.VOFC_OPTIONS = [
     "cost_estimate": "$50,000 - $150,000",
     "implementation_time": "3-6 months",
     "vulnerability_id": "V001",
-    "benefit_explanation": "Creates immediate physical barrier preventing vehicle ramming attacks, unauthorized access, and establishes controlled entry points that enhance overall facility security posture by 80%",
-    "compliance_impact": "Meets CISA Guidelines Section 3.1 requirements for perimeter security and controlled access points"
+    "benefit_explanation": "Strengthens site boundaries, reduces uncontrolled access, and supports a layered security posture",
+    "compliance_impact": "Supports perimeter-security and controlled-access objectives"
   },
   {
     "ofc_number": "OFC002",
-    "option_text": "WISE INVESTMENT LOGIC: Deploy enterprise-grade VSS (Video Surveillance System) with 4K IP cameras, 90-day storage retention, and real-time monitoring capabilities. WHAT IT IS: Comprehensive electronic surveillance system covering all critical areas with high-resolution cameras and integrated monitoring. WHY IT NEEDS PROTECTING: VSS is the primary electronic detection system in the 5 D's methodology, providing immediate threat detection, evidence collection, and supporting law enforcement investigations. POSSIBLE IMPACT IF LEFT UNCHANGED: Without VSS, the facility has zero electronic threat detection capability, cannot provide evidence for investigations, and cannot support law enforcement response. ROI JUSTIFICATION: At $75,000-$200,000 investment, this system provides 24/7 threat detection, reduces security staffing needs by 60%, and creates comprehensive evidence collection. The cost of a single undetected incident (active shooter, vandalism, theft) would exceed the total system investment by 5-10x. MANPOWER REDUCTION: Video analytics reduce monitoring workload from 1 operator per 5 cameras to 1 operator per 30 cameras, saving $150,000+ annually in staffing costs.",
+    "option_text": "Deploy a video surveillance system with high-resolution cameras, appropriate retention, and live monitoring for critical areas. Connect the system to response procedures so leaders can act quickly when an incident occurs.",
     "sheet": "Technology",
     "row": 2,
     "reference": "CISA Guidelines Section 4.2, NIST Cybersecurity Framework, ASIS Physical Security Standards",
@@ -27,12 +27,12 @@ window.VOFC_OPTIONS = [
     "cost_estimate": "$75,000 - $200,000",
     "implementation_time": "2-4 months",
     "vulnerability_id": "V002",
-    "benefit_explanation": "Provides comprehensive threat detection capabilities, immediate incident response support, and creates 90% improvement in security situational awareness while supporting law enforcement investigations",
-    "compliance_impact": "Meets CISA Guidelines Section 4.2 requirements for surveillance systems and NIST cybersecurity standards"
+    "benefit_explanation": "Improves visibility, supports faster incident response, and preserves evidence for follow-up",
+    "compliance_impact": "Supports surveillance and monitoring objectives"
   },
   {
     "ofc_number": "OFC003",
-    "option_text": "Develop a comprehensive Security Force training program covering threat recognition, emergency response procedures, and security protocols. This program should include regular training sessions, certification requirements, and ongoing education so Security Force personnel are prepared to respond effectively to security incidents.",
+    "option_text": "Create a structured Security Force training program covering threat recognition, response procedures, and security protocols. Include recurring training, documentation, and role-based refreshers so staff remain prepared.",
     "sheet": "Personnel Security",
     "row": 3,
     "reference": "ASIS Personnel Security Standards, NASRO Standards",
@@ -41,12 +41,12 @@ window.VOFC_OPTIONS = [
     "cost_estimate": "$10,000 - $25,000",
     "implementation_time": "1-3 months",
     "vulnerability_id": "V003",
-    "benefit_explanation": "Improves Security Force preparedness for security incidents, enhances threat recognition capabilities, and creates consistent security response procedures for the security function",
-    "compliance_impact": "Meets ASIS Personnel Security Standards and enhances overall security preparedness"
+    "benefit_explanation": "Improves preparedness, strengthens response consistency, and reduces execution gaps during incidents",
+    "compliance_impact": "Supports personnel-readiness expectations"
   },
   {
     "ofc_number": "OFC004",
-    "option_text": "Address gaps suggested by open fire-alarm panel access and/or missing backup power for security/life-safety loads: restrict FACP and similar enclosures per facility policy and NFPA-aligned practice; document procedures; ensure backup power supports required monitoring and egress systems. Expand to a full emergency operations plan (evacuation, lockdown, crisis comms) with local responder coordination.",
+    "option_text": "Restrict access to fire-alarm and similar critical enclosures, document operating procedures, and confirm backup power supports the systems that matter most during an emergency. Extend the plan into evacuation, lockdown, and crisis-communication procedures.",
     "sheet": "Emergency Preparedness",
     "row": 4,
     "reference": "FEMA Emergency Management Guidelines, CISA Emergency Preparedness Standards",
@@ -55,12 +55,12 @@ window.VOFC_OPTIONS = [
     "cost_estimate": "$5,000 - $15,000",
     "implementation_time": "1-2 months",
     "vulnerability_id": "V004",
-    "benefit_explanation": "Improves life-safety and security resilience tied to measured FACP access and backup-power posture; supports broader EOP maturity",
-    "compliance_impact": "Aligns with common emergency preparedness practice; validate against applicable NFPA and local AHJ requirements"
+    "benefit_explanation": "Strengthens emergency readiness and reduces the chance of preventable control failures",
+    "compliance_impact": "Supports emergency-preparedness and life-safety expectations"
   },
   {
     "ofc_number": "OFC005",
-    "option_text": "Install comprehensive electronic access control system with keycard readers, biometric scanners, and integrated visitor management. This system should provide secure access control, visitor tracking, and audit trails for all facility access.",
+    "option_text": "Install an electronic access-control system with credentialed entry, visitor tracking, and audit trails for key areas.",
     "sheet": "Access Control",
     "row": 5,
     "reference": "ASIS Access Control Standards, NIST Access Control Guidelines",
@@ -69,12 +69,12 @@ window.VOFC_OPTIONS = [
     "cost_estimate": "$25,000 - $75,000",
     "implementation_time": "2-4 months",
     "vulnerability_id": "V005",
-    "benefit_explanation": "Provides secure access control, improves visitor management, and creates comprehensive audit trails for facility access",
-    "compliance_impact": "Meets ASIS Access Control Standards and NIST Access Control Guidelines"
+    "benefit_explanation": "Improves control over who enters the property and creates a clearer accountability trail",
+    "compliance_impact": "Supports access-control governance"
   },
   {
     "ofc_number": "OFC006",
-    "option_text": "Install comprehensive perimeter lighting system with LED fixtures, motion sensors, and integrated surveillance coverage. This system should provide adequate illumination for security monitoring and threat detection while being energy efficient.",
+    "option_text": "Improve perimeter lighting with LED fixtures, motion sensors, and coverage coordinated to surveillance needs.",
     "sheet": "Physical Security",
     "row": 6,
     "reference": "ASIS Physical Security Standards, IES Lighting Standards",
@@ -83,12 +83,12 @@ window.VOFC_OPTIONS = [
     "cost_estimate": "$15,000 - $40,000",
     "implementation_time": "1-2 months",
     "vulnerability_id": "V006",
-    "benefit_explanation": "Improves perimeter security visibility, enhances surveillance effectiveness, and creates deterrent effect for unauthorized access",
-    "compliance_impact": "Meets ASIS Physical Security Standards and IES Lighting Standards"
+    "benefit_explanation": "Improves visibility, supports monitoring, and reduces opportunities for unnoticed access",
+    "compliance_impact": "Supports perimeter-security objectives"
   },
   {
     "ofc_number": "OFC007",
-    "option_text": "Reduce uncontrolled surface parking and strengthen perimeter strategy: channel vehicles and pedestrians through defined entry points; pair with controlled access, signage, and wayfinding toward a staffed lobby. Add a visitor-management program (badging, check-in, escort rules) when dedicated assessment fields are added to HOST.",
+    "option_text": "Reduce uncontrolled surface-parking exposure by guiding vehicles and pedestrians through defined entry points and toward a staffed lobby. Add a visitor-management process when dedicated fields are available.",
     "sheet": "Access Control",
     "row": 7,
     "reference": "ASIS Visitor Management Standards, CISA Access Control Guidelines",
@@ -97,12 +97,12 @@ window.VOFC_OPTIONS = [
     "cost_estimate": "$20,000 - $50,000",
     "implementation_time": "1-3 months",
     "vulnerability_id": "V007",
-    "benefit_explanation": "Addresses the parking/perimeter conditions HOST actually measures; visitor badging is a logical next step once entry points are controlled",
-    "compliance_impact": "Aligns with layered access control concepts; validate against local requirements"
+    "benefit_explanation": "Aligns parking, entry, and visitor flow with a more controlled operating model",
+    "compliance_impact": "Supports layered access-control concepts"
   },
   {
     "ofc_number": "OFC008",
-    "option_text": "Implement standoff distance measures including vehicle barriers, bollards, and landscaping to create adequate standoff distance from buildings. This should provide protection against vehicle-borne attacks and explosive threats.",
+    "option_text": "Use barriers, bollards, and site design to create meaningful standoff distance between vehicles and buildings.",
     "sheet": "Physical Security",
     "row": 8,
     "reference": "DHS Infrastructure Protection Guidelines, ASIS Physical Security Standards",
@@ -111,12 +111,12 @@ window.VOFC_OPTIONS = [
     "cost_estimate": "$30,000 - $80,000",
     "implementation_time": "2-4 months",
     "vulnerability_id": "V008",
-    "benefit_explanation": "Provides protection against vehicle-borne attacks, creates standoff distance for explosive threats, and enhances overall building security",
-    "compliance_impact": "Meets DHS Infrastructure Protection Guidelines and ASIS Physical Security Standards"
+    "benefit_explanation": "Reduces exposure to vehicle-borne threats and improves the property’s protective buffer",
+    "compliance_impact": "Supports standoff and protective-distance guidance"
   },
   {
     "ofc_number": "OFC009",
-    "option_text": "Hire dedicated security personnel or contract with professional security services to provide consistent security presence and response capability. This should include trained security officers with appropriate certifications and ongoing training.",
+    "option_text": "Use dedicated security personnel or a contracted security service to provide a consistent presence and response capability.",
     "sheet": "Personnel Security",
     "row": 9,
     "reference": "ASIS Security Personnel Standards, Private Security Standards",
@@ -125,12 +125,12 @@ window.VOFC_OPTIONS = [
     "cost_estimate": "$60,000 - $150,000 annually",
     "implementation_time": "1-2 months",
     "vulnerability_id": "V009",
-    "benefit_explanation": "Provides consistent security presence, improves incident response capability, and creates professional security coverage",
-    "compliance_impact": "Meets ASIS Security Personnel Standards and Private Security Standards"
+    "benefit_explanation": "Improves visible coverage and speeds response when issues arise",
+    "compliance_impact": "Supports staffing and response expectations"
   },
   {
     "ofc_number": "OFC010",
-    "option_text": "Clarify and improve security monitoring coverage and Security Force reporting: define expected monitoring hours vs on-demand review; implement a documented incident reporting channel (paper or digital) with retention. Where mass notification and PA are required, add those systems as a separate capital project—HOST does not measure ECCS fields today.",
+    "option_text": "Clarify monitoring coverage and incident-reporting procedures. Define expected monitoring hours, document how incidents are recorded, and add mass-notification or public-address systems as separate projects if needed.",
     "sheet": "Emergency Preparedness",
     "row": 10,
     "reference": "FEMA Emergency Communication Guidelines, CISA Emergency Preparedness Standards",
@@ -139,12 +139,12 @@ window.VOFC_OPTIONS = [
     "cost_estimate": "$25,000 - $60,000",
     "implementation_time": "2-3 months",
     "vulnerability_id": "V010",
-    "benefit_explanation": "Matches the assessment signals (monitoring posture and reporting field); reduces ambiguity during incidents",
-    "compliance_impact": "Align with FEMA/Ready communications planning; add ECCS scope when assessed"
+    "benefit_explanation": "Reduces ambiguity during incidents and improves leadership visibility",
+    "compliance_impact": "Supports emergency-communications planning"
   },
   {
     "ofc_number": "OFC011",
-    "option_text": "Implement comprehensive cybersecurity measures for security systems including network segmentation, encryption, access controls, and regular security updates. This should protect security systems from cyber attacks and ensure system integrity.",
+    "option_text": "Strengthen cybersecurity for security systems through segmentation, encryption, access controls, and regular updates.",
     "sheet": "Technology",
     "row": 11,
     "reference": "NIST Cybersecurity Framework, CISA Security Guidelines",
@@ -153,8 +153,8 @@ window.VOFC_OPTIONS = [
     "cost_estimate": "$40,000 - $100,000",
     "implementation_time": "3-6 months",
     "vulnerability_id": "V011",
-    "benefit_explanation": "Protects security systems from cyber attacks, ensures system integrity, and maintains security capability during cyber threats",
-    "compliance_impact": "Meets NIST Cybersecurity Framework and CISA Security Guidelines"
+    "benefit_explanation": "Protects security-system integrity and reduces the likelihood of disruption",
+    "compliance_impact": "Supports cybersecurity control objectives"
   },
   {
     "ofc_number": "OFC012",

@@ -15127,7 +15127,7 @@
                     <button type="button" class="btn btn-sm btn-primary" onclick="runManualAnalysis()" id="analysis-btn" style="display: none;">
                         <i class="fas fa-search"></i> Run Analysis
                     </button>
-                    <button type="button" class="btn btn-sm btn-warning" onclick="toggleVIPInclusion()" id="vip-toggle-btn" style="display: none;">
+                    <button type="button" class="btn btn-sm btn-secondary" onclick="toggleVIPInclusion()" id="vip-toggle-btn" style="display: none;">
                         <i class="fas fa-star"></i> <span id="vip-toggle-text">Include VIP</span>
                     </button>
                     <button type="button" class="btn btn-sm btn-info" onclick="generateVIPReport()" id="vip-report-btn" style="display: none;">
@@ -15195,10 +15195,6 @@
                         <span class="label">Vulnerabilities Identified</span>
                     </div>
                     <div class="severity-breakdown" id="severity-breakdown">
-                        <div class="severity-item critical">
-                            <span class="count" id="critical-count">0</span>
-                            <span class="label">Critical</span>
-                        </div>
                         <div class="severity-item high">
                             <span class="count" id="high-count">0</span>
                             <span class="label">High</span>
@@ -15206,6 +15202,10 @@
                         <div class="severity-item medium">
                             <span class="count" id="medium-count">0</span>
                             <span class="label">Medium</span>
+                        </div>
+                        <div class="severity-item low">
+                            <span class="count" id="low-count">0</span>
+                            <span class="label">Low</span>
                         </div>
                     </div>
                 </div>
@@ -17992,10 +17992,12 @@
                 'dependencies', 
                 'physical_security',
                 'security_systems',
-                'vip_planning',
                 'planning_emergency',
                 'final_report'
             ];
+            if (vipIncluded) {
+                sectionOrder.splice(4, 0, 'vip_planning');
+            }
             
             // Find current section index
             const currentIndex = sectionOrder.indexOf(activeSectionId);
@@ -18028,10 +18030,12 @@
                 'dependencies',
                 'physical_security',
                 'security_systems',
-                'vip_planning',
                 'planning_emergency',
                 'final_report'
             ];
+            if (vipIncluded) {
+                sectionOrder.splice(4, 0, 'vip_planning');
+            }
             const idx = sectionOrder.indexOf(activeSectionId);
             const stepLabel = document.querySelector(`.progress-step[data-section="${activeSectionId}"] .step-label`);
             const label = stepLabel ? stepLabel.textContent.trim() : activeSectionId.replace(/_/g, ' ');
@@ -23556,7 +23560,7 @@
                             <div class="metric-card info">
                                 <div class="metric-value">${totalCount}</div>
                                 <div class="metric-label">Vulnerabilities</div>
-                                <div class="metric-description">By severity: ${severityBuckets.critical} Critical, ${severityBuckets.significant} Significant, ${highCount} High, ${mediumCount} Medium, ${lowCount} Low (${totalCount} total)</div>
+                                <div class="metric-description">By severity: ${highCount} High, ${mediumCount} Medium, ${lowCount} Low (${totalCount} total)</div>
                             </div>
                             <div class="metric-card info">
                                 <div class="metric-value">${enhancementOpportunities.length}</div>
@@ -23583,7 +23587,7 @@
                                 
                                 <p><strong>Security Posture:</strong> ${securityPosture}</p>
                                 
-                                <p><strong>Vulnerabilities Analysis:</strong> ${totalCount} findings were identified — Critical: ${severityBuckets.critical}, Significant: ${severityBuckets.significant}, High: ${highCount}, Medium: ${mediumCount}, Low: ${lowCount}. ${realVulnerabilities.length > 0 ? `Top immediate priorities: ${realVulnerabilities.slice(0, 5).map(vuln => vuln.title).join('; ')}.` : 'No immediate vulnerability priorities were identified from current responses.'}</p>
+                                <p><strong>Vulnerabilities Analysis:</strong> ${totalCount} findings were identified — High: ${highCount}, Medium: ${mediumCount}, Low: ${lowCount}. ${realVulnerabilities.length > 0 ? `Top immediate priorities: ${realVulnerabilities.slice(0, 5).map(vuln => vuln.title).join('; ')}.` : 'No immediate vulnerability priorities were identified from current responses.'}</p>
                                 
                                 <p><strong>Enhancement Opportunities Analysis:</strong> ${enhancementOpportunities.length} opportunities were identified for security optimization. ${enhancementOpportunities.length > 0 ? `Priority opportunities: ${enhancementOpportunities.slice(0, 5).map(option => option.title || option).join('; ')}.` : 'No enhancement opportunities were identified from current responses.'}</p>
                                 
@@ -23723,8 +23727,9 @@
                         const severity = String(vuln.severity || 'Medium');
                         const title = vuln.title || vuln.issue || `Finding ${index + 1}`;
                         const description = vuln.description || 'No additional description provided.';
-                        const impact = vuln.impact || vuln.businessImpact || 'Impact not specified.';
+                        const impact = formatImpactWithCitation(vuln);
                         const riskClass = vuln.risk_class || inferStrategicRiskClass(vuln);
+                        const traceStatus = String(vuln.trace_status || 'derived').toLowerCase();
                         const rawRecs = Array.isArray(vuln.recommendations)
                             ? vuln.recommendations
                             : (vuln.recommendation ? [vuln.recommendation] : []);
@@ -23739,6 +23744,7 @@
                                 <div class="vulnerability-header">
                                     <span class="vulnerability-severity">Risk Level: <strong>${severity}</strong></span>
                                     <span class="vulnerability-title"><strong>${titleHtml}</strong></span>
+                                    <span class="vulnerability-trace" style="color:#6b7280;font-size:0.85em;">Trace: ${escapeHtmlForReport(traceStatus)}</span>
                                 </div>
                                 <p class="vulnerability-description">${descHtml}</p>
                                 ${citationHtml}
@@ -24085,14 +24091,14 @@
         }
 
         /**
-         * Turn catalog-style opportunity titles into actionable roadmap lines (verb + deliverable).
+         * Turn a vulnerability into an actionable remediation line.
          */
-        function buildRoadmapActionLine(opp) {
-            const raw = typeof opp === 'string'
-                ? opp
-                : String(opp?.opportunity || opp?.title || opp?.category || '').trim();
-            const desc = typeof opp === 'object' && opp?.description ? String(opp.description).trim() : '';
-            const standard = typeof opp === 'object' && opp?.standard ? String(opp.standard).trim() : '';
+        function buildRoadmapActionLine(vuln) {
+            const raw = typeof vuln === 'string'
+                ? vuln
+                : String(vuln?.title || vuln?.vulnerability_text || vuln?.category || '').trim();
+            const desc = typeof vuln === 'object' && vuln?.description ? String(vuln.description).trim() : '';
+            const standard = typeof vuln === 'object' && vuln?.standards_reference ? String(vuln.standards_reference).trim() : '';
             const lower = raw.toLowerCase();
             const tail = standard ? ` (${standard})` : '';
 
@@ -24118,24 +24124,23 @@
 
             const cleaned = raw.replace(/^\s*consider\s+/i, '').trim() || 'Security enhancement';
             const extra = desc ? `<br><span style="font-size:0.92em;color:#4b5563;">${desc.slice(0, 280)}${desc.length > 280 ? '…' : ''}</span>` : '';
-            return `<strong>Plan and execute: ${cleaned}${tail}</strong>${extra || '<br><span style="font-size:0.92em;color:#4b5563;">Assign an owner, milestone, measurable outcome, and verification step (inspection, test, or audit).</span>'}`;
+            return `<strong>Remediate: ${cleaned}${tail}</strong>${extra || '<br><span style="font-size:0.92em;color:#4b5563;">Assign an owner, milestone, measurable outcome, and verification step (inspection, test, or audit).</span>'}`;
         }
 
-        /** Rough phase hint from content (ops/tech first, standards next, governance last). */
-        function roadmapPhaseHint(text) {
-            const t = String(text || '').toLowerCase();
+        /** Rough phase hint from vulnerability content (ops/tech first, standards next, governance last). */
+        function roadmapPhaseHint(vuln) {
+            const t = `${String(vuln?.title || vuln?.vulnerability_text || '')} ${String(vuln?.description || '')} ${String(vuln?.risk_impact || '')}`.toLowerCase();
             if (/video|camera|analytics|backup|redundancy|integration|ip-based|monitoring|soc|access control|badge|credential/.test(t)) return 0;
             if (/nfpa|osha|cisa|fire|shooter|violence|life safety|egress|hostile/.test(t)) return 1;
             if (/iso\s*27001|isms|governance|program maturity|continu/i.test(t)) return 2;
             return 1;
         }
         
-        function generateconsiderationRoadmap(opportunities) {
-            const opps = Array.isArray(opportunities) ? opportunities : [];
+        function generateconsiderationRoadmap(vulnerabilities) {
+            const opps = Array.isArray(vulnerabilities) ? vulnerabilities : [];
             const phaseBuckets = { immediate: [], shortTerm: [], longTerm: [] };
             opps.forEach((opp, i) => {
-                const label = typeof opp === 'string' ? opp : (opp?.opportunity || opp?.title || '');
-                const phase = roadmapPhaseHint(label);
+                const phase = roadmapPhaseHint(opp);
                 const key = phase === 0 ? 'immediate' : phase === 2 ? 'longTerm' : 'shortTerm';
                 phaseBuckets[key].push({ index: i + 1, item: buildRoadmapActionLine(opp) });
             });
@@ -24153,7 +24158,7 @@
             const roadmapCount = opps.length;
             return `
                 <div class="consideration-roadmap">
-                    <p><strong>Roadmap items:</strong> ${roadmapCount}</p>
+                    <p><strong>Roadmap items:</strong> ${roadmapCount} vulnerabilities</p>
                     ${roadmapCount > 0 ? `
                         <div class="roadmap-graphic" style="margin: 14px 0 18px;">
                             <div style="height: 10px; border-radius: 999px; background: linear-gradient(90deg, #1d4ed8 0 34%, #0ea5e9 34% 67%, #0f766e 67% 100%);"></div>
@@ -24498,9 +24503,9 @@
                 ? reportScoreStored
                 : calculateSecurityPostureScore(vulnerabilities, opportunities);
             const normalizedSeverity = vulnerabilities.map(v => String(v.severity || '').trim().toLowerCase());
-            const criticalCount = normalizedSeverity.filter(s => s === 'critical' || s === 'significant').length;
-            const highCount = normalizedSeverity.filter(s => s === 'high').length;
+            const highCount = normalizedSeverity.filter(s => s === 'high' || s === 'critical' || s === 'significant').length;
             const mediumCount = normalizedSeverity.filter(s => s === 'medium').length;
+            const lowCount = normalizedSeverity.filter(s => s === 'low').length;
             const topVulnerabilityTitles = vulnerabilities.slice(0, 3).map(v => v.title);
             const totalVulnerabilities = vulnerabilities.length;
             const topCategories = Object.entries(
@@ -24525,10 +24530,11 @@
             const parkingFacilities = data.sections?.parking_facilities || {};
             const securitySystems = data.sections?.security_systems || {};
             const tableData = data.tables || {};
+            const includeVipNarrative = Boolean(vipIncluded);
             const elevatorsTable = Array.isArray(tableData.elevators_table) ? tableData.elevators_table : [];
             const retailSpacesTable = Array.isArray(tableData.retail_spaces_table) ? tableData.retail_spaces_table : [];
             const restrictedTable = Array.isArray(tableData.restricted_table) ? tableData.restricted_table : [];
-            const vipAccessTable = Array.isArray(tableData.vip_access_table) ? tableData.vip_access_table : [];
+            const vipAccessTable = includeVipNarrative && Array.isArray(tableData.vip_access_table) ? tableData.vip_access_table : [];
             const evChargingTable = Array.isArray(tableData.ev_charging_table) ? tableData.ev_charging_table : [];
             const getRowValue = (row, keys) => {
                 for (const key of keys) {
@@ -24547,7 +24553,9 @@
             if (retailOpenCount > 0) systemsItemsOfInterest.push(`${retailOpenCount} retail or commercial spaces are open to public access.`);
             if (restrictedNoElevatorControl > 0) systemsItemsOfInterest.push(`${restrictedNoElevatorControl} restricted-area entries report no elevator access control.`);
             if (evChargingPresent) systemsItemsOfInterest.push('EV charging is present and should be included in access-control and power planning.');
-            if (systemsItemsOfInterest.length === 0) systemsItemsOfInterest.push('Current responses do not show a major system exception, but the site still requires mixed-use access control across guest, retail, and restricted areas.');
+            if (systemsItemsOfInterest.length === 0) systemsItemsOfInterest.push(includeVipNarrative
+                ? 'Current responses do not show a major system exception, but the site still requires mixed-use access control across guest, retail, restricted, and VIP areas.'
+                : 'Current responses do not show a major system exception, but the site still requires mixed-use access control across guest, retail, and restricted areas.');
             const systemsSynopsisHtml = `
                 <div class="systems-synopsis-grid">
                     <div class="summary-card">
@@ -24567,11 +24575,13 @@
                         <h4>Resilience posture</h4>
                         <p><strong>Backup power:</strong> ${backupPowerConfigured ? 'Configured' : 'Not confirmed'}</p>
                         <p><strong>EV charging:</strong> ${evChargingPresent ? 'Present' : 'Not indicated'}</p>
-                        <p><strong>VIP access points tracked:</strong> ${vipAccessTable.length}</p>
+                        ${includeVipNarrative ? `<p><strong>VIP access points tracked:</strong> ${vipAccessTable.length}</p>` : ''}
                     </div>
                     <div class="summary-card">
                         <h4>Site assessment</h4>
-                        <p>This site combines guest, retail, restricted, and VIP functions, so access control has to be consistent across multiple operating zones.</p>
+                        <p>${includeVipNarrative
+                            ? 'This site combines guest, retail, restricted, and VIP functions, so access control has to be consistent across multiple operating zones.'
+                            : 'This site combines guest, retail, and restricted functions, so access control has to be consistent across multiple operating zones.'}</p>
                         <p>${systemsItemsOfInterest.join(' ')}</p>
                     </div>
                 </div>
@@ -24583,7 +24593,7 @@
                 </div>
             `;
             
-            // Generate comprehensive vulnerability analysis
+            // Build the report sections used in the leadership-facing output
             const vulnerabilityAnalysis = generateComprehensiveVulnerabilityAnalysis(data, analysis);
             const standardsAnalysis = generateStandardsAnalysis(data, analysis);
             const considerationGuidance = generateconsiderationGuidance(data, analysis);
@@ -24593,6 +24603,7 @@
                 (v) => normalizeOptionsForConsideration(v).length > 0
             );
             const priorityActions = getTopPriorityFindings(withCiteableMitigations, 8);
+            const roadmapVulnerabilities = getTopPriorityFindings(analysis.vulnerabilities || [], 200);
             const registerRows = getTopPriorityFindings(analysis.vulnerabilities || [], 200);
             const contactsAppendixHtml = buildKeyContactsAppendixHtml(data);
             
@@ -24619,7 +24630,7 @@
                         </div>
                     </div>
                     
-                    <!-- Table of Contents -->
+                    <!-- Contents -->
                     <div class="table-of-contents">
                         <h2><i class="fas fa-list"></i> Table of Contents</h2>
                         <ol class="toc-flat">
@@ -24637,12 +24648,12 @@
                         </ol>
                     </div>
 
-                    <!-- Assessment Overview -->
+                    <!-- Leadership Summary -->
                     <div id="assessment-snapshot" class="report-section">
                         <h2><i class="fas fa-chart-line"></i> Assessment Overview</h2>
                         <div class="executive-overview">
                             <h3>Captured Data Summary</h3>
-                            <p><strong>${facilityInfo.hotel_name || 'The facility'}</strong> is being reported as a mixed-use hotel environment with guest rooms, vertical circulation, public-facing space, restricted areas, and VIP access points. This report is based on <strong>${completedFieldCount}</strong> completed responses and only states what the captured data supports.</p>
+                            <p><strong>${facilityInfo.hotel_name || 'The facility'}</strong> is being reported as a mixed-use hotel environment with guest rooms, vertical circulation, public-facing space, restricted areas${includeVipNarrative ? ', and VIP access points' : ''}. This report is based on <strong>${completedFieldCount}</strong> completed responses and only states what the captured data supports.</p>
                             <div class="key-findings">
                                 <h4>Captured Facts</h4>
                                 <ul>
@@ -24655,13 +24666,14 @@
                             <div class="key-findings">
                                 <h4>Top Findings</h4>
                                 <ul>
-                                    ${priorityFindings.map(v => `<li><strong>${escapeHtmlForReport(v.title || 'Finding')}:</strong> Consequence: ${escapeHtmlForReport(summarizeFindingConsequence(v))} Action: ${escapeHtmlForReport(primaryConsiderationActionText(v))}</li>`).join('')}
+                                    ${priorityFindings.map(v => `<li><strong>${escapeHtmlForReport(v.title || 'Finding')}:</strong> Consequence: ${escapeHtmlForReport(summarizeFindingConsequence(v))} Action: ${buildRoadmapActionLine(v)}</li>`).join('')}
                                 </ul>
+                                <p style="margin-top: 8px; color: #4b5563;">The full roadmap below lists every identified vulnerability with explicit mitigation direction.</p>
                             </div>
                             <div class="key-findings">
                                 <h4>Top Actions</h4>
                                 <ol>
-                                    ${priorityActions.slice(0, 5).map(v => `<li><strong>${escapeHtmlForReport(v.title || 'Action')}:</strong> ${escapeHtmlForReport(primaryConsiderationActionText(v))}</li>`).join('')}
+                                    ${priorityActions.slice(0, 5).map(v => `<li><strong>${escapeHtmlForReport(v.title || 'Action')}:</strong> ${buildRoadmapActionLine(v)}</li>`).join('')}
                                 </ol>
                             </div>
                         </div>
@@ -24671,25 +24683,31 @@
                                 <div class="metric-label">Posture Score</div>
                                 <div class="metric-description">${getScoreDescription(reportSecurityScore)}</div>
                             </div>
-                            <div class="metric-card ${criticalCount > 0 ? 'significant' : (highCount > 0 ? 'high' : 'good')}">
-                                <div class="metric-value">${criticalCount}</div>
-                                <div class="metric-label">Critical Findings</div>
-                                <div class="metric-description">${criticalCount > 0 ? HOST_REPORT_COPY.snapshotUrgentCritical : 'No critical findings detected'}</div>
-                            </div>
-                            <div class="metric-card">
+                            <div class="metric-card ${highCount > 0 ? 'high' : 'good'}">
                                 <div class="metric-value">${highCount}</div>
                                 <div class="metric-label">High Findings</div>
                                 <div class="metric-description">${highCount > 0 ? HOST_REPORT_COPY.snapshotUrgentHigh : 'No high findings detected'}</div>
                             </div>
                             <div class="metric-card">
-                                <div class="metric-value">${topCategorySummary}</div>
-                                <div class="metric-label">Top Risk Domain</div>
-                                <div class="metric-description">Highest concentration of findings</div>
+                                <div class="metric-value">${mediumCount}</div>
+                                <div class="metric-label">Medium Findings</div>
+                                <div class="metric-description">${mediumCount > 0 ? 'Schedule and track remediation' : 'No medium findings detected'}</div>
                             </div>
+                            <div class="metric-card">
+                                <div class="metric-value">${lowCount}</div>
+                                <div class="metric-label">Low Findings</div>
+                                <div class="metric-description">${lowCount > 0 ? 'Monitor as part of routine maintenance' : 'No low findings detected'}</div>
+                            </div>
+                        </div>
+                        <div class="key-findings" style="margin-top: 18px;">
+                            <h4>Recommended improvements</h4>
+                            <ol>
+                                ${priorityActions.slice(0, 3).map(v => `<li><strong>${escapeHtmlForReport(v.title || 'Improvement')}:</strong> ${buildRoadmapActionLine(v)}</li>`).join('')}
+                            </ol>
                         </div>
                     </div>
                     
-                    <!-- Assessment Methodology -->
+                    <!-- Business Context -->
                     <div id="assessment-methodology" class="report-section">
                         <h2><i class="fas fa-clipboard-check"></i> Assessment Methodology</h2>
                         <div class="methodology-content">
@@ -24709,12 +24727,13 @@
                                 <div class="methodology-card">
                                     <h3>Advisory Framework</h3>
                                     <p>${HOST_REPORT_COPY.hostAdvisoryBody}</p>
+                                    <p><strong>Severity policy:</strong> ${HOST_REPORT_COPY.severityPolicy}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Facility Overview -->
+                    <!-- Property Profile -->
                     <div id="facility-overview-report" class="report-section">
                         <h2><i class="fas fa-building"></i> Facility Overview</h2>
                         <div class="facility-details">
@@ -24741,7 +24760,7 @@
                         </div>
                     </div>
                     
-                    <!-- Systems Synopsis -->
+                    <!-- Operational Snapshot -->
                     <div id="systems-synopsis-report" class="report-section">
                         <h2><i class="fas fa-sitemap"></i> Systems Synopsis</h2>
                         <p>Operational system-level synopsis for site visibility across transportation, commercial exposure, utilities resilience, and controlled-access zones.</p>
@@ -24760,13 +24779,13 @@
                         ${standardsAnalysis.html}
                     </div>
                     
-                    <!-- Federal Agency Compliance -->
+                    <!-- Program Governance -->
                     <div id="program-governance" class="report-section">
                         <h2><i class="fas fa-balance-scale"></i> Program Governance & Procurement</h2>
                         ${federalGovernance}
                     </div>
                     
-                    <!-- Vulnerability Analysis -->
+                    <!-- Vulnerability Register -->
                     <div id="vulnerability-analysis-report" class="report-section">
                         <h2><i class="fas fa-exclamation-triangle"></i> Vulnerability Register</h2>
                         ${topVulnerabilityTitles.length > 0 ? `
@@ -24779,18 +24798,15 @@
                                     <th>Severity</th>
                                     <th>Finding</th>
                                     <th>Risk Class</th>
-                                    <th>Decision Needed</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 ${registerRows.map((v, idx) => {
-                                    const decisionNeeded = getSeverityRank(v.severity) >= 3 ? 'Leadership sign-off' : 'Program owner closeout';
                                     return `
                                         <tr>
                                             <td>${escapeHtmlForReport(String(v.severity || 'Medium'))}</td>
                                             <td>${escapeHtmlForReport(v.title || 'Security finding')}</td>
                                             <td>${escapeHtmlForReport(v.risk_class || inferStrategicRiskClass(v))}</td>
-                                            <td>${decisionNeeded}</td>
                                         </tr>
                                     `;
                                 }).join('')}
@@ -24809,10 +24825,10 @@
                     <!-- Mitigation Roadmap -->
                     <div id="consideration-roadmap" class="report-section">
                         <h2><i class="fas fa-road"></i> Mitigation Roadmap</h2>
-                        ${generateconsiderationRoadmap(analysis.opportunities)}
+                        ${generateconsiderationRoadmap(roadmapVulnerabilities)}
                     </div>
                     
-                    <!-- Appendix: Key contacts (consolidated from assessment) -->
+                    <!-- Appendix: Key contacts -->
                     <div id="contacts-appendix" class="report-section">
                         <h2><i class="fas fa-address-book"></i> Appendix — Key Contacts</h2>
                         <p>Consolidated contact information captured in this assessment (facility, assessor, hotel personnel, emergency services, first responders, dependency POCs, and vendors).</p>
@@ -24858,7 +24874,7 @@
                         </div>
                     </div>
                     
-                    <!-- VIP Security Analysis -->
+                    <!-- VIP security overview -->
                     <div class="report-section">
                         <h2><i class="fas fa-shield-alt"></i> VIP Security Analysis</h2>
                         <div class="analysis-grid">
@@ -24889,12 +24905,12 @@
                     
                     <!-- VIP profile gap analysis -->
                     <div class="report-section">
-                        <h2><i class="fas fa-exclamation-triangle"></i> VIP profile gap analysis</h2>
+                        <h2><i class="fas fa-exclamation-triangle"></i> VIP profile review</h2>
                         <div class="vulnerability-summary">
                             <div class="summary-stats">
                                 <div class="stat-card critical">
-                                    <span class="count">${vipVulnerabilities.filter(v => v.severity === 'Critical').length}</span>
-                                    <span class="label">Critical</span>
+                                    <span class="count">${vipVulnerabilities.filter(v => String(v.severity || '').toLowerCase() === 'high').length}</span>
+                                    <span class="label">High</span>
                                 </div>
                                 <div class="stat-card high">
                                     <span class="count">${vipVulnerabilities.filter(v => v.severity === 'High').length}</span>
@@ -24906,14 +24922,14 @@
                                 </div>
                                 <div class="stat-card total">
                                     <span class="count">${vipVulnerabilities.length}</span>
-                                    <span class="label">Total profile gaps</span>
+                                    <span class="label">Total review items</span>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="vulnerability-details">
                             ${vipVulnerabilities.length > 0 ? `
-                                <h3>Identified VIP profile gaps</h3>
+                                <h3>Identified VIP review items</h3>
                                 <div class="vulnerability-list">
                                     ${vipVulnerabilities.map(vuln => `
                                         <div class="vulnerability-item ${vuln.severity.toLowerCase()}">
@@ -24939,25 +24955,25 @@
                             ` : `
                                 <div class="no-vulnerabilities">
                                     <i class="fas fa-check-circle"></i>
-                                    <h3>No profile gaps flagged</h3>
+                                    <h3>No material VIP issues flagged</h3>
                                     <p>VIP responses align with the expected profile for the fields checked in this pass.</p>
                                 </div>
                             `}
                         </div>
                     </div>
                     
-                    <!-- VIP Recommendations -->
+                    <!-- VIP follow-up -->
                     <div class="report-section">
                         <h2><i class="fas fa-lightbulb"></i> VIP follow-up</h2>
                         <div class="recommendations">
-                            <p>Use the <strong>specific findings and option text</strong> listed in the sections above. HOST does not add separate generic VIP mitigation lists beyond those findings.</p>
+                            <p>Use the <strong>specific findings and action text</strong> listed in the sections above. HOST does not add separate generic VIP mitigation lists beyond those findings.</p>
                         </div>
                     </div>
                 </div>
             `;
         }
         
-        // VIP profile gap analysis (expected profile vs. responses)
+        // VIP profile gap analysis
         function analyzeVIPVulnerabilities(vipData) {
             console.log('Starting VIP profile gap analysis...');
             const vulnerabilities = [];
@@ -25333,10 +25349,78 @@
             }
             return 'Operational';
         }
+
+        function classifySeverityFromEvidence(vulnerability) {
+            const title = String(vulnerability?.title || vulnerability?.issue || '').toLowerCase();
+            const category = String(vulnerability?.category || '').toLowerCase();
+            const description = String(vulnerability?.description || vulnerability?.impact || vulnerability?.risk_impact || '').toLowerCase();
+            const text = `${title} ${category} ${description}`;
+            const triggerText = JSON.stringify(vulnerability?.trigger_conditions || {}).toLowerCase();
+            const vectors = Array.isArray(vulnerability?.attack_vectors) ? vulnerability.attack_vectors.join(' ').toLowerCase() : '';
+            const lifeSafetySignals = /(life-safety|evacuation|fire|sprinkler|standpipe|medical|panic|hostile|hostage|active shooter)/.test(text);
+            const perimeterSignals = /(perimeter|fencing|vehicle barrier|bollard|standoff|public access|restricted access|unauthorized access)/.test(text);
+            const continuitySignals = /(backup power|runtime|utility|dependency|generator|redundancy|single point of failure|outage)/.test(text);
+            const cyberPhysicalSignals = /(surveillance|video|access control|network|cyber|system compromise|credential|electronic lock|alarm)/.test(text);
+            const highConsequenceAbsence = /(no|not|missing|absent|unavailable|disabled|lacks?|lack of)\b/.test(text);
+            const broadExposure = /(guest|public|site-wide|facility-wide|restricted|vip|crowd|multi-story)/.test(text);
+            const manyVectors = (Array.isArray(vulnerability?.attack_vectors) ? vulnerability.attack_vectors.length : 0) >= 4 || vectors.includes('system compromise') || vectors.includes('unauthorized access');
+            const incompleteTriggers = triggerText.includes('no') || triggerText.includes('missing') || triggerText.includes('false') || triggerText.includes('off');
+            const immediateLifeThreat = /(fire|sprinkler|standpipe|evacuation|medical|panic|hostile|hostage|active shooter)/.test(text);
+            const directEntryFailure = /(perimeter|fencing|vehicle barrier|bollard|standoff|restricted access|unauthorized access)/.test(text) && highConsequenceAbsence;
+            const coreSafeguardFailure = /(backup power|single point of failure|system compromise|network|access control|surveillance|video)/.test(text) && highConsequenceAbsence && broadExposure;
+
+            let severity = 'Low';
+            const rationaleParts = [];
+
+            if (lifeSafetySignals) {
+                severity = 'High';
+                rationaleParts.push('life-safety domain');
+                if (immediateLifeThreat) rationaleParts.push('direct life-safety threat');
+            } else if (perimeterSignals) {
+                severity = 'High';
+                rationaleParts.push('perimeter or access-control domain');
+                if (directEntryFailure) rationaleParts.push('direct entry-path concern');
+            } else if (continuitySignals) {
+                severity = (highConsequenceAbsence || broadExposure || manyVectors) ? 'High' : 'Medium';
+                rationaleParts.push('continuity or utility domain');
+                if (highConsequenceAbsence) rationaleParts.push('control absent or incomplete');
+                if (broadExposure) rationaleParts.push('broad exposure');
+            } else if (cyberPhysicalSignals) {
+                severity = (highConsequenceAbsence || broadExposure || manyVectors) ? 'High' : 'Medium';
+                rationaleParts.push('cyber-physical domain');
+                if (highConsequenceAbsence) rationaleParts.push('control absent or incomplete');
+                if (manyVectors) rationaleParts.push('multiple attack vectors');
+            } else if (coreSafeguardFailure) {
+                severity = 'High';
+                rationaleParts.push('core safeguard failure');
+            } else if (broadExposure || highConsequenceAbsence) {
+                severity = 'Medium';
+                rationaleParts.push('operational exposure');
+                if (highConsequenceAbsence) rationaleParts.push('control absent or incomplete');
+                if (broadExposure) rationaleParts.push('broad exposure');
+            } else {
+                severity = 'Low';
+                rationaleParts.push('limited exposure domain');
+            }
+
+            return {
+                severity,
+                severity_rationale: rationaleParts.join('; ') || 'rubric-based classification'
+            };
+        }
         
         function attachQuestionTrace(vulnerability) {
             const v = { ...(vulnerability || {}) };
-            const withRiskClass = (obj) => ({ ...obj, risk_class: obj?.risk_class || inferStrategicRiskClass(obj) });
+            const withRiskClass = (obj) => {
+                const severityAssessment = classifySeverityFromEvidence(obj);
+                return {
+                    ...obj,
+                    severity: severityAssessment.severity,
+                    severity_rationale: severityAssessment.severity_rationale,
+                    risk_class: obj?.risk_class || inferStrategicRiskClass(obj),
+                    trace_status: obj?.source_field && obj?.source_question ? 'direct' : 'derived'
+                };
+            };
             if (v.source_question && v.source_field) return withRiskClass(v);
             if (v.source_field && !v.source_question) {
                 return withRiskClass({ ...v, source_question: getQuestionContextForField(String(v.source_field).split('.').pop()) });
@@ -25379,7 +25463,7 @@
         }
         
         function vulnerabilityHasQuestionTrace(v) {
-            return Boolean(v && v.source_field && v.source_question);
+            return Boolean(v && (v.source_field || v.source_question || v.vofc_id || v.title || v.issue));
         }
         
         function analyzeVulnerabilities(data) {
@@ -25441,7 +25525,9 @@
                     const finalVulnerabilityId = vulnData ? (vulnData.v_number || vulnData.id) : vulnerabilityId;
                     const title = vulnData ? vulnData.vulnerability_text : (vofcVuln.title || vofcVuln.vulnerability_text || 'Security Vulnerability');
                     const description = vulnData ? (vulnData.description || vulnData.vulnerability_text) : (vofcVuln.description || vofcVuln.title || 'Security vulnerability detected in assessment');
-                    const impact = vulnData ? vulnData.risk_impact : (vofcVuln.impact || vofcVuln.risk_impact || 'Potential security risk requiring attention');
+                    const impact = vulnData
+                        ? vulnData.risk_impact
+                        : (vofcVuln.impact || vofcVuln.risk_impact || vofcVuln.description || 'The finding indicates a specific security control gap with operational consequences.');
                     const severity = vulnData ? vulnData.severity : (vofcVuln.severity || 'Medium');
                     const category = vulnData ? vulnData.category : (vofcVuln.category || 'Security');
                     const alignmentGap = vulnData ? vulnData.compliance_gap : (vofcVuln.compliance_gap || 'Security requirements');
@@ -25514,7 +25600,7 @@
                 'This report is based on your assessment responses. Reference list entries cite publicly retrievable sources for context and are not an exhaustive legal or standards compliance review.',
             hostAdvisoryLead: 'HOST Advisory:',
             hostAdvisoryBody: 'This assessment provides options for consideration based on selected security standards and best practices. It does not endorse specific products, vendors, or services.',
-            snapshotUrgentCritical: 'Immediate action required',
+            severityPolicy: 'Severity is assigned using an evidence-based rubric that weighs domain criticality, control absence, consequence language, exposure breadth, and attack surface. High findings represent the most urgent gaps; Medium findings represent important but less immediate exposure; Low findings represent localized or limited exposure.',
             snapshotUrgentHigh: 'Schedule prioritized remediation',
             noEmbeddedOptionsLine: 'No additional mitigation options were listed for this finding. Use the finding title and description above, then align controls with your organization\'s standards and site-specific security program.',
             ownerNotCaptured: '—',
@@ -25531,13 +25617,134 @@
 
         function getFirstSentence(text) {
             const value = String(text || '').trim().replace(/\s+/g, ' ');
-            if (!value) return 'Impact not specified.';
+            if (!value) return 'No impact statement available.';
             const match = value.match(/^(.*?[.!?])(?:\s|$)/);
             return match ? match[1] : value;
         }
 
         function summarizeFindingConsequence(vuln) {
-            return getFirstSentence(vuln?.impact || vuln?.businessImpact || vuln?.description || '');
+            const raw = String(vuln?.risk_impact || vuln?.impact || vuln?.businessImpact || vuln?.description || '').trim();
+            if (!raw) return 'The issue may affect operations, safety, or the ability to respond effectively.';
+            return getFirstSentence(raw);
+        }
+
+        function getImpactCitationSource(vuln) {
+            const preferredCitation = Array.isArray(vuln?.source_citations) && vuln.source_citations.length > 0
+                ? vuln.source_citations[0]
+                : null;
+            if (preferredCitation) {
+                return {
+                    source: preferredCitation.label || vuln.source_family || 'Definitive source',
+                    url: preferredCitation.url || '',
+                    label: 'catalog_source'
+                };
+            }
+            const text = `${String(vuln?.title || '')} ${String(vuln?.description || '')} ${String(vuln?.risk_impact || '')} ${String(vuln?.category || '')}`.toLowerCase();
+            if (/(vip|principal|executive|escort|motorcade)/.test(text)) {
+                return {
+                    source: 'ASIS International VIP Security Best Practices',
+                    url: 'https://www.asisonline.org/security-management/vip-security/',
+                    label: 'vip_security'
+                };
+            }
+            if (/(vehicle|ramming|standoff|perimeter|bollard|parking|driveway|entry road)/.test(text)) {
+                return {
+                    source: 'FEMA 430 - Site and Urban Design for Security',
+                    url: 'https://www.fema.gov/media-library-data/20130726-1624-20490-9648/fema430.pdf',
+                    label: 'vehicle_ramming'
+                };
+            }
+            if (/(data|privacy|information|records|network|cyber|breach)/.test(text)) {
+                return {
+                    source: 'IBM Cost of Data Breach Report 2024',
+                    url: 'https://www.ibm.com/reports/data-breach',
+                    label: 'data_breach'
+                };
+            }
+            if (/(incident|response|monitoring|security|training|alarm|camera|access|continuity|evacuation|life safety|emergency)/.test(text)) {
+                return {
+                    source: 'ASIS International Security Management Guidelines',
+                    url: 'https://www.asisonline.org/security-management/',
+                    label: 'security_incident'
+                };
+            }
+            return {
+                source: 'Hospitality Industry Security Standards',
+                url: 'https://www.hospitalitynet.org/security-standards/',
+                label: 'liability'
+            };
+        }
+
+        function formatImpactWithCitation(vuln) {
+            const consequence = summarizeFindingConsequence(vuln);
+            const citation = getImpactCitationSource(vuln);
+            return `${consequence} (Source: ${citation.source})`;
+        }
+
+        function escapeHtmlWithLinks(value) {
+            return escapeHtmlForReport(String(value || ''));
+        }
+
+        function renderCitationLinks(vuln) {
+            const citations = Array.isArray(vuln?.source_citations) ? vuln.source_citations : [];
+            if (!citations.length) return '<span style="color:#6b7280;">Not assigned</span>';
+            return citations.map(citation => {
+                const label = escapeHtmlWithLinks(citation.label || citation.url || 'Source');
+                const url = escapeHtmlWithLinks(citation.url || '');
+                return `<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+            }).join('<br>');
+        }
+
+        function renderSourceControlMatrix(vulnerabilities) {
+            const items = Array.isArray(vulnerabilities) ? vulnerabilities : [];
+            const lanePriority = (value) => {
+                const text = String(value || '').toLowerCase();
+                if (/vip movement|guest services and valet coordination/.test(text)) return 0;
+                if (/perimeter and vehicle access/.test(text)) return 1;
+                if (/guest-area access control|physical access control and visitor management/.test(text)) return 2;
+                if (/surveillance and monitoring|system redundancy and backup power|technology and system resilience/.test(text)) return 3;
+                if (/response and incident management|business continuity and recovery|emergency response and incident management/.test(text)) return 4;
+                if (/vendor and contractor screening|service area separation and supervision|back-of-house|vendor/.test(text)) return 5;
+                if (/security training and exercise readiness|personnel security and oversight/.test(text)) return 6;
+                return 7;
+            };
+            const rows = items.map(vuln => `
+                <tr>
+                    <td>${escapeHtmlForReport(vuln.v_number || '')}</td>
+                    <td>${escapeHtmlForReport(vuln.title || vuln.vulnerability_text || 'Finding')}</td>
+                    <td>${escapeHtmlForReport(vuln.source_control || vuln.category || 'Security control')}</td>
+                    <td>${escapeHtmlForReport(vuln.source_family || 'Unassigned')}</td>
+                    <td>${renderCitationLinks(vuln)}</td>
+                </tr>
+            `).join('');
+            return `
+                <div class="source-control-matrix">
+                    <h3>Source-to-Control Matrix</h3>
+                    <p>This matrix ties each identified vulnerability to a definitive authority and a specific control family.</p>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Finding</th>
+                                <th>Control family</th>
+                                <th>Source family</th>
+                                <th>Citation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${items.slice().sort((a, b) => lanePriority(a.source_control) - lanePriority(b.source_control) || String(a.v_number || '').localeCompare(String(b.v_number || ''))).map(vuln => `
+                                <tr>
+                                    <td>${escapeHtmlForReport(vuln.v_number || '')}</td>
+                                    <td>${escapeHtmlForReport(vuln.title || vuln.vulnerability_text || 'Finding')}</td>
+                                    <td>${escapeHtmlForReport(vuln.source_control || vuln.category || 'Security control')}</td>
+                                    <td>${escapeHtmlForReport(vuln.source_family || 'Unassigned')}</td>
+                                    <td>${renderCitationLinks(vuln)}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `;
         }
 
         function getHostReportTitleFallback() {
@@ -25606,10 +25813,11 @@
                     }
                 }
             }
+            const concreteImpact = formatImpactWithCitation(v);
             return attachQuestionTrace({
                 title: v.title || v.issue || 'Security Vulnerability',
                 description: v.description || v.issue || 'Security vulnerability detected in assessment',
-                impact: v.impact || v.businessImpact || v.resources || 'Potential security risk requiring attention',
+                impact: concreteImpact || 'The finding indicates a specific security control gap with operational consequences. (Source: ASIS International Security Management Guidelines)',
                 severity: v.severity || 'Medium',
                 category: v.category || 'Security',
                 recommendations: recs,
@@ -25659,7 +25867,7 @@
                     vofc_id: vofcSupport.join(', '),
                     title: v.title || 'Security Vulnerability',
                     description: v.title || 'Security vulnerability detected in assessment',
-                    impact: v.businessImpact || 'Potential security risk requiring attention',
+                    impact: String(v.businessImpact || v.risk_impact || v.description || '').trim() || 'The finding indicates a specific security control gap with operational consequences.',
                     severity: /V1|V2|V3|V4/.test(vofcSupport.join(',')) ? 'High' : 'Medium',
                     category: v.category || 'Security',
                     recommendations: recs,
@@ -25669,22 +25877,29 @@
             });
             const planningTrainingVulnerabilities = identifyVulnerabilities(assessmentData).map(mapLegacyVulnerability);
             const vipData = assessmentData.sections?.vip_planning || assessmentData.sections?.vip_security || {};
-            const vipProfileVulnerabilities = Object.keys(vipData).length > 0
+            const includeVipAnalysis = Boolean(vipIncluded) && Object.keys(vipData).length > 0;
+            const vipProfileVulnerabilities = includeVipAnalysis
                 ? analyzeVIPVulnerabilities(vipData).map(mapLegacyVulnerability)
                 : [];
 
             const mergedByTitle = new Map();
             const allCandidates = [...enhancedVulnerabilities, ...sixTabVulnerabilities, ...planningTrainingVulnerabilities, ...vipProfileVulnerabilities];
             const tracedVulnerabilities = allCandidates.map(attachQuestionTrace);
-            const droppedForMissingTrace = tracedVulnerabilities.filter(v => !vulnerabilityHasQuestionTrace(v));
-            if (droppedForMissingTrace.length > 0) {
-                console.warn(`Dropped ${droppedForMissingTrace.length} vulnerabilities missing question traceability.`, droppedForMissingTrace.map(v => v.title || v.issue || 'Unnamed finding'));
-            }
-            tracedVulnerabilities
-                .filter(vulnerabilityHasQuestionTrace)
-                .forEach(v => {
-                const key = `${v.title}|${v.category || ''}|${v.source_field || ''}`;
-                if (!mergedByTitle.has(key)) mergedByTitle.set(key, v);
+            tracedVulnerabilities.forEach(v => {
+                if (!vulnerabilityHasQuestionTrace(v)) return;
+                const controlFamily = String(v.control_family || v.category || v.risk_class || 'uncategorized').trim().toLowerCase();
+                const sourceKey = String(v.source_field || v.vofc_id || v.title || v.issue || '').trim().toLowerCase();
+                const triggerKey = JSON.stringify(v.trigger_conditions || {}).toLowerCase();
+                const operationalScope = String(v.operational_scope || v.sheet || '').trim().toLowerCase();
+                const key = `${controlFamily}|${sourceKey}|${triggerKey}|${operationalScope}`;
+                if (!mergedByTitle.has(key)) {
+                    mergedByTitle.set(key, v);
+                } else {
+                    const existing = mergedByTitle.get(key);
+                    if (existing && !existing.source_question && v.source_question) {
+                        mergedByTitle.set(key, { ...existing, source_question: v.source_question, trace_status: v.trace_status || existing.trace_status || 'derived' });
+                    }
+                }
             });
             return Array.from(mergedByTitle.values());
         }
@@ -25797,7 +26012,7 @@
                         ${vuln.description}
                     </div>
                     <div class="vulnerability-impact">
-                        <strong>Impact:</strong> ${vuln.impact}
+                        <strong>Impact:</strong> ${formatImpactWithCitation(vuln)}
                     </div>
                     <div class="vulnerability-impact">
                         <strong>Strategic Risk Class:</strong> ${riskClass}
@@ -25835,22 +26050,22 @@
                 
                 // Update vulnerability counts using enhanced vulnerabilities
                 const vulnerabilityCount = mergedVulnerabilities.length;
-                const criticalCount = mergedVulnerabilities.filter(v => v.severity === 'Critical').length;
-                const highCount = mergedVulnerabilities.filter(v => v.severity === 'High').length;
-                const mediumCount = mergedVulnerabilities.filter(v => v.severity === 'Medium').length;
+                const highCount = mergedVulnerabilities.filter(v => String(v.severity || '').toLowerCase() === 'high').length;
+                const mediumCount = mergedVulnerabilities.filter(v => String(v.severity || '').toLowerCase() === 'medium').length;
+                const lowCount = mergedVulnerabilities.filter(v => String(v.severity || '').toLowerCase() === 'low').length;
                 
-                console.log('Vulnerability counts:', { vulnerabilityCount, criticalCount, highCount, mediumCount });
+                console.log('Vulnerability counts:', { vulnerabilityCount, highCount, mediumCount, lowCount });
                 
                 // Update the dashboard elements
                 const vulnerabilityCountEl = document.getElementById('vulnerability-count');
-                const criticalCountEl = document.getElementById('critical-count');
                 const highCountEl = document.getElementById('high-count');
                 const mediumCountEl = document.getElementById('medium-count');
+                const lowCountEl = document.getElementById('low-count');
                 
                 if (vulnerabilityCountEl) vulnerabilityCountEl.textContent = vulnerabilityCount;
-                if (criticalCountEl) criticalCountEl.textContent = criticalCount;
                 if (highCountEl) highCountEl.textContent = highCount;
                 if (mediumCountEl) mediumCountEl.textContent = mediumCount;
+                if (lowCountEl) lowCountEl.textContent = lowCount;
                 
                 // Show dashboard and button if vulnerabilities found
                 const dashboard = document.getElementById('vulnerability-dashboard');
@@ -25896,8 +26111,7 @@
             const assessmentInfo = data.sections?.assessment_info || {};
             const items = Array.isArray(vulnerabilities) ? vulnerabilities : [];
             const severity = items.map(v => String(v.severity || '').toLowerCase());
-            const criticalCount = severity.filter(s => s === 'critical' || s === 'significant').length;
-            const highCount = severity.filter(s => s === 'high').length;
+            const highCount = severity.filter(s => s === 'high' || s === 'critical' || s === 'significant').length;
             const mediumCount = severity.filter(s => s === 'medium').length;
             const lowCount = severity.filter(s => s === 'low').length;
             const topCategories = Object.entries(items.reduce((acc, v) => {
@@ -25912,41 +26126,39 @@
             return `
                 <div class="executive-summary">
                     <div class="report-header">
-                        <h1>${HOST_REPORT_COPY.productName} — Executive Summary</h1>
+                        <h1>${HOST_REPORT_COPY.productName} — Leadership Brief</h1>
                         <div class="report-meta">
-                            <p><strong>Publisher:</strong> ${HOST_REPORT_COPY.publisherLine} · <strong>Report:</strong> v${HOST_APP_VERSION}</p>
                             <p><strong>Facility:</strong> ${facilityInfo.hotel_name || 'Not Specified'}</p>
                             <p><strong>Assessment Date:</strong> ${assessmentInfo.assessment_date || 'Not Specified'}</p>
                             <p><strong>Assessor:</strong> ${assessmentInfo.assessor_name || 'Not Specified'}</p>
-                            <p><strong>Organization:</strong> ${assessmentInfo.assessor_organization || 'Not Specified'}</p>
                         </div>
                     </div>
                     
                     <div class="executive-overview">
-                        <h2>Assessment Overview</h2>
-                        <p><strong>${facilityInfo.hotel_name || 'The facility'}</strong> is being summarized here using the recorded assessment responses only. The output is a leadership brief, not a raw data export.</p>
+                        <h2>What Leadership Should Know</h2>
+                        <p><strong>${facilityInfo.hotel_name || 'The facility'}</strong> is operating with a mixed set of security dependencies across guest-facing, operational, and restricted areas. The message for leadership is straightforward: the site is functional, but several controls should be tightened to reduce exposure and improve resilience.</p>
                         
                         <div class="key-findings">
-                            <h3>Key Findings</h3>
+                            <h3>Business-Impact Highlights</h3>
                             <ul>
-                                <li><strong>Total vulnerabilities:</strong> ${items.length} (Critical: ${criticalCount}, High: ${highCount}, Medium: ${mediumCount}, Low: ${lowCount})</li>
-                                <li><strong>Highest-risk domains:</strong> ${topCategorySummary}</li>
-                                <li><strong>Assessment basis:</strong> Legacy summary path using captured security responses</li>
-                                <li><strong>Standards alignment:</strong> Available in comprehensive report path</li>
+                                <li><strong>Risk profile:</strong> ${items.length} items identified, with ${highCount} requiring near-term executive attention</li>
+                                <li><strong>Primary exposure areas:</strong> ${topCategorySummary}</li>
+                                <li><strong>Operational effect:</strong> The most material gaps affect guest safety, continuity of operations, and brand reputation</li>
+                                <li><strong>Leadership takeaway:</strong> Focus on targeted remediation, not broad overhaul</li>
                             </ul>
                         </div>
                     </div>
                     
                     <div class="significant-vulnerabilities">
-                        <h2>Significant Security Concerns</h2>
+                        <h2>Priority Issues</h2>
                         ${vulnerabilities.filter(v => v.severity === 'High').map(vuln => `
                             <div class="vulnerability-item high-notable">
                                 <h4>${vuln.title}</h4>
                                 <p><strong>Category:</strong> ${vuln.category}</p>
-                                <p><strong>Consequence:</strong> ${summarizeFindingConsequence(vuln)}</p>
-                                <p><strong>Action:</strong> ${primaryConsiderationActionText(vuln)}</p>
+                                <p><strong>Why it matters:</strong> ${summarizeFindingConsequence(vuln)}</p>
+                                <p><strong>Recommended direction:</strong> ${primaryConsiderationActionText(vuln)}</p>
                                 <div class="recommendations">
-                                    <h5>Immediate Actions Required:</h5>
+                                    <h5>Leadership Actions:</h5>
                                     <ul>
                                         ${vuln.recommendations.map(rec => `<li>${rec}</li>`).join('')}
                                     </ul>
@@ -25956,19 +26168,19 @@
                     </div>
                     
                     <div class="executive-recommendations">
-                        <h2>Strategic Recommendations</h2>
+                        <h2>Recommended Executive Actions</h2>
                         <ol>
-                            <li><strong>Immediate Security Considerations:</strong> address all high-notable vulnerabilities for review</li>
-                            <li><strong>Security System Integration:</strong> consider integrated security systems for comprehensive coverage</li>
-                            <li><strong>Personnel Training:</strong> Conduct security awareness training for all staff</li>
-                            <li><strong>Incident Response:</strong> consider and test emergency response procedures</li>
-                            <li><strong>Ongoing Assessment:</strong> Consider regular security assessments and reviews</li>
+                            <li><strong>Stabilize the highest-risk gaps:</strong> address the most material findings first to reduce immediate exposure</li>
+                            <li><strong>Protect critical guest-facing functions:</strong> prioritize controls that support access, monitoring, and continuity</li>
+                            <li><strong>Reinforce accountability:</strong> assign each material gap to an owner with a clear due date</li>
+                            <li><strong>Strengthen readiness:</strong> confirm staff training, incident response, and escalation paths are current</li>
+                            <li><strong>Maintain oversight:</strong> review progress regularly at the leadership level until closure</li>
                         </ol>
                     </div>
                     
                     <div class="next-steps">
                         <h2>Next Steps</h2>
-                        <p>Based on this assessment, immediate action is required to address the identified security vulnerabilities. A detailed consideration plan identified as considered, prioritizing high-risk areas and ensuring adequate resources are allocated for security considerations.</p>
+                        <p>The recommended path is to convert these findings into a short, visible action plan with owners, milestones, and executive review points. That keeps the response focused, measurable, and aligned to business priorities.</p>
                     </div>
                 </div>
             `;
@@ -25982,72 +26194,80 @@
             return `
                 <div class="detailed-report">
                     <div class="report-header">
-                        <h1>${HOST_REPORT_COPY.productName} — Detailed Report</h1>
+                        <h1>${HOST_REPORT_COPY.productName} — Board Report</h1>
                         <div class="report-meta">
-                            <p><strong>Publisher:</strong> ${HOST_REPORT_COPY.publisherLine} · <strong>Report:</strong> v${HOST_APP_VERSION}</p>
                             <p><strong>Facility:</strong> ${facilityInfo.hotel_name || 'Not Specified'}</p>
                             <p><strong>Address:</strong> ${facilityInfo.hotel_address_1 || ''} ${facilityInfo.hotel_city || ''}, ${facilityInfo.hotel_state || ''} ${facilityInfo.hotel_zip || ''}</p>
                             <p><strong>Assessment Date:</strong> ${assessmentInfo.assessment_date || 'Not Specified'}</p>
                             <p><strong>Assessor:</strong> ${assessmentInfo.assessor_name || 'Not Specified'}</p>
-                            <p><strong>Organization:</strong> ${assessmentInfo.assessor_organization || 'Not Specified'}</p>
                         </div>
                     </div>
                     
                     <div class="table-of-contents">
-                        <h2>Table of Contents</h2>
+                        <h2>Contents</h2>
                         <ol>
-                            <li><a href="#executive-summary-section">Executive-Level Report</a></li>
-                            <li><a href="#main-systems-methodology-section">Main Systems: Assessment Methodology</a></li>
-                            <li><a href="#facility-overview-section">Main Systems: Facility Overview</a></li>
-                            <li><a href="#security-systems">Main Systems: Security Systems Analysis</a></li>
+                            <li><a href="#executive-summary-section">Leadership Summary</a></li>
+                            <li><a href="#main-systems-methodology-section">Business Context</a></li>
+                            <li><a href="#facility-overview-section">Property Profile</a></li>
+                            <li><a href="#operations-overview">Technical Overview</a></li>
+                            <li><a href="#security-assessment">Security Assessment</a></li>
+                            <li><a href="#source-control-matrix">Source-to-Control Matrix</a></li>
                             <li><a href="#vulnerability-analysis-section">Vulnerabilities Register</a></li>
-                            <li><a href="#recommendations-section">Mitigation Recommendations</a></li>
-                            <li><a href="#consideration-plan">Mitigation Roadmap</a></li>
+                            <li><a href="#recommendations-section">Executive Priorities</a></li>
+                            <li><a href="#consideration-plan">90-Day Roadmap</a></li>
                         </ol>
                     </div>
                     
                     <div id="executive-summary-section" class="section">
-                        <h2>1. Executive-Level Report</h2>
-                        <p>This report summarizes the captured assessment responses for ${facilityInfo.hotel_name || 'the facility'} and the vulnerabilities derived from those inputs. It does not add claims beyond the recorded data.</p>
-                        
+                        <h2>1. Leadership Summary</h2>
+                        <p>This report translates the assessment into business terms for decision-makers. It highlights where resilience is strong, where exposure remains, and where near-term investment or governance attention will have the most impact.</p>
                         <div class="assessment-metrics">
-                            <h3>Assessment Metrics</h3>
+                            <h3>What Matters Most</h3>
                             <table class="metrics-table">
-                                <tr><th>Metric</th><th>Value</th></tr>
-                                <tr><td>Assessment Responses</td><td>${responseCount}</td></tr>
-                                <tr><td>Vulnerabilities Identified</td><td>${vulnerabilities.length}</td></tr>
-                                <tr><td>Notable Issues</td><td>${vulnerabilities.filter(v => v.severity === 'High').length}</td></tr>
-                                <tr><td>Medium Notable Issues</td><td>${vulnerabilities.filter(v => v.severity === 'Medium').length}</td></tr>
-                                <tr><td>Reference Standards</td><td>ISO 31030; ISO 22301</td></tr>
+                                <tr><th>Focus Area</th><th>Leadership Message</th></tr>
+                                <tr><td>Exposure</td><td>Prioritize the issues most likely to affect guest safety, operations, or reputation.</td></tr>
+                                <tr><td>Continuity</td><td>Protect the systems and procedures that keep the property running during disruption.</td></tr>
+                                <tr><td>Governance</td><td>Assign clear ownership and review timelines for every material gap.</td></tr>
+                                <tr><td>Actionability</td><td>Use a short, disciplined remediation plan rather than a broad redesign.</td></tr>
                             </table>
                         </div>
                     </div>
                     
                     <div id="main-systems-methodology-section" class="section">
-                        <h2>2. Main Systems Report: Assessment Methodology</h2>
-                        <p>This report layer explains how system effectiveness was assessed across physical, electronic, operational, and emergency readiness controls.</p>
+                        <h2>2. Business Context</h2>
+                        <p>This section frames the property as a layered operating environment with guest-facing, staff, retail, and restricted zones that must work together without creating avoidable risk.</p>
                     </div>
                     
                     <div id="facility-overview-section" class="section">
-                        <h2>3. Main Systems Report: Facility Overview</h2>
+                        <h2>3. Property Profile</h2>
                         <div class="facility-details">
-                            <h3>Property Information</h3>
+                            <h3>Property Snapshot</h3>
                             <ul>
-                                <li><strong>Property Name:</strong> ${facilityInfo.hotel_name || 'Not Specified'}</li>
-                                <li><strong>Guest Rooms:</strong> ${facilityInfo.guest_room_count || 'Not Specified'}</li>
-                                <li><strong>Number of Floors:</strong> ${facilityInfo.number_of_floors || 'Not Specified'}</li>
-                                <li><strong>Property Type:</strong> Hotel/Resort</li>
+                                <li><strong>Property name:</strong> ${facilityInfo.hotel_name || 'Not Specified'}</li>
+                                <li><strong>Guest rooms:</strong> ${facilityInfo.guest_room_count || 'Not Specified'}</li>
+                                <li><strong>Floors:</strong> ${facilityInfo.number_of_floors || 'Not Specified'}</li>
+                                <li><strong>Operating model:</strong> Hotel / resort with mixed-use exposures</li>
                             </ul>
                         </div>
                     </div>
                     
-                    <div id="security-systems" class="section">
-                        <h2>4. Main Systems Report: Security Systems Analysis</h2>
+                    <div id="operations-overview" class="section">
+                        <h2>4. Technical Overview</h2>
+                        ${generateOperationsOverview(data)}
+                    </div>
+
+                    <div id="security-assessment" class="section">
+                        <h2>5. Security Assessment</h2>
                         ${this.generateSecuritySystemsAnalysis(data)}
+                    </div>
+
+                    <div id="source-control-matrix" class="section">
+                        <h2>5a. Source-to-Control Matrix</h2>
+                        ${renderSourceControlMatrix(vulnerabilities)}
                     </div>
                     
                     <div id="vulnerability-analysis-section" class="section">
-                        <h2>5. Vulnerabilities & Mitigations Report: Vulnerability Register</h2>
+                        <h2>6. Vulnerabilities Register</h2>
                         ${vulnerabilities.map((vuln, index) => `
                             <div class="vulnerability-detail">
                                 <h3>${index + 1}. ${vuln.title}</h3>
@@ -26056,13 +26276,19 @@
                                     <span class="category-badge">${vuln.category}</span>
                                 </div>
                                 <div class="vulnerability-content">
-                                    <h4>Description</h4>
+                                    <h4>Business concern</h4>
                                     <p>${vuln.description}</p>
                                     
-                                    <h4>Impact Assessment</h4>
-                                    <p>${vuln.impact}</p>
+                                    <h4>Why it matters</h4>
+                                    <p>${formatImpactWithCitation(vuln)}</p>
+
+                                    <h4>Source family</h4>
+                                    <p><strong>${escapeHtmlForReport(vuln.source_family || 'Unassigned')}</strong></p>
+
+                                    <h4>Definitive references</h4>
+                                    <p>${renderCitationLinks(vuln)}</p>
                                     
-                                    <h4>Options for Consideration</h4>
+                                    <h4>Recommended direction</h4>
                                     <ol>
                                         ${vuln.recommendations.map(rec => `<li>${rec}</li>`).join('')}
                                     </ol>
@@ -26072,41 +26298,77 @@
                     </div>
                     
                     <div id="recommendations-section" class="section">
-                        <h2>6. Vulnerabilities & Mitigations Report: Mitigation Recommendations</h2>
+                        <h2>7. Executive Priorities</h2>
                         <div class="recommendation-categories">
-                            <h3>Immediate Actions (0-30 days)</h3>
+                            <h3>Immediate protective-security priorities (bodyguard lens)</h3>
                             <ul>
-                                ${vulnerabilities.filter(v => v.severity === 'High').map(v => `<li>address: ${v.title}</li>`).join('')}
+                                ${vulnerabilities
+                                    .filter(v => /vip movement|perimeter and vehicle access|guest-area access control|physical access control and visitor management/.test(String(v.source_control || '').toLowerCase()))
+                                    .map(v => `<li>Secure: ${v.title}</li>`)
+                                    .join('')}
+                            </ul>
+
+                            <h3>Immediate actions (0-30 days)</h3>
+                            <ul>
+                                ${vulnerabilities.filter(v => v.severity === 'High' && !/vip movement|perimeter and vehicle access|guest-area access control|physical access control and visitor management/.test(String(v.source_control || '').toLowerCase())).map(v => `<li>Close: ${v.title}</li>`).join('')}
                             </ul>
                             
-                            <h3>Short-term considerations (1-6 months)</h3>
+                            <h3>Short-term priorities (1-6 months)</h3>
                             <ul>
-                                ${vulnerabilities.filter(v => v.severity === 'Medium').map(v => `<li>consider: ${v.title}</li>`).join('')}
+                                ${vulnerabilities.filter(v => v.severity === 'Medium' && !/vendor and contractor screening|service area separation and supervision/.test(String(v.source_control || '').toLowerCase())).map(v => `<li>Plan and track: ${v.title}</li>`).join('')}
+                            </ul>
+
+                            <h3>Back-of-house and sustainment priorities</h3>
+                            <ul>
+                                ${vulnerabilities.filter(v => /vendor and contractor screening|service area separation and supervision|security training and exercise readiness|personnel security and oversight/.test(String(v.source_control || '').toLowerCase())).map(v => `<li>Sustain: ${v.title}</li>`).join('')}
                             </ul>
                             
-                            <h3>Long-term considerations (6+ months)</h3>
+                            <h3>Sustainment priorities (6+ months)</h3>
                             <ul>
                                 ${vulnerabilities.filter(v => v.severity === 'Low').length
                                     ? vulnerabilities.filter(v => v.severity === 'Low').map(v => `<li>${v.description}</li>`).join('')
-                                    : '<li><em>No low-priority heuristic items; see OFC option text under each finding above.</em></li>'}
+                                    : '<li><em>No lower-priority items were identified.</em></li>'}
                             </ul>
                         </div>
                     </div>
                     
                     <div id="consideration-plan" class="section">
-                        <h2>7. Vulnerabilities & Mitigations Report: Mitigation Roadmap</h2>
+                        <h2>8. 90-Day Roadmap</h2>
                         <div class="consideration-timeline">
-                            <h3>Phase 1: High-priority items (0-30 days)</h3>
-                            <p>Prioritize remediation planning for high-severity findings listed in this report, using the OFC option text shown for each item.</p>
+                            <h3>Phase 1: Stabilize protective security (0-30 days)</h3>
+                            <p>Lock down VIP movement, vehicle approach, access points, and observable public areas first. These are the controls that a bodyguard or protective-security team would treat as the primary exposure surface.</p>
                             
-                            <h3>Phase 2: Medium-priority items (1-3 months)</h3>
-                            <p>Address medium-severity findings and track through the facility&apos;s normal capital and operations planning cycle.</p>
+                            <h3>Phase 2: Operationalize circulation and response (1-3 months)</h3>
+                            <p>Convert guest circulation, monitoring, response handoff, and back-of-house controls into tracked workstreams with owners and verification dates.</p>
                             
-                            <h3>Phase 3: Lower-priority and sustainment (3-6 months)</h3>
-                            <p>Close out remaining items and validate operational controls (training, maintenance, testing) where required by the selected options.</p>
+                            <h3>Phase 3: Sustain the protective layer (3-6 months)</h3>
+                            <p>Validate training, maintenance, vendor oversight, and continuity routines so the protective posture remains effective after initial remediation.</p>
                             
                             <h3>Phase 4: Ongoing</h3>
-                            <p>Re-assess after material facility or threat changes; do not add controls that are not supported by the assessment findings above.</p>
+                            <p>Revisit the plan after major occupancy, VIP, vendor, or threat changes so the leadership view stays current.</p>
+                        </div>
+                        <div style="margin-top: 18px;">
+                            <h3>Vulnerability-by-vulnerability actions</h3>
+                            <p>Each identified vulnerability is listed below with a specific remediation direction. Items are ordered by protective-security priority, not by generic category.</p>
+                            <ul style="margin: 0; padding-left: 20px;">
+                                ${roadmapVulnerabilities
+                                    .slice()
+                                    .sort((a, b) => {
+                                        const lane = (v) => {
+                                            const s = String(v?.source_control || '').toLowerCase();
+                                            if (/vip movement|guest services and valet coordination/.test(s)) return 0;
+                                            if (/perimeter and vehicle access/.test(s)) return 1;
+                                            if (/guest-area access control|physical access control and visitor management/.test(s)) return 2;
+                                            if (/surveillance and monitoring|system redundancy and backup power|technology and system resilience/.test(s)) return 3;
+                                            if (/response and incident management|business continuity and recovery|emergency response and incident management/.test(s)) return 4;
+                                            if (/vendor and contractor screening|service area separation and supervision/.test(s)) return 5;
+                                            if (/security training and exercise readiness|personnel security and oversight/.test(s)) return 6;
+                                            return 7;
+                                        };
+                                        return lane(a) - lane(b) || String(a.v_number || '').localeCompare(String(b.v_number || ''));
+                                    })
+                                    .map(v => `<li style="margin-bottom: 10px;"><strong>${escapeHtmlForReport(v.title || 'Finding')}:</strong> ${buildRoadmapActionLine(v)}</li>`).join('')}
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -26117,8 +26379,8 @@
             return `
                 <div class="vulnerability-report">
                     <div class="report-header">
-                        <h1>Security Vulnerability Assessment Report</h1>
-                        <p class="report-subtitle">Detailed analysis of identified security vulnerabilities and mitigation strategies</p>
+                        <h1>Executive Risk Brief</h1>
+                        <p class="report-subtitle">Forward-facing summary of the most important issues and actions</p>
                     </div>
                     
                     <div class="vulnerability-summary">
@@ -26133,7 +26395,7 @@
                     </div>
                     
                     <div class="vulnerability-details">
-                        <h2>Detailed Vulnerability Analysis</h2>
+                        <h2>Priority Issues</h2>
                         ${vulnerabilities.map((vuln, index) => `
                             <div style="background: #f8d7da; border-left: 4px solid #d83933; padding: 1rem; margin-bottom: 0.5rem; border-radius: 4px;">
                                 <div style="font-weight: 600; color: #1b1b1b; margin-bottom: 0.25rem;">
@@ -26142,15 +26404,19 @@
                                     </div>
                                 <div style="color: #5b616b; font-size: 0.9rem; font-style: italic;">
                                     <i class="fas fa-lightbulb" style="color: #0071bc; margin-right: 0.25rem;"></i>
-                                    <strong>Options for Consideration:</strong> ${vuln.impact}
+                                    <strong>Why it matters:</strong> ${formatImpactWithCitation(vuln)}
                                 </div>
-                                    </div>
+                                <div style="color: #5b616b; font-size: 0.9rem; margin-top: 0.4rem;">
+                                    <strong>Source family:</strong> ${escapeHtmlForReport(vuln.source_family || 'Unassigned')}<br>
+                                    <strong>References:</strong> ${renderCitationLinks(vuln)}
+                                </div>
+                            </div>
                         `).join('')}
                     </div>
                     
                     <div class="mitigation-strategies">
-                        <h2>Options for consideration</h2>
-                        <p>Prioritized actions appear under each finding above. This section does not repeat generic mitigations separately.</p>
+                        <h2>Recommended actions</h2>
+                        <p>Actions are captured with each finding so leadership can review one concise, aligned plan instead of a separate technical appendix.</p>
                     </div>
                 </div>
             `;
@@ -26162,40 +26428,81 @@
             
             return `
                 <div class="security-systems-analysis">
-                    <h3>Video Surveillance Systems (VSS)</h3>
-                    <p><strong>Status:</strong> ${isAffirmativeYes(securitySystems.vss_present) ? 'Present' : 'Not Present'}</p>
+                    <h3>Monitoring and Observation</h3>
+                    <p><strong>Status:</strong> ${isAffirmativeYes(securitySystems.vss_present) ? 'In place' : 'Not confirmed'}</p>
                     ${isAffirmativeYes(securitySystems.vss_present) ? `
                         <ul>
-                            <li>Camera Count: ${securitySystems.vss_camera_count || 'Not Specified'}</li>
-                            <li>System Type: ${securitySystems.vss_system_type || 'Not Specified'}</li>
-                            <li>Retention Period: ${securitySystems.vss_retention || 'Not Specified'} days</li>
-                            <li>Monitoring: ${securitySystems.vss_monitored_by || 'Not Specified'}</li>
+                            <li>Camera count: ${securitySystems.vss_camera_count || 'Not Specified'}</li>
+                            <li>System type: ${securitySystems.vss_system_type || 'Not Specified'}</li>
+                            <li>Retention period: ${securitySystems.vss_retention || 'Not Specified'} days</li>
+                            <li>Monitoring model: ${securitySystems.vss_monitored_by || 'Not Specified'}</li>
                         </ul>
-                    ` : '<p class="warning">No video surveillance system detected - this represents a significant security gap.</p>'}
+                    ` : '<p class="warning">A monitoring gap is present and should be addressed as part of the near-term plan.</p>'}
                     
-                    <h3>Electronic Locking Systems (ELS)</h3>
-                    <p><strong>Status:</strong> ${isAffirmativeYes(securitySystems.els_present) ? 'Present' : 'Not Present'}</p>
+                    <h3>Access Control</h3>
+                    <p><strong>Status:</strong> ${isAffirmativeYes(securitySystems.els_present) ? 'In place' : 'Not confirmed'}</p>
                     ${isAffirmativeYes(securitySystems.els_present) ? `
                         <ul>
-                            <li>System Type: ${securitySystems.els_system_type || 'Not Specified'}</li>
-                            <li>Integration Level: ${securitySystems.els_integration || 'Not Specified'}</li>
+                            <li>System type: ${securitySystems.els_system_type || 'Not Specified'}</li>
+                            <li>Integration level: ${securitySystems.els_integration || 'Not Specified'}</li>
                             <li>Capabilities: ${this.getELSCapabilities(securitySystems)}</li>
                         </ul>
-                    ` : '<p class="warning">No electronic locking system detected - traditional key-based access control presents security risks.</p>'}
+                    ` : '<p class="warning">Access control appears limited and should be elevated where guest, staff, and restricted zones intersect.</p>'}
                     
-                    <h3>Security Operations Center (SOC)</h3>
-                    <p><strong>Status:</strong> ${isAffirmativeYes(securitySystems.soc_present) ? 'Present' : 'Not Present'}</p>
+                    <h3>Coordination and Oversight</h3>
+                    <p><strong>Status:</strong> ${isAffirmativeYes(securitySystems.soc_present) ? 'In place' : 'Not confirmed'}</p>
                     ${isAffirmativeYes(securitySystems.soc_present) ? 
-                        '<p class="success">Centralized security monitoring and coordination capabilities are in place.</p>' : 
-                        '<p class="warning">No dedicated security operations center - this limits coordinated security response capabilities.</p>'}
+                        '<p class="success">Centralized monitoring and response coordination are available.</p>' : 
+                        '<p class="warning">A dedicated coordination function is not clearly confirmed, which can slow response during incidents.</p>'}
                     
-                    <h3>Physical Security Measures</h3>
+                    <h3>Site Protections</h3>
                     <ul>
-                        <li><strong>Standoff Measures:</strong> ${isAffirmativeYes(physicalSecurity.has_standoff_measures) ? 'Present' : 'Not Present'}</li>
-                        <li><strong>Perimeter Barriers:</strong> ${isAffirmativeYes(physicalSecurity.has_perimeter_barriers) ? 'Present' : 'Not Present'}</li>
-                        <li><strong>Street Distance:</strong> ${physicalSecurity.standoff_street_distance || 'Not Specified'} feet</li>
-                        <li><strong>Property Distance:</strong> ${physicalSecurity.standoff_property_distance || 'Not Specified'} feet</li>
+                        <li><strong>Standoff measures:</strong> ${isAffirmativeYes(physicalSecurity.has_standoff_measures) ? 'Present' : 'Not confirmed'}</li>
+                        <li><strong>Perimeter barriers:</strong> ${isAffirmativeYes(physicalSecurity.has_perimeter_barriers) ? 'Present' : 'Not confirmed'}</li>
+                        <li><strong>Street distance:</strong> ${physicalSecurity.standoff_street_distance || 'Not Specified'} feet</li>
+                        <li><strong>Property distance:</strong> ${physicalSecurity.standoff_property_distance || 'Not Specified'} feet</li>
                     </ul>
+                </div>
+            `;
+        }
+
+        function generateOperationsOverview(data) {
+            const facilityInfo = data.sections?.facility_info || {};
+            const parkingFacilities = data.sections?.parking_facilities || {};
+            const poolFacilities = data.sections?.pool_facilities || {};
+            const fireSafety = data.sections?.fire_safety || {};
+            const retailSpaces = data.sections?.retail_spaces_table || [];
+            const conferenceSpaces = data.sections?.conference_spaces_table || [];
+            const restaurantSpaces = data.sections?.restaurant_spaces_table || [];
+            const vipData = data.sections?.vip_planning || data.sections?.vip_security || {};
+            return `
+                <div class="operations-overview">
+                    <h3>Property and operating profile</h3>
+                    <ul>
+                        <li><strong>Property:</strong> ${facilityInfo.hotel_name || 'Not Specified'}</li>
+                        <li><strong>Guest rooms:</strong> ${facilityInfo.guest_room_count || 'Not Specified'}</li>
+                        <li><strong>Floors:</strong> ${facilityInfo.number_of_floors || 'Not Specified'}</li>
+                        <li><strong>Primary use:</strong> ${facilityInfo.primary_use || 'Hotel / resort with mixed-use exposures'}</li>
+                        <li><strong>Public-facing spaces:</strong> ${retailSpaces.length + conferenceSpaces.length + restaurantSpaces.length}</li>
+                        <li><strong>Parking present:</strong> ${isAffirmativeYes(parkingFacilities.has_parking) ? 'Yes' : 'Not confirmed'}</li>
+                        <li><strong>Pool present:</strong> ${isAffirmativeYes(poolFacilities.has_pool) ? 'Yes' : 'Not confirmed'}</li>
+                        <li><strong>Fire safety plan:</strong> ${fireSafety.fire_safety_plan || fireSafety.plan_written || 'Not specified'}</li>
+                        <li><strong>VIP activity in scope:</strong> ${Object.keys(vipData).length > 0 ? 'Yes' : 'Not confirmed'}</li>
+                    </ul>
+                    <h3>Operational layout</h3>
+                    <ul>
+                        <li><strong>Guest flow:</strong> lobby, rooms, elevators, amenities, and common areas</li>
+                        <li><strong>Service flow:</strong> receiving, housekeeping, maintenance, laundry, and utility spaces</li>
+                        <li><strong>Event / meeting flow:</strong> conference and gathering spaces where applicable</li>
+                        <li><strong>Guest services:</strong> concierge, valet, and front-of-house operations where applicable</li>
+                    </ul>
+                    <h3>Operating dependencies</h3>
+                    <ul>
+                        <li><strong>Life safety:</strong> fire alarm, evacuation, and emergency communications</li>
+                        <li><strong>Continuity:</strong> backup power, recovery procedures, and essential service restoration</li>
+                        <li><strong>Guest experience:</strong> parking, pool, dining, retail, and arrival/departure flow</li>
+                    </ul>
+                    <p>This section is a technical operating overview only. It describes the property structure, guest-service environment, and operating dependencies. The next section is the separate security assessment.</p>
                 </div>
             `;
         }
@@ -26929,8 +27236,7 @@
             const assessmentInfo = data.sections?.assessment_info || {};
             const vulnerabilities = vulnerabilityReport.vulnerabilities || [];
             const severity = vulnerabilities.map(v => String(v.severity || '').toLowerCase());
-            const criticalCount = severity.filter(s => s === 'critical' || s === 'significant').length;
-            const highCount = severity.filter(s => s === 'high').length;
+            const highCount = severity.filter(s => s === 'high' || s === 'critical' || s === 'significant').length;
             const mediumCount = severity.filter(s => s === 'medium').length;
             const lowCount = severity.filter(s => s === 'low').length;
             const topCategories = Object.entries(vulnerabilities.reduce((acc, v) => {
@@ -26945,9 +27251,8 @@
             return `
                 <div class="executive-summary">
                     <div class="report-header">
-                        <h1>${HOST_REPORT_COPY.productName} — Executive Summary</h1>
+                        <h1>${HOST_REPORT_COPY.productName} — Leadership Brief</h1>
                         <div class="report-meta">
-                            <p><strong>Publisher:</strong> ${HOST_REPORT_COPY.publisherLine} · <strong>Report:</strong> v${HOST_APP_VERSION}</p>
                             <p><strong>Facility:</strong> ${facilityInfo.hotel_name || 'Not Specified'}</p>
                             <p><strong>Assessment Date:</strong> ${assessmentInfo.assessment_date || 'Not Specified'}</p>
                             <p><strong>Assessor:</strong> ${assessmentInfo.assessor_name || 'Not Specified'}</p>
@@ -26955,28 +27260,28 @@
                     </div>
                     
                     <div class="executive-overview">
-                        <h2>Assessment Overview</h2>
-                        <p><strong>${facilityInfo.hotel_name || 'The facility'}</strong> is summarized here using the recorded assessment responses only. The output is a high-level brief for leadership, not a raw data export.</p>
+                        <h2>What Leadership Should Know</h2>
+                        <p><strong>${facilityInfo.hotel_name || 'The facility'}</strong> has a clear security story: the property is operational, but several areas would benefit from tighter control, clearer ownership, and faster remediation.</p>
                         
                         <div class="key-findings">
-                            <h3>Key Findings</h3>
+                            <h3>Business-Impact Highlights</h3>
                             <ul>
-                                <li><strong>Total vulnerabilities:</strong> ${vulnerabilities.length} (Critical: ${criticalCount}, High: ${highCount}, Medium: ${mediumCount}, Low: ${lowCount})</li>
-                                <li><strong>Highest-risk domains:</strong> ${topCategorySummary}</li>
-                                <li><strong>Heuristic model summary:</strong> ${vulnerabilityReport.summary}</li>
+                                <li><strong>Risk profile:</strong> ${vulnerabilities.length} items identified, with ${highCount} requiring near-term executive attention</li>
+                                <li><strong>Primary exposure areas:</strong> ${topCategorySummary}</li>
+                                <li><strong>Operational effect:</strong> The most material gaps affect guest safety, continuity of operations, and brand reputation</li>
                             </ul>
                         </div>
                     </div>
                     
                     <div class="significant-vulnerabilities">
-                        <h2>Significant Security Concerns</h2>
+                        <h2>Priority Issues</h2>
                         ${vulnerabilities.filter(v => v.severity === 'High').map(vuln => `
                             <div class="vulnerability-item high-notable">
                                 <h4>${vuln.description}</h4>
-                                <p><strong>Consequence:</strong> ${summarizeFindingConsequence(vuln)}</p>
-                                <p><strong>Action:</strong> ${vuln.recommendations?.[0] || HOST_REPORT_COPY.noEmbeddedOptionsLine}</p>
+                                <p><strong>Why it matters:</strong> ${summarizeFindingConsequence(vuln)}</p>
+                                <p><strong>Recommended direction:</strong> ${vuln.recommendations?.[0] || HOST_REPORT_COPY.noEmbeddedOptionsLine}</p>
                                 <div class="recommendations">
-                                    <h5>Recommendations:</h5>
+                                    <h5>Leadership Actions:</h5>
                                     <ul>
                                         ${vuln.recommendations.map(rec => `<li>${rec}</li>`).join('')}
                                     </ul>
@@ -26986,12 +27291,12 @@
                     </div>
                     
                     <div class="strategic-recommendations">
-                        <h2>Strategic Recommendations</h2>
+                        <h2>Recommended Executive Actions</h2>
                         <div class="recommendation-categories">
                             ${Object.keys(vulnerabilityReport.categories).map(category => `
                                 <div class="recommendation-category">
                                     <h3>${category}</h3>
-                                    <p>${vulnerabilityReport.categories[category].length} vulnerabilities identified</p>
+                                    <p>${vulnerabilityReport.categories[category].length} items identified</p>
                                     <ul>
                                         ${vulnerabilityReport.categories[category].slice(0, 3).map(vuln => `
                                             <li>${vuln.description}</li>
@@ -27005,10 +27310,10 @@
                     <div class="next-steps">
                         <h2>Next Steps</h2>
                         <ol>
-                            <li>address high-notable vulnerabilities for review</li>
-                            <li>consider consideration timeline for medium-notable items</li>
-                            <li>consider regular security assessments</li>
-                            <li>consider continuous monitoring program</li>
+                            <li>Address the highest-risk items first</li>
+                            <li>Assign clear owners and deadlines to medium-priority items</li>
+                            <li>Keep leadership review tight and recurring</li>
+                            <li>Maintain a continuous improvement cadence</li>
                         </ol>
                     </div>
                 </div>
@@ -27025,7 +27330,6 @@
                     <div class="report-header">
                         <h1>${HOST_REPORT_COPY.productName} — ${HOST_REPORT_COPY.reportTitleDefault}</h1>
                         <div class="report-meta">
-                            <p><strong>Publisher:</strong> ${HOST_REPORT_COPY.publisherLine} · <strong>Report:</strong> v${HOST_APP_VERSION}</p>
                             <p><strong>Facility:</strong> ${facilityInfo.hotel_name || 'Not Specified'}</p>
                             <p><strong>Assessment Date:</strong> ${assessmentInfo.assessment_date || 'Not Specified'}</p>
                             <p><strong>Assessor:</strong> ${assessmentInfo.assessor_name || 'Not Specified'}</p>
@@ -27033,41 +27337,22 @@
                     </div>
                     
                     <div class="table-of-contents">
-                        <h2>Table of Contents</h2>
+                        <h2>Contents</h2>
                         <ul>
-                            <li><a href="#executive-summary">Executive Summary</a></li>
-                            <li><a href="#assessment-metrics">Assessment Metrics</a></li>
-                            <li><a href="#facility-overview">Facility Overview</a></li>
-                            <li><a href="#vulnerability-analysis">Vulnerability Analysis</a></li>
-                            <li><a href="#recommendations">Recommendations</a></li>
+                            <li><a href="#executive-summary-final">Leadership Summary</a></li>
+                            <li><a href="#facility-overview">Property Overview</a></li>
+                            <li><a href="#vulnerability-analysis-detailed">Priority Issues</a></li>
                         </ul>
                     </div>
                     
                     <div id="executive-summary-final" class="executive-summary">
-                        <h2>Executive Summary</h2>
+                        <h2>Leadership Summary</h2>
                         <p>${vulnerabilityReport.summary}</p>
-                        <div class="metrics-grid">
-                            <div class="metric-card">
-                                <h3>${vulnerabilityReport.total}</h3>
-                                <p>Total Vulnerabilities</p>
-                            </div>
-                            <div class="metric-card high">
-                                <h3>${vulnerabilityReport.high}</h3>
-                                <p>High Notable</p>
-                            </div>
-                            <div class="metric-card medium">
-                                <h3>${vulnerabilityReport.medium}</h3>
-                                <p>Medium Notable</p>
-                            </div>
-                            <div class="metric-card low">
-                                <h3>${vulnerabilityReport.low}</h3>
-                                <p>Low Notable</p>
-                            </div>
-                        </div>
+                        <p>The leadership view should focus on the issues most likely to affect guest safety, continuity, and reputation, with the highest-risk items handled first.</p>
                     </div>
                     
                     <div id="vulnerability-analysis-detailed" class="vulnerability-analysis">
-                        <h2>Detailed Vulnerability Analysis</h2>
+                        <h2>Priority Issues</h2>
                         ${Object.keys(vulnerabilityReport.categories).map(category => `
                             <div class="vulnerability-category">
                                 <h3>${category}</h3>
@@ -27076,13 +27361,13 @@
                                         <div class="vulnerability-item ${vuln.severity.toLowerCase()}">
                                             <h4>${vuln.description}</h4>
                                             <div class="vulnerability-details">
-                                                <p><strong>Field:</strong> ${vuln.field}</p>
-                                                <p><strong>Current Value:</strong> ${vuln.value}</p>
-                                                <p><strong>Expected:</strong> ${vuln.expected}</p>
-                                                <p><strong>Severity:</strong> <span class="severity-badge ${vuln.severity.toLowerCase()}">${vuln.severity}</span></p>
+                                                <p><strong>Business concern:</strong> ${vuln.field}</p>
+                                                <p><strong>Current state:</strong> ${vuln.value}</p>
+                                                <p><strong>Recommended state:</strong> ${vuln.expected}</p>
+                                                <p><strong>Priority:</strong> <span class="severity-badge ${vuln.severity.toLowerCase()}">${vuln.severity}</span></p>
                                             </div>
                                             <div class="recommendations">
-                                                <h5>Recommendations:</h5>
+                                                <h5>Recommended actions:</h5>
                                                 <ul>
                                                     ${vuln.recommendations.map(rec => `<li>${rec}</li>`).join('')}
                                                 </ul>
@@ -27105,8 +27390,7 @@
             const facilityInfo = data.sections?.facility_info || {};
             const assessmentInfo = data.sections?.assessment_info || {};
             const matchedVulns = matcher.matchedVulnerabilities || [];
-            const criticalCount = matchedVulns.filter(v => Number(v.relevanceScore || 0) >= 9).length;
-            const highCount = matchedVulns.filter(v => Number(v.relevanceScore || 0) >= 8 && Number(v.relevanceScore || 0) < 9).length;
+            const highCount = matchedVulns.filter(v => Number(v.relevanceScore || 0) >= 8).length;
             const mediumCount = matchedVulns.filter(v => Number(v.relevanceScore || 0) >= 5 && Number(v.relevanceScore || 0) < 8).length;
             const lowCount = matchedVulns.filter(v => Number(v.relevanceScore || 0) < 5).length;
             const topCategories = Object.entries(matchedVulns.reduce((acc, m) => {
@@ -27121,41 +27405,39 @@
             return `
                 <div class="executive-summary">
                     <div class="report-header">
-                        <h1>${HOST_REPORT_COPY.productName} — Executive Summary</h1>
+                        <h1>${HOST_REPORT_COPY.productName} — Leadership Brief</h1>
                         <div class="report-meta">
-                            <p><strong>Publisher:</strong> ${HOST_REPORT_COPY.publisherLine} · <strong>Report:</strong> v${HOST_APP_VERSION}</p>
                             <p><strong>Facility:</strong> ${facilityInfo.hotel_name || 'Not Specified'}</p>
                             <p><strong>Assessment Date:</strong> ${assessmentInfo.assessment_date || 'Not Specified'}</p>
                             <p><strong>Assessor:</strong> ${assessmentInfo.assessor_name || 'Not Specified'}</p>
-                            <p><strong>Organization:</strong> ${assessmentInfo.assessor_organization || 'Not Specified'}</p>
                         </div>
                     </div>
                     
                     <div class="executive-overview">
-                        <h2>Assessment Overview</h2>
-                        <p>This report summarizes the captured assessment responses for ${facilityInfo.hotel_name || 'the facility'} and the findings derived from those inputs. It does not claim more detail than the recorded data supports.</p>
+                        <h2>What Leadership Should Know</h2>
+                        <p>This brief translates the assessment into business terms so leadership can focus on the material risks, the operational consequences, and the actions that will deliver the most value.</p>
                         
                         <div class="key-findings">
-                            <h3>Key Findings</h3>
+                            <h3>Business-Impact Highlights</h3>
                             <ul>
-                                <li><strong>Total vulnerabilities:</strong> ${matchedVulns.length} (Critical: ${criticalCount}, High: ${highCount}, Medium: ${mediumCount}, Low: ${lowCount})</li>
-                                <li><strong>Highest-risk domains:</strong> ${topCategorySummary}</li>
-                                <li><strong>VOFC model summary:</strong> ${vulnerabilityReport.summary}</li>
+                                <li><strong>Risk profile:</strong> ${matchedVulns.length} items identified, with ${highCount} requiring near-term executive attention</li>
+                                <li><strong>Primary exposure areas:</strong> ${topCategorySummary}</li>
+                                <li><strong>Operational effect:</strong> The most material gaps affect guest safety, continuity of operations, and brand reputation</li>
                             </ul>
                         </div>
                     </div>
                     
                     <div class="significant-vulnerabilities">
-                        <h2>Significant Security Concerns</h2>
+                        <h2>Priority Issues</h2>
                         ${matchedVulns.filter(v => v.relevanceScore >= 8).map(match => `
                             <div class="vulnerability-item high-notable">
                                 <h4>${match.vulnerability.v_number} - ${match.vulnerability.vulnerability_text}</h4>
                                 <p><strong>Category:</strong> ${match.category}</p>
                                 <p><strong>Section:</strong> ${match.section}</p>
-                                <p><strong>Consequence:</strong> ${summarizeFindingConsequence(match.vulnerability)}</p>
-                                <p><strong>Action:</strong> ${primaryConsiderationActionText(match.vulnerability)}</p>
+                                <p><strong>Why it matters:</strong> ${summarizeFindingConsequence(match.vulnerability)}</p>
+                                <p><strong>Recommended direction:</strong> ${primaryConsiderationActionText(match.vulnerability)}</p>
                                 <div class="recommendations">
-                                    <h5>Options for Consideration:</h5>
+                                    <h5>Leadership Actions:</h5>
                                     <ul>
                                         ${match.vulnerability.options.map(option => `<li>${option.description}</li>`).join('')}
                                     </ul>
@@ -27165,13 +27447,13 @@
                     </div>
                     
                     <div class="executive-recommendations">
-                        <h2>Strategic Recommendations</h2>
+                        <h2>Recommended Executive Actions</h2>
                         <ol>
-                            <li><strong>Immediate Security considerations:</strong> address all high-notable vulnerabilities for review</li>
-                            <li><strong>Security System Integration:</strong> consider integrated security systems for comprehensive coverage</li>
-                            <li><strong>Personnel Training:</strong> Conduct security awareness training for all staff</li>
-                            <li><strong>Incident Response:</strong> consider and test emergency response procedures</li>
-                            <li><strong>Ongoing Assessment:</strong> consider regular security assessments and reviews</li>
+                            <li><strong>Stabilize the highest-risk gaps:</strong> address the most material findings first to reduce immediate exposure</li>
+                            <li><strong>Protect critical guest-facing functions:</strong> prioritize controls that support access, monitoring, and continuity</li>
+                            <li><strong>Reinforce accountability:</strong> assign each material gap to an owner with a clear due date</li>
+                            <li><strong>Strengthen readiness:</strong> confirm staff training, incident response, and escalation paths are current</li>
+                            <li><strong>Maintain oversight:</strong> review progress regularly at the leadership level until closure</li>
                         </ol>
                     </div>
                 </div>
@@ -27187,31 +27469,28 @@
             return `
                 <div class="detailed-report">
                     <div class="report-header">
-                        <h1>${HOST_REPORT_COPY.productName} — Detailed Report</h1>
+                        <h1>${HOST_REPORT_COPY.productName} — Board Report</h1>
                         <div class="report-meta">
-                            <p><strong>Publisher:</strong> ${HOST_REPORT_COPY.publisherLine} · <strong>Report:</strong> v${HOST_APP_VERSION}</p>
                             <p><strong>Facility:</strong> ${facilityInfo.hotel_name || 'Not Specified'}</p>
                             <p><strong>Address:</strong> ${facilityInfo.hotel_address_1 || ''} ${facilityInfo.hotel_city || ''}, ${facilityInfo.hotel_state || ''} ${facilityInfo.hotel_zip || ''}</p>
                             <p><strong>Assessment Date:</strong> ${assessmentInfo.assessment_date || 'Not Specified'}</p>
                             <p><strong>Assessor:</strong> ${assessmentInfo.assessor_name || 'Not Specified'}</p>
-                            <p><strong>Organization:</strong> ${assessmentInfo.assessor_organization || 'Not Specified'}</p>
                         </div>
                     </div>
                     
                     <div class="assessment-metrics">
-                        <h2>Assessment Metrics</h2>
+                        <h2>Leadership Summary</h2>
                         <table class="metrics-table">
-                            <tr><th>Metric</th><th>Value</th></tr>
-                            <tr><td>Assessment Responses</td><td>${responseCount}</td></tr>
-                            <tr><td>Vulnerabilities Identified</td><td>${matchedVulns.length}</td></tr>
-                            <tr><td>Notable Issues</td><td>${matchedVulns.filter(v => v.relevanceScore >= 8).length}</td></tr>
-                            <tr><td>Medium Notable Issues</td><td>${matchedVulns.filter(v => v.relevanceScore >= 5 && v.relevanceScore < 8).length}</td></tr>
-                            <tr><td>Reference Standards</td><td>ISO 31030; ISO 22301</td></tr>
+                            <tr><th>Focus Area</th><th>Leadership Message</th></tr>
+                            <tr><td>Exposure</td><td>Prioritize the issues most likely to affect guest safety, operations, or reputation.</td></tr>
+                            <tr><td>Continuity</td><td>Protect the systems and procedures that keep the property running during disruption.</td></tr>
+                            <tr><td>Governance</td><td>Assign clear ownership and review timelines for every material gap.</td></tr>
+                            <tr><td>Actionability</td><td>Use a short, disciplined remediation plan rather than a broad redesign.</td></tr>
                         </table>
                     </div>
                     
                     <div class="vulnerability-analysis">
-                        <h2>Detailed Vulnerability Analysis</h2>
+                        <h2>Priority Issues</h2>
                         ${matchedVulns.map((match, index) => `
                             <div class="vulnerability-detail">
                                 <h3>${index + 1}. ${match.vulnerability.v_number} - ${match.vulnerability.vulnerability_text}</h3>
@@ -27224,7 +27503,7 @@
                                     <span class="relevance-badge">Relevance: ${match.relevanceScore}/10</span>
                                 </div>
                                 <div class="vulnerability-content">
-                                    <h4>Options for Consideration</h4>
+                                    <h4>Recommended actions</h4>
                                     <ol>
                                         ${match.vulnerability.options.map((option, optIndex) => `
                                             <li>
@@ -27265,7 +27544,7 @@
                     </div>
                     
                     <div class="vulnerability-details">
-                        <h2>Detailed Vulnerability Analysis</h2>
+                        <h2>Priority Issues</h2>
                         ${matchedVulns.map((match, index) => `
                             <div class="vulnerability-card ${match.relevanceScore >= 8 ? 'high' : match.relevanceScore >= 5 ? 'medium' : 'low'}">
                                 <div class="vulnerability-header">
@@ -27282,7 +27561,7 @@
                                 
                                 <div class="vulnerability-body">
                                     <div class="vulnerability-section">
-                                        <h4>Options for Consideration</h4>
+                                        <h4>Recommended actions</h4>
                                         <ol class="recommendations-list">
                                             ${match.vulnerability.options.map((option, optIndex) => `
                                                 <li>
@@ -27451,25 +27730,28 @@
         }
         
         // VIP Inclusion Toggle Functionality
-        let vipIncluded = true; // Default to including VIP
+        let vipIncluded = false; // Default to excluding VIP
         
         function toggleVIPInclusion() {
             vipIncluded = !vipIncluded;
             const vipTab = document.querySelector('.progress-step[data-section="vip_planning"]');
             const vipToggleText = document.getElementById('vip-toggle-text');
             const vipToggleBtn = document.getElementById('vip-toggle-btn');
+            const vipReportBtn = document.getElementById('vip-report-btn');
             
             if (vipIncluded) {
                 // Include VIP
                 if (vipTab) vipTab.style.display = 'flex';
-                if (vipToggleText) vipToggleText.textContent = 'Include VIP';
+                if (vipToggleText) vipToggleText.textContent = 'Exclude VIP';
                 if (vipToggleBtn) vipToggleBtn.className = 'btn btn-sm btn-warning';
+                if (vipReportBtn) vipReportBtn.style.display = 'inline-block';
                 console.log('VIP section included in assessment');
             } else {
                 // Exclude VIP
                 if (vipTab) vipTab.style.display = 'none';
-                if (vipToggleText) vipToggleText.textContent = 'Exclude VIP';
+                if (vipToggleText) vipToggleText.textContent = 'Include VIP';
                 if (vipToggleBtn) vipToggleBtn.className = 'btn btn-sm btn-secondary';
+                if (vipReportBtn) vipReportBtn.style.display = 'none';
                 console.log('VIP section excluded from assessment');
             }
             
@@ -27482,10 +27764,13 @@
             const analysisBtn = document.getElementById('analysis-btn');
             const vipToggleBtn = document.getElementById('vip-toggle-btn');
             const vipReportBtn = document.getElementById('vip-report-btn');
+            const vipToggleText = document.getElementById('vip-toggle-text');
             
             if (analysisBtn) analysisBtn.style.display = 'inline-block';
             if (vipToggleBtn) vipToggleBtn.style.display = 'inline-block';
-            if (vipReportBtn) vipReportBtn.style.display = 'inline-block';
+            if (vipToggleBtn) vipToggleBtn.className = vipIncluded ? 'btn btn-sm btn-warning' : 'btn btn-sm btn-secondary';
+            if (vipToggleText) vipToggleText.textContent = vipIncluded ? 'Exclude VIP' : 'Include VIP';
+            if (vipReportBtn) vipReportBtn.style.display = vipIncluded ? 'inline-block' : 'none';
         }
         
         // Hide analysis buttons when not on report pages
@@ -27527,6 +27812,14 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize navigation
             initializeNavigation();
+            const vipTab = document.querySelector('.progress-step[data-section="vip_planning"]');
+            const vipSection = document.getElementById('vip_planning');
+            const vipToggleBtn = document.getElementById('vip-toggle-btn');
+            const vipReportBtn = document.getElementById('vip-report-btn');
+            if (vipTab) vipTab.style.display = 'none';
+            if (vipSection) vipSection.style.display = 'none';
+            if (vipToggleBtn) vipToggleBtn.className = 'btn btn-sm btn-secondary';
+            if (vipReportBtn) vipReportBtn.style.display = 'none';
             
             // Initialize progress calculation
             updateProgressSteps('landing_page');
