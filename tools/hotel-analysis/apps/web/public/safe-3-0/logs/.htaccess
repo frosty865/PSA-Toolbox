@@ -1,3 +1,0 @@
-# Deny access to logs directory
-Order Deny,Allow
-Deny from all

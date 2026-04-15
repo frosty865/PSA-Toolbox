@@ -153,6 +153,37 @@ body {
     margin: 0;
     padding: 0;
 }
+/* Mammoth HTML from Assets/report template.docx (browser print / Save as PDF) */
+.print-layout-docx .print-docx-template {
+    margin: 0 0 14px 0;
+    color: var(--body-text);
+    font-size: 11pt;
+    line-height: 1.15;
+}
+.print-layout-docx .print-docx-template p {
+    margin: 0 0 6px 0;
+}
+.print-layout-docx .print-docx-template h1,
+.print-layout-docx .print-docx-template h2,
+.print-layout-docx .print-docx-template h3 {
+    font-family: "Franklin Gothic Medium", "Franklin Gothic Book", Arial, sans-serif;
+    color: var(--dhs-blue);
+}
+.print-layout-docx .print-docx-template table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0;
+    font-size: 11pt;
+}
+.print-layout-docx .print-docx-template img {
+    max-width: 100%;
+    height: auto;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+.print-layout-docx .host-report-generated {
+    margin-top: 8px;
+}
 .report-utility-bar, .vulnerability-modal, .btn, button { display: none !important; }
 .report-header {
     border: 0 !important;
