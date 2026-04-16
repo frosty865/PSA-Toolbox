@@ -7,7 +7,7 @@
     "preinstall": "npx only-allow pnpm",
     "dev": "node scripts/dev.js",
     "build": "pnpm run validate:deps && pnpm -r run build",
-    "build:web": "pnpm --filter schema run build && pnpm --filter security run build && pnpm --filter ui run build && pnpm --filter engine run build && node scripts/sync_host_static.cjs && node scripts/build-web-with-tmp.js",
+    "build:web": "pnpm --filter schema run build && pnpm --filter security run build && pnpm --filter ui run build && pnpm --filter engine run build && node scripts/build-web-with-tmp.js",
     "build:web:field": "pnpm --filter web run build:field",
     "verify:field-bundle": "pnpm run build:web && pnpm run build:web:field && node scripts/smoke-field-static.mjs",
     "lint": "pnpm run verify:question-integrity && pnpm run verify:dependency-scope && pnpm run verify:vuln-gap && pnpm run verify:question-vofc-coverage && pnpm run verify:truth-parity && pnpm run validate:deps && pnpm --filter web run validate:dependency-contract && pnpm -r run lint",
