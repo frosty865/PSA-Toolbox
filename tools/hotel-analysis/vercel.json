@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/HOST%20V3.html"
+      "destination": "/HOST V3.html"
     }
   ]
 }
