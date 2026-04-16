@@ -22357,12 +22357,13 @@
                 .map(row => firstNonEmptyValue(row, ['dep_dependency', 'dep_company', 'dep_poc_title']))
                 .filter(Boolean);
             if (dependencies.length > 0 && missingPraDependencies.length > 0) {
+                const dependencyNames = missingPraDependencies.join(', ');
                 vulnerabilities.push({
                     category: 'Dependency Resilience',
                     severity: 'Medium',
-                    issue: 'Critical utility dependencies lack priority restoration agreements',
-                    description: `Priority Restoration Agreements are not confirmed for: ${missingPraDependencies.join(', ')}.`,
-                    recommendation: 'Establish priority restoration agreements for the listed utility and service dependencies supporting life safety and security operations.',
+                    issue: 'Document and execute priority restoration agreements for critical utility dependencies',
+                    description: `Priority Restoration Agreements are not confirmed for: ${dependencyNames}.`,
+                    recommendation: `Coordinate with the listed providers (${dependencyNames}) to document priority restoration agreements, confirm escalation contacts, and record restoration order for life-safety and security-supporting services.`,
                     source_field: 'dep-table.dep_pra',
                     source_question: 'Is a Priority Restoration Agreement (PRA) in place for each dependency?'
                 });
@@ -25908,6 +25909,9 @@
                 : (vuln?.recommendation ? [vuln.recommendation] : []);
             return raw
                 .map(item => String(item ?? '').trim())
+                .map(item => item.replace(/^consider\s+/i, 'Document and implement '))
+                .map(item => item.replace(/^establish\s+/i, 'Establish and maintain '))
+                .map(item => item.replace(/^implement\s+/i, 'Implement '))
                 .filter(item => item && item.toLowerCase() !== 'undefined' && item.toLowerCase() !== 'null');
         }
 
