@@ -26197,7 +26197,40 @@
             const mergedByTitle = new Map();
             const allCandidates = [...enhancedVulnerabilities, ...sixTabVulnerabilities, ...planningTrainingVulnerabilities, ...vipProfileVulnerabilities];
             const tracedVulnerabilities = allCandidates.map(attachQuestionTrace);
+            const physicalFamilies = new Set([
+                'physical security',
+                'perimeter security',
+                'access control',
+                'surveillance',
+                'personnel security',
+                'emergency preparedness',
+                'vip operations'
+            ]);
+            const physicalControls = [
+                'perimeter and vehicle access',
+                'guest-area access control and circulation',
+                'surveillance and monitoring',
+                'response and incident management',
+                'vendor and contractor screening',
+                'service area separation and supervision',
+                'back-of-house access control',
+                'security training and exercise readiness',
+                'personnel security and oversight',
+                'guest services and valet coordination',
+                'public access',
+                'building envelope',
+                'entries and exits',
+                'parking and vehicle access',
+                'vertical circulation'
+            ];
             tracedVulnerabilities.forEach(v => {
+                const title = String(v.title || v.issue || '').toLowerCase();
+                const category = String(v.category || v.source_family || v.control_family || v.risk_class || '').toLowerCase();
+                const control = String(v.source_control || '').toLowerCase();
+                const hasTrace = vulnerabilityHasQuestionTrace(v);
+                const isPhysical = physicalFamilies.has(category) || physicalControls.some(term => title.includes(term) || control.includes(term) || category.includes(term));
+                const looksLikeLegacyFifa = /fifa|hosting suitability|executive summary/i.test(`${title} ${category} ${control}`);
+                if (!hasTrace || !isPhysical || looksLikeLegacyFifa) return;
                 if (!vulnerabilityHasQuestionTrace(v)) return;
                 const controlFamily = String(v.control_family || v.category || v.risk_class || 'uncategorized').trim().toLowerCase();
                 const sourceKey = String(v.source_field || v.vofc_id || v.title || v.issue || '').trim().toLowerCase();
