@@ -24467,7 +24467,7 @@
                 <div class="consideration-guidance">
                     <div class="consideration-overview">
                         <h3>Mitigation Framework</h3>
-                        <p>This section provides guidance for evaluating security improvements based on selected standards and best practices. Content is advisory; see the <strong>Assessment Advisory Notice</strong> under Program Governance &amp; Procurement.</p>
+                        <p>This section converts the finding register into direct mitigation actions and keeps the language tied to the observed security gaps.</p>
                     </div>
                     
                     <div class="consideration-phases">
@@ -24504,57 +24504,17 @@
                         <h3>Implementation Considerations</h3>
                         <div class="considerations-grid">
                             <div class="consideration-card">
-                                <h4>Procurement Requirements</h4>
-                                <p>All security improvements should align with your organization's procurement policies, approval workflows, and implementation constraints.</p>
+                                <h4>Implementation Scope</h4>
+                                <p>Apply each action to the specific control gap identified in the corresponding vulnerability block.</p>
                             </div>
                             <div class="consideration-card">
-                                <h4>Security Clearances</h4>
-                                <p>Confirm security clearance and vetting requirements for vendors and contractors involved in implementation and maintenance.</p>
+                                <h4>Execution Sequence</h4>
+                                <p>Prioritize fixes that reduce direct access, exposed approach paths, and uncontrolled entry first.</p>
                             </div>
                             <div class="consideration-card">
-                                <h4>Standards Alignment</h4>
-                                <p>Ensure all improvements align with selected security standards and the captured assessment responses.</p>
+                                <h4>Validation</h4>
+                                <p>Verify each mitigation by re-assessing the exact condition that triggered the finding.</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-        
-        function generateGovernanceSection() {
-            const standardsApproach = 'VIP Travel Risk Management (ISO 31030) and ISO 22301 Business Continuity Management';
-            return `
-                <div class="governance-section">
-                    <div class="governance-overview">
-                        <h3>Program Governance & Procurement</h3>
-                        <p>The topics below support procurement and approval workflows. All recommendations are advisory; see the <strong>Assessment Advisory Notice</strong> for full terms.</p>
-                    </div>
-                    
-                    <div class="governance-requirements">
-                        <h3>Governance Considerations</h3>
-                        <div class="requirements-grid">
-                            <div class="requirement-card">
-                                <h4>Procurement Policy Alignment</h4>
-                                <p>All security improvements should align with your organization's procurement policies, approval workflows, and implementation constraints.</p>
-                            </div>
-                            <div class="requirement-card">
-                                <h4>Security Clearance Requirements</h4>
-                                <p>Confirm security clearance and vetting requirements for vendors and contractors involved in implementation and maintenance.</p>
-                            </div>
-                            <div class="requirement-card">
-                                <h4>Standards-Based Requirements</h4>
-                                <p>All recommendations are based on selected standards including VIP travel risk management (ISO 31030) where applicable and ISO 22301 without specific product endorsements.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="advisory-disclaimer">
-                        <h3>Assessment Advisory Notice</h3>
-                        <div class="disclaimer-content">
-                            <p><strong>${HOST_REPORT_COPY.hostAdvisoryLead}</strong> ${HOST_REPORT_COPY.hostAdvisoryBody}</p>
-                            <p><strong>Standards-Based Approach:</strong> Recommendations are informed by selected standards including ${standardsApproach}.</p>
-                            <p><strong>Mitigation Guidance:</strong> Evaluate improvement opportunities against your organization's procurement policies, security requirements, and approval process.</p>
-                            <p><strong>CISA program:</strong> ${HOST_REPORT_COPY.cisaAttributionLine}</p>
                         </div>
                     </div>
                 </div>
@@ -24881,7 +24841,6 @@
             const vulnerabilityAnalysis = generateComprehensiveVulnerabilityAnalysis(data, analysis);
             const standardsAnalysis = generateStandardsAnalysis(data, analysis);
             const considerationGuidance = generateconsiderationGuidance(data, analysis);
-            const federalGovernance = generateGovernanceSection();
             const priorityFindings = getTopPriorityFindings(analysis.vulnerabilities || [], 5);
             const withCiteableMitigations = (analysis.vulnerabilities || []).filter(
                 (v) => normalizeOptionsForConsideration(v).length > 0
@@ -24924,7 +24883,6 @@
                             <li><a href="#systems-synopsis-report">Systems Synopsis</a></li>
                             <li><a href="#security-domains">Security Domain Analysis</a></li>
                             <li><a href="#standards-alignment">Standards Alignment</a></li>
-                            <li><a href="#program-governance">Program Governance & Procurement</a></li>
                             <li><a href="#vulnerability-analysis-report">Vulnerability Register</a></li>
                             <li><a href="#consideration-guidance">Mitigation Guidance</a></li>
                             <li><a href="#consideration-roadmap">Mitigation Roadmap</a></li>
@@ -24946,19 +24904,6 @@
                                     <li><strong>Observed categories:</strong> ${topCategorySummary}</li>
                                     <li><strong>Strategic risk classes:</strong> ${riskClassSummary}</li>
                                 </ul>
-                            </div>
-                            <div class="key-findings">
-                                <h4>Top Findings</h4>
-                                <ul>
-                                    ${priorityFindings.map(v => `<li><strong>${escapeHtmlForReport(v.title || 'Finding')}:</strong> Consequence: ${escapeHtmlForReport(summarizeFindingConsequence(v))} Action: ${buildRoadmapActionLine(v)}</li>`).join('')}
-                                </ul>
-                                <p style="margin-top: 8px; color: #4b5563;">The full roadmap below lists every identified vulnerability with explicit mitigation direction.</p>
-                            </div>
-                            <div class="key-findings">
-                                <h4>Top Actions</h4>
-                                <ol>
-                                    ${priorityActions.slice(0, 5).map(v => `<li><strong>${escapeHtmlForReport(v.title || 'Action')}:</strong> ${buildRoadmapActionLine(v)}</li>`).join('')}
-                                </ol>
                             </div>
                         </div>
                         <div class="dashboard-metrics">
@@ -24982,12 +24927,6 @@
                                 <div class="metric-label">Low Findings</div>
                                 <div class="metric-description">${lowCount > 0 ? 'Monitor as part of routine maintenance' : 'No low findings detected'}</div>
                             </div>
-                        </div>
-                        <div class="key-findings" style="margin-top: 18px;">
-                            <h4>Recommended improvements</h4>
-                            <ol>
-                                ${priorityActions.slice(0, 3).map(v => `<li><strong>${escapeHtmlForReport(v.title || 'Improvement')}:</strong> ${buildRoadmapActionLine(v)}</li>`).join('')}
-                            </ol>
                         </div>
                     </div>
                     
@@ -25061,12 +25000,6 @@
                     <div id="standards-alignment" class="report-section">
                         <h2><i class="fas fa-certificate"></i> Standards Alignment</h2>
                         ${standardsAnalysis.html}
-                    </div>
-                    
-                    <!-- Program Governance -->
-                    <div id="program-governance" class="report-section">
-                        <h2><i class="fas fa-balance-scale"></i> Program Governance & Procurement</h2>
-                        ${federalGovernance}
                     </div>
                     
                     <!-- Vulnerability Register -->
@@ -26355,22 +26288,24 @@
                 
                 vulnElement.innerHTML = `
                     <div class="vulnerability-title">
-                        <strong>${findingId ? `${findingId} - ${findingTitle}` : findingTitle}</strong>
+                        <strong>Vulnerability:</strong> ${findingId ? `${findingId} - ${findingTitle}` : findingTitle}
                     </div>
                     <div class="vulnerability-description">
-                        ${vuln.description}
-                    </div>
-                    <div class="vulnerability-impact">
-                        <strong>Impact:</strong> ${formatImpactWithCitation(vuln)}
-                    </div>
-                    <div class="vulnerability-impact">
-                        <strong>Strategic Risk Class:</strong> ${riskClass}
+                        <strong>Possible Impact:</strong> ${formatImpactWithCitation(vuln)}
                     </div>
                     ${options.length > 0 ? `
                         <div class="vulnerability-recommendations" style="margin-top: 8px;">
                             <strong>Options for Consideration:</strong>
                             <ul style="margin: 5px 0 0 20px; font-size: 0.85em;">
                                 ${options.map(rec => `<li>${rec}</li>`).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+                    ${Array.isArray(vuln.source_citations) && vuln.source_citations.length > 0 ? `
+                        <div class="vulnerability-recommendations" style="margin-top: 8px;">
+                            <strong>Source Citations:</strong>
+                            <ul style="margin: 5px 0 0 20px; font-size: 0.85em;">
+                                ${vuln.source_citations.map(c => `<li>${escapeHtmlForReport(c.label || c.url || 'Source')}</li>`).join('')}
                             </ul>
                         </div>
                     ` : ''}
