@@ -45,8 +45,7 @@ _EN_DASH = "\u2013"
 def render_vulnerability_block(doc: Document, block: dict) -> None:
     """
     Render a single RenderedVulnerabilityBlock with strict paragraph boundaries.
-    Order: Title (bold) -> [Category] -> Condition Identified -> Operational Exposure -> Why This Matters
-          -> OFC heading -> numbered OFCs -> References heading -> refs.
+    Order: Vulnerability -> [Category] -> Possible Impact -> Options for Consideration -> Source Citations.
     When condition_identified/operational_exposure/why_this_matters present, use those; else narrative.
     """
     title = sanitize_vulnerability_text(block.get("title") or "")
@@ -58,37 +57,25 @@ def render_vulnerability_block(doc: Document, block: dict) -> None:
     ofcs = block.get("ofcs") or []
     references = block.get("references") or []
 
-    # 1) Title paragraph (bold)
+    # 1) Vulnerability label + title
+    p_label = doc.add_paragraph()
+    r = p_label.add_run("Vulnerability")
+    r.bold = True
     p_title = doc.add_paragraph()
     r = p_title.add_run(title)
     r.bold = True
     set_paragraph_keep_with_next(p_title)
 
-    # 2) Category (when present)
-    if driver_cat:
-        doc.add_paragraph(f"Category: {driver_cat}")
+    # 2) Possible Impact
+    if cond_id or op_exp or why or narrative:
+        p_h = doc.add_paragraph()
+        r = p_h.add_run("Possible Impact")
+        r.bold = True
+        impact_text = op_exp or cond_id or why or narrative
+        if impact_text:
+            doc.add_paragraph(impact_text)
 
-    # 3) Condition Identified / Operational Exposure / Why This Matters (canonical) or fallback narrative
-    if cond_id or op_exp or why:
-        if cond_id:
-            p_h = doc.add_paragraph()
-            r = p_h.add_run("Condition Identified")
-            r.bold = True
-            doc.add_paragraph(cond_id)
-        if op_exp:
-            p_h = doc.add_paragraph()
-            r = p_h.add_run("Operational Exposure")
-            r.bold = True
-            doc.add_paragraph(op_exp)
-        if why:
-            p_h = doc.add_paragraph()
-            r = p_h.add_run("Why This Matters")
-            r.bold = True
-            doc.add_paragraph(why)
-    elif narrative:
-        doc.add_paragraph(narrative)
-
-    # 4) Options for Consideration heading + numbered OFCs
+    # 3) Options for Consideration heading + numbered OFCs
     if ofcs:
         p_ofc_h = doc.add_paragraph()
         r = p_ofc_h.add_run("Options for Consideration")
@@ -96,10 +83,10 @@ def render_vulnerability_block(doc: Document, block: dict) -> None:
         for i, ofc in enumerate(ofcs[:4], 1):
             doc.add_paragraph(sanitize_vulnerability_text(f"{i}. {ofc}"))
 
-    # 5) References heading + bullet refs (always after OFCs)
+    # 4) Source Citations heading + bullet refs (always after OFCs)
     if references:
         p_ref_h = doc.add_paragraph()
-        r = p_ref_h.add_run("References")
+        r = p_ref_h.add_run("Source Citations")
         r.bold = True
         for ref in references:
             doc.add_paragraph(sanitize_text(f"\u2022 {ref}"))
@@ -110,7 +97,7 @@ def render_vulnerability_block_after(
 ) -> DocxParagraph:
     """
     Strict narrative vulnerability block: Heading 3 (title), Normal (category/body), Heading 4 (section labels),
-    Normal (body), List Number (OFCs, max 4), List Bullet (references). No manual "1." or "•" numbering.
+    Normal (body), List Number (OFCs, max 4), List Bullet (source citations). No manual "1." or "•" numbering.
     """
     title = sanitize_vulnerability_text(block.get("title") or "")
     narrative = sanitize_vulnerability_text(block.get("narrative") or "")
@@ -121,26 +108,16 @@ def render_vulnerability_block_after(
     ofcs = block.get("ofcs") or []
     references = block.get("references") or []
     last = after_paragraph
-    p_title = insert_paragraph_after(last, title, style="Heading 3")
+    p_label = insert_paragraph_after(last, "Vulnerability", style="Heading 4")
+    set_paragraph_keep_with_next(p_label)
+    p_title = insert_paragraph_after(p_label, title, style="Heading 3")
     set_paragraph_keep_with_next(p_title)
     last = p_title
-    if driver_cat:
-        last = insert_paragraph_after(last, f"Category: {driver_cat}", style="Normal")
-    if cond_id or op_exp or why:
-        if cond_id:
-            p_h = insert_paragraph_after(last, "Condition Identified", style="Heading 4")
-            set_paragraph_keep_with_next(p_h)
-            last = insert_paragraph_after(p_h, cond_id, style="Normal")
-        if op_exp:
-            p_h = insert_paragraph_after(last, "Operational Exposure", style="Heading 4")
-            set_paragraph_keep_with_next(p_h)
-            last = insert_paragraph_after(p_h, op_exp, style="Normal")
-        if why:
-            p_h = insert_paragraph_after(last, "Why This Matters", style="Heading 4")
-            set_paragraph_keep_with_next(p_h)
-            last = insert_paragraph_after(p_h, why, style="Normal")
-    elif narrative:
-        last = insert_paragraph_after(last, narrative, style="Normal")
+    if cond_id or op_exp or why or narrative:
+        p_h = insert_paragraph_after(last, "Possible Impact", style="Heading 4")
+        set_paragraph_keep_with_next(p_h)
+        impact_text = op_exp or cond_id or why or narrative
+        last = insert_paragraph_after(p_h, impact_text, style="Normal")
     try:
         if last:
             last.paragraph_format.space_after = Pt(VULN_NARRATIVE_SPACING_PT)
