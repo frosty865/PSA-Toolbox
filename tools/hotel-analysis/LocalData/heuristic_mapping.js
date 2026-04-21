@@ -25,13 +25,11 @@ class HeuristicVulnerabilityMapper {
     // Load local data files
     async loadLocalData() {
         try {
-            // Use embedded VOFC data to avoid CORS issues
-            if (window.EMBEDDED_VOFC_DATA) {
-                this.vofcData = window.EMBEDDED_VOFC_DATA;
-                console.log('VOFC data loaded from embedded data:', this.vofcData.length, 'vulnerabilities');
+            this.vofcData = Array.isArray(window.VOFC_VULNERABILITIES) ? window.VOFC_VULNERABILITIES : [];
+            if (this.vofcData.length === 0) {
+                console.warn('VOFC vulnerability catalog not available');
             } else {
-                console.warn('No embedded VOFC data found');
-                this.vofcData = [];
+                console.log('VOFC data loaded from LocalData scripts:', this.vofcData.length, 'vulnerabilities');
             }
 
             return true;
@@ -344,39 +342,10 @@ class HeuristicVulnerabilityMapper {
     }
 
     /**
-     * Options for consideration: OFC option_text from embedded VOFC catalog only (no generated advice).
+     * Options for consideration are sourced from the VOFC matcher. This heuristic helper does not
+     * generate a second catalog.
      */
     getRecommendationsForField(fieldName, mapping) {
-        const embedded = typeof window !== 'undefined' && window.EMBEDDED_VOFC_DATA;
-        if (!embedded || !Array.isArray(embedded)) return [];
-
-        const hintLists = {
-            has_perimeter_barriers: ['high-speed avenues of approach'],
-            standoff_vehicle_barriers: ['high-speed avenues of approach'],
-            vss_present: ['does not have a cctv system'],
-            vss_camera_count: ['cctv coverage of the facility'],
-            vss_retention: ['recorded information from the cctv system for no more than 1 month'],
-            els_present: ['limited or no access control policies/procedures for employees'],
-            els_integration: ['limited or no access control policies/procedures for visitors'],
-            soc_present: ['does not use real-time monitoring for the cctv system'],
-            monitoring_hours: ['does not use real-time monitoring for the cctv system'],
-            secforce_247: ['deploy the security force to regularly patrol'],
-            secforce_type: ['deploy the security force to regularly patrol']
-        };
-
-        const hints = hintLists[fieldName];
-        if (!hints) return [];
-
-        for (let i = 0; i < hints.length; i++) {
-            const sub = hints[i].toLowerCase();
-            const row = embedded.find(
-                (v) => (v.vulnerability_text || '').toLowerCase().includes(sub)
-            );
-            if (row && Array.isArray(row.options) && row.options.length) {
-                return row.options.slice(0, 8).map((o) => o.option_text);
-            }
-        }
-
         return [];
     }
 

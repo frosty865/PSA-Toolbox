@@ -15,6 +15,11 @@ class VOFCIntegration {
      */
     initialize() {
         try {
+            if (typeof VOFCFieldMappings !== 'function' || typeof VOFCManager !== 'function') {
+                console.error('VOFC dependencies not available');
+                return;
+            }
+
             // Initialize field mappings
             this.fieldMappings = new VOFCFieldMappings();
             
@@ -221,14 +226,17 @@ class VOFCIntegration {
 }
 
 // Global instance for backward compatibility
-window.vofcMatcher = new VOFCIntegration();
+const vofcMatcherInstance = new VOFCIntegration();
+window.vofcMatcher = vofcMatcherInstance;
 
 // Auto-initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     // Wait a bit for other scripts to load
     setTimeout(() => {
-        if (window.vofcMatcher) {
-            window.vofcMatcher.initialize();
+        if (vofcMatcherInstance && typeof vofcMatcherInstance.initialize === 'function') {
+            vofcMatcherInstance.initialize();
+        } else {
+            console.error('VOFC matcher instance not available');
         }
     }, 100);
 });

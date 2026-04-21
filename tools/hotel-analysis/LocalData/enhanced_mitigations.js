@@ -1,6 +1,5 @@
 // Legacy hook — speculative “innovative / emerging / alternative” mitigation lists were removed.
-// HOST reports use OFC option text from the embedded VOFC catalog (see EMBEDDED_VOFC_DATA) and
-// matcher output — not generated marketing-style mitigations.
+// HOST reports use OFC option text from the VOFC scripts loaded in LocalData and matcher output.
 
 class EnhancedMitigationDatabase {
     constructor() {}
@@ -12,7 +11,7 @@ class EnhancedMitigationDatabase {
         const n = Array.isArray(vulnerabilities) ? vulnerabilities.length : 0;
         return {
             summary:
-                'No separate speculative mitigation catalog is included. Options for consideration are drawn from the OFC-linked text in HOST (embedded VOFC data) and the findings sections above.',
+                'No separate speculative mitigation catalog is included. Options for consideration are drawn from the VOFC data and the findings sections above.',
             totalVulnerabilities: n,
             mitigationCategories: {},
             recommendations: []
