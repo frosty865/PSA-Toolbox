@@ -140,6 +140,64 @@ describe('normalizeDependencyConditions', () => {
     expect(reportThemedUnmapped).toEqual([]);
   });
 
+  it('showcase-style maintenance and monitoring fields do not appear in unmappedKeys', () => {
+    const fixture: Assessment = {
+      ...fullAssessmentForExport,
+      categories: {
+        ...fullAssessmentForExport.categories,
+        ELECTRIC_POWER: {
+          requires_service: true,
+          maintenance_schedule: { preventive_maintenance_established: 'Yes' },
+          monitoring_capabilities: { real_time_monitoring_exists: 'Yes' },
+        },
+        COMMUNICATIONS: {
+          requires_service: true,
+          comms_single_provider_restoration: 'No',
+          comms_restoration_constraints: ['specialized_equipment'],
+          maintenance_schedule: { preventive_maintenance_established: 'Yes' },
+          monitoring_capabilities: { real_time_monitoring_exists: 'Yes' },
+        },
+        INFORMATION_TECHNOLOGY: {
+          requires_service: true,
+          equipment_suppliers: [{ component_or_service: 'Firewall', alternatives_available: 'Yes' }],
+          alternative_providers: { available: 'Yes' },
+          maintenance_schedule: { preventive_maintenance_established: 'Yes' },
+          monitoring_capabilities: { real_time_monitoring_exists: 'Yes' },
+        },
+        WATER: {
+          requires_service: true,
+          maintenance_schedule: { preventive_maintenance_established: 'Yes' },
+          monitoring_capabilities: { real_time_monitoring_exists: 'Yes' },
+        },
+        WASTEWATER: {
+          requires_service: true,
+          maintenance_schedule: { preventive_maintenance_established: 'Yes' },
+          monitoring_capabilities: { real_time_monitoring_exists: 'Yes' },
+        },
+      } as any,
+    } as Assessment;
+    const { accounting } = normalizeDependencyConditions(fixture);
+    const unexpected = accounting.unmappedKeys.filter((k) =>
+      [
+        'ELECTRIC_POWER:maintenance_schedule',
+        'ELECTRIC_POWER:monitoring_capabilities',
+        'COMMUNICATIONS:comms_single_provider_restoration',
+        'COMMUNICATIONS:comms_restoration_constraints',
+        'COMMUNICATIONS:maintenance_schedule',
+        'COMMUNICATIONS:monitoring_capabilities',
+        'INFORMATION_TECHNOLOGY:equipment_suppliers',
+        'INFORMATION_TECHNOLOGY:alternative_providers',
+        'INFORMATION_TECHNOLOGY:maintenance_schedule',
+        'INFORMATION_TECHNOLOGY:monitoring_capabilities',
+        'WATER:maintenance_schedule',
+        'WATER:monitoring_capabilities',
+        'WASTEWATER:maintenance_schedule',
+        'WASTEWATER:monitoring_capabilities',
+      ].includes(k)
+    );
+    expect(unexpected).toEqual([]);
+  });
+
   describe('hosted continuity: no default NONE; vulnerability only on explicit NONE', () => {
     const baseIT = {
       requires_service: true,

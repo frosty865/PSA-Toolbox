@@ -337,6 +337,7 @@ def check_vulnerability_section_styles(doc: Document) -> None:
 
 
 CANONICAL_TEMPLATE_SUFFIX = "ADA/report template.docx"
+WORKSPACE_TEMPLATE_SUFFIX = "apps/web/public/hotel-analysis/Assets/report template.docx"
 
 
 def assert_template_canonical(template_path: str) -> None:
@@ -344,7 +345,10 @@ def assert_template_canonical(template_path: str) -> None:
     if not template_path:
         return
     normalized = (template_path or "").replace("\\", "/")
-    if not normalized.endswith(CANONICAL_TEMPLATE_SUFFIX):
+    if not (
+        normalized.endswith(CANONICAL_TEMPLATE_SUFFIX)
+        or normalized.endswith(WORKSPACE_TEMPLATE_SUFFIX)
+    ):
         raise ValueError(
             "Wrong template: export must use /ADA/report template.docx. "
             f"Got: {template_path!r}"

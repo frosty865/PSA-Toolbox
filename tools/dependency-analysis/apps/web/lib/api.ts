@@ -3,7 +3,11 @@ import type { VOFCCollection } from 'schema';
 import { getApiBase } from '@/lib/platform/apiBase';
 import { isFieldStaticMode } from '@/lib/field/isFieldStaticMode';
 import * as fieldApi from '@/lib/field/apiFieldStatic';
-import { getFieldExportBaseUrl, isFieldRemoteDocxEnabled } from '@/lib/field/remoteExport';
+import {
+  getBrowserReportServiceBaseUrl,
+  getFieldExportBaseUrl,
+  isFieldRemoteDocxEnabled,
+} from '@/lib/field/remoteExport';
 import { getExportFilename } from '@/lib/uiCopy/reviewExportCopy';
 import { purgeAllLocalState } from '@/app/lib/io/purge';
 import { buildVofcCollectionFromAssessment } from '@/app/lib/vofc/build_vofc_collection';
@@ -202,6 +206,11 @@ export async function exportFinal(
   }
 ): Promise<Blob> {
   const payload = prepareAssessmentForVofcApi(assessment);
+  const remoteReportServiceBaseUrl = getBrowserReportServiceBaseUrl();
+  if (remoteReportServiceBaseUrl) {
+    return postExportFinalRequest(`${remoteReportServiceBaseUrl}/api/export/final`, payload, options, true);
+  }
+
   if (isFieldStaticMode()) {
     const remote = getFieldExportBaseUrl();
     if (remote) {

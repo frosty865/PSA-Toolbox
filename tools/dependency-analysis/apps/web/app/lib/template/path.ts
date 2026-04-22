@@ -53,24 +53,37 @@ export function findRootWithReporter(): string {
   return root;
 }
 
-/** Canonical anchor template: [[SNAPSHOT_*]], [[INFRA_*]] tokens. Single source for export. */
-export const CANONICAL_TEMPLATE_RELATIVE = path.join('ADA', 'report template.docx');
+/**
+ * Template locations seen in this workspace family.
+ * Prefer the checked-in reporter template under public/hotel-analysis, but keep
+ * the legacy ADA path as a fallback so older layouts still work.
+ */
+export const TEMPLATE_RELATIVE_CANDIDATES = [
+  path.join('apps', 'web', 'public', 'hotel-analysis', 'Assets', 'report template.docx'),
+  path.join('ADA', 'report template.docx'),
+] as const;
 
 /**
  * Path to the production DOCX template for a given repo root.
- * Use this with findRootWithReporter() so export and template check use the same root.
+ * Returns the first template candidate that exists, falling back to the primary
+ * candidate when none are present.
  */
 export function getCanonicalTemplatePath(repoRoot: string): string {
-  return path.join(repoRoot, CANONICAL_TEMPLATE_RELATIVE);
+  for (const relative of TEMPLATE_RELATIVE_CANDIDATES) {
+    const candidate = path.join(repoRoot, relative);
+    if (fs.existsSync(candidate)) return candidate;
+  }
+  return path.join(repoRoot, TEMPLATE_RELATIVE_CANDIDATES[0]);
 }
 
 /**
- * Asserts path is the canonical template (ADA/report template.docx). Use before export/check.
+ * Asserts path is one of the known template locations. Use before export/check.
  */
 export function assertCanonicalTemplatePath(templatePath: string): void {
   const normalized = templatePath.replace(/\\/g, '/');
-  if (!normalized.endsWith('ADA/report template.docx')) {
-    throw new Error(`Wrong template: export must use ADA/report template.docx. Got: ${templatePath}`);
+  const allowed = TEMPLATE_RELATIVE_CANDIDATES.map((relative) => relative.replace(/\\/g, '/'));
+  if (!allowed.some((relative) => normalized.endsWith(relative))) {
+    throw new Error(`Wrong template: export must use a known report template. Got: ${templatePath}`);
   }
 }
 

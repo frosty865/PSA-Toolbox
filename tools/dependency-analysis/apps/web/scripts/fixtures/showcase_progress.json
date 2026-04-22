@@ -1,0 +1,1065 @@
+{
+  "tool": "infrastructure-dependency-tool",
+  "version": 2,
+  "saved_at_iso": "2026-04-22T17:17:34.726Z",
+  "assessment": {
+    "meta": {
+      "tool_version": "0.1.0",
+      "template_version": "1",
+      "created_at_iso": "2026-04-22T12:00:00.000Z"
+    },
+    "asset": {
+      "asset_name": "Harbor View Community Center",
+      "visit_date_iso": "2026-04-22",
+      "sector": "Commercial Facilities",
+      "subsector": "Community Center",
+      "mailing_address_line1": "100 Sample Ave",
+      "mailing_address_line2": "Suite 200",
+      "mailing_address_line3": "",
+      "mailing_city": "Harbor City",
+      "mailing_state": "FL",
+      "mailing_zip": "33301",
+      "mailing_country": "United States",
+      "physical_address": "100 Sample Ave, Suite 200\nHarbor City, FL 33301\nUnited States",
+      "location": "26.1234, -80.1234",
+      "facility_latitude": "26.1234",
+      "facility_longitude": "-80.1234",
+      "assessor": "Sample Analyst",
+      "psa_name": "Sample PSA",
+      "psa_region": "South Florida",
+      "psa_city": "Fort Lauderdale",
+      "psa_phone": "(555) 010-2000",
+      "psa_cell": "(555) 010-2001",
+      "psa_email": "sample@example.com",
+      "services_provided": [
+        "community programs",
+        "meeting space",
+        "after-hours shelter"
+      ]
+    },
+    "categories": {
+      "ELECTRIC_POWER": {
+        "requires_service": true,
+        "time_to_impact_hours": 0,
+        "loss_fraction_no_backup": 0.92,
+        "has_backup_any": true,
+        "has_backup_generator": true,
+        "backup_duration_hours": 48,
+        "loss_fraction_with_backup": 0.08,
+        "recovery_time_hours": 12,
+        "backup_capacity_pct": 92,
+        "has_backup": true,
+        "backup_type": "TEMPORARY",
+        "supply": {
+          "has_alternate_source": true,
+          "sources": [
+            {
+              "source_id": "ep-utility-a",
+              "provider_name": "Harbor Electric Cooperative",
+              "source_label": "Primary feeder",
+              "demarcation_lat": 26.1234,
+              "demarcation_lon": -80.1234,
+              "demarcation_description": "Primary service entrance on north wall.",
+              "independence": "DIFFERENT_LOOP_OR_PATH",
+              "notes": "Dedicated feeder serving the facility."
+            },
+            {
+              "source_id": "ep-utility-b",
+              "provider_name": "Harbor Electric Cooperative",
+              "source_label": "Secondary feeder",
+              "demarcation_lat": 26.1236,
+              "demarcation_lon": -80.1231,
+              "demarcation_description": "Secondary service entrance in utility yard.",
+              "independence": "DIFFERENT_DEMARCATION_SAME_UPSTREAM",
+              "notes": "Separate feed with a distinct pathway."
+            }
+          ]
+        },
+        "agreements": {
+          "has_sla": true,
+          "sla_hours": 4,
+          "has_pra": true,
+          "pra_category": "TIER_2",
+          "pra_category_other": null
+        },
+        "maintenance_schedule": {
+          "preventive_maintenance_established": "Yes",
+          "frequency": "Monthly",
+          "last_service_date": "2026-03-15",
+          "next_scheduled_date": "2026-04-15",
+          "load_test_within_12_months": "Yes",
+          "last_load_test_date": "2026-01-20",
+          "load_pct_tested": 80,
+          "spare_parts_maintained": "Yes",
+          "parts_list": [
+            "automatic transfer switch",
+            "filters",
+            "belts"
+          ],
+          "spare_parts_summary": "Critical parts stocked on site."
+        },
+        "monitoring_capabilities": {
+          "real_time_monitoring_exists": "Yes",
+          "automated_alerts_for_loss": "Yes"
+        },
+        "redundancy_activation": {
+          "mode": "AUTOMATIC",
+          "activation_delay_min": 15,
+          "requires_trained_personnel": false,
+          "trained_personnel_24_7": true,
+          "remote_initiation_available": false,
+          "vendor_dispatch_required": false,
+          "documented_and_tested": true
+        },
+        "vehicle_impact_exposure": "no",
+        "vehicle_impact_protection": "unknown",
+        "answers": {
+          "curve_requires_service": true,
+          "curve_primary_provider": "Harbor Electric Cooperative",
+          "curve_time_to_impact_hours": 0,
+          "curve_loss_fraction_no_backup": 0.92,
+          "curve_backup_available": "yes",
+          "curve_backup_duration_hours": 48,
+          "curve_loss_fraction_with_backup": 0.08,
+          "curve_recovery_time_hours": 12,
+          "E-2_can_identify_substations": "yes",
+          "E-3_more_than_one_connection": "yes"
+        }
+      },
+      "COMMUNICATIONS": {
+        "backup_capacity_pct": 85,
+        "requires_service": true,
+        "time_to_impact_hours": 1,
+        "loss_fraction_no_backup": 0.7,
+        "has_backup_any": true,
+        "has_backup": true,
+        "has_backup_generator": false,
+        "backup_duration_hours": 72,
+        "loss_fraction_with_backup": 0.15,
+        "backup_type": "TEMPORARY",
+        "recovery_time_hours": 24,
+        "supply": {
+          "has_alternate_source": true,
+          "sources": [
+            {
+              "source_id": "comms-fiber-a",
+              "provider_name": "Metro Fiber",
+              "source_label": "Primary fiber path",
+              "demarcation_lat": 26.1235,
+              "demarcation_lon": -80.1237,
+              "demarcation_description": "Main telco handoff on west side.",
+              "independence": "DIFFERENT_LOOP_OR_PATH",
+              "notes": "Primary path used by business operations."
+            },
+            {
+              "source_id": "comms-fiber-b",
+              "provider_name": "Backup Carrier",
+              "source_label": "Secondary fiber path",
+              "demarcation_lat": 26.1236,
+              "demarcation_lon": -80.1232,
+              "demarcation_description": "Alternate handoff in equipment room.",
+              "independence": "DIFFERENT_LOOP_OR_PATH",
+              "notes": "Separate carrier path for redundancy."
+            }
+          ]
+        },
+        "agreements": {
+          "has_sla": true,
+          "sla_hours": 8,
+          "has_pra": true,
+          "pra_category": "TIER_2",
+          "pra_category_other": null
+        },
+        "comms_single_provider_restoration": "No",
+        "comms_alternate_providers_or_paths": "Yes",
+        "comms_restoration_constraints": [
+          "specialized_equipment",
+          "regional_outage_dependency"
+        ],
+        "maintenance_schedule": {
+          "preventive_maintenance_established": "Yes",
+          "frequency": "Quarterly",
+          "last_service_date": "2026-02-10",
+          "next_scheduled_date": "2026-05-10",
+          "load_test_within_12_months": "Yes",
+          "last_load_test_date": "2026-02-10",
+          "spare_parts_maintained": "Unknown"
+        },
+        "monitoring_capabilities": {
+          "real_time_monitoring_exists": "Yes",
+          "automated_alerts_for_loss": "Yes"
+        },
+        "redundancy_activation": {
+          "mode": "MANUAL_REMOTE",
+          "activation_delay_min": 30,
+          "requires_trained_personnel": true,
+          "trained_personnel_24_7": true,
+          "remote_initiation_available": true,
+          "vendor_dispatch_required": false,
+          "documented_and_tested": true
+        },
+        "vehicle_impact_exposure": "unknown",
+        "vehicle_impact_protection": "unknown",
+        "answers": {
+          "curve_requires_service": true,
+          "curve_primary_provider": "Metro Fiber",
+          "curve_time_to_impact_hours": 1,
+          "curve_loss_fraction_no_backup": 0.7,
+          "curve_backup_available": "yes",
+          "curve_backup_duration_hours": 72,
+          "curve_loss_fraction_with_backup": 0.15,
+          "curve_recovery_time_hours": 24,
+          "comm_single_provider_restoration": "No",
+          "comm_alternate_providers_or_paths": "Yes"
+        }
+      },
+      "INFORMATION_TECHNOLOGY": {
+        "backup_capacity_pct": 80,
+        "requires_service": true,
+        "time_to_impact_hours": 0.5,
+        "loss_fraction_no_backup": 0.85,
+        "has_backup_any": true,
+        "has_backup": true,
+        "has_backup_generator": false,
+        "backup_duration_hours": null,
+        "loss_fraction_with_backup": 0.2,
+        "backup_type": "PERMANENT",
+        "recovery_time_hours": 6,
+        "supply": {
+          "has_alternate_source": true,
+          "sources": [
+            {
+              "source_id": "it-isp-a",
+              "provider_name": "CoreNet ISP",
+              "source_label": "Primary internet circuit",
+              "demarcation_lat": 26.1234,
+              "demarcation_lon": -80.1234,
+              "demarcation_description": "Main demarcation closet.",
+              "independence": "UNKNOWN",
+              "notes": "Primary ISP path for business systems."
+            },
+            {
+              "source_id": "it-isp-b",
+              "provider_name": "CloudLink",
+              "source_label": "Secondary internet circuit",
+              "demarcation_lat": 26.1237,
+              "demarcation_lon": -80.123,
+              "demarcation_description": "Backup demarcation closet.",
+              "independence": "UNKNOWN",
+              "notes": "Secondary ISP path for hosted workloads."
+            }
+          ]
+        },
+        "alternative_providers": {
+          "available": "Yes",
+          "lead_time_days": 5,
+          "reason_or_constraint": "Hardware provisioning lead time and carrier install window."
+        },
+        "equipment_suppliers": [
+          {
+            "component_or_service": "Managed firewall appliance",
+            "provider_name": "CoreNet ISP",
+            "alternatives_available": "No",
+            "lead_time_days": 14,
+            "notes": "Firewall replacement depends on managed service contract."
+          }
+        ],
+        "maintenance_schedule": {
+          "preventive_maintenance_established": "Yes",
+          "frequency": "Monthly",
+          "last_service_date": "2026-03-05",
+          "next_scheduled_date": "2026-04-05",
+          "load_test_within_12_months": "Yes",
+          "last_load_test_date": "2026-03-01",
+          "spare_parts_maintained": "Yes",
+          "parts_list": [
+            "spare switch",
+            "optics",
+            "power supplies"
+          ],
+          "spare_parts_summary": "One spare of each critical network component is kept on site."
+        },
+        "monitoring_capabilities": {
+          "real_time_monitoring_exists": "Yes",
+          "automated_alerts_for_loss": "Yes"
+        },
+        "redundancy_activation": {
+          "mode": "MANUAL_REMOTE",
+          "activation_delay_min": 10,
+          "requires_trained_personnel": true,
+          "trained_personnel_24_7": true,
+          "remote_initiation_available": true,
+          "vendor_dispatch_required": false,
+          "documented_and_tested": true
+        },
+        "it_installation_location": "interior_or_underground",
+        "it_continuity_plan_exists": "yes",
+        "it_plan_exercised": "yes_within_12_months",
+        "it_exercise_scope": "functional_technical_test",
+        "it_transport_resilience": {
+          "circuit_count": "TWO",
+          "carrier_diversity": "DIFFERENT_CARRIERS",
+          "physical_path_diversity": {
+            "separate_conduits": true,
+            "same_conduit": false,
+            "separate_street_approach": true,
+            "unknown": false
+          },
+          "building_entry_diversity": "SEPARATE_ENTRIES",
+          "upstream_pop_diversity": "DIFFERENT_POPS",
+          "notes": "Distinct carrier handoffs and distinct building entry routes are documented.",
+          "transport_connection_count": 2,
+          "transport_provider_count": 2,
+          "transport_building_entry_diversity": "SEPARATE_ENTRY",
+          "transport_route_independence": "CONFIRMED",
+          "transport_failover_mode": "MANUAL_REMOTE"
+        },
+        "it_hosted_resilience": {
+          "primary_erp": {
+            "survivability": "ALTERNATE_PLATFORM_OR_PROVIDER",
+            "notes": "ERP can fail over to a hosted secondary platform."
+          },
+          "backup_files": {
+            "survivability": "LOCAL_MIRROR_OR_CACHE",
+            "notes": "Encrypted backups are replicated offsite."
+          }
+        },
+        "answers": {
+          "curve_requires_service": true,
+          "curve_primary_provider": "CoreNet ISP",
+          "curve_time_to_impact_hours": 0.5,
+          "curve_loss_fraction_no_backup": 0.85,
+          "curve_backup_available": "yes",
+          "curve_backup_duration_hours": null,
+          "curve_loss_fraction_with_backup": 0.2,
+          "curve_recovery_time_hours": 6,
+          "IT-1_can_identify_providers": "yes",
+          "IT-8_backup_available": "yes"
+        }
+      },
+      "WATER": {
+        "requires_service": true,
+        "time_to_impact_hours": 2,
+        "loss_fraction_no_backup": 0.8,
+        "has_backup": true,
+        "backup_duration_hours": null,
+        "loss_fraction_with_backup": 0.25,
+        "recovery_time_hours": 18,
+        "backup_capacity_pct": 75,
+        "has_backup_any": true,
+        "has_backup_generator": false,
+        "backup_type": "PERMANENT",
+        "supply": {
+          "has_alternate_source": true,
+          "sources": [
+            {
+              "source_id": "water-main-a",
+              "provider_name": "Harbor Water Utility",
+              "source_label": "Primary water feed",
+              "demarcation_lat": 26.1233,
+              "demarcation_lon": -80.1236,
+              "demarcation_description": "Primary service on east utility corridor.",
+              "independence": "DIFFERENT_LOOP_OR_PATH",
+              "notes": "Primary utility service for potable water."
+            },
+            {
+              "source_id": "water-main-b",
+              "provider_name": "Harbor Water Utility",
+              "source_label": "Secondary water feed",
+              "demarcation_lat": 26.1232,
+              "demarcation_lon": -80.1232,
+              "demarcation_description": "Secondary service near the fire riser room.",
+              "independence": "SAME_DEMARCATION",
+              "notes": "Distinct internal branch with a separate shutoff."
+            }
+          ]
+        },
+        "agreements": {
+          "has_sla": true,
+          "sla_hours": 12,
+          "has_pra": true,
+          "pra_category": "TIER_3",
+          "pra_category_other": null
+        },
+        "maintenance_schedule": {
+          "preventive_maintenance_established": "Yes",
+          "frequency": "Quarterly",
+          "last_service_date": "2026-02-20",
+          "next_scheduled_date": "2026-05-20",
+          "load_test_within_12_months": "Yes",
+          "last_load_test_date": "2026-02-20",
+          "spare_parts_maintained": "Yes",
+          "parts_list": [
+            "pressure sensors",
+            "valves"
+          ],
+          "spare_parts_summary": "Essential replacement parts are stored on site."
+        },
+        "monitoring_capabilities": {
+          "real_time_monitoring_exists": "Yes",
+          "automated_alerts_for_loss": "Yes"
+        },
+        "redundancy_activation": {
+          "mode": "MANUAL_ONSITE",
+          "activation_delay_min": 45,
+          "requires_trained_personnel": true,
+          "trained_personnel_24_7": false,
+          "remote_initiation_available": false,
+          "vendor_dispatch_required": true,
+          "documented_and_tested": true
+        },
+        "vehicle_impact_exposure": "unknown",
+        "vehicle_impact_protection": "unknown",
+        "answers": {
+          "curve_requires_service": true,
+          "curve_primary_provider": "Harbor Water Utility",
+          "curve_time_to_impact_hours": 2,
+          "curve_loss_fraction_no_backup": 0.8,
+          "curve_backup_available": "yes",
+          "curve_backup_duration_hours": null,
+          "curve_loss_fraction_with_backup": 0.25,
+          "curve_recovery_time_hours": 18
+        }
+      },
+      "WASTEWATER": {
+        "requires_service": true,
+        "time_to_impact_hours": 4,
+        "loss_fraction_no_backup": 0.6,
+        "has_backup": true,
+        "backup_duration_hours": 8,
+        "loss_fraction_with_backup": 0.2,
+        "recovery_time_hours": 12,
+        "backup_capacity_pct": 80,
+        "has_backup_any": true,
+        "has_backup_generator": false,
+        "backup_type": "TEMPORARY",
+        "supply": {
+          "has_alternate_source": true,
+          "sources": [
+            {
+              "source_id": "ww-main-a",
+              "provider_name": "Harbor Wastewater Utility",
+              "source_label": "Primary lift station feed",
+              "demarcation_lat": 26.1231,
+              "demarcation_lon": -80.1235,
+              "demarcation_description": "Primary electrical service near lift station.",
+              "independence": "DIFFERENT_LOOP_OR_PATH",
+              "notes": "Primary feed for wastewater controls."
+            },
+            {
+              "source_id": "ww-main-b",
+              "provider_name": "Harbor Wastewater Utility",
+              "source_label": "Secondary lift station feed",
+              "demarcation_lat": 26.123,
+              "demarcation_lon": -80.1231,
+              "demarcation_description": "Secondary electrical service at backup panel.",
+              "independence": "DIFFERENT_LOOP_OR_PATH",
+              "notes": "Secondary feed used when the primary line is disrupted."
+            }
+          ]
+        },
+        "agreements": {
+          "has_sla": true,
+          "sla_hours": 12,
+          "has_pra": false,
+          "pra_category": null,
+          "pra_category_other": null
+        },
+        "maintenance_schedule": {
+          "preventive_maintenance_established": "Yes",
+          "frequency": "Monthly",
+          "last_service_date": "2026-03-08",
+          "next_scheduled_date": "2026-04-08",
+          "load_test_within_12_months": "Yes",
+          "last_load_test_date": "2026-03-08",
+          "spare_parts_maintained": "Yes",
+          "parts_list": [
+            "pump seals",
+            "control relays"
+          ],
+          "spare_parts_summary": "Pump and controls spare parts are tracked in inventory."
+        },
+        "monitoring_capabilities": {
+          "real_time_monitoring_exists": "Yes",
+          "automated_alerts_for_loss": "Yes"
+        },
+        "redundancy_activation": {
+          "mode": "AUTOMATIC",
+          "activation_delay_min": 5,
+          "requires_trained_personnel": false,
+          "trained_personnel_24_7": true,
+          "remote_initiation_available": true,
+          "vendor_dispatch_required": false,
+          "documented_and_tested": true
+        },
+        "vehicle_impact_exposure": "yes",
+        "vehicle_impact_protection": "yes",
+        "answers": {
+          "curve_requires_service": true,
+          "curve_primary_provider": "Harbor Wastewater Utility",
+          "curve_time_to_impact_hours": 4,
+          "curve_loss_fraction_no_backup": 0.6,
+          "curve_backup_available": "yes",
+          "curve_backup_duration_hours": 8,
+          "curve_loss_fraction_with_backup": 0.2,
+          "curve_recovery_time_hours": 12
+        }
+      },
+      "CRITICAL_PRODUCTS": {
+        "critical_products": [
+          {
+            "product_or_service": "Disinfectant wipes",
+            "dependency_present": true,
+            "notes": "Stock is maintained on site and replenished weekly.",
+            "single_source": false,
+            "alternate_supplier_identified": true,
+            "alternate_supplier_name": "Regional Supply Co.",
+            "multi_source_currently_used": true
+          },
+          {
+            "product_or_service": "Replacement HVAC filters",
+            "dependency_present": true,
+            "notes": "Alternate supplier exists but lead time is longer than the on-site reorder cycle.",
+            "single_source": true,
+            "alternate_supplier_identified": false,
+            "alternate_supplier_name": null,
+            "multi_source_currently_used": false
+          }
+        ],
+        "backup_capacity_pct": 0,
+        "critical_product_single_source": false,
+        "critical_product_no_alt_supplier": false,
+        "answers": {
+          "critical_products": [
+            {
+              "product_or_service": "Disinfectant wipes",
+              "dependency_present": true,
+              "alternate_supplier_identified": true
+            },
+            {
+              "product_or_service": "Replacement HVAC filters",
+              "dependency_present": true,
+              "alternate_supplier_identified": false
+            }
+          ]
+        },
+        "redundancy_activation": {
+          "mode": "UNKNOWN",
+          "activation_delay_min": null,
+          "requires_trained_personnel": null,
+          "trained_personnel_24_7": null,
+          "remote_initiation_available": null,
+          "vendor_dispatch_required": null,
+          "documented_and_tested": null
+        }
+      }
+    },
+    "priority_restoration": {
+      "energy": {
+        "federal_standard": true,
+        "pra_category": "TIER_2",
+        "pra_category_other": null,
+        "paid_sla": true,
+        "sla_assessed": true,
+        "sla_mttr_max_hours": 4,
+        "sla_mttr_max_source": "contract",
+        "sla_mttr_max_notes": "Utility response commitment and contracted generator service.",
+        "notes": "Priority restoration verified with the utility and facilities contractor.",
+        "sla_failure_flags": {
+          "regional_applicability": "yes",
+          "clock_defined": "yes",
+          "activation_required_documented": "yes",
+          "escalation_defined": "yes",
+          "full_component_coverage": "yes",
+          "restoration_validation_defined": "yes",
+          "tolerance_reviewed": "yes",
+          "documentation_accessible": "yes"
+        }
+      },
+      "communications": {
+        "federal_standard": false,
+        "pra_category": null,
+        "pra_category_other": null,
+        "paid_sla": true,
+        "sla_assessed": true,
+        "sla_mttr_max_hours": 8,
+        "sla_mttr_max_source": "service_order",
+        "sla_mttr_max_notes": "",
+        "notes": "Carrier SLA documented in the service order."
+      },
+      "information_technology": {
+        "federal_standard": false,
+        "pra_category": null,
+        "pra_category_other": null,
+        "paid_sla": true,
+        "sla_assessed": true,
+        "sla_mttr_max_hours": 6,
+        "sla_mttr_max_source": "contract",
+        "sla_mttr_max_notes": "",
+        "notes": "Primary hosted applications have a documented recovery commitment."
+      },
+      "water": {
+        "federal_standard": true,
+        "pra_category": "TIER_3",
+        "pra_category_other": null,
+        "paid_sla": false,
+        "sla_assessed": true,
+        "sla_mttr_max_hours": null,
+        "sla_mttr_max_source": "unknown",
+        "sla_mttr_max_notes": "",
+        "notes": "Municipal restoration priority is understood but no separate SLA is documented."
+      },
+      "wastewater": {
+        "federal_standard": false,
+        "pra_category": null,
+        "pra_category_other": null,
+        "paid_sla": false,
+        "sla_assessed": true,
+        "sla_mttr_max_hours": null,
+        "sla_mttr_max_source": "unknown",
+        "sla_mttr_max_notes": "",
+        "notes": "No formal restoration agreement was identified for wastewater service."
+      }
+    },
+    "settings": {
+      "pra_sla_enabled": true,
+      "cross_dependency_enabled": true
+    },
+    "modules": {
+      "MODULE_OT_ICS_RESILIENCE": {
+        "enabled": false,
+        "answers": {}
+      }
+    },
+    "cross_dependencies": {
+      "edges": [
+        {
+          "from_category": "ELECTRIC_POWER",
+          "to_category": "INFORMATION_TECHNOLOGY",
+          "purpose": "primary_operations",
+          "criticality": "critical",
+          "time_to_cascade_bucket": "short",
+          "single_path": "yes",
+          "confidence": "documented",
+          "notes": "Network and endpoint systems rely on facility power.",
+          "source": "user"
+        },
+        {
+          "from_category": "COMMUNICATIONS",
+          "to_category": "WATER",
+          "purpose": "monitoring_control",
+          "criticality": "important",
+          "time_to_cascade_bucket": "medium",
+          "single_path": "unknown",
+          "confidence": "assumed",
+          "notes": "Remote monitoring and dispatch depend on carrier continuity.",
+          "source": "auto_suggest"
+        }
+      ],
+      "derived": {
+        "common_mode_spof": [
+          {
+            "upstream_category": "COMMUNICATIONS",
+            "affected_categories": [
+              "INFORMATION_TECHNOLOGY",
+              "WATER"
+            ],
+            "rationale": "Shared upstream carrier and shared network equipment create a common-mode dependency."
+          }
+        ],
+        "circular_dependencies": [
+          {
+            "path": [
+              "ELECTRIC_POWER",
+              "COMMUNICATIONS",
+              "INFORMATION_TECHNOLOGY",
+              "ELECTRIC_POWER"
+            ]
+          }
+        ]
+      },
+      "last_auto_suggest_hash": "showcase-demo",
+      "rejected_keys": [
+        "CRITICAL_PRODUCTS"
+      ]
+    },
+    "sessions": {
+      "ELECTRIC_POWER": {
+        "derived": {
+          "themedFindings": [
+            {
+              "id": "ENERGY_FEED_DIVERSITY",
+              "domain": "ELECTRIC_POWER",
+              "title": "Electric service feed diversity may be limited",
+              "narrative": "Electric service may rely on a single connection, co-located entry points, or insufficient load survivability. A localized failure could significantly affect facility operations.",
+              "ofcText": "Evaluate the feasibility of establishing additional electric service connections with geographic separation, or ensuring one connection can support critical operations.",
+              "evidence": [
+                {
+                  "question_id": "E-3"
+                },
+                {
+                  "question_id": "E-4"
+                },
+                {
+                  "question_id": "E-5"
+                }
+              ],
+              "references": [
+                "FEMA P-2166, Community Continuity Guidance (CCG), 2022 (2022) - https://www.fema.gov/sites/default/files/documents/fema_p2166_community-continuity-guidance.pdf",
+                "NFPA 1600, Standard on Continuity, Emergency, and Crisis Management, 2024 Edition (2024) - https://www.nfpa.org/codes-and-standards/nfpa-1600"
+              ]
+            },
+            {
+              "id": "ENERGY_BACKUP_SUSTAIN_TEST",
+              "domain": "ELECTRIC_POWER",
+              "title": "Backup power sustainment or testing may be uncertain",
+              "narrative": "Refueling or sustainment planning for backup power may be absent, or backup systems may not have been tested under load. This can increase recovery time and uncertainty during extended outages.",
+              "ofcText": "Establish refueling/sustainment planning for backup power and maintain a routine testing schedule to verify backup systems function as intended under load.",
+              "evidence": [
+                {
+                  "question_id": "E-9"
+                },
+                {
+                  "question_id": "E-10"
+                }
+              ],
+              "references": [
+                "NFPA 110, Standard for Emergency and Standby Power Systems, 2019 Edition (2019) - https://www.nfpa.org/codes-and-standards/nfpa-110",
+                "FEMA P-2166, Community Continuity Guidance (CCG), 2022 (2022) - https://www.fema.gov/sites/default/files/documents/fema_p2166_community-continuity-guidance.pdf"
+              ]
+            }
+          ]
+        }
+      },
+      "COMMUNICATIONS": {
+        "derived": {
+          "themedFindings": []
+        }
+      },
+      "INFORMATION_TECHNOLOGY": {
+        "derived": {
+          "themedFindings": [
+            {
+              "id": "IT_TRANSPORT_INDEPENDENCE_UNKNOWN",
+              "domain": "INFORMATION_TECHNOLOGY",
+              "title": "Transport independence remains unknown",
+              "narrative": "Transport independence is unresolved for one or more critical links, so common-cause failure cannot be excluded.",
+              "ofcText": "Confirm physical path diversity and route independence for transport circuits and update continuity assumptions to match verified constraints.",
+              "evidence": [
+                {
+                  "question_id": "supply.has_alternate_source",
+                  "answer": true
+                },
+                {
+                  "question_id": "it_transport_resilience.carrier_diversity",
+                  "answer": "DIFFERENT_CARRIERS"
+                }
+              ],
+              "references": [
+                "Improving Emergency Communications Resiliency through Redundancies (2021) - https://www.cisa.gov/resources-tools/resources/improving-emergency-communications-resiliency-through-redundancies",
+                "Communications Security, Reliability and Interoperability Council (CSRIC) Recommendations - https://www.fcc.gov/about-fcc/advisory-committees/communications-security-reliability-and-interoperability-council"
+              ]
+            }
+          ]
+        }
+      },
+      "WATER": {
+        "derived": {
+          "themedFindings": [
+            {
+              "id": "W_NO_ALTERNATE_SOURCE",
+              "domain": "WATER",
+              "title": "No alternate water source",
+              "narrative": "The facility does not have an alternate/backup water source to use if primary water service is disrupted.",
+              "ofcText": "Consider evaluating whether an alternate source is needed for core operations during extended disruptions.",
+              "evidence": [
+                {
+                  "question_id": "W_Q8"
+                }
+              ],
+              "references": [
+                "Water Infrastructure and Security Guidance (2022) - https://www.epa.gov/waterresilience",
+                "Power Resilience: Guide for Water and Wastewater Utilities (May 2023 update) (2023) - https://www.epa.gov/system/files/documents/2023-05/PowerResilienceGuide_2023_508c.pdf"
+              ]
+            }
+          ]
+        }
+      },
+      "WASTEWATER": {
+        "derived": {
+          "themedFindings": []
+        }
+      }
+    },
+    "infrastructure": {
+      "energy": {
+        "curve": {
+          "requires_service": true,
+          "time_to_impact": 0,
+          "loss_no_backup": 0.92,
+          "backup_duration": 48,
+          "loss_with_backup": 0.08,
+          "recovery_time": 12
+        }
+      },
+      "communications": {
+        "curve": {
+          "requires_service": true,
+          "time_to_impact": 1,
+          "loss_no_backup": 0.7,
+          "backup_duration": 72,
+          "loss_with_backup": 0.15,
+          "recovery_time": 24
+        }
+      },
+      "information_technology": {
+        "curve": {
+          "requires_service": true,
+          "time_to_impact": 0.5,
+          "loss_no_backup": 0.85,
+          "backup_duration": null,
+          "loss_with_backup": 0.2,
+          "recovery_time": 6
+        }
+      },
+      "water": {
+        "curve": {
+          "requires_service": true,
+          "time_to_impact": 2,
+          "loss_no_backup": 0.8,
+          "backup_duration": null,
+          "loss_with_backup": 0.25,
+          "recovery_time": 18
+        }
+      },
+      "wastewater": {
+        "curve": {
+          "requires_service": true,
+          "time_to_impact": 4,
+          "loss_no_backup": 0.6,
+          "backup_duration": 8,
+          "loss_with_backup": 0.2,
+          "recovery_time": 12
+        }
+      }
+    }
+  },
+  "sessions": {
+    "ELECTRIC_POWER": {
+      "answers": {
+        "curve_requires_service": true,
+        "curve_primary_provider": "Harbor Electric Cooperative",
+        "curve_backup_available": "yes",
+        "curve_backup_duration_hours": 48,
+        "curve_loss_fraction_with_backup": 0.08,
+        "curve_recovery_time_hours": 12,
+        "E-2_can_identify_substations": "yes",
+        "E-3_more_than_one_connection": "yes"
+      },
+      "derived": {
+        "themedFindings": [
+          {
+            "id": "ENERGY_FEED_DIVERSITY",
+            "domain": "ELECTRIC_POWER",
+            "title": "Electric service feed diversity may be limited",
+            "narrative": "Electric service may rely on a single connection, co-located entry points, or insufficient load survivability. A localized failure could significantly affect facility operations.",
+            "ofcText": "Evaluate the feasibility of establishing additional electric service connections with geographic separation, or ensuring one connection can support critical operations.",
+            "evidence": [
+              {
+                "question_id": "E-3"
+              },
+              {
+                "question_id": "E-4"
+              },
+              {
+                "question_id": "E-5"
+              }
+            ],
+            "references": [
+              "FEMA P-2166, Community Continuity Guidance (CCG), 2022 (2022) - https://www.fema.gov/sites/default/files/documents/fema_p2166_community-continuity-guidance.pdf",
+              "NFPA 1600, Standard on Continuity, Emergency, and Crisis Management, 2024 Edition (2024) - https://www.nfpa.org/codes-and-standards/nfpa-1600"
+            ]
+          },
+          {
+            "id": "ENERGY_BACKUP_SUSTAIN_TEST",
+            "domain": "ELECTRIC_POWER",
+            "title": "Backup power sustainment or testing may be uncertain",
+            "narrative": "Refueling or sustainment planning for backup power may be absent, or backup systems may not have been tested under load. This can increase recovery time and uncertainty during extended outages.",
+            "ofcText": "Establish refueling/sustainment planning for backup power and maintain a routine testing schedule to verify backup systems function as intended under load.",
+            "evidence": [
+              {
+                "question_id": "E-9"
+              },
+              {
+                "question_id": "E-10"
+              }
+            ],
+            "references": [
+              "NFPA 110, Standard for Emergency and Standby Power Systems, 2019 Edition (2019) - https://www.nfpa.org/codes-and-standards/nfpa-110",
+              "FEMA P-2166, Community Continuity Guidance (CCG), 2022 (2022) - https://www.fema.gov/sites/default/files/documents/fema_p2166_community-continuity-guidance.pdf"
+            ]
+          }
+        ],
+        "vulnerabilities": [
+          {
+            "id": "ENERGY_FEED_DIVERSITY",
+            "text": "Electric service feed diversity may be limited. Electric service may rely on a single connection, co-located entry points, or insufficient load survivability. A localized failure could significantly affect facility operations.",
+            "infrastructure": "ELECTRIC_POWER"
+          },
+          {
+            "id": "ENERGY_BACKUP_SUSTAIN_TEST",
+            "text": "Backup power sustainment or testing may be uncertain. Refueling or sustainment planning for backup power may be absent, or backup systems may not have been tested under load. This can increase recovery time and uncertainty during extended outages.",
+            "infrastructure": "ELECTRIC_POWER"
+          }
+        ],
+        "ofcs": [
+          {
+            "id": "OFC-ENERGY_FEED_DIVERSITY",
+            "text": "Evaluate the feasibility of establishing additional electric service connections with geographic separation, or ensuring one connection can support critical operations.",
+            "vulnerability_id": "ENERGY_FEED_DIVERSITY"
+          },
+          {
+            "id": "OFC-ENERGY_BACKUP_SUSTAIN_TEST",
+            "text": "Establish refueling/sustainment planning for backup power and maintain a routine testing schedule to verify backup systems function as intended under load.",
+            "vulnerability_id": "ENERGY_BACKUP_SUSTAIN_TEST"
+          }
+        ],
+        "reportBlocks": []
+      },
+      "saved_at_iso": "2026-04-22T12:00:00.000Z"
+    },
+    "COMMUNICATIONS": {
+      "answers": {
+        "curve_requires_service": true,
+        "curve_primary_provider": "Metro Fiber",
+        "curve_backup_available": "yes",
+        "curve_backup_duration_hours": 72,
+        "curve_loss_fraction_with_backup": 0.15,
+        "curve_recovery_time_hours": 24,
+        "comm_single_provider_restoration": "No",
+        "comm_alternate_providers_or_paths": "Yes"
+      },
+      "derived": {
+        "themedFindings": [],
+        "vulnerabilities": [],
+        "ofcs": [],
+        "reportBlocks": []
+      },
+      "saved_at_iso": "2026-04-22T12:00:00.000Z"
+    },
+    "INFORMATION_TECHNOLOGY": {
+      "answers": {
+        "curve_requires_service": true,
+        "curve_primary_provider": "CoreNet ISP",
+        "curve_backup_available": "yes",
+        "curve_loss_fraction_with_backup": 0.2,
+        "curve_recovery_time_hours": 6,
+        "IT-1_can_identify_providers": "yes",
+        "IT-8_backup_available": "yes"
+      },
+      "derived": {
+        "themedFindings": [
+          {
+            "id": "IT_TRANSPORT_INDEPENDENCE_UNKNOWN",
+            "domain": "INFORMATION_TECHNOLOGY",
+            "title": "Transport independence remains unknown",
+            "narrative": "Transport independence is unresolved for one or more critical links, so common-cause failure cannot be excluded.",
+            "ofcText": "Confirm physical path diversity and route independence for transport circuits and update continuity assumptions to match verified constraints.",
+            "evidence": [
+              {
+                "question_id": "supply.has_alternate_source",
+                "answer": true
+              },
+              {
+                "question_id": "it_transport_resilience.carrier_diversity",
+                "answer": "DIFFERENT_CARRIERS"
+              }
+            ],
+            "references": [
+              "Improving Emergency Communications Resiliency through Redundancies (2021) - https://www.cisa.gov/resources-tools/resources/improving-emergency-communications-resiliency-through-redundancies",
+              "Communications Security, Reliability and Interoperability Council (CSRIC) Recommendations - https://www.fcc.gov/about-fcc/advisory-committees/communications-security-reliability-and-interoperability-council"
+            ]
+          }
+        ],
+        "vulnerabilities": [
+          {
+            "id": "IT_TRANSPORT_INDEPENDENCE_UNKNOWN",
+            "text": "Transport independence remains unknown. Transport independence is unresolved for one or more critical links, so common-cause failure cannot be excluded.",
+            "infrastructure": "INFORMATION_TECHNOLOGY"
+          }
+        ],
+        "ofcs": [
+          {
+            "id": "OFC-IT_TRANSPORT_INDEPENDENCE_UNKNOWN",
+            "text": "Confirm physical path diversity and route independence for transport circuits and update continuity assumptions to match verified constraints.",
+            "vulnerability_id": "IT_TRANSPORT_INDEPENDENCE_UNKNOWN"
+          }
+        ],
+        "reportBlocks": []
+      },
+      "saved_at_iso": "2026-04-22T12:00:00.000Z"
+    },
+    "WATER": {
+      "answers": {
+        "curve_requires_service": true,
+        "curve_primary_provider": "Harbor Water Utility",
+        "curve_backup_available": "yes",
+        "curve_loss_fraction_with_backup": 0.25,
+        "curve_recovery_time_hours": 18
+      },
+      "derived": {
+        "themedFindings": [
+          {
+            "id": "W_NO_ALTERNATE_SOURCE",
+            "domain": "WATER",
+            "title": "No alternate water source",
+            "narrative": "The facility does not have an alternate/backup water source to use if primary water service is disrupted.",
+            "ofcText": "Consider evaluating whether an alternate source is needed for core operations during extended disruptions.",
+            "evidence": [
+              {
+                "question_id": "W_Q8"
+              }
+            ],
+            "references": [
+              "Water Infrastructure and Security Guidance (2022) - https://www.epa.gov/waterresilience",
+              "Power Resilience: Guide for Water and Wastewater Utilities (May 2023 update) (2023) - https://www.epa.gov/system/files/documents/2023-05/PowerResilienceGuide_2023_508c.pdf"
+            ]
+          }
+        ],
+        "vulnerabilities": [
+          {
+            "id": "W_NO_ALTERNATE_SOURCE",
+            "text": "No alternate water source. The facility does not have an alternate/backup water source to use if primary water service is disrupted.",
+            "infrastructure": "WATER"
+          }
+        ],
+        "ofcs": [
+          {
+            "id": "OFC-W_NO_ALTERNATE_SOURCE",
+            "text": "Consider evaluating whether an alternate source is needed for core operations during extended disruptions.",
+            "vulnerability_id": "W_NO_ALTERNATE_SOURCE"
+          }
+        ],
+        "reportBlocks": []
+      },
+      "saved_at_iso": "2026-04-22T12:00:00.000Z"
+    },
+    "WASTEWATER": {
+      "answers": {
+        "curve_requires_service": true,
+        "curve_primary_provider": "Harbor Wastewater Utility",
+        "curve_backup_available": "yes",
+        "curve_backup_duration_hours": 8,
+        "curve_loss_fraction_with_backup": 0.2,
+        "curve_recovery_time_hours": 12
+      },
+      "derived": {
+        "themedFindings": [],
+        "vulnerabilities": [],
+        "ofcs": [],
+        "reportBlocks": []
+      },
+      "saved_at_iso": "2026-04-22T12:00:00.000Z"
+    }
+  }
+}

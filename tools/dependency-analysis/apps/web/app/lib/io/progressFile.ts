@@ -54,6 +54,50 @@ function normalizeAssessmentNullStrings(assessment: Record<string, unknown>): vo
   normalizeObjectNullStrings(assessment, 0);
 }
 
+const OPTIONAL_OBJECT_KEYS = new Set([
+  'priority_restoration',
+  'cross_dependencies',
+  'settings',
+  'infrastructure',
+  'modules',
+  'supply',
+  'agreements',
+  'alternative_providers',
+  'maintenance_schedule',
+  'monitoring_capabilities',
+  'redundancy_activation',
+  'it_transport_resilience',
+  'it_hosted_resilience',
+  'sla_failure_flags',
+  'sla_categorization',
+  'curve',
+  'derived',
+  'answers',
+]);
+
+function normalizeObjectNullObjects(obj: Record<string, unknown>, depth: number): void {
+  if (depth > 15) return;
+  for (const key of Object.keys(obj)) {
+    const val = obj[key];
+    if (val === null && OPTIONAL_OBJECT_KEYS.has(key)) {
+      delete obj[key];
+    } else if (val != null && typeof val === 'object' && !Array.isArray(val)) {
+      normalizeObjectNullObjects(val as Record<string, unknown>, depth + 1);
+    } else if (Array.isArray(val)) {
+      for (const item of val) {
+        if (item != null && typeof item === 'object' && !Array.isArray(item)) {
+          normalizeObjectNullObjects(item as Record<string, unknown>, depth + 1);
+        }
+      }
+    }
+  }
+}
+
+/** Strip null values from optional object blocks before schema validation. */
+function normalizeAssessmentNullObjects(assessment: Record<string, unknown>): void {
+  normalizeObjectNullObjects(assessment, 0);
+}
+
 const TOOL_ID = 'infrastructure-dependency-tool';
 const LEGACY_TOOL_IDS = new Set(['asset-dependency-tool']);
 const TOOL_DISPLAY_NAME = 'Infrastructure Dependency Tool (IDT)';
@@ -219,6 +263,7 @@ export function parseProgressFile(raw: string): ImportResult {
 
   normalizeAssessmentNumericFields(assessment);
   normalizeAssessmentNullStrings(assessment);
+  normalizeAssessmentNullObjects(assessment);
   sanitizeLegacySupplyChainFields(assessment);
 
   const parsed = AssessmentSchema.safeParse(assessment);

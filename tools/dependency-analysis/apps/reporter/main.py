@@ -7852,8 +7852,13 @@ def _render_report(data: dict, work_path: Path, template_path: Path, skip_canoni
     if not skip_canonical_template_check:
         CANONICAL_TEMPLATE_SUFFIX = "ADA" + os.sep + "report template.docx"
         CANONICAL_TEMPLATE_SUFFIX_ALT = "ADA/report template.docx"
+        WORKSPACE_TEMPLATE_SUFFIX = os.path.join("apps", "web", "public", "hotel-analysis", "Assets", "report template.docx").replace("\\", "/")
         normalized = str(template_path.resolve()).replace("\\", "/")
-        if not (normalized.endswith(CANONICAL_TEMPLATE_SUFFIX_ALT) or normalized.endswith(CANONICAL_TEMPLATE_SUFFIX)):
+        if not (
+            normalized.endswith(CANONICAL_TEMPLATE_SUFFIX_ALT)
+            or normalized.endswith(CANONICAL_TEMPLATE_SUFFIX)
+            or normalized.endswith(WORKSPACE_TEMPLATE_SUFFIX)
+        ):
             raise ValueError(f"Wrong template: export must use ADA/report template.docx. Got: {template_path}")
     if isinstance(data, dict) and "assessment" in data:
         assessment = data["assessment"]
@@ -8421,16 +8426,22 @@ def main() -> None:
 
     CANONICAL_TEMPLATE_SUFFIX = "ADA" + os.sep + "report template.docx"
     CANONICAL_TEMPLATE_SUFFIX_ALT = "ADA/report template.docx"
+    WORKSPACE_TEMPLATE_SUFFIX = os.path.join("apps", "web", "public", "hotel-analysis", "Assets", "report template.docx").replace("\\", "/")
     script_dir = Path(__file__).resolve().parent
     repo_root = script_dir.parent.parent
     template_path = os.environ.get("TEMPLATE_PATH")
     if template_path:
         template_path = Path(template_path)
     else:
-        template_path = repo_root / "ADA" / "report template.docx"
+        workspace_template = repo_root / "apps" / "web" / "public" / "hotel-analysis" / "Assets" / "report template.docx"
+        template_path = workspace_template if workspace_template.is_file() else repo_root / "ADA" / "report template.docx"
     template_path = template_path.resolve()
     normalized = str(template_path).replace("\\", "/")
-    if not (normalized.endswith(CANONICAL_TEMPLATE_SUFFIX_ALT) or normalized.endswith(CANONICAL_TEMPLATE_SUFFIX)):
+    if not (
+        normalized.endswith(CANONICAL_TEMPLATE_SUFFIX_ALT)
+        or normalized.endswith(CANONICAL_TEMPLATE_SUFFIX)
+        or normalized.endswith(WORKSPACE_TEMPLATE_SUFFIX)
+    ):
         print("ERROR: Wrong template: export must use /ADA/report template.docx", file=sys.stderr)
         print(f"  Got: {template_path}", file=sys.stderr)
         sys.exit(1)

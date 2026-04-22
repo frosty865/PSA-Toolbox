@@ -12,6 +12,7 @@ const FIXED_META = {
 const FIXED_ASSET = {
   asset_name: "Fixture Asset",
   visit_date_iso: "2000-01-01",
+  psa_cell: "555-000-0000",
 };
 
 export function assessment(overrides: Partial<Assessment> = {}): Assessment {

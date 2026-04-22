@@ -1,3 +1,5 @@
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 import { describe, it, expect } from 'vitest';
 import {
   buildProgressFile,
@@ -70,6 +72,31 @@ describe('progressFile', () => {
     };
     const result = parseProgressFile(JSON.stringify(file));
     expect(result.ok).toBe(false);
+  });
+
+  it('imports legacy null optional object blocks', () => {
+    const assessment = getDefaultAssessment();
+    const file = buildProgressFileV2(assessment, undefined) as {
+      assessment: typeof assessment & {
+        categories: Record<string, Record<string, unknown>>;
+      };
+    };
+
+    const comms = file.assessment.categories.COMMUNICATIONS;
+    const it = file.assessment.categories.INFORMATION_TECHNOLOGY;
+    if (!comms || !it) throw new Error('Expected legacy categories to exist');
+
+    (comms as Record<string, unknown> & { redundancy_activation?: unknown }).redundancy_activation = null;
+    (it as Record<string, unknown> & { redundancy_activation?: unknown }).redundancy_activation = null;
+
+    const result = parseProgressFile(JSON.stringify(file));
+    expect(result.ok).toBe(true);
+    if (!result.ok) return;
+
+    const parsedComms = result.assessment.categories.COMMUNICATIONS as Record<string, unknown>;
+    const parsedIt = result.assessment.categories.INFORMATION_TECHNOLOGY as Record<string, unknown>;
+    expect(parsedComms.redundancy_activation).toBeUndefined();
+    expect(parsedIt.redundancy_activation).toBeUndefined();
   });
 
   it('V1 import migrates energy and comms to sessions map', () => {
@@ -232,5 +259,12 @@ describe('progressFile', () => {
     expect(chartData).not.toBeNull();
     expect(chartData!.withoutBackup.length).toBeGreaterThan(0);
     expect(shouldShowChart('ELECTRIC_POWER', loaded.categories.ELECTRIC_POWER)).toBe(true);
+  });
+
+  it('showcase fixture parses', () => {
+    const fixturePath = path.join(process.cwd(), 'scripts', 'fixtures', 'showcase_progress.json');
+    const raw = fs.readFileSync(fixturePath, 'utf8');
+    const result = parseProgressFile(raw);
+    expect(result.ok).toBe(true);
   });
 });

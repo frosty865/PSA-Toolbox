@@ -11,14 +11,15 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { randomUUID } from 'node:crypto';
 import { spawn } from 'node:child_process';
 import { runExportToDocx, type RunExportTimings } from '../../lib/export/runExport';
+import { findRootWithReporter, getCanonicalTemplatePath } from '../../app/lib/template/path';
 import type { Assessment } from 'schema';
 import { ensureDir, nowIso, toErrorMessage } from './_helpers';
 
 const WEB_ROOT = process.cwd();
-const REPO_ROOT = path.resolve(WEB_ROOT, '..', '..');
+const REPO_ROOT = findRootWithReporter();
 const DATA_TEMP = path.join(REPO_ROOT, 'data', 'temp');
 const PERF_ROOT = path.join(REPO_ROOT, 'data', 'exports', '_perf');
-const TEMPLATE_PATH = path.join(REPO_ROOT, 'ADA', 'report template.docx');
+const TEMPLATE_PATH = getCanonicalTemplatePath(REPO_ROOT);
 const REPORTER_VERIFY = path.join(REPO_ROOT, 'apps', 'reporter', 'verify_output.py');
 const FIXTURES_DIR = path.join(WEB_ROOT, 'scripts', 'tests', 'fixtures');
 

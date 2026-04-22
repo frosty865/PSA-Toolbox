@@ -17,6 +17,7 @@ import { importProgress } from '@/app/lib/io/progressFile';
 import { useAssessment } from '@/lib/assessment-context';
 import { getDefaultAssessment } from '@/lib/default-assessment';
 import { navigateFieldFile, shouldUseFieldFileNavigation } from '@/lib/field/fileProtocolNav';
+import { getBrowserReportServiceBaseUrl } from '@/lib/field/remoteExport';
 
 type ReportStage = 'idle' | 'starting' | 'loading_assessment' | 'validating' | 'assembling' | 'rendering' | 'done' | 'error';
 
@@ -32,16 +33,21 @@ export default function NewAssessmentPage() {
   const [reportErrorDetail, setReportErrorDetail] = useState<string | null>(null);
   const [reportRequestId, setReportRequestId] = useState<string | null>(null);
   const reportInFlightRef = useRef(false);
+  const remoteReportServiceEnabled = getBrowserReportServiceBaseUrl() != null;
 
   useEffect(() => {
     purge().catch(() => {});
   }, []);
 
   useEffect(() => {
+    if (remoteReportServiceEnabled) {
+      setTemplateReady(true);
+      return;
+    }
     getTemplateCheck()
       .then((r) => setTemplateReady(r.ok))
       .catch(() => setTemplateReady(false));
-  }, []);
+  }, [remoteReportServiceEnabled]);
 
   const handleExportDraft = useCallback(async () => {
       setError(null);
@@ -133,7 +139,7 @@ export default function NewAssessmentPage() {
         Session is in-memory only. Use JSON export to save progress.
       </p>
 
-      {templateReady === false && (
+      {!remoteReportServiceEnabled && templateReady === false && (
         <div className="alert alert-danger mb-4" role="alert">
           DOCX template failed readiness checks (missing anchors). Export is disabled until fixed.
           <br />

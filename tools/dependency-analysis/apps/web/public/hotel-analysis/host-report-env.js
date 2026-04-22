@@ -1,0 +1,1 @@
+(function(){/* DOCX: set REPORT_SERVICE_URL or NEXT_PUBLIC_HOST_REPORT_SERVICE_URL in Vercel (Railway base URL), then rebuild. Or meta host-report-service-url / localStorage HOST_REPORT_SERVICE_URL. */})();

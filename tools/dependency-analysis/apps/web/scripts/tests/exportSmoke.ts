@@ -13,12 +13,13 @@ import { randomUUID } from 'node:crypto';
 import { spawn } from 'node:child_process';
 import { fullAssessmentForExport } from 'engine';
 import { runExportToDocx, type RunExportTimings } from '../../lib/export/runExport';
+import { findRootWithReporter, getCanonicalTemplatePath } from '../../app/lib/template/path';
 import { ensureDir, safeRm, toErrorMessage } from './_helpers';
 
 const WEB_ROOT = process.cwd();
-const REPO_ROOT = path.resolve(WEB_ROOT, '..', '..');
+const REPO_ROOT = findRootWithReporter();
 const DATA_TEMP = path.join(REPO_ROOT, 'data', 'temp');
-const TEMPLATE_PATH = path.join(REPO_ROOT, 'ADA', 'report template.docx');
+const TEMPLATE_PATH = getCanonicalTemplatePath(REPO_ROOT);
 const REPORTER_VERIFY = path.join(REPO_ROOT, 'apps', 'reporter', 'verify_output.py');
 const SMOKE_KEEP_DIR = path.join(REPO_ROOT, 'data', 'exports', '_smoke');
 const SMOKE_KEEP_PATH = path.join(SMOKE_KEEP_DIR, 'SmokeReport.docx');

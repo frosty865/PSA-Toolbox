@@ -10,6 +10,7 @@ import { buildReportVMForReview } from '@/app/lib/report/build_report_vm_client'
 import { getTemplateCheck } from '@/lib/api';
 import { computeCompletion } from '@/app/lib/assessment/completion';
 import { reviewExportCopy } from '@/lib/uiCopy/reviewExportCopy';
+import { getBrowserReportServiceBaseUrl } from '@/lib/field/remoteExport';
 import { AssessmentStatusStrip } from './AssessmentStatusStrip';
 import { ExecutiveSummaryPreview } from './sections/ExecutiveSummaryPreview';
 import { InfrastructureSectionsPreview } from './sections/InfrastructureSectionsPreview';
@@ -53,6 +54,8 @@ export function ReviewExportPage() {
 
   const praSlaEnabled = isPraSlaEnabled(assessment);
   const crossDependencyEnabled = isCrossDependencyEnabled(assessment);
+  const remoteReportServiceBaseUrl = getBrowserReportServiceBaseUrl();
+  const remoteReportServiceEnabled = remoteReportServiceBaseUrl != null;
 
   // Source of truth on Review page is the in-memory assessment object.
   // Do not overlay localStorage sessions here; stale browser sessions can diverge from imported/restored assessment data.
@@ -61,25 +64,30 @@ export function ReviewExportPage() {
   }, [assessment]);
 
   const completion = useMemo(() => computeCompletion(mergedAssessment), [mergedAssessment]);
+  const templateReadyForExport = remoteReportServiceEnabled || templateReady === true;
 
   const reportVM = useMemo(() => {
     try {
       return buildReportVMForReview(mergedAssessment, {
         completion,
-        templateReady: templateReady === true,
+        templateReady: templateReadyForExport,
       });
     } catch (e) {
       console.error('Failed to build ReportVM:', e);
       return null;
     }
-  }, [mergedAssessment, completion, templateReady]);
+  }, [mergedAssessment, completion, templateReadyForExport]);
 
   // Fetch template status on mount
   React.useEffect(() => {
+    if (remoteReportServiceEnabled) {
+      setTemplateReady(true);
+      return;
+    }
     getTemplateCheck()
       .then((r) => setTemplateReady(r.ok))
       .catch(() => setTemplateReady(false));
-  }, []);
+  }, [remoteReportServiceEnabled]);
 
   const toggleSection = (sectionKey: keyof typeof expandedSections) => {
     setExpandedSections((prev) => ({
@@ -98,7 +106,14 @@ export function ReviewExportPage() {
             <p className="text-secondary" style={{ marginBottom: 'var(--spacing-md)' }}>
               {reviewExportCopy.pageDescription}
             </p>
-            {templateReady !== null && (
+            {templateReadyForExport && remoteReportServiceEnabled ? (
+              <p style={{ fontSize: 'var(--font-size-sm)', marginTop: 'var(--spacing-sm)' }}>
+                {reviewExportCopy.templateLabel}{' '}
+                <span style={{ color: 'var(--color-success, #0a0)', fontWeight: 600 }}>
+                  Railway DOCX renderer ready
+                </span>
+              </p>
+            ) : templateReady !== null && (
               <p style={{ fontSize: 'var(--font-size-sm)', marginTop: 'var(--spacing-sm)' }}>
                 {reviewExportCopy.templateLabel}{' '}
                 {templateReady ? (
@@ -265,7 +280,7 @@ export function ReviewExportPage() {
       {/* EXPORT PANEL (sticky) */}
       <ExportPanel
         assessment={mergedAssessment}
-        templateReady={templateReady}
+        templateReady={templateReadyForExport}
         completion={completion}
         reportVM={reportVM}
       />

@@ -549,15 +549,6 @@ export function computeExportPreflight(
     errorDetails.push({ message: msg });
   }
 
-  if (!completion.isComplete) {
-    const first = getFirstMissingInfo(completion);
-    const msg = first
-      ? `Assessment incomplete: missing required inputs in ${first.sectorLabel}. Next: ${first.label}`
-      : 'Assessment incomplete: answer all required questions in each sector.';
-    errors.push(msg);
-    errorDetails.push({ message: msg, sector: first?.sector });
-  }
-
   const categories = assessment.categories ?? {};
   const sectorToInfra: Record<SectorKey, string> = {
     ELECTRIC_POWER: 'Electric Power',

@@ -193,18 +193,6 @@ function computePreflight(
     blockers.push({ code: BLOCKER_CODES.TEMPLATE_NOT_READY, message: 'Report template is not ready.' });
   }
 
-  if (!completion.isComplete) {
-    const first = getFirstMissingInfo(completion);
-    const sector = first?.sector;
-    const label = first?.sectorLabel ?? (sector ? SECTOR_LABELS[sector] : 'Assessment');
-    const next = first?.label ? ` Next: ${first.label}` : '';
-    blockers.push({
-      code: BLOCKER_CODES.MISSING_REQUIRED_ANSWERS,
-      message: `Assessment incomplete: missing required inputs in ${label}.${next}`,
-      sector,
-    });
-  }
-
   // Check required curves for sectors where requires_service
   let hasRequiredCurves = true;
   const infras = vm.infrastructures ?? [];
@@ -253,7 +241,6 @@ function computePreflight(
 
   const canExport =
     templateReady &&
-    completion.isComplete &&
     hasRequiredCurves &&
     !hasUnmappedKeys;
 

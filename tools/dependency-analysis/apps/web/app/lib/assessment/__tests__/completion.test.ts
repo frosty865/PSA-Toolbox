@@ -174,7 +174,7 @@ describe('computeExportPreflight', () => {
     expect(preflight.errors.some((e) => e.includes('curve points') || e.includes('Electric Power'))).toBe(true);
   });
 
-  it('allows export when template ready, complete, and curve points present', () => {
+  it('allows export when template ready and curve points present even if assessment is incomplete', () => {
     const assessment = buildBaseAssessment();
     assessment.categories!.ELECTRIC_POWER = {
       curve_requires_service: true,
@@ -192,10 +192,8 @@ describe('computeExportPreflight', () => {
     const completion = computeCompletion(assessment);
     const preflight = computeExportPreflight(assessment, completion, true);
 
-    expect(preflight.canExport).toBe(completion.isComplete);
-    if (completion.isComplete) {
-      expect(preflight.errors).toHaveLength(0);
-    }
+    expect(preflight.canExport).toBe(true);
+    expect(preflight.errors).toHaveLength(0);
   });
 
   it('blocks export when template not ready', () => {

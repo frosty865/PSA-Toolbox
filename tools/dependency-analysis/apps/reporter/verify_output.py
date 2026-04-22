@@ -19,10 +19,11 @@ except ImportError:
     sys.exit(2)
 
 
-# At least one of these must appear (template may use "EXECUTIVE SUMMARY" instead of "Summary")
-REQUIRED_HEADING_ANY = ("Summary", "EXECUTIVE SUMMARY")
+# At least one of these must appear. The current reporter emits the Part I brief heading.
+REQUIRED_HEADING_ANY = ("Summary", "EXECUTIVE SUMMARY", "PART I – EXECUTIVE DEPENDENCY RISK BRIEF")
 REQUIRED_HEADINGS = (
-    "Vulnerabilities and Options for Consideration",
+    "PART II – TECHNICAL ANNEX",
+    "INFRASTRUCTURE VULNERABILITIES",
 )
 # Summary table must include all categories (display or code)
 REQUIRED_SUMMARY_CATEGORY_ANY = ("CRITICAL_PRODUCTS", "Critical Products")

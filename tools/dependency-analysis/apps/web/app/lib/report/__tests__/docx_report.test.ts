@@ -10,6 +10,7 @@ import { mkdir, readFile } from 'node:fs/promises';
 import { randomUUID } from 'node:crypto';
 import JSZip from 'jszip';
 import { fullAssessmentForExport } from 'engine';
+import { getCanonicalTemplatePath } from '@/app/lib/template/path';
 
 /** Extract plain text from DOCX buffer (word/document.xml). */
 async function extractDocxText(buffer: Buffer): Promise<string> {
@@ -62,7 +63,7 @@ async function runReporter(
 }
 
 const REPO_ROOT = path.resolve(__dirname, '..', '..', '..', '..', '..', '..');
-const TEMPLATE_PATH = path.join(REPO_ROOT, 'ADA', 'report template.docx');
+const TEMPLATE_PATH = getCanonicalTemplatePath(REPO_ROOT);
 
 describe('DOCX report output', () => {
   let docxText: string = '';
@@ -88,12 +89,12 @@ describe('DOCX report output', () => {
 
   it('must contain Communications long header when dependency_sections present', () => {
     if (!docxText) return;
-    expect(docxText).toContain('Communications (Carrier-Based Transport Services)');
+    expect(docxText).toContain('COMMUNICATIONS — Dependency Assessment');
   });
 
   it('must contain Information Technology long header when dependency_sections present', () => {
     if (!docxText) return;
-    expect(docxText).toContain('Information Technology (Externally Hosted / Managed Digital Services)');
+    expect(docxText).toContain('INFORMATION TECHNOLOGY — Dependency Assessment');
   });
 
   it('must contain "not confirmed" for unknown/missing values (not "Not identified")', () => {
